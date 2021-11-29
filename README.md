@@ -1,20 +1,28 @@
-# Webpack Typescript Starter For Logseq Plugin
+# logseq-plugin-vim-shortcuts
 
-A simple webpack typescript starter for Logseq Plugin Development
+This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 
-## What's in it.
+## Supported shortcuts
 
-* Just a hello world for now.
-* No vue/react included.
+- `j`: Move line focus down
+- `k`: Move line focus up
+- `h`: Collapse current block 有 bug
+- `l`: Extend current block 有 bug
+- `i`: Enter edit mode
+- `yy`: Copy current block content
+- `Y`: Copy current block ref
+- `p`: Paste clipboard content to next sibling
+- `P`: Paste clipboard content to previous sibling
+- `oo`: Insert a empty block to next sibling
+- `O`: Insert a empty block to previous sibling
+- `dd`: Delete current block
+- `gg`: Scroll to top
+- `G`: Scroll to bottom
 
-## How to use it.
+## Notice
 
-1. Clone
-2. Run `npm install`
-3. Run `npm run build`
-4. In logseq, click `Plugins` which is in right top dropdown menu
-5. Click `Load unpacked plugin` button and select the this plugin directory, *not dist directory by the way*
-6. If plugin not work, you can try to disable and enable the plugin by clicking the switch button on Plugins page.
+Logseq keybinding support may change in future, so just use it for a while if you need it.
 
 ## Licence
+
 MIT

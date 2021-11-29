@@ -1,6 +1,7 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
+import { debug, getCurrentBlockUUID, setLastBlockUUID } from '../common/funcs';
 
-export default (logseq: ILSPluginUser, block: BlockEntity | null = null) => {
+export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-insert',
     label: 'Enter insert mode',
@@ -8,10 +9,13 @@ export default (logseq: ILSPluginUser, block: BlockEntity | null = null) => {
       mode: 'non-editing',
       binding: 'i'
     }
-  }, async aaa => {
-    console.log('block.uuid', aaa);
-    if (block?.uuid) {
-      logseq.Editor.editBlock(block.uuid);
+  }, async () => {
+    debug('insert');
+
+    let blockUUID = await getCurrentBlockUUID();
+    if (blockUUID) {
+      setLastBlockUUID(blockUUID);
+      logseq.Editor.editBlock(blockUUID);
     }
   });
 };

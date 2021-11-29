@@ -1,6 +1,7 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
+import { debug, scrollToBlockInPage } from '../common/funcs';
 
-export default (logseq: ILSPluginUser, block: BlockEntity | null = null) => {
+export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-top',
     label: 'Go to current page top',
@@ -9,13 +10,13 @@ export default (logseq: ILSPluginUser, block: BlockEntity | null = null) => {
       binding: 'g g'
     }
   }, async () => {
-    logseq.App.showMsg('top');
+    debug('top');
     const page = await logseq.Editor.getCurrentPage();
     if (page?.name) {
       const blocks = await logseq.Editor.getPageBlocksTree(page?.name);
       if (blocks.length > 0) {
-        block = blocks[0];
-        logseq.Editor.scrollToBlockInPage(page.name, block.uuid);
+        let block = blocks[0];
+        scrollToBlockInPage(page.name, block.uuid);
       }
     }
   });
