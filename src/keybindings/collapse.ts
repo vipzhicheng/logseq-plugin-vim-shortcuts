@@ -1,5 +1,5 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, scrollToBlockInPage, setLastBlockUUID } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage, setLastBlockUUID } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
@@ -12,7 +12,7 @@ export default (logseq: ILSPluginUser) => {
   }, async () => {
     debug('Collapse block');
 
-    const page = await logseq.Editor.getCurrentPage();
+    const page = await getCurrentPage();
     if (page?.name) {
       let blockUUID = await getCurrentBlockUUID();
       if (blockUUID) {

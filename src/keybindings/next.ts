@@ -1,5 +1,22 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, scrollToBlockInPage } from '../common/funcs';
+import { ILSPluginUser, BlockEntity, PageEntity } from '@logseq/libs/dist/LSPlugin';
+import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage } from '../common/funcs';
+
+const findNextBlockRecur = async (page: PageEntity | BlockEntity, block: BlockEntity) => {
+  if (block.parent.id) {
+    const parentBlock = await logseq.Editor.getBlock(block.parent.id);
+    if (parentBlock?.uuid) {
+      const parentNextBlock = await logseq.Editor.getNextSiblingBlock(parentBlock?.uuid);
+      console.log('parentBlock', parentBlock);
+      console.log('parentNextBlock', parentNextBlock);
+      if (parentNextBlock?.uuid) {
+        scrollToBlockInPage(page.name, parentNextBlock.uuid);
+      } else if (parentBlock.parent.id) {
+        await findNextBlockRecur(page, parentBlock);
+      }
+    }
+  }
+
+};
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
@@ -11,9 +28,8 @@ export default (logseq: ILSPluginUser) => {
     }
   }, async () => {
     debug('next');
-    const page = await logseq.Editor.getCurrentPage();
+    const page = await getCurrentPage();
     if (page?.name) {
-
       let blockUUID = await getCurrentBlockUUID();
       if (blockUUID) {
         let block = await logseq.Editor.getBlock(blockUUID);
@@ -22,13 +38,7 @@ export default (logseq: ILSPluginUser) => {
           if (nextBlock?.uuid) {
             scrollToBlockInPage(page.name, nextBlock.uuid);
           } else if (block.parent.id) {
-            const parentBlock = await logseq.Editor.getBlock(block.parent.id);
-            if (parentBlock?.uuid) {
-              const parentNextBlock = await logseq.Editor.getNextSiblingBlock(parentBlock?.uuid);
-              if (parentNextBlock?.uuid) {
-                scrollToBlockInPage(page.name, parentNextBlock.uuid);
-              }
-            }
+            await findNextBlockRecur(page, block);
           }
         }
       }

@@ -5,6 +5,7 @@ import { TempCache } from './type';
 const tempCache: TempCache = {
   clipboard: '',
   lastBlock: '',
+  lastPage: '',
 };
 
 
@@ -46,4 +47,16 @@ export const getCurrentBlockUUID = async (): Promise<BlockUUID | undefined> => {
     let block = await logseq.Editor.getCurrentBlock();
     return block?.uuid;
   }
+};
+
+export const getCurrentPage = async () => {
+  const page = await logseq.Editor.getCurrentPage();
+
+  if (page?.name) {
+    if (tempCache !== page.name) {
+      tempCache.lastBlock = '';
+    }
+    tempCache.lastPage = page.name;
+  }
+  return page;
 };

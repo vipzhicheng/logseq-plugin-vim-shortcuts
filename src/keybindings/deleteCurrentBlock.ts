@@ -1,5 +1,5 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage } from '../common/funcs';
 import prev from './prev';
 
 export default (logseq: ILSPluginUser) => {
@@ -12,7 +12,7 @@ export default (logseq: ILSPluginUser) => {
     }
   }, async () => {
     debug('delete current block');
-    const page = await logseq.Editor.getCurrentPage();
+    const page = await getCurrentPage();
     if (page?.name) {
       let blockUUID = await getCurrentBlockUUID();
       if (blockUUID) {

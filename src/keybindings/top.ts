@@ -1,5 +1,5 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentPage, scrollToBlockInPage } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
@@ -7,11 +7,11 @@ export default (logseq: ILSPluginUser) => {
     label: 'Go to current page top',
     keybinding: {
       mode: 'non-editing',
-      binding: 'g g'
+      binding: 'g shift+g'
     }
   }, async () => {
     debug('top');
-    const page = await logseq.Editor.getCurrentPage();
+    const page = await getCurrentPage();
     if (page?.name) {
       const blocks = await logseq.Editor.getPageBlocksTree(page?.name);
       if (blocks.length > 0) {

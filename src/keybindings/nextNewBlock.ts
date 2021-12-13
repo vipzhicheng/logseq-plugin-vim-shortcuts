@@ -7,7 +7,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'Create new next block',
     keybinding: {
       mode: 'non-editing',
-      binding: 'o o'
+      binding: 'o'
     }
   }, async () => {
     debug('create new next block');
