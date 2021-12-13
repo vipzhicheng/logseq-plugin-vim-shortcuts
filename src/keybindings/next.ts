@@ -6,8 +6,6 @@ const findNextBlockRecur = async (page: PageEntity | BlockEntity, block: BlockEn
     const parentBlock = await logseq.Editor.getBlock(block.parent.id);
     if (parentBlock?.uuid) {
       const parentNextBlock = await logseq.Editor.getNextSiblingBlock(parentBlock?.uuid);
-      console.log('parentBlock', parentBlock);
-      console.log('parentNextBlock', parentNextBlock);
       if (parentNextBlock?.uuid) {
         scrollToBlockInPage(page.name, parentNextBlock.uuid);
       } else if (parentBlock.parent.id) {

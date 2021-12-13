@@ -7,7 +7,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'Go to current page top',
     keybinding: {
       mode: 'non-editing',
-      binding: 'g shift+g'
+      binding: 'shift+t'
     }
   }, async () => {
     debug('top');

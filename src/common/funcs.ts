@@ -41,7 +41,9 @@ export const setLastBlockUUID = (uuid:BlockUUID) => {
 };
 
 export const getCurrentBlockUUID = async (): Promise<BlockUUID | undefined> => {
-  if (tempCache.lastBlock) {
+  const page = await logseq.Editor.getCurrentPage();
+  // When page is not null, means it's on page not home
+  if (page && tempCache.lastBlock) {
     return tempCache.lastBlock;
   } else {
     let block = await logseq.Editor.getCurrentBlock();

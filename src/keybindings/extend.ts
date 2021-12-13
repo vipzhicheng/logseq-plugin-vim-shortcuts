@@ -12,14 +12,14 @@ export default (logseq: ILSPluginUser) => {
   }, async () => {
     debug('Extend block');
 
-    const page = await getCurrentPage();
-    if (page?.name) {
+    // const page = await getCurrentPage();
+    // if (page?.name) {
       let blockUUID = await getCurrentBlockUUID();
       if (blockUUID) {
         await logseq.Editor.upsertBlockProperty(blockUUID, 'collapsed', false);
-        scrollToBlockInPage(page.name, blockUUID);
+      //   scrollToBlockInPage(page.name, blockUUID);
       }
-    }
+    // }
 
   });
 };

@@ -36,6 +36,30 @@ export default (logseq: ILSPluginUser) => {
           }
         }
       }
+    } else {
+      let blockUUID = await getCurrentBlockUUID();
+      if (blockUUID) {
+        let block = await logseq.Editor.getBlock(blockUUID);
+        if (block?.uuid) {
+
+          let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid);
+          let nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
+
+          await logseq.Editor.removeBlock(block.uuid);
+          let focusBlock = prevBlock || nextBlock || null;
+          if (focusBlock?.uuid) {
+            await logseq.Editor.editBlock(focusBlock.uuid);
+            await logseq.Editor.exitEditingMode(true);
+          } else if (block.left.id) {
+            const parentBlock = await logseq.Editor.getBlock(block.left.id);
+            if (parentBlock?.uuid) {
+              await logseq.Editor.editBlock(parentBlock.uuid);
+              await logseq.Editor.exitEditingMode(true);
+
+            }
+          }
+        }
+      }
     }
   });
 };

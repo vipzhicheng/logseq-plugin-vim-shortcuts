@@ -17,8 +17,6 @@ export default (logseq: ILSPluginUser) => {
       let blockUUID = await getCurrentBlockUUID();
       if (blockUUID) {
         let block = await logseq.Editor.getBlock(blockUUID);
-        console.log('block', block);
-
         if (block?.parent.id) {
           const parentBlock = await logseq.Editor.getBlock(block?.parent.id);
           if (parentBlock?.uuid) {
