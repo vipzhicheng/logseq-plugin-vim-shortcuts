@@ -3,19 +3,21 @@ import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage, setLas
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-extend',
-    label: 'Extend block',
+    key: 'vim-shortcut-indent',
+    label: 'indent',
     keybinding: {
       mode: 'non-editing',
-      binding: 'l'
+      binding: 'shift+l'
     }
   }, async () => {
-    debug('Extend block');
+    debug('Indent');
 
-    let blockUUID = await getCurrentBlockUUID();
-    if (blockUUID) {
-      await logseq.Editor.upsertBlockProperty(blockUUID, 'collapsed', false);
+    // @ts-ignore
+    await logseq.App.invokeExternalCommand('logseq.editor/indent');
+    await logseq.Editor.exitEditingMode(true);
+    const uuid = await getCurrentBlockUUID();
+    if (uuid) {
+      setLastBlockUUID(uuid);
     }
-
   });
 };

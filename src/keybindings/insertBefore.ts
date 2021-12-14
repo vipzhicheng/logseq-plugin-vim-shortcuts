@@ -18,6 +18,7 @@ export default (logseq: ILSPluginUser) => {
       await logseq.Editor.editBlock(blockUUID, {
         pos: 0
       });
+
     }
   });
 };

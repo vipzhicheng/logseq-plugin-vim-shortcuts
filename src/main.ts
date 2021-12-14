@@ -21,6 +21,10 @@ import highlightFocusIn from './keybindings/highlightFocusIn';
 import highlightFocusOut from './keybindings/highlightFocusOut';
 import search from './keybindings/search';
 import insertBefore from './keybindings/insertBefore';
+import up from './keybindings/up';
+import down from './keybindings/down';
+import outdent from './keybindings/outdent';
+import indent from './keybindings/indent';
 
 async function main() {
   undo(logseq);
@@ -32,6 +36,10 @@ async function main() {
   bottom(logseq);
   nextSibling(logseq);
   prevSibling(logseq);
+  up(logseq);
+  down(logseq);
+  indent(logseq);
+  outdent(logseq);
   nextNewBlock(logseq);
   prevNewBlock(logseq);
   deleteCurrentBlock(logseq);
@@ -41,8 +49,8 @@ async function main() {
   pastePrev(logseq);
   collapse(logseq);
   extend(logseq);
-  highlightFocusIn(logseq);
-  highlightFocusOut(logseq);
+  // highlightFocusIn(logseq);
+  // highlightFocusOut(logseq);
 
 }
 

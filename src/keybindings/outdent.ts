@@ -3,19 +3,21 @@ import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage, setLas
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-extend',
-    label: 'Extend block',
+    key: 'vim-shortcut-outdent',
+    label: 'outdent',
     keybinding: {
       mode: 'non-editing',
-      binding: 'l'
+      binding: 'shift+h'
     }
   }, async () => {
-    debug('Extend block');
+    debug('Outdent');
 
-    let blockUUID = await getCurrentBlockUUID();
-    if (blockUUID) {
-      await logseq.Editor.upsertBlockProperty(blockUUID, 'collapsed', false);
+    // @ts-ignore
+    await logseq.App.invokeExternalCommand('logseq.editor/outdent');
+    await logseq.Editor.exitEditingMode(true);
+    const uuid = await getCurrentBlockUUID();
+    if (uuid) {
+      setLastBlockUUID(uuid);
     }
-
   });
 };
