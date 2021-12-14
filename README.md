@@ -4,16 +4,14 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 
 ## Supported shortcuts
 
-- `j`: Move to next sibling.
-- `k`: Move to previous sibling.
-- `h`: Collapse current block.
-- `l`: Extend current block.
-- `J`: Move to next line.
-- `K`: Move to previous line.
-- `H`: Highlight Focus out.
-- `L`: Highlight Focus in.
+- `j`: Move to next line.
+- `k`: Move to previous line.
+- `h`: Outdent.
+- `l`: Indent.
+- `J`: Move to next sibling.
+- `K`: Move to previous sibling.
 - `i`: Enter edit mode, put the cursor to the end.
-- `I`: Enter edit mode, put the cursor to the start. TODO:
+- `I`: Enter edit mode, put the cursor to the start.
 - `yy`: Copy current block content. Only support one block, multi blocks copy please use `cmd+c`.
 - `Y`: Copy current block ref.
 - `p`: Paste clipboard content to next sibling. Only support one block, multi blocks paste please use `cmd+v`.
@@ -22,6 +20,8 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `O`: Insert a empty block to previous sibling.
 - `dd`: Delete current block.
 - `T`: Scroll to top, because Logseq use gg to go to graph view, you can change that shortcut to another shortcut first and then set gg back to this Command on this plugin's settings panel(WIP).
+- `zo`: Extend block.
+- `zm`: Collapse block.
 - `G`: Scroll to bottom.
 - `u`: Undo.
 - `ctrl+r`: Redo.
