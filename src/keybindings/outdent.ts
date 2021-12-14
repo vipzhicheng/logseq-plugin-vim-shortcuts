@@ -7,7 +7,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'outdent',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+h'
+      binding: 'h'
     }
   }, async () => {
     debug('Outdent');

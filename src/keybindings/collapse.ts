@@ -7,7 +7,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'Collapse block',
     keybinding: {
       mode: 'non-editing',
-      binding: 'h'
+      binding: 'z m'
     }
   }, async () => {
     debug('Collapse block');

@@ -7,7 +7,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'indent',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+l'
+      binding: 'l'
     }
   }, async () => {
     debug('Indent');

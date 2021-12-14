@@ -7,7 +7,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'Extend block',
     keybinding: {
       mode: 'non-editing',
-      binding: 'l'
+      binding: 'z o'
     }
   }, async () => {
     debug('Extend block');
