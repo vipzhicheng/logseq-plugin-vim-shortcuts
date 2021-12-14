@@ -7,7 +7,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'up',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+k'
+      binding: 'k'
     }
   }, async () => {
     debug('Up');

@@ -22,7 +22,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'Go to next line',
     keybinding: {
       mode: 'non-editing',
-      binding: 'j'
+      binding: 'shift+j'
     }
   }, async () => {
     debug('next');

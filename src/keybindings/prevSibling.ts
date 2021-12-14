@@ -7,7 +7,7 @@ export default (logseq: ILSPluginUser) => {
     label: 'Go to previous line',
     keybinding: {
       mode: 'non-editing',
-      binding: 'k'
+      binding: 'shift+k'
     }
   }, async () => {
     debug('prev');
