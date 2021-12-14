@@ -60,7 +60,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        // { from: './src/icon.png', to: 'icon.png' },
+        { from: './src/icon.png', to: 'icon.png' },
         { from: './package.json', to: 'package.json' },
       ],
     }),

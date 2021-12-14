@@ -23,7 +23,6 @@ export default (logseq: ILSPluginUser) => {
         const ref = `((${block.uuid}))`;
 
         writeClipboard(ref);
-        logseq.App.showMsg('Block ref has been copied.');
       }
     }
   });

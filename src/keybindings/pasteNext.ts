@@ -12,6 +12,7 @@ export default (logseq: ILSPluginUser) => {
     }
   }, async () => {
     debug('Paste to next block');
+
     let blockUUID = await getCurrentBlockUUID();
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
@@ -22,5 +23,6 @@ export default (logseq: ILSPluginUser) => {
         });
       }
     }
+
   });
 };

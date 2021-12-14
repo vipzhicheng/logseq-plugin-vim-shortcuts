@@ -1,11 +1,13 @@
 import '@logseq/libs';
 import { BlockEntity } from '@logseq/libs/dist/LSPlugin';
 
+import undo from './keybindings/undo';
+import redo from './keybindings/redo';
 import insert from './keybindings/insert';
 import bottom from './keybindings/bottom';
 import top from './keybindings/top';
-import next from './keybindings/next';
-import prev from './keybindings/prev';
+import nextSibling from './keybindings/nextSibling';
+import prevSibling from './keybindings/prevSibling';
 import nextNewBlock from './keybindings/nextNewBlock';
 import prevNewBlock from './keybindings/prevNewBlock';
 import deleteCurrentBlock from './keybindings/deleteCurrentBlock';
@@ -17,16 +19,19 @@ import collapse from './keybindings/collapse';
 import extend from './keybindings/extend';
 import highlightFocusIn from './keybindings/highlightFocusIn';
 import highlightFocusOut from './keybindings/highlightFocusOut';
-
-
-
+import search from './keybindings/search';
+import insertBefore from './keybindings/insertBefore';
 
 async function main() {
+  undo(logseq);
+  redo(logseq);
+  search(logseq);
   insert(logseq);
+  insertBefore(logseq);
   top(logseq);
   bottom(logseq);
-  next(logseq);
-  prev(logseq);
+  nextSibling(logseq);
+  prevSibling(logseq);
   nextNewBlock(logseq);
   prevNewBlock(logseq);
   deleteCurrentBlock(logseq);
@@ -40,4 +45,5 @@ async function main() {
   highlightFocusOut(logseq);
 
 }
+
 logseq.ready(main).catch(console.error);

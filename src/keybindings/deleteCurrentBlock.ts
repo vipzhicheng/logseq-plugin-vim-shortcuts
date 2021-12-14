@@ -1,6 +1,5 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage } from '../common/funcs';
-import prev from './prev';
+import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage, writeClipboard } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
@@ -22,6 +21,7 @@ export default (logseq: ILSPluginUser) => {
           let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid);
           let nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
 
+          writeClipboard(block.content);
           await logseq.Editor.removeBlock(block.uuid);
 
           let focusBlock = prevBlock || nextBlock || null;
@@ -45,6 +45,7 @@ export default (logseq: ILSPluginUser) => {
           let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid);
           let nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
 
+          writeClipboard(block.content);
           await logseq.Editor.removeBlock(block.uuid);
           let focusBlock = prevBlock || nextBlock || null;
           if (focusBlock?.uuid) {

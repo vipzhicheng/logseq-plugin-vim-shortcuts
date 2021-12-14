@@ -27,6 +27,7 @@ export default (logseq: ILSPluginUser) => {
   }, async () => {
     debug('next');
     const page = await getCurrentPage();
+
     if (page?.name) {
       let blockUUID = await getCurrentBlockUUID();
       if (blockUUID) {

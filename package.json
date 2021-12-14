@@ -1,9 +1,11 @@
 {
-  "name": "logseq-plugin-vim-shortcut",
+  "name": "logseq-plugin-vim-shortcuts",
   "version": "0.0.1",
   "license": "MIT",
   "main": "index.html",
-  "logseq": {},
+  "logseq": {
+    "icon": "./icon.png"
+  },
   "scripts": {
     "start": "webpack serve --config=webpack.config.js --devtool=source-map --mode=development --port=3001",
     "build": "webpack --config=webpack.config.js --devtool=source-map --mode=development",

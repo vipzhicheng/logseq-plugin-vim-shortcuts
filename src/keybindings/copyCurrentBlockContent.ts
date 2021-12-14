@@ -1,6 +1,5 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
 import { debug, getCurrentBlockUUID, writeClipboard } from '../common/funcs';
-import { TempCache } from 'src/common/type';
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
@@ -11,16 +10,15 @@ export default (logseq: ILSPluginUser) => {
       binding: 'y y'
     }
   }, async () => {
-    debug('Copy current block content');
+    debug('Copy current block contents');
     let blockUUID = await getCurrentBlockUUID();
     if (blockUUID) {
       const block = await logseq.Editor.getBlock(blockUUID);
       if (block?.content) {
         const { content } = block;
-
         writeClipboard(content);
-        logseq.App.showMsg('Block content has been copied.');
       }
     }
+
   });
 };

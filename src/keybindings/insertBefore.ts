@@ -3,19 +3,21 @@ import { debug, getCurrentBlockUUID, setLastBlockUUID } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-insert',
-    label: 'Enter insert mode',
+    key: 'vim-shortcut-insert-before',
+    label: 'Enter insert mode at first pos ',
     keybinding: {
       mode: 'non-editing',
-      binding: 'i'
+      binding: 'shift+i'
     }
   }, async () => {
-    debug('insert');
+    debug('Insert before');
 
     let blockUUID = await getCurrentBlockUUID();
     if (blockUUID) {
       setLastBlockUUID(blockUUID);
-      await logseq.Editor.editBlock(blockUUID);
+      await logseq.Editor.editBlock(blockUUID, {
+        pos: 0
+      });
     }
   });
 };
