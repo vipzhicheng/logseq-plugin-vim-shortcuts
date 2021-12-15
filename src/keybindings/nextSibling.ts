@@ -18,14 +18,14 @@ const findNextBlockRecur = async (page: PageEntity | BlockEntity, block: BlockEn
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-next',
-    label: 'Go to next line',
+    key: 'vim-shortcut-next-sibling',
+    label: 'Go to next sibling',
     keybinding: {
       mode: 'non-editing',
       binding: 'shift+j'
     }
   }, async () => {
-    debug('next');
+    debug('Next sibling');
     const page = await getCurrentPage();
 
     if (page?.name) {

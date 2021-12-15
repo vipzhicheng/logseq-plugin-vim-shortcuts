@@ -25,32 +25,57 @@ import up from './keybindings/up';
 import down from './keybindings/down';
 import outdent from './keybindings/outdent';
 import indent from './keybindings/indent';
+import searchBaidu from './keybindings/searchBaidu';
+import searchGithub from './keybindings/searchGithub';
+import searchGoogle from './keybindings/searchGoogle';
+import searchStackoverflow from './keybindings/searchStackoverflow';
+import searchWikipedia from './keybindings/searchWikipedia';
+import searchYoutube from './keybindings/searchYoutube';
 
 async function main() {
   undo(logseq);
   redo(logseq);
+
   search(logseq);
+
   insert(logseq);
   insertBefore(logseq);
+
   top(logseq);
   bottom(logseq);
+
   nextSibling(logseq);
   prevSibling(logseq);
+
   up(logseq);
   down(logseq);
+
   indent(logseq);
   outdent(logseq);
+
   nextNewBlock(logseq);
   prevNewBlock(logseq);
+
   deleteCurrentBlock(logseq);
+
   copyCurrentBlockContent(logseq);
   copyCurrentBlockRef(logseq);
+
   pasteNext(logseq);
   pastePrev(logseq);
+
   collapse(logseq);
   extend(logseq);
+
   highlightFocusIn(logseq);
   highlightFocusOut(logseq);
+
+  searchBaidu(logseq);
+  searchGithub(logseq);
+  searchGoogle(logseq);
+  searchStackoverflow(logseq);
+  searchWikipedia(logseq);
+  searchYoutube(logseq);
 
 }
 

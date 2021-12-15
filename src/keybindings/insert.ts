@@ -10,7 +10,7 @@ export default (logseq: ILSPluginUser) => {
       binding: 'i'
     }
   }, async () => {
-    debug('insert');
+    debug('Insert');
 
     let blockUUID = await getCurrentBlockUUID();
     if (blockUUID) {

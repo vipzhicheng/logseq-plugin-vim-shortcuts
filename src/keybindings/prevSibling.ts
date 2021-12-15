@@ -3,14 +3,14 @@ import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage } from 
 
 export default (logseq: ILSPluginUser) => {
   logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-prev',
-    label: 'Go to previous line',
+    key: 'vim-shortcut-prev-sibling',
+    label: 'Go to previous sibling',
     keybinding: {
       mode: 'non-editing',
       binding: 'shift+k'
     }
   }, async () => {
-    debug('prev');
+    debug('Prev sibling');
     const page = await getCurrentPage();
     if (page?.name) {
 

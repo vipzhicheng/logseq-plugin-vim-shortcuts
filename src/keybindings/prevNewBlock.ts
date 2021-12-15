@@ -10,7 +10,7 @@ export default (logseq: ILSPluginUser) => {
       binding: 'shift+o'
     }
   }, async () => {
-    debug('create new prev block');
+    debug('Create new prev block');
     let blockUUID = await getCurrentBlockUUID();
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
