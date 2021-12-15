@@ -1,5 +1,5 @@
 import { ILSPluginUser, BlockEntity, PageEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, getSettings, scrollToBlockInPage } from '../common/funcs';
 
 const findNextBlockRecur = async (page: PageEntity | BlockEntity, block: BlockEntity) => {
   if (block.parent.id) {
@@ -17,12 +17,14 @@ const findNextBlockRecur = async (page: PageEntity | BlockEntity, block: BlockEn
 };
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-next-sibling',
     label: 'Go to next sibling',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+j'
+      binding: settings.nextSibling
     }
   }, async () => {
     debug('Next sibling');

@@ -1,13 +1,15 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, getSettings, scrollToBlockInPage } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-search-wikipedia',
     label: 'Search in Wikipedia',
     keybinding: {
       mode: 'non-editing',
-      binding: 's e'
+      binding: settings.searchWikipedia
     }
   }, async () => {
     debug('Search in Wikipedia');

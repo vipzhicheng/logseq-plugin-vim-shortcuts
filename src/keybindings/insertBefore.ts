@@ -1,13 +1,15 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, setLastBlockUUID } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getSettings, setLastBlockUUID } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-insert-before',
     label: 'Enter insert mode at first pos ',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+i'
+      binding: settings.insertBefore,
     }
   }, async () => {
     debug('Insert before');

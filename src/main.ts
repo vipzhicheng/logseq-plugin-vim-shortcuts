@@ -1,38 +1,46 @@
 import '@logseq/libs';
-import { BlockEntity } from '@logseq/libs/dist/LSPlugin';
-
-import undo from './keybindings/undo';
-import redo from './keybindings/redo';
-import insert from './keybindings/insert';
+import { initSettings } from './common/funcs';
 import bottom from './keybindings/bottom';
-import top from './keybindings/top';
-import nextSibling from './keybindings/nextSibling';
-import prevSibling from './keybindings/prevSibling';
-import nextNewBlock from './keybindings/nextNewBlock';
-import prevNewBlock from './keybindings/prevNewBlock';
-import deleteCurrentBlock from './keybindings/deleteCurrentBlock';
+import collapse from './keybindings/collapse';
 import copyCurrentBlockContent from './keybindings/copyCurrentBlockContent';
 import copyCurrentBlockRef from './keybindings/copyCurrentBlockRef';
-import pasteNext from './keybindings/pasteNext';
-import pastePrev from './keybindings/pastePrev';
-import collapse from './keybindings/collapse';
+import deleteCurrentBlock from './keybindings/deleteCurrentBlock';
+import down from './keybindings/down';
 import extend from './keybindings/extend';
 import highlightFocusIn from './keybindings/highlightFocusIn';
 import highlightFocusOut from './keybindings/highlightFocusOut';
-import search from './keybindings/search';
-import insertBefore from './keybindings/insertBefore';
-import up from './keybindings/up';
-import down from './keybindings/down';
-import outdent from './keybindings/outdent';
 import indent from './keybindings/indent';
+import insert from './keybindings/insert';
+import insertBefore from './keybindings/insertBefore';
+import nextNewBlock from './keybindings/nextNewBlock';
+import nextSibling from './keybindings/nextSibling';
+import outdent from './keybindings/outdent';
+import pasteNext from './keybindings/pasteNext';
+import pastePrev from './keybindings/pastePrev';
+import prevNewBlock from './keybindings/prevNewBlock';
+import prevSibling from './keybindings/prevSibling';
+import redo from './keybindings/redo';
+import search from './keybindings/search';
 import searchBaidu from './keybindings/searchBaidu';
 import searchGithub from './keybindings/searchGithub';
 import searchGoogle from './keybindings/searchGoogle';
 import searchStackoverflow from './keybindings/searchStackoverflow';
 import searchWikipedia from './keybindings/searchWikipedia';
 import searchYoutube from './keybindings/searchYoutube';
+import top from './keybindings/top';
+import undo from './keybindings/undo';
+import up from './keybindings/up';
+
+
+
+
 
 async function main() {
+
+  // settings
+  initSettings();
+
+  // bindings
   undo(logseq);
   redo(logseq);
 

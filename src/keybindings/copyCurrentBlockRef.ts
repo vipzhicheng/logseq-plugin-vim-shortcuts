@@ -1,14 +1,15 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, writeClipboard } from '../common/funcs';
-import { TempCache } from 'src/common/type';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
+import { debug, getCurrentBlockUUID, getSettings, writeClipboard } from '../common/funcs';
+
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-copy-current-block-ref',
     label: 'Copy current block ref',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+y'
+      binding: settings.copyCurrentBlockRef
     }
   }, async () => {
     debug('Copy current block ref');

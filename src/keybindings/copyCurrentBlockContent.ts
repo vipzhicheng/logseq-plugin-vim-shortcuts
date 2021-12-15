@@ -1,13 +1,15 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, writeClipboard } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getSettings, writeClipboard } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-copy-current-block-content',
     label: 'Copy current block content',
     keybinding: {
       mode: 'non-editing',
-      binding: 'y y'
+      binding: settings.copyCurrentBlockContent
     }
   }, async () => {
     debug('Copy current block contents');

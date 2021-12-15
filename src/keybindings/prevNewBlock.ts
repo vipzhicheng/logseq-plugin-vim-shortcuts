@@ -1,13 +1,15 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, setLastBlockUUID } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getSettings, setLastBlockUUID } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-prev-new-block',
     label: 'Create new prev block',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+o'
+      binding: settings.prevNewBlock
     }
   }, async () => {
     debug('Create new prev block');

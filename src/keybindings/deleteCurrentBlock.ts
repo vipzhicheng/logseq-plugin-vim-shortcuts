@@ -1,13 +1,15 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage, writeClipboard } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, getSettings, scrollToBlockInPage, writeClipboard } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-delete-current-block',
     label: 'Delete current block',
     keybinding: {
       mode: 'non-editing',
-      binding: 'd d'
+      binding: settings.deleteCurrentBlock
     }
   }, async () => {
     debug('delete current block');

@@ -1,13 +1,15 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentPage, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentPage, getSettings, scrollToBlockInPage } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-top',
     label: 'Go to current page top',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+t'
+      binding: settings.top
     }
   }, async () => {
     debug('top');

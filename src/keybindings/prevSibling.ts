@@ -1,13 +1,15 @@
 import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, getSettings, scrollToBlockInPage } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
   logseq.App.registerCommandPalette({
     key: 'vim-shortcut-prev-sibling',
     label: 'Go to previous sibling',
     keybinding: {
       mode: 'non-editing',
-      binding: 'shift+k'
+      binding: settings.prevSibling
     }
   }, async () => {
     debug('Prev sibling');
