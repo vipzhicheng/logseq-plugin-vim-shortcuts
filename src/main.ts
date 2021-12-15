@@ -49,8 +49,8 @@ async function main() {
   pastePrev(logseq);
   collapse(logseq);
   extend(logseq);
-  // highlightFocusIn(logseq);
-  // highlightFocusOut(logseq);
+  highlightFocusIn(logseq);
+  highlightFocusOut(logseq);
 
 }
 
