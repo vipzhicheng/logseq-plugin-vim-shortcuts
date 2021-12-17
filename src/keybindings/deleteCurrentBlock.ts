@@ -1,19 +1,8 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, getSettings, scrollToBlockInPage, writeClipboard } from '../common/funcs';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
+import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, resetNumber, scrollToBlockInPage, writeClipboard } from '../common/funcs';
 
-export default (logseq: ILSPluginUser) => {
-  const settings = getSettings();
-
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-delete-current-block',
-    label: 'Delete current block',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.deleteCurrentBlock
-    }
-  }, async () => {
-    debug('delete current block');
-    const page = await getCurrentPage();
+const deleteCurrentBlock = async () => {
+  const page = await getCurrentPage();
     if (page?.name) {
       let blockUUID = await getCurrentBlockUUID();
       if (blockUUID) {
@@ -63,6 +52,27 @@ export default (logseq: ILSPluginUser) => {
           }
         }
       }
+    }
+};
+
+export default (logseq: ILSPluginUser) => {
+  const settings = getSettings();
+
+  logseq.App.registerCommandPalette({
+    key: 'vim-shortcut-delete-current-block',
+    label: 'Delete current block',
+    keybinding: {
+      mode: 'non-editing',
+      binding: settings.deleteCurrentBlock
+    }
+  }, async () => {
+    debug('delete current block');
+
+    const number = getNumber();
+    resetNumber();
+
+    for (let i = 0; i < number; i++) {
+      await deleteCurrentBlock();
     }
   });
 };

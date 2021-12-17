@@ -1,5 +1,5 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getSettings } from '../common/funcs';
+import { debug, getNumber, getSettings, resetNumber } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
@@ -14,8 +14,16 @@ export default (logseq: ILSPluginUser) => {
   }, async () => {
     debug('Indent');
 
-    // @ts-ignore
-    await logseq.App.invokeExternalCommand('logseq.editor/indent');
-    await logseq.Editor.exitEditingMode(true);
+
+    const number = getNumber();
+    resetNumber();
+    console.log('number', number);
+
+    for (let i = 0; i < number; i++) {
+      console.log(i);
+      // @ts-ignore
+      await logseq.App.invokeExternalCommand('logseq.editor/indent');
+      await logseq.Editor.exitEditingMode(true);
+    }
   });
 };

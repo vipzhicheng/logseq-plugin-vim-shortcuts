@@ -1,5 +1,5 @@
-import { ILSPluginUser, BlockEntity, PageEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, getSettings, scrollToBlockInPage } from '../common/funcs';
+import { ILSPluginUser, BlockEntity, PageEntity, BlockUUID } from '@logseq/libs/dist/LSPlugin';
+import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, resetNumber, scrollToBlockInPage } from '../common/funcs';
 
 const findNextBlockRecur = async (page: PageEntity | BlockEntity, block: BlockEntity) => {
   if (block.parent.id) {
@@ -16,6 +16,26 @@ const findNextBlockRecur = async (page: PageEntity | BlockEntity, block: BlockEn
 
 };
 
+const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
+  const page = await getCurrentPage();
+
+    if (page?.name) {
+      let blockUUID = lastBlockUUID || (await getCurrentBlockUUID());
+      if (blockUUID) {
+        let block = await logseq.Editor.getBlock(blockUUID);
+        if (block?.uuid) {
+          const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
+          if (nextBlock?.uuid) {
+            scrollToBlockInPage(page.name, nextBlock.uuid);
+            return nextBlock?.uuid;
+          } else if (block.parent.id) {
+            await findNextBlockRecur(page, block);
+          }
+        }
+      }
+    }
+};
+
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
@@ -28,21 +48,15 @@ export default (logseq: ILSPluginUser) => {
     }
   }, async () => {
     debug('Next sibling');
-    const page = await getCurrentPage();
 
-    if (page?.name) {
-      let blockUUID = await getCurrentBlockUUID();
-      if (blockUUID) {
-        let block = await logseq.Editor.getBlock(blockUUID);
-        if (block?.uuid) {
-          const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
-          if (nextBlock?.uuid) {
-            scrollToBlockInPage(page.name, nextBlock.uuid);
-          } else if (block.parent.id) {
-            await findNextBlockRecur(page, block);
-          }
-        }
-      }
+    const number = getNumber();
+    resetNumber();
+
+    let lastBlockUUID: BlockUUID | undefined;
+    for (let i = 0; i < number; i++) {
+      // @ts-ignore
+      lastBlockUUID = await goNextSibling(lastBlockUUID);
     }
+
   });
 };
