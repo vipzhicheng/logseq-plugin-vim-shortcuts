@@ -1,12 +1,49 @@
 import '@logseq/libs';
-import { BlockIdentity, BlockPageName, BlockUUID } from '@logseq/libs/dist/LSPlugin';
-import { TempCache } from './type';
+import { BlockPageName, BlockUUID } from '@logseq/libs/dist/LSPlugin';
+import { N, TempCache } from './type';
 
 const tempCache: TempCache = {
   clipboard: '',
   lastPage: '',
 };
 
+const numberCache: N = {
+  n: 1,
+  lastChange: null
+};
+
+export const resetNumber = () => {
+  numberCache.n = 1;
+  numberCache.lastChange = null;
+};
+
+export const getNumber = (): number => {
+  const now = new Date();
+  if (numberCache.lastChange && now.getTime() - numberCache.lastChange.getTime() >= 10000) {
+    resetNumber();
+  }
+  return numberCache.n;
+};
+
+export const setNumber = (n: number) => {
+  const now = new Date();
+
+  if (numberCache.lastChange === null) {
+    if (n > 0) {
+      numberCache.n = n;
+      numberCache.lastChange = now;
+    }
+  } else {
+    if (now.getTime() - numberCache.lastChange.getTime() >= 1000) {
+      numberCache.n = n;
+      numberCache.lastChange = now;
+    } else {
+      numberCache.n = numberCache.n * 10 + n;
+      numberCache.lastChange = now;
+    }
+  }
+
+};
 
 const debugMode = false;
 export const debug = (msg: string, status = 'success') => {

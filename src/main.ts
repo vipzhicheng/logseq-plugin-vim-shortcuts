@@ -14,6 +14,7 @@ import insert from './keybindings/insert';
 import insertBefore from './keybindings/insertBefore';
 import nextNewBlock from './keybindings/nextNewBlock';
 import nextSibling from './keybindings/nextSibling';
+import number from './keybindings/number';
 import outdent from './keybindings/outdent';
 import pasteNext from './keybindings/pasteNext';
 import pastePrev from './keybindings/pastePrev';
@@ -41,6 +42,9 @@ async function main() {
   initSettings();
 
   // bindings
+
+  number(logseq);
+
   undo(logseq);
   redo(logseq);
 

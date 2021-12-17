@@ -6,5 +6,5 @@ export type TempCache = {
 
 export type N = {
   n: number
-  lastChange: Date
+  lastChange: Date | null
 };
