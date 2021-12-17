@@ -1,5 +1,5 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, getSettings, scrollToBlockInPage, setLastBlockUUID } from '../common/funcs';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
+import { debug, getCurrentBlockUUID, getSettings } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();

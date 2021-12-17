@@ -1,5 +1,5 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getSettings, setLastBlockUUID } from '../common/funcs';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
+import { debug, getCurrentBlockUUID, getSettings } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
@@ -16,7 +16,6 @@ export default (logseq: ILSPluginUser) => {
 
     let blockUUID = await getCurrentBlockUUID();
     if (blockUUID) {
-      setLastBlockUUID(blockUUID);
       await logseq.Editor.editBlock(blockUUID);
     }
   });

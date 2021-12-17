@@ -1,5 +1,5 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, getSettings, scrollToBlockInPage, setLastBlockUUID } from '../common/funcs';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
+import { debug, getSettings } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
@@ -17,9 +17,5 @@ export default (logseq: ILSPluginUser) => {
     // @ts-ignore
     await logseq.App.invokeExternalCommand('logseq.editor/up');
     await logseq.Editor.exitEditingMode(true);
-    const uuid = await getCurrentBlockUUID();
-    if (uuid) {
-      setLastBlockUUID(uuid);
-    }
   });
 };

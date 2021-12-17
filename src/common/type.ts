@@ -1,6 +1,10 @@
 
 export type TempCache = {
   clipboard: string
-  lastBlock: string
   lastPage: string
+};
+
+export type N = {
+  n: number
+  lastChange: Date
 };

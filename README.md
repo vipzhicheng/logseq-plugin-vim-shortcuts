@@ -38,7 +38,8 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 * There may be more shortcuts coming soon.
 * Stay tuned.
 * Copy here not means copy to system clipboard, just in memory of Logseq.
-
+* The `VIM` scroll to top shortcut is `gg`, if you want it, you can change Logseq gg shortcut to another one, and set gg in plugin settings JSON file.
+* Some shortcuts support VIM-like N+action to run action N times.
 ## Licence
 
 MIT
