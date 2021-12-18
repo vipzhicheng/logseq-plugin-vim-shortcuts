@@ -14,19 +14,7 @@ export default (logseq: ILSPluginUser) => {
   }, async () => {
     debug('Indent');
 
-
-    const number = getNumber();
-    resetNumber();
-    console.log('number', number);
-
-    for (let i = 0; i < number; i++) {
-      console.log(i);
-      try {
-        // @ts-ignore
-        await logseq.App.invokeExternalCommand('logseq.editor/indent');
-
-      } catch(e){}
-      // await logseq.Editor.exitEditingMode(true);
-    }
+     // @ts-ignore
+     await logseq.App.invokeExternalCommand('logseq.editor/indent');
   });
 };

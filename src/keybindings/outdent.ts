@@ -14,13 +14,7 @@ export default (logseq: ILSPluginUser) => {
   }, async () => {
     debug('Outdent');
 
-    const number = getNumber();
-    resetNumber();
-
-    for (let i = 0; i < number; i++) {
-      // @ts-ignore
-      await logseq.App.invokeExternalCommand('logseq.editor/outdent');
-      await logseq.Editor.exitEditingMode(true);
-    }
+    // @ts-ignore
+    await logseq.App.invokeExternalCommand('logseq.editor/outdent');
   });
 };

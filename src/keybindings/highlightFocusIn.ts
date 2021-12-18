@@ -19,7 +19,6 @@ export default (logseq: ILSPluginUser) => {
       let blockUUID = await getCurrentBlockUUID();
       if (blockUUID) {
         let block = await logseq.Editor.getBlock(blockUUID);
-        console.log(block);
         if (block?.children && block?.children?.length > 0) {
           let focusInBlock = block.children[block.children.length - 1];
           if (Array.isArray(focusInBlock) && focusInBlock[0] === 'uuid') {

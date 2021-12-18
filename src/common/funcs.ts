@@ -105,11 +105,7 @@ export const initSettings = () => {
 
 export const getSettings = (): DefaultSettingsType => {
   let settings = logseq.settings;
-
-  console.log('settings', settings);
   const merged = Object.assign(defaultSettings, settings);
-
-  console.log('merged', merged);
   return merged;
 };
 

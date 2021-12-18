@@ -1,7 +1,7 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
 import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, resetNumber, scrollToBlockInPage, writeClipboard } from '../common/funcs';
 
-const deleteCurrentBlock = async () => {
+const deleteCurrentBlock = async (number: number) => {
   const page = await getCurrentPage();
     if (page?.name) {
       let blockUUID = await getCurrentBlockUUID();
@@ -10,10 +10,19 @@ const deleteCurrentBlock = async () => {
         if (block?.uuid) {
 
           let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid);
-          let nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
+          let nextBlock, currentBlock;
+          currentBlock = block;
 
-          writeClipboard(block.content);
-          await logseq.Editor.removeBlock(block.uuid);
+          for (let i = 0; i < number; i++) {
+            writeClipboard(currentBlock.content);
+            nextBlock = await logseq.Editor.getNextSiblingBlock(currentBlock.uuid);
+            await logseq.Editor.removeBlock(currentBlock.uuid);
+            if (!nextBlock) {
+              break;
+            } else {
+              currentBlock = nextBlock;
+            }
+          }
 
           let focusBlock = prevBlock || nextBlock || null;
           if (focusBlock?.uuid) {
@@ -34,10 +43,20 @@ const deleteCurrentBlock = async () => {
         if (block?.uuid) {
 
           let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid);
-          let nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
+          let nextBlock, currentBlock;
+          currentBlock = block;
 
-          writeClipboard(block.content);
-          await logseq.Editor.removeBlock(block.uuid);
+          for (let i = 0; i < number; i++) {
+            writeClipboard(currentBlock.content);
+            nextBlock = await logseq.Editor.getNextSiblingBlock(currentBlock.uuid);
+            await logseq.Editor.removeBlock(currentBlock.uuid);
+            if (!nextBlock) {
+              break;
+            } else {
+              currentBlock = nextBlock;
+            }
+          }
+
           let focusBlock = prevBlock || nextBlock || null;
           if (focusBlock?.uuid) {
             await logseq.Editor.editBlock(focusBlock.uuid);
@@ -71,8 +90,6 @@ export default (logseq: ILSPluginUser) => {
     const number = getNumber();
     resetNumber();
 
-    for (let i = 0; i < number; i++) {
-      await deleteCurrentBlock();
-    }
+    await deleteCurrentBlock(number);
   });
 };
