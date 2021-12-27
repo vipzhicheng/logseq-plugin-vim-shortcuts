@@ -1,4 +1,5 @@
 # logseq-plugin-vim-shortcuts
+[![Github All Releases](https://img.shields.io/github/downloads/vipzhicheng/logseq-plugin-vim-shortcuts/total.svg)](https://github.com/vipzhicheng/logseq-plugin-vim-shortcuts/releases)
 
 This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 
