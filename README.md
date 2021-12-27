@@ -31,7 +31,7 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 
 ## Notice
 
-* Logseq keybindings support may be changed in future, so just use it for a while if you need it.
+* Logseq keybindings support may be changed in future, so just use it for a while if you need it, and it may be conflicted with Logseq future shortcuts.
 * Not exactly same with VIM key-bindings, just mimic.
 * If you are on journal home page, some shortcuts will redirect you to specific page, because there is no API can stay journal home page and move block highlight line.
 * Some shortcuts are not perfect for now, maybe need more polish and some support from Logseq Team.
@@ -40,6 +40,8 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 * Copy here not means copy to system clipboard, just in memory of Logseq.
 * The `VIM` scroll to top shortcut is `gg`, if you want it, you can change Logseq gg shortcut to another one, and set gg in plugin settings JSON file.
 * Some shortcuts support VIM-like N+action to run action N times.
+* Recommend version of Logseq is `v0.5.5`+.
+
 ## Licence
 
 MIT
