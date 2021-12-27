@@ -3,6 +3,8 @@
 
 This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 
+![screencast](screencast.gif)
+
 ## Supported shortcuts
 
 - `j`: Move to next line.
@@ -29,6 +31,12 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `zo`: Extend block.
 - `zm`: Collapse block.
 - `/`: Trigger the search in page panel.
+- `sb`: Search block content in Baidu.
+- `se`: Search block content in Wikipedia.
+- `sg`: Search block content in Google.
+- `sh`: Search block content in Github.
+- `ss`: Search block content in Stackoverflow.
+- `sy`: Search block content in Youtube.
 
 ## Notice
 
