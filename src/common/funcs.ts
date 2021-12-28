@@ -86,6 +86,7 @@ export const defaultSettings = {
   top: 'shift+t',
   undo: 'u',
   up: 'k',
+  exitEditing: 'ctrl+[',
   settingsVersion,
   disabled: false,
 };

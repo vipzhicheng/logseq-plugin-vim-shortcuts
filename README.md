@@ -17,6 +17,7 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `L`: Highlight focus into child level.
 - `i`: Enter edit mode, put the cursor to the end.
 - `I`: Enter edit mode, put the cursor to the start.
+- `ctrl+[`: Exit edit mode.
 - `yy`: Copy current block content. Only support one block, multi blocks copy please use `cmd+c`.
 - `Y`: Copy current block ref.
 - `p`: Paste clipboard content to next sibling. Only support one block, multi blocks paste please use `cmd+v`.

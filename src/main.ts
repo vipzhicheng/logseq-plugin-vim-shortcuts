@@ -31,6 +31,7 @@ import searchYoutube from './keybindings/searchYoutube';
 import top from './keybindings/top';
 import undo from './keybindings/undo';
 import up from './keybindings/up';
+import exit from './keybindings/exit';
 
 
 
@@ -52,6 +53,8 @@ async function main() {
 
   insert(logseq);
   insertBefore(logseq);
+
+  exit(logseq);
 
   top(logseq);
   bottom(logseq);
