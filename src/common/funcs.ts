@@ -58,11 +58,13 @@ const settingsVersion = 'v1';
 export const defaultSettings = {
   bottom: 'shift+g',
   collapse: 'z m',
+  collapseAll: 'z shift+m',
   copyCurrentBlockContent: 'y y',
   copyCurrentBlockRef: 'shift+y',
   deleteCurrentBlock: 'd d',
   down: 'j',
   extend: 'z o',
+  extendAll: 'z shift+o',
   highlightFocusIn: 'shift+l',
   highlightFocusOut: 'shift+h',
   indent: 'l',

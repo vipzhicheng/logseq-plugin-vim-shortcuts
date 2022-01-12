@@ -2,11 +2,13 @@ import '@logseq/libs';
 import { initSettings } from './common/funcs';
 import bottom from './keybindings/bottom';
 import collapse from './keybindings/collapse';
+import collapseAll from './keybindings/collapseAll';
 import copyCurrentBlockContent from './keybindings/copyCurrentBlockContent';
 import copyCurrentBlockRef from './keybindings/copyCurrentBlockRef';
 import deleteCurrentBlock from './keybindings/deleteCurrentBlock';
 import down from './keybindings/down';
 import extend from './keybindings/extend';
+import extendAll from './keybindings/extendAll';
 import highlightFocusIn from './keybindings/highlightFocusIn';
 import highlightFocusOut from './keybindings/highlightFocusOut';
 import indent from './keybindings/indent';
@@ -78,6 +80,9 @@ async function main() {
 
   collapse(logseq);
   extend(logseq);
+
+  collapseAll(logseq);
+  extendAll(logseq);
 
   highlightFocusIn(logseq);
   highlightFocusOut(logseq);
