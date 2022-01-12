@@ -10,7 +10,7 @@ const collapse = async (blockUUID: BlockUUID | undefined) => {
     if (block && block.children && block.children.length > 0) {
       for (let item of block.children) {
         if (Array.isArray(item) && item[0] === 'uuid') {
-          collapse(item[1]);
+          await collapse(item[1]);
         }
       }
     }
