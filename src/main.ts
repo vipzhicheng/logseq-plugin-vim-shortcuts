@@ -7,6 +7,7 @@ import copyCurrentBlockContent from './keybindings/copyCurrentBlockContent';
 import copyCurrentBlockRef from './keybindings/copyCurrentBlockRef';
 import deleteCurrentBlock from './keybindings/deleteCurrentBlock';
 import down from './keybindings/down';
+import exitEditing from './keybindings/exitEditing';
 import extend from './keybindings/extend';
 import extendAll from './keybindings/extendAll';
 import highlightFocusIn from './keybindings/highlightFocusIn';
@@ -93,6 +94,8 @@ async function main() {
   searchStackoverflow(logseq);
   searchWikipedia(logseq);
   searchYoutube(logseq);
+
+  exitEditing(logseq);
 
 }
 
