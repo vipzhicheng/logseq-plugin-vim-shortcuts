@@ -15,7 +15,7 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `K`: Move to previous sibling.
 - `H`: Highlight focus out to parent level.
 - `L`: Highlight focus into child level.
-- `i`: Enter edit mode, put the cursor to the end.
+- `i`: Enter edit mode, put the cursor to the end, and also `a` can do the same thing.
 - `I`: Enter edit mode, put the cursor to the start.
 - `yy`: Copy current block content. Only support one block, multi blocks copy please use `cmd+c`.
 - `Y`: Copy current block ref.
@@ -30,9 +30,9 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `ctrl+r`: Redo.
 - `zo`: Extend block.
 - `zm`: Collapse block.
-- `cmd+j cmd+j` Exit editing mode.
-- `ctrl+j` Join next sibling block.
-- `ctrl+enter` Jumping into internal page or tag.
+- `cmd+j cmd+j` Exit editing mode, also `ctrl+[` can do the same thing.
+- `mod+alt+j` Join next sibling block.
+- `mod+shift+enter` Jumping into internal page or tag.
 - `/`: Trigger the search in page panel.
 - `sb`: Search block content in Baidu.
 - `se`: Search block content in Wikipedia.
@@ -54,6 +54,7 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 * Some shortcuts support VIM-like combo actions, that means pressing `N+action` to run action `N` times.
 * The join shortcuts can only join siblings without children blocks and should not be trigger too fast in editing mode.
 * Jumping internal page support combo action to select which page to jump.
+* `mod` means `Cmd` on Mac, `Ctrl` on Windows/Linux.
 * Recommend version of Logseq is `v0.5.9`+.
 
 ## ❤️ Buy me a coffee

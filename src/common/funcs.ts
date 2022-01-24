@@ -94,9 +94,8 @@ export const defaultSettings = {
   undo: 'u',
   up: 'k',
   exitEditing: ['mod+j mod+j', 'ctrl+['],
-  jumpInto: 'ctrl+enter',
+  jumpInto: 'mod+shift+enter',
   joinNextLine: 'mod+alt+j',
-
   settingsVersion,
   disabled: false,
 };

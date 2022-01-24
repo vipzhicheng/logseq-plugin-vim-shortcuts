@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.0.4
+
+* fix: change `ctrl+enter` to `mod+shift+enter` to jump internal page or tag.
+
 ## v0.0.3
 
 * fix: `mod+j mod+j` would conflict with `ctrl+j` on many devices, so I changed `ctrl+j` shortcut to `mod+alt+j` to join sibling block.
