@@ -30,6 +30,9 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `ctrl+r`: Redo.
 - `zo`: Extend block.
 - `zm`: Collapse block.
+- `cmd+j cmd+j` Exit editing mode.
+- `ctrl+j` Join next sibling block.
+- `ctrl+enter` Jumping into internal page or tag.
 - `/`: Trigger the search in page panel.
 - `sb`: Search block content in Baidu.
 - `se`: Search block content in Wikipedia.
