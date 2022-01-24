@@ -4,19 +4,23 @@ import { debug, getCurrentBlockUUID, getSettings } from '../common/funcs';
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-insert',
-    label: 'Enter insert mode',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.insert
-    }
-  }, async () => {
-    debug('Insert');
+  const bindings = Array.isArray(settings.insert) ? settings.insert : [settings.insert];
 
-    let blockUUID = await getCurrentBlockUUID();
-    if (blockUUID) {
-      await logseq.Editor.editBlock(blockUUID);
-    }
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-insert',
+      label: 'Enter insert mode',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Insert');
+
+      let blockUUID = await getCurrentBlockUUID();
+      if (blockUUID) {
+        await logseq.Editor.editBlock(blockUUID);
+      }
+    });
   });
 };
