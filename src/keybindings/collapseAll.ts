@@ -3,10 +3,11 @@ import { debug, getCurrentBlockUUID, getSettings } from '../common/funcs';
 
 const collapse = async (blockUUID: BlockUUID | undefined) => {
   if (blockUUID) {
-    await logseq.Editor.upsertBlockProperty(blockUUID, 'collapsed', true);
+    try {
+      await logseq.Editor.setBlockCollapsed(blockUUID, { flag: true });
+    } catch(e) {}
 
     const block = await logseq.Editor.getBlock(blockUUID);
-
     if (block && block.children && block.children.length > 0) {
       for (let item of block.children) {
         if (Array.isArray(item) && item[0] === 'uuid') {

@@ -2,6 +2,10 @@ import '@logseq/libs';
 import { BlockPageName, BlockUUID } from '@logseq/libs/dist/LSPlugin';
 import { N, TempCache } from './type';
 
+export function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 const tempCache: TempCache = {
   clipboard: '',
   lastPage: '',
@@ -45,11 +49,12 @@ export const setNumber = (n: number) => {
 
 };
 
-const debugMode = false;
+const debugMode = true;
 export const debug = (msg: string, status = 'success') => {
 
   if (debugMode) {
-    logseq.App.showMsg(msg, status);
+    // logseq.App.showMsg(msg, status);
+    console.log(msg);
   }
 
 };
@@ -89,6 +94,9 @@ export const defaultSettings = {
   undo: 'u',
   up: 'k',
   exitEditing: 'mod+j mod+j',
+  jumpInto: 'ctrl+enter',
+  joinNextLine: 'ctrl+j',
+
   settingsVersion,
   disabled: false,
 };

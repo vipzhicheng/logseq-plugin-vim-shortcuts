@@ -48,8 +48,14 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 * Stay tuned.
 * Copy here not means copy to system clipboard, just in memory of Logseq.
 * The `VIM` scroll to top shortcut is `gg`, if you want it, you can change Logseq gg shortcut to another one, and set gg in plugin settings JSON file.
-* Some shortcuts support VIM-like N+action to run action N times.
-* Recommend version of Logseq is `v0.5.5`+.
+* Some shortcuts support VIM-like combo actions, that means pressing `N+action` to run action `N` times.
+* The join shortcuts can only join siblings without children blocks and should not be trigger too fast in editing mode.
+* Jumping internal page support combo action to select which page to jump.
+* Recommend version of Logseq is `v0.5.9`+.
+
+## ❤️ Buy me a coffee
+
+If this plugin solve your situation a little bit and you will, you can choose to buy me a coffee via [this](https://www.buymeacoffee.com/vipzhicheng) and [this](https://afdian.net/@vipzhicheng), that means a lot to me.
 
 ## Licence
 

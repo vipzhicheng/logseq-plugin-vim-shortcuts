@@ -31,6 +31,6 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
-    "@logseq/libs": "^0.0.1-alpha.33"
+    "@logseq/libs": "^0.0.1-alpha.34"
   }
 }

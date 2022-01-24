@@ -1,5 +1,5 @@
 import '@logseq/libs';
-import { initSettings } from './common/funcs';
+import { getNumber, initSettings, resetNumber } from './common/funcs';
 import bottom from './keybindings/bottom';
 import collapse from './keybindings/collapse';
 import collapseAll from './keybindings/collapseAll';
@@ -15,6 +15,8 @@ import highlightFocusOut from './keybindings/highlightFocusOut';
 import indent from './keybindings/indent';
 import insert from './keybindings/insert';
 import insertBefore from './keybindings/insertBefore';
+import joinNextLine from './keybindings/joinNextLine';
+import jumpInto from './keybindings/jumpInto';
 import nextNewBlock from './keybindings/nextNewBlock';
 import nextSibling from './keybindings/nextSibling';
 import number from './keybindings/number';
@@ -82,8 +84,8 @@ async function main() {
   collapse(logseq);
   extend(logseq);
 
-  collapseAll(logseq);
-  extendAll(logseq);
+  // collapseAll(logseq);
+  // extendAll(logseq);
 
   highlightFocusIn(logseq);
   highlightFocusOut(logseq);
@@ -96,6 +98,8 @@ async function main() {
   searchYoutube(logseq);
 
   exitEditing(logseq);
+  jumpInto(logseq);
+  joinNextLine(logseq);
 
 }
 

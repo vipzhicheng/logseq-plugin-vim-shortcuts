@@ -16,7 +16,7 @@ export default (logseq: ILSPluginUser) => {
 
     let blockUUID = await getCurrentBlockUUID();
     if (blockUUID) {
-      await logseq.Editor.upsertBlockProperty(blockUUID, 'collapsed', false);
+      await logseq.Editor.setBlockCollapsed(blockUUID, { flag: false });
     }
 
   });
