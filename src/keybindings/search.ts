@@ -4,17 +4,21 @@ import { debug, getSettings } from '../common/funcs';
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-search',
-    label: 'Search',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.search,
-    }
-  }, async () => {
-    debug('Search');
+  const bindings = Array.isArray(settings.search) ? settings.search : [settings.search];
 
-    // @ts-ignore
-    await logseq.App.invokeExternalCommand('logseq.go/search-in-page');
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-search',
+      label: 'Search',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Search');
+
+      // @ts-ignore
+      await logseq.App.invokeExternalCommand('logseq.go/search-in-page');
+    });
   });
 };

@@ -4,23 +4,27 @@ import { debug, getNumber, getSettings, resetNumber } from '../common/funcs';
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-undo',
-    label: 'Undo',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.undo
-    }
-  }, async () => {
-    debug('Undo');
+  const bindings = Array.isArray(settings.undo) ? settings.undo : [settings.undo];
 
-    const number = getNumber();
-    resetNumber();
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-undo',
+      label: 'Undo',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Undo');
 
-    for (let i = 0; i < number; i++) {
-      // @ts-ignore
-      await logseq.App.invokeExternalCommand('logseq.editor/undo');
-      await logseq.Editor.exitEditingMode(true);
-    }
+      const number = getNumber();
+      resetNumber();
+
+      for (let i = 0; i < number; i++) {
+        // @ts-ignore
+        await logseq.App.invokeExternalCommand('logseq.editor/undo');
+        await logseq.Editor.exitEditingMode(true);
+      }
+    });
   });
 };

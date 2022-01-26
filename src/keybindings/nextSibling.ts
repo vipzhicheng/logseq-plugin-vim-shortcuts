@@ -39,24 +39,28 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-next-sibling',
-    label: 'Go to next sibling',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.nextSibling
-    }
-  }, async () => {
-    debug('Next sibling');
+  const bindings = Array.isArray(settings.nextSibling) ? settings.nextSibling : [settings.nextSibling];
 
-    const number = getNumber();
-    resetNumber();
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-next-sibling',
+      label: 'Go to next sibling',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Next sibling');
 
-    let lastBlockUUID: BlockUUID | undefined;
-    for (let i = 0; i < number; i++) {
-      // @ts-ignore
-      lastBlockUUID = await goNextSibling(lastBlockUUID);
-    }
+      const number = getNumber();
+      resetNumber();
 
+      let lastBlockUUID: BlockUUID | undefined;
+      for (let i = 0; i < number; i++) {
+        // @ts-ignore
+        lastBlockUUID = await goNextSibling(lastBlockUUID);
+      }
+
+    });
   });
 };

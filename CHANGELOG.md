@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.0.5
+
+* all actions support multiple key bindings in settings JSON file.
+
 ## v0.0.4
 
 * fix: change `ctrl+enter` to `mod+shift+enter` to jump internal page or tag.

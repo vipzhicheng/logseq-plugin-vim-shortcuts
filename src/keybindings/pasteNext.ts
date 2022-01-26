@@ -5,26 +5,30 @@ import { debug, getCurrentBlockUUID, getSettings, readClipboard } from '../commo
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-paste-next',
-    label: 'Paste to next block',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.pasteNext
-    }
-  }, async () => {
-    debug('Paste to next block');
+  const bindings = Array.isArray(settings.pasteNext) ? settings.pasteNext : [settings.pasteNext];
 
-    let blockUUID = await getCurrentBlockUUID();
-    if (blockUUID) {
-      let block = await logseq.Editor.getBlock(blockUUID);
-      if (block?.uuid) {
-        await logseq.Editor.insertBlock(block.uuid, readClipboard(), {
-          before: false,
-          sibling: true,
-        });
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-paste-next',
+      label: 'Paste to next block',
+      keybinding: {
+        mode: 'non-editing',
+        binding
       }
-    }
+    }, async () => {
+      debug('Paste to next block');
 
+      let blockUUID = await getCurrentBlockUUID();
+      if (blockUUID) {
+        let block = await logseq.Editor.getBlock(blockUUID);
+        if (block?.uuid) {
+          await logseq.Editor.insertBlock(block.uuid, readClipboard(), {
+            before: false,
+            sibling: true,
+          });
+        }
+      }
+
+    });
   });
 };

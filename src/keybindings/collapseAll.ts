@@ -20,17 +20,22 @@ const collapse = async (blockUUID: BlockUUID | undefined) => {
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-collapse-hierarchically',
-    label: 'Collapse block hierarchically',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.collapseAll
-    }
-  }, async () => {
-    debug('Collapse block hierarchically');
 
-    let blockUUID = await getCurrentBlockUUID();
-    await collapse(blockUUID);
+  const bindings = Array.isArray(settings.collapseAll) ? settings.collapseAll : [settings.collapseAll];
+
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-collapse-hierarchically',
+      label: 'Collapse block hierarchically',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Collapse block hierarchically');
+
+      let blockUUID = await getCurrentBlockUUID();
+      await collapse(blockUUID);
+    });
   });
 };

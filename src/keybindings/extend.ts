@@ -4,20 +4,24 @@ import { debug, getCurrentBlockUUID, getSettings } from '../common/funcs';
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-extend',
-    label: 'Extend block',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.extend
-    }
-  }, async () => {
-    debug('Extend block');
+  const bindings = Array.isArray(settings.extend) ? settings.extend : [settings.extend];
 
-    let blockUUID = await getCurrentBlockUUID();
-    if (blockUUID) {
-      await logseq.Editor.setBlockCollapsed(blockUUID, { flag: false });
-    }
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-extend',
+      label: 'Extend block',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Extend block');
 
+      let blockUUID = await getCurrentBlockUUID();
+      if (blockUUID) {
+        await logseq.Editor.setBlockCollapsed(blockUUID, { flag: false });
+      }
+
+    });
   });
 };

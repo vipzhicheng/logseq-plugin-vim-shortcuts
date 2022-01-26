@@ -49,7 +49,7 @@ export const setNumber = (n: number) => {
 
 };
 
-const debugMode = true;
+const debugMode = false;
 export const debug = (msg: string, status = 'success') => {
 
   if (debugMode) {

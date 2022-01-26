@@ -4,23 +4,27 @@ import { debug, getNumber, getSettings, resetNumber } from '../common/funcs';
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-down',
-    label: 'down',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.down
-    }
-  }, async () => {
-    debug('Down');
+  const bindings = Array.isArray(settings.down) ? settings.down : [settings.down];
 
-    const number = getNumber();
-    resetNumber();
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-down',
+      label: 'down',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Down');
 
-    for (let i = 0; i < number; i++) {
-      // @ts-ignore
-      await logseq.App.invokeExternalCommand('logseq.editor/down');
-    }
+      const number = getNumber();
+      resetNumber();
 
+      for (let i = 0; i < number; i++) {
+        // @ts-ignore
+        await logseq.App.invokeExternalCommand('logseq.editor/down');
+      }
+
+    });
   });
 };

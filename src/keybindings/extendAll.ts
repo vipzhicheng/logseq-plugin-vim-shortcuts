@@ -23,18 +23,22 @@ const extend = async (blockUUID: BlockUUID | undefined) => {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-extend-hierarchically',
-    label: 'Extend block hierarchically',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.extendAll
-    }
-  }, async () => {
-    debug('Extend block hierarchically');
+  const bindings = Array.isArray(settings.extendAll) ? settings.extendAll : [settings.extendAll];
 
-    let blockUUID = await getCurrentBlockUUID();
-    await extend(blockUUID);
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-extend-hierarchically',
+      label: 'Extend block hierarchically',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Extend block hierarchically');
 
+      let blockUUID = await getCurrentBlockUUID();
+      await extend(blockUUID);
+
+    });
   });
 };

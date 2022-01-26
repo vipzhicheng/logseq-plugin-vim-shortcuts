@@ -27,22 +27,26 @@ const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-prev-sibling',
-    label: 'Go to previous sibling',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.prevSibling
-    }
-  }, async () => {
-    debug('Prev sibling');
+  const bindings = Array.isArray(settings.prevSibling) ? settings.prevSibling : [settings.prevSibling];
 
-    const number = getNumber();
-    resetNumber();
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-prev-sibling',
+      label: 'Go to previous sibling',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('Prev sibling');
 
-    let lastBlockUUID: BlockUUID | undefined = undefined;
-    for (let i = 0; i < number; i++) {
-      lastBlockUUID = await goPrevSibling(lastBlockUUID);
-    }
+      const number = getNumber();
+      resetNumber();
+
+      let lastBlockUUID: BlockUUID | undefined = undefined;
+      for (let i = 0; i < number; i++) {
+        lastBlockUUID = await goPrevSibling(lastBlockUUID);
+      }
+    });
   });
 };

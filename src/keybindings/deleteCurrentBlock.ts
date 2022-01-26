@@ -77,19 +77,23 @@ const deleteCurrentBlock = async (number: number) => {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  logseq.App.registerCommandPalette({
-    key: 'vim-shortcut-delete-current-block',
-    label: 'Delete current block',
-    keybinding: {
-      mode: 'non-editing',
-      binding: settings.deleteCurrentBlock
-    }
-  }, async () => {
-    debug('delete current block');
+  const bindings = Array.isArray(settings.deleteCurrentBlock) ? settings.deleteCurrentBlock : [settings.deleteCurrentBlock];
 
-    const number = getNumber();
-    resetNumber();
+  bindings.forEach(binding => {
+    logseq.App.registerCommandPalette({
+      key: 'vim-shortcut-delete-current-block',
+      label: 'Delete current block',
+      keybinding: {
+        mode: 'non-editing',
+        binding
+      }
+    }, async () => {
+      debug('delete current block');
 
-    await deleteCurrentBlock(number);
+      const number = getNumber();
+      resetNumber();
+
+      await deleteCurrentBlock(number);
+    });
   });
 };
