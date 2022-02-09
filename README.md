@@ -7,12 +7,12 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 
 ## Supported shortcuts
 
-- `j`: Move to next line.
-- `k`: Move to previous line.
+- `j`: Move to next line, in visual block mode it is for selecting down.
+- `k`: Move to previous line in visual block mode it is for selecting up.
 - `h`: Outdent.
 - `l`: Indent.
-- `J`: Move to next sibling.
-- `K`: Move to previous sibling.
+- `J`: Move to next sibling, in visual block mode it is for moving down.
+- `K`: Move to previous sibling, in visual block node it is for moving up.
 - `H`: Highlight focus out to parent level.
 - `L`: Highlight focus into child level.
 - `i`: Enter edit mode, put the cursor to the end, and also `a` can do the same thing.
@@ -40,6 +40,21 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `sh`: Search block content in Github.
 - `ss`: Search block content in Stackoverflow.
 - `sy`: Search block content in Youtube.
+- `ctrl+v`: Toggle visual block mode.
+
+## Modes
+
+### Normal mode
+
+A block is focused/highlighted.
+
+### Insert mode
+
+You can edit a block
+
+### Visual block mode
+
+You can select more blocks up and down and move the selected blocks.
 
 ## Notice
 

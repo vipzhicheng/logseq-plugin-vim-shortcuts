@@ -33,6 +33,7 @@ import searchGoogle from './keybindings/searchGoogle';
 import searchStackoverflow from './keybindings/searchStackoverflow';
 import searchWikipedia from './keybindings/searchWikipedia';
 import searchYoutube from './keybindings/searchYoutube';
+import toggleVisualMode from './keybindings/toggleVisualMode';
 import top from './keybindings/top';
 import undo from './keybindings/undo';
 import up from './keybindings/up';
@@ -100,6 +101,8 @@ async function main() {
   exitEditing(logseq);
   jumpInto(logseq);
   joinNextLine(logseq);
+
+  toggleVisualMode(logseq);
 
 }
 

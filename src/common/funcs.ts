@@ -9,6 +9,28 @@ export function sleep(ms: number) {
 const tempCache: TempCache = {
   clipboard: '',
   lastPage: '',
+  visualMode: false,
+};
+
+export const writeClipboard = (content: string) => {
+  tempCache.clipboard = content;
+};
+
+export const readClipboard = (): string => {
+  return tempCache.clipboard;
+};
+
+export const setVisualMode = (visualMode: boolean) => {
+  if (visualMode) {
+    logseq.App.showMsg('Visual block mode enabled', 'success');
+  } else {
+    logseq.App.showMsg('Visual block mode disabled', 'success');
+  }
+  tempCache.visualMode = visualMode;
+};
+
+export const getVisualMode = (): boolean => {
+  return tempCache.visualMode;
 };
 
 const numberCache: N = {
@@ -96,6 +118,7 @@ export const defaultSettings = {
   exitEditing: ['mod+j mod+j', 'ctrl+['],
   jumpInto: 'mod+shift+enter',
   joinNextLine: 'mod+alt+j',
+  toggleVisualMode: 'ctrl+v',
   settingsVersion,
   disabled: false,
 };
@@ -117,14 +140,6 @@ export const getSettings = (): DefaultSettingsType => {
   let settings = logseq.settings;
   const merged = Object.assign(defaultSettings, settings);
   return merged;
-};
-
-export const writeClipboard = (content: string) => {
-  tempCache.clipboard = content;
-};
-
-export const readClipboard = (): string => {
-  return tempCache.clipboard;
 };
 
 export const scrollToBlockInPage = (pageName: BlockPageName, blockId: BlockUUID) => {

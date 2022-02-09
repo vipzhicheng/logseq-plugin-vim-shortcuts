@@ -1,5 +1,5 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getNumber, getSettings, resetNumber } from '../common/funcs';
+import { debug, getNumber, getSettings, getVisualMode, resetNumber } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
@@ -15,14 +15,23 @@ export default (logseq: ILSPluginUser) => {
         binding
       }
     }, async () => {
-      debug('Down');
-
       const number = getNumber();
       resetNumber();
 
-      for (let i = 0; i < number; i++) {
-        // @ts-ignore
-        await logseq.App.invokeExternalCommand('logseq.editor/down');
+      const visualMode = getVisualMode();
+
+      if (visualMode) {
+        debug('Select down');
+        for (let i = 0; i < number; i++) {
+          // @ts-ignore
+          await logseq.App.invokeExternalCommand('logseq.editor/select-block-down');
+        }
+      } else {
+        debug('Down');
+        for (let i = 0; i < number; i++) {
+          // @ts-ignore
+          await logseq.App.invokeExternalCommand('logseq.editor/down');
+        }
       }
 
     });

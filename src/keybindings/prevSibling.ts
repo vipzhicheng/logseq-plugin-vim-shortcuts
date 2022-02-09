@@ -1,5 +1,5 @@
 import { BlockUUID, ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, resetNumber, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, getVisualMode, resetNumber, scrollToBlockInPage } from '../common/funcs';
 
 const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
   const page = await getCurrentPage();
@@ -38,15 +38,29 @@ export default (logseq: ILSPluginUser) => {
         binding
       }
     }, async () => {
-      debug('Prev sibling');
+
 
       const number = getNumber();
       resetNumber();
 
-      let lastBlockUUID: BlockUUID | undefined = undefined;
-      for (let i = 0; i < number; i++) {
-        lastBlockUUID = await goPrevSibling(lastBlockUUID);
+      const visualMode = getVisualMode();
+
+      if (visualMode) {
+        debug('Move block up');
+        for (let i = 0; i < number; i++) {
+          // @ts-ignore
+          await logseq.App.invokeExternalCommand('logseq.editor/move-block-up');
+        }
+      } else {
+        debug('Prev sibling');
+
+        let lastBlockUUID: BlockUUID | undefined = undefined;
+        for (let i = 0; i < number; i++) {
+          lastBlockUUID = await goPrevSibling(lastBlockUUID);
+        }
       }
+
+
     });
   });
 };

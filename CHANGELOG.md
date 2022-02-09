@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v0.0.6
+
+* feat: add VIM-like visual block mode, in this mode, `j` and `k` are for block selecting, `J` and `K` are for block moving.
 ## v0.0.5
 
 * all actions support multiple key bindings in settings JSON file.
