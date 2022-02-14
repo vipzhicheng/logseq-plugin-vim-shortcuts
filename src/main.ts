@@ -1,6 +1,9 @@
 import '@logseq/libs';
 import { getNumber, initSettings, resetNumber } from './common/funcs';
 import bottom from './keybindings/bottom';
+import changeCase from './keybindings/changeCase';
+import changeCaseLowerCase from './keybindings/changeCaseLowerCase';
+import changeCaseUpperCase from './keybindings/changeCaseUpperCase';
 import collapse from './keybindings/collapse';
 import collapseAll from './keybindings/collapseAll';
 import copyCurrentBlockContent from './keybindings/copyCurrentBlockContent';
@@ -37,10 +40,6 @@ import toggleVisualMode from './keybindings/toggleVisualMode';
 import top from './keybindings/top';
 import undo from './keybindings/undo';
 import up from './keybindings/up';
-
-
-
-
 
 async function main() {
 
@@ -103,6 +102,10 @@ async function main() {
   joinNextLine(logseq);
 
   toggleVisualMode(logseq);
+
+  changeCase(logseq);
+  changeCaseUpperCase(logseq);
+  changeCaseLowerCase(logseq);
 
 }
 

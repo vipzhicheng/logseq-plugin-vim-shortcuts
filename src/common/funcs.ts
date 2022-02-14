@@ -71,7 +71,7 @@ export const setNumber = (n: number) => {
 
 };
 
-const debugMode = false;
+const debugMode = true;
 export const debug = (msg: string, status = 'success') => {
 
   if (debugMode) {
@@ -84,6 +84,9 @@ export const debug = (msg: string, status = 'success') => {
 const settingsVersion = 'v1';
 export const defaultSettings = {
   bottom: 'shift+g',
+  changeCase: 'mod+shift+u',
+  changeCaseUpper: 'g shift+u',
+  changeCaseLower: 'g u',
   collapse: 'z m',
   collapseAll: 'z shift+m',
   copyCurrentBlockContent: 'y y',

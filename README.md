@@ -28,6 +28,10 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `G`: Scroll to bottom.
 - `u`: Undo.
 - `ctrl+r`: Redo.
+- `gu`: Change block content to lower case.
+- `gU`: Change block content to upper case.
+- `mod+shift+u`: Toggle block content to lower case or upper case.
+- `NUMBER`+`mod+shift+u`: Trigger different case style, support 1~16.
 - `zo`: Extend block.
 - `zm`: Collapse block.
 - `cmd+j cmd+j` Exit editing mode, also `ctrl+[` can do the same thing.
@@ -55,6 +59,25 @@ You can edit a block
 ### Visual block mode
 
 You can select more blocks up and down and move the selected blocks.
+
+## Case Styles
+
+* `1`: Toggle upper and lower case, the default behavior.
+* `2`: Change to upper case. e.g. `LOGSEQ IS SO AWESOME`
+* `3`: Change to lower case. e.g. `logseq is so awesome`
+* `4`: Change to title case. e.g. `Logseq Is so Awesome`
+* `5`: Change to sentence case. e.g. `Logseq is so awesome`
+* `6`: Change to path case. e.g. `logseq/is/so/awesome`
+* `7`: Change to capital case. e.g. `Logseq Is So Awesome`
+* `8`: Change to constant case. e.g. `LOGSEQ_IS_SO_AWESOME`
+* `9`: Change to dot case. e.g. `logseq.is.so.awesome`
+* `10`: Change to header case. e.g. `Logseq-Is-So-Awesome`
+* `11`: Change to param case. e.g. `logseq-is-so-awesome`
+* `12`: Change to pascal case. e.g. `LogseqIsSoAwesome`
+* `13`: Change to camel case. e.g. `logseqIsSoAwesome`
+* `14`: Change to snake case. e.g. `logseq_is_so_awesome`
+* `15`: Change to swap case. e.g. `lOGSEQ IS SO AWESOME`
+* `16`: Change to random case. e.g. `logsEQ IS SO awESoME`
 
 ## Notice
 

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.0.7
+
+* feat: add changing case action, the shortcut is `mod+shift+u`, means to toggle upper case and lower case.
+* feat: combo action supported 16 case style, `Number key` + `mod+shift+u` to trigger, learn more from README.
+* feat: add original VIM case shortcut, `gu` is for lower case, `gU` is for upper case.
+
 ## v0.0.6
 
 * feat: add VIM-like visual block mode, in this mode, `j` and `k` are for block selecting, `J` and `K` are for block moving.
@@ -22,7 +28,7 @@
 * feat: add `mod+j mod+j` to exit editing mode.
 * feat: add `ctrl+enter` to jump into internal page, support `[[]]` and `#tag` style, sometimes better UX than DWIM.
 * feat: add `ctrl+j` to join next sibling conditionally.
-* fix: `z o` and `z m` shortcut not work on latest Logseq release.
+* fix: `zo` and `zm` shortcut not work on latest Logseq release.
 
 NOTE:
 1. The joining shortcut can only join siblings without children blocks and support combo and should not be trigger too fast in editing mode.
