@@ -1,6 +1,12 @@
 import '@logseq/libs';
 import { BlockPageName, BlockUUID } from '@logseq/libs/dist/LSPlugin';
 import { N, TempCache } from './type';
+import { schemaVersion } from '../../package.json';
+
+export async function getGraphKey(key: string): Promise<string> {
+  const graph = await logseq.App.getCurrentGraph();
+  return 'logseq-plugin-vim-shortcuts:' + key + ':' + schemaVersion + ':' + (graph?.path ?? 'nograph');
+}
 
 export function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -72,24 +78,36 @@ export const setNumber = (n: number) => {
 };
 
 
-const markCache: { [key: string]: {
+let markCache: { [key: string]: {
   page: string,
   block?: BlockUUID | undefined,
 } } = {};
 
-export const setMark = (number: number, page: BlockPageName, block: BlockUUID | undefined = undefined) => {
+export const setMark = async (number: number, page: BlockPageName, block: BlockUUID | undefined = undefined) => {
   markCache[number] = {
     page,
     block
   };
+
+  const graphKey = await getGraphKey('markCache');
+  localStorage.setItem(graphKey, JSON.stringify(markCache));
 };
+
+export const loadMarks = async () => {
+  const graphKey = await getGraphKey('markCache');
+  const markCacheStr = localStorage.getItem(graphKey);
+  if (markCacheStr) {
+    markCache = JSON.parse(markCacheStr) || {};
+  }
+};
+
 
 export const getMark = (number: number) => {
   return markCache[number] || undefined;
 };
 
 
-const debugMode = true;
+const debugMode = false;
 export const debug = (msg: string, status = 'success') => {
 
   if (debugMode) {

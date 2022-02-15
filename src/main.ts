@@ -1,5 +1,5 @@
 import '@logseq/libs';
-import { getNumber, initSettings, resetNumber } from './common/funcs';
+import { getNumber, initSettings, loadMarks, resetNumber } from './common/funcs';
 import bottom from './keybindings/bottom';
 import changeCase from './keybindings/changeCase';
 import changeCaseLowerCase from './keybindings/changeCaseLowerCase';
@@ -107,6 +107,11 @@ async function main() {
   changeCase(logseq);
   changeCaseUpperCase(logseq);
   changeCaseLowerCase(logseq);
+
+  // await loadMarks();
+  logseq.App.onCurrentGraphChanged(async () => {
+    await loadMarks();
+  });
 
   mark(logseq);
 

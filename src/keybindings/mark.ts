@@ -25,10 +25,20 @@ export default (logseq: ILSPluginUser) => {
       const page = await getCurrentPage();
       if (page?.name) {
         const block = await logseq.Editor.getCurrentBlock();
-        if (block?.uuid) {
-          setMark(number, page.name, block.uuid);
+        const selected = await logseq.Editor.getSelectedBlocks();
+
+        // 1. current block uuid exist
+        // 2. current block page id === current page id
+        // 3. current block is selected and only current block is selected
+        if (block?.uuid && block.page.id === page.id && (selected && selected.length === 1 && selected[0].uuid === block.uuid)) {
+          if (!block?.properties?.id) {
+            await logseq.Editor.upsertBlockProperty(block.uuid, 'id', block.uuid);
+          }
+          await setMark(number, page.name, block.uuid);
+          logseq.App.showMsg(`Mark ${number} saved`);
         } else {
-          setMark(number, page.name);
+          await setMark(number, page.name);
+          logseq.App.showMsg(`Mark ${number} saved`);
         }
       }
     });
