@@ -71,6 +71,24 @@ export const setNumber = (n: number) => {
 
 };
 
+
+const markCache: { [key: string]: {
+  page: string,
+  block?: BlockUUID | undefined,
+} } = {};
+
+export const setMark = (number: number, page: BlockPageName, block: BlockUUID | undefined = undefined) => {
+  markCache[number] = {
+    page,
+    block
+  };
+};
+
+export const getMark = (number: number) => {
+  return markCache[number] || undefined;
+};
+
+
 const debugMode = true;
 export const debug = (msg: string, status = 'success') => {
 
@@ -122,6 +140,9 @@ export const defaultSettings = {
   jumpInto: 'mod+shift+enter',
   joinNextLine: 'mod+alt+j',
   toggleVisualMode: 'ctrl+v',
+  markSave: 'm',
+  markJump: '\'',
+  markJumpSidebar: 'mod+\'',
   settingsVersion,
   disabled: false,
 };

@@ -11,13 +11,11 @@ export default (logseq: ILSPluginUser) => {
       key: 'vim-shortcut-toggleVisualMode',
       label: 'Toggle visual mode',
       keybinding: {
-        mode: 'global',
-        binding
+        mode: 'non-editing',
+        binding,
       }
     }, async () => {
       debug('Toggle visual mode');
-
-      await logseq.Editor.exitEditingMode(true);
 
       const visualMode = getVisualMode();
       if (visualMode) {

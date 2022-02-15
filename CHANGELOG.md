@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.0.8
+
+* fix: `ctrl+v` in Windows is for pasting, so I disable visual block mode key-binding for editing mode.
+*
+
 ## v0.0.7
 
 * feat: add changing case action, the shortcut is `mod+shift+u`, means to toggle upper case and lower case.

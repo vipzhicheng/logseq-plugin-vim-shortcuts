@@ -20,6 +20,7 @@ import insert from './keybindings/insert';
 import insertBefore from './keybindings/insertBefore';
 import joinNextLine from './keybindings/joinNextLine';
 import jumpInto from './keybindings/jumpInto';
+import mark from './keybindings/mark';
 import nextNewBlock from './keybindings/nextNewBlock';
 import nextSibling from './keybindings/nextSibling';
 import number from './keybindings/number';
@@ -106,6 +107,8 @@ async function main() {
   changeCase(logseq);
   changeCaseUpperCase(logseq);
   changeCaseLowerCase(logseq);
+
+  mark(logseq);
 
 }
 
