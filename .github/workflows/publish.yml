@@ -18,7 +18,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: "14.x" # You might need to adjust this value to your own version
+          node-version: "16.x" # You might need to adjust this value to your own version
       - name: Build
         id: build
         run: |
@@ -26,6 +26,7 @@ jobs:
           pnpm install
           pnpm build
           mv dist ${{ env.PLUGIN_NAME }}
+          cp package.json icon.png LICENSE ${{ env.PLUGIN_NAME }}
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
           tar -cvzf ${{ env.PLUGIN_NAME }}.tar.gz -C ${{ env.PLUGIN_NAME }} .
           ls
