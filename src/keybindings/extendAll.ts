@@ -25,9 +25,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.extendAll) ? settings.extendAll : [settings.extendAll];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-extend-hierarchically',
+      key: 'vim-shortcut-extend-hierarchically-' + index,
       label: 'Extend block hierarchically',
       keybinding: {
         mode: 'non-editing',

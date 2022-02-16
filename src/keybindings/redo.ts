@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.redo) ? settings.redo : [settings.redo];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-redo',
+      key: 'vim-shortcut-redo-' + index,
       label: 'Redo',
       keybinding: {
         mode: 'non-editing',

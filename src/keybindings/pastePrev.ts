@@ -1,5 +1,4 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { TempCache } from 'src/common/type';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
 import { debug, getCurrentBlockUUID, getSettings, readClipboard } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
@@ -7,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.pastePrev) ? settings.pastePrev : [settings.pastePrev];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-paste-prev',
+      key: 'vim-shortcut-paste-prev-' + index,
       label: 'Paste to prev block',
       keybinding: {
         mode: 'non-editing',

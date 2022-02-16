@@ -1,15 +1,15 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
 import * as cc from 'change-case-all';
-import { debug, getNumber, getSettings, resetNumber } from '../common/funcs';
+import { debug, getSettings } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.changeCaseUpper) ? settings.changeCaseUpper : [settings.changeCaseUpper];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-change-case-upper',
+      key: 'vim-shortcut-change-case-upper-' + index,
       label: 'Change case upper',
       keybinding: {
         mode: 'non-editing',

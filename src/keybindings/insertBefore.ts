@@ -1,4 +1,4 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
 import { debug, getCurrentBlockUUID, getSettings } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.insertBefore) ? settings.insertBefore : [settings.insertBefore];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-insert-before',
+      key: 'vim-shortcut-insert-before-' + index,
       label: 'Enter insert mode at first pos ',
       keybinding: {
         mode: 'non-editing',

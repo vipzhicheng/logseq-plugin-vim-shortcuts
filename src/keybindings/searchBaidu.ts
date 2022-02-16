@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.searchBaidu) ? settings.searchBaidu : [settings.searchBaidu];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-search-baidu',
+      key: 'vim-shortcut-search-baidu-' + index,
       label: 'Search in Baidu',
       keybinding: {
         mode: 'non-editing',

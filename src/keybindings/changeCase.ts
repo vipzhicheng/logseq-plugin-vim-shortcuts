@@ -7,9 +7,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.changeCase) ? settings.changeCase : [settings.changeCase];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-change-case',
+      key: 'vim-shortcut-change-case-' + index,
       label: 'Change case',
       keybinding: {
         mode: 'global',

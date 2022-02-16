@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.highlightFocusOut) ? settings.highlightFocusOut : [settings.highlightFocusOut];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-highlightFocusOut',
+      key: 'vim-shortcut-highlightFocusOut-' + index,
       label: 'Highlight focus out',
       keybinding: {
         mode: 'non-editing',

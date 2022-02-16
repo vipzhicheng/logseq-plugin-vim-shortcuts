@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.searchStackoverflow) ? settings.searchStackoverflow : [settings.searchStackoverflow];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-search-stackoverflow',
+      key: 'vim-shortcut-search-stackoverflow-' + index,
       label: 'Search in Stackoverflow',
       keybinding: {
         mode: 'non-editing',

@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.collapse) ? settings.collapse : [settings.collapse];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-collapse',
+      key: 'vim-shortcut-collapse-' + index,
       label: 'Collapse block',
       keybinding: {
         mode: 'non-editing',

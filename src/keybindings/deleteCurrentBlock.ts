@@ -79,9 +79,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.deleteCurrentBlock) ? settings.deleteCurrentBlock : [settings.deleteCurrentBlock];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-delete-current-block',
+      key: 'vim-shortcut-delete-current-block-' + index,
       label: 'Delete current block',
       keybinding: {
         mode: 'non-editing',

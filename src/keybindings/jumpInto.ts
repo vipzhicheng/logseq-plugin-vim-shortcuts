@@ -1,14 +1,14 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getNumber, getSettings, resetNumber } from '../common/funcs';
+import { debug, getNumber, getSettings, resetNumber } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.jumpInto) ? settings.jumpInto : [settings.jumpInto];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-jump-internal-link',
+      key: 'vim-shortcut-jump-internal-link-' + index,
       label: 'Jump into internal link',
       keybinding: {
         mode: 'global',

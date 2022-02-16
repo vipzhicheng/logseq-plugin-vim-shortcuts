@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.indent) ? settings.indent : [settings.indent];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-indent',
+      key: 'vim-shortcut-indent-' + index,
       label: 'indent',
       keybinding: {
         mode: 'non-editing',

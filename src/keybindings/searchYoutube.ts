@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.searchYoutube) ? settings.searchYoutube : [settings.searchYoutube];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-search-youtube',
+      key: 'vim-shortcut-search-youtube-' + index,
       label: 'Search in Youtube',
       keybinding: {
         mode: 'non-editing',

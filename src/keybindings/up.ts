@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.up) ? settings.up : [settings.up];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-up',
+      key: 'vim-shortcut-up-' + index,
       label: 'up',
       keybinding: {
         mode: 'non-editing',

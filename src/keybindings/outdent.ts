@@ -1,14 +1,14 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getNumber, getSettings, resetNumber } from '../common/funcs';
+import { debug, getSettings } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.outdent) ? settings.outdent : [settings.outdent];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-outdent',
+      key: 'vim-shortcut-outdent-' + index,
       label: 'outdent',
       keybinding: {
         mode: 'non-editing',

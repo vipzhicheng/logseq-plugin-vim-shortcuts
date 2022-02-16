@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.insert) ? settings.insert : [settings.insert];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-insert',
+      key: 'vim-shortcut-insert-' + index,
       label: 'Enter insert mode',
       keybinding: {
         mode: 'non-editing',

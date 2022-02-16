@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.searchGoogle) ? settings.searchGoogle : [settings.searchGoogle];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-search-google',
+      key: 'vim-shortcut-search-google-' + index,
       label: 'Search in Google',
       keybinding: {
         mode: 'non-editing',

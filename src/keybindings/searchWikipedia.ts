@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.searchWikipedia) ? settings.searchWikipedia : [settings.searchWikipedia];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-search-wikipedia',
+      key: 'vim-shortcut-search-wikipedia-' + index,
       label: 'Search in Wikipedia',
       keybinding: {
         mode: 'non-editing',

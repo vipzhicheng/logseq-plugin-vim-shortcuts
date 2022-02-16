@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.undo) ? settings.undo : [settings.undo];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-undo',
+      key: 'vim-shortcut-undo-' + index,
       label: 'Undo',
       keybinding: {
         mode: 'non-editing',

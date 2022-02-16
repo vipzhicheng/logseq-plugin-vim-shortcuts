@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.copyCurrentBlockContent) ? settings.copyCurrentBlockContent : [settings.copyCurrentBlockContent];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-copy-current-block-content',
+      key: 'vim-shortcut-copy-current-block-content-' + index,
       label: 'Copy current block content',
       keybinding: {
         mode: 'non-editing',

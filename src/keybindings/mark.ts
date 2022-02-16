@@ -1,5 +1,5 @@
-import { ILSPluginUser, BlockEntity } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentPage, getMark, getNumber, getSettings, resetNumber, scrollToBlockInPage, setMark } from '../common/funcs';
+import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
+import { debug, getCurrentPage, getMark, getNumber, getSettings, resetNumber, setMark } from '../common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
@@ -8,9 +8,9 @@ export default (logseq: ILSPluginUser) => {
   const bindingsMarkJump = Array.isArray(settings.markJump) ? settings.markJump : [settings.markJump];
   const bindingsMarkJumpSidebar = Array.isArray(settings.markJumpSidebar) ? settings.markJumpSidebar : [settings.markJumpSidebar];
 
-  bindingsMarkSave.forEach(binding => {
+  bindingsMarkSave.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-save-mark',
+      key: 'vim-shortcut-save-mark-' + index,
       label: 'Save mark',
       keybinding: {
         mode: 'non-editing',
@@ -44,9 +44,9 @@ export default (logseq: ILSPluginUser) => {
     });
   });
 
-  bindingsMarkJump.forEach(binding => {
+  bindingsMarkJump.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-jump-mark',
+      key: 'vim-shortcut-jump-mark-' + index,
       label: 'Jump mark',
       keybinding: {
         mode: 'non-editing',
@@ -73,9 +73,9 @@ export default (logseq: ILSPluginUser) => {
     });
   });
 
-  bindingsMarkJumpSidebar.forEach(binding => {
+  bindingsMarkJumpSidebar.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-jump-mark-sidebar',
+      key: 'vim-shortcut-jump-mark-sidebar-' + index,
       label: 'Jump mark to sidebar',
       keybinding: {
         mode: 'non-editing',

@@ -41,9 +41,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.nextSibling) ? settings.nextSibling : [settings.nextSibling];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-next-sibling',
+      key: 'vim-shortcut-next-sibling-' + index,
       label: 'Go to next sibling',
       keybinding: {
         mode: 'non-editing',

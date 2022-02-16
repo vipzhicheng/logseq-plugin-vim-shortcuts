@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.extend) ? settings.extend : [settings.extend];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-extend',
+      key: 'vim-shortcut-extend-' + index,
       label: 'Extend block',
       keybinding: {
         mode: 'non-editing',

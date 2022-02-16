@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.nextNewBlock) ? settings.nextNewBlock : [settings.nextNewBlock];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-next-new-block',
+      key: 'vim-shortcut-next-new-block-' + index,
       label: 'Create new next block',
       keybinding: {
         mode: 'non-editing',

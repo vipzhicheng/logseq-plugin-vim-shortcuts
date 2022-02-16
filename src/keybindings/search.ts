@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.search) ? settings.search : [settings.search];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-search',
+      key: 'vim-shortcut-search-' + index,
       label: 'Search',
       keybinding: {
         mode: 'non-editing',

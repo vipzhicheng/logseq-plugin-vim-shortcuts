@@ -6,9 +6,9 @@ export default (logseq: ILSPluginUser) => {
 
   const bindings = Array.isArray(settings.highlightFocusIn) ? settings.highlightFocusIn : [settings.highlightFocusIn];
 
-  bindings.forEach(binding => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-highlightFocusIn',
+      key: 'vim-shortcut-highlightFocusIn-' + index,
       label: 'Highlight focus in',
       keybinding: {
         mode: 'non-editing',
