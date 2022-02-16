@@ -34,6 +34,9 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `NUMBER`+`mod+shift+u`: Trigger different case style, support 1~16.
 - `zo`: Extend block.
 - `zm`: Collapse block.
+- `NUMBER`+`m`: Save current page or block as a mark to NUMBER register.
+- `NUMBER`+`'`: Load saved mark on main region.
+- `NUMBER`+`mod+'`: Load saved mark on right sidebar.
 - `cmd+j cmd+j` Exit editing mode, also `ctrl+[` can do the same thing.
 - `mod+alt+j` Join next sibling block.
 - `mod+shift+enter` Jumping into internal page or tag.
@@ -60,7 +63,7 @@ You can edit a block
 
 You can select more blocks up and down and move the selected blocks.
 
-## Case Styles
+## Case Change Styles
 
 * `1`: Toggle upper and lower case, the default behavior.
 * `2`: Change to upper case. e.g. `LOGSEQ IS SO AWESOME`
@@ -79,7 +82,15 @@ You can select more blocks up and down and move the selected blocks.
 * `15`: Change to swap case. e.g. `lOGSEQ IS SO AWESOME`
 * `16`: Change to random case. e.g. `logsEQ IS SO awESoME`
 
-## Notice
+## Mark feature notes
+
+* Logseq have `Favorites` and `Recent` feature, and we also have a `Tabs` plugins, the mark feature kind of like Tabs position, but give the power to yourself to decide which is which, that feels good to me.
+* Marked pages and blocks can be persisted automatically and graph separately.
+* NUMBER can be more than 10, actually thousands if you wish.
+* The `m` shortcut could be conflicted with `Markmap` plugin, so if you met this issue, please upgrade `Markmap` plugin to latest version.
+* NUMBER=1 is the default one, so you can just press `m` to save and press `'` to load for mark 1.
+
+## Other notes
 
 * Logseq keybindings support may be changed in future, so just use it for a while if you need it, and it may be conflicted with Logseq future shortcuts.
 * Not exactly same with VIM key-bindings, just mimic.

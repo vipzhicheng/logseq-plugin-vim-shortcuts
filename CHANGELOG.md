@@ -3,7 +3,7 @@
 ## v0.0.8
 
 * fix: `ctrl+v` in Windows is for pasting, so I disable visual block mode key-binding for editing mode.
-*
+* feat: add mark feature like VIM, the short cut is `NUMBER + m` to save current page or block, and `NUMBER + '` to load saved mark, and `mod+'` to load saved mark on right sidebar. The NUMBER can be more than 10, actually thousands if you wish.
 
 ## v0.0.7
 

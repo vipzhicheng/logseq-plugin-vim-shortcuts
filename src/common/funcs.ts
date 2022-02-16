@@ -98,6 +98,8 @@ export const loadMarks = async () => {
   const markCacheStr = localStorage.getItem(graphKey);
   if (markCacheStr) {
     markCache = JSON.parse(markCacheStr) || {};
+  } else {
+    markCache = {};
   }
 };
 
