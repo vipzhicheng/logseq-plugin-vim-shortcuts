@@ -138,6 +138,7 @@ export const defaultSettings = {
   indent: 'l',
   insert: ['i', 'a'],
   insertBefore: 'shift+i',
+  insertAfter: 'shift+a',
   nextNewBlock: 'o',
   nextSibling: 'shift+j',
   outdent: 'h',

@@ -16,6 +16,7 @@ import highlightFocusOut from './keybindings/highlightFocusOut';
 import indent from './keybindings/indent';
 import insert from './keybindings/insert';
 import insertBefore from './keybindings/insertBefore';
+import insertAfter from './keybindings/insertAfter';
 import joinNextLine from './keybindings/joinNextLine';
 import jumpInto from './keybindings/jumpInto';
 import mark from './keybindings/mark';
@@ -56,6 +57,7 @@ async function main() {
 
   insert(logseq);
   insertBefore(logseq);
+  insertAfter(logseq);
 
   top(logseq);
   bottom(logseq);
