@@ -26,7 +26,6 @@ jobs:
           pnpm install
           pnpm build
           mv dist ${{ env.PLUGIN_NAME }}
-          cp package.json icon.png LICENSE ${{ env.PLUGIN_NAME }}
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
           tar -cvzf ${{ env.PLUGIN_NAME }}.tar.gz -C ${{ env.PLUGIN_NAME }} .
           ls

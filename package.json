@@ -10,8 +10,7 @@
     "title": "Vim Shortcuts"
   },
   "scripts": {
-    "build:dev": "vite build && cp icon.png package.json dist/",
-    "build": "vite build"
+    "build": "vite build && cp icon.png package.json LICENSE dist/"
   },
   "devDependencies": {
     "typescript": "^4.5.5",
