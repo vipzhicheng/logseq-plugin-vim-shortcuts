@@ -136,31 +136,43 @@ async function main() {
   // setup ui hotkeys
   setHotkeys(logseq);
 
-  const el = document.querySelector(".command-input input") as HTMLInputElement;
-
+  const $input = document.querySelector(
+    ".command-input input"
+  ) as HTMLInputElement;
+  const $popper = document.querySelector(
+    ".el-autocomplete__popper"
+  ) as HTMLElement;
+  const $run = document.querySelector(".command-run") as HTMLButtonElement;
   const handleClick = (e) => {
-    const el = document.querySelector(
-      ".command-input input"
-    ) as HTMLInputElement;
-    el && el.focus();
+    $input && $input.focus();
     e.stopPropagation();
     return false;
   };
 
   const handleKeyup = (e) => {
     if (e.keyCode === 38 || e.code === "ArrowUp") {
-      e.stopPropagation();
-      const command = getCommandFromHistoryBack();
-      el.value = command;
+      if ($popper.style.display === "none") {
+        e.stopPropagation();
+        const command = getCommandFromHistoryBack();
+        $input.value = command;
+      }
     } else if (e.keyCode === 40 || e.code === "ArrowDown") {
-      const command = getCommandFromHistoryForward();
-      e.stopPropagation();
-      el.value = command;
+      if ($popper.style.display === "none") {
+        const command = getCommandFromHistoryForward();
+        e.stopPropagation();
+        $input.value = command;
+      }
     } else if (e.keyCode === 27 || e.code === "Escape") {
       e.stopPropagation();
-      el.value = "";
+      $input.value = "";
       hideMainUI();
+    } else if (e.keyCode === 13 || e.code === "Enter") {
+      e.stopPropagation();
+      if ($input.value) {
+        $run.click();
+      }
     }
+    // console.log(e);
   };
 
   const handleKeydown = (e) => {
@@ -169,11 +181,11 @@ async function main() {
       e.stopPropagation();
 
       const findCommand = commands.filter((c) => {
-        return c.value.toLowerCase().startsWith(el.value.toLowerCase());
+        return c.value.toLowerCase().startsWith($input.value.toLowerCase());
       });
 
       if (findCommand.length === 1) {
-        el.value = findCommand[0].value;
+        $input.value = findCommand[0].value;
       }
     }
   };
@@ -185,17 +197,17 @@ async function main() {
 
     setTimeout(() => {
       // add event listeners for input element
-      el.removeEventListener("click", handleClick);
-      el.addEventListener("click", handleClick);
+      $input.removeEventListener("click", handleClick);
+      $input.addEventListener("click", handleClick);
 
-      el.removeEventListener("keyup", handleKeyup);
-      el.addEventListener("keyup", handleKeyup);
+      $input.removeEventListener("keyup", handleKeyup);
+      $input.addEventListener("keyup", handleKeyup);
 
-      el.removeEventListener("keydown", handleKeydown);
-      el.addEventListener("keydown", handleKeydown);
+      $input.removeEventListener("keydown", handleKeydown);
+      $input.addEventListener("keydown", handleKeydown);
 
       // auto focus
-      el && el.focus();
+      $input && $input.focus();
     }, 300);
   });
 }

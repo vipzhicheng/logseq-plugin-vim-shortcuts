@@ -4,8 +4,10 @@ import { useMarkStore } from "../stores/mark";
 const mark = useMarkStore();
 
 const handleClose = () => {
-  const el = document.querySelector(".command-input input") as HTMLInputElement;
-  el && el.focus();
+  const $input = document.querySelector(
+    ".command-input input"
+  ) as HTMLInputElement;
+  $input && $input.focus();
 };
 const handleClick = async (mark) => {
   if (mark) {

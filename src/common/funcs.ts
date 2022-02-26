@@ -10,21 +10,21 @@ import hotkeys from "hotkeys-js";
 
 export async function setHotkeys(logseq: ILSPluginUser) {
   hotkeys("esc", () => {
-    const el = document.querySelector(
+    const $input = document.querySelector(
       ".command-input input"
     ) as HTMLInputElement;
-    if (el) {
-      el.value = "";
+    if ($input) {
+      $input.value = "";
     }
     hideMainUI();
     return false;
   });
 
   hotkeys("command+shift+;, ctrl+shift+;", () => {
-    const el = document.querySelector(
+    const $input = document.querySelector(
       ".command-input input"
     ) as HTMLInputElement;
-    el && el.focus();
+    $input && $input.focus();
     return false;
   });
 }

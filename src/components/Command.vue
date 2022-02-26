@@ -87,8 +87,10 @@ const walkReplace = async (blocks: any[], regex, replace) => {
 
 let wait = false;
 const handleSelect = async (selected) => {
-  const el = document.querySelector(".command-input input") as HTMLInputElement;
-  if (el) {
+  const $input = document.querySelector(
+    ".command-input input"
+  ) as HTMLInputElement;
+  if ($input) {
     wait = selected.wait || false;
   }
 };
@@ -98,8 +100,10 @@ const handleEnter = async () => {
     wait = false;
     return;
   }
-  const el = document.querySelector(".command-input input") as HTMLInputElement;
-  const value = el.value;
+  const $input = document.querySelector(
+    ".command-input input"
+  ) as HTMLInputElement;
+  const value = $input.value;
   if (!value) return;
   pushCommandHistory(value);
 
@@ -113,7 +117,7 @@ const handleEnter = async () => {
     case "h":
     case "help":
       helpStore.toggle();
-      el && el.blur();
+      $input && $input.blur();
       break;
     case "option-trigger-autocomplete-on-focus":
       triggerOnFocus.value = true;
@@ -196,7 +200,7 @@ const handleEnter = async () => {
     case "marks":
       markStore.reload();
       markStore.toggle();
-      el && el.blur();
+      $input && $input.blur();
       break;
     case "delm":
     case "delmarks":
@@ -292,9 +296,9 @@ const handleEnter = async () => {
   }
 
   input.value = "";
-  el && el.blur();
+  $input && $input.blur();
   setTimeout(() => {
-    el && el.focus();
+    $input && $input.focus();
   }, 100);
 };
 const commands = commandStore.getCommands();
@@ -331,18 +335,10 @@ const handleClose = () => {
   >
     <template #prepend>:</template>
     <template #append>
-      <el-button
-        class="command-input-button"
-        @click="handleEnter"
-        type="primary"
-      >
+      <el-button class="command-run" @click="handleEnter" type="primary">
         Run
       </el-button>
-      <el-button
-        class="command-input-button"
-        @click="handleClose"
-        type="primary"
-      >
+      <el-button class="command-close" @click="handleClose" type="primary">
         Close
       </el-button>
     </template>

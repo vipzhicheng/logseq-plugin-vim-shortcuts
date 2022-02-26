@@ -5,10 +5,10 @@ export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
   const handleDocumentClick = () => {
-    const el = document.querySelector(".command-input input");
-
-    // @ts-ignore
-    el && el.blur();
+    const $input = document.querySelector(
+      ".command-input input"
+    ) as HTMLInputElement;
+    $input && $input.blur();
   };
 
   const bindings = Array.isArray(settings.command)
