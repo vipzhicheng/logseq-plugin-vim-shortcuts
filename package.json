@@ -13,11 +13,24 @@
     "build": "vite build && cp icon.png package.json LICENSE dist/"
   },
   "devDependencies": {
+    "@types/lodash-es": "*",
+    "@types/minimist": "^1.2.2",
+    "@vitejs/plugin-vue": "^2.2.2",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.23",
     "typescript": "^4.5.5",
+    "unplugin-auto-import": "^0.6.1",
+    "unplugin-vue-components": "^0.17.21",
     "vite": "^2.8.3"
   },
   "dependencies": {
-    "@logseq/libs": "^0.0.1-alpha.34",
-    "change-case-all": "^1.0.14"
+    "@logseq/libs": "^0.0.1-alpha.35",
+    "change-case-all": "^1.0.14",
+    "element-plus": "^2.0.2",
+    "hotkeys-js": "^3.8.7",
+    "minimist": "^1.2.5",
+    "pinia": "^2.0.11",
+    "vue": "^3.2.31"
   }
 }
