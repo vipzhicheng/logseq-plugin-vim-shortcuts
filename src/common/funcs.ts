@@ -8,29 +8,22 @@ import { N, TempCache } from "./type";
 import { schemaVersion } from "../../package.json";
 import hotkeys from "hotkeys-js";
 
-import { useMarkStore } from "../stores/mark";
-
 export async function setHotkeys(logseq: ILSPluginUser) {
   hotkeys("esc", () => {
-    logseq.hideMainUI({
-      restoreEditingCursor: true,
-    });
-    return false;
-  });
-
-  hotkeys("tab", () => {
-    logseq.App.showMsg("tab");
-  });
-
-  hotkeys("q", () => {
-    const mark = useMarkStore();
-    mark.close();
+    const el = document.querySelector(
+      ".command-input input"
+    ) as HTMLInputElement;
+    if (el) {
+      el.value = "";
+    }
+    hideMainUI();
     return false;
   });
 
   hotkeys("command+shift+;, ctrl+shift+;", () => {
-    const el = document.querySelector(".command-input input");
-    // @ts-ignore
+    const el = document.querySelector(
+      ".command-input input"
+    ) as HTMLInputElement;
     el && el.focus();
     return false;
   });
@@ -117,6 +110,43 @@ export const setNumber = (n: number) => {
       numberCache.lastChange = now;
     }
   }
+};
+
+let commandHistory: string[] = [];
+let commandCursor = 0;
+
+export const pushCommandHistory = (command: string) => {
+  commandHistory.unshift(command);
+  commandCursor = 0;
+  if (commandHistory.length > 1000) {
+    commandHistory.pop();
+  }
+};
+
+export const getCommandFromHistoryBack = (): string => {
+  commandCursor = commandCursor % commandHistory.length;
+  const command = commandHistory[commandCursor] || "";
+  commandCursor++;
+  return command;
+};
+
+export const getCommandFromHistoryForward = (): string => {
+  commandCursor =
+    commandCursor < 0 ? commandCursor + commandHistory.length : commandCursor;
+  const command = commandHistory[commandCursor] || "";
+  commandCursor--;
+  return command;
+};
+
+export const resetCommandCursor = () => {
+  commandCursor = 0;
+};
+
+export const hideMainUI = () => {
+  logseq.hideMainUI({
+    restoreEditingCursor: true,
+  });
+  resetCommandCursor();
 };
 
 let markCache: {

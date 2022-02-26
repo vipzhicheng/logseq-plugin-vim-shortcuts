@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v0.0.9
+## v0.1.0
 
 - feat: add VIM command mode, trigger by shortcut: `mod+shift+;`，for now 10+ commands supported, and I'm sure that would be more.
 - feat: one useful commmand is: replace string like VIM. Input `:%s/search/replace/modifiers`, e.g. `:%s/foo/bar/ig`

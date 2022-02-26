@@ -5,7 +5,7 @@ const help = useHelpStore();
 </script>
 
 <template>
-  <el-dialog v-model="help.visible" width="30%" top="25vh" center>
+  <el-dialog v-model="help.visible" width="30%" top="25vh" center draggable>
     <div class="flex flex-col gap-4">
       <div class="text-gray-500 text-center font-bold">
         Logseq VIM shortcuts v{{ version }}
@@ -35,7 +35,11 @@ const help = useHelpStore();
       <p>
         With evolving, it is becoming a little bit complicated and need some
         time to learn, please click the repo icon to read plugin usage on repo
-        readme.
+        <a
+          href="https://github.com/vipzhicheng/logseq-plugin-vim-shortcuts"
+          target="_blank"
+          >readme</a
+        >.
       </p>
       <p class="text-gray-400 text-sm">
         If you like this plugin and would like to support me to keep working on

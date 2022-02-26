@@ -10,7 +10,6 @@ export const useMarkStore = defineStore("mark", {
   }),
   actions: {
     toggle() {
-      // console.log(visible);
       this.visible = !this.visible;
     },
     close() {

@@ -4,7 +4,14 @@ import "./style.css";
 import { createApp } from "vue";
 import App from "./App.vue";
 
-import { initSettings, loadMarks, setHotkeys } from "./common/funcs";
+import {
+  initSettings,
+  loadMarks,
+  setHotkeys,
+  getCommandFromHistoryBack,
+  getCommandFromHistoryForward,
+  hideMainUI,
+} from "./common/funcs";
 import bottom from "./keybindings/bottom";
 import changeCase from "./keybindings/changeCase";
 import changeCaseLowerCase from "./keybindings/changeCaseLowerCase";
@@ -47,12 +54,13 @@ import undo from "./keybindings/undo";
 import up from "./keybindings/up";
 import { createPinia } from "pinia";
 
+import { commands } from "./stores/command";
+
 async function main() {
   // settings
   initSettings();
 
   // bindings
-
   number(logseq);
 
   undo(logseq);
@@ -113,36 +121,80 @@ async function main() {
   changeCaseLowerCase(logseq);
   command(logseq);
 
-  // await loadMarks();
+  // load marks
   logseq.App.onCurrentGraphChanged(async () => {
     await loadMarks();
   });
 
   mark(logseq);
 
+  // setup vue
   const app = createApp(App);
-  // app.use(ElementPlus, { size: "small", zIndex: 3000 });
-  app.directive("focus", {
-    mounted(el) {
-      console.log("xxxx");
-      el.focus();
-      el.children[0].focus();
-      setTimeout((_) => {
-        el.children[0].focus();
-      }, 100);
-    },
-  });
   app.use(createPinia());
   app.mount("#app");
+
+  // setup ui hotkeys
   setHotkeys(logseq);
+
+  const el = document.querySelector(".command-input input") as HTMLInputElement;
+
+  const handleClick = (e) => {
+    const el = document.querySelector(
+      ".command-input input"
+    ) as HTMLInputElement;
+    el && el.focus();
+    e.stopPropagation();
+    return false;
+  };
+
+  const handleKeyup = (e) => {
+    if (e.keyCode === 38 || e.code === "ArrowUp") {
+      e.stopPropagation();
+      const command = getCommandFromHistoryBack();
+      el.value = command;
+    } else if (e.keyCode === 40 || e.code === "ArrowDown") {
+      const command = getCommandFromHistoryForward();
+      e.stopPropagation();
+      el.value = command;
+    } else if (e.keyCode === 27 || e.code === "Escape") {
+      e.stopPropagation();
+      el.value = "";
+      hideMainUI();
+    }
+  };
+
+  const handleKeydown = (e) => {
+    if (e.keyCode === 9 || e.code === "Tab") {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const findCommand = commands.filter((c) => {
+        return c.value.toLowerCase().startsWith(el.value.toLowerCase());
+      });
+
+      if (findCommand.length === 1) {
+        el.value = findCommand[0].value;
+      }
+    }
+  };
+
   logseq.on("ui:visible:changed", async ({ visible }) => {
     if (!visible) {
       return;
     }
 
     setTimeout(() => {
-      const el = document.querySelector(".command-input input");
-      // @ts-ignore
+      // add event listeners for input element
+      el.removeEventListener("click", handleClick);
+      el.addEventListener("click", handleClick);
+
+      el.removeEventListener("keyup", handleKeyup);
+      el.addEventListener("keyup", handleKeyup);
+
+      el.removeEventListener("keydown", handleKeydown);
+      el.addEventListener("keydown", handleKeydown);
+
+      // auto focus
       el && el.focus();
     }, 300);
   });

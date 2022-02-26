@@ -2,13 +2,70 @@
 import "@logseq/libs";
 import { useMarkStore } from "../stores/mark";
 import { useHelpStore } from "../stores/help";
+import { useCommandStore } from "../stores/command";
 import minimist from "minimist";
+import { format, add, sub } from "date-fns";
+import { hideMainUI, pushCommandHistory } from "../common/funcs";
 
-const mark = useMarkStore();
-const help = useHelpStore();
+const markStore = useMarkStore();
+const helpStore = useHelpStore();
+const commandStore = useCommandStore();
 
 const input = ref(null);
 const triggerOnFocus = ref(false);
+
+const parsePageName = async (pageName: string) => {
+  const config = await logseq.App.getUserConfigs();
+  const page = await logseq.Editor.getCurrentPage();
+  switch (pageName) {
+    case "@":
+    case "@contents":
+    case "@index":
+      return "Contents";
+    case "@today":
+      pageName = format(new Date(), config.preferredDateFormat);
+      return pageName;
+    case "@yesterday":
+      pageName = format(
+        sub(new Date(), {
+          days: 1,
+        }),
+        config.preferredDateFormat
+      );
+      return pageName;
+    case "@tomorrow":
+      pageName = format(
+        add(new Date(), {
+          days: 1,
+        }),
+        config.preferredDateFormat
+      );
+      return pageName;
+    case "@prev":
+      if (page["journal?"]) {
+        pageName = format(
+          sub(new Date(page.name), {
+            days: 1,
+          }),
+          config.preferredDateFormat
+        );
+        return pageName;
+      }
+    case "@next":
+      if (page["journal?"]) {
+        pageName = format(
+          add(new Date(page.name), {
+            days: 1,
+          }),
+          config.preferredDateFormat
+        );
+        return pageName;
+      }
+
+    default:
+      return pageName;
+  }
+};
 
 const replaceBlock = async (block, regex, replace) => {
   const replaced = block.content.replace(regex, replace);
@@ -36,13 +93,16 @@ const handleSelect = async (selected) => {
   }
 };
 
-const handleEnter = async (value) => {
-  if (!value) return;
+const handleEnter = async () => {
   if (wait) {
     wait = false;
     return;
   }
   const el = document.querySelector(".command-input input") as HTMLInputElement;
+  const value = el.value;
+  if (!value) return;
+  pushCommandHistory(value);
+
   const split: string[] = value.split(" ");
   const args = split.slice(1).join(" ");
   const argv = minimist(args.split(" "));
@@ -52,7 +112,7 @@ const handleEnter = async (value) => {
   switch (cmd) {
     case "h":
     case "help":
-      help.toggle();
+      helpStore.toggle();
       el && el.blur();
       break;
     case "option-trigger-autocomplete-on-focus":
@@ -68,23 +128,26 @@ const handleEnter = async (value) => {
       isBlock = /\(\((.*?)\)\)/.test(pageName);
 
       if (!isBlock) {
-        let page = await logseq.Editor.getPage(pageName);
+        pageName = await parsePageName(pageName);
+        if (pageName) {
+          let page = await logseq.Editor.getPage(pageName);
 
-        if (!page) {
-          page = await logseq.Editor.createPage(
-            pageName,
-            {},
-            {
-              createFirstBlock: true,
-              redirect: true,
-            }
-          );
-          const blocks = await logseq.Editor.getPageBlocksTree(pageName);
-          await logseq.Editor.editBlock(blocks[0].uuid);
-        } else {
-          await logseq.App.pushState("page", {
-            name: pageName,
-          });
+          if (!page) {
+            page = await logseq.Editor.createPage(
+              pageName,
+              {},
+              {
+                createFirstBlock: true,
+                redirect: true,
+              }
+            );
+            const blocks = await logseq.Editor.getPageBlocksTree(pageName);
+            await logseq.Editor.editBlock(blocks[0].uuid);
+          } else {
+            await logseq.App.pushState("page", {
+              name: pageName,
+            });
+          }
         }
       } else {
         const match = pageName.match(/\(\((.*?)\)\)/);
@@ -97,23 +160,25 @@ const handleEnter = async (value) => {
           logseq.App.showMsg("Block not exist!");
         }
       }
-      await logseq.hideMainUI({
-        restoreEditingCursor: true,
-      });
+      hideMainUI();
       break;
     case "go":
       pageName = split.slice(1).join(" ");
       isBlock = /\(\((.*?)\)\)/.test(pageName);
 
       if (!isBlock) {
-        let page = await logseq.Editor.getPage(pageName);
+        pageName = await parsePageName(pageName);
 
-        if (!page) {
-          logseq.App.showMsg("Page not exist!");
-        } else {
-          await logseq.App.pushState("page", {
-            name: pageName,
-          });
+        if (pageName) {
+          let page = await logseq.Editor.getPage(pageName);
+
+          if (!page) {
+            logseq.App.showMsg("Page not exist!");
+          } else {
+            await logseq.App.pushState("page", {
+              name: pageName,
+            });
+          }
         }
       } else {
         const match = pageName.match(/\(\((.*?)\)\)/);
@@ -126,25 +191,23 @@ const handleEnter = async (value) => {
           logseq.App.showMsg("Block not exist!");
         }
       }
-      await logseq.hideMainUI({
-        restoreEditingCursor: true,
-      });
+      hideMainUI();
       break;
     case "marks":
-      mark.reload();
-      mark.toggle();
+      markStore.reload();
+      markStore.toggle();
       el && el.blur();
       break;
     case "delm":
     case "delmarks":
       if (argv._.length > 0) {
-        await mark.deleteMarks(argv._);
-        mark.reload();
+        await markStore.deleteMarks(argv._);
+        markStore.reload();
       }
       break;
     case "m":
     case "mark":
-      const m = mark.getMark(argv._[0]);
+      const m = markStore.getMark(argv._[0]);
       if (m) {
         if (m.block) {
           logseq.Editor.scrollToBlockInPage(m.page, m.block);
@@ -157,8 +220,8 @@ const handleEnter = async (value) => {
       break;
     case "delm!":
     case "delmarks!":
-      await mark.clearMarks();
-      mark.reload();
+      await markStore.clearMarks();
+      markStore.reload();
       break;
     case "w":
     case "write":
@@ -168,15 +231,11 @@ const handleEnter = async (value) => {
       logseq.App.showMsg(
         "Actually Logseq save your info automatically! So just quit VIM command mode."
       );
-      logseq.hideMainUI({
-        restoreEditingCursor: true,
-      });
+      hideMainUI();
       break;
     case "q":
       logseq.App.showMsg("Quit VIM command mode.");
-      logseq.hideMainUI({
-        restoreEditingCursor: true,
-      });
+      hideMainUI();
       break;
     default:
       if (value.indexOf("s/") === 0 || value.indexOf("substitute/") === 0) {
@@ -192,9 +251,7 @@ const handleEnter = async (value) => {
             await logseq.App.showMsg(
               'Current block replaced "' + search + '" with "' + replace + '"'
             );
-            logseq.hideMainUI({
-              restoreEditingCursor: true,
-            });
+            hideMainUI();
           } else {
             await logseq.App.showMsg(
               "Current block not found. Please select a block first."
@@ -222,9 +279,7 @@ const handleEnter = async (value) => {
               replace +
               '"'
           );
-          logseq.hideMainUI({
-            restoreEditingCursor: true,
-          });
+          hideMainUI();
         } else {
           await logseq.App.showMsg(
             'Please input "%s/search/replace/modifiers"'
@@ -242,56 +297,7 @@ const handleEnter = async (value) => {
     el && el.focus();
   }, 100);
 };
-const commands = [
-  { value: "s/", desc: "Replace current block according regex.", wait: true },
-  {
-    value: "substitute/",
-    desc: "Replace current block according regex.",
-    wait: true,
-  },
-  {
-    value: "%s/",
-    desc: "Replace current page blocks according regex.",
-    wait: true,
-  },
-  {
-    value: "%substitute/",
-    desc: "Replace current page blocks according regex.",
-    wait: true,
-  },
-  { value: "m", desc: "Go to marked page or block.", wait: true },
-  { value: "mark", desc: "Go to marked page or block.", wait: true },
-  { value: "marks", desc: "Show marks." },
-  { value: "delm", desc: "Delete specific marks.", wait: true },
-  { value: "delmarks", desc: "Delete specific marks.", wait: true },
-  { value: "delm!", desc: "Delete all marks.", wait: false },
-  { value: "delmarks!", desc: "Delete all marks.", wait: false },
-  { value: "w", desc: "Save current page." },
-  { value: "write", desc: "Save current page." },
-  { value: "wq", desc: "Save current page and quit vim command mode." },
-  { value: "q", desc: "Quit vim command mode." },
-  { value: "go ", desc: "Create new page or go to existed page.", wait: true },
-  {
-    value: "option-trigger-autocomplete-on-focus",
-    desc: "Trigger autocomplete on focus.",
-    wait: false,
-  },
-  {
-    value: "option-no-trigger-autocomplete-on-focus",
-    desc: "No trigger autocomplete on focus.",
-    wait: false,
-  },
-  {
-    value: "h",
-    desc: "Show help modal.",
-    wait: false,
-  },
-  {
-    value: "help",
-    desc: "Show help modal.",
-    wait: false,
-  },
-];
+const commands = commandStore.getCommands();
 const querySearch = (queryString: string, cb: any) => {
   const results = queryString
     ? commands.filter(
@@ -305,45 +311,52 @@ const querySearch = (queryString: string, cb: any) => {
 
 const handleClose = () => {
   logseq.App.showMsg("Quit VIM command mode.");
-  logseq.hideMainUI({
-    restoreEditingCursor: true,
-  });
+  hideMainUI();
 };
 </script>
 
 <template>
-  <div class="absolute bottom-0 w-full">
-    <el-autocomplete
-      v-model="input"
-      :fetch-suggestions="querySearch"
-      :trigger-on-focus="triggerOnFocus"
-      :highlight-first-item="true"
-      :teleported="false"
-      class="w-full command-input"
-      popper-class="w-[99%] overflow-hidden"
-      size="large"
-      placement="bottom-start"
-      @select="handleSelect"
-      @change="handleEnter"
-    >
-      <template #prepend>:</template>
-      <template #append>
-        <el-button
-          class="command-input-button"
-          @click="handleClose"
-          type="primary"
-        >
-          Close
-        </el-button>
-      </template>
-      <template #default="{ item }">
-        <div>
-          :{{ item.value }}
-          <span class="text-gray-400">-- {{ item.desc }}</span>
-        </div>
-      </template>
-    </el-autocomplete>
-  </div>
+  <el-autocomplete
+    v-model="input"
+    :fetch-suggestions="querySearch"
+    :trigger-on-focus="triggerOnFocus"
+    :highlight-first-item="true"
+    :teleported="false"
+    class="w-full command-input absolute bottom-0"
+    popper-class="w-[99%] overflow-hidden"
+    size="large"
+    placement="bottom-start"
+    @select="handleSelect"
+    @change="handleEnter"
+  >
+    <template #prepend>:</template>
+    <template #append>
+      <el-button
+        class="command-input-button"
+        @click="handleEnter"
+        type="primary"
+      >
+        Run
+      </el-button>
+      <el-button
+        class="command-input-button"
+        @click="handleClose"
+        type="primary"
+      >
+        Close
+      </el-button>
+    </template>
+    <template #default="{ item }">
+      <div>
+        :{{ item.value }}
+        <span class="text-gray-400">-- {{ item.desc }}</span>
+      </div>
+    </template>
+  </el-autocomplete>
 </template>
 
-<style></style>
+<style>
+.el-autocomplete {
+  position: absolute;
+}
+</style>

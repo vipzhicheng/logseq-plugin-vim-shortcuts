@@ -69,6 +69,15 @@ You can select more blocks up and down and move the selected blocks.
 
 In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;`, also can be memorized as `mod+:`, After trigger, you can find a input area at the bottom, you can input some commands here like in VIM. For now it's about 10+ commands, but I believe that would be more.
 
+#### The bottom input features
+
+- Autocomplete when you input.
+- Press `Tab` if only one command matched, the matched command will be autocomplete right away.
+- Press `Up` and `Down` to traverse command history, it's a 1000 limit history, I think it's enough to use.
+- Just in case bug stuck, there are `Run` button and `Close` at bottom right to help you trigger behaviors.
+
+#### Supported commands
+
 - `:s/` and `:substitute/`: Replace current block according regex, e.g. `s/foo/bar/gi`, Notice it support Regex modifiers.
 - `:%s/`a nd `:%substitute/`: Replace current page blocks according regex, e.g. `%s/foo/bar/gi`.
 - `:marks`: Show marks.
@@ -76,6 +85,13 @@ In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;
 - `:delm!` and `:delmarks!`: Delete all marks.
 - `:m` and `:mark`: Go to specific mark, e.g. `:m 1`.
 - `:go`: Go to existed page or block, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
+  - There are some shortcuts for page name:
+    - `:go @` and `:go @index` and `:go @contents`: Go to Contents page
+    - `:go @today` Go to today's journal page.
+    - `:go @tomorrow` Go to tomorrow's journal page.
+    - `:go @yesterday` Go to yesterday's journal page.
+    - `:go @prev` Go to prev-day's journal page.
+    - `:go @next` Go to next-day's journal page.
 - `:go!`: Go to existed page or block, create one if page not exist, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
 - `:w` and `:write`: Save current page, actually this is a fake one, because Logseq save automatically.
 - `:wq`: Save current page and quit vim command mode.

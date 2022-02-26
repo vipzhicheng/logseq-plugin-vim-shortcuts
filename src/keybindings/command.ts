@@ -8,7 +8,7 @@ export default (logseq: ILSPluginUser) => {
     const el = document.querySelector(".command-input input");
 
     // @ts-ignore
-    el && el.focus();
+    el && el.blur();
   };
 
   const bindings = Array.isArray(settings.command)
