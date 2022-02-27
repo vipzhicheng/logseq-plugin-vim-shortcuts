@@ -1,6 +1,6 @@
 {
   "name": "logseq-plugin-vim-shortcuts",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "schemaVersion": "1.0.0",
   "license": "MIT",
   "main": "index.html",
