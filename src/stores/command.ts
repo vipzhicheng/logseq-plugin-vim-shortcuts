@@ -31,6 +31,9 @@ export const commands = [
   { value: "write", desc: "Save current page." },
   { value: "wq", desc: "Save current page and quit vim command mode." },
   { value: "q", desc: "Quit vim command mode." },
+  { value: "quit", desc: "Quit vim command mode." },
+  { value: "re", desc: "Rename current page.", wait: true },
+  { value: "rename", desc: "Rename current page.", wait: true },
   {
     value: "go ",
     desc: "Create new page or go to existed page.",

@@ -20,7 +20,7 @@ export async function setHotkeys(logseq: ILSPluginUser) {
     return false;
   });
 
-  hotkeys("command+shift+;, ctrl+shift+;", () => {
+  hotkeys("command+shift+;, ctrl+shift+;, shift+;", () => {
     const $input = document.querySelector(
       ".command-input input"
     ) as HTMLInputElement;

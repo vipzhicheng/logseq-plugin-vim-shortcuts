@@ -112,12 +112,14 @@ const handleEnter = async () => {
   const argv = minimist(args.split(" "));
   const cmd = split[0];
 
+  let delayFocus = true;
+
   let pageName, isBlock;
   switch (cmd) {
     case "h":
     case "help":
       helpStore.toggle();
-      $input && $input.blur();
+      delayFocus = false;
       break;
     case "option-trigger-autocomplete-on-focus":
       triggerOnFocus.value = true;
@@ -126,6 +128,17 @@ const handleEnter = async () => {
     case "option-no-trigger-autocomplete-on-focus":
       triggerOnFocus.value = false;
       logseq.App.showMsg("trigger-on-focus is off!");
+      break;
+    case "re":
+    case "rename":
+      pageName = split.slice(1).join(" ");
+      const currentPage = await logseq.Editor.getCurrentPage();
+      if (currentPage) {
+        await logseq.Editor.renamePage(currentPage.name, pageName);
+        logseq.App.showMsg(`Page renamed to ${pageName}`);
+      } else {
+        logseq.App.showMsg("Rename command only work on a page.");
+      }
       break;
     case "go!":
       pageName = split.slice(1).join(" ");
@@ -238,6 +251,7 @@ const handleEnter = async () => {
       hideMainUI();
       break;
     case "q":
+    case "quit":
       logseq.App.showMsg("Quit VIM command mode.");
       hideMainUI();
       break;
@@ -297,11 +311,22 @@ const handleEnter = async () => {
 
   input.value = "";
   $input && $input.blur();
-  setTimeout(() => {
-    $input && $input.focus();
-  }, 100);
+  if (delayFocus) {
+    setTimeout(() => {
+      $input && $input.focus();
+    }, 100);
+  }
 };
 const commands = commandStore.getCommands();
+commands.sort((a, b) => {
+  if (a.value < b.value) {
+    return -1;
+  } else if (a.value > b.value) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
 const querySearch = (queryString: string, cb: any) => {
   const results = queryString
     ? commands.filter(
