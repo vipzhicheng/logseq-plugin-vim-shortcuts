@@ -5,7 +5,7 @@ import {
   getCurrentPage,
   getSettings,
   scrollToBlockInPage,
-} from "../common/funcs";
+} from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();

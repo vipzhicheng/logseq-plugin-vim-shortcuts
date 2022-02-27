@@ -1,5 +1,5 @@
 import { BlockUUID, ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getCurrentBlockUUID, getSettings } from "../common/funcs";
+import { debug, getCurrentBlockUUID, getSettings } from "@/common/funcs";
 
 const extend = async (blockUUID: BlockUUID | undefined) => {
   if (blockUUID) {

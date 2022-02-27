@@ -1,5 +1,5 @@
 import { ILSPluginUser, BlockEntity, PageEntity, BlockUUID } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, getVisualMode, resetNumber, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, getVisualMode, resetNumber, scrollToBlockInPage } from '@/common/funcs';
 
 const findNextBlockRecur = async (page: PageEntity | BlockEntity, block: BlockEntity) => {
   if (block.parent.id) {

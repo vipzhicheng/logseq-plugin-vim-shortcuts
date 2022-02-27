@@ -1,5 +1,5 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getSettings, readClipboard } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getSettings, readClipboard } from '@/common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();

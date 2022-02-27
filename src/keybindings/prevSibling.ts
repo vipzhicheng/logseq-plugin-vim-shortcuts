@@ -1,5 +1,5 @@
 import { BlockUUID, ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, getVisualMode, resetNumber, scrollToBlockInPage } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, getVisualMode, resetNumber, scrollToBlockInPage } from '@/common/funcs';
 
 const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
   const page = await getCurrentPage();

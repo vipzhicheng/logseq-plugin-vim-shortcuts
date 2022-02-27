@@ -1,5 +1,5 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentPage, getMark, getNumber, getSettings, resetNumber, setMark } from '../common/funcs';
+import { debug, getCurrentPage, getMark, getNumber, getSettings, resetNumber, setMark } from '@/common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();

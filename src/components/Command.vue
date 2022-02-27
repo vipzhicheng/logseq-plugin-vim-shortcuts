@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import "@logseq/libs";
-import { useMarkStore } from "../stores/mark";
-import { useHelpStore } from "../stores/help";
-import { useCommandStore } from "../stores/command";
 import minimist from "minimist";
 import { format, add, sub } from "date-fns";
-import { hideMainUI, pushCommandHistory } from "../common/funcs";
+
+import { useMarkStore } from "@/stores/mark";
+import { useHelpStore } from "@/stores/help";
+import { useCommandStore } from "@/stores/command";
+import { hideMainUI, pushCommandHistory } from "@/common/funcs";
 
 const markStore = useMarkStore();
 const helpStore = useHelpStore();

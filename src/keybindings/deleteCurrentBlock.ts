@@ -1,5 +1,5 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, resetNumber, scrollToBlockInPage, writeClipboard } from '../common/funcs';
+import { debug, getCurrentBlockUUID, getCurrentPage, getNumber, getSettings, resetNumber, scrollToBlockInPage, writeClipboard } from '@/common/funcs';
 
 const deleteCurrentBlock = async (number: number) => {
   const page = await getCurrentPage();

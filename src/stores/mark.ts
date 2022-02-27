@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { clearMarks, delMark, getMark, getMarks } from "../common/funcs";
+import { clearMarks, delMark, getMark, getMarks } from "@/common/funcs";
 
 export const useMarkStore = defineStore("mark", {
   state: () => ({

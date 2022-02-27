@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useMarkStore } from "../stores/mark";
+import { useMarkStore } from "@/stores/mark";
 
 const mark = useMarkStore();
 

@@ -1,6 +1,6 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
 import * as cc from 'change-case-all';
-import { debug, getNumber, getSettings, resetNumber } from '../common/funcs';
+import { debug, getNumber, getSettings, resetNumber } from '@/common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();

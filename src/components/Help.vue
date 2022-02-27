@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { version } from "../../package.json";
-import { useHelpStore } from "../stores/help";
+import { useHelpStore } from "@/stores/help";
 const help = useHelpStore();
 </script>
 

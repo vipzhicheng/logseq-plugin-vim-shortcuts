@@ -1,5 +1,5 @@
 import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getNumber, getSettings, getVisualMode, resetNumber } from '../common/funcs';
+import { debug, getNumber, getSettings, getVisualMode, resetNumber } from '@/common/funcs';
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
