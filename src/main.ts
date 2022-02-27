@@ -149,7 +149,7 @@ async function main() {
     return false;
   };
 
-  const handleKeyup = (e) => {
+  const handleKeyup = async (e) => {
     if (e.keyCode === 38 || e.code === "ArrowUp") {
       if ($popper.style.display === "none") {
         e.stopPropagation();
@@ -179,9 +179,9 @@ async function main() {
     if (e.keyCode === 9 || e.code === "Tab") {
       e.preventDefault();
       e.stopPropagation();
-
+      const keyword = $input.value;
       const findCommand = commands.filter((c) => {
-        return c.value.toLowerCase().startsWith($input.value.toLowerCase());
+        return c.value.toLowerCase().startsWith(keyword.toLowerCase());
       });
 
       if (findCommand.length === 1) {

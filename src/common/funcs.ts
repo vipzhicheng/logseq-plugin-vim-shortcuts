@@ -3,10 +3,27 @@ import {
   BlockPageName,
   BlockUUID,
   ILSPluginUser,
+  PageEntity,
 } from "@logseq/libs/dist/LSPlugin";
 import { N, TempCache } from "./type";
 import { schemaVersion } from "../../package.json";
 import hotkeys from "hotkeys-js";
+
+export async function createPageIfNotExists(pageName): Promise<PageEntity> {
+  let page = await logseq.Editor.getPage(pageName);
+  if (!page) {
+    page = await logseq.Editor.createPage(
+      pageName,
+      {},
+      {
+        createFirstBlock: true,
+        redirect: false,
+      }
+    );
+  }
+
+  return page;
+}
 
 export async function setHotkeys(logseq: ILSPluginUser) {
   hotkeys("esc", () => {
@@ -146,6 +163,7 @@ export const hideMainUI = () => {
   logseq.hideMainUI({
     restoreEditingCursor: true,
   });
+  logseq.Editor.restoreEditingCursor();
   resetCommandCursor();
 };
 

@@ -86,24 +86,29 @@ const walkReplace = async (blocks: any[], regex, replace) => {
 };
 
 let wait = false;
+let selectCommand = "";
 const handleSelect = async (selected) => {
   const $input = document.querySelector(
     ".command-input input"
   ) as HTMLInputElement;
-  if ($input) {
-    wait = selected.wait || false;
-  }
+  wait = selected.wait || false;
+  selectCommand = selected.value || "";
+
+  setTimeout(() => {
+    $input && $input.focus();
+  }, 500);
 };
 
 const handleEnter = async () => {
+  const $input = document.querySelector(
+    ".command-input input"
+  ) as HTMLInputElement;
+  const value = selectCommand || $input.value;
+  selectCommand = "";
   if (wait) {
     wait = false;
     return;
   }
-  const $input = document.querySelector(
-    ".command-input input"
-  ) as HTMLInputElement;
-  const value = $input.value;
   if (!value) return;
   pushCommandHistory(value);
 
@@ -140,6 +145,14 @@ const handleEnter = async () => {
         logseq.App.showMsg("Rename command only work on a page.");
       }
       break;
+    case "undo":
+      // @ts-ignore
+      await logseq.App.invokeExternalCommand("logseq.editor/undo");
+      break;
+    case "redo":
+      // @ts-ignore
+      await logseq.App.invokeExternalCommand("logseq.editor/redo");
+      break;
     case "go!":
       pageName = split.slice(1).join(" ");
       isBlock = /\(\((.*?)\)\)/.test(pageName);
@@ -161,9 +174,13 @@ const handleEnter = async () => {
             const blocks = await logseq.Editor.getPageBlocksTree(pageName);
             await logseq.Editor.editBlock(blocks[0].uuid);
           } else {
-            await logseq.App.pushState("page", {
+            const blocks = await logseq.Editor.getPageBlocksTree(pageName);
+            logseq.App.pushState("page", {
               name: pageName,
             });
+            if (blocks && blocks.length > 0) {
+              logseq.Editor.editBlock(blocks[0].uuid);
+            }
           }
         }
       } else {
@@ -190,11 +207,17 @@ const handleEnter = async () => {
           let page = await logseq.Editor.getPage(pageName);
 
           if (!page) {
-            logseq.App.showMsg("Page not exist!");
+            logseq.App.showMsg(
+              "Page not exist! If you want create non-exist page, use go! command."
+            );
           } else {
-            await logseq.App.pushState("page", {
+            const blocks = await logseq.Editor.getPageBlocksTree(pageName);
+            logseq.App.pushState("page", {
               name: pageName,
             });
+            if (blocks && blocks.length > 0) {
+              logseq.Editor.editBlock(blocks[0].uuid);
+            }
           }
         }
       } else {
@@ -257,14 +280,14 @@ const handleEnter = async () => {
       break;
     default:
       if (value.indexOf("s/") === 0 || value.indexOf("substitute/") === 0) {
-        const splitReplace = value.split("/");
+        const splitReplace = value.trim().split("/");
         const search = splitReplace[1];
         if (search) {
           const replace = splitReplace[2] || "";
           const modifiers = splitReplace[3] || "";
           const regex = new RegExp(search, modifiers);
           const block = await logseq.Editor.getCurrentBlock();
-          if (block.uuid && block.content) {
+          if (block && block.uuid && block.content) {
             await replaceBlock(block, regex, replace);
             await logseq.App.showMsg(
               'Current block replaced "' + search + '" with "' + replace + '"'
@@ -283,24 +306,30 @@ const handleEnter = async () => {
         value.indexOf("%substitute/") === 0
       ) {
         const blocks = await logseq.Editor.getCurrentPageBlocksTree();
-        const splitReplace = value.split("/");
-        const search = splitReplace[1];
-        if (search) {
-          const replace = splitReplace[2] || "";
-          const modifiers = splitReplace[3] || "";
-          const regex = new RegExp(search, modifiers);
-          await walkReplace(blocks, regex, replace);
-          await logseq.App.showMsg(
-            'Current page blocks replaced "' +
-              search +
-              '" with "' +
-              replace +
-              '"'
-          );
-          hideMainUI();
+        if (blocks.length > 0) {
+          const splitReplace = value.trim().split("/");
+          const search = splitReplace[1];
+          if (search) {
+            const replace = splitReplace[2] || "";
+            const modifiers = splitReplace[3] || "";
+            const regex = new RegExp(search, modifiers);
+            await walkReplace(blocks, regex, replace);
+            await logseq.App.showMsg(
+              'Current page blocks replaced "' +
+                search +
+                '" with "' +
+                replace +
+                '"'
+            );
+            hideMainUI();
+          } else {
+            await logseq.App.showMsg(
+              'Please input "%s/search/replace/modifiers"'
+            );
+          }
         } else {
           await logseq.App.showMsg(
-            'Please input "%s/search/replace/modifiers"'
+            "Current page blocks not found. Please select a page first."
           );
         }
       } else {
@@ -356,7 +385,6 @@ const handleClose = () => {
     size="large"
     placement="bottom-start"
     @select="handleSelect"
-    @change="handleEnter"
   >
     <template #prepend>:</template>
     <template #append>
