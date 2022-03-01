@@ -71,9 +71,10 @@ In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;
 
 #### The bottom input features
 
-- Autocomplete when you input.
-- Press `Tab` if only one command matched, the matched command will be autocomplete right away.
+- Autosuggestion when you input.
+- Press `Tab` if only one command matched, the matched command will be autocompleted right away.
 - Press `Up` and `Down` to traverse command history, it's a 1000 limit history, I think it's enough to use.
+- Press `Esc` to close command mode and back to the main window. For now Logseq can not get focused automatically sometime. so you need to click the main window to continue.
 - Just in case bug stuck, there are `Run` button and `Close` at bottom right to help you trigger behaviors.
 
 #### Supported commands
