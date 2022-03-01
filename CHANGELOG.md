@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.1
+
+- feat: add `@back` and `@forward` for command mode go command
+
 ## v0.1.0
 
 - feat: add VIM command mode, trigger by shortcut: `mod+shift+;`，for now 10+ commands supported, and I'm sure that would be more.

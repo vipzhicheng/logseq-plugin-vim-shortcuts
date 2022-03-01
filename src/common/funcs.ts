@@ -206,7 +206,7 @@ export const getMarks = () => {
   return markCache;
 };
 
-export const delMark = async (number: number) => {
+export const delMark = async (number: string) => {
   delete markCache[number];
   const graphKey = await getGraphKey("markCache");
   localStorage.setItem(graphKey, JSON.stringify(markCache));
@@ -218,7 +218,7 @@ export const clearMarks = async () => {
   localStorage.setItem(graphKey, JSON.stringify(markCache));
 };
 
-const debugMode = false;
+const debugMode = true;
 export const debug = (msg: string, status = "success") => {
   if (debugMode) {
     // logseq.App.showMsg(msg, status);

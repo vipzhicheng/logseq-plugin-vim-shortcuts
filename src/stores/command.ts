@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-export const commands = [
+export const commandList = [
   {
     value: "s/",
     desc: "Replace current block according regex.",
@@ -64,11 +64,22 @@ export const commands = [
 ];
 export const useCommandStore = defineStore("command", {
   state: () => ({
-    commands,
+    commandList,
+    triggerOnFocus: false,
+    input: "",
   }),
   actions: {
-    getCommands() {
-      return this.commands;
+    getCommandList() {
+      return this.commandList;
+    },
+    enableTriggerOnFocus() {
+      this.triggerOnFocus = true;
+    },
+    disableTriggerOnFocus() {
+      this.triggerOnFocus = true;
+    },
+    emptyInput() {
+      this.input = "";
     },
   },
 });

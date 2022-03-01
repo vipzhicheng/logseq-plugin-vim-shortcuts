@@ -86,12 +86,14 @@ In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;
 - `:m` and `:mark`: Go to specific mark, e.g. `:m 1`.
 - `:go`: Go to existed page or block, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
   - There are some shortcuts for page name:
-    - `:go @` and `:go @index` and `:go @contents`: Go to Contents page
+    - `:go @` and `:go @index`: Go to Contents page
     - `:go @today` Go to today's journal page.
-    - `:go @tomorrow` Go to tomorrow's journal page.
     - `:go @yesterday` Go to yesterday's journal page.
-    - `:go @prev` Go to prev-day's journal page.
-    - `:go @next` Go to next-day's journal page.
+    - `:go @tomorrow` Go to tomorrow's journal page.
+    - `:go @prev` Go to prev-day's journal page, if currect page is not a journal page, fallback to @yesterday.
+    - `:go @next` Go to next-day's journal page, if currect page is not a journal page, fallback to @tomorrow.
+    - `:go @back` Go to backward page.
+    - `:go @forward` Go to forward page.
 - `:go!`: Go to existed page or block, create one if page not exist, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
 - `:re` and `:rename`: Rename current page name, if target page exists, page content will be merged.
 - `:undo` and `:redo`: Undo and redo last edit.

@@ -54,7 +54,7 @@ import undo from "./keybindings/undo";
 import up from "./keybindings/up";
 import { createPinia } from "pinia";
 
-import { commands } from "./stores/command";
+import { commandList } from "./stores/command";
 
 async function main() {
   // settings
@@ -180,12 +180,48 @@ async function main() {
       e.preventDefault();
       e.stopPropagation();
       const keyword = $input.value;
-      const findCommand = commands.filter((c) => {
+      const findCommand = commandList.filter((c) => {
         return c.value.toLowerCase().startsWith(keyword.toLowerCase());
       });
 
-      if (findCommand.length === 1) {
-        $input.value = findCommand[0].value;
+      if (findCommand.length > 0) {
+        if (findCommand.length === 1) {
+          $input.value = findCommand[0].value;
+        }
+      } else {
+        // not find
+        const splitKeyword = keyword.split(" ");
+        if (splitKeyword.length > 1) {
+          const lastWord = splitKeyword[splitKeyword.length - 1];
+          const subKeyword = splitKeyword[0];
+
+          switch (subKeyword) {
+            case "go":
+            case "go!":
+              const tokens = [
+                "@today",
+                "@yesterday",
+                "@tomorrow",
+                "@prev",
+                "@next",
+                "@back",
+                "@forward",
+                "@index",
+              ];
+              const findLastToken = tokens.filter((token) => {
+                return token.toLowerCase().startsWith(lastWord.toLowerCase());
+              });
+              if (findLastToken.length > 0) {
+                if (findLastToken.length === 1) {
+                  $input.value =
+                    splitKeyword.slice(0, -1).join(" ") +
+                    " " +
+                    findLastToken[0];
+                }
+              }
+              break;
+          }
+        }
       }
     }
   };

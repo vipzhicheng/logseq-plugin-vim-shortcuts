@@ -15,7 +15,7 @@ export const useMarkStore = defineStore("mark", {
     close() {
       this.visible = false;
     },
-    async deleteMarks(numbers) {
+    async deleteMarks(numbers: string[]) {
       for (let number of numbers) {
         await delMark(number);
       }

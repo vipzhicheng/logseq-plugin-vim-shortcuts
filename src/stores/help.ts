@@ -7,5 +7,9 @@ export const useHelpStore = defineStore("help", {
     toggle() {
       this.visible = !this.visible;
     },
+
+    show() {
+      this.visible = true;
+    },
   },
 });
