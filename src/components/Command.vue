@@ -101,6 +101,15 @@ const handleEnter = async () => {
     case "wq":
       commands.page.writeAndQuit();
       break;
+    case "lorem":
+    case "lorem-ipsum":
+      await commands.lorem.generate(argv);
+      hideMainUI();
+      break;
+    // case "sort":
+    //   await commands.sort.sort();
+    //   hideMainUI();
+    //   break;
     case "q":
     case "quit":
       commands.page.quit();

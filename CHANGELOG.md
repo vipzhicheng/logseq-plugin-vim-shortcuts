@@ -2,7 +2,8 @@
 
 ## v0.1.1
 
-- feat: add `@back` and `@forward` for command mode go command
+- feat: add `@back` and `@forward` for command mode `:go` command.
+- feat: add `:lorem` command to generate some random blocks.
 
 ## v0.1.0
 

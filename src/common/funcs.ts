@@ -218,7 +218,7 @@ export const clearMarks = async () => {
   localStorage.setItem(graphKey, JSON.stringify(markCache));
 };
 
-const debugMode = true;
+const debugMode = false;
 export const debug = (msg: string, status = "success") => {
   if (debugMode) {
     // logseq.App.showMsg(msg, status);

@@ -10,6 +10,7 @@ specifiers:
   date-fns: ^2.28.0
   element-plus: ^2.0.2
   hotkeys-js: ^3.8.7
+  lorem-ipsum: ^2.0.4
   minimist: ^1.2.5
   pinia: ^2.0.11
   postcss: ^8.4.6
@@ -26,6 +27,7 @@ dependencies:
   date-fns: 2.28.0
   element-plus: 2.0.2_1a412d14def5ff5ca1122000e4bee666
   hotkeys-js: 3.8.7
+  lorem-ipsum: 2.0.4
   minimist: 1.2.5
   pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
   vue: 3.2.31
@@ -506,6 +508,10 @@ packages:
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
+
+  /commander/2.20.3:
+    resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
+    dev: false
 
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
@@ -1041,6 +1047,14 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
+
+  /lorem-ipsum/2.0.4:
+    resolution: {integrity: sha512-TD+ERYfxjYiUfOyaKU6OH4euumNVeKoo3BxIhokb7bGmoCULsME48onF9NVxYK3CU1z9L5ALnkDkW8lIkHvMNQ==}
+    engines: {node: '>= 8.x', npm: '>= 5.x'}
+    hasBin: true
+    dependencies:
+      commander: 2.20.3
     dev: false
 
   /lower-case-first/2.0.2:

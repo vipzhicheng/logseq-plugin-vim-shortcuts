@@ -63,7 +63,7 @@ You can edit a block
 
 ### Visual block mode
 
-You can select more blocks up and down and move the selected blocks.
+You can select more blocks up and down and move the selected blocks using `j` and `k`
 
 ### Command mode
 
@@ -98,6 +98,7 @@ In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;
 - `:go!`: Go to existed page or block, create one if page not exist, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
 - `:re` and `:rename`: Rename current page name, if target page exists, page content will be merged.
 - `:undo` and `:redo`: Undo and redo last edit.
+- `:lorem` and `:lorem-ipsum`: generate random blocks in same level, with `--unit word|paragraph|sentence` to change random block unit.
 - `:w` and `:write`: Save current page, actually this is a fake one, because Logseq save automatically.
 - `:wq`: Save current page and quit vim command mode.
 - `:q` and `:quit`: Quit vim command mode.
