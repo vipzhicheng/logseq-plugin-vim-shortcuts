@@ -4,6 +4,7 @@
 
 - feat: add `@back` and `@forward` for command mode `:go` command.
 - feat: add `:lorem` command to generate some random blocks.
+- feat: add `:emo` and `:emoji` to insert emojis by searching keyword.
 
 ## v0.1.0
 

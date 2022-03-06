@@ -38,6 +38,8 @@ export const commandList = [
   { value: "redo", desc: "Redo last edit.", wait: false },
   { value: "lorem", desc: "Random generate blocks.", wait: true },
   { value: "lorem-ipsum", desc: "Random generate blocks.", wait: true },
+  { value: "emo", desc: "Search and input emojis.", wait: true },
+  { value: "emoji", desc: "Search and input emojis.", wait: true },
   // { value: "sort", desc: "Sort blocks a-z.", wait: false },
   // { value: "rsort", desc: "Sort blocks z-a.", wait: false },
   {

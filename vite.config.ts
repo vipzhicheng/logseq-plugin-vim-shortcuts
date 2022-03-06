@@ -8,9 +8,9 @@ import path from "path";
 export default defineConfig({
   base: "./",
   build: {
-    sourcemap: true,
+    sourcemap: false,
     target: "esnext",
-    minify: false,
+    minify: "esbuild",
     chunkSizeWarningLimit: 1024,
     rollupOptions: {
       output: {

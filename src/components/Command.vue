@@ -4,30 +4,33 @@ import minimist from "minimist";
 
 import * as commands from "@/commands";
 import { useCommandStore } from "@/stores/command";
-import { hideMainUI, pushCommandHistory } from "@/common/funcs";
+import { hideMainUI, pushCommandHistory, sleep } from "@/common/funcs";
+
+import emojiData from "../commands/emoji/emoji";
 
 const commandStore = useCommandStore();
 
 let wait = false;
-let selectCommand = "";
 const handleSelect = async (selected) => {
   const $input = document.querySelector(
     ".command-input input"
   ) as HTMLInputElement;
   wait = selected.wait || false;
-  selectCommand = selected.value || "";
+
+  const splitInput = $input.value.split(" ");
+  splitInput[splitInput.length - 1] = selected.value;
 
   setTimeout(() => {
-    $input && $input.focus();
-  }, 500);
+    $input.value = splitInput.join(" ");
+    $input.focus();
+  }, 300);
 };
 
 const handleEnter = async () => {
   const $input = document.querySelector(
     ".command-input input"
   ) as HTMLInputElement;
-  const value = selectCommand || $input.value;
-  selectCommand = "";
+  const value = $input.value;
   if (wait) {
     wait = false;
     return;
@@ -110,6 +113,11 @@ const handleEnter = async () => {
     //   await commands.sort.sort();
     //   hideMainUI();
     //   break;
+    case "emo":
+    case "emoji":
+      await commands.emoji.generate(argv);
+      hideMainUI();
+      break;
     case "q":
     case "quit":
       commands.page.quit();
@@ -147,12 +155,45 @@ commandList.sort((a, b) => {
   }
 });
 const querySearch = (queryString: string, cb: any) => {
-  const results = queryString
+  let results = queryString
     ? commandList.filter(
         (item) =>
           item.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
       )
     : commandList;
+
+  if (results.length === 0) {
+    const splitQueryString: string[] = queryString.split(" ");
+
+    switch (splitQueryString[0]) {
+      case "emo":
+      case "emoji":
+        if (
+          !Number.isInteger(
+            parseInt(splitQueryString[splitQueryString.length - 1])
+          )
+        ) {
+          const subQueryString = splitQueryString
+            .slice(1)
+            .filter((item) => !Number.isInteger(item));
+
+          const emojiKeyword = subQueryString[subQueryString.length - 1];
+          if (emojiKeyword.length > 2) {
+            results = emojiData.emoji
+              .filter((emoji) => {
+                return emoji.name.indexOf(emojiKeyword) > -1;
+              })
+              .map((item) => ({
+                value: item.emoji,
+                desc: item.name,
+                wait: true,
+              }));
+          }
+        }
+
+        break;
+    }
+  }
   // call callback function to return suggestions
   cb(results);
 };
@@ -188,7 +229,7 @@ const handleClose = () => {
     <template #default="{ item }">
       <div>
         :{{ item.value }}
-        <span class="text-gray-400">-- {{ item.desc }}</span>
+        <span class="text-gray-400"> - {{ item.desc }}</span>
       </div>
     </template>
   </el-autocomplete>
