@@ -1,8 +1,8 @@
 import "@logseq/libs";
 
 export async function generate(argv) {
-  if (argv._.length <= 1) {
-    logseq.App.showMsg("Please input at least one emoji." + argv._.join(" "));
+  if (argv._.length < 1) {
+    logseq.App.showMsg("Please input at least one emoji.");
     return;
   }
   let repeats = 1;
@@ -12,7 +12,7 @@ export async function generate(argv) {
   }
 
   if (argv._.length < 1) {
-    logseq.App.showMsg("Please input at least one emoji." + argv._.join(" "));
+    logseq.App.showMsg("Please input at least one emoji.");
     return;
   }
 

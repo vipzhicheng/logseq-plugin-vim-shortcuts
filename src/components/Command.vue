@@ -181,7 +181,10 @@ const querySearch = (queryString: string, cb: any) => {
           if (emojiKeyword.length > 2) {
             results = emojiData.emoji
               .filter((emoji) => {
-                return emoji.name.indexOf(emojiKeyword) > -1;
+                return (
+                  emoji.name.toLowerCase().indexOf(emojiKeyword.toLowerCase()) >
+                  -1
+                );
               })
               .map((item) => ({
                 value: item.emoji,
