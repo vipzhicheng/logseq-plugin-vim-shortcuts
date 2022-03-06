@@ -6,10 +6,19 @@ export async function generate(argv) {
     logseq.App.showMsg("No block selected!");
     return;
   }
+
+  let u = argv.unit || argv.u;
+  const uMapping = {
+    p: "paragraph",
+    w: "word",
+    s: "sentence",
+  };
+  if (uMapping[u]) {
+    u = uMapping[u];
+  }
+
   const lines = parseInt(argv._[0]) || 1;
-  const unit = ["paragraph", "sentence", "word"].includes(argv.unit)
-    ? argv.unit
-    : "sentence";
+  const unit = ["paragraph", "sentence", "word"].includes(u) ? u : "sentence";
 
   let currentBlockFilled = false;
   for (let i = 0; i < lines; i++) {

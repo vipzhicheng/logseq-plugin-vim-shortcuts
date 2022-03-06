@@ -99,6 +99,8 @@ In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;
 - `:re` and `:rename`: Rename current page name, if target page exists, page content will be merged.
 - `:undo` and `:redo`: Undo and redo last edit.
 - `:lorem` and `:lorem-ipsum`: generate random blocks in same level, with `--unit word|paragraph|sentence` to change random block unit.
+  - `--unit` has a short style as `-u`
+  - `word`, `paragraph` and `sentence` also have short styles as `w`, `p`, and `s`.
 - `:emo`a nd `:emoji`: Insert emojis by searching keyword, you can repeat emoji by appending a number.
 - `:w` and `:write`: Save current page, actually this is a fake one, because Logseq save automatically.
 - `:wq`: Save current page and quit vim command mode.
