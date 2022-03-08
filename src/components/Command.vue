@@ -231,7 +231,7 @@ const handleClose = () => {
     </template>
     <template #default="{ item }">
       <div>
-        :{{ item.value }}
+        :<span class="font-bold">{{ item.value }}</span>
         <span class="text-gray-400"> - {{ item.desc }}</span>
       </div>
     </template>
