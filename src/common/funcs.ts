@@ -76,11 +76,31 @@ export const readClipboard = (): string => {
   return tempCache.clipboard;
 };
 
-export const setVisualMode = (visualMode: boolean) => {
+export const setVisualMode = (visualMode: boolean, message = true) => {
   if (visualMode) {
-    logseq.App.showMsg("Visual block mode enabled", "success");
+    message && logseq.App.showMsg("Visual block mode enabled", "success");
+    // logseq.App.registerUIItem("pagebar", {
+    //   key: "vim-shortcut-mode",
+    //   template: `
+    //     <span class="">
+    //       <a title="Visual mode" class="button" data-on-click="">
+    //         Visual
+    //       </a>
+    //     </span>
+    //   `,
+    // });
   } else {
-    logseq.App.showMsg("Visual block mode disabled", "success");
+    message && logseq.App.showMsg("Visual block mode disabled", "success");
+    // logseq.App.registerUIItem("pagebar", {
+    //   key: "vim-shortcut-mode",
+    //   template: `
+    //     <span class="">
+    //       <a title="Non-Visual mode" class="button" data-on-click="">
+    //         Normal
+    //       </a>
+    //     </span>
+    //   `,
+    // });
   }
   tempCache.visualMode = visualMode;
 };

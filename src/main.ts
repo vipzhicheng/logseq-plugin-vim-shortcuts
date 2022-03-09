@@ -11,6 +11,7 @@ import {
   getCommandFromHistoryBack,
   getCommandFromHistoryForward,
   hideMainUI,
+  setVisualMode,
 } from "./common/funcs";
 import bottom from "./keybindings/bottom";
 import changeCase from "./keybindings/changeCase";
@@ -135,6 +136,7 @@ async function main() {
 
   // setup ui hotkeys
   setHotkeys(logseq);
+  setVisualMode(false);
 
   const $input = document.querySelector(
     ".command-input input"
