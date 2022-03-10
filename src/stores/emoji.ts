@@ -38,7 +38,7 @@ export const useEmojiStore = defineStore("emoji", {
       return this.picker;
     },
     async showPicker() {
-      const { left, top, rect, pos } =
+      const { left, top, rect } =
         await logseq.Editor.getEditingCursorPosition();
       Object.assign(this.emojiPickerEl.style, {
         position: "absolute",

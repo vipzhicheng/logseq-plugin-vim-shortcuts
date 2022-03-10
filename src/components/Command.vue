@@ -45,7 +45,6 @@ const handleEnter = async () => {
   let delayFocus = true;
 
   let pageName;
-  console.log("cmd", cmd);
   switch (cmd) {
     case "h":
     case "help":
