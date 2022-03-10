@@ -51,7 +51,11 @@ export async function sort() {
       for (let j = 0; j < blocks.length - i; j++) {
         const a = blocks[j];
         const b = blocks[j + 1];
-        if (a && b && a.content.localeCompare(b.content) > 0) {
+        if (
+          a &&
+          b &&
+          a.content.localeCompare(b.content, "en", { numeric: true }) > 0
+        ) {
           try {
             await logseq.Editor.moveBlock(a.uuid, b.uuid, {
               before: false,
