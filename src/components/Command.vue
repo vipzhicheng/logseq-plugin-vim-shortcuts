@@ -19,7 +19,6 @@ const handleSelect = async (selected) => {
 
   const splitInput = $input.value.split(" ");
   splitInput[splitInput.length - 1] = selected.value;
-
   setTimeout(() => {
     $input.value = splitInput.join(" ");
     $input.focus();
@@ -46,6 +45,7 @@ const handleEnter = async () => {
   let delayFocus = true;
 
   let pageName;
+  console.log("cmd", cmd);
   switch (cmd) {
     case "h":
     case "help":
@@ -113,10 +113,9 @@ const handleEnter = async () => {
     //   await commands.sort.sort();
     //   hideMainUI();
     //   break;
-    case "emo":
+    case "emoji-picker":
     case "emoji":
       await commands.emoji.generate(argv);
-      hideMainUI();
       break;
     case "q":
     case "quit":
@@ -154,6 +153,7 @@ commandList.sort((a, b) => {
     return 0;
   }
 });
+const isCommand = ref(true);
 const querySearch = (queryString: string, cb: any) => {
   let results = queryString
     ? commandList.filter(
@@ -163,10 +163,10 @@ const querySearch = (queryString: string, cb: any) => {
     : commandList;
 
   if (results.length === 0) {
+    isCommand.value = false;
     const splitQueryString: string[] = queryString.split(" ");
 
     switch (splitQueryString[0]) {
-      case "emo":
       case "emoji":
         if (
           !Number.isInteger(
@@ -196,6 +196,8 @@ const querySearch = (queryString: string, cb: any) => {
 
         break;
     }
+  } else {
+    isCommand.value = true;
   }
   // call callback function to return suggestions
   cb(results);
@@ -210,6 +212,7 @@ const handleClose = () => {
 <template>
   <el-autocomplete
     v-model="commandStore.input"
+    :v-show="commandStore.visible"
     :fetch-suggestions="querySearch"
     :trigger-on-focus="commandStore.triggerOnFocus"
     :highlight-first-item="true"
@@ -231,7 +234,8 @@ const handleClose = () => {
     </template>
     <template #default="{ item }">
       <div>
-        :<span class="font-bold">{{ item.value }}</span>
+        <span v-if="isCommand">:</span
+        ><span class="font-bold">{{ item.value }}</span>
         <span class="text-gray-400"> - {{ item.desc }}</span>
       </div>
     </template>

@@ -1,7 +1,9 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
 import { debug, getSettings } from "@/common/funcs";
+import { useCommandStore } from "@/stores/command";
 
 export default (logseq: ILSPluginUser) => {
+  const commandStore = useCommandStore();
   const settings = getSettings();
 
   const handleDocumentClick = () => {
@@ -27,6 +29,7 @@ export default (logseq: ILSPluginUser) => {
       },
       async () => {
         debug("Call VIM commands");
+        commandStore.show();
         logseq.showMainUI({
           autoFocus: true,
         });
@@ -48,6 +51,7 @@ export default (logseq: ILSPluginUser) => {
     },
     async () => {
       debug("Call VIM commands non editing");
+      commandStore.show();
       logseq.showMainUI({
         autoFocus: true,
       });

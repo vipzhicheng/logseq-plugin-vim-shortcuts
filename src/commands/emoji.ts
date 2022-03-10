@@ -1,8 +1,31 @@
 import "@logseq/libs";
+import { useEmojiStore } from "@/stores/emoji";
+import { hideMainUI } from "@/common/funcs";
 
 export async function generate(argv) {
-  if (argv._.length < 1) {
-    logseq.App.showMsg("Please input at least one emoji.");
+  if (argv._.length < 1 || !argv._[0]) {
+    // logseq.App.showMsg("Please input at least one emoji.");
+    // popup emoji picker
+    const isEditing = await logseq.Editor.checkEditing();
+    if (!isEditing) {
+      logseq.App.showMsg("Please edit a block first.");
+      return;
+    }
+    const emojiStore = useEmojiStore();
+    const { left, top, rect } = await logseq.Editor.getEditingCursorPosition();
+
+    Object.assign(emojiStore.emojiPickerEl.style, {
+      position: "absolute",
+      top: top + rect.top + "px",
+      left: left + rect.left + "px",
+    });
+
+    setTimeout(() => {
+      if (emojiStore.picker) {
+        emojiStore.picker.showPicker(emojiStore.emojiPickerEl);
+      }
+    }, 100);
+
     return;
   }
   let repeats = 1;
@@ -25,4 +48,5 @@ export async function generate(argv) {
       await logseq.Editor.insertAtEditingCursor(" ");
     }
   }
+  hideMainUI();
 }

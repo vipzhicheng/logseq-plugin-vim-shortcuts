@@ -38,7 +38,7 @@ export const commandList = [
   { value: "redo", desc: "Redo last edit.", wait: false },
   { value: "lorem", desc: "Random generate blocks.", wait: true },
   { value: "lorem-ipsum", desc: "Random generate blocks.", wait: true },
-  { value: "emo", desc: "Search and input emojis.", wait: true },
+  { value: "emoji-picker", desc: "Search and input emojis.", wait: false },
   { value: "emoji", desc: "Search and input emojis.", wait: true },
   // { value: "sort", desc: "Sort blocks a-z.", wait: false },
   // { value: "rsort", desc: "Sort blocks z-a.", wait: false },
@@ -73,8 +73,16 @@ export const useCommandStore = defineStore("command", {
     commandList,
     triggerOnFocus: false,
     input: "",
+    visible: true,
   }),
   actions: {
+    show() {
+      this.input = "";
+      this.visible = true;
+    },
+    hide() {
+      this.visible = false;
+    },
     getCommandList() {
       return this.commandList;
     },

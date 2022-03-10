@@ -8,6 +8,7 @@ import {
 import { N, TempCache } from "./type";
 import { schemaVersion } from "../../package.json";
 import hotkeys from "hotkeys-js";
+import { useCommandStore } from "@/stores/command";
 
 export async function createPageIfNotExists(pageName): Promise<PageEntity> {
   let page = await logseq.Editor.getPage(pageName);
@@ -180,6 +181,9 @@ export const resetCommandCursor = () => {
 };
 
 export const hideMainUI = () => {
+  const commandStore = useCommandStore();
+  commandStore.emptyInput();
+
   logseq.hideMainUI({
     restoreEditingCursor: true,
   });

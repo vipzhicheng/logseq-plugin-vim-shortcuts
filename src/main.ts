@@ -57,9 +57,16 @@ import { createPinia } from "pinia";
 
 import { commandList } from "./stores/command";
 
+import { useEmojiStore } from "@/stores/emoji";
+
 async function main() {
   // settings
   initSettings();
+
+  // setup vue
+  const app = createApp(App);
+  app.use(createPinia());
+  app.mount("#app");
 
   // bindings
   number(logseq);
@@ -129,14 +136,12 @@ async function main() {
 
   mark(logseq);
 
-  // setup vue
-  const app = createApp(App);
-  app.use(createPinia());
-  app.mount("#app");
-
   // setup ui hotkeys
   setHotkeys(logseq);
-  setVisualMode(false);
+  setVisualMode(false, false);
+
+  const emojiStore = useEmojiStore();
+  emojiStore.init();
 
   const $input = document.querySelector(
     ".command-input input"
@@ -146,7 +151,9 @@ async function main() {
   ) as HTMLElement;
   const $run = document.querySelector(".command-run") as HTMLButtonElement;
   const handleClick = (e) => {
-    $input && $input.focus();
+    setTimeout(() => {
+      $input && $input.focus();
+    }, 100);
     e.stopPropagation();
     return false;
   };
