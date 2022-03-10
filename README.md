@@ -50,6 +50,7 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `ss`: Search block content in Stackoverflow.
 - `sy`: Search block content in Youtube.
 - `ctrl+v`: Toggle visual block mode.
+- `ctrl+e`: Trigger emoji picker UI.
 
 ## Modes
 

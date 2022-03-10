@@ -12,19 +12,7 @@ export async function generate(argv) {
       return;
     }
     const emojiStore = useEmojiStore();
-    const { left, top, rect } = await logseq.Editor.getEditingCursorPosition();
-
-    Object.assign(emojiStore.emojiPickerEl.style, {
-      position: "absolute",
-      top: top + rect.top + "px",
-      left: left + rect.left + "px",
-    });
-
-    setTimeout(() => {
-      if (emojiStore.picker) {
-        emojiStore.picker.showPicker(emojiStore.emojiPickerEl);
-      }
-    }, 100);
+    emojiStore.showPicker();
 
     return;
   }

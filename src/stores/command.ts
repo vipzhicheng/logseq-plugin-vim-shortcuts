@@ -83,6 +83,9 @@ export const useCommandStore = defineStore("command", {
     hide() {
       this.visible = false;
     },
+    setVisible(visible) {
+      this.visible = visible;
+    },
     getCommandList() {
       return this.commandList;
     },

@@ -180,6 +180,14 @@ export const resetCommandCursor = () => {
   commandCursor = 0;
 };
 
+export const showMainUI = (inputVisible) => {
+  const commandStore = useCommandStore();
+  commandStore.setVisible(inputVisible);
+  logseq.showMainUI({
+    autoFocus: true,
+  });
+};
+
 export const hideMainUI = () => {
   const commandStore = useCommandStore();
   commandStore.emptyInput();
@@ -295,6 +303,7 @@ export const defaultSettings = {
   markJump: "'",
   markJumpSidebar: "mod+'",
   command: "mod+shift+;",
+  emoji: "ctrl+e",
   settingsVersion,
   disabled: false,
 };

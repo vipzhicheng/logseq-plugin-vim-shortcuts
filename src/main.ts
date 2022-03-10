@@ -58,6 +58,7 @@ import { createPinia } from "pinia";
 import { commandList } from "./stores/command";
 
 import { useEmojiStore } from "@/stores/emoji";
+import emoji from "./keybindings/emoji";
 
 async function main() {
   // settings
@@ -141,7 +142,8 @@ async function main() {
   setVisualMode(false, false);
 
   const emojiStore = useEmojiStore();
-  emojiStore.init();
+  emojiStore.initPicker();
+  emoji(logseq);
 
   const $input = document.querySelector(
     ".command-input input"

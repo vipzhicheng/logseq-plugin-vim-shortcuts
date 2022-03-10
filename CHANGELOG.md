@@ -4,7 +4,10 @@
 
 - feat: add `@back` and `@forward` for command mode `:go` command.
 - feat: add `:lorem` command to generate some random blocks.
-- feat: add `:emo` and `:emoji` to insert emojis by searching keyword.
+- feat: add `:emoji` to insert emojis by searching keyword.
+- feat: add `:emoji-picker` to open emoji picker UI.
+- feat: add `ctrl+e` to trigger emoji picker UI.
+- feat: add `/Insert emoji` slash command to trigger emoji picker UI.
 
 ## v0.1.0
 
