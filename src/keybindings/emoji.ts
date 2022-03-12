@@ -37,5 +37,5 @@ export default (logseq: ILSPluginUser) => {
     );
   });
 
-  logseq.Editor.registerSlashCommand("Insert emoji", emojiHandler);
+  logseq.Editor.registerSlashCommand("Insert Emoji", emojiHandler);
 };

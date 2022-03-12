@@ -1,4 +1,8 @@
-import { BlockUUID, ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
+import {
+  BlockEntity,
+  BlockUUID,
+  ILSPluginUser,
+} from "@logseq/libs/dist/LSPlugin";
 import { debug, getCurrentBlockUUID, getSettings } from "@/common/funcs";
 
 const collapse = async (blockUUID: BlockUUID | undefined) => {
@@ -10,10 +14,11 @@ const collapse = async (blockUUID: BlockUUID | undefined) => {
     const block = await logseq.Editor.getBlock(blockUUID, {
       includeChildren: true,
     });
+    console.log("block", block);
     if (block && block.children && block.children.length > 0) {
-      for (let item of block.children) {
-        if (Array.isArray(item) && item[0] === "uuid") {
-          await collapse(item[1]);
+      for (let item of block.children as BlockEntity[]) {
+        if (item.uuid) {
+          await collapse(item.uuid);
         }
       }
     }

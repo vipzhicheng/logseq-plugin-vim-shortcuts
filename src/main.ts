@@ -55,10 +55,13 @@ import undo from "./keybindings/undo";
 import up from "./keybindings/up";
 import { createPinia } from "pinia";
 
-import { commandList } from "./stores/command";
+import { commandList, useCommandStore } from "./stores/command";
 
 import { useEmojiStore } from "@/stores/emoji";
 import emoji from "./keybindings/emoji";
+import sort from "./keybindings/sort";
+import collapseAll from "./keybindings/collapseAll";
+import extendAll from "./keybindings/extendAll";
 
 async function main() {
   // settings
@@ -128,6 +131,7 @@ async function main() {
   changeCase(logseq);
   changeCaseUpperCase(logseq);
   changeCaseLowerCase(logseq);
+  sort(logseq);
   command(logseq);
 
   // load marks
@@ -161,21 +165,22 @@ async function main() {
   };
 
   const handleKeyup = async (e) => {
+    const commandStore = useCommandStore();
     if (e.keyCode === 38 || e.code === "ArrowUp") {
       if ($popper.style.display === "none") {
         e.stopPropagation();
         const command = getCommandFromHistoryBack();
-        $input.value = command;
+        commandStore.setInput(command);
       }
     } else if (e.keyCode === 40 || e.code === "ArrowDown") {
       if ($popper.style.display === "none") {
         const command = getCommandFromHistoryForward();
         e.stopPropagation();
-        $input.value = command;
+        commandStore.setInput(command);
       }
     } else if (e.keyCode === 27 || e.code === "Escape") {
       e.stopPropagation();
-      $input.value = "";
+      commandStore.emptyInput();
       hideMainUI();
     } else if (e.keyCode === 13 || e.code === "Enter") {
       e.stopPropagation();
@@ -187,17 +192,18 @@ async function main() {
   };
 
   const handleKeydown = (e) => {
+    const commandStore = useCommandStore();
     if (e.keyCode === 9 || e.code === "Tab") {
       e.preventDefault();
       e.stopPropagation();
-      const keyword = $input.value;
+      const keyword = commandStore.input;
       const findCommand = commandList.filter((c) => {
         return c.value.toLowerCase().startsWith(keyword.toLowerCase());
       });
 
       if (findCommand.length > 0) {
         if (findCommand.length === 1) {
-          $input.value = findCommand[0].value;
+          commandStore.setInput(findCommand[0].value);
         }
       } else {
         // not find
@@ -224,10 +230,9 @@ async function main() {
               });
               if (findLastToken.length > 0) {
                 if (findLastToken.length === 1) {
-                  $input.value =
-                    splitKeyword.slice(0, -1).join(" ") +
-                    " " +
-                    findLastToken[0];
+                  commandStore.setInput(
+                    splitKeyword.slice(0, -1).join(" ") + " " + findLastToken[0]
+                  );
                 }
               }
               break;

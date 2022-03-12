@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v0.1.2
+
+- feat: add `:sort` and `:rsort` to sort blocks, it support to sort/reverse sort page first level blocks with no focus any blocks and to sort/reverse sort sub level blocks with focus on one block.
+- feat: also you can sort sub level blocks or reverse sort by slash command: `/Sort Blocks` and `/Reverse Sort Blocks`.
+- fix: change emoji-picker ui shortcut from `ctrl+e` to `mod+/` because `ctrl+e` in editing mode have special meaning.
+- fix: remove `trigger-on-focus` option commands.
+
 ## v0.1.1
 
 - feat: add `@back` and `@forward` for command mode `:go` command.

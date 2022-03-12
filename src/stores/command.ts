@@ -40,22 +40,12 @@ export const commandList = [
   { value: "lorem-ipsum", desc: "Random generate blocks.", wait: true },
   { value: "emoji-picker", desc: "Search and input emojis.", wait: false },
   { value: "emoji", desc: "Search and input emojis.", wait: true },
-  // { value: "sort", desc: "Sort blocks a-z.", wait: false },
-  // { value: "rsort", desc: "Sort blocks z-a.", wait: false },
+  { value: "sort", desc: "Sort blocks a-z.", wait: false },
+  { value: "rsort", desc: "Sort blocks z-a.", wait: false },
   {
     value: "go ",
     desc: "Create new page or go to existed page.",
     wait: true,
-  },
-  {
-    value: "option-trigger-autocomplete-on-focus",
-    desc: "Trigger autocomplete on focus.",
-    wait: false,
-  },
-  {
-    value: "option-no-trigger-autocomplete-on-focus",
-    desc: "No trigger autocomplete on focus.",
-    wait: false,
   },
   {
     value: "h",
@@ -97,6 +87,9 @@ export const useCommandStore = defineStore("command", {
     },
     emptyInput() {
       this.input = "";
+    },
+    setInput(input) {
+      this.input = input;
     },
   },
 });

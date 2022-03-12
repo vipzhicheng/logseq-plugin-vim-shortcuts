@@ -1,6 +1,7 @@
 import "@logseq/libs";
 import { useEmojiStore } from "@/stores/emoji";
 import { hideMainUI } from "@/common/funcs";
+import { useCommandStore } from "@/stores/command";
 
 export async function generate(argv) {
   if (argv._.length < 1 || !argv._[0]) {
@@ -13,6 +14,8 @@ export async function generate(argv) {
     }
     const emojiStore = useEmojiStore();
     emojiStore.showPicker();
+    const commandStore = useCommandStore();
+    commandStore.hide();
 
     return;
   }

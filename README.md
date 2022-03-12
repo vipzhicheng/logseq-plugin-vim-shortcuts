@@ -50,7 +50,7 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `ss`: Search block content in Stackoverflow.
 - `sy`: Search block content in Youtube.
 - `ctrl+v`: Toggle visual block mode.
-- `ctrl+e`: Trigger emoji picker UI.
+- `mod+/`: Trigger emoji picker UI.
 
 ## Modes
 
@@ -102,12 +102,12 @@ In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;
 - `:lorem` and `:lorem-ipsum`: generate random blocks in same level, with `--unit word|paragraph|sentence` to change random block unit.
   - `--unit` has a short style as `-u`
   - `word`, `paragraph` and `sentence` also have short styles as `w`, `p`, and `s`.
-- `:emo`a nd `:emoji`: Insert emojis by searching keyword, you can repeat emoji by appending a number.
+- `:emoji`: Insert emojis by searching keyword, you can repeat emoji by appending a number.
+- `:emoji-picker`: Insert emoji by emoji UI.
+- `:sort` and `rsort`: Sort page first level blocks with no focus any blocks and sort sub level blocks with focus on one block.
 - `:w` and `:write`: Save current page, actually this is a fake one, because Logseq save automatically.
 - `:wq`: Save current page and quit vim command mode.
 - `:q` and `:quit`: Quit vim command mode.
-- `:option-trigger-autocomplete-on-focus`: Option: enable showing autocomplete list when input just get focused.
-- `:option-no-trigger-autocomplete-on-focus`: Options: disable showing autocomplete list when input just get focused.
 - `h` and `help`: Show a help message modal.
 
 ## Case Change Styles
@@ -136,6 +136,14 @@ In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;
 - NUMBER can be more than 10, actually thousands if you wish.
 - The `m` shortcut could be conflicted with `Markmap` plugin, so if you met this issue, please upgrade `Markmap` plugin to latest version.
 - NUMBER=1 is the default one, so you can just press `m` to save and press `'` to load for mark 1.
+
+## Slash commands this plugin added
+
+Because some VIM shortcuts or commands may also need to be as a slash command, so this plugin provides some.
+
+- `/Insert Emoji`: Insert emoji at current position.
+- `/Sort Blocks`: Sort sub level children blocks from a to z.
+- `/Reverse Sort Blocks`: Sort sub level children blocks from z to a.
 
 ## Other notes
 

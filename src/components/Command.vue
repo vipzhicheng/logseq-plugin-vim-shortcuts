@@ -17,10 +17,18 @@ const handleSelect = async (selected) => {
   ) as HTMLInputElement;
   wait = selected.wait || false;
 
-  const splitInput = $input.value.split(" ");
+  const value = commandStore.input;
+  const splitInput = value.split(" ");
   splitInput[splitInput.length - 1] = selected.value;
+  const newValue = splitInput.join(" ");
+
+  switch (newValue) {
+    default:
+      commandStore.setInput(newValue);
+      break;
+  }
+
   setTimeout(() => {
-    $input.value = splitInput.join(" ");
     $input.focus();
   }, 300);
 };
@@ -29,13 +37,14 @@ const handleEnter = async () => {
   const $input = document.querySelector(
     ".command-input input"
   ) as HTMLInputElement;
-  const value = $input.value;
+  const value = commandStore.input;
   if (wait) {
     wait = false;
     return;
   }
   if (!value) return;
   pushCommandHistory(value);
+  commandStore.emptyInput();
 
   const split: string[] = value.split(" ");
   const args = split.slice(1).join(" ");
@@ -50,14 +59,6 @@ const handleEnter = async () => {
     case "help":
       commands.help.show();
       delayFocus = false;
-      break;
-    case "option-trigger-autocomplete-on-focus":
-      commandStore.enableTriggerOnFocus();
-      logseq.App.showMsg("trigger-on-focus is on!");
-      break;
-    case "option-no-trigger-autocomplete-on-focus":
-      commandStore.disableTriggerOnFocus();
-      logseq.App.showMsg("trigger-on-focus is off!");
       break;
     case "re":
     case "rename":
@@ -108,10 +109,14 @@ const handleEnter = async () => {
       await commands.lorem.generate(argv);
       hideMainUI();
       break;
-    // case "sort":
-    //   await commands.sort.sort();
-    //   hideMainUI();
-    //   break;
+    case "sort":
+      hideMainUI();
+      await commands.sort.sort();
+      break;
+    case "rsort":
+      hideMainUI();
+      await commands.sort.rsort();
+      break;
     case "emoji-picker":
     case "emoji":
       await commands.emoji.generate(argv);
@@ -129,7 +134,7 @@ const handleEnter = async () => {
       ) {
         await commands.page.substitutePage(value);
       } else {
-        logseq.App.showMsg("Unknown command");
+        logseq.App.showMsg("Unknown command: " + cmd);
       }
       break;
   }
@@ -211,7 +216,7 @@ const handleClose = () => {
 <template>
   <el-autocomplete
     v-model="commandStore.input"
-    :v-show="commandStore.visible"
+    v-show="commandStore.visible"
     :fetch-suggestions="querySearch"
     :trigger-on-focus="commandStore.triggerOnFocus"
     :highlight-first-item="true"

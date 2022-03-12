@@ -32,7 +32,8 @@ export async function setHotkeys(logseq: ILSPluginUser) {
       ".command-input input"
     ) as HTMLInputElement;
     if ($input) {
-      $input.value = "";
+      const commandStore = useCommandStore();
+      commandStore.emptyInput();
     }
     hideMainUI();
     return false;
@@ -303,7 +304,7 @@ export const defaultSettings = {
   markJump: "'",
   markJumpSidebar: "mod+'",
   command: "mod+shift+;",
-  emoji: "ctrl+e",
+  emoji: "mod+/",
   settingsVersion,
   disabled: false,
 };
