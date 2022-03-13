@@ -17,20 +17,16 @@ const handleSelect = async (selected) => {
   ) as HTMLInputElement;
   wait = selected.wait || false;
 
-  const value = commandStore.input;
+  const value = $input.value;
   const splitInput = value.split(" ");
   splitInput[splitInput.length - 1] = selected.value;
   const newValue = splitInput.join(" ");
 
-  switch (newValue) {
-    default:
-      commandStore.setInput(newValue);
-      break;
-  }
-
   setTimeout(() => {
+    commandStore.setInput(newValue);
+    $input.value = newValue;
     $input.focus();
-  }, 300);
+  }, 200);
 };
 
 const handleEnter = async () => {
@@ -159,6 +155,9 @@ commandList.sort((a, b) => {
 });
 const isCommand = ref(true);
 const querySearch = (queryString: string, cb: any) => {
+  const $input = document.querySelector(
+    ".command-input input"
+  ) as HTMLInputElement;
   let results = queryString
     ? commandList.filter(
         (item) =>
@@ -182,19 +181,35 @@ const querySearch = (queryString: string, cb: any) => {
             .filter((item) => !Number.isInteger(item));
 
           const emojiKeyword = subQueryString[subQueryString.length - 1];
-          if (emojiKeyword.length > 2) {
-            results = emojiData.emoji
+          if (emojiKeyword.length > 3) {
+            results = emojiData
               .filter((emoji) => {
+                const keyword = Array.isArray(emoji.keyword)
+                  ? emoji.keyword
+                  : [emoji.keyword];
                 return (
-                  emoji.name.toLowerCase().indexOf(emojiKeyword.toLowerCase()) >
-                  -1
+                  `:${keyword.join(":|:")}:`
+                    .toLowerCase()
+                    .indexOf(emojiKeyword.toLowerCase()) > -1
                 );
               })
-              .map((item) => ({
-                value: item.emoji,
-                desc: item.name,
-                wait: true,
-              }));
+              .map((emoji) => {
+                return {
+                  value: emoji.title,
+                  desc: emoji.description,
+                  wait: true,
+                };
+              });
+          }
+
+          if (
+            emojiKeyword[0] === ":" &&
+            emojiKeyword[emojiKeyword.length - 1] === ":" &&
+            results.length > 0
+          ) {
+            subQueryString[subQueryString.length - 1] = results[0].value;
+            $input.value = "emoji " + subQueryString.join(" ");
+            commandStore.setInput($input.value);
           }
         }
 
@@ -221,7 +236,7 @@ const handleClose = () => {
     :trigger-on-focus="commandStore.triggerOnFocus"
     :highlight-first-item="true"
     :teleported="false"
-    class="w-full command-input absolute bottom-0"
+    class="w-full command-input absolute bottom-0 font-mono font-bold"
     popper-class="w-[99%] overflow-hidden"
     size="large"
     placement="bottom-start"
@@ -240,7 +255,8 @@ const handleClose = () => {
       <div>
         <span v-if="isCommand">:</span
         ><span class="font-bold">{{ item.value }}</span>
-        <span class="text-gray-400"> - {{ item.desc }}</span>
+        <span v-if="isCommand">-</span>
+        <span class="text-gray-400">{{ item.desc }}</span>
       </div>
     </template>
   </el-autocomplete>

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.1.3
+
+- feat: add `mod+alt+;` shortcut to command mode for Windows trigger.
+- feat: support emoji replacement, like `:smile:` will be replaced to 😄 immediately.
+
 ## v0.1.2
 
 - feat: add `:sort` and `:rsort` to sort blocks, it support to sort/reverse sort page first level blocks with no focus any blocks and to sort/reverse sort sub level blocks with focus on one block.

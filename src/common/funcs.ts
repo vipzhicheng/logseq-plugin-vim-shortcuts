@@ -303,7 +303,7 @@ export const defaultSettings = {
   markSave: "m",
   markJump: "'",
   markJumpSidebar: "mod+'",
-  command: "mod+shift+;",
+  command: ["mod+alt+;", "mod+shift+;"],
   emoji: "mod+/",
   settingsVersion,
   disabled: false,

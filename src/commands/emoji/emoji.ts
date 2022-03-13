@@ -1,1 +1,8692 @@
-export default {"categories":["smileys","people","animals","food","travel","activities","objects","symbols","flags"],"emoji":[{"emoji":"😀","category":0,"name":"grinning face","version":"1.0"},{"emoji":"😃","category":0,"name":"grinning face with big eyes","version":"1.0"},{"emoji":"😄","category":0,"name":"grinning face with smiling eyes","version":"1.0"},{"emoji":"😁","category":0,"name":"beaming face with smiling eyes","version":"1.0"},{"emoji":"😆","category":0,"name":"grinning squinting face","version":"1.0"},{"emoji":"😅","category":0,"name":"grinning face with sweat","version":"1.0"},{"emoji":"🤣","category":0,"name":"rolling on the floor laughing","version":"3.0"},{"emoji":"😂","category":0,"name":"face with tears of joy","version":"1.0"},{"emoji":"🙂","category":0,"name":"slightly smiling face","version":"1.0"},{"emoji":"🙃","category":0,"name":"upside-down face","version":"1.0"},{"emoji":"😉","category":0,"name":"winking face","version":"1.0"},{"emoji":"😊","category":0,"name":"smiling face with smiling eyes","version":"1.0"},{"emoji":"😇","category":0,"name":"smiling face with halo","version":"1.0"},{"emoji":"🥰","category":0,"name":"smiling face with hearts","version":"11.0"},{"emoji":"😍","category":0,"name":"smiling face with heart-eyes","version":"1.0"},{"emoji":"🤩","category":0,"name":"star-struck","version":"5.0"},{"emoji":"😘","category":0,"name":"face blowing a kiss","version":"1.0"},{"emoji":"😗","category":0,"name":"kissing face","version":"1.0"},{"emoji":"☺️","category":0,"name":"smiling face","version":"1.0"},{"emoji":"😚","category":0,"name":"kissing face with closed eyes","version":"1.0"},{"emoji":"😙","category":0,"name":"kissing face with smiling eyes","version":"1.0"},{"emoji":"🥲","category":0,"name":"smiling face with tear","version":"13.0"},{"emoji":"😋","category":0,"name":"face savoring food","version":"1.0"},{"emoji":"😛","category":0,"name":"face with tongue","version":"1.0"},{"emoji":"😜","category":0,"name":"winking face with tongue","version":"1.0"},{"emoji":"🤪","category":0,"name":"zany face","version":"5.0"},{"emoji":"😝","category":0,"name":"squinting face with tongue","version":"1.0"},{"emoji":"🤑","category":0,"name":"money-mouth face","version":"1.0"},{"emoji":"🤗","category":0,"name":"hugging face","version":"1.0"},{"emoji":"🤭","category":0,"name":"face with hand over mouth","version":"5.0"},{"emoji":"🤫","category":0,"name":"shushing face","version":"5.0"},{"emoji":"🤔","category":0,"name":"thinking face","version":"1.0"},{"emoji":"🤐","category":0,"name":"zipper-mouth face","version":"1.0"},{"emoji":"🤨","category":0,"name":"face with raised eyebrow","version":"5.0"},{"emoji":"😐","category":0,"name":"neutral face","version":"1.0"},{"emoji":"😑","category":0,"name":"expressionless face","version":"1.0"},{"emoji":"😶","category":0,"name":"face without mouth","version":"1.0"},{"emoji":"😏","category":0,"name":"smirking face","version":"1.0"},{"emoji":"😒","category":0,"name":"unamused face","version":"1.0"},{"emoji":"🙄","category":0,"name":"face with rolling eyes","version":"1.0"},{"emoji":"😬","category":0,"name":"grimacing face","version":"1.0"},{"emoji":"🤥","category":0,"name":"lying face","version":"3.0"},{"emoji":"😌","category":0,"name":"relieved face","version":"1.0"},{"emoji":"😔","category":0,"name":"pensive face","version":"1.0"},{"emoji":"😪","category":0,"name":"sleepy face","version":"1.0"},{"emoji":"🤤","category":0,"name":"drooling face","version":"3.0"},{"emoji":"😴","category":0,"name":"sleeping face","version":"1.0"},{"emoji":"😷","category":0,"name":"face with medical mask","version":"1.0"},{"emoji":"🤒","category":0,"name":"face with thermometer","version":"1.0"},{"emoji":"🤕","category":0,"name":"face with head-bandage","version":"1.0"},{"emoji":"🤢","category":0,"name":"nauseated face","version":"3.0"},{"emoji":"🤮","category":0,"name":"face vomiting","version":"5.0"},{"emoji":"🤧","category":0,"name":"sneezing face","version":"3.0"},{"emoji":"🥵","category":0,"name":"hot face","version":"11.0"},{"emoji":"🥶","category":0,"name":"cold face","version":"11.0"},{"emoji":"🥴","category":0,"name":"woozy face","version":"11.0"},{"emoji":"😵","category":0,"name":"dizzy face","version":"1.0"},{"emoji":"🤯","category":0,"name":"exploding head","version":"5.0"},{"emoji":"🤠","category":0,"name":"cowboy hat face","version":"3.0"},{"emoji":"🥳","category":0,"name":"partying face","version":"11.0"},{"emoji":"🥸","category":0,"name":"disguised face","version":"13.0"},{"emoji":"😎","category":0,"name":"smiling face with sunglasses","version":"1.0"},{"emoji":"🤓","category":0,"name":"nerd face","version":"1.0"},{"emoji":"🧐","category":0,"name":"face with monocle","version":"5.0"},{"emoji":"😕","category":0,"name":"confused face","version":"1.0"},{"emoji":"😟","category":0,"name":"worried face","version":"1.0"},{"emoji":"🙁","category":0,"name":"slightly frowning face","version":"1.0"},{"emoji":"☹️","category":0,"name":"frowning face","version":"1.0"},{"emoji":"😮","category":0,"name":"face with open mouth","version":"1.0"},{"emoji":"😯","category":0,"name":"hushed face","version":"1.0"},{"emoji":"😲","category":0,"name":"astonished face","version":"1.0"},{"emoji":"😳","category":0,"name":"flushed face","version":"1.0"},{"emoji":"🥺","category":0,"name":"pleading face","version":"11.0"},{"emoji":"😦","category":0,"name":"frowning face with open mouth","version":"1.0"},{"emoji":"😧","category":0,"name":"anguished face","version":"1.0"},{"emoji":"😨","category":0,"name":"fearful face","version":"1.0"},{"emoji":"😰","category":0,"name":"anxious face with sweat","version":"1.0"},{"emoji":"😥","category":0,"name":"sad but relieved face","version":"1.0"},{"emoji":"😢","category":0,"name":"crying face","version":"1.0"},{"emoji":"😭","category":0,"name":"loudly crying face","version":"1.0"},{"emoji":"😱","category":0,"name":"face screaming in fear","version":"1.0"},{"emoji":"😖","category":0,"name":"confounded face","version":"1.0"},{"emoji":"😣","category":0,"name":"persevering face","version":"1.0"},{"emoji":"😞","category":0,"name":"disappointed face","version":"1.0"},{"emoji":"😓","category":0,"name":"downcast face with sweat","version":"1.0"},{"emoji":"😩","category":0,"name":"weary face","version":"1.0"},{"emoji":"😫","category":0,"name":"tired face","version":"1.0"},{"emoji":"🥱","category":0,"name":"yawning face","version":"12.0"},{"emoji":"😤","category":0,"name":"face with steam from nose","version":"1.0"},{"emoji":"😡","category":0,"name":"pouting face","version":"1.0"},{"emoji":"😠","category":0,"name":"angry face","version":"1.0"},{"emoji":"🤬","category":0,"name":"face with symbols on mouth","version":"5.0"},{"emoji":"😈","category":0,"name":"smiling face with horns","version":"1.0"},{"emoji":"👿","category":0,"name":"angry face with horns","version":"1.0"},{"emoji":"💀","category":0,"name":"skull","version":"1.0"},{"emoji":"☠️","category":0,"name":"skull and crossbones","version":"1.0"},{"emoji":"💩","category":0,"name":"pile of poo","version":"1.0"},{"emoji":"🤡","category":0,"name":"clown face","version":"3.0"},{"emoji":"👹","category":0,"name":"ogre","version":"1.0"},{"emoji":"👺","category":0,"name":"goblin","version":"1.0"},{"emoji":"👻","category":0,"name":"ghost","version":"1.0"},{"emoji":"👽","category":0,"name":"alien","version":"1.0"},{"emoji":"👾","category":0,"name":"alien monster","version":"1.0"},{"emoji":"🤖","category":0,"name":"robot","version":"1.0"},{"emoji":"😺","category":0,"name":"grinning cat","version":"1.0"},{"emoji":"😸","category":0,"name":"grinning cat with smiling eyes","version":"1.0"},{"emoji":"😹","category":0,"name":"cat with tears of joy","version":"1.0"},{"emoji":"😻","category":0,"name":"smiling cat with heart-eyes","version":"1.0"},{"emoji":"😼","category":0,"name":"cat with wry smile","version":"1.0"},{"emoji":"😽","category":0,"name":"kissing cat","version":"1.0"},{"emoji":"🙀","category":0,"name":"weary cat","version":"1.0"},{"emoji":"😿","category":0,"name":"crying cat","version":"1.0"},{"emoji":"😾","category":0,"name":"pouting cat","version":"1.0"},{"emoji":"🙈","category":0,"name":"see-no-evil monkey","version":"1.0"},{"emoji":"🙉","category":0,"name":"hear-no-evil monkey","version":"1.0"},{"emoji":"🙊","category":0,"name":"speak-no-evil monkey","version":"1.0"},{"emoji":"💋","category":0,"name":"kiss mark","version":"1.0"},{"emoji":"💌","category":0,"name":"love letter","version":"1.0"},{"emoji":"💘","category":0,"name":"heart with arrow","version":"1.0"},{"emoji":"💝","category":0,"name":"heart with ribbon","version":"1.0"},{"emoji":"💖","category":0,"name":"sparkling heart","version":"1.0"},{"emoji":"💗","category":0,"name":"growing heart","version":"1.0"},{"emoji":"💓","category":0,"name":"beating heart","version":"1.0"},{"emoji":"💞","category":0,"name":"revolving hearts","version":"1.0"},{"emoji":"💕","category":0,"name":"two hearts","version":"1.0"},{"emoji":"💟","category":0,"name":"heart decoration","version":"1.0"},{"emoji":"❣️","category":0,"name":"heart exclamation","version":"1.0"},{"emoji":"💔","category":0,"name":"broken heart","version":"1.0"},{"emoji":"❤️","category":0,"name":"red heart","version":"1.0"},{"emoji":"🧡","category":0,"name":"orange heart","version":"5.0"},{"emoji":"💛","category":0,"name":"yellow heart","version":"1.0"},{"emoji":"💚","category":0,"name":"green heart","version":"1.0"},{"emoji":"💙","category":0,"name":"blue heart","version":"1.0"},{"emoji":"💜","category":0,"name":"purple heart","version":"1.0"},{"emoji":"🤎","category":0,"name":"brown heart","version":"12.0"},{"emoji":"🖤","category":0,"name":"black heart","version":"3.0"},{"emoji":"🤍","category":0,"name":"white heart","version":"12.0"},{"emoji":"💯","category":0,"name":"hundred points","version":"1.0"},{"emoji":"💢","category":0,"name":"anger symbol","version":"1.0"},{"emoji":"💥","category":0,"name":"collision","version":"1.0"},{"emoji":"💫","category":0,"name":"dizzy","version":"1.0"},{"emoji":"💦","category":0,"name":"sweat droplets","version":"1.0"},{"emoji":"💨","category":0,"name":"dashing away","version":"1.0"},{"emoji":"🕳️","category":0,"name":"hole","version":"1.0"},{"emoji":"💣","category":0,"name":"bomb","version":"1.0"},{"emoji":"💬","category":0,"name":"speech balloon","version":"1.0"},{"emoji":"👁️‍🗨️","category":0,"name":"eye in speech bubble","version":"2.0"},{"emoji":"🗨️","category":0,"name":"left speech bubble","version":"2.0"},{"emoji":"🗯️","category":0,"name":"right anger bubble","version":"1.0"},{"emoji":"💭","category":0,"name":"thought balloon","version":"1.0"},{"emoji":"💤","category":0,"name":"zzz","version":"1.0"},{"emoji":"👋","category":1,"name":"waving hand","variations":["👋🏻","👋🏼","👋🏽","👋🏾","👋🏿"],"version":"1.0"},{"emoji":"🤚","category":1,"name":"raised back of hand","variations":["🤚🏻","🤚🏼","🤚🏽","🤚🏾","🤚🏿"],"version":"3.0"},{"emoji":"🖐️","category":1,"name":"hand with fingers splayed","variations":["🖐🏻","🖐🏼","🖐🏽","🖐🏾","🖐🏿"],"version":"1.0"},{"emoji":"✋","category":1,"name":"raised hand","variations":["✋🏻","✋🏼","✋🏽","✋🏾","✋🏿"],"version":"1.0"},{"emoji":"🖖","category":1,"name":"vulcan salute","variations":["🖖🏻","🖖🏼","🖖🏽","🖖🏾","🖖🏿"],"version":"1.0"},{"emoji":"👌","category":1,"name":"OK hand","variations":["👌🏻","👌🏼","👌🏽","👌🏾","👌🏿"],"version":"1.0"},{"emoji":"🤌","category":1,"name":"pinched fingers","variations":["🤌🏻","🤌🏼","🤌🏽","🤌🏾","🤌🏿"],"version":"13.0"},{"emoji":"🤏","category":1,"name":"pinching hand","variations":["🤏🏻","🤏🏼","🤏🏽","🤏🏾","🤏🏿"],"version":"12.0"},{"emoji":"✌️","category":1,"name":"victory hand","variations":["✌🏻","✌🏼","✌🏽","✌🏾","✌🏿"],"version":"1.0"},{"emoji":"🤞","category":1,"name":"crossed fingers","variations":["🤞🏻","🤞🏼","🤞🏽","🤞🏾","🤞🏿"],"version":"3.0"},{"emoji":"🤟","category":1,"name":"love-you gesture","variations":["🤟🏻","🤟🏼","🤟🏽","🤟🏾","🤟🏿"],"version":"5.0"},{"emoji":"🤘","category":1,"name":"sign of the horns","variations":["🤘🏻","🤘🏼","🤘🏽","🤘🏾","🤘🏿"],"version":"1.0"},{"emoji":"🤙","category":1,"name":"call me hand","variations":["🤙🏻","🤙🏼","🤙🏽","🤙🏾","🤙🏿"],"version":"3.0"},{"emoji":"👈","category":1,"name":"backhand index pointing left","variations":["👈🏻","👈🏼","👈🏽","👈🏾","👈🏿"],"version":"1.0"},{"emoji":"👉","category":1,"name":"backhand index pointing right","variations":["👉🏻","👉🏼","👉🏽","👉🏾","👉🏿"],"version":"1.0"},{"emoji":"👆","category":1,"name":"backhand index pointing up","variations":["👆🏻","👆🏼","👆🏽","👆🏾","👆🏿"],"version":"1.0"},{"emoji":"🖕","category":1,"name":"middle finger","variations":["🖕🏻","🖕🏼","🖕🏽","🖕🏾","🖕🏿"],"version":"1.0"},{"emoji":"👇","category":1,"name":"backhand index pointing down","variations":["👇🏻","👇🏼","👇🏽","👇🏾","👇🏿"],"version":"1.0"},{"emoji":"☝️","category":1,"name":"index pointing up","variations":["☝🏻","☝🏼","☝🏽","☝🏾","☝🏿"],"version":"1.0"},{"emoji":"👍","category":1,"name":"thumbs up","variations":["👍🏻","👍🏼","👍🏽","👍🏾","👍🏿"],"version":"1.0"},{"emoji":"👎","category":1,"name":"thumbs down","variations":["👎🏻","👎🏼","👎🏽","👎🏾","👎🏿"],"version":"1.0"},{"emoji":"✊","category":1,"name":"raised fist","variations":["✊🏻","✊🏼","✊🏽","✊🏾","✊🏿"],"version":"1.0"},{"emoji":"👊","category":1,"name":"oncoming fist","variations":["👊🏻","👊🏼","👊🏽","👊🏾","👊🏿"],"version":"1.0"},{"emoji":"🤛","category":1,"name":"left-facing fist","variations":["🤛🏻","🤛🏼","🤛🏽","🤛🏾","🤛🏿"],"version":"3.0"},{"emoji":"🤜","category":1,"name":"right-facing fist","variations":["🤜🏻","🤜🏼","🤜🏽","🤜🏾","🤜🏿"],"version":"3.0"},{"emoji":"👏","category":1,"name":"clapping hands","variations":["👏🏻","👏🏼","👏🏽","👏🏾","👏🏿"],"version":"1.0"},{"emoji":"🙌","category":1,"name":"raising hands","variations":["🙌🏻","🙌🏼","🙌🏽","🙌🏾","🙌🏿"],"version":"1.0"},{"emoji":"👐","category":1,"name":"open hands","variations":["👐🏻","👐🏼","👐🏽","👐🏾","👐🏿"],"version":"1.0"},{"emoji":"🤲","category":1,"name":"palms up together","variations":["🤲🏻","🤲🏼","🤲🏽","🤲🏾","🤲🏿"],"version":"5.0"},{"emoji":"🤝","category":1,"name":"handshake","version":"3.0"},{"emoji":"🙏","category":1,"name":"folded hands","variations":["🙏🏻","🙏🏼","🙏🏽","🙏🏾","🙏🏿"],"version":"1.0"},{"emoji":"✍️","category":1,"name":"writing hand","variations":["✍🏻","✍🏼","✍🏽","✍🏾","✍🏿"],"version":"1.0"},{"emoji":"💅","category":1,"name":"nail polish","variations":["💅🏻","💅🏼","💅🏽","💅🏾","💅🏿"],"version":"1.0"},{"emoji":"🤳","category":1,"name":"selfie","variations":["🤳🏻","🤳🏼","🤳🏽","🤳🏾","🤳🏿"],"version":"3.0"},{"emoji":"💪","category":1,"name":"flexed biceps","variations":["💪🏻","💪🏼","💪🏽","💪🏾","💪🏿"],"version":"1.0"},{"emoji":"🦾","category":1,"name":"mechanical arm","version":"12.0"},{"emoji":"🦿","category":1,"name":"mechanical leg","version":"12.0"},{"emoji":"🦵","category":1,"name":"leg","variations":["🦵🏻","🦵🏼","🦵🏽","🦵🏾","🦵🏿"],"version":"11.0"},{"emoji":"🦶","category":1,"name":"foot","variations":["🦶🏻","🦶🏼","🦶🏽","🦶🏾","🦶🏿"],"version":"11.0"},{"emoji":"👂","category":1,"name":"ear","variations":["👂🏻","👂🏼","👂🏽","👂🏾","👂🏿"],"version":"1.0"},{"emoji":"🦻","category":1,"name":"ear with hearing aid","variations":["🦻🏻","🦻🏼","🦻🏽","🦻🏾","🦻🏿"],"version":"12.0"},{"emoji":"👃","category":1,"name":"nose","variations":["👃🏻","👃🏼","👃🏽","👃🏾","👃🏿"],"version":"1.0"},{"emoji":"🧠","category":1,"name":"brain","version":"5.0"},{"emoji":"🫀","category":1,"name":"anatomical heart","version":"13.0"},{"emoji":"🫁","category":1,"name":"lungs","version":"13.0"},{"emoji":"🦷","category":1,"name":"tooth","version":"11.0"},{"emoji":"🦴","category":1,"name":"bone","version":"11.0"},{"emoji":"👀","category":1,"name":"eyes","version":"1.0"},{"emoji":"👁️","category":1,"name":"eye","version":"1.0"},{"emoji":"👅","category":1,"name":"tongue","version":"1.0"},{"emoji":"👄","category":1,"name":"mouth","version":"1.0"},{"emoji":"👶","category":1,"name":"baby","variations":["👶🏻","👶🏼","👶🏽","👶🏾","👶🏿"],"version":"1.0"},{"emoji":"🧒","category":1,"name":"child","variations":["🧒🏻","🧒🏼","🧒🏽","🧒🏾","🧒🏿"],"version":"5.0"},{"emoji":"👦","category":1,"name":"boy","variations":["👦🏻","👦🏼","👦🏽","👦🏾","👦🏿"],"version":"1.0"},{"emoji":"👧","category":1,"name":"girl","variations":["👧🏻","👧🏼","👧🏽","👧🏾","👧🏿"],"version":"1.0"},{"emoji":"🧑","category":1,"name":"person","variations":["🧑🏻","🧑🏼","🧑🏽","🧑🏾","🧑🏿"],"version":"5.0"},{"emoji":"👱","category":1,"name":"person with blond hair","variations":["👱🏻","👱🏼","👱🏽","👱🏾","👱🏿"],"version":"1.0"},{"emoji":"👨","category":1,"name":"man","variations":["👨🏻","👨🏼","👨🏽","👨🏾","👨🏿"],"version":"1.0"},{"emoji":"🧔","category":1,"name":"man with beard","variations":["🧔🏻","🧔🏼","🧔🏽","🧔🏾","🧔🏿"],"version":"5.0"},{"emoji":"👨‍🦰","category":1,"name":"man with red hair","variations":["👨🏻‍🦰","👨🏼‍🦰","👨🏽‍🦰","👨🏾‍🦰","👨🏿‍🦰"],"version":"11.0"},{"emoji":"👨‍🦱","category":1,"name":"man with curly hair","variations":["👨🏻‍🦱","👨🏼‍🦱","👨🏽‍🦱","👨🏾‍🦱","👨🏿‍🦱"],"version":"11.0"},{"emoji":"👨‍🦳","category":1,"name":"man with white hair","variations":["👨🏻‍🦳","👨🏼‍🦳","👨🏽‍🦳","👨🏾‍🦳","👨🏿‍🦳"],"version":"11.0"},{"emoji":"👨‍🦲","category":1,"name":"man with no hair","variations":["👨🏻‍🦲","👨🏼‍🦲","👨🏽‍🦲","👨🏾‍🦲","👨🏿‍🦲"],"version":"11.0"},{"emoji":"👩","category":1,"name":"woman","variations":["👩🏻","👩🏼","👩🏽","👩🏾","👩🏿"],"version":"1.0"},{"emoji":"👩‍🦰","category":1,"name":"woman with red hair","variations":["👩🏻‍🦰","👩🏼‍🦰","👩🏽‍🦰","👩🏾‍🦰","👩🏿‍🦰"],"version":"11.0"},{"emoji":"🧑‍🦰","category":1,"name":"person with red hair","variations":["🧑🏻‍🦰","🧑🏼‍🦰","🧑🏽‍🦰","🧑🏾‍🦰","🧑🏿‍🦰"],"version":"12.1"},{"emoji":"👩‍🦱","category":1,"name":"woman with curly hair","variations":["👩🏻‍🦱","👩🏼‍🦱","👩🏽‍🦱","👩🏾‍🦱","👩🏿‍🦱"],"version":"11.0"},{"emoji":"🧑‍🦱","category":1,"name":"person with curly hair","variations":["🧑🏻‍🦱","🧑🏼‍🦱","🧑🏽‍🦱","🧑🏾‍🦱","🧑🏿‍🦱"],"version":"12.1"},{"emoji":"👩‍🦳","category":1,"name":"woman with white hair","variations":["👩🏻‍🦳","👩🏼‍🦳","👩🏽‍🦳","👩🏾‍🦳","👩🏿‍🦳"],"version":"11.0"},{"emoji":"🧑‍🦳","category":1,"name":"person with white hair","variations":["🧑🏻‍🦳","🧑🏼‍🦳","🧑🏽‍🦳","🧑🏾‍🦳","🧑🏿‍🦳"],"version":"12.1"},{"emoji":"👩‍🦲","category":1,"name":"woman with no hair","variations":["👩🏻‍🦲","👩🏼‍🦲","👩🏽‍🦲","👩🏾‍🦲","👩🏿‍🦲"],"version":"11.0"},{"emoji":"🧑‍🦲","category":1,"name":"person with no hair","variations":["🧑🏻‍🦲","🧑🏼‍🦲","🧑🏽‍🦲","🧑🏾‍🦲","🧑🏿‍🦲"],"version":"12.1"},{"emoji":"👱‍♀️","category":1,"name":"woman with blond hair","variations":["👱🏻‍♀️","👱🏼‍♀️","👱🏽‍♀️","👱🏾‍♀️","👱🏿‍♀️"],"version":"4.0"},{"emoji":"👱‍♂️","category":1,"name":"man with blond hair","variations":["👱🏻‍♂️","👱🏼‍♂️","👱🏽‍♂️","👱🏾‍♂️","👱🏿‍♂️"],"version":"4.0"},{"emoji":"🧓","category":1,"name":"older person","variations":["🧓🏻","🧓🏼","🧓🏽","🧓🏾","🧓🏿"],"version":"5.0"},{"emoji":"👴","category":1,"name":"old man","variations":["👴🏻","👴🏼","👴🏽","👴🏾","👴🏿"],"version":"1.0"},{"emoji":"👵","category":1,"name":"old woman","variations":["👵🏻","👵🏼","👵🏽","👵🏾","👵🏿"],"version":"1.0"},{"emoji":"🙍","category":1,"name":"person frowning","variations":["🙍🏻","🙍🏼","🙍🏽","🙍🏾","🙍🏿"],"version":"1.0"},{"emoji":"🙍‍♂️","category":1,"name":"man frowning","variations":["🙍🏻‍♂️","🙍🏼‍♂️","🙍🏽‍♂️","🙍🏾‍♂️","🙍🏿‍♂️"],"version":"4.0"},{"emoji":"🙍‍♀️","category":1,"name":"woman frowning","variations":["🙍🏻‍♀️","🙍🏼‍♀️","🙍🏽‍♀️","🙍🏾‍♀️","🙍🏿‍♀️"],"version":"4.0"},{"emoji":"🙎","category":1,"name":"person pouting","variations":["🙎🏻","🙎🏼","🙎🏽","🙎🏾","🙎🏿"],"version":"1.0"},{"emoji":"🙎‍♂️","category":1,"name":"man pouting","variations":["🙎🏻‍♂️","🙎🏼‍♂️","🙎🏽‍♂️","🙎🏾‍♂️","🙎🏿‍♂️"],"version":"4.0"},{"emoji":"🙎‍♀️","category":1,"name":"woman pouting","variations":["🙎🏻‍♀️","🙎🏼‍♀️","🙎🏽‍♀️","🙎🏾‍♀️","🙎🏿‍♀️"],"version":"4.0"},{"emoji":"🙅","category":1,"name":"person gesturing NO","variations":["🙅🏻","🙅🏼","🙅🏽","🙅🏾","🙅🏿"],"version":"1.0"},{"emoji":"🙅‍♂️","category":1,"name":"man gesturing NO","variations":["🙅🏻‍♂️","🙅🏼‍♂️","🙅🏽‍♂️","🙅🏾‍♂️","🙅🏿‍♂️"],"version":"4.0"},{"emoji":"🙅‍♀️","category":1,"name":"woman gesturing NO","variations":["🙅🏻‍♀️","🙅🏼‍♀️","🙅🏽‍♀️","🙅🏾‍♀️","🙅🏿‍♀️"],"version":"4.0"},{"emoji":"🙆","category":1,"name":"person gesturing OK","variations":["🙆🏻","🙆🏼","🙆🏽","🙆🏾","🙆🏿"],"version":"1.0"},{"emoji":"🙆‍♂️","category":1,"name":"man gesturing OK","variations":["🙆🏻‍♂️","🙆🏼‍♂️","🙆🏽‍♂️","🙆🏾‍♂️","🙆🏿‍♂️"],"version":"4.0"},{"emoji":"🙆‍♀️","category":1,"name":"woman gesturing OK","variations":["🙆🏻‍♀️","🙆🏼‍♀️","🙆🏽‍♀️","🙆🏾‍♀️","🙆🏿‍♀️"],"version":"4.0"},{"emoji":"💁","category":1,"name":"person tipping hand","variations":["💁🏻","💁🏼","💁🏽","💁🏾","💁🏿"],"version":"1.0"},{"emoji":"💁‍♂️","category":1,"name":"man tipping hand","variations":["💁🏻‍♂️","💁🏼‍♂️","💁🏽‍♂️","💁🏾‍♂️","💁🏿‍♂️"],"version":"4.0"},{"emoji":"💁‍♀️","category":1,"name":"woman tipping hand","variations":["💁🏻‍♀️","💁🏼‍♀️","💁🏽‍♀️","💁🏾‍♀️","💁🏿‍♀️"],"version":"4.0"},{"emoji":"🙋","category":1,"name":"person raising hand","variations":["🙋🏻","🙋🏼","🙋🏽","🙋🏾","🙋🏿"],"version":"1.0"},{"emoji":"🙋‍♂️","category":1,"name":"man raising hand","variations":["🙋🏻‍♂️","🙋🏼‍♂️","🙋🏽‍♂️","🙋🏾‍♂️","🙋🏿‍♂️"],"version":"4.0"},{"emoji":"🙋‍♀️","category":1,"name":"woman raising hand","variations":["🙋🏻‍♀️","🙋🏼‍♀️","🙋🏽‍♀️","🙋🏾‍♀️","🙋🏿‍♀️"],"version":"4.0"},{"emoji":"🧏","category":1,"name":"deaf person","variations":["🧏🏻","🧏🏼","🧏🏽","🧏🏾","🧏🏿"],"version":"12.0"},{"emoji":"🧏‍♂️","category":1,"name":"deaf man","variations":["🧏🏻‍♂️","🧏🏼‍♂️","🧏🏽‍♂️","🧏🏾‍♂️","🧏🏿‍♂️"],"version":"12.0"},{"emoji":"🧏‍♀️","category":1,"name":"deaf woman","variations":["🧏🏻‍♀️","🧏🏼‍♀️","🧏🏽‍♀️","🧏🏾‍♀️","🧏🏿‍♀️"],"version":"12.0"},{"emoji":"🙇","category":1,"name":"person bowing","variations":["🙇🏻","🙇🏼","🙇🏽","🙇🏾","🙇🏿"],"version":"1.0"},{"emoji":"🙇‍♂️","category":1,"name":"man bowing","variations":["🙇🏻‍♂️","🙇🏼‍♂️","🙇🏽‍♂️","🙇🏾‍♂️","🙇🏿‍♂️"],"version":"4.0"},{"emoji":"🙇‍♀️","category":1,"name":"woman bowing","variations":["🙇🏻‍♀️","🙇🏼‍♀️","🙇🏽‍♀️","🙇🏾‍♀️","🙇🏿‍♀️"],"version":"4.0"},{"emoji":"🤦","category":1,"name":"person facepalming","variations":["🤦🏻","🤦🏼","🤦🏽","🤦🏾","🤦🏿"],"version":"3.0"},{"emoji":"🤦‍♂️","category":1,"name":"man facepalming","variations":["🤦🏻‍♂️","🤦🏼‍♂️","🤦🏽‍♂️","🤦🏾‍♂️","🤦🏿‍♂️"],"version":"4.0"},{"emoji":"🤦‍♀️","category":1,"name":"woman facepalming","variations":["🤦🏻‍♀️","🤦🏼‍♀️","🤦🏽‍♀️","🤦🏾‍♀️","🤦🏿‍♀️"],"version":"4.0"},{"emoji":"🤷","category":1,"name":"person shrugging","variations":["🤷🏻","🤷🏼","🤷🏽","🤷🏾","🤷🏿"],"version":"3.0"},{"emoji":"🤷‍♂️","category":1,"name":"man shrugging","variations":["🤷🏻‍♂️","🤷🏼‍♂️","🤷🏽‍♂️","🤷🏾‍♂️","🤷🏿‍♂️"],"version":"4.0"},{"emoji":"🤷‍♀️","category":1,"name":"woman shrugging","variations":["🤷🏻‍♀️","🤷🏼‍♀️","🤷🏽‍♀️","🤷🏾‍♀️","🤷🏿‍♀️"],"version":"4.0"},{"emoji":"🧑‍⚕️","category":1,"name":"health worker","variations":["🧑🏻‍⚕️","🧑🏼‍⚕️","🧑🏽‍⚕️","🧑🏾‍⚕️","🧑🏿‍⚕️"],"version":"12.1"},{"emoji":"👨‍⚕️","category":1,"name":"man health worker","variations":["👨🏻‍⚕️","👨🏼‍⚕️","👨🏽‍⚕️","👨🏾‍⚕️","👨🏿‍⚕️"],"version":"4.0"},{"emoji":"👩‍⚕️","category":1,"name":"woman health worker","variations":["👩🏻‍⚕️","👩🏼‍⚕️","👩🏽‍⚕️","👩🏾‍⚕️","👩🏿‍⚕️"],"version":"4.0"},{"emoji":"🧑‍🎓","category":1,"name":"student","variations":["🧑🏻‍🎓","🧑🏼‍🎓","🧑🏽‍🎓","🧑🏾‍🎓","🧑🏿‍🎓"],"version":"12.1"},{"emoji":"👨‍🎓","category":1,"name":"man student","variations":["👨🏻‍🎓","👨🏼‍🎓","👨🏽‍🎓","👨🏾‍🎓","👨🏿‍🎓"],"version":"4.0"},{"emoji":"👩‍🎓","category":1,"name":"woman student","variations":["👩🏻‍🎓","👩🏼‍🎓","👩🏽‍🎓","👩🏾‍🎓","👩🏿‍🎓"],"version":"4.0"},{"emoji":"🧑‍🏫","category":1,"name":"teacher","variations":["🧑🏻‍🏫","🧑🏼‍🏫","🧑🏽‍🏫","🧑🏾‍🏫","🧑🏿‍🏫"],"version":"12.1"},{"emoji":"👨‍🏫","category":1,"name":"man teacher","variations":["👨🏻‍🏫","👨🏼‍🏫","👨🏽‍🏫","👨🏾‍🏫","👨🏿‍🏫"],"version":"4.0"},{"emoji":"👩‍🏫","category":1,"name":"woman teacher","variations":["👩🏻‍🏫","👩🏼‍🏫","👩🏽‍🏫","👩🏾‍🏫","👩🏿‍🏫"],"version":"4.0"},{"emoji":"🧑‍⚖️","category":1,"name":"judge","variations":["🧑🏻‍⚖️","🧑🏼‍⚖️","🧑🏽‍⚖️","🧑🏾‍⚖️","🧑🏿‍⚖️"],"version":"12.1"},{"emoji":"👨‍⚖️","category":1,"name":"man judge","variations":["👨🏻‍⚖️","👨🏼‍⚖️","👨🏽‍⚖️","👨🏾‍⚖️","👨🏿‍⚖️"],"version":"4.0"},{"emoji":"👩‍⚖️","category":1,"name":"woman judge","variations":["👩🏻‍⚖️","👩🏼‍⚖️","👩🏽‍⚖️","👩🏾‍⚖️","👩🏿‍⚖️"],"version":"4.0"},{"emoji":"🧑‍🌾","category":1,"name":"farmer","variations":["🧑🏻‍🌾","🧑🏼‍🌾","🧑🏽‍🌾","🧑🏾‍🌾","🧑🏿‍🌾"],"version":"12.1"},{"emoji":"👨‍🌾","category":1,"name":"man farmer","variations":["👨🏻‍🌾","👨🏼‍🌾","👨🏽‍🌾","👨🏾‍🌾","👨🏿‍🌾"],"version":"4.0"},{"emoji":"👩‍🌾","category":1,"name":"woman farmer","variations":["👩🏻‍🌾","👩🏼‍🌾","👩🏽‍🌾","👩🏾‍🌾","👩🏿‍🌾"],"version":"4.0"},{"emoji":"🧑‍🍳","category":1,"name":"cook","variations":["🧑🏻‍🍳","🧑🏼‍🍳","🧑🏽‍🍳","🧑🏾‍🍳","🧑🏿‍🍳"],"version":"12.1"},{"emoji":"👨‍🍳","category":1,"name":"man cook","variations":["👨🏻‍🍳","👨🏼‍🍳","👨🏽‍🍳","👨🏾‍🍳","👨🏿‍🍳"],"version":"4.0"},{"emoji":"👩‍🍳","category":1,"name":"woman cook","variations":["👩🏻‍🍳","👩🏼‍🍳","👩🏽‍🍳","👩🏾‍🍳","👩🏿‍🍳"],"version":"4.0"},{"emoji":"🧑‍🔧","category":1,"name":"mechanic","variations":["🧑🏻‍🔧","🧑🏼‍🔧","🧑🏽‍🔧","🧑🏾‍🔧","🧑🏿‍🔧"],"version":"12.1"},{"emoji":"👨‍🔧","category":1,"name":"man mechanic","variations":["👨🏻‍🔧","👨🏼‍🔧","👨🏽‍🔧","👨🏾‍🔧","👨🏿‍🔧"],"version":"4.0"},{"emoji":"👩‍🔧","category":1,"name":"woman mechanic","variations":["👩🏻‍🔧","👩🏼‍🔧","👩🏽‍🔧","👩🏾‍🔧","👩🏿‍🔧"],"version":"4.0"},{"emoji":"🧑‍🏭","category":1,"name":"factory worker","variations":["🧑🏻‍🏭","🧑🏼‍🏭","🧑🏽‍🏭","🧑🏾‍🏭","🧑🏿‍🏭"],"version":"12.1"},{"emoji":"👨‍🏭","category":1,"name":"man factory worker","variations":["👨🏻‍🏭","👨🏼‍🏭","👨🏽‍🏭","👨🏾‍🏭","👨🏿‍🏭"],"version":"4.0"},{"emoji":"👩‍🏭","category":1,"name":"woman factory worker","variations":["👩🏻‍🏭","👩🏼‍🏭","👩🏽‍🏭","👩🏾‍🏭","👩🏿‍🏭"],"version":"4.0"},{"emoji":"🧑‍💼","category":1,"name":"office worker","variations":["🧑🏻‍💼","🧑🏼‍💼","🧑🏽‍💼","🧑🏾‍💼","🧑🏿‍💼"],"version":"12.1"},{"emoji":"👨‍💼","category":1,"name":"man office worker","variations":["👨🏻‍💼","👨🏼‍💼","👨🏽‍💼","👨🏾‍💼","👨🏿‍💼"],"version":"4.0"},{"emoji":"👩‍💼","category":1,"name":"woman office worker","variations":["👩🏻‍💼","👩🏼‍💼","👩🏽‍💼","👩🏾‍💼","👩🏿‍💼"],"version":"4.0"},{"emoji":"🧑‍🔬","category":1,"name":"scientist","variations":["🧑🏻‍🔬","🧑🏼‍🔬","🧑🏽‍🔬","🧑🏾‍🔬","🧑🏿‍🔬"],"version":"12.1"},{"emoji":"👨‍🔬","category":1,"name":"man scientist","variations":["👨🏻‍🔬","👨🏼‍🔬","👨🏽‍🔬","👨🏾‍🔬","👨🏿‍🔬"],"version":"4.0"},{"emoji":"👩‍🔬","category":1,"name":"woman scientist","variations":["👩🏻‍🔬","👩🏼‍🔬","👩🏽‍🔬","👩🏾‍🔬","👩🏿‍🔬"],"version":"4.0"},{"emoji":"🧑‍💻","category":1,"name":"technologist","variations":["🧑🏻‍💻","🧑🏼‍💻","🧑🏽‍💻","🧑🏾‍💻","🧑🏿‍💻"],"version":"12.1"},{"emoji":"👨‍💻","category":1,"name":"man technologist","variations":["👨🏻‍💻","👨🏼‍💻","👨🏽‍💻","👨🏾‍💻","👨🏿‍💻"],"version":"4.0"},{"emoji":"👩‍💻","category":1,"name":"woman technologist","variations":["👩🏻‍💻","👩🏼‍💻","👩🏽‍💻","👩🏾‍💻","👩🏿‍💻"],"version":"4.0"},{"emoji":"🧑‍🎤","category":1,"name":"singer","variations":["🧑🏻‍🎤","🧑🏼‍🎤","🧑🏽‍🎤","🧑🏾‍🎤","🧑🏿‍🎤"],"version":"12.1"},{"emoji":"👨‍🎤","category":1,"name":"man singer","variations":["👨🏻‍🎤","👨🏼‍🎤","👨🏽‍🎤","👨🏾‍🎤","👨🏿‍🎤"],"version":"4.0"},{"emoji":"👩‍🎤","category":1,"name":"woman singer","variations":["👩🏻‍🎤","👩🏼‍🎤","👩🏽‍🎤","👩🏾‍🎤","👩🏿‍🎤"],"version":"4.0"},{"emoji":"🧑‍🎨","category":1,"name":"artist","variations":["🧑🏻‍🎨","🧑🏼‍🎨","🧑🏽‍🎨","🧑🏾‍🎨","🧑🏿‍🎨"],"version":"12.1"},{"emoji":"👨‍🎨","category":1,"name":"man artist","variations":["👨🏻‍🎨","👨🏼‍🎨","👨🏽‍🎨","👨🏾‍🎨","👨🏿‍🎨"],"version":"4.0"},{"emoji":"👩‍🎨","category":1,"name":"woman artist","variations":["👩🏻‍🎨","👩🏼‍🎨","👩🏽‍🎨","👩🏾‍🎨","👩🏿‍🎨"],"version":"4.0"},{"emoji":"🧑‍✈️","category":1,"name":"pilot","variations":["🧑🏻‍✈️","🧑🏼‍✈️","🧑🏽‍✈️","🧑🏾‍✈️","🧑🏿‍✈️"],"version":"12.1"},{"emoji":"👨‍✈️","category":1,"name":"man pilot","variations":["👨🏻‍✈️","👨🏼‍✈️","👨🏽‍✈️","👨🏾‍✈️","👨🏿‍✈️"],"version":"4.0"},{"emoji":"👩‍✈️","category":1,"name":"woman pilot","variations":["👩🏻‍✈️","👩🏼‍✈️","👩🏽‍✈️","👩🏾‍✈️","👩🏿‍✈️"],"version":"4.0"},{"emoji":"🧑‍🚀","category":1,"name":"astronaut","variations":["🧑🏻‍🚀","🧑🏼‍🚀","🧑🏽‍🚀","🧑🏾‍🚀","🧑🏿‍🚀"],"version":"12.1"},{"emoji":"👨‍🚀","category":1,"name":"man astronaut","variations":["👨🏻‍🚀","👨🏼‍🚀","👨🏽‍🚀","👨🏾‍🚀","👨🏿‍🚀"],"version":"4.0"},{"emoji":"👩‍🚀","category":1,"name":"woman astronaut","variations":["👩🏻‍🚀","👩🏼‍🚀","👩🏽‍🚀","👩🏾‍🚀","👩🏿‍🚀"],"version":"4.0"},{"emoji":"🧑‍🚒","category":1,"name":"firefighter","variations":["🧑🏻‍🚒","🧑🏼‍🚒","🧑🏽‍🚒","🧑🏾‍🚒","🧑🏿‍🚒"],"version":"12.1"},{"emoji":"👨‍🚒","category":1,"name":"man firefighter","variations":["👨🏻‍🚒","👨🏼‍🚒","👨🏽‍🚒","👨🏾‍🚒","👨🏿‍🚒"],"version":"4.0"},{"emoji":"👩‍🚒","category":1,"name":"woman firefighter","variations":["👩🏻‍🚒","👩🏼‍🚒","👩🏽‍🚒","👩🏾‍🚒","👩🏿‍🚒"],"version":"4.0"},{"emoji":"👮","category":1,"name":"police officer","variations":["👮🏻","👮🏼","👮🏽","👮🏾","👮🏿"],"version":"1.0"},{"emoji":"👮‍♂️","category":1,"name":"man police officer","variations":["👮🏻‍♂️","👮🏼‍♂️","👮🏽‍♂️","👮🏾‍♂️","👮🏿‍♂️"],"version":"4.0"},{"emoji":"👮‍♀️","category":1,"name":"woman police officer","variations":["👮🏻‍♀️","👮🏼‍♀️","👮🏽‍♀️","👮🏾‍♀️","👮🏿‍♀️"],"version":"4.0"},{"emoji":"🕵️","category":1,"name":"detective","variations":["🕵🏻","🕵🏼","🕵🏽","🕵🏾","🕵🏿"],"version":"1.0"},{"emoji":"🕵️‍♂️","category":1,"name":"man detective","variations":["🕵🏻‍♂️","🕵🏼‍♂️","🕵🏽‍♂️","🕵🏾‍♂️","🕵🏿‍♂️"],"version":"4.0"},{"emoji":"🕵️‍♀️","category":1,"name":"woman detective","variations":["🕵🏻‍♀️","🕵🏼‍♀️","🕵🏽‍♀️","🕵🏾‍♀️","🕵🏿‍♀️"],"version":"4.0"},{"emoji":"💂","category":1,"name":"guard","variations":["💂🏻","💂🏼","💂🏽","💂🏾","💂🏿"],"version":"1.0"},{"emoji":"💂‍♂️","category":1,"name":"man guard","variations":["💂🏻‍♂️","💂🏼‍♂️","💂🏽‍♂️","💂🏾‍♂️","💂🏿‍♂️"],"version":"4.0"},{"emoji":"💂‍♀️","category":1,"name":"woman guard","variations":["💂🏻‍♀️","💂🏼‍♀️","💂🏽‍♀️","💂🏾‍♀️","💂🏿‍♀️"],"version":"4.0"},{"emoji":"🥷","category":1,"name":"ninja","variations":["🥷🏻","🥷🏼","🥷🏽","🥷🏾","🥷🏿"],"version":"13.0"},{"emoji":"👷","category":1,"name":"construction worker","variations":["👷🏻","👷🏼","👷🏽","👷🏾","👷🏿"],"version":"1.0"},{"emoji":"👷‍♂️","category":1,"name":"man construction worker","variations":["👷🏻‍♂️","👷🏼‍♂️","👷🏽‍♂️","👷🏾‍♂️","👷🏿‍♂️"],"version":"4.0"},{"emoji":"👷‍♀️","category":1,"name":"woman construction worker","variations":["👷🏻‍♀️","👷🏼‍♀️","👷🏽‍♀️","👷🏾‍♀️","👷🏿‍♀️"],"version":"4.0"},{"emoji":"🤴","category":1,"name":"prince","variations":["🤴🏻","🤴🏼","🤴🏽","🤴🏾","🤴🏿"],"version":"3.0"},{"emoji":"👸","category":1,"name":"princess","variations":["👸🏻","👸🏼","👸🏽","👸🏾","👸🏿"],"version":"1.0"},{"emoji":"👳","category":1,"name":"person wearing turban","variations":["👳🏻","👳🏼","👳🏽","👳🏾","👳🏿"],"version":"1.0"},{"emoji":"👳‍♂️","category":1,"name":"man wearing turban","variations":["👳🏻‍♂️","👳🏼‍♂️","👳🏽‍♂️","👳🏾‍♂️","👳🏿‍♂️"],"version":"4.0"},{"emoji":"👳‍♀️","category":1,"name":"woman wearing turban","variations":["👳🏻‍♀️","👳🏼‍♀️","👳🏽‍♀️","👳🏾‍♀️","👳🏿‍♀️"],"version":"4.0"},{"emoji":"👲","category":1,"name":"person with skullcap","variations":["👲🏻","👲🏼","👲🏽","👲🏾","👲🏿"],"version":"1.0"},{"emoji":"🧕","category":1,"name":"woman with headscarf","variations":["🧕🏻","🧕🏼","🧕🏽","🧕🏾","🧕🏿"],"version":"5.0"},{"emoji":"🤵","category":1,"name":"person in tuxedo","variations":["🤵🏻","🤵🏼","🤵🏽","🤵🏾","🤵🏿"],"version":"3.0"},{"emoji":"🤵‍♂️","category":1,"name":"man in tuxedo","variations":["🤵🏻‍♂️","🤵🏼‍♂️","🤵🏽‍♂️","🤵🏾‍♂️","🤵🏿‍♂️"],"version":"13.0"},{"emoji":"🤵‍♀️","category":1,"name":"woman in tuxedo","variations":["🤵🏻‍♀️","🤵🏼‍♀️","🤵🏽‍♀️","🤵🏾‍♀️","🤵🏿‍♀️"],"version":"13.0"},{"emoji":"👰","category":1,"name":"person with veil","variations":["👰🏻","👰🏼","👰🏽","👰🏾","👰🏿"],"version":"1.0"},{"emoji":"👰‍♂️","category":1,"name":"man with veil","variations":["👰🏻‍♂️","👰🏼‍♂️","👰🏽‍♂️","👰🏾‍♂️","👰🏿‍♂️"],"version":"13.0"},{"emoji":"👰‍♀️","category":1,"name":"woman with veil","variations":["👰🏻‍♀️","👰🏼‍♀️","👰🏽‍♀️","👰🏾‍♀️","👰🏿‍♀️"],"version":"13.0"},{"emoji":"🤰","category":1,"name":"pregnant woman","variations":["🤰🏻","🤰🏼","🤰🏽","🤰🏾","🤰🏿"],"version":"3.0"},{"emoji":"🤱","category":1,"name":"breast-feeding","variations":["🤱🏻","🤱🏼","🤱🏽","🤱🏾","🤱🏿"],"version":"5.0"},{"emoji":"👩‍🍼","category":1,"name":"woman feeding baby","variations":["👩🏻‍🍼","👩🏼‍🍼","👩🏽‍🍼","👩🏾‍🍼","👩🏿‍🍼"],"version":"13.0"},{"emoji":"👨‍🍼","category":1,"name":"man feeding baby","variations":["👨🏻‍🍼","👨🏼‍🍼","👨🏽‍🍼","👨🏾‍🍼","👨🏿‍🍼"],"version":"13.0"},{"emoji":"🧑‍🍼","category":1,"name":"person feeding baby","variations":["🧑🏻‍🍼","🧑🏼‍🍼","🧑🏽‍🍼","🧑🏾‍🍼","🧑🏿‍🍼"],"version":"13.0"},{"emoji":"👼","category":1,"name":"baby angel","variations":["👼🏻","👼🏼","👼🏽","👼🏾","👼🏿"],"version":"1.0"},{"emoji":"🎅","category":1,"name":"Santa Claus","variations":["🎅🏻","🎅🏼","🎅🏽","🎅🏾","🎅🏿"],"version":"1.0"},{"emoji":"🤶","category":1,"name":"Mrs. Claus","variations":["🤶🏻","🤶🏼","🤶🏽","🤶🏾","🤶🏿"],"version":"3.0"},{"emoji":"🧑‍🎄","category":1,"name":"mx claus","variations":["🧑🏻‍🎄","🧑🏼‍🎄","🧑🏽‍🎄","🧑🏾‍🎄","🧑🏿‍🎄"],"version":"13.0"},{"emoji":"🦸","category":1,"name":"superhero","variations":["🦸🏻","🦸🏼","🦸🏽","🦸🏾","🦸🏿"],"version":"11.0"},{"emoji":"🦸‍♂️","category":1,"name":"man superhero","variations":["🦸🏻‍♂️","🦸🏼‍♂️","🦸🏽‍♂️","🦸🏾‍♂️","🦸🏿‍♂️"],"version":"11.0"},{"emoji":"🦸‍♀️","category":1,"name":"woman superhero","variations":["🦸🏻‍♀️","🦸🏼‍♀️","🦸🏽‍♀️","🦸🏾‍♀️","🦸🏿‍♀️"],"version":"11.0"},{"emoji":"🦹","category":1,"name":"supervillain","variations":["🦹🏻","🦹🏼","🦹🏽","🦹🏾","🦹🏿"],"version":"11.0"},{"emoji":"🦹‍♂️","category":1,"name":"man supervillain","variations":["🦹🏻‍♂️","🦹🏼‍♂️","🦹🏽‍♂️","🦹🏾‍♂️","🦹🏿‍♂️"],"version":"11.0"},{"emoji":"🦹‍♀️","category":1,"name":"woman supervillain","variations":["🦹🏻‍♀️","🦹🏼‍♀️","🦹🏽‍♀️","🦹🏾‍♀️","🦹🏿‍♀️"],"version":"11.0"},{"emoji":"🧙","category":1,"name":"mage","variations":["🧙🏻","🧙🏼","🧙🏽","🧙🏾","🧙🏿"],"version":"5.0"},{"emoji":"🧙‍♂️","category":1,"name":"man mage","variations":["🧙🏻‍♂️","🧙🏼‍♂️","🧙🏽‍♂️","🧙🏾‍♂️","🧙🏿‍♂️"],"version":"5.0"},{"emoji":"🧙‍♀️","category":1,"name":"woman mage","variations":["🧙🏻‍♀️","🧙🏼‍♀️","🧙🏽‍♀️","🧙🏾‍♀️","🧙🏿‍♀️"],"version":"5.0"},{"emoji":"🧚","category":1,"name":"fairy","variations":["🧚🏻","🧚🏼","🧚🏽","🧚🏾","🧚🏿"],"version":"5.0"},{"emoji":"🧚‍♂️","category":1,"name":"man fairy","variations":["🧚🏻‍♂️","🧚🏼‍♂️","🧚🏽‍♂️","🧚🏾‍♂️","🧚🏿‍♂️"],"version":"5.0"},{"emoji":"🧚‍♀️","category":1,"name":"woman fairy","variations":["🧚🏻‍♀️","🧚🏼‍♀️","🧚🏽‍♀️","🧚🏾‍♀️","🧚🏿‍♀️"],"version":"5.0"},{"emoji":"🧛","category":1,"name":"vampire","variations":["🧛🏻","🧛🏼","🧛🏽","🧛🏾","🧛🏿"],"version":"5.0"},{"emoji":"🧛‍♂️","category":1,"name":"man vampire","variations":["🧛🏻‍♂️","🧛🏼‍♂️","🧛🏽‍♂️","🧛🏾‍♂️","🧛🏿‍♂️"],"version":"5.0"},{"emoji":"🧛‍♀️","category":1,"name":"woman vampire","variations":["🧛🏻‍♀️","🧛🏼‍♀️","🧛🏽‍♀️","🧛🏾‍♀️","🧛🏿‍♀️"],"version":"5.0"},{"emoji":"🧜","category":1,"name":"merperson","variations":["🧜🏻","🧜🏼","🧜🏽","🧜🏾","🧜🏿"],"version":"5.0"},{"emoji":"🧜‍♂️","category":1,"name":"merman","variations":["🧜🏻‍♂️","🧜🏼‍♂️","🧜🏽‍♂️","🧜🏾‍♂️","🧜🏿‍♂️"],"version":"5.0"},{"emoji":"🧜‍♀️","category":1,"name":"mermaid","variations":["🧜🏻‍♀️","🧜🏼‍♀️","🧜🏽‍♀️","🧜🏾‍♀️","🧜🏿‍♀️"],"version":"5.0"},{"emoji":"🧝","category":1,"name":"elf","variations":["🧝🏻","🧝🏼","🧝🏽","🧝🏾","🧝🏿"],"version":"5.0"},{"emoji":"🧝‍♂️","category":1,"name":"man elf","variations":["🧝🏻‍♂️","🧝🏼‍♂️","🧝🏽‍♂️","🧝🏾‍♂️","🧝🏿‍♂️"],"version":"5.0"},{"emoji":"🧝‍♀️","category":1,"name":"woman elf","variations":["🧝🏻‍♀️","🧝🏼‍♀️","🧝🏽‍♀️","🧝🏾‍♀️","🧝🏿‍♀️"],"version":"5.0"},{"emoji":"🧞","category":1,"name":"genie","version":"5.0"},{"emoji":"🧞‍♂️","category":1,"name":"man genie","version":"5.0"},{"emoji":"🧞‍♀️","category":1,"name":"woman genie","version":"5.0"},{"emoji":"🧟","category":1,"name":"zombie","version":"5.0"},{"emoji":"🧟‍♂️","category":1,"name":"man zombie","version":"5.0"},{"emoji":"🧟‍♀️","category":1,"name":"woman zombie","version":"5.0"},{"emoji":"💆","category":1,"name":"person getting massage","variations":["💆🏻","💆🏼","💆🏽","💆🏾","💆🏿"],"version":"1.0"},{"emoji":"💆‍♂️","category":1,"name":"man getting massage","variations":["💆🏻‍♂️","💆🏼‍♂️","💆🏽‍♂️","💆🏾‍♂️","💆🏿‍♂️"],"version":"4.0"},{"emoji":"💆‍♀️","category":1,"name":"woman getting massage","variations":["💆🏻‍♀️","💆🏼‍♀️","💆🏽‍♀️","💆🏾‍♀️","💆🏿‍♀️"],"version":"4.0"},{"emoji":"💇","category":1,"name":"person getting haircut","variations":["💇🏻","💇🏼","💇🏽","💇🏾","💇🏿"],"version":"1.0"},{"emoji":"💇‍♂️","category":1,"name":"man getting haircut","variations":["💇🏻‍♂️","💇🏼‍♂️","💇🏽‍♂️","💇🏾‍♂️","💇🏿‍♂️"],"version":"4.0"},{"emoji":"💇‍♀️","category":1,"name":"woman getting haircut","variations":["💇🏻‍♀️","💇🏼‍♀️","💇🏽‍♀️","💇🏾‍♀️","💇🏿‍♀️"],"version":"4.0"},{"emoji":"🚶","category":1,"name":"person walking","variations":["🚶🏻","🚶🏼","🚶🏽","🚶🏾","🚶🏿"],"version":"1.0"},{"emoji":"🚶‍♂️","category":1,"name":"man walking","variations":["🚶🏻‍♂️","🚶🏼‍♂️","🚶🏽‍♂️","🚶🏾‍♂️","🚶🏿‍♂️"],"version":"4.0"},{"emoji":"🚶‍♀️","category":1,"name":"woman walking","variations":["🚶🏻‍♀️","🚶🏼‍♀️","🚶🏽‍♀️","🚶🏾‍♀️","🚶🏿‍♀️"],"version":"4.0"},{"emoji":"🧍","category":1,"name":"person standing","variations":["🧍🏻","🧍🏼","🧍🏽","🧍🏾","🧍🏿"],"version":"12.0"},{"emoji":"🧍‍♂️","category":1,"name":"man standing","variations":["🧍🏻‍♂️","🧍🏼‍♂️","🧍🏽‍♂️","🧍🏾‍♂️","🧍🏿‍♂️"],"version":"12.0"},{"emoji":"🧍‍♀️","category":1,"name":"woman standing","variations":["🧍🏻‍♀️","🧍🏼‍♀️","🧍🏽‍♀️","🧍🏾‍♀️","🧍🏿‍♀️"],"version":"12.0"},{"emoji":"🧎","category":1,"name":"person kneeling","variations":["🧎🏻","🧎🏼","🧎🏽","🧎🏾","🧎🏿"],"version":"12.0"},{"emoji":"🧎‍♂️","category":1,"name":"man kneeling","variations":["🧎🏻‍♂️","🧎🏼‍♂️","🧎🏽‍♂️","🧎🏾‍♂️","🧎🏿‍♂️"],"version":"12.0"},{"emoji":"🧎‍♀️","category":1,"name":"woman kneeling","variations":["🧎🏻‍♀️","🧎🏼‍♀️","🧎🏽‍♀️","🧎🏾‍♀️","🧎🏿‍♀️"],"version":"12.0"},{"emoji":"🧑‍🦯","category":1,"name":"person with white cane","variations":["🧑🏻‍🦯","🧑🏼‍🦯","🧑🏽‍🦯","🧑🏾‍🦯","🧑🏿‍🦯"],"version":"12.1"},{"emoji":"👨‍🦯","category":1,"name":"man with white cane","variations":["👨🏻‍🦯","👨🏼‍🦯","👨🏽‍🦯","👨🏾‍🦯","👨🏿‍🦯"],"version":"12.0"},{"emoji":"👩‍🦯","category":1,"name":"woman with white cane","variations":["👩🏻‍🦯","👩🏼‍🦯","👩🏽‍🦯","👩🏾‍🦯","👩🏿‍🦯"],"version":"12.0"},{"emoji":"🧑‍🦼","category":1,"name":"person in motorized wheelchair","variations":["🧑🏻‍🦼","🧑🏼‍🦼","🧑🏽‍🦼","🧑🏾‍🦼","🧑🏿‍🦼"],"version":"12.1"},{"emoji":"👨‍🦼","category":1,"name":"man in motorized wheelchair","variations":["👨🏻‍🦼","👨🏼‍🦼","👨🏽‍🦼","👨🏾‍🦼","👨🏿‍🦼"],"version":"12.0"},{"emoji":"👩‍🦼","category":1,"name":"woman in motorized wheelchair","variations":["👩🏻‍🦼","👩🏼‍🦼","👩🏽‍🦼","👩🏾‍🦼","👩🏿‍🦼"],"version":"12.0"},{"emoji":"🧑‍🦽","category":1,"name":"person in manual wheelchair","variations":["🧑🏻‍🦽","🧑🏼‍🦽","🧑🏽‍🦽","🧑🏾‍🦽","🧑🏿‍🦽"],"version":"12.1"},{"emoji":"👨‍🦽","category":1,"name":"man in manual wheelchair","variations":["👨🏻‍🦽","👨🏼‍🦽","👨🏽‍🦽","👨🏾‍🦽","👨🏿‍🦽"],"version":"12.0"},{"emoji":"👩‍🦽","category":1,"name":"woman in manual wheelchair","variations":["👩🏻‍🦽","👩🏼‍🦽","👩🏽‍🦽","👩🏾‍🦽","👩🏿‍🦽"],"version":"12.0"},{"emoji":"🏃","category":1,"name":"person running","variations":["🏃🏻","🏃🏼","🏃🏽","🏃🏾","🏃🏿"],"version":"1.0"},{"emoji":"🏃‍♂️","category":1,"name":"man running","variations":["🏃🏻‍♂️","🏃🏼‍♂️","🏃🏽‍♂️","🏃🏾‍♂️","🏃🏿‍♂️"],"version":"4.0"},{"emoji":"🏃‍♀️","category":1,"name":"woman running","variations":["🏃🏻‍♀️","🏃🏼‍♀️","🏃🏽‍♀️","🏃🏾‍♀️","🏃🏿‍♀️"],"version":"4.0"},{"emoji":"💃","category":1,"name":"woman dancing","variations":["💃🏻","💃🏼","💃🏽","💃🏾","💃🏿"],"version":"1.0"},{"emoji":"🕺","category":1,"name":"man dancing","variations":["🕺🏻","🕺🏼","🕺🏽","🕺🏾","🕺🏿"],"version":"3.0"},{"emoji":"🕴️","category":1,"name":"person in suit levitating","variations":["🕴🏻","🕴🏼","🕴🏽","🕴🏾","🕴🏿"],"version":"1.0"},{"emoji":"👯","category":1,"name":"people with bunny ears","version":"1.0"},{"emoji":"👯‍♂️","category":1,"name":"men with bunny ears","version":"4.0"},{"emoji":"👯‍♀️","category":1,"name":"women with bunny ears","version":"4.0"},{"emoji":"🧖","category":1,"name":"person in steamy room","variations":["🧖🏻","🧖🏼","🧖🏽","🧖🏾","🧖🏿"],"version":"5.0"},{"emoji":"🧖‍♂️","category":1,"name":"man in steamy room","variations":["🧖🏻‍♂️","🧖🏼‍♂️","🧖🏽‍♂️","🧖🏾‍♂️","🧖🏿‍♂️"],"version":"5.0"},{"emoji":"🧖‍♀️","category":1,"name":"woman in steamy room","variations":["🧖🏻‍♀️","🧖🏼‍♀️","🧖🏽‍♀️","🧖🏾‍♀️","🧖🏿‍♀️"],"version":"5.0"},{"emoji":"🧗","category":1,"name":"person climbing","variations":["🧗🏻","🧗🏼","🧗🏽","🧗🏾","🧗🏿"],"version":"5.0"},{"emoji":"🧗‍♂️","category":1,"name":"man climbing","variations":["🧗🏻‍♂️","🧗🏼‍♂️","🧗🏽‍♂️","🧗🏾‍♂️","🧗🏿‍♂️"],"version":"5.0"},{"emoji":"🧗‍♀️","category":1,"name":"woman climbing","variations":["🧗🏻‍♀️","🧗🏼‍♀️","🧗🏽‍♀️","🧗🏾‍♀️","🧗🏿‍♀️"],"version":"5.0"},{"emoji":"🤺","category":1,"name":"person fencing","version":"3.0"},{"emoji":"🏇","category":1,"name":"horse racing","variations":["🏇🏻","🏇🏼","🏇🏽","🏇🏾","🏇🏿"],"version":"1.0"},{"emoji":"⛷️","category":1,"name":"skier","version":"1.0"},{"emoji":"🏂","category":1,"name":"snowboarder","variations":["🏂🏻","🏂🏼","🏂🏽","🏂🏾","🏂🏿"],"version":"1.0"},{"emoji":"🏌️","category":1,"name":"person golfing","variations":["🏌🏻","🏌🏼","🏌🏽","🏌🏾","🏌🏿"],"version":"1.0"},{"emoji":"🏌️‍♂️","category":1,"name":"man golfing","variations":["🏌🏻‍♂️","🏌🏼‍♂️","🏌🏽‍♂️","🏌🏾‍♂️","🏌🏿‍♂️"],"version":"4.0"},{"emoji":"🏌️‍♀️","category":1,"name":"woman golfing","variations":["🏌🏻‍♀️","🏌🏼‍♀️","🏌🏽‍♀️","🏌🏾‍♀️","🏌🏿‍♀️"],"version":"4.0"},{"emoji":"🏄","category":1,"name":"person surfing","variations":["🏄🏻","🏄🏼","🏄🏽","🏄🏾","🏄🏿"],"version":"1.0"},{"emoji":"🏄‍♂️","category":1,"name":"man surfing","variations":["🏄🏻‍♂️","🏄🏼‍♂️","🏄🏽‍♂️","🏄🏾‍♂️","🏄🏿‍♂️"],"version":"4.0"},{"emoji":"🏄‍♀️","category":1,"name":"woman surfing","variations":["🏄🏻‍♀️","🏄🏼‍♀️","🏄🏽‍♀️","🏄🏾‍♀️","🏄🏿‍♀️"],"version":"4.0"},{"emoji":"🚣","category":1,"name":"person rowing boat","variations":["🚣🏻","🚣🏼","🚣🏽","🚣🏾","🚣🏿"],"version":"1.0"},{"emoji":"🚣‍♂️","category":1,"name":"man rowing boat","variations":["🚣🏻‍♂️","🚣🏼‍♂️","🚣🏽‍♂️","🚣🏾‍♂️","🚣🏿‍♂️"],"version":"4.0"},{"emoji":"🚣‍♀️","category":1,"name":"woman rowing boat","variations":["🚣🏻‍♀️","🚣🏼‍♀️","🚣🏽‍♀️","🚣🏾‍♀️","🚣🏿‍♀️"],"version":"4.0"},{"emoji":"🏊","category":1,"name":"person swimming","variations":["🏊🏻","🏊🏼","🏊🏽","🏊🏾","🏊🏿"],"version":"1.0"},{"emoji":"🏊‍♂️","category":1,"name":"man swimming","variations":["🏊🏻‍♂️","🏊🏼‍♂️","🏊🏽‍♂️","🏊🏾‍♂️","🏊🏿‍♂️"],"version":"4.0"},{"emoji":"🏊‍♀️","category":1,"name":"woman swimming","variations":["🏊🏻‍♀️","🏊🏼‍♀️","🏊🏽‍♀️","🏊🏾‍♀️","🏊🏿‍♀️"],"version":"4.0"},{"emoji":"⛹️","category":1,"name":"person bouncing ball","variations":["⛹🏻","⛹🏼","⛹🏽","⛹🏾","⛹🏿"],"version":"1.0"},{"emoji":"⛹️‍♂️","category":1,"name":"man bouncing ball","variations":["⛹🏻‍♂️","⛹🏼‍♂️","⛹🏽‍♂️","⛹🏾‍♂️","⛹🏿‍♂️"],"version":"4.0"},{"emoji":"⛹️‍♀️","category":1,"name":"woman bouncing ball","variations":["⛹🏻‍♀️","⛹🏼‍♀️","⛹🏽‍♀️","⛹🏾‍♀️","⛹🏿‍♀️"],"version":"4.0"},{"emoji":"🏋️","category":1,"name":"person lifting weights","variations":["🏋🏻","🏋🏼","🏋🏽","🏋🏾","🏋🏿"],"version":"1.0"},{"emoji":"🏋️‍♂️","category":1,"name":"man lifting weights","variations":["🏋🏻‍♂️","🏋🏼‍♂️","🏋🏽‍♂️","🏋🏾‍♂️","🏋🏿‍♂️"],"version":"4.0"},{"emoji":"🏋️‍♀️","category":1,"name":"woman lifting weights","variations":["🏋🏻‍♀️","🏋🏼‍♀️","🏋🏽‍♀️","🏋🏾‍♀️","🏋🏿‍♀️"],"version":"4.0"},{"emoji":"🚴","category":1,"name":"person biking","variations":["🚴🏻","🚴🏼","🚴🏽","🚴🏾","🚴🏿"],"version":"1.0"},{"emoji":"🚴‍♂️","category":1,"name":"man biking","variations":["🚴🏻‍♂️","🚴🏼‍♂️","🚴🏽‍♂️","🚴🏾‍♂️","🚴🏿‍♂️"],"version":"4.0"},{"emoji":"🚴‍♀️","category":1,"name":"woman biking","variations":["🚴🏻‍♀️","🚴🏼‍♀️","🚴🏽‍♀️","🚴🏾‍♀️","🚴🏿‍♀️"],"version":"4.0"},{"emoji":"🚵","category":1,"name":"person mountain biking","variations":["🚵🏻","🚵🏼","🚵🏽","🚵🏾","🚵🏿"],"version":"1.0"},{"emoji":"🚵‍♂️","category":1,"name":"man mountain biking","variations":["🚵🏻‍♂️","🚵🏼‍♂️","🚵🏽‍♂️","🚵🏾‍♂️","🚵🏿‍♂️"],"version":"4.0"},{"emoji":"🚵‍♀️","category":1,"name":"woman mountain biking","variations":["🚵🏻‍♀️","🚵🏼‍♀️","🚵🏽‍♀️","🚵🏾‍♀️","🚵🏿‍♀️"],"version":"4.0"},{"emoji":"🤸","category":1,"name":"person cartwheeling","variations":["🤸🏻","🤸🏼","🤸🏽","🤸🏾","🤸🏿"],"version":"3.0"},{"emoji":"🤸‍♂️","category":1,"name":"man cartwheeling","variations":["🤸🏻‍♂️","🤸🏼‍♂️","🤸🏽‍♂️","🤸🏾‍♂️","🤸🏿‍♂️"],"version":"4.0"},{"emoji":"🤸‍♀️","category":1,"name":"woman cartwheeling","variations":["🤸🏻‍♀️","🤸🏼‍♀️","🤸🏽‍♀️","🤸🏾‍♀️","🤸🏿‍♀️"],"version":"4.0"},{"emoji":"🤼","category":1,"name":"people wrestling","version":"3.0"},{"emoji":"🤼‍♂️","category":1,"name":"men wrestling","version":"4.0"},{"emoji":"🤼‍♀️","category":1,"name":"women wrestling","version":"4.0"},{"emoji":"🤽","category":1,"name":"person playing water polo","variations":["🤽🏻","🤽🏼","🤽🏽","🤽🏾","🤽🏿"],"version":"3.0"},{"emoji":"🤽‍♂️","category":1,"name":"man playing water polo","variations":["🤽🏻‍♂️","🤽🏼‍♂️","🤽🏽‍♂️","🤽🏾‍♂️","🤽🏿‍♂️"],"version":"4.0"},{"emoji":"🤽‍♀️","category":1,"name":"woman playing water polo","variations":["🤽🏻‍♀️","🤽🏼‍♀️","🤽🏽‍♀️","🤽🏾‍♀️","🤽🏿‍♀️"],"version":"4.0"},{"emoji":"🤾","category":1,"name":"person playing handball","variations":["🤾🏻","🤾🏼","🤾🏽","🤾🏾","🤾🏿"],"version":"3.0"},{"emoji":"🤾‍♂️","category":1,"name":"man playing handball","variations":["🤾🏻‍♂️","🤾🏼‍♂️","🤾🏽‍♂️","🤾🏾‍♂️","🤾🏿‍♂️"],"version":"4.0"},{"emoji":"🤾‍♀️","category":1,"name":"woman playing handball","variations":["🤾🏻‍♀️","🤾🏼‍♀️","🤾🏽‍♀️","🤾🏾‍♀️","🤾🏿‍♀️"],"version":"4.0"},{"emoji":"🤹","category":1,"name":"person juggling","variations":["🤹🏻","🤹🏼","🤹🏽","🤹🏾","🤹🏿"],"version":"3.0"},{"emoji":"🤹‍♂️","category":1,"name":"man juggling","variations":["🤹🏻‍♂️","🤹🏼‍♂️","🤹🏽‍♂️","🤹🏾‍♂️","🤹🏿‍♂️"],"version":"4.0"},{"emoji":"🤹‍♀️","category":1,"name":"woman juggling","variations":["🤹🏻‍♀️","🤹🏼‍♀️","🤹🏽‍♀️","🤹🏾‍♀️","🤹🏿‍♀️"],"version":"4.0"},{"emoji":"🧘","category":1,"name":"person in lotus position","variations":["🧘🏻","🧘🏼","🧘🏽","🧘🏾","🧘🏿"],"version":"5.0"},{"emoji":"🧘‍♂️","category":1,"name":"man in lotus position","variations":["🧘🏻‍♂️","🧘🏼‍♂️","🧘🏽‍♂️","🧘🏾‍♂️","🧘🏿‍♂️"],"version":"5.0"},{"emoji":"🧘‍♀️","category":1,"name":"woman in lotus position","variations":["🧘🏻‍♀️","🧘🏼‍♀️","🧘🏽‍♀️","🧘🏾‍♀️","🧘🏿‍♀️"],"version":"5.0"},{"emoji":"🛀","category":1,"name":"person taking bath","variations":["🛀🏻","🛀🏼","🛀🏽","🛀🏾","🛀🏿"],"version":"1.0"},{"emoji":"🛌","category":1,"name":"person in bed","variations":["🛌🏻","🛌🏼","🛌🏽","🛌🏾","🛌🏿"],"version":"1.0"},{"emoji":"🧑‍🤝‍🧑","category":1,"name":"people holding hands","variations":["🧑🏻‍🤝‍🧑🏻","🧑🏻‍🤝‍🧑🏼","🧑🏻‍🤝‍🧑🏽","🧑🏻‍🤝‍🧑🏾","🧑🏻‍🤝‍🧑🏿","🧑🏼‍🤝‍🧑🏻","🧑🏼‍🤝‍🧑🏼","🧑🏼‍🤝‍🧑🏽","🧑🏼‍🤝‍🧑🏾","🧑🏼‍🤝‍🧑🏿","🧑🏽‍🤝‍🧑🏻","🧑🏽‍🤝‍🧑🏼","🧑🏽‍🤝‍🧑🏽","🧑🏽‍🤝‍🧑🏾","🧑🏽‍🤝‍🧑🏿","🧑🏾‍🤝‍🧑🏻","🧑🏾‍🤝‍🧑🏼","🧑🏾‍🤝‍🧑🏽","🧑🏾‍🤝‍🧑🏾","🧑🏾‍🤝‍🧑🏿","🧑🏿‍🤝‍🧑🏻","🧑🏿‍🤝‍🧑🏼","🧑🏿‍🤝‍🧑🏽","🧑🏿‍🤝‍🧑🏾","🧑🏿‍🤝‍🧑🏿"],"version":"12.0"},{"emoji":"👭","category":1,"name":"women holding hands","variations":["👭🏻","👩🏻‍🤝‍👩🏼","👩🏻‍🤝‍👩🏽","👩🏻‍🤝‍👩🏾","👩🏻‍🤝‍👩🏿","👩🏼‍🤝‍👩🏻","👭🏼","👩🏼‍🤝‍👩🏽","👩🏼‍🤝‍👩🏾","👩🏼‍🤝‍👩🏿","👩🏽‍🤝‍👩🏻","👩🏽‍🤝‍👩🏼","👭🏽","👩🏽‍🤝‍👩🏾","👩🏽‍🤝‍👩🏿","👩🏾‍🤝‍👩🏻","👩🏾‍🤝‍👩🏼","👩🏾‍🤝‍👩🏽","👭🏾","👩🏾‍🤝‍👩🏿","👩🏿‍🤝‍👩🏻","👩🏿‍🤝‍👩🏼","👩🏿‍🤝‍👩🏽","👩🏿‍🤝‍👩🏾","👭🏿"],"version":"1.0"},{"emoji":"👫","category":1,"name":"woman and man holding hands","variations":["👫🏻","👩🏻‍🤝‍👨🏼","👩🏻‍🤝‍👨🏽","👩🏻‍🤝‍👨🏾","👩🏻‍🤝‍👨🏿","👩🏼‍🤝‍👨🏻","👫🏼","👩🏼‍🤝‍👨🏽","👩🏼‍🤝‍👨🏾","👩🏼‍🤝‍👨🏿","👩🏽‍🤝‍👨🏻","👩🏽‍🤝‍👨🏼","👫🏽","👩🏽‍🤝‍👨🏾","👩🏽‍🤝‍👨🏿","👩🏾‍🤝‍👨🏻","👩🏾‍🤝‍👨🏼","👩🏾‍🤝‍👨🏽","👫🏾","👩🏾‍🤝‍👨🏿","👩🏿‍🤝‍👨🏻","👩🏿‍🤝‍👨🏼","👩🏿‍🤝‍👨🏽","👩🏿‍🤝‍👨🏾","👫🏿"],"version":"1.0"},{"emoji":"👬","category":1,"name":"men holding hands","variations":["👬🏻","👨🏻‍🤝‍👨🏼","👨🏻‍🤝‍👨🏽","👨🏻‍🤝‍👨🏾","👨🏻‍🤝‍👨🏿","👨🏼‍🤝‍👨🏻","👬🏼","👨🏼‍🤝‍👨🏽","👨🏼‍🤝‍👨🏾","👨🏼‍🤝‍👨🏿","👨🏽‍🤝‍👨🏻","👨🏽‍🤝‍👨🏼","👬🏽","👨🏽‍🤝‍👨🏾","👨🏽‍🤝‍👨🏿","👨🏾‍🤝‍👨🏻","👨🏾‍🤝‍👨🏼","👨🏾‍🤝‍👨🏽","👬🏾","👨🏾‍🤝‍👨🏿","👨🏿‍🤝‍👨🏻","👨🏿‍🤝‍👨🏼","👨🏿‍🤝‍👨🏽","👨🏿‍🤝‍👨🏾","👬🏿"],"version":"1.0"},{"emoji":"💏","category":1,"name":"kiss","variations":["👩‍❤️‍💋‍👨","👨‍❤️‍💋‍👨","👩‍❤️‍💋‍👩"],"version":"1.0"},{"emoji":"💑","category":1,"name":"couple with heart","variations":["👩‍❤️‍👨","👨‍❤️‍👨","👩‍❤️‍👩"],"version":"1.0"},{"emoji":"👪","category":1,"name":"family","version":"1.0"},{"emoji":"👨‍👩‍👦","category":1,"name":"family: man, woman, boy","version":"2.0"},{"emoji":"👨‍👩‍👧","category":1,"name":"family: man, woman, girl","version":"2.0"},{"emoji":"👨‍👩‍👧‍👦","category":1,"name":"family: man, woman, girl, boy","version":"2.0"},{"emoji":"👨‍👩‍👦‍👦","category":1,"name":"family: man, woman, boy, boy","version":"2.0"},{"emoji":"👨‍👩‍👧‍👧","category":1,"name":"family: man, woman, girl, girl","version":"2.0"},{"emoji":"👨‍👨‍👦","category":1,"name":"family: man, man, boy","version":"2.0"},{"emoji":"👨‍👨‍👧","category":1,"name":"family: man, man, girl","version":"2.0"},{"emoji":"👨‍👨‍👧‍👦","category":1,"name":"family: man, man, girl, boy","version":"2.0"},{"emoji":"👨‍👨‍👦‍👦","category":1,"name":"family: man, man, boy, boy","version":"2.0"},{"emoji":"👨‍👨‍👧‍👧","category":1,"name":"family: man, man, girl, girl","version":"2.0"},{"emoji":"👩‍👩‍👦","category":1,"name":"family: woman, woman, boy","version":"2.0"},{"emoji":"👩‍👩‍👧","category":1,"name":"family: woman, woman, girl","version":"2.0"},{"emoji":"👩‍👩‍👧‍👦","category":1,"name":"family: woman, woman, girl, boy","version":"2.0"},{"emoji":"👩‍👩‍👦‍👦","category":1,"name":"family: woman, woman, boy, boy","version":"2.0"},{"emoji":"👩‍👩‍👧‍👧","category":1,"name":"family: woman, woman, girl, girl","version":"2.0"},{"emoji":"👨‍👦","category":1,"name":"family: man, boy","version":"4.0"},{"emoji":"👨‍👦‍👦","category":1,"name":"family: man, boy, boy","version":"4.0"},{"emoji":"👨‍👧","category":1,"name":"family: man, girl","version":"4.0"},{"emoji":"👨‍👧‍👦","category":1,"name":"family: man, girl, boy","version":"4.0"},{"emoji":"👨‍👧‍👧","category":1,"name":"family: man, girl, girl","version":"4.0"},{"emoji":"👩‍👦","category":1,"name":"family: woman, boy","version":"4.0"},{"emoji":"👩‍👦‍👦","category":1,"name":"family: woman, boy, boy","version":"4.0"},{"emoji":"👩‍👧","category":1,"name":"family: woman, girl","version":"4.0"},{"emoji":"👩‍👧‍👦","category":1,"name":"family: woman, girl, boy","version":"4.0"},{"emoji":"👩‍👧‍👧","category":1,"name":"family: woman, girl, girl","version":"4.0"},{"emoji":"🗣️","category":1,"name":"speaking head","version":"1.0"},{"emoji":"👤","category":1,"name":"bust in silhouette","version":"1.0"},{"emoji":"👥","category":1,"name":"busts in silhouette","version":"1.0"},{"emoji":"🫂","category":1,"name":"people hugging","version":"13.0"},{"emoji":"👣","category":1,"name":"footprints","version":"1.0"},{"emoji":"🐵","category":2,"name":"monkey face","version":"1.0"},{"emoji":"🐒","category":2,"name":"monkey","version":"1.0"},{"emoji":"🦍","category":2,"name":"gorilla","version":"3.0"},{"emoji":"🦧","category":2,"name":"orangutan","version":"12.0"},{"emoji":"🐶","category":2,"name":"dog face","version":"1.0"},{"emoji":"🐕","category":2,"name":"dog","version":"1.0"},{"emoji":"🦮","category":2,"name":"guide dog","version":"12.0"},{"emoji":"🐕‍🦺","category":2,"name":"service dog","version":"12.0"},{"emoji":"🐩","category":2,"name":"poodle","version":"1.0"},{"emoji":"🐺","category":2,"name":"wolf","version":"1.0"},{"emoji":"🦊","category":2,"name":"fox","version":"3.0"},{"emoji":"🦝","category":2,"name":"raccoon","version":"11.0"},{"emoji":"🐱","category":2,"name":"cat face","version":"1.0"},{"emoji":"🐈","category":2,"name":"cat","version":"1.0"},{"emoji":"🐈‍⬛","category":2,"name":"black cat","version":"13.0"},{"emoji":"🦁","category":2,"name":"lion","version":"1.0"},{"emoji":"🐯","category":2,"name":"tiger face","version":"1.0"},{"emoji":"🐅","category":2,"name":"tiger","version":"1.0"},{"emoji":"🐆","category":2,"name":"leopard","version":"1.0"},{"emoji":"🐴","category":2,"name":"horse face","version":"1.0"},{"emoji":"🐎","category":2,"name":"horse","version":"1.0"},{"emoji":"🦄","category":2,"name":"unicorn","version":"1.0"},{"emoji":"🦓","category":2,"name":"zebra","version":"5.0"},{"emoji":"🦌","category":2,"name":"deer","version":"3.0"},{"emoji":"🦬","category":2,"name":"bison","version":"13.0"},{"emoji":"🐮","category":2,"name":"cow face","version":"1.0"},{"emoji":"🐂","category":2,"name":"ox","version":"1.0"},{"emoji":"🐃","category":2,"name":"water buffalo","version":"1.0"},{"emoji":"🐄","category":2,"name":"cow","version":"1.0"},{"emoji":"🐷","category":2,"name":"pig face","version":"1.0"},{"emoji":"🐖","category":2,"name":"pig","version":"1.0"},{"emoji":"🐗","category":2,"name":"boar","version":"1.0"},{"emoji":"🐽","category":2,"name":"pig nose","version":"1.0"},{"emoji":"🐏","category":2,"name":"ram","version":"1.0"},{"emoji":"🐑","category":2,"name":"ewe","version":"1.0"},{"emoji":"🐐","category":2,"name":"goat","version":"1.0"},{"emoji":"🐪","category":2,"name":"camel","version":"1.0"},{"emoji":"🐫","category":2,"name":"two-hump camel","version":"1.0"},{"emoji":"🦙","category":2,"name":"llama","version":"11.0"},{"emoji":"🦒","category":2,"name":"giraffe","version":"5.0"},{"emoji":"🐘","category":2,"name":"elephant","version":"1.0"},{"emoji":"🦣","category":2,"name":"mammoth","version":"13.0"},{"emoji":"🦏","category":2,"name":"rhinoceros","version":"3.0"},{"emoji":"🦛","category":2,"name":"hippopotamus","version":"11.0"},{"emoji":"🐭","category":2,"name":"mouse face","version":"1.0"},{"emoji":"🐁","category":2,"name":"mouse","version":"1.0"},{"emoji":"🐀","category":2,"name":"rat","version":"1.0"},{"emoji":"🐹","category":2,"name":"hamster","version":"1.0"},{"emoji":"🐰","category":2,"name":"rabbit face","version":"1.0"},{"emoji":"🐇","category":2,"name":"rabbit","version":"1.0"},{"emoji":"🐿️","category":2,"name":"chipmunk","version":"1.0"},{"emoji":"🦫","category":2,"name":"beaver","version":"13.0"},{"emoji":"🦔","category":2,"name":"hedgehog","version":"5.0"},{"emoji":"🦇","category":2,"name":"bat","version":"3.0"},{"emoji":"🐻","category":2,"name":"bear","version":"1.0"},{"emoji":"🐻‍❄️","category":2,"name":"polar bear","version":"13.0"},{"emoji":"🐨","category":2,"name":"koala","version":"1.0"},{"emoji":"🐼","category":2,"name":"panda","version":"1.0"},{"emoji":"🦥","category":2,"name":"sloth","version":"12.0"},{"emoji":"🦦","category":2,"name":"otter","version":"12.0"},{"emoji":"🦨","category":2,"name":"skunk","version":"12.0"},{"emoji":"🦘","category":2,"name":"kangaroo","version":"11.0"},{"emoji":"🦡","category":2,"name":"badger","version":"11.0"},{"emoji":"🐾","category":2,"name":"paw prints","version":"1.0"},{"emoji":"🦃","category":2,"name":"turkey","version":"1.0"},{"emoji":"🐔","category":2,"name":"chicken","version":"1.0"},{"emoji":"🐓","category":2,"name":"rooster","version":"1.0"},{"emoji":"🐣","category":2,"name":"hatching chick","version":"1.0"},{"emoji":"🐤","category":2,"name":"baby chick","version":"1.0"},{"emoji":"🐥","category":2,"name":"front-facing baby chick","version":"1.0"},{"emoji":"🐦","category":2,"name":"bird","version":"1.0"},{"emoji":"🐧","category":2,"name":"penguin","version":"1.0"},{"emoji":"🕊️","category":2,"name":"dove","version":"1.0"},{"emoji":"🦅","category":2,"name":"eagle","version":"3.0"},{"emoji":"🦆","category":2,"name":"duck","version":"3.0"},{"emoji":"🦢","category":2,"name":"swan","version":"11.0"},{"emoji":"🦉","category":2,"name":"owl","version":"3.0"},{"emoji":"🦤","category":2,"name":"dodo","version":"13.0"},{"emoji":"🪶","category":2,"name":"feather","version":"13.0"},{"emoji":"🦩","category":2,"name":"flamingo","version":"12.0"},{"emoji":"🦚","category":2,"name":"peacock","version":"11.0"},{"emoji":"🦜","category":2,"name":"parrot","version":"11.0"},{"emoji":"🐸","category":2,"name":"frog","version":"1.0"},{"emoji":"🐊","category":2,"name":"crocodile","version":"1.0"},{"emoji":"🐢","category":2,"name":"turtle","version":"1.0"},{"emoji":"🦎","category":2,"name":"lizard","version":"3.0"},{"emoji":"🐍","category":2,"name":"snake","version":"1.0"},{"emoji":"🐲","category":2,"name":"dragon face","version":"1.0"},{"emoji":"🐉","category":2,"name":"dragon","version":"1.0"},{"emoji":"🦕","category":2,"name":"sauropod","version":"5.0"},{"emoji":"🦖","category":2,"name":"T-Rex","version":"5.0"},{"emoji":"🐳","category":2,"name":"spouting whale","version":"1.0"},{"emoji":"🐋","category":2,"name":"whale","version":"1.0"},{"emoji":"🐬","category":2,"name":"dolphin","version":"1.0"},{"emoji":"🦭","category":2,"name":"seal","version":"13.0"},{"emoji":"🐟","category":2,"name":"fish","version":"1.0"},{"emoji":"🐠","category":2,"name":"tropical fish","version":"1.0"},{"emoji":"🐡","category":2,"name":"blowfish","version":"1.0"},{"emoji":"🦈","category":2,"name":"shark","version":"3.0"},{"emoji":"🐙","category":2,"name":"octopus","version":"1.0"},{"emoji":"🐚","category":2,"name":"spiral shell","version":"1.0"},{"emoji":"🐌","category":2,"name":"snail","version":"1.0"},{"emoji":"🦋","category":2,"name":"butterfly","version":"3.0"},{"emoji":"🐛","category":2,"name":"bug","version":"1.0"},{"emoji":"🐜","category":2,"name":"ant","version":"1.0"},{"emoji":"🐝","category":2,"name":"honeybee","version":"1.0"},{"emoji":"🪲","category":2,"name":"beetle","version":"13.0"},{"emoji":"🐞","category":2,"name":"lady beetle","version":"1.0"},{"emoji":"🦗","category":2,"name":"cricket","version":"5.0"},{"emoji":"🪳","category":2,"name":"cockroach","version":"13.0"},{"emoji":"🕷️","category":2,"name":"spider","version":"1.0"},{"emoji":"🕸️","category":2,"name":"spider web","version":"1.0"},{"emoji":"🦂","category":2,"name":"scorpion","version":"1.0"},{"emoji":"🦟","category":2,"name":"mosquito","version":"11.0"},{"emoji":"🪰","category":2,"name":"fly","version":"13.0"},{"emoji":"🪱","category":2,"name":"worm","version":"13.0"},{"emoji":"🦠","category":2,"name":"microbe","version":"11.0"},{"emoji":"💐","category":2,"name":"bouquet","version":"1.0"},{"emoji":"🌸","category":2,"name":"cherry blossom","version":"1.0"},{"emoji":"💮","category":2,"name":"white flower","version":"1.0"},{"emoji":"🏵️","category":2,"name":"rosette","version":"1.0"},{"emoji":"🌹","category":2,"name":"rose","version":"1.0"},{"emoji":"🥀","category":2,"name":"wilted flower","version":"3.0"},{"emoji":"🌺","category":2,"name":"hibiscus","version":"1.0"},{"emoji":"🌻","category":2,"name":"sunflower","version":"1.0"},{"emoji":"🌼","category":2,"name":"blossom","version":"1.0"},{"emoji":"🌷","category":2,"name":"tulip","version":"1.0"},{"emoji":"🌱","category":2,"name":"seedling","version":"1.0"},{"emoji":"🪴","category":2,"name":"potted plant","version":"13.0"},{"emoji":"🌲","category":2,"name":"evergreen tree","version":"1.0"},{"emoji":"🌳","category":2,"name":"deciduous tree","version":"1.0"},{"emoji":"🌴","category":2,"name":"palm tree","version":"1.0"},{"emoji":"🌵","category":2,"name":"cactus","version":"1.0"},{"emoji":"🌾","category":2,"name":"sheaf of rice","version":"1.0"},{"emoji":"🌿","category":2,"name":"herb","version":"1.0"},{"emoji":"☘️","category":2,"name":"shamrock","version":"1.0"},{"emoji":"🍀","category":2,"name":"four leaf clover","version":"1.0"},{"emoji":"🍁","category":2,"name":"maple leaf","version":"1.0"},{"emoji":"🍂","category":2,"name":"fallen leaf","version":"1.0"},{"emoji":"🍃","category":2,"name":"leaf fluttering in wind","version":"1.0"},{"emoji":"🍇","category":3,"name":"grapes","version":"1.0"},{"emoji":"🍈","category":3,"name":"melon","version":"1.0"},{"emoji":"🍉","category":3,"name":"watermelon","version":"1.0"},{"emoji":"🍊","category":3,"name":"tangerine","version":"1.0"},{"emoji":"🍋","category":3,"name":"lemon","version":"1.0"},{"emoji":"🍌","category":3,"name":"banana","version":"1.0"},{"emoji":"🍍","category":3,"name":"pineapple","version":"1.0"},{"emoji":"🥭","category":3,"name":"mango","version":"11.0"},{"emoji":"🍎","category":3,"name":"red apple","version":"1.0"},{"emoji":"🍏","category":3,"name":"green apple","version":"1.0"},{"emoji":"🍐","category":3,"name":"pear","version":"1.0"},{"emoji":"🍑","category":3,"name":"peach","version":"1.0"},{"emoji":"🍒","category":3,"name":"cherries","version":"1.0"},{"emoji":"🍓","category":3,"name":"strawberry","version":"1.0"},{"emoji":"🫐","category":3,"name":"blueberries","version":"13.0"},{"emoji":"🥝","category":3,"name":"kiwi fruit","version":"3.0"},{"emoji":"🍅","category":3,"name":"tomato","version":"1.0"},{"emoji":"🫒","category":3,"name":"olive","version":"13.0"},{"emoji":"🥥","category":3,"name":"coconut","version":"5.0"},{"emoji":"🥑","category":3,"name":"avocado","version":"3.0"},{"emoji":"🍆","category":3,"name":"eggplant","version":"1.0"},{"emoji":"🥔","category":3,"name":"potato","version":"3.0"},{"emoji":"🥕","category":3,"name":"carrot","version":"3.0"},{"emoji":"🌽","category":3,"name":"ear of corn","version":"1.0"},{"emoji":"🌶️","category":3,"name":"hot pepper","version":"1.0"},{"emoji":"🫑","category":3,"name":"bell pepper","version":"13.0"},{"emoji":"🥒","category":3,"name":"cucumber","version":"3.0"},{"emoji":"🥬","category":3,"name":"leafy green","version":"11.0"},{"emoji":"🥦","category":3,"name":"broccoli","version":"5.0"},{"emoji":"🧄","category":3,"name":"garlic","version":"12.0"},{"emoji":"🧅","category":3,"name":"onion","version":"12.0"},{"emoji":"🍄","category":3,"name":"mushroom","version":"1.0"},{"emoji":"🥜","category":3,"name":"peanuts","version":"3.0"},{"emoji":"🌰","category":3,"name":"chestnut","version":"1.0"},{"emoji":"🍞","category":3,"name":"bread","version":"1.0"},{"emoji":"🥐","category":3,"name":"croissant","version":"3.0"},{"emoji":"🥖","category":3,"name":"baguette bread","version":"3.0"},{"emoji":"🫓","category":3,"name":"flatbread","version":"13.0"},{"emoji":"🥨","category":3,"name":"pretzel","version":"5.0"},{"emoji":"🥯","category":3,"name":"bagel","version":"11.0"},{"emoji":"🥞","category":3,"name":"pancakes","version":"3.0"},{"emoji":"🧇","category":3,"name":"waffle","version":"12.0"},{"emoji":"🧀","category":3,"name":"cheese wedge","version":"1.0"},{"emoji":"🍖","category":3,"name":"meat on bone","version":"1.0"},{"emoji":"🍗","category":3,"name":"poultry leg","version":"1.0"},{"emoji":"🥩","category":3,"name":"cut of meat","version":"5.0"},{"emoji":"🥓","category":3,"name":"bacon","version":"3.0"},{"emoji":"🍔","category":3,"name":"hamburger","version":"1.0"},{"emoji":"🍟","category":3,"name":"french fries","version":"1.0"},{"emoji":"🍕","category":3,"name":"pizza","version":"1.0"},{"emoji":"🌭","category":3,"name":"hot dog","version":"1.0"},{"emoji":"🥪","category":3,"name":"sandwich","version":"5.0"},{"emoji":"🌮","category":3,"name":"taco","version":"1.0"},{"emoji":"🌯","category":3,"name":"burrito","version":"1.0"},{"emoji":"🫔","category":3,"name":"tamale","version":"13.0"},{"emoji":"🥙","category":3,"name":"stuffed flatbread","version":"3.0"},{"emoji":"🧆","category":3,"name":"falafel","version":"12.0"},{"emoji":"🥚","category":3,"name":"egg","version":"3.0"},{"emoji":"🍳","category":3,"name":"cooking","version":"1.0"},{"emoji":"🥘","category":3,"name":"shallow pan of food","version":"3.0"},{"emoji":"🍲","category":3,"name":"pot of food","version":"1.0"},{"emoji":"🫕","category":3,"name":"fondue","version":"13.0"},{"emoji":"🥣","category":3,"name":"bowl with spoon","version":"5.0"},{"emoji":"🥗","category":3,"name":"green salad","version":"3.0"},{"emoji":"🍿","category":3,"name":"popcorn","version":"1.0"},{"emoji":"🧈","category":3,"name":"butter","version":"12.0"},{"emoji":"🧂","category":3,"name":"salt","version":"11.0"},{"emoji":"🥫","category":3,"name":"canned food","version":"5.0"},{"emoji":"🍱","category":3,"name":"bento box","version":"1.0"},{"emoji":"🍘","category":3,"name":"rice cracker","version":"1.0"},{"emoji":"🍙","category":3,"name":"rice ball","version":"1.0"},{"emoji":"🍚","category":3,"name":"cooked rice","version":"1.0"},{"emoji":"🍛","category":3,"name":"curry rice","version":"1.0"},{"emoji":"🍜","category":3,"name":"steaming bowl","version":"1.0"},{"emoji":"🍝","category":3,"name":"spaghetti","version":"1.0"},{"emoji":"🍠","category":3,"name":"roasted sweet potato","version":"1.0"},{"emoji":"🍢","category":3,"name":"oden","version":"1.0"},{"emoji":"🍣","category":3,"name":"sushi","version":"1.0"},{"emoji":"🍤","category":3,"name":"fried shrimp","version":"1.0"},{"emoji":"🍥","category":3,"name":"fish cake with swirl","version":"1.0"},{"emoji":"🥮","category":3,"name":"moon cake","version":"11.0"},{"emoji":"🍡","category":3,"name":"dango","version":"1.0"},{"emoji":"🥟","category":3,"name":"dumpling","version":"5.0"},{"emoji":"🥠","category":3,"name":"fortune cookie","version":"5.0"},{"emoji":"🥡","category":3,"name":"takeout box","version":"5.0"},{"emoji":"🦀","category":3,"name":"crab","version":"1.0"},{"emoji":"🦞","category":3,"name":"lobster","version":"11.0"},{"emoji":"🦐","category":3,"name":"shrimp","version":"3.0"},{"emoji":"🦑","category":3,"name":"squid","version":"3.0"},{"emoji":"🦪","category":3,"name":"oyster","version":"12.0"},{"emoji":"🍦","category":3,"name":"soft ice cream","version":"1.0"},{"emoji":"🍧","category":3,"name":"shaved ice","version":"1.0"},{"emoji":"🍨","category":3,"name":"ice cream","version":"1.0"},{"emoji":"🍩","category":3,"name":"doughnut","version":"1.0"},{"emoji":"🍪","category":3,"name":"cookie","version":"1.0"},{"emoji":"🎂","category":3,"name":"birthday cake","version":"1.0"},{"emoji":"🍰","category":3,"name":"shortcake","version":"1.0"},{"emoji":"🧁","category":3,"name":"cupcake","version":"11.0"},{"emoji":"🥧","category":3,"name":"pie","version":"5.0"},{"emoji":"🍫","category":3,"name":"chocolate bar","version":"1.0"},{"emoji":"🍬","category":3,"name":"candy","version":"1.0"},{"emoji":"🍭","category":3,"name":"lollipop","version":"1.0"},{"emoji":"🍮","category":3,"name":"custard","version":"1.0"},{"emoji":"🍯","category":3,"name":"honey pot","version":"1.0"},{"emoji":"🍼","category":3,"name":"baby bottle","version":"1.0"},{"emoji":"🥛","category":3,"name":"glass of milk","version":"3.0"},{"emoji":"☕","category":3,"name":"hot beverage","version":"1.0"},{"emoji":"🫖","category":3,"name":"teapot","version":"13.0"},{"emoji":"🍵","category":3,"name":"teacup without handle","version":"1.0"},{"emoji":"🍶","category":3,"name":"sake","version":"1.0"},{"emoji":"🍾","category":3,"name":"bottle with popping cork","version":"1.0"},{"emoji":"🍷","category":3,"name":"wine glass","version":"1.0"},{"emoji":"🍸","category":3,"name":"cocktail glass","version":"1.0"},{"emoji":"🍹","category":3,"name":"tropical drink","version":"1.0"},{"emoji":"🍺","category":3,"name":"beer mug","version":"1.0"},{"emoji":"🍻","category":3,"name":"clinking beer mugs","version":"1.0"},{"emoji":"🥂","category":3,"name":"clinking glasses","version":"3.0"},{"emoji":"🥃","category":3,"name":"tumbler glass","version":"3.0"},{"emoji":"🥤","category":3,"name":"cup with straw","version":"5.0"},{"emoji":"🧋","category":3,"name":"bubble tea","version":"13.0"},{"emoji":"🧃","category":3,"name":"beverage box","version":"12.0"},{"emoji":"🧉","category":3,"name":"mate","version":"12.0"},{"emoji":"🧊","category":3,"name":"ice","version":"12.0"},{"emoji":"🥢","category":3,"name":"chopsticks","version":"5.0"},{"emoji":"🍽️","category":3,"name":"fork and knife with plate","version":"1.0"},{"emoji":"🍴","category":3,"name":"fork and knife","version":"1.0"},{"emoji":"🥄","category":3,"name":"spoon","version":"3.0"},{"emoji":"🔪","category":3,"name":"kitchen knife","version":"1.0"},{"emoji":"🏺","category":3,"name":"amphora","version":"1.0"},{"emoji":"🌍","category":4,"name":"globe showing Europe-Africa","version":"1.0"},{"emoji":"🌎","category":4,"name":"globe showing Americas","version":"1.0"},{"emoji":"🌏","category":4,"name":"globe showing Asia-Australia","version":"1.0"},{"emoji":"🌐","category":4,"name":"globe with meridians","version":"1.0"},{"emoji":"🗺️","category":4,"name":"world map","version":"1.0"},{"emoji":"🗾","category":4,"name":"map of Japan","version":"1.0"},{"emoji":"🧭","category":4,"name":"compass","version":"11.0"},{"emoji":"🏔️","category":4,"name":"snow-capped mountain","version":"1.0"},{"emoji":"⛰️","category":4,"name":"mountain","version":"1.0"},{"emoji":"🌋","category":4,"name":"volcano","version":"1.0"},{"emoji":"🗻","category":4,"name":"mount fuji","version":"1.0"},{"emoji":"🏕️","category":4,"name":"camping","version":"1.0"},{"emoji":"🏖️","category":4,"name":"beach with umbrella","version":"1.0"},{"emoji":"🏜️","category":4,"name":"desert","version":"1.0"},{"emoji":"🏝️","category":4,"name":"desert island","version":"1.0"},{"emoji":"🏞️","category":4,"name":"national park","version":"1.0"},{"emoji":"🏟️","category":4,"name":"stadium","version":"1.0"},{"emoji":"🏛️","category":4,"name":"classical building","version":"1.0"},{"emoji":"🏗️","category":4,"name":"building construction","version":"1.0"},{"emoji":"🧱","category":4,"name":"brick","version":"11.0"},{"emoji":"🪨","category":4,"name":"rock","version":"13.0"},{"emoji":"🪵","category":4,"name":"wood","version":"13.0"},{"emoji":"🛖","category":4,"name":"hut","version":"13.0"},{"emoji":"🏘️","category":4,"name":"houses","version":"1.0"},{"emoji":"🏚️","category":4,"name":"derelict house","version":"1.0"},{"emoji":"🏠","category":4,"name":"house","version":"1.0"},{"emoji":"🏡","category":4,"name":"house with garden","version":"1.0"},{"emoji":"🏢","category":4,"name":"office building","version":"1.0"},{"emoji":"🏣","category":4,"name":"Japanese post office","version":"1.0"},{"emoji":"🏤","category":4,"name":"post office","version":"1.0"},{"emoji":"🏥","category":4,"name":"hospital","version":"1.0"},{"emoji":"🏦","category":4,"name":"bank","version":"1.0"},{"emoji":"🏨","category":4,"name":"hotel","version":"1.0"},{"emoji":"🏩","category":4,"name":"love hotel","version":"1.0"},{"emoji":"🏪","category":4,"name":"convenience store","version":"1.0"},{"emoji":"🏫","category":4,"name":"school","version":"1.0"},{"emoji":"🏬","category":4,"name":"department store","version":"1.0"},{"emoji":"🏭","category":4,"name":"factory","version":"1.0"},{"emoji":"🏯","category":4,"name":"Japanese castle","version":"1.0"},{"emoji":"🏰","category":4,"name":"castle","version":"1.0"},{"emoji":"💒","category":4,"name":"wedding","version":"1.0"},{"emoji":"🗼","category":4,"name":"Tokyo tower","version":"1.0"},{"emoji":"🗽","category":4,"name":"Statue of Liberty","version":"1.0"},{"emoji":"⛪","category":4,"name":"church","version":"1.0"},{"emoji":"🕌","category":4,"name":"mosque","version":"1.0"},{"emoji":"🛕","category":4,"name":"hindu temple","version":"12.0"},{"emoji":"🕍","category":4,"name":"synagogue","version":"1.0"},{"emoji":"⛩️","category":4,"name":"shinto shrine","version":"1.0"},{"emoji":"🕋","category":4,"name":"kaaba","version":"1.0"},{"emoji":"⛲","category":4,"name":"fountain","version":"1.0"},{"emoji":"⛺","category":4,"name":"tent","version":"1.0"},{"emoji":"🌁","category":4,"name":"foggy","version":"1.0"},{"emoji":"🌃","category":4,"name":"night with stars","version":"1.0"},{"emoji":"🏙️","category":4,"name":"cityscape","version":"1.0"},{"emoji":"🌄","category":4,"name":"sunrise over mountains","version":"1.0"},{"emoji":"🌅","category":4,"name":"sunrise","version":"1.0"},{"emoji":"🌆","category":4,"name":"cityscape at dusk","version":"1.0"},{"emoji":"🌇","category":4,"name":"sunset","version":"1.0"},{"emoji":"🌉","category":4,"name":"bridge at night","version":"1.0"},{"emoji":"♨️","category":4,"name":"hot springs","version":"1.0"},{"emoji":"🎠","category":4,"name":"carousel horse","version":"1.0"},{"emoji":"🎡","category":4,"name":"ferris wheel","version":"1.0"},{"emoji":"🎢","category":4,"name":"roller coaster","version":"1.0"},{"emoji":"💈","category":4,"name":"barber pole","version":"1.0"},{"emoji":"🎪","category":4,"name":"circus tent","version":"1.0"},{"emoji":"🚂","category":4,"name":"locomotive","version":"1.0"},{"emoji":"🚃","category":4,"name":"railway car","version":"1.0"},{"emoji":"🚄","category":4,"name":"high-speed train","version":"1.0"},{"emoji":"🚅","category":4,"name":"bullet train","version":"1.0"},{"emoji":"🚆","category":4,"name":"train","version":"1.0"},{"emoji":"🚇","category":4,"name":"metro","version":"1.0"},{"emoji":"🚈","category":4,"name":"light rail","version":"1.0"},{"emoji":"🚉","category":4,"name":"station","version":"1.0"},{"emoji":"🚊","category":4,"name":"tram","version":"1.0"},{"emoji":"🚝","category":4,"name":"monorail","version":"1.0"},{"emoji":"🚞","category":4,"name":"mountain railway","version":"1.0"},{"emoji":"🚋","category":4,"name":"tram car","version":"1.0"},{"emoji":"🚌","category":4,"name":"bus","version":"1.0"},{"emoji":"🚍","category":4,"name":"oncoming bus","version":"1.0"},{"emoji":"🚎","category":4,"name":"trolleybus","version":"1.0"},{"emoji":"🚐","category":4,"name":"minibus","version":"1.0"},{"emoji":"🚑","category":4,"name":"ambulance","version":"1.0"},{"emoji":"🚒","category":4,"name":"fire engine","version":"1.0"},{"emoji":"🚓","category":4,"name":"police car","version":"1.0"},{"emoji":"🚔","category":4,"name":"oncoming police car","version":"1.0"},{"emoji":"🚕","category":4,"name":"taxi","version":"1.0"},{"emoji":"🚖","category":4,"name":"oncoming taxi","version":"1.0"},{"emoji":"🚗","category":4,"name":"automobile","version":"1.0"},{"emoji":"🚘","category":4,"name":"oncoming automobile","version":"1.0"},{"emoji":"🚙","category":4,"name":"sport utility vehicle","version":"1.0"},{"emoji":"🛻","category":4,"name":"pickup truck","version":"13.0"},{"emoji":"🚚","category":4,"name":"delivery truck","version":"1.0"},{"emoji":"🚛","category":4,"name":"articulated lorry","version":"1.0"},{"emoji":"🚜","category":4,"name":"tractor","version":"1.0"},{"emoji":"🏎️","category":4,"name":"racing car","version":"1.0"},{"emoji":"🏍️","category":4,"name":"motorcycle","version":"1.0"},{"emoji":"🛵","category":4,"name":"motor scooter","version":"3.0"},{"emoji":"🦽","category":4,"name":"manual wheelchair","version":"12.0"},{"emoji":"🦼","category":4,"name":"motorized wheelchair","version":"12.0"},{"emoji":"🛺","category":4,"name":"auto rickshaw","version":"12.0"},{"emoji":"🚲","category":4,"name":"bicycle","version":"1.0"},{"emoji":"🛴","category":4,"name":"kick scooter","version":"3.0"},{"emoji":"🛹","category":4,"name":"skateboard","version":"11.0"},{"emoji":"🛼","category":4,"name":"roller skate","version":"13.0"},{"emoji":"🚏","category":4,"name":"bus stop","version":"1.0"},{"emoji":"🛣️","category":4,"name":"motorway","version":"1.0"},{"emoji":"🛤️","category":4,"name":"railway track","version":"1.0"},{"emoji":"🛢️","category":4,"name":"oil drum","version":"1.0"},{"emoji":"⛽","category":4,"name":"fuel pump","version":"1.0"},{"emoji":"🚨","category":4,"name":"police car light","version":"1.0"},{"emoji":"🚥","category":4,"name":"horizontal traffic light","version":"1.0"},{"emoji":"🚦","category":4,"name":"vertical traffic light","version":"1.0"},{"emoji":"🛑","category":4,"name":"stop sign","version":"3.0"},{"emoji":"🚧","category":4,"name":"construction","version":"1.0"},{"emoji":"⚓","category":4,"name":"anchor","version":"1.0"},{"emoji":"⛵","category":4,"name":"sailboat","version":"1.0"},{"emoji":"🛶","category":4,"name":"canoe","version":"3.0"},{"emoji":"🚤","category":4,"name":"speedboat","version":"1.0"},{"emoji":"🛳️","category":4,"name":"passenger ship","version":"1.0"},{"emoji":"⛴️","category":4,"name":"ferry","version":"1.0"},{"emoji":"🛥️","category":4,"name":"motor boat","version":"1.0"},{"emoji":"🚢","category":4,"name":"ship","version":"1.0"},{"emoji":"✈️","category":4,"name":"airplane","version":"1.0"},{"emoji":"🛩️","category":4,"name":"small airplane","version":"1.0"},{"emoji":"🛫","category":4,"name":"airplane departure","version":"1.0"},{"emoji":"🛬","category":4,"name":"airplane arrival","version":"1.0"},{"emoji":"🪂","category":4,"name":"parachute","version":"12.0"},{"emoji":"💺","category":4,"name":"seat","version":"1.0"},{"emoji":"🚁","category":4,"name":"helicopter","version":"1.0"},{"emoji":"🚟","category":4,"name":"suspension railway","version":"1.0"},{"emoji":"🚠","category":4,"name":"mountain cableway","version":"1.0"},{"emoji":"🚡","category":4,"name":"aerial tramway","version":"1.0"},{"emoji":"🛰️","category":4,"name":"satellite","version":"1.0"},{"emoji":"🚀","category":4,"name":"rocket","version":"1.0"},{"emoji":"🛸","category":4,"name":"flying saucer","version":"5.0"},{"emoji":"🛎️","category":4,"name":"bellhop bell","version":"1.0"},{"emoji":"🧳","category":4,"name":"luggage","version":"11.0"},{"emoji":"⌛","category":4,"name":"hourglass done","version":"1.0"},{"emoji":"⏳","category":4,"name":"hourglass not done","version":"1.0"},{"emoji":"⌚","category":4,"name":"watch","version":"1.0"},{"emoji":"⏰","category":4,"name":"alarm clock","version":"1.0"},{"emoji":"⏱️","category":4,"name":"stopwatch","version":"1.0"},{"emoji":"⏲️","category":4,"name":"timer clock","version":"1.0"},{"emoji":"🕰️","category":4,"name":"mantelpiece clock","version":"1.0"},{"emoji":"🕛","category":4,"name":"twelve o’clock","version":"1.0"},{"emoji":"🕧","category":4,"name":"twelve-thirty","version":"1.0"},{"emoji":"🕐","category":4,"name":"one o’clock","version":"1.0"},{"emoji":"🕜","category":4,"name":"one-thirty","version":"1.0"},{"emoji":"🕑","category":4,"name":"two o’clock","version":"1.0"},{"emoji":"🕝","category":4,"name":"two-thirty","version":"1.0"},{"emoji":"🕒","category":4,"name":"three o’clock","version":"1.0"},{"emoji":"🕞","category":4,"name":"three-thirty","version":"1.0"},{"emoji":"🕓","category":4,"name":"four o’clock","version":"1.0"},{"emoji":"🕟","category":4,"name":"four-thirty","version":"1.0"},{"emoji":"🕔","category":4,"name":"five o’clock","version":"1.0"},{"emoji":"🕠","category":4,"name":"five-thirty","version":"1.0"},{"emoji":"🕕","category":4,"name":"six o’clock","version":"1.0"},{"emoji":"🕡","category":4,"name":"six-thirty","version":"1.0"},{"emoji":"🕖","category":4,"name":"seven o’clock","version":"1.0"},{"emoji":"🕢","category":4,"name":"seven-thirty","version":"1.0"},{"emoji":"🕗","category":4,"name":"eight o’clock","version":"1.0"},{"emoji":"🕣","category":4,"name":"eight-thirty","version":"1.0"},{"emoji":"🕘","category":4,"name":"nine o’clock","version":"1.0"},{"emoji":"🕤","category":4,"name":"nine-thirty","version":"1.0"},{"emoji":"🕙","category":4,"name":"ten o’clock","version":"1.0"},{"emoji":"🕥","category":4,"name":"ten-thirty","version":"1.0"},{"emoji":"🕚","category":4,"name":"eleven o’clock","version":"1.0"},{"emoji":"🕦","category":4,"name":"eleven-thirty","version":"1.0"},{"emoji":"🌑","category":4,"name":"new moon","version":"1.0"},{"emoji":"🌒","category":4,"name":"waxing crescent moon","version":"1.0"},{"emoji":"🌓","category":4,"name":"first quarter moon","version":"1.0"},{"emoji":"🌔","category":4,"name":"waxing gibbous moon","version":"1.0"},{"emoji":"🌕","category":4,"name":"full moon","version":"1.0"},{"emoji":"🌖","category":4,"name":"waning gibbous moon","version":"1.0"},{"emoji":"🌗","category":4,"name":"last quarter moon","version":"1.0"},{"emoji":"🌘","category":4,"name":"waning crescent moon","version":"1.0"},{"emoji":"🌙","category":4,"name":"crescent moon","version":"1.0"},{"emoji":"🌚","category":4,"name":"new moon face","version":"1.0"},{"emoji":"🌛","category":4,"name":"first quarter moon face","version":"1.0"},{"emoji":"🌜","category":4,"name":"last quarter moon face","version":"1.0"},{"emoji":"🌡️","category":4,"name":"thermometer","version":"1.0"},{"emoji":"☀️","category":4,"name":"sun","version":"1.0"},{"emoji":"🌝","category":4,"name":"full moon face","version":"1.0"},{"emoji":"🌞","category":4,"name":"sun with face","version":"1.0"},{"emoji":"🪐","category":4,"name":"ringed planet","version":"12.0"},{"emoji":"⭐","category":4,"name":"star","version":"1.0"},{"emoji":"🌟","category":4,"name":"glowing star","version":"1.0"},{"emoji":"🌠","category":4,"name":"shooting star","version":"1.0"},{"emoji":"🌌","category":4,"name":"milky way","version":"1.0"},{"emoji":"☁️","category":4,"name":"cloud","version":"1.0"},{"emoji":"⛅","category":4,"name":"sun behind cloud","version":"1.0"},{"emoji":"⛈️","category":4,"name":"cloud with lightning and rain","version":"1.0"},{"emoji":"🌤️","category":4,"name":"sun behind small cloud","version":"1.0"},{"emoji":"🌥️","category":4,"name":"sun behind large cloud","version":"1.0"},{"emoji":"🌦️","category":4,"name":"sun behind rain cloud","version":"1.0"},{"emoji":"🌧️","category":4,"name":"cloud with rain","version":"1.0"},{"emoji":"🌨️","category":4,"name":"cloud with snow","version":"1.0"},{"emoji":"🌩️","category":4,"name":"cloud with lightning","version":"1.0"},{"emoji":"🌪️","category":4,"name":"tornado","version":"1.0"},{"emoji":"🌫️","category":4,"name":"fog","version":"1.0"},{"emoji":"🌬️","category":4,"name":"wind face","version":"1.0"},{"emoji":"🌀","category":4,"name":"cyclone","version":"1.0"},{"emoji":"🌈","category":4,"name":"rainbow","version":"1.0"},{"emoji":"🌂","category":4,"name":"closed umbrella","version":"1.0"},{"emoji":"☂️","category":4,"name":"umbrella","version":"1.0"},{"emoji":"☔","category":4,"name":"umbrella with rain drops","version":"1.0"},{"emoji":"⛱️","category":4,"name":"umbrella on ground","version":"1.0"},{"emoji":"⚡","category":4,"name":"high voltage","version":"1.0"},{"emoji":"❄️","category":4,"name":"snowflake","version":"1.0"},{"emoji":"☃️","category":4,"name":"snowman","version":"1.0"},{"emoji":"⛄","category":4,"name":"snowman without snow","version":"1.0"},{"emoji":"☄️","category":4,"name":"comet","version":"1.0"},{"emoji":"🔥","category":4,"name":"fire","version":"1.0"},{"emoji":"💧","category":4,"name":"droplet","version":"1.0"},{"emoji":"🌊","category":4,"name":"water wave","version":"1.0"},{"emoji":"🎃","category":5,"name":"jack-o-lantern","version":"1.0"},{"emoji":"🎄","category":5,"name":"Christmas tree","version":"1.0"},{"emoji":"🎆","category":5,"name":"fireworks","version":"1.0"},{"emoji":"🎇","category":5,"name":"sparkler","version":"1.0"},{"emoji":"🧨","category":5,"name":"firecracker","version":"11.0"},{"emoji":"✨","category":5,"name":"sparkles","version":"1.0"},{"emoji":"🎈","category":5,"name":"balloon","version":"1.0"},{"emoji":"🎉","category":5,"name":"party popper","version":"1.0"},{"emoji":"🎊","category":5,"name":"confetti ball","version":"1.0"},{"emoji":"🎋","category":5,"name":"tanabata tree","version":"1.0"},{"emoji":"🎍","category":5,"name":"pine decoration","version":"1.0"},{"emoji":"🎎","category":5,"name":"Japanese dolls","version":"1.0"},{"emoji":"🎏","category":5,"name":"carp streamer","version":"1.0"},{"emoji":"🎐","category":5,"name":"wind chime","version":"1.0"},{"emoji":"🎑","category":5,"name":"moon viewing ceremony","version":"1.0"},{"emoji":"🧧","category":5,"name":"red envelope","version":"11.0"},{"emoji":"🎀","category":5,"name":"ribbon","version":"1.0"},{"emoji":"🎁","category":5,"name":"wrapped gift","version":"1.0"},{"emoji":"🎗️","category":5,"name":"reminder ribbon","version":"1.0"},{"emoji":"🎟️","category":5,"name":"admission tickets","version":"1.0"},{"emoji":"🎫","category":5,"name":"ticket","version":"1.0"},{"emoji":"🎖️","category":5,"name":"military medal","version":"1.0"},{"emoji":"🏆","category":5,"name":"trophy","version":"1.0"},{"emoji":"🏅","category":5,"name":"sports medal","version":"1.0"},{"emoji":"🥇","category":5,"name":"1st place medal","version":"3.0"},{"emoji":"🥈","category":5,"name":"2nd place medal","version":"3.0"},{"emoji":"🥉","category":5,"name":"3rd place medal","version":"3.0"},{"emoji":"⚽","category":5,"name":"soccer ball","version":"1.0"},{"emoji":"⚾","category":5,"name":"baseball","version":"1.0"},{"emoji":"🥎","category":5,"name":"softball","version":"11.0"},{"emoji":"🏀","category":5,"name":"basketball","version":"1.0"},{"emoji":"🏐","category":5,"name":"volleyball","version":"1.0"},{"emoji":"🏈","category":5,"name":"american football","version":"1.0"},{"emoji":"🏉","category":5,"name":"rugby football","version":"1.0"},{"emoji":"🎾","category":5,"name":"tennis","version":"1.0"},{"emoji":"🥏","category":5,"name":"flying disc","version":"11.0"},{"emoji":"🎳","category":5,"name":"bowling","version":"1.0"},{"emoji":"🏏","category":5,"name":"cricket game","version":"1.0"},{"emoji":"🏑","category":5,"name":"field hockey","version":"1.0"},{"emoji":"🏒","category":5,"name":"ice hockey","version":"1.0"},{"emoji":"🥍","category":5,"name":"lacrosse","version":"11.0"},{"emoji":"🏓","category":5,"name":"ping pong","version":"1.0"},{"emoji":"🏸","category":5,"name":"badminton","version":"1.0"},{"emoji":"🥊","category":5,"name":"boxing glove","version":"3.0"},{"emoji":"🥋","category":5,"name":"martial arts uniform","version":"3.0"},{"emoji":"🥅","category":5,"name":"goal net","version":"3.0"},{"emoji":"⛳","category":5,"name":"flag in hole","version":"1.0"},{"emoji":"⛸️","category":5,"name":"ice skate","version":"1.0"},{"emoji":"🎣","category":5,"name":"fishing pole","version":"1.0"},{"emoji":"🤿","category":5,"name":"diving mask","version":"12.0"},{"emoji":"🎽","category":5,"name":"running shirt","version":"1.0"},{"emoji":"🎿","category":5,"name":"skis","version":"1.0"},{"emoji":"🛷","category":5,"name":"sled","version":"5.0"},{"emoji":"🥌","category":5,"name":"curling stone","version":"5.0"},{"emoji":"🎯","category":5,"name":"direct hit","version":"1.0"},{"emoji":"🪀","category":5,"name":"yo-yo","version":"12.0"},{"emoji":"🪁","category":5,"name":"kite","version":"12.0"},{"emoji":"🎱","category":5,"name":"pool 8 ball","version":"1.0"},{"emoji":"🔮","category":5,"name":"crystal ball","version":"1.0"},{"emoji":"🪄","category":5,"name":"magic wand","version":"13.0"},{"emoji":"🧿","category":5,"name":"nazar amulet","version":"11.0"},{"emoji":"🎮","category":5,"name":"video game","version":"1.0"},{"emoji":"🕹️","category":5,"name":"joystick","version":"1.0"},{"emoji":"🎰","category":5,"name":"slot machine","version":"1.0"},{"emoji":"🎲","category":5,"name":"game die","version":"1.0"},{"emoji":"🧩","category":5,"name":"puzzle piece","version":"11.0"},{"emoji":"🧸","category":5,"name":"teddy bear","version":"11.0"},{"emoji":"🪅","category":5,"name":"piñata","version":"13.0"},{"emoji":"🪆","category":5,"name":"nesting dolls","version":"13.0"},{"emoji":"♠️","category":5,"name":"spade suit","version":"1.0"},{"emoji":"♥️","category":5,"name":"heart suit","version":"1.0"},{"emoji":"♦️","category":5,"name":"diamond suit","version":"1.0"},{"emoji":"♣️","category":5,"name":"club suit","version":"1.0"},{"emoji":"♟️","category":5,"name":"chess pawn","version":"11.0"},{"emoji":"🃏","category":5,"name":"joker","version":"1.0"},{"emoji":"🀄","category":5,"name":"mahjong red dragon","version":"1.0"},{"emoji":"🎴","category":5,"name":"flower playing cards","version":"1.0"},{"emoji":"🎭","category":5,"name":"performing arts","version":"1.0"},{"emoji":"🖼️","category":5,"name":"framed picture","version":"1.0"},{"emoji":"🎨","category":5,"name":"artist palette","version":"1.0"},{"emoji":"🧵","category":5,"name":"thread","version":"11.0"},{"emoji":"🪡","category":5,"name":"sewing needle","version":"13.0"},{"emoji":"🧶","category":5,"name":"yarn","version":"11.0"},{"emoji":"🪢","category":5,"name":"knot","version":"13.0"},{"emoji":"👓","category":6,"name":"glasses","version":"1.0"},{"emoji":"🕶️","category":6,"name":"sunglasses","version":"1.0"},{"emoji":"🥽","category":6,"name":"goggles","version":"11.0"},{"emoji":"🥼","category":6,"name":"lab coat","version":"11.0"},{"emoji":"🦺","category":6,"name":"safety vest","version":"12.0"},{"emoji":"👔","category":6,"name":"necktie","version":"1.0"},{"emoji":"👕","category":6,"name":"t-shirt","version":"1.0"},{"emoji":"👖","category":6,"name":"jeans","version":"1.0"},{"emoji":"🧣","category":6,"name":"scarf","version":"5.0"},{"emoji":"🧤","category":6,"name":"gloves","version":"5.0"},{"emoji":"🧥","category":6,"name":"coat","version":"5.0"},{"emoji":"🧦","category":6,"name":"socks","version":"5.0"},{"emoji":"👗","category":6,"name":"dress","version":"1.0"},{"emoji":"👘","category":6,"name":"kimono","version":"1.0"},{"emoji":"🥻","category":6,"name":"sari","version":"12.0"},{"emoji":"🩱","category":6,"name":"one-piece swimsuit","version":"12.0"},{"emoji":"🩲","category":6,"name":"briefs","version":"12.0"},{"emoji":"🩳","category":6,"name":"shorts","version":"12.0"},{"emoji":"👙","category":6,"name":"bikini","version":"1.0"},{"emoji":"👚","category":6,"name":"woman’s clothes","version":"1.0"},{"emoji":"👛","category":6,"name":"purse","version":"1.0"},{"emoji":"👜","category":6,"name":"handbag","version":"1.0"},{"emoji":"👝","category":6,"name":"clutch bag","version":"1.0"},{"emoji":"🛍️","category":6,"name":"shopping bags","version":"1.0"},{"emoji":"🎒","category":6,"name":"backpack","version":"1.0"},{"emoji":"🩴","category":6,"name":"thong sandal","version":"13.0"},{"emoji":"👞","category":6,"name":"man’s shoe","version":"1.0"},{"emoji":"👟","category":6,"name":"running shoe","version":"1.0"},{"emoji":"🥾","category":6,"name":"hiking boot","version":"11.0"},{"emoji":"🥿","category":6,"name":"flat shoe","version":"11.0"},{"emoji":"👠","category":6,"name":"high-heeled shoe","version":"1.0"},{"emoji":"👡","category":6,"name":"woman’s sandal","version":"1.0"},{"emoji":"🩰","category":6,"name":"ballet shoes","version":"12.0"},{"emoji":"👢","category":6,"name":"woman’s boot","version":"1.0"},{"emoji":"👑","category":6,"name":"crown","version":"1.0"},{"emoji":"👒","category":6,"name":"woman’s hat","version":"1.0"},{"emoji":"🎩","category":6,"name":"top hat","version":"1.0"},{"emoji":"🎓","category":6,"name":"graduation cap","version":"1.0"},{"emoji":"🧢","category":6,"name":"billed cap","version":"5.0"},{"emoji":"🪖","category":6,"name":"military helmet","version":"13.0"},{"emoji":"⛑️","category":6,"name":"rescue worker’s helmet","version":"1.0"},{"emoji":"📿","category":6,"name":"prayer beads","version":"1.0"},{"emoji":"💄","category":6,"name":"lipstick","version":"1.0"},{"emoji":"💍","category":6,"name":"ring","version":"1.0"},{"emoji":"💎","category":6,"name":"gem stone","version":"1.0"},{"emoji":"🔇","category":6,"name":"muted speaker","version":"1.0"},{"emoji":"🔈","category":6,"name":"speaker low volume","version":"1.0"},{"emoji":"🔉","category":6,"name":"speaker medium volume","version":"1.0"},{"emoji":"🔊","category":6,"name":"speaker high volume","version":"1.0"},{"emoji":"📢","category":6,"name":"loudspeaker","version":"1.0"},{"emoji":"📣","category":6,"name":"megaphone","version":"1.0"},{"emoji":"📯","category":6,"name":"postal horn","version":"1.0"},{"emoji":"🔔","category":6,"name":"bell","version":"1.0"},{"emoji":"🔕","category":6,"name":"bell with slash","version":"1.0"},{"emoji":"🎼","category":6,"name":"musical score","version":"1.0"},{"emoji":"🎵","category":6,"name":"musical note","version":"1.0"},{"emoji":"🎶","category":6,"name":"musical notes","version":"1.0"},{"emoji":"🎙️","category":6,"name":"studio microphone","version":"1.0"},{"emoji":"🎚️","category":6,"name":"level slider","version":"1.0"},{"emoji":"🎛️","category":6,"name":"control knobs","version":"1.0"},{"emoji":"🎤","category":6,"name":"microphone","version":"1.0"},{"emoji":"🎧","category":6,"name":"headphone","version":"1.0"},{"emoji":"📻","category":6,"name":"radio","version":"1.0"},{"emoji":"🎷","category":6,"name":"saxophone","version":"1.0"},{"emoji":"🪗","category":6,"name":"accordion","version":"13.0"},{"emoji":"🎸","category":6,"name":"guitar","version":"1.0"},{"emoji":"🎹","category":6,"name":"musical keyboard","version":"1.0"},{"emoji":"🎺","category":6,"name":"trumpet","version":"1.0"},{"emoji":"🎻","category":6,"name":"violin","version":"1.0"},{"emoji":"🪕","category":6,"name":"banjo","version":"12.0"},{"emoji":"🥁","category":6,"name":"drum","version":"3.0"},{"emoji":"🪘","category":6,"name":"long drum","version":"13.0"},{"emoji":"📱","category":6,"name":"mobile phone","version":"1.0"},{"emoji":"📲","category":6,"name":"mobile phone with arrow","version":"1.0"},{"emoji":"☎️","category":6,"name":"telephone","version":"1.0"},{"emoji":"📞","category":6,"name":"telephone receiver","version":"1.0"},{"emoji":"📟","category":6,"name":"pager","version":"1.0"},{"emoji":"📠","category":6,"name":"fax machine","version":"1.0"},{"emoji":"🔋","category":6,"name":"battery","version":"1.0"},{"emoji":"🔌","category":6,"name":"electric plug","version":"1.0"},{"emoji":"💻","category":6,"name":"laptop","version":"1.0"},{"emoji":"🖥️","category":6,"name":"desktop computer","version":"1.0"},{"emoji":"🖨️","category":6,"name":"printer","version":"1.0"},{"emoji":"⌨️","category":6,"name":"keyboard","version":"1.0"},{"emoji":"🖱️","category":6,"name":"computer mouse","version":"1.0"},{"emoji":"🖲️","category":6,"name":"trackball","version":"1.0"},{"emoji":"💽","category":6,"name":"computer disk","version":"1.0"},{"emoji":"💾","category":6,"name":"floppy disk","version":"1.0"},{"emoji":"💿","category":6,"name":"optical disk","version":"1.0"},{"emoji":"📀","category":6,"name":"dvd","version":"1.0"},{"emoji":"🧮","category":6,"name":"abacus","version":"11.0"},{"emoji":"🎥","category":6,"name":"movie camera","version":"1.0"},{"emoji":"🎞️","category":6,"name":"film frames","version":"1.0"},{"emoji":"📽️","category":6,"name":"film projector","version":"1.0"},{"emoji":"🎬","category":6,"name":"clapper board","version":"1.0"},{"emoji":"📺","category":6,"name":"television","version":"1.0"},{"emoji":"📷","category":6,"name":"camera","version":"1.0"},{"emoji":"📸","category":6,"name":"camera with flash","version":"1.0"},{"emoji":"📹","category":6,"name":"video camera","version":"1.0"},{"emoji":"📼","category":6,"name":"videocassette","version":"1.0"},{"emoji":"🔍","category":6,"name":"magnifying glass tilted left","version":"1.0"},{"emoji":"🔎","category":6,"name":"magnifying glass tilted right","version":"1.0"},{"emoji":"🕯️","category":6,"name":"candle","version":"1.0"},{"emoji":"💡","category":6,"name":"light bulb","version":"1.0"},{"emoji":"🔦","category":6,"name":"flashlight","version":"1.0"},{"emoji":"🏮","category":6,"name":"red paper lantern","version":"1.0"},{"emoji":"🪔","category":6,"name":"diya lamp","version":"12.0"},{"emoji":"📔","category":6,"name":"notebook with decorative cover","version":"1.0"},{"emoji":"📕","category":6,"name":"closed book","version":"1.0"},{"emoji":"📖","category":6,"name":"open book","version":"1.0"},{"emoji":"📗","category":6,"name":"green book","version":"1.0"},{"emoji":"📘","category":6,"name":"blue book","version":"1.0"},{"emoji":"📙","category":6,"name":"orange book","version":"1.0"},{"emoji":"📚","category":6,"name":"books","version":"1.0"},{"emoji":"📓","category":6,"name":"notebook","version":"1.0"},{"emoji":"📒","category":6,"name":"ledger","version":"1.0"},{"emoji":"📃","category":6,"name":"page with curl","version":"1.0"},{"emoji":"📜","category":6,"name":"scroll","version":"1.0"},{"emoji":"📄","category":6,"name":"page facing up","version":"1.0"},{"emoji":"📰","category":6,"name":"newspaper","version":"1.0"},{"emoji":"🗞️","category":6,"name":"rolled-up newspaper","version":"1.0"},{"emoji":"📑","category":6,"name":"bookmark tabs","version":"1.0"},{"emoji":"🔖","category":6,"name":"bookmark","version":"1.0"},{"emoji":"🏷️","category":6,"name":"label","version":"1.0"},{"emoji":"💰","category":6,"name":"money bag","version":"1.0"},{"emoji":"🪙","category":6,"name":"coin","version":"13.0"},{"emoji":"💴","category":6,"name":"yen banknote","version":"1.0"},{"emoji":"💵","category":6,"name":"dollar banknote","version":"1.0"},{"emoji":"💶","category":6,"name":"euro banknote","version":"1.0"},{"emoji":"💷","category":6,"name":"pound banknote","version":"1.0"},{"emoji":"💸","category":6,"name":"money with wings","version":"1.0"},{"emoji":"💳","category":6,"name":"credit card","version":"1.0"},{"emoji":"🧾","category":6,"name":"receipt","version":"11.0"},{"emoji":"💹","category":6,"name":"chart increasing with yen","version":"1.0"},{"emoji":"✉️","category":6,"name":"envelope","version":"1.0"},{"emoji":"📧","category":6,"name":"e-mail","version":"1.0"},{"emoji":"📨","category":6,"name":"incoming envelope","version":"1.0"},{"emoji":"📩","category":6,"name":"envelope with arrow","version":"1.0"},{"emoji":"📤","category":6,"name":"outbox tray","version":"1.0"},{"emoji":"📥","category":6,"name":"inbox tray","version":"1.0"},{"emoji":"📦","category":6,"name":"package","version":"1.0"},{"emoji":"📫","category":6,"name":"closed mailbox with raised flag","version":"1.0"},{"emoji":"📪","category":6,"name":"closed mailbox with lowered flag","version":"1.0"},{"emoji":"📬","category":6,"name":"open mailbox with raised flag","version":"1.0"},{"emoji":"📭","category":6,"name":"open mailbox with lowered flag","version":"1.0"},{"emoji":"📮","category":6,"name":"postbox","version":"1.0"},{"emoji":"🗳️","category":6,"name":"ballot box with ballot","version":"1.0"},{"emoji":"✏️","category":6,"name":"pencil","version":"1.0"},{"emoji":"✒️","category":6,"name":"black nib","version":"1.0"},{"emoji":"🖋️","category":6,"name":"fountain pen","version":"1.0"},{"emoji":"🖊️","category":6,"name":"pen","version":"1.0"},{"emoji":"🖌️","category":6,"name":"paintbrush","version":"1.0"},{"emoji":"🖍️","category":6,"name":"crayon","version":"1.0"},{"emoji":"📝","category":6,"name":"memo","version":"1.0"},{"emoji":"💼","category":6,"name":"briefcase","version":"1.0"},{"emoji":"📁","category":6,"name":"file folder","version":"1.0"},{"emoji":"📂","category":6,"name":"open file folder","version":"1.0"},{"emoji":"🗂️","category":6,"name":"card index dividers","version":"1.0"},{"emoji":"📅","category":6,"name":"calendar","version":"1.0"},{"emoji":"📆","category":6,"name":"tear-off calendar","version":"1.0"},{"emoji":"🗒️","category":6,"name":"spiral notepad","version":"1.0"},{"emoji":"🗓️","category":6,"name":"spiral calendar","version":"1.0"},{"emoji":"📇","category":6,"name":"card index","version":"1.0"},{"emoji":"📈","category":6,"name":"chart increasing","version":"1.0"},{"emoji":"📉","category":6,"name":"chart decreasing","version":"1.0"},{"emoji":"📊","category":6,"name":"bar chart","version":"1.0"},{"emoji":"📋","category":6,"name":"clipboard","version":"1.0"},{"emoji":"📌","category":6,"name":"pushpin","version":"1.0"},{"emoji":"📍","category":6,"name":"round pushpin","version":"1.0"},{"emoji":"📎","category":6,"name":"paperclip","version":"1.0"},{"emoji":"🖇️","category":6,"name":"linked paperclips","version":"1.0"},{"emoji":"📏","category":6,"name":"straight ruler","version":"1.0"},{"emoji":"📐","category":6,"name":"triangular ruler","version":"1.0"},{"emoji":"✂️","category":6,"name":"scissors","version":"1.0"},{"emoji":"🗃️","category":6,"name":"card file box","version":"1.0"},{"emoji":"🗄️","category":6,"name":"file cabinet","version":"1.0"},{"emoji":"🗑️","category":6,"name":"wastebasket","version":"1.0"},{"emoji":"🔒","category":6,"name":"locked","version":"1.0"},{"emoji":"🔓","category":6,"name":"unlocked","version":"1.0"},{"emoji":"🔏","category":6,"name":"locked with pen","version":"1.0"},{"emoji":"🔐","category":6,"name":"locked with key","version":"1.0"},{"emoji":"🔑","category":6,"name":"key","version":"1.0"},{"emoji":"🗝️","category":6,"name":"old key","version":"1.0"},{"emoji":"🔨","category":6,"name":"hammer","version":"1.0"},{"emoji":"🪓","category":6,"name":"axe","version":"12.0"},{"emoji":"⛏️","category":6,"name":"pick","version":"1.0"},{"emoji":"⚒️","category":6,"name":"hammer and pick","version":"1.0"},{"emoji":"🛠️","category":6,"name":"hammer and wrench","version":"1.0"},{"emoji":"🗡️","category":6,"name":"dagger","version":"1.0"},{"emoji":"⚔️","category":6,"name":"crossed swords","version":"1.0"},{"emoji":"🔫","category":6,"name":"pistol","version":"1.0"},{"emoji":"🪃","category":6,"name":"boomerang","version":"13.0"},{"emoji":"🏹","category":6,"name":"bow and arrow","version":"1.0"},{"emoji":"🛡️","category":6,"name":"shield","version":"1.0"},{"emoji":"🪚","category":6,"name":"carpentry saw","version":"13.0"},{"emoji":"🔧","category":6,"name":"wrench","version":"1.0"},{"emoji":"🪛","category":6,"name":"screwdriver","version":"13.0"},{"emoji":"🔩","category":6,"name":"nut and bolt","version":"1.0"},{"emoji":"⚙️","category":6,"name":"gear","version":"1.0"},{"emoji":"🗜️","category":6,"name":"clamp","version":"1.0"},{"emoji":"⚖️","category":6,"name":"balance scale","version":"1.0"},{"emoji":"🦯","category":6,"name":"white cane","version":"12.0"},{"emoji":"🔗","category":6,"name":"link","version":"1.0"},{"emoji":"⛓️","category":6,"name":"chains","version":"1.0"},{"emoji":"🪝","category":6,"name":"hook","version":"13.0"},{"emoji":"🧰","category":6,"name":"toolbox","version":"11.0"},{"emoji":"🧲","category":6,"name":"magnet","version":"11.0"},{"emoji":"🪜","category":6,"name":"ladder","version":"13.0"},{"emoji":"⚗️","category":6,"name":"alembic","version":"1.0"},{"emoji":"🧪","category":6,"name":"test tube","version":"11.0"},{"emoji":"🧫","category":6,"name":"petri dish","version":"11.0"},{"emoji":"🧬","category":6,"name":"dna","version":"11.0"},{"emoji":"🔬","category":6,"name":"microscope","version":"1.0"},{"emoji":"🔭","category":6,"name":"telescope","version":"1.0"},{"emoji":"📡","category":6,"name":"satellite antenna","version":"1.0"},{"emoji":"💉","category":6,"name":"syringe","version":"1.0"},{"emoji":"🩸","category":6,"name":"drop of blood","version":"12.0"},{"emoji":"💊","category":6,"name":"pill","version":"1.0"},{"emoji":"🩹","category":6,"name":"adhesive bandage","version":"12.0"},{"emoji":"🩺","category":6,"name":"stethoscope","version":"12.0"},{"emoji":"🚪","category":6,"name":"door","version":"1.0"},{"emoji":"🛗","category":6,"name":"elevator","version":"13.0"},{"emoji":"🪞","category":6,"name":"mirror","version":"13.0"},{"emoji":"🪟","category":6,"name":"window","version":"13.0"},{"emoji":"🛏️","category":6,"name":"bed","version":"1.0"},{"emoji":"🛋️","category":6,"name":"couch and lamp","version":"1.0"},{"emoji":"🪑","category":6,"name":"chair","version":"12.0"},{"emoji":"🚽","category":6,"name":"toilet","version":"1.0"},{"emoji":"🪠","category":6,"name":"plunger","version":"13.0"},{"emoji":"🚿","category":6,"name":"shower","version":"1.0"},{"emoji":"🛁","category":6,"name":"bathtub","version":"1.0"},{"emoji":"🪤","category":6,"name":"mouse trap","version":"13.0"},{"emoji":"🪒","category":6,"name":"razor","version":"12.0"},{"emoji":"🧴","category":6,"name":"lotion bottle","version":"11.0"},{"emoji":"🧷","category":6,"name":"safety pin","version":"11.0"},{"emoji":"🧹","category":6,"name":"broom","version":"11.0"},{"emoji":"🧺","category":6,"name":"basket","version":"11.0"},{"emoji":"🧻","category":6,"name":"roll of paper","version":"11.0"},{"emoji":"🪣","category":6,"name":"bucket","version":"13.0"},{"emoji":"🧼","category":6,"name":"soap","version":"11.0"},{"emoji":"🪥","category":6,"name":"toothbrush","version":"13.0"},{"emoji":"🧽","category":6,"name":"sponge","version":"11.0"},{"emoji":"🧯","category":6,"name":"fire extinguisher","version":"11.0"},{"emoji":"🛒","category":6,"name":"shopping cart","version":"3.0"},{"emoji":"🚬","category":6,"name":"cigarette","version":"1.0"},{"emoji":"⚰️","category":6,"name":"coffin","version":"1.0"},{"emoji":"🪦","category":6,"name":"headstone","version":"13.0"},{"emoji":"⚱️","category":6,"name":"funeral urn","version":"1.0"},{"emoji":"🗿","category":6,"name":"moai","version":"1.0"},{"emoji":"🪧","category":6,"name":"placard","version":"13.0"},{"emoji":"🏧","category":7,"name":"ATM sign","version":"1.0"},{"emoji":"🚮","category":7,"name":"litter in bin sign","version":"1.0"},{"emoji":"🚰","category":7,"name":"potable water","version":"1.0"},{"emoji":"♿","category":7,"name":"wheelchair symbol","version":"1.0"},{"emoji":"🚹","category":7,"name":"men’s room","version":"1.0"},{"emoji":"🚺","category":7,"name":"women’s room","version":"1.0"},{"emoji":"🚻","category":7,"name":"restroom","version":"1.0"},{"emoji":"🚼","category":7,"name":"baby symbol","version":"1.0"},{"emoji":"🚾","category":7,"name":"water closet","version":"1.0"},{"emoji":"🛂","category":7,"name":"passport control","version":"1.0"},{"emoji":"🛃","category":7,"name":"customs","version":"1.0"},{"emoji":"🛄","category":7,"name":"baggage claim","version":"1.0"},{"emoji":"🛅","category":7,"name":"left luggage","version":"1.0"},{"emoji":"⚠️","category":7,"name":"warning","version":"1.0"},{"emoji":"🚸","category":7,"name":"children crossing","version":"1.0"},{"emoji":"⛔","category":7,"name":"no entry","version":"1.0"},{"emoji":"🚫","category":7,"name":"prohibited","version":"1.0"},{"emoji":"🚳","category":7,"name":"no bicycles","version":"1.0"},{"emoji":"🚭","category":7,"name":"no smoking","version":"1.0"},{"emoji":"🚯","category":7,"name":"no littering","version":"1.0"},{"emoji":"🚱","category":7,"name":"non-potable water","version":"1.0"},{"emoji":"🚷","category":7,"name":"no pedestrians","version":"1.0"},{"emoji":"📵","category":7,"name":"no mobile phones","version":"1.0"},{"emoji":"🔞","category":7,"name":"no one under eighteen","version":"1.0"},{"emoji":"☢️","category":7,"name":"radioactive","version":"1.0"},{"emoji":"☣️","category":7,"name":"biohazard","version":"1.0"},{"emoji":"⬆️","category":7,"name":"up arrow","version":"1.0"},{"emoji":"↗️","category":7,"name":"up-right arrow","version":"1.0"},{"emoji":"➡️","category":7,"name":"right arrow","version":"1.0"},{"emoji":"↘️","category":7,"name":"down-right arrow","version":"1.0"},{"emoji":"⬇️","category":7,"name":"down arrow","version":"1.0"},{"emoji":"↙️","category":7,"name":"down-left arrow","version":"1.0"},{"emoji":"⬅️","category":7,"name":"left arrow","version":"1.0"},{"emoji":"↖️","category":7,"name":"up-left arrow","version":"1.0"},{"emoji":"↕️","category":7,"name":"up-down arrow","version":"1.0"},{"emoji":"↔️","category":7,"name":"left-right arrow","version":"1.0"},{"emoji":"↩️","category":7,"name":"right arrow curving left","version":"1.0"},{"emoji":"↪️","category":7,"name":"left arrow curving right","version":"1.0"},{"emoji":"⤴️","category":7,"name":"right arrow curving up","version":"1.0"},{"emoji":"⤵️","category":7,"name":"right arrow curving down","version":"1.0"},{"emoji":"🔃","category":7,"name":"clockwise vertical arrows","version":"1.0"},{"emoji":"🔄","category":7,"name":"counterclockwise arrows button","version":"1.0"},{"emoji":"🔙","category":7,"name":"BACK arrow","version":"1.0"},{"emoji":"🔚","category":7,"name":"END arrow","version":"1.0"},{"emoji":"🔛","category":7,"name":"ON! arrow","version":"1.0"},{"emoji":"🔜","category":7,"name":"SOON arrow","version":"1.0"},{"emoji":"🔝","category":7,"name":"TOP arrow","version":"1.0"},{"emoji":"🛐","category":7,"name":"place of worship","version":"1.0"},{"emoji":"⚛️","category":7,"name":"atom symbol","version":"1.0"},{"emoji":"🕉️","category":7,"name":"om","version":"1.0"},{"emoji":"✡️","category":7,"name":"star of David","version":"1.0"},{"emoji":"☸️","category":7,"name":"wheel of dharma","version":"1.0"},{"emoji":"☯️","category":7,"name":"yin yang","version":"1.0"},{"emoji":"✝️","category":7,"name":"latin cross","version":"1.0"},{"emoji":"☦️","category":7,"name":"orthodox cross","version":"1.0"},{"emoji":"☪️","category":7,"name":"star and crescent","version":"1.0"},{"emoji":"☮️","category":7,"name":"peace symbol","version":"1.0"},{"emoji":"🕎","category":7,"name":"menorah","version":"1.0"},{"emoji":"🔯","category":7,"name":"dotted six-pointed star","version":"1.0"},{"emoji":"♈","category":7,"name":"Aries","version":"1.0"},{"emoji":"♉","category":7,"name":"Taurus","version":"1.0"},{"emoji":"♊","category":7,"name":"Gemini","version":"1.0"},{"emoji":"♋","category":7,"name":"Cancer","version":"1.0"},{"emoji":"♌","category":7,"name":"Leo","version":"1.0"},{"emoji":"♍","category":7,"name":"Virgo","version":"1.0"},{"emoji":"♎","category":7,"name":"Libra","version":"1.0"},{"emoji":"♏","category":7,"name":"Scorpio","version":"1.0"},{"emoji":"♐","category":7,"name":"Sagittarius","version":"1.0"},{"emoji":"♑","category":7,"name":"Capricorn","version":"1.0"},{"emoji":"♒","category":7,"name":"Aquarius","version":"1.0"},{"emoji":"♓","category":7,"name":"Pisces","version":"1.0"},{"emoji":"⛎","category":7,"name":"Ophiuchus","version":"1.0"},{"emoji":"🔀","category":7,"name":"shuffle tracks button","version":"1.0"},{"emoji":"🔁","category":7,"name":"repeat button","version":"1.0"},{"emoji":"🔂","category":7,"name":"repeat single button","version":"1.0"},{"emoji":"▶️","category":7,"name":"play button","version":"1.0"},{"emoji":"⏩","category":7,"name":"fast-forward button","version":"1.0"},{"emoji":"⏭️","category":7,"name":"next track button","version":"1.0"},{"emoji":"⏯️","category":7,"name":"play or pause button","version":"1.0"},{"emoji":"◀️","category":7,"name":"reverse button","version":"1.0"},{"emoji":"⏪","category":7,"name":"fast reverse button","version":"1.0"},{"emoji":"⏮️","category":7,"name":"last track button","version":"1.0"},{"emoji":"🔼","category":7,"name":"upwards button","version":"1.0"},{"emoji":"⏫","category":7,"name":"fast up button","version":"1.0"},{"emoji":"🔽","category":7,"name":"downwards button","version":"1.0"},{"emoji":"⏬","category":7,"name":"fast down button","version":"1.0"},{"emoji":"⏸️","category":7,"name":"pause button","version":"1.0"},{"emoji":"⏹️","category":7,"name":"stop button","version":"1.0"},{"emoji":"⏺️","category":7,"name":"record button","version":"1.0"},{"emoji":"⏏️","category":7,"name":"eject button","version":"1.0"},{"emoji":"🎦","category":7,"name":"cinema","version":"1.0"},{"emoji":"🔅","category":7,"name":"dim button","version":"1.0"},{"emoji":"🔆","category":7,"name":"bright button","version":"1.0"},{"emoji":"📶","category":7,"name":"antenna bars","version":"1.0"},{"emoji":"📳","category":7,"name":"vibration mode","version":"1.0"},{"emoji":"📴","category":7,"name":"mobile phone off","version":"1.0"},{"emoji":"♀️","category":7,"name":"female sign","version":"4.0"},{"emoji":"♂️","category":7,"name":"male sign","version":"4.0"},{"emoji":"⚧️","category":7,"name":"transgender symbol","version":"13.0"},{"emoji":"✖️","category":7,"name":"multiply","version":"1.0"},{"emoji":"➕","category":7,"name":"plus","version":"1.0"},{"emoji":"➖","category":7,"name":"minus","version":"1.0"},{"emoji":"➗","category":7,"name":"divide","version":"1.0"},{"emoji":"♾️","category":7,"name":"infinity","version":"11.0"},{"emoji":"‼️","category":7,"name":"double exclamation mark","version":"1.0"},{"emoji":"⁉️","category":7,"name":"exclamation question mark","version":"1.0"},{"emoji":"❓","category":7,"name":"question mark","version":"1.0"},{"emoji":"❔","category":7,"name":"white question mark","version":"1.0"},{"emoji":"❕","category":7,"name":"white exclamation mark","version":"1.0"},{"emoji":"❗","category":7,"name":"exclamation mark","version":"1.0"},{"emoji":"〰️","category":7,"name":"wavy dash","version":"1.0"},{"emoji":"💱","category":7,"name":"currency exchange","version":"1.0"},{"emoji":"💲","category":7,"name":"heavy dollar sign","version":"1.0"},{"emoji":"⚕️","category":7,"name":"medical symbol","version":"4.0"},{"emoji":"♻️","category":7,"name":"recycling symbol","version":"1.0"},{"emoji":"⚜️","category":7,"name":"fleur-de-lis","version":"1.0"},{"emoji":"🔱","category":7,"name":"trident emblem","version":"1.0"},{"emoji":"📛","category":7,"name":"name badge","version":"1.0"},{"emoji":"🔰","category":7,"name":"Japanese symbol for beginner","version":"1.0"},{"emoji":"⭕","category":7,"name":"hollow red circle","version":"1.0"},{"emoji":"✅","category":7,"name":"check mark button","version":"1.0"},{"emoji":"☑️","category":7,"name":"check box with check","version":"1.0"},{"emoji":"✔️","category":7,"name":"check mark","version":"1.0"},{"emoji":"❌","category":7,"name":"cross mark","version":"1.0"},{"emoji":"❎","category":7,"name":"cross mark button","version":"1.0"},{"emoji":"➰","category":7,"name":"curly loop","version":"1.0"},{"emoji":"➿","category":7,"name":"double curly loop","version":"1.0"},{"emoji":"〽️","category":7,"name":"part alternation mark","version":"1.0"},{"emoji":"✳️","category":7,"name":"eight-spoked asterisk","version":"1.0"},{"emoji":"✴️","category":7,"name":"eight-pointed star","version":"1.0"},{"emoji":"❇️","category":7,"name":"sparkle","version":"1.0"},{"emoji":"©️","category":7,"name":"copyright","version":"1.0"},{"emoji":"®️","category":7,"name":"registered","version":"1.0"},{"emoji":"™️","category":7,"name":"trade mark","version":"1.0"},{"emoji":"#️⃣","category":7,"name":"keycap: #","version":"1.0"},{"emoji":"*️⃣","category":7,"name":"keycap: *","version":"2.0"},{"emoji":"0️⃣","category":7,"name":"keycap: 0","version":"1.0"},{"emoji":"1️⃣","category":7,"name":"keycap: 1","version":"1.0"},{"emoji":"2️⃣","category":7,"name":"keycap: 2","version":"1.0"},{"emoji":"3️⃣","category":7,"name":"keycap: 3","version":"1.0"},{"emoji":"4️⃣","category":7,"name":"keycap: 4","version":"1.0"},{"emoji":"5️⃣","category":7,"name":"keycap: 5","version":"1.0"},{"emoji":"6️⃣","category":7,"name":"keycap: 6","version":"1.0"},{"emoji":"7️⃣","category":7,"name":"keycap: 7","version":"1.0"},{"emoji":"8️⃣","category":7,"name":"keycap: 8","version":"1.0"},{"emoji":"9️⃣","category":7,"name":"keycap: 9","version":"1.0"},{"emoji":"🔟","category":7,"name":"keycap: 10","version":"1.0"},{"emoji":"🔠","category":7,"name":"input latin uppercase","version":"1.0"},{"emoji":"🔡","category":7,"name":"input latin lowercase","version":"1.0"},{"emoji":"🔢","category":7,"name":"input numbers","version":"1.0"},{"emoji":"🔣","category":7,"name":"input symbols","version":"1.0"},{"emoji":"🔤","category":7,"name":"input latin letters","version":"1.0"},{"emoji":"🅰️","category":7,"name":"A button (blood type)","version":"1.0"},{"emoji":"🆎","category":7,"name":"AB button (blood type)","version":"1.0"},{"emoji":"🅱️","category":7,"name":"B button (blood type)","version":"1.0"},{"emoji":"🆑","category":7,"name":"CL button","version":"1.0"},{"emoji":"🆒","category":7,"name":"COOL button","version":"1.0"},{"emoji":"🆓","category":7,"name":"FREE button","version":"1.0"},{"emoji":"ℹ️","category":7,"name":"information","version":"1.0"},{"emoji":"🆔","category":7,"name":"ID button","version":"1.0"},{"emoji":"Ⓜ️","category":7,"name":"circled M","version":"1.0"},{"emoji":"🆕","category":7,"name":"NEW button","version":"1.0"},{"emoji":"🆖","category":7,"name":"NG button","version":"1.0"},{"emoji":"🅾️","category":7,"name":"O button (blood type)","version":"1.0"},{"emoji":"🆗","category":7,"name":"OK button","version":"1.0"},{"emoji":"🅿️","category":7,"name":"P button","version":"1.0"},{"emoji":"🆘","category":7,"name":"SOS button","version":"1.0"},{"emoji":"🆙","category":7,"name":"UP! button","version":"1.0"},{"emoji":"🆚","category":7,"name":"VS button","version":"1.0"},{"emoji":"🈁","category":7,"name":"Japanese “here” button","version":"1.0"},{"emoji":"🈂️","category":7,"name":"Japanese “service charge” button","version":"1.0"},{"emoji":"🈷️","category":7,"name":"Japanese “monthly amount” button","version":"1.0"},{"emoji":"🈶","category":7,"name":"Japanese “not free of charge” button","version":"1.0"},{"emoji":"🈯","category":7,"name":"Japanese “reserved” button","version":"1.0"},{"emoji":"🉐","category":7,"name":"Japanese “bargain” button","version":"1.0"},{"emoji":"🈹","category":7,"name":"Japanese “discount” button","version":"1.0"},{"emoji":"🈚","category":7,"name":"Japanese “free of charge” button","version":"1.0"},{"emoji":"🈲","category":7,"name":"Japanese “prohibited” button","version":"1.0"},{"emoji":"🉑","category":7,"name":"Japanese “acceptable” button","version":"1.0"},{"emoji":"🈸","category":7,"name":"Japanese “application” button","version":"1.0"},{"emoji":"🈴","category":7,"name":"Japanese “passing grade” button","version":"1.0"},{"emoji":"🈳","category":7,"name":"Japanese “vacancy” button","version":"1.0"},{"emoji":"㊗️","category":7,"name":"Japanese “congratulations” button","version":"1.0"},{"emoji":"㊙️","category":7,"name":"Japanese “secret” button","version":"1.0"},{"emoji":"🈺","category":7,"name":"Japanese “open for business” button","version":"1.0"},{"emoji":"🈵","category":7,"name":"Japanese “no vacancy” button","version":"1.0"},{"emoji":"🔴","category":7,"name":"red circle","version":"1.0"},{"emoji":"🟠","category":7,"name":"orange circle","version":"12.0"},{"emoji":"🟡","category":7,"name":"yellow circle","version":"12.0"},{"emoji":"🟢","category":7,"name":"green circle","version":"12.0"},{"emoji":"🔵","category":7,"name":"blue circle","version":"1.0"},{"emoji":"🟣","category":7,"name":"purple circle","version":"12.0"},{"emoji":"🟤","category":7,"name":"brown circle","version":"12.0"},{"emoji":"⚫","category":7,"name":"black circle","version":"1.0"},{"emoji":"⚪","category":7,"name":"white circle","version":"1.0"},{"emoji":"🟥","category":7,"name":"red square","version":"12.0"},{"emoji":"🟧","category":7,"name":"orange square","version":"12.0"},{"emoji":"🟨","category":7,"name":"yellow square","version":"12.0"},{"emoji":"🟩","category":7,"name":"green square","version":"12.0"},{"emoji":"🟦","category":7,"name":"blue square","version":"12.0"},{"emoji":"🟪","category":7,"name":"purple square","version":"12.0"},{"emoji":"🟫","category":7,"name":"brown square","version":"12.0"},{"emoji":"⬛","category":7,"name":"black large square","version":"1.0"},{"emoji":"⬜","category":7,"name":"white large square","version":"1.0"},{"emoji":"◼️","category":7,"name":"black medium square","version":"1.0"},{"emoji":"◻️","category":7,"name":"white medium square","version":"1.0"},{"emoji":"◾","category":7,"name":"black medium-small square","version":"1.0"},{"emoji":"◽","category":7,"name":"white medium-small square","version":"1.0"},{"emoji":"▪️","category":7,"name":"black small square","version":"1.0"},{"emoji":"▫️","category":7,"name":"white small square","version":"1.0"},{"emoji":"🔶","category":7,"name":"large orange diamond","version":"1.0"},{"emoji":"🔷","category":7,"name":"large blue diamond","version":"1.0"},{"emoji":"🔸","category":7,"name":"small orange diamond","version":"1.0"},{"emoji":"🔹","category":7,"name":"small blue diamond","version":"1.0"},{"emoji":"🔺","category":7,"name":"red triangle pointed up","version":"1.0"},{"emoji":"🔻","category":7,"name":"red triangle pointed down","version":"1.0"},{"emoji":"💠","category":7,"name":"diamond with a dot","version":"1.0"},{"emoji":"🔘","category":7,"name":"radio button","version":"1.0"},{"emoji":"🔳","category":7,"name":"white square button","version":"1.0"},{"emoji":"🔲","category":7,"name":"black square button","version":"1.0"},{"emoji":"🏁","category":8,"name":"chequered flag","version":"1.0"},{"emoji":"🚩","category":8,"name":"triangular flag","version":"1.0"},{"emoji":"🎌","category":8,"name":"crossed flags","version":"1.0"},{"emoji":"🏴","category":8,"name":"black flag","version":"1.0"},{"emoji":"🏳️","category":8,"name":"white flag","version":"1.0"},{"emoji":"🏳️‍🌈","category":8,"name":"rainbow flag","version":"4.0"},{"emoji":"🏳️‍⚧️","category":8,"name":"transgender flag","version":"13.0"},{"emoji":"🏴‍☠️","category":8,"name":"pirate flag","version":"11.0"},{"emoji":"🇦🇨","category":8,"name":"flag: Ascension Island","version":"2.0"},{"emoji":"🇦🇩","category":8,"name":"flag: Andorra","version":"2.0"},{"emoji":"🇦🇪","category":8,"name":"flag: United Arab Emirates","version":"2.0"},{"emoji":"🇦🇫","category":8,"name":"flag: Afghanistan","version":"2.0"},{"emoji":"🇦🇬","category":8,"name":"flag: Antigua & Barbuda","version":"2.0"},{"emoji":"🇦🇮","category":8,"name":"flag: Anguilla","version":"2.0"},{"emoji":"🇦🇱","category":8,"name":"flag: Albania","version":"2.0"},{"emoji":"🇦🇲","category":8,"name":"flag: Armenia","version":"2.0"},{"emoji":"🇦🇴","category":8,"name":"flag: Angola","version":"2.0"},{"emoji":"🇦🇶","category":8,"name":"flag: Antarctica","version":"2.0"},{"emoji":"🇦🇷","category":8,"name":"flag: Argentina","version":"2.0"},{"emoji":"🇦🇸","category":8,"name":"flag: American Samoa","version":"2.0"},{"emoji":"🇦🇹","category":8,"name":"flag: Austria","version":"2.0"},{"emoji":"🇦🇺","category":8,"name":"flag: Australia","version":"2.0"},{"emoji":"🇦🇼","category":8,"name":"flag: Aruba","version":"2.0"},{"emoji":"🇦🇽","category":8,"name":"flag: Åland Islands","version":"2.0"},{"emoji":"🇦🇿","category":8,"name":"flag: Azerbaijan","version":"2.0"},{"emoji":"🇧🇦","category":8,"name":"flag: Bosnia & Herzegovina","version":"2.0"},{"emoji":"🇧🇧","category":8,"name":"flag: Barbados","version":"2.0"},{"emoji":"🇧🇩","category":8,"name":"flag: Bangladesh","version":"2.0"},{"emoji":"🇧🇪","category":8,"name":"flag: Belgium","version":"2.0"},{"emoji":"🇧🇫","category":8,"name":"flag: Burkina Faso","version":"2.0"},{"emoji":"🇧🇬","category":8,"name":"flag: Bulgaria","version":"2.0"},{"emoji":"🇧🇭","category":8,"name":"flag: Bahrain","version":"2.0"},{"emoji":"🇧🇮","category":8,"name":"flag: Burundi","version":"2.0"},{"emoji":"🇧🇯","category":8,"name":"flag: Benin","version":"2.0"},{"emoji":"🇧🇱","category":8,"name":"flag: St. Barthélemy","version":"2.0"},{"emoji":"🇧🇲","category":8,"name":"flag: Bermuda","version":"2.0"},{"emoji":"🇧🇳","category":8,"name":"flag: Brunei","version":"2.0"},{"emoji":"🇧🇴","category":8,"name":"flag: Bolivia","version":"2.0"},{"emoji":"🇧🇶","category":8,"name":"flag: Caribbean Netherlands","version":"2.0"},{"emoji":"🇧🇷","category":8,"name":"flag: Brazil","version":"2.0"},{"emoji":"🇧🇸","category":8,"name":"flag: Bahamas","version":"2.0"},{"emoji":"🇧🇹","category":8,"name":"flag: Bhutan","version":"2.0"},{"emoji":"🇧🇻","category":8,"name":"flag: Bouvet Island","version":"2.0"},{"emoji":"🇧🇼","category":8,"name":"flag: Botswana","version":"2.0"},{"emoji":"🇧🇾","category":8,"name":"flag: Belarus","version":"2.0"},{"emoji":"🇧🇿","category":8,"name":"flag: Belize","version":"2.0"},{"emoji":"🇨🇦","category":8,"name":"flag: Canada","version":"2.0"},{"emoji":"🇨🇨","category":8,"name":"flag: Cocos (Keeling) Islands","version":"2.0"},{"emoji":"🇨🇩","category":8,"name":"flag: Congo - Kinshasa","version":"2.0"},{"emoji":"🇨🇫","category":8,"name":"flag: Central African Republic","version":"2.0"},{"emoji":"🇨🇬","category":8,"name":"flag: Congo - Brazzaville","version":"2.0"},{"emoji":"🇨🇭","category":8,"name":"flag: Switzerland","version":"2.0"},{"emoji":"🇨🇮","category":8,"name":"flag: Côte d’Ivoire","version":"2.0"},{"emoji":"🇨🇰","category":8,"name":"flag: Cook Islands","version":"2.0"},{"emoji":"🇨🇱","category":8,"name":"flag: Chile","version":"2.0"},{"emoji":"🇨🇲","category":8,"name":"flag: Cameroon","version":"2.0"},{"emoji":"🇨🇳","category":8,"name":"flag: China","version":"1.0"},{"emoji":"🇨🇴","category":8,"name":"flag: Colombia","version":"2.0"},{"emoji":"🇨🇵","category":8,"name":"flag: Clipperton Island","version":"2.0"},{"emoji":"🇨🇷","category":8,"name":"flag: Costa Rica","version":"2.0"},{"emoji":"🇨🇺","category":8,"name":"flag: Cuba","version":"2.0"},{"emoji":"🇨🇻","category":8,"name":"flag: Cape Verde","version":"2.0"},{"emoji":"🇨🇼","category":8,"name":"flag: Curaçao","version":"2.0"},{"emoji":"🇨🇽","category":8,"name":"flag: Christmas Island","version":"2.0"},{"emoji":"🇨🇾","category":8,"name":"flag: Cyprus","version":"2.0"},{"emoji":"🇨🇿","category":8,"name":"flag: Czechia","version":"2.0"},{"emoji":"🇩🇪","category":8,"name":"flag: Germany","version":"1.0"},{"emoji":"🇩🇬","category":8,"name":"flag: Diego Garcia","version":"2.0"},{"emoji":"🇩🇯","category":8,"name":"flag: Djibouti","version":"2.0"},{"emoji":"🇩🇰","category":8,"name":"flag: Denmark","version":"2.0"},{"emoji":"🇩🇲","category":8,"name":"flag: Dominica","version":"2.0"},{"emoji":"🇩🇴","category":8,"name":"flag: Dominican Republic","version":"2.0"},{"emoji":"🇩🇿","category":8,"name":"flag: Algeria","version":"2.0"},{"emoji":"🇪🇦","category":8,"name":"flag: Ceuta & Melilla","version":"2.0"},{"emoji":"🇪🇨","category":8,"name":"flag: Ecuador","version":"2.0"},{"emoji":"🇪🇪","category":8,"name":"flag: Estonia","version":"2.0"},{"emoji":"🇪🇬","category":8,"name":"flag: Egypt","version":"2.0"},{"emoji":"🇪🇭","category":8,"name":"flag: Western Sahara","version":"2.0"},{"emoji":"🇪🇷","category":8,"name":"flag: Eritrea","version":"2.0"},{"emoji":"🇪🇸","category":8,"name":"flag: Spain","version":"1.0"},{"emoji":"🇪🇹","category":8,"name":"flag: Ethiopia","version":"2.0"},{"emoji":"🇪🇺","category":8,"name":"flag: European Union","version":"2.0"},{"emoji":"🇫🇮","category":8,"name":"flag: Finland","version":"2.0"},{"emoji":"🇫🇯","category":8,"name":"flag: Fiji","version":"2.0"},{"emoji":"🇫🇰","category":8,"name":"flag: Falkland Islands","version":"2.0"},{"emoji":"🇫🇲","category":8,"name":"flag: Micronesia","version":"2.0"},{"emoji":"🇫🇴","category":8,"name":"flag: Faroe Islands","version":"2.0"},{"emoji":"🇫🇷","category":8,"name":"flag: France","version":"1.0"},{"emoji":"🇬🇦","category":8,"name":"flag: Gabon","version":"2.0"},{"emoji":"🇬🇧","category":8,"name":"flag: United Kingdom","version":"1.0"},{"emoji":"🇬🇩","category":8,"name":"flag: Grenada","version":"2.0"},{"emoji":"🇬🇪","category":8,"name":"flag: Georgia","version":"2.0"},{"emoji":"🇬🇫","category":8,"name":"flag: French Guiana","version":"2.0"},{"emoji":"🇬🇬","category":8,"name":"flag: Guernsey","version":"2.0"},{"emoji":"🇬🇭","category":8,"name":"flag: Ghana","version":"2.0"},{"emoji":"🇬🇮","category":8,"name":"flag: Gibraltar","version":"2.0"},{"emoji":"🇬🇱","category":8,"name":"flag: Greenland","version":"2.0"},{"emoji":"🇬🇲","category":8,"name":"flag: Gambia","version":"2.0"},{"emoji":"🇬🇳","category":8,"name":"flag: Guinea","version":"2.0"},{"emoji":"🇬🇵","category":8,"name":"flag: Guadeloupe","version":"2.0"},{"emoji":"🇬🇶","category":8,"name":"flag: Equatorial Guinea","version":"2.0"},{"emoji":"🇬🇷","category":8,"name":"flag: Greece","version":"2.0"},{"emoji":"🇬🇸","category":8,"name":"flag: South Georgia & South Sandwich Islands","version":"2.0"},{"emoji":"🇬🇹","category":8,"name":"flag: Guatemala","version":"2.0"},{"emoji":"🇬🇺","category":8,"name":"flag: Guam","version":"2.0"},{"emoji":"🇬🇼","category":8,"name":"flag: Guinea-Bissau","version":"2.0"},{"emoji":"🇬🇾","category":8,"name":"flag: Guyana","version":"2.0"},{"emoji":"🇭🇰","category":8,"name":"flag: Hong Kong SAR China","version":"2.0"},{"emoji":"🇭🇲","category":8,"name":"flag: Heard & McDonald Islands","version":"2.0"},{"emoji":"🇭🇳","category":8,"name":"flag: Honduras","version":"2.0"},{"emoji":"🇭🇷","category":8,"name":"flag: Croatia","version":"2.0"},{"emoji":"🇭🇹","category":8,"name":"flag: Haiti","version":"2.0"},{"emoji":"🇭🇺","category":8,"name":"flag: Hungary","version":"2.0"},{"emoji":"🇮🇨","category":8,"name":"flag: Canary Islands","version":"2.0"},{"emoji":"🇮🇩","category":8,"name":"flag: Indonesia","version":"2.0"},{"emoji":"🇮🇪","category":8,"name":"flag: Ireland","version":"2.0"},{"emoji":"🇮🇱","category":8,"name":"flag: Israel","version":"2.0"},{"emoji":"🇮🇲","category":8,"name":"flag: Isle of Man","version":"2.0"},{"emoji":"🇮🇳","category":8,"name":"flag: India","version":"2.0"},{"emoji":"🇮🇴","category":8,"name":"flag: British Indian Ocean Territory","version":"2.0"},{"emoji":"🇮🇶","category":8,"name":"flag: Iraq","version":"2.0"},{"emoji":"🇮🇷","category":8,"name":"flag: Iran","version":"2.0"},{"emoji":"🇮🇸","category":8,"name":"flag: Iceland","version":"2.0"},{"emoji":"🇮🇹","category":8,"name":"flag: Italy","version":"1.0"},{"emoji":"🇯🇪","category":8,"name":"flag: Jersey","version":"2.0"},{"emoji":"🇯🇲","category":8,"name":"flag: Jamaica","version":"2.0"},{"emoji":"🇯🇴","category":8,"name":"flag: Jordan","version":"2.0"},{"emoji":"🇯🇵","category":8,"name":"flag: Japan","version":"1.0"},{"emoji":"🇰🇪","category":8,"name":"flag: Kenya","version":"2.0"},{"emoji":"🇰🇬","category":8,"name":"flag: Kyrgyzstan","version":"2.0"},{"emoji":"🇰🇭","category":8,"name":"flag: Cambodia","version":"2.0"},{"emoji":"🇰🇮","category":8,"name":"flag: Kiribati","version":"2.0"},{"emoji":"🇰🇲","category":8,"name":"flag: Comoros","version":"2.0"},{"emoji":"🇰🇳","category":8,"name":"flag: St. Kitts & Nevis","version":"2.0"},{"emoji":"🇰🇵","category":8,"name":"flag: North Korea","version":"2.0"},{"emoji":"🇰🇷","category":8,"name":"flag: South Korea","version":"1.0"},{"emoji":"🇰🇼","category":8,"name":"flag: Kuwait","version":"2.0"},{"emoji":"🇰🇾","category":8,"name":"flag: Cayman Islands","version":"2.0"},{"emoji":"🇰🇿","category":8,"name":"flag: Kazakhstan","version":"2.0"},{"emoji":"🇱🇦","category":8,"name":"flag: Laos","version":"2.0"},{"emoji":"🇱🇧","category":8,"name":"flag: Lebanon","version":"2.0"},{"emoji":"🇱🇨","category":8,"name":"flag: St. Lucia","version":"2.0"},{"emoji":"🇱🇮","category":8,"name":"flag: Liechtenstein","version":"2.0"},{"emoji":"🇱🇰","category":8,"name":"flag: Sri Lanka","version":"2.0"},{"emoji":"🇱🇷","category":8,"name":"flag: Liberia","version":"2.0"},{"emoji":"🇱🇸","category":8,"name":"flag: Lesotho","version":"2.0"},{"emoji":"🇱🇹","category":8,"name":"flag: Lithuania","version":"2.0"},{"emoji":"🇱🇺","category":8,"name":"flag: Luxembourg","version":"2.0"},{"emoji":"🇱🇻","category":8,"name":"flag: Latvia","version":"2.0"},{"emoji":"🇱🇾","category":8,"name":"flag: Libya","version":"2.0"},{"emoji":"🇲🇦","category":8,"name":"flag: Morocco","version":"2.0"},{"emoji":"🇲🇨","category":8,"name":"flag: Monaco","version":"2.0"},{"emoji":"🇲🇩","category":8,"name":"flag: Moldova","version":"2.0"},{"emoji":"🇲🇪","category":8,"name":"flag: Montenegro","version":"2.0"},{"emoji":"🇲🇫","category":8,"name":"flag: St. Martin","version":"2.0"},{"emoji":"🇲🇬","category":8,"name":"flag: Madagascar","version":"2.0"},{"emoji":"🇲🇭","category":8,"name":"flag: Marshall Islands","version":"2.0"},{"emoji":"🇲🇰","category":8,"name":"flag: North Macedonia","version":"2.0"},{"emoji":"🇲🇱","category":8,"name":"flag: Mali","version":"2.0"},{"emoji":"🇲🇲","category":8,"name":"flag: Myanmar (Burma)","version":"2.0"},{"emoji":"🇲🇳","category":8,"name":"flag: Mongolia","version":"2.0"},{"emoji":"🇲🇴","category":8,"name":"flag: Macao SAR China","version":"2.0"},{"emoji":"🇲🇵","category":8,"name":"flag: Northern Mariana Islands","version":"2.0"},{"emoji":"🇲🇶","category":8,"name":"flag: Martinique","version":"2.0"},{"emoji":"🇲🇷","category":8,"name":"flag: Mauritania","version":"2.0"},{"emoji":"🇲🇸","category":8,"name":"flag: Montserrat","version":"2.0"},{"emoji":"🇲🇹","category":8,"name":"flag: Malta","version":"2.0"},{"emoji":"🇲🇺","category":8,"name":"flag: Mauritius","version":"2.0"},{"emoji":"🇲🇻","category":8,"name":"flag: Maldives","version":"2.0"},{"emoji":"🇲🇼","category":8,"name":"flag: Malawi","version":"2.0"},{"emoji":"🇲🇽","category":8,"name":"flag: Mexico","version":"2.0"},{"emoji":"🇲🇾","category":8,"name":"flag: Malaysia","version":"2.0"},{"emoji":"🇲🇿","category":8,"name":"flag: Mozambique","version":"2.0"},{"emoji":"🇳🇦","category":8,"name":"flag: Namibia","version":"2.0"},{"emoji":"🇳🇨","category":8,"name":"flag: New Caledonia","version":"2.0"},{"emoji":"🇳🇪","category":8,"name":"flag: Niger","version":"2.0"},{"emoji":"🇳🇫","category":8,"name":"flag: Norfolk Island","version":"2.0"},{"emoji":"🇳🇬","category":8,"name":"flag: Nigeria","version":"2.0"},{"emoji":"🇳🇮","category":8,"name":"flag: Nicaragua","version":"2.0"},{"emoji":"🇳🇱","category":8,"name":"flag: Netherlands","version":"2.0"},{"emoji":"🇳🇴","category":8,"name":"flag: Norway","version":"2.0"},{"emoji":"🇳🇵","category":8,"name":"flag: Nepal","version":"2.0"},{"emoji":"🇳🇷","category":8,"name":"flag: Nauru","version":"2.0"},{"emoji":"🇳🇺","category":8,"name":"flag: Niue","version":"2.0"},{"emoji":"🇳🇿","category":8,"name":"flag: New Zealand","version":"2.0"},{"emoji":"🇴🇲","category":8,"name":"flag: Oman","version":"2.0"},{"emoji":"🇵🇦","category":8,"name":"flag: Panama","version":"2.0"},{"emoji":"🇵🇪","category":8,"name":"flag: Peru","version":"2.0"},{"emoji":"🇵🇫","category":8,"name":"flag: French Polynesia","version":"2.0"},{"emoji":"🇵🇬","category":8,"name":"flag: Papua New Guinea","version":"2.0"},{"emoji":"🇵🇭","category":8,"name":"flag: Philippines","version":"2.0"},{"emoji":"🇵🇰","category":8,"name":"flag: Pakistan","version":"2.0"},{"emoji":"🇵🇱","category":8,"name":"flag: Poland","version":"2.0"},{"emoji":"🇵🇲","category":8,"name":"flag: St. Pierre & Miquelon","version":"2.0"},{"emoji":"🇵🇳","category":8,"name":"flag: Pitcairn Islands","version":"2.0"},{"emoji":"🇵🇷","category":8,"name":"flag: Puerto Rico","version":"2.0"},{"emoji":"🇵🇸","category":8,"name":"flag: Palestinian Territories","version":"2.0"},{"emoji":"🇵🇹","category":8,"name":"flag: Portugal","version":"2.0"},{"emoji":"🇵🇼","category":8,"name":"flag: Palau","version":"2.0"},{"emoji":"🇵🇾","category":8,"name":"flag: Paraguay","version":"2.0"},{"emoji":"🇶🇦","category":8,"name":"flag: Qatar","version":"2.0"},{"emoji":"🇷🇪","category":8,"name":"flag: Réunion","version":"2.0"},{"emoji":"🇷🇴","category":8,"name":"flag: Romania","version":"2.0"},{"emoji":"🇷🇸","category":8,"name":"flag: Serbia","version":"2.0"},{"emoji":"🇷🇺","category":8,"name":"flag: Russia","version":"1.0"},{"emoji":"🇷🇼","category":8,"name":"flag: Rwanda","version":"2.0"},{"emoji":"🇸🇦","category":8,"name":"flag: Saudi Arabia","version":"2.0"},{"emoji":"🇸🇧","category":8,"name":"flag: Solomon Islands","version":"2.0"},{"emoji":"🇸🇨","category":8,"name":"flag: Seychelles","version":"2.0"},{"emoji":"🇸🇩","category":8,"name":"flag: Sudan","version":"2.0"},{"emoji":"🇸🇪","category":8,"name":"flag: Sweden","version":"2.0"},{"emoji":"🇸🇬","category":8,"name":"flag: Singapore","version":"2.0"},{"emoji":"🇸🇭","category":8,"name":"flag: St. Helena","version":"2.0"},{"emoji":"🇸🇮","category":8,"name":"flag: Slovenia","version":"2.0"},{"emoji":"🇸🇯","category":8,"name":"flag: Svalbard & Jan Mayen","version":"2.0"},{"emoji":"🇸🇰","category":8,"name":"flag: Slovakia","version":"2.0"},{"emoji":"🇸🇱","category":8,"name":"flag: Sierra Leone","version":"2.0"},{"emoji":"🇸🇲","category":8,"name":"flag: San Marino","version":"2.0"},{"emoji":"🇸🇳","category":8,"name":"flag: Senegal","version":"2.0"},{"emoji":"🇸🇴","category":8,"name":"flag: Somalia","version":"2.0"},{"emoji":"🇸🇷","category":8,"name":"flag: Suriname","version":"2.0"},{"emoji":"🇸🇸","category":8,"name":"flag: South Sudan","version":"2.0"},{"emoji":"🇸🇹","category":8,"name":"flag: São Tomé & Príncipe","version":"2.0"},{"emoji":"🇸🇻","category":8,"name":"flag: El Salvador","version":"2.0"},{"emoji":"🇸🇽","category":8,"name":"flag: Sint Maarten","version":"2.0"},{"emoji":"🇸🇾","category":8,"name":"flag: Syria","version":"2.0"},{"emoji":"🇸🇿","category":8,"name":"flag: Eswatini","version":"2.0"},{"emoji":"🇹🇦","category":8,"name":"flag: Tristan da Cunha","version":"2.0"},{"emoji":"🇹🇨","category":8,"name":"flag: Turks & Caicos Islands","version":"2.0"},{"emoji":"🇹🇩","category":8,"name":"flag: Chad","version":"2.0"},{"emoji":"🇹🇫","category":8,"name":"flag: French Southern Territories","version":"2.0"},{"emoji":"🇹🇬","category":8,"name":"flag: Togo","version":"2.0"},{"emoji":"🇹🇭","category":8,"name":"flag: Thailand","version":"2.0"},{"emoji":"🇹🇯","category":8,"name":"flag: Tajikistan","version":"2.0"},{"emoji":"🇹🇰","category":8,"name":"flag: Tokelau","version":"2.0"},{"emoji":"🇹🇱","category":8,"name":"flag: Timor-Leste","version":"2.0"},{"emoji":"🇹🇲","category":8,"name":"flag: Turkmenistan","version":"2.0"},{"emoji":"🇹🇳","category":8,"name":"flag: Tunisia","version":"2.0"},{"emoji":"🇹🇴","category":8,"name":"flag: Tonga","version":"2.0"},{"emoji":"🇹🇷","category":8,"name":"flag: Turkey","version":"2.0"},{"emoji":"🇹🇹","category":8,"name":"flag: Trinidad & Tobago","version":"2.0"},{"emoji":"🇹🇻","category":8,"name":"flag: Tuvalu","version":"2.0"},{"emoji":"🇹🇼","category":8,"name":"flag: Taiwan","version":"2.0"},{"emoji":"🇹🇿","category":8,"name":"flag: Tanzania","version":"2.0"},{"emoji":"🇺🇦","category":8,"name":"flag: Ukraine","version":"2.0"},{"emoji":"🇺🇬","category":8,"name":"flag: Uganda","version":"2.0"},{"emoji":"🇺🇲","category":8,"name":"flag: U.S. Outlying Islands","version":"2.0"},{"emoji":"🇺🇳","category":8,"name":"flag: United Nations","version":"4.0"},{"emoji":"🇺🇸","category":8,"name":"flag: United States","version":"1.0"},{"emoji":"🇺🇾","category":8,"name":"flag: Uruguay","version":"2.0"},{"emoji":"🇺🇿","category":8,"name":"flag: Uzbekistan","version":"2.0"},{"emoji":"🇻🇦","category":8,"name":"flag: Vatican City","version":"2.0"},{"emoji":"🇻🇨","category":8,"name":"flag: St. Vincent & Grenadines","version":"2.0"},{"emoji":"🇻🇪","category":8,"name":"flag: Venezuela","version":"2.0"},{"emoji":"🇻🇬","category":8,"name":"flag: British Virgin Islands","version":"2.0"},{"emoji":"🇻🇮","category":8,"name":"flag: U.S. Virgin Islands","version":"2.0"},{"emoji":"🇻🇳","category":8,"name":"flag: Vietnam","version":"2.0"},{"emoji":"🇻🇺","category":8,"name":"flag: Vanuatu","version":"2.0"},{"emoji":"🇼🇫","category":8,"name":"flag: Wallis & Futuna","version":"2.0"},{"emoji":"🇼🇸","category":8,"name":"flag: Samoa","version":"2.0"},{"emoji":"🇽🇰","category":8,"name":"flag: Kosovo","version":"2.0"},{"emoji":"🇾🇪","category":8,"name":"flag: Yemen","version":"2.0"},{"emoji":"🇾🇹","category":8,"name":"flag: Mayotte","version":"2.0"},{"emoji":"🇿🇦","category":8,"name":"flag: South Africa","version":"2.0"},{"emoji":"🇿🇲","category":8,"name":"flag: Zambia","version":"2.0"},{"emoji":"🇿🇼","category":8,"name":"flag: Zimbabwe","version":"2.0"},{"emoji":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","category":8,"name":"flag: England","version":"5.0"},{"emoji":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","category":8,"name":"flag: Scotland","version":"5.0"},{"emoji":"🏴󠁧󠁢󠁷󠁬󠁳󠁿","category":8,"name":"flag: Wales","version":"5.0"}]}
+export default [
+  {
+    title: "😀",
+    description: ":grinning:",
+    keyword: "grinning",
+  },
+  {
+    title: "😃",
+    description: ":smiley:",
+    keyword: "smiley",
+  },
+  {
+    title: "😄",
+    description: ":smile:",
+    keyword: "smile",
+  },
+  {
+    title: "😁",
+    description: ":grin:",
+    keyword: "grin",
+  },
+  {
+    title: "😆",
+    description: ":satisfied:",
+    keyword: "satisfied",
+  },
+  {
+    title: "😅",
+    description: ":sweat_smile:",
+    keyword: "sweat_smile",
+  },
+  {
+    title: "🤣",
+    description: ":rofl:",
+    keyword: "rofl",
+  },
+  {
+    title: "😂",
+    description: ":joy:",
+    keyword: "joy",
+  },
+  {
+    title: "🙂",
+    description: ":slightly_smiling_face:",
+    keyword: "slightly_smiling_face",
+  },
+  {
+    title: "🙃",
+    description: ":upside_down_face:",
+    keyword: "upside_down_face",
+  },
+  {
+    title: "😉",
+    description: ":wink:",
+    keyword: "wink",
+  },
+  {
+    title: "😊",
+    description: ":blush:",
+    keyword: "blush",
+  },
+  {
+    title: "😇",
+    description: ":innocent:",
+    keyword: "innocent",
+  },
+  {
+    title: "🥰",
+    description: ":smiling_face_with_three_hearts:",
+    keyword: "smiling_face_with_three_hearts",
+  },
+  {
+    title: "😍",
+    description: ":heart_eyes:",
+    keyword: "heart_eyes",
+  },
+  {
+    title: "🤩",
+    description: ":star_struck:",
+    keyword: "star_struck",
+  },
+  {
+    title: "😘",
+    description: ":kissing_heart:",
+    keyword: "kissing_heart",
+  },
+  {
+    title: "😗",
+    description: ":kissing:",
+    keyword: "kissing",
+  },
+  {
+    title: "☺️",
+    description: ":relaxed:",
+    keyword: "relaxed",
+  },
+  {
+    title: "😚",
+    description: ":kissing_closed_eyes:",
+    keyword: "kissing_closed_eyes",
+  },
+  {
+    title: "😙",
+    description: ":kissing_smiling_eyes:",
+    keyword: "kissing_smiling_eyes",
+  },
+  {
+    title: "😋",
+    description: ":yum:",
+    keyword: "yum",
+  },
+  {
+    title: "😛",
+    description: ":stuck_out_tongue:",
+    keyword: "stuck_out_tongue",
+  },
+  {
+    title: "😜",
+    description: ":stuck_out_tongue_winking_eye:",
+    keyword: "stuck_out_tongue_winking_eye",
+  },
+  {
+    title: "🤪",
+    description: ":zany_face:",
+    keyword: "zany_face",
+  },
+  {
+    title: "😝",
+    description: ":stuck_out_tongue_closed_eyes:",
+    keyword: "stuck_out_tongue_closed_eyes",
+  },
+  {
+    title: "🤑",
+    description: ":money_mouth_face:",
+    keyword: "money_mouth_face",
+  },
+  {
+    title: "🤗",
+    description: ":hugs:",
+    keyword: "hugs",
+  },
+  {
+    title: "🤭",
+    description: ":hand_over_mouth:",
+    keyword: "hand_over_mouth",
+  },
+  {
+    title: "🤫",
+    description: ":shushing_face:",
+    keyword: "shushing_face",
+  },
+  {
+    title: "🤔",
+    description: ":thinking:",
+    keyword: "thinking",
+  },
+  {
+    title: "🤐",
+    description: ":zipper_mouth_face:",
+    keyword: "zipper_mouth_face",
+  },
+  {
+    title: "🤨",
+    description: ":raised_eyebrow:",
+    keyword: "raised_eyebrow",
+  },
+  {
+    title: "😐",
+    description: ":neutral_face:",
+    keyword: "neutral_face",
+  },
+  {
+    title: "😑",
+    description: ":expressionless:",
+    keyword: "expressionless",
+  },
+  {
+    title: "😶",
+    description: ":no_mouth:",
+    keyword: "no_mouth",
+  },
+  {
+    title: "😏",
+    description: ":smirk:",
+    keyword: "smirk",
+  },
+  {
+    title: "😒",
+    description: ":unamused:",
+    keyword: "unamused",
+  },
+  {
+    title: "🙄",
+    description: ":roll_eyes:",
+    keyword: "roll_eyes",
+  },
+  {
+    title: "😬",
+    description: ":grimacing:",
+    keyword: "grimacing",
+  },
+  {
+    title: "🤥",
+    description: ":lying_face:",
+    keyword: "lying_face",
+  },
+  {
+    title: "😌",
+    description: ":relieved:",
+    keyword: "relieved",
+  },
+  {
+    title: "😔",
+    description: ":pensive:",
+    keyword: "pensive",
+  },
+  {
+    title: "😪",
+    description: ":sleepy:",
+    keyword: "sleepy",
+  },
+  {
+    title: "🤤",
+    description: ":drooling_face:",
+    keyword: "drooling_face",
+  },
+  {
+    title: "😴",
+    description: ":sleeping:",
+    keyword: "sleeping",
+  },
+  {
+    title: "😷",
+    description: ":mask:",
+    keyword: "mask",
+  },
+  {
+    title: "🤒",
+    description: ":face_with_thermometer:",
+    keyword: "face_with_thermometer",
+  },
+  {
+    title: "🤕",
+    description: ":face_with_head_bandage:",
+    keyword: "face_with_head_bandage",
+  },
+  {
+    title: "🤢",
+    description: ":nauseated_face:",
+    keyword: "nauseated_face",
+  },
+  {
+    title: "🤮",
+    description: ":vomiting_face:",
+    keyword: "vomiting_face",
+  },
+  {
+    title: "🤧",
+    description: ":sneezing_face:",
+    keyword: "sneezing_face",
+  },
+  {
+    title: "🥵",
+    description: ":hot_face:",
+    keyword: "hot_face",
+  },
+  {
+    title: "🥶",
+    description: ":cold_face:",
+    keyword: "cold_face",
+  },
+  {
+    title: "🥴",
+    description: ":woozy_face:",
+    keyword: "woozy_face",
+  },
+  {
+    title: "😵",
+    description: ":dizzy_face:",
+    keyword: "dizzy_face",
+  },
+  {
+    title: "🤯",
+    description: ":exploding_head:",
+    keyword: "exploding_head",
+  },
+  {
+    title: "🤠",
+    description: ":cowboy_hat_face:",
+    keyword: "cowboy_hat_face",
+  },
+  {
+    title: "🥳",
+    description: ":partying_face:",
+    keyword: "partying_face",
+  },
+  {
+    title: "😎",
+    description: ":sunglasses:",
+    keyword: "sunglasses",
+  },
+  {
+    title: "🤓",
+    description: ":nerd_face:",
+    keyword: "nerd_face",
+  },
+  {
+    title: "🧐",
+    description: ":monocle_face:",
+    keyword: "monocle_face",
+  },
+  {
+    title: "😕",
+    description: ":confused:",
+    keyword: "confused",
+  },
+  {
+    title: "😟",
+    description: ":worried:",
+    keyword: "worried",
+  },
+  {
+    title: "🙁",
+    description: ":slightly_frowning_face:",
+    keyword: "slightly_frowning_face",
+  },
+  {
+    title: "☹️",
+    description: ":frowning_face:",
+    keyword: "frowning_face",
+  },
+  {
+    title: "😮",
+    description: ":open_mouth:",
+    keyword: "open_mouth",
+  },
+  {
+    title: "😯",
+    description: ":hushed:",
+    keyword: "hushed",
+  },
+  {
+    title: "😲",
+    description: ":astonished:",
+    keyword: "astonished",
+  },
+  {
+    title: "😳",
+    description: ":flushed:",
+    keyword: "flushed",
+  },
+  {
+    title: "🥺",
+    description: ":pleading_face:",
+    keyword: "pleading_face",
+  },
+  {
+    title: "😦",
+    description: ":frowning:",
+    keyword: "frowning",
+  },
+  {
+    title: "😧",
+    description: ":anguished:",
+    keyword: "anguished",
+  },
+  {
+    title: "😨",
+    description: ":fearful:",
+    keyword: "fearful",
+  },
+  {
+    title: "😰",
+    description: ":cold_sweat:",
+    keyword: "cold_sweat",
+  },
+  {
+    title: "😥",
+    description: ":disappointed_relieved:",
+    keyword: "disappointed_relieved",
+  },
+  {
+    title: "😢",
+    description: ":cry:",
+    keyword: "cry",
+  },
+  {
+    title: "😭",
+    description: ":sob:",
+    keyword: "sob",
+  },
+  {
+    title: "😱",
+    description: ":scream:",
+    keyword: "scream",
+  },
+  {
+    title: "😖",
+    description: ":confounded:",
+    keyword: "confounded",
+  },
+  {
+    title: "😣",
+    description: ":persevere:",
+    keyword: "persevere",
+  },
+  {
+    title: "😞",
+    description: ":disappointed:",
+    keyword: "disappointed",
+  },
+  {
+    title: "😓",
+    description: ":sweat:",
+    keyword: "sweat",
+  },
+  {
+    title: "😩",
+    description: ":weary:",
+    keyword: "weary",
+  },
+  {
+    title: "😫",
+    description: ":tired_face:",
+    keyword: "tired_face",
+  },
+  {
+    title: "🥱",
+    description: ":yawning_face:",
+    keyword: "yawning_face",
+  },
+  {
+    title: "😤",
+    description: ":triumph:",
+    keyword: "triumph",
+  },
+  {
+    title: "😡",
+    description: ":rage:",
+    keyword: "rage",
+  },
+  {
+    title: "😠",
+    description: ":angry:",
+    keyword: "angry",
+  },
+  {
+    title: "🤬",
+    description: ":cursing_face:",
+    keyword: "cursing_face",
+  },
+  {
+    title: "😈",
+    description: ":smiling_imp:",
+    keyword: "smiling_imp",
+  },
+  {
+    title: "👿",
+    description: ":imp:",
+    keyword: "imp",
+  },
+  {
+    title: "💀",
+    description: ":skull:",
+    keyword: "skull",
+  },
+  {
+    title: "☠️",
+    description: ":skull_and_crossbones:",
+    keyword: "skull_and_crossbones",
+  },
+  {
+    title: "💩",
+    description: ":shit:",
+    keyword: "shit",
+  },
+  {
+    title: "🤡",
+    description: ":clown_face:",
+    keyword: "clown_face",
+  },
+  {
+    title: "👹",
+    description: ":japanese_ogre:",
+    keyword: "japanese_ogre",
+  },
+  {
+    title: "👺",
+    description: ":japanese_goblin:",
+    keyword: "japanese_goblin",
+  },
+  {
+    title: "👻",
+    description: ":ghost:",
+    keyword: "ghost",
+  },
+  {
+    title: "👽",
+    description: ":alien:",
+    keyword: "alien",
+  },
+  {
+    title: "👾",
+    description: ":space_invader:",
+    keyword: "space_invader",
+  },
+  {
+    title: "🤖",
+    description: ":robot:",
+    keyword: "robot",
+  },
+  {
+    title: "😺",
+    description: ":smiley_cat:",
+    keyword: "smiley_cat",
+  },
+  {
+    title: "😸",
+    description: ":smile_cat:",
+    keyword: "smile_cat",
+  },
+  {
+    title: "😹",
+    description: ":joy_cat:",
+    keyword: "joy_cat",
+  },
+  {
+    title: "😻",
+    description: ":heart_eyes_cat:",
+    keyword: "heart_eyes_cat",
+  },
+  {
+    title: "😼",
+    description: ":smirk_cat:",
+    keyword: "smirk_cat",
+  },
+  {
+    title: "😽",
+    description: ":kissing_cat:",
+    keyword: "kissing_cat",
+  },
+  {
+    title: "🙀",
+    description: ":scream_cat:",
+    keyword: "scream_cat",
+  },
+  {
+    title: "😿",
+    description: ":crying_cat_face:",
+    keyword: "crying_cat_face",
+  },
+  {
+    title: "😾",
+    description: ":pouting_cat:",
+    keyword: "pouting_cat",
+  },
+  {
+    title: "🙈",
+    description: ":see_no_evil:",
+    keyword: "see_no_evil",
+  },
+  {
+    title: "🙉",
+    description: ":hear_no_evil:",
+    keyword: "hear_no_evil",
+  },
+  {
+    title: "🙊",
+    description: ":speak_no_evil:",
+    keyword: "speak_no_evil",
+  },
+  {
+    title: "💋",
+    description: ":kiss:",
+    keyword: "kiss",
+  },
+  {
+    title: "💌",
+    description: ":love_letter:",
+    keyword: "love_letter",
+  },
+  {
+    title: "💘",
+    description: ":cupid:",
+    keyword: "cupid",
+  },
+  {
+    title: "💝",
+    description: ":gift_heart:",
+    keyword: "gift_heart",
+  },
+  {
+    title: "💖",
+    description: ":sparkling_heart:",
+    keyword: "sparkling_heart",
+  },
+  {
+    title: "💗",
+    description: ":heartpulse:",
+    keyword: "heartpulse",
+  },
+  {
+    title: "💓",
+    description: ":heartbeat:",
+    keyword: "heartbeat",
+  },
+  {
+    title: "💞",
+    description: ":revolving_hearts:",
+    keyword: "revolving_hearts",
+  },
+  {
+    title: "💕",
+    description: ":two_hearts:",
+    keyword: "two_hearts",
+  },
+  {
+    title: "💟",
+    description: ":heart_decoration:",
+    keyword: "heart_decoration",
+  },
+  {
+    title: "❣️",
+    description: ":heavy_heart_exclamation:",
+    keyword: "heavy_heart_exclamation",
+  },
+  {
+    title: "💔",
+    description: ":broken_heart:",
+    keyword: "broken_heart",
+  },
+  {
+    title: "❤️",
+    description: ":heart:",
+    keyword: "heart",
+  },
+  {
+    title: "🧡",
+    description: ":orange_heart:",
+    keyword: "orange_heart",
+  },
+  {
+    title: "💛",
+    description: ":yellow_heart:",
+    keyword: "yellow_heart",
+  },
+  {
+    title: "💚",
+    description: ":green_heart:",
+    keyword: "green_heart",
+  },
+  {
+    title: "💙",
+    description: ":blue_heart:",
+    keyword: "blue_heart",
+  },
+  {
+    title: "💜",
+    description: ":purple_heart:",
+    keyword: "purple_heart",
+  },
+  {
+    title: "🤎",
+    description: ":brown_heart:",
+    keyword: "brown_heart",
+  },
+  {
+    title: "🖤",
+    description: ":black_heart:",
+    keyword: "black_heart",
+  },
+  {
+    title: "🤍",
+    description: ":white_heart:",
+    keyword: "white_heart",
+  },
+  {
+    title: "💯",
+    description: ":100:",
+    keyword: "100",
+  },
+  {
+    title: "💢",
+    description: ":anger:",
+    keyword: "anger",
+  },
+  {
+    title: "💥",
+    description: ":collision:",
+    keyword: "collision",
+  },
+  {
+    title: "💫",
+    description: ":dizzy:",
+    keyword: "dizzy",
+  },
+  {
+    title: "💦",
+    description: ":sweat_drops:",
+    keyword: "sweat_drops",
+  },
+  {
+    title: "💨",
+    description: ":dash:",
+    keyword: "dash",
+  },
+  {
+    title: "🕳️",
+    description: ":hole:",
+    keyword: "hole",
+  },
+  {
+    title: "💣",
+    description: ":bomb:",
+    keyword: "bomb",
+  },
+  {
+    title: "💬",
+    description: ":speech_balloon:",
+    keyword: "speech_balloon",
+  },
+  {
+    title: "🗨️",
+    description: ":left_speech_bubble:",
+    keyword: "left_speech_bubble",
+  },
+  {
+    title: "🗯️",
+    description: ":right_anger_bubble:",
+    keyword: "right_anger_bubble",
+  },
+  {
+    title: "💭",
+    description: ":thought_balloon:",
+    keyword: "thought_balloon",
+  },
+  {
+    title: "💤",
+    description: ":zzz:",
+    keyword: "zzz",
+  },
+  {
+    title: "👋",
+    description: ":wave:",
+    keyword: "wave",
+  },
+  {
+    title: "🤚",
+    description: ":raised_back_of_hand:",
+    keyword: "raised_back_of_hand",
+  },
+  {
+    title: "🖐️",
+    description: ":raised_hand_with_fingers_splayed:",
+    keyword: "raised_hand_with_fingers_splayed",
+  },
+  {
+    title: "✋",
+    description: ":raised_hand:",
+    keyword: "raised_hand",
+  },
+  {
+    title: "🖖",
+    description: ":vulcan_salute:",
+    keyword: "vulcan_salute",
+  },
+  {
+    title: "👌",
+    description: ":ok_hand:",
+    keyword: "ok_hand",
+  },
+  {
+    title: "🤏",
+    description: ":pinching_hand:",
+    keyword: "pinching_hand",
+  },
+  {
+    title: "✌️",
+    description: ":v:",
+    keyword: "v",
+  },
+  {
+    title: "🤞",
+    description: ":crossed_fingers:",
+    keyword: "crossed_fingers",
+  },
+  {
+    title: "🤟",
+    description: ":love_you_gesture:",
+    keyword: "love_you_gesture",
+  },
+  {
+    title: "🤘",
+    description: ":metal:",
+    keyword: "metal",
+  },
+  {
+    title: "🤙",
+    description: ":call_me_hand:",
+    keyword: "call_me_hand",
+  },
+  {
+    title: "👈",
+    description: ":point_left:",
+    keyword: "point_left",
+  },
+  {
+    title: "👉",
+    description: ":point_right:",
+    keyword: "point_right",
+  },
+  {
+    title: "👆",
+    description: ":point_up_2:",
+    keyword: "point_up_2",
+  },
+  {
+    title: "🖕",
+    description: ":middle_finger:",
+    keyword: "middle_finger",
+  },
+  {
+    title: "👇",
+    description: ":point_down:",
+    keyword: "point_down",
+  },
+  {
+    title: "☝️",
+    description: ":point_up:",
+    keyword: "point_up",
+  },
+  {
+    title: "👍",
+    description: ":thumbsup:",
+    keyword: ["thumbsup", "+1"],
+  },
+  {
+    title: "👎",
+    description: ":thumbsdown:",
+    keyword: ["thumbsdown", "-1"],
+  },
+  {
+    title: "✊",
+    description: ":fist_raised:",
+    keyword: "fist_raised",
+  },
+  {
+    title: "👊",
+    description: ":punch:",
+    keyword: "punch",
+  },
+  {
+    title: "🤛",
+    description: ":fist_left:",
+    keyword: "fist_left",
+  },
+  {
+    title: "🤜",
+    description: ":fist_right:",
+    keyword: "fist_right",
+  },
+  {
+    title: "👏",
+    description: ":clap:",
+    keyword: "clap",
+  },
+  {
+    title: "🙌",
+    description: ":raised_hands:",
+    keyword: "raised_hands",
+  },
+  {
+    title: "👐",
+    description: ":open_hands:",
+    keyword: "open_hands",
+  },
+  {
+    title: "🤲",
+    description: ":palms_up_together:",
+    keyword: "palms_up_together",
+  },
+  {
+    title: "🤝",
+    description: ":handshake:",
+    keyword: "handshake",
+  },
+  {
+    title: "🙏",
+    description: ":pray:",
+    keyword: "pray",
+  },
+  {
+    title: "✍️",
+    description: ":writing_hand:",
+    keyword: "writing_hand",
+  },
+  {
+    title: "💅",
+    description: ":nail_care:",
+    keyword: "nail_care",
+  },
+  {
+    title: "🤳",
+    description: ":selfie:",
+    keyword: "selfie",
+  },
+  {
+    title: "💪",
+    description: ":muscle:",
+    keyword: "muscle",
+  },
+  {
+    title: "🦾",
+    description: ":mechanical_arm:",
+    keyword: "mechanical_arm",
+  },
+  {
+    title: "🦿",
+    description: ":mechanical_leg:",
+    keyword: "mechanical_leg",
+  },
+  {
+    title: "🦵",
+    description: ":leg:",
+    keyword: "leg",
+  },
+  {
+    title: "🦶",
+    description: ":foot:",
+    keyword: "foot",
+  },
+  {
+    title: "👂",
+    description: ":ear:",
+    keyword: "ear",
+  },
+  {
+    title: "🦻",
+    description: ":ear_with_hearing_aid:",
+    keyword: "ear_with_hearing_aid",
+  },
+  {
+    title: "👃",
+    description: ":nose:",
+    keyword: "nose",
+  },
+  {
+    title: "🧠",
+    description: ":brain:",
+    keyword: "brain",
+  },
+  {
+    title: "🦷",
+    description: ":tooth:",
+    keyword: "tooth",
+  },
+  {
+    title: "🦴",
+    description: ":bone:",
+    keyword: "bone",
+  },
+  {
+    title: "👀",
+    description: ":eyes:",
+    keyword: "eyes",
+  },
+  {
+    title: "👁️",
+    description: ":eye:",
+    keyword: "eye",
+  },
+  {
+    title: "👅",
+    description: ":tongue:",
+    keyword: "tongue",
+  },
+  {
+    title: "👄",
+    description: ":lips:",
+    keyword: "lips",
+  },
+  {
+    title: "👶",
+    description: ":baby:",
+    keyword: "baby",
+  },
+  {
+    title: "🧒",
+    description: ":child:",
+    keyword: "child",
+  },
+  {
+    title: "👦",
+    description: ":boy:",
+    keyword: "boy",
+  },
+  {
+    title: "👧",
+    description: ":girl:",
+    keyword: "girl",
+  },
+  {
+    title: "🧑",
+    description: ":adult:",
+    keyword: "adult",
+  },
+  {
+    title: "👱",
+    description: ":blond_haired_person:",
+    keyword: "blond_haired_person",
+  },
+  {
+    title: "👨",
+    description: ":man:",
+    keyword: "man",
+  },
+  {
+    title: "🧔",
+    description: ":bearded_person:",
+    keyword: "bearded_person",
+  },
+  {
+    title: "👩",
+    description: ":woman:",
+    keyword: "woman",
+  },
+  {
+    title: "🧓",
+    description: ":older_adult:",
+    keyword: "older_adult",
+  },
+  {
+    title: "👴",
+    description: ":older_man:",
+    keyword: "older_man",
+  },
+  {
+    title: "👵",
+    description: ":older_woman:",
+    keyword: "older_woman",
+  },
+  {
+    title: "🙍",
+    description: ":frowning_person:",
+    keyword: "frowning_person",
+  },
+  {
+    title: "🙎",
+    description: ":pouting_face:",
+    keyword: "pouting_face",
+  },
+  {
+    title: "🙅",
+    description: ":no_good:",
+    keyword: "no_good",
+  },
+  {
+    title: "🙆",
+    description: ":ok_person:",
+    keyword: "ok_person",
+  },
+  {
+    title: "💁",
+    description: ":tipping_hand_person:",
+    keyword: "tipping_hand_person",
+  },
+  {
+    title: "🙋",
+    description: ":raising_hand:",
+    keyword: "raising_hand",
+  },
+  {
+    title: "🧏",
+    description: ":deaf_person:",
+    keyword: "deaf_person",
+  },
+  {
+    title: "🙇",
+    description: ":bow:",
+    keyword: "bow",
+  },
+  {
+    title: "🤦",
+    description: ":facepalm:",
+    keyword: "facepalm",
+  },
+  {
+    title: "🤷",
+    description: ":shrug:",
+    keyword: "shrug",
+  },
+  {
+    title: "👮",
+    description: ":police_officer:",
+    keyword: "police_officer",
+  },
+  {
+    title: "🕵️",
+    description: ":detective:",
+    keyword: "detective",
+  },
+  {
+    title: "💂",
+    description: ":guard:",
+    keyword: "guard",
+  },
+  {
+    title: "👷",
+    description: ":construction_worker:",
+    keyword: "construction_worker",
+  },
+  {
+    title: "🤴",
+    description: ":prince:",
+    keyword: "prince",
+  },
+  {
+    title: "👸",
+    description: ":princess:",
+    keyword: "princess",
+  },
+  {
+    title: "👳",
+    description: ":person_with_turban:",
+    keyword: "person_with_turban",
+  },
+  {
+    title: "👲",
+    description: ":man_with_gua_pi_mao:",
+    keyword: "man_with_gua_pi_mao",
+  },
+  {
+    title: "🧕",
+    description: ":woman_with_headscarf:",
+    keyword: "woman_with_headscarf",
+  },
+  {
+    title: "🤵",
+    description: ":man_in_tuxedo:",
+    keyword: "man_in_tuxedo",
+  },
+  {
+    title: "👰",
+    description: ":bride_with_veil:",
+    keyword: "bride_with_veil",
+  },
+  {
+    title: "🤰",
+    description: ":pregnant_woman:",
+    keyword: "pregnant_woman",
+  },
+  {
+    title: "🤱",
+    description: ":breast_feeding:",
+    keyword: "breast_feeding",
+  },
+  {
+    title: "👼",
+    description: ":angel:",
+    keyword: "angel",
+  },
+  {
+    title: "🎅",
+    description: ":santa:",
+    keyword: "santa",
+  },
+  {
+    title: "🤶",
+    description: ":mrs_claus:",
+    keyword: "mrs_claus",
+  },
+  {
+    title: "🦸",
+    description: ":superhero:",
+    keyword: "superhero",
+  },
+  {
+    title: "🦹",
+    description: ":supervillain:",
+    keyword: "supervillain",
+  },
+  {
+    title: "🧙",
+    description: ":mage:",
+    keyword: "mage",
+  },
+  {
+    title: "🧚",
+    description: ":fairy:",
+    keyword: "fairy",
+  },
+  {
+    title: "🧛",
+    description: ":vampire:",
+    keyword: "vampire",
+  },
+  {
+    title: "🧜",
+    description: ":merperson:",
+    keyword: "merperson",
+  },
+  {
+    title: "🧝",
+    description: ":elf:",
+    keyword: "elf",
+  },
+  {
+    title: "🧞",
+    description: ":genie:",
+    keyword: "genie",
+  },
+  {
+    title: "🧟",
+    description: ":zombie:",
+    keyword: "zombie",
+  },
+  {
+    title: "💆",
+    description: ":massage:",
+    keyword: "massage",
+  },
+  {
+    title: "💇",
+    description: ":haircut:",
+    keyword: "haircut",
+  },
+  {
+    title: "🚶",
+    description: ":walking:",
+    keyword: "walking",
+  },
+  {
+    title: "🧍",
+    description: ":standing_person:",
+    keyword: "standing_person",
+  },
+  {
+    title: "🧎",
+    description: ":kneeling_person:",
+    keyword: "kneeling_person",
+  },
+  {
+    title: "🏃",
+    description: ":running:",
+    keyword: "running",
+  },
+  {
+    title: "💃",
+    description: ":woman_dancing:",
+    keyword: "woman_dancing",
+  },
+  {
+    title: "🕺",
+    description: ":man_dancing:",
+    keyword: "man_dancing",
+  },
+  {
+    title: "🕴️",
+    description: ":business_suit_levitating:",
+    keyword: "business_suit_levitating",
+  },
+  {
+    title: "👯",
+    description: ":dancers:",
+    keyword: "dancers",
+  },
+  {
+    title: "🧖",
+    description: ":sauna_person:",
+    keyword: "sauna_person",
+  },
+  {
+    title: "🧗",
+    description: ":climbing:",
+    keyword: "climbing",
+  },
+  {
+    title: "🤺",
+    description: ":person_fencing:",
+    keyword: "person_fencing",
+  },
+  {
+    title: "🏇",
+    description: ":horse_racing:",
+    keyword: "horse_racing",
+  },
+  {
+    title: "⛷️",
+    description: ":skier:",
+    keyword: "skier",
+  },
+  {
+    title: "🏂",
+    description: ":snowboarder:",
+    keyword: "snowboarder",
+  },
+  {
+    title: "🏌️",
+    description: ":golfing:",
+    keyword: "golfing",
+  },
+  {
+    title: "🏄",
+    description: ":surfer:",
+    keyword: "surfer",
+  },
+  {
+    title: "🚣",
+    description: ":rowboat:",
+    keyword: "rowboat",
+  },
+  {
+    title: "🏊",
+    description: ":swimmer:",
+    keyword: "swimmer",
+  },
+  {
+    title: "⛹️",
+    description: ":bouncing_ball_person:",
+    keyword: "bouncing_ball_person",
+  },
+  {
+    title: "🏋️",
+    description: ":weight_lifting:",
+    keyword: "weight_lifting",
+  },
+  {
+    title: "🚴",
+    description: ":bicyclist:",
+    keyword: "bicyclist",
+  },
+  {
+    title: "🚵",
+    description: ":mountain_bicyclist:",
+    keyword: "mountain_bicyclist",
+  },
+  {
+    title: "🤸",
+    description: ":cartwheeling:",
+    keyword: "cartwheeling",
+  },
+  {
+    title: "🤼",
+    description: ":wrestling:",
+    keyword: "wrestling",
+  },
+  {
+    title: "🤽",
+    description: ":water_polo:",
+    keyword: "water_polo",
+  },
+  {
+    title: "🤾",
+    description: ":handball_person:",
+    keyword: "handball_person",
+  },
+  {
+    title: "🤹",
+    description: ":juggling_person:",
+    keyword: "juggling_person",
+  },
+  {
+    title: "🧘",
+    description: ":lotus_position:",
+    keyword: "lotus_position",
+  },
+  {
+    title: "🛀",
+    description: ":bath:",
+    keyword: "bath",
+  },
+  {
+    title: "🛌",
+    description: ":sleeping_bed:",
+    keyword: "sleeping_bed",
+  },
+  {
+    title: "👭",
+    description: ":two_women_holding_hands:",
+    keyword: "two_women_holding_hands",
+  },
+  {
+    title: "👫",
+    description: ":couple:",
+    keyword: "couple",
+  },
+  {
+    title: "👬",
+    description: ":two_men_holding_hands:",
+    keyword: "two_men_holding_hands",
+  },
+  {
+    title: "💏",
+    description: ":couplekiss:",
+    keyword: "couplekiss",
+  },
+  {
+    title: "💑",
+    description: ":couple_with_heart:",
+    keyword: "couple_with_heart",
+  },
+  {
+    title: "👪",
+    description: ":family:",
+    keyword: "family",
+  },
+  {
+    title: "🗣️",
+    description: ":speaking_head:",
+    keyword: "speaking_head",
+  },
+  {
+    title: "👤",
+    description: ":bust_in_silhouette:",
+    keyword: "bust_in_silhouette",
+  },
+  {
+    title: "👥",
+    description: ":busts_in_silhouette:",
+    keyword: "busts_in_silhouette",
+  },
+  {
+    title: "👣",
+    description: ":footprints:",
+    keyword: "footprints",
+  },
+  {
+    title: "🐵",
+    description: ":monkey_face:",
+    keyword: "monkey_face",
+  },
+  {
+    title: "🐒",
+    description: ":monkey:",
+    keyword: "monkey",
+  },
+  {
+    title: "🦍",
+    description: ":gorilla:",
+    keyword: "gorilla",
+  },
+  {
+    title: "🦧",
+    description: ":orangutan:",
+    keyword: "orangutan",
+  },
+  {
+    title: "🐶",
+    description: ":dog:",
+    keyword: "dog",
+  },
+  {
+    title: "🐕",
+    description: ":dog2:",
+    keyword: "dog2",
+  },
+  {
+    title: "🦮",
+    description: ":guide_dog:",
+    keyword: "guide_dog",
+  },
+  {
+    title: "🐩",
+    description: ":poodle:",
+    keyword: "poodle",
+  },
+  {
+    title: "🐺",
+    description: ":wolf:",
+    keyword: "wolf",
+  },
+  {
+    title: "🦊",
+    description: ":fox_face:",
+    keyword: "fox_face",
+  },
+  {
+    title: "🦝",
+    description: ":raccoon:",
+    keyword: "raccoon",
+  },
+  {
+    title: "🐱",
+    description: ":cat:",
+    keyword: "cat",
+  },
+  {
+    title: "🐈",
+    description: ":cat2:",
+    keyword: "cat2",
+  },
+  {
+    title: "🦁",
+    description: ":lion:",
+    keyword: "lion",
+  },
+  {
+    title: "🐯",
+    description: ":tiger:",
+    keyword: "tiger",
+  },
+  {
+    title: "🐅",
+    description: ":tiger2:",
+    keyword: "tiger2",
+  },
+  {
+    title: "🐆",
+    description: ":leopard:",
+    keyword: "leopard",
+  },
+  {
+    title: "🐴",
+    description: ":horse:",
+    keyword: "horse",
+  },
+  {
+    title: "🐎",
+    description: ":racehorse:",
+    keyword: "racehorse",
+  },
+  {
+    title: "🦄",
+    description: ":unicorn:",
+    keyword: "unicorn",
+  },
+  {
+    title: "🦓",
+    description: ":zebra:",
+    keyword: "zebra",
+  },
+  {
+    title: "🦌",
+    description: ":deer:",
+    keyword: "deer",
+  },
+  {
+    title: "🐮",
+    description: ":cow:",
+    keyword: "cow",
+  },
+  {
+    title: "🐂",
+    description: ":ox:",
+    keyword: "ox",
+  },
+  {
+    title: "🐃",
+    description: ":water_buffalo:",
+    keyword: "water_buffalo",
+  },
+  {
+    title: "🐄",
+    description: ":cow2:",
+    keyword: "cow2",
+  },
+  {
+    title: "🐷",
+    description: ":pig:",
+    keyword: "pig",
+  },
+  {
+    title: "🐖",
+    description: ":pig2:",
+    keyword: "pig2",
+  },
+  {
+    title: "🐗",
+    description: ":boar:",
+    keyword: "boar",
+  },
+  {
+    title: "🐽",
+    description: ":pig_nose:",
+    keyword: "pig_nose",
+  },
+  {
+    title: "🐏",
+    description: ":ram:",
+    keyword: "ram",
+  },
+  {
+    title: "🐑",
+    description: ":sheep:",
+    keyword: "sheep",
+  },
+  {
+    title: "🐐",
+    description: ":goat:",
+    keyword: "goat",
+  },
+  {
+    title: "🐪",
+    description: ":dromedary_camel:",
+    keyword: "dromedary_camel",
+  },
+  {
+    title: "🐫",
+    description: ":camel:",
+    keyword: "camel",
+  },
+  {
+    title: "🦙",
+    description: ":llama:",
+    keyword: "llama",
+  },
+  {
+    title: "🦒",
+    description: ":giraffe:",
+    keyword: "giraffe",
+  },
+  {
+    title: "🐘",
+    description: ":elephant:",
+    keyword: "elephant",
+  },
+  {
+    title: "🦏",
+    description: ":rhinoceros:",
+    keyword: "rhinoceros",
+  },
+  {
+    title: "🦛",
+    description: ":hippopotamus:",
+    keyword: "hippopotamus",
+  },
+  {
+    title: "🐭",
+    description: ":mouse:",
+    keyword: "mouse",
+  },
+  {
+    title: "🐁",
+    description: ":mouse2:",
+    keyword: "mouse2",
+  },
+  {
+    title: "🐀",
+    description: ":rat:",
+    keyword: "rat",
+  },
+  {
+    title: "🐹",
+    description: ":hamster:",
+    keyword: "hamster",
+  },
+  {
+    title: "🐰",
+    description: ":rabbit:",
+    keyword: "rabbit",
+  },
+  {
+    title: "🐇",
+    description: ":rabbit2:",
+    keyword: "rabbit2",
+  },
+  {
+    title: "🐿️",
+    description: ":chipmunk:",
+    keyword: "chipmunk",
+  },
+  {
+    title: "🦔",
+    description: ":hedgehog:",
+    keyword: "hedgehog",
+  },
+  {
+    title: "🦇",
+    description: ":bat:",
+    keyword: "bat",
+  },
+  {
+    title: "🐻",
+    description: ":bear:",
+    keyword: "bear",
+  },
+  {
+    title: "🐨",
+    description: ":koala:",
+    keyword: "koala",
+  },
+  {
+    title: "🐼",
+    description: ":panda_face:",
+    keyword: "panda_face",
+  },
+  {
+    title: "🦥",
+    description: ":sloth:",
+    keyword: "sloth",
+  },
+  {
+    title: "🦦",
+    description: ":otter:",
+    keyword: "otter",
+  },
+  {
+    title: "🦨",
+    description: ":skunk:",
+    keyword: "skunk",
+  },
+  {
+    title: "🦘",
+    description: ":kangaroo:",
+    keyword: "kangaroo",
+  },
+  {
+    title: "🦡",
+    description: ":badger:",
+    keyword: "badger",
+  },
+  {
+    title: "🐾",
+    description: ":paw_prints:",
+    keyword: "paw_prints",
+  },
+  {
+    title: "🦃",
+    description: ":turkey:",
+    keyword: "turkey",
+  },
+  {
+    title: "🐔",
+    description: ":chicken:",
+    keyword: "chicken",
+  },
+  {
+    title: "🐓",
+    description: ":rooster:",
+    keyword: "rooster",
+  },
+  {
+    title: "🐣",
+    description: ":hatching_chick:",
+    keyword: "hatching_chick",
+  },
+  {
+    title: "🐤",
+    description: ":baby_chick:",
+    keyword: "baby_chick",
+  },
+  {
+    title: "🐥",
+    description: ":hatched_chick:",
+    keyword: "hatched_chick",
+  },
+  {
+    title: "🐦",
+    description: ":bird:",
+    keyword: "bird",
+  },
+  {
+    title: "🐧",
+    description: ":penguin:",
+    keyword: "penguin",
+  },
+  {
+    title: "🕊️",
+    description: ":dove:",
+    keyword: "dove",
+  },
+  {
+    title: "🦅",
+    description: ":eagle:",
+    keyword: "eagle",
+  },
+  {
+    title: "🦆",
+    description: ":duck:",
+    keyword: "duck",
+  },
+  {
+    title: "🦢",
+    description: ":swan:",
+    keyword: "swan",
+  },
+  {
+    title: "🦉",
+    description: ":owl:",
+    keyword: "owl",
+  },
+  {
+    title: "🦩",
+    description: ":flamingo:",
+    keyword: "flamingo",
+  },
+  {
+    title: "🦚",
+    description: ":peacock:",
+    keyword: "peacock",
+  },
+  {
+    title: "🦜",
+    description: ":parrot:",
+    keyword: "parrot",
+  },
+  {
+    title: "🐸",
+    description: ":frog:",
+    keyword: "frog",
+  },
+  {
+    title: "🐊",
+    description: ":crocodile:",
+    keyword: "crocodile",
+  },
+  {
+    title: "🐢",
+    description: ":turtle:",
+    keyword: "turtle",
+  },
+  {
+    title: "🦎",
+    description: ":lizard:",
+    keyword: "lizard",
+  },
+  {
+    title: "🐍",
+    description: ":snake:",
+    keyword: "snake",
+  },
+  {
+    title: "🐲",
+    description: ":dragon_face:",
+    keyword: "dragon_face",
+  },
+  {
+    title: "🐉",
+    description: ":dragon:",
+    keyword: "dragon",
+  },
+  {
+    title: "🦕",
+    description: ":sauropod:",
+    keyword: "sauropod",
+  },
+  {
+    title: "🦖",
+    description: ":t-rex:",
+    keyword: "t-rex",
+  },
+  {
+    title: "🐳",
+    description: ":whale:",
+    keyword: "whale",
+  },
+  {
+    title: "🐋",
+    description: ":whale2:",
+    keyword: "whale2",
+  },
+  {
+    title: "🐬",
+    description: ":flipper:",
+    keyword: "flipper",
+  },
+  {
+    title: "🐟",
+    description: ":fish:",
+    keyword: "fish",
+  },
+  {
+    title: "🐠",
+    description: ":tropical_fish:",
+    keyword: "tropical_fish",
+  },
+  {
+    title: "🐡",
+    description: ":blowfish:",
+    keyword: "blowfish",
+  },
+  {
+    title: "🦈",
+    description: ":shark:",
+    keyword: "shark",
+  },
+  {
+    title: "🐙",
+    description: ":octopus:",
+    keyword: "octopus",
+  },
+  {
+    title: "🐚",
+    description: ":shell:",
+    keyword: "shell",
+  },
+  {
+    title: "🐌",
+    description: ":snail:",
+    keyword: "snail",
+  },
+  {
+    title: "🦋",
+    description: ":butterfly:",
+    keyword: "butterfly",
+  },
+  {
+    title: "🐛",
+    description: ":bug:",
+    keyword: "bug",
+  },
+  {
+    title: "🐜",
+    description: ":ant:",
+    keyword: "ant",
+  },
+  {
+    title: "🐝",
+    description: ":honeybee:",
+    keyword: "honeybee",
+  },
+  {
+    title: "🐞",
+    description: ":beetle:",
+    keyword: "beetle",
+  },
+  {
+    title: "🦗",
+    description: ":cricket:",
+    keyword: "cricket",
+  },
+  {
+    title: "🕷️",
+    description: ":spider:",
+    keyword: "spider",
+  },
+  {
+    title: "🕸️",
+    description: ":spider_web:",
+    keyword: "spider_web",
+  },
+  {
+    title: "🦂",
+    description: ":scorpion:",
+    keyword: "scorpion",
+  },
+  {
+    title: "🦟",
+    description: ":mosquito:",
+    keyword: "mosquito",
+  },
+  {
+    title: "🦠",
+    description: ":microbe:",
+    keyword: "microbe",
+  },
+  {
+    title: "💐",
+    description: ":bouquet:",
+    keyword: "bouquet",
+  },
+  {
+    title: "🌸",
+    description: ":cherry_blossom:",
+    keyword: "cherry_blossom",
+  },
+  {
+    title: "💮",
+    description: ":white_flower:",
+    keyword: "white_flower",
+  },
+  {
+    title: "🏵️",
+    description: ":rosette:",
+    keyword: "rosette",
+  },
+  {
+    title: "🌹",
+    description: ":rose:",
+    keyword: "rose",
+  },
+  {
+    title: "🥀",
+    description: ":wilted_flower:",
+    keyword: "wilted_flower",
+  },
+  {
+    title: "🌺",
+    description: ":hibiscus:",
+    keyword: "hibiscus",
+  },
+  {
+    title: "🌻",
+    description: ":sunflower:",
+    keyword: "sunflower",
+  },
+  {
+    title: "🌼",
+    description: ":blossom:",
+    keyword: "blossom",
+  },
+  {
+    title: "🌷",
+    description: ":tulip:",
+    keyword: "tulip",
+  },
+  {
+    title: "🌱",
+    description: ":seedling:",
+    keyword: "seedling",
+  },
+  {
+    title: "🌲",
+    description: ":evergreen_tree:",
+    keyword: "evergreen_tree",
+  },
+  {
+    title: "🌳",
+    description: ":deciduous_tree:",
+    keyword: "deciduous_tree",
+  },
+  {
+    title: "🌴",
+    description: ":palm_tree:",
+    keyword: "palm_tree",
+  },
+  {
+    title: "🌵",
+    description: ":cactus:",
+    keyword: "cactus",
+  },
+  {
+    title: "🌾",
+    description: ":ear_of_rice:",
+    keyword: "ear_of_rice",
+  },
+  {
+    title: "🌿",
+    description: ":herb:",
+    keyword: "herb",
+  },
+  {
+    title: "☘️",
+    description: ":shamrock:",
+    keyword: "shamrock",
+  },
+  {
+    title: "🍀",
+    description: ":four_leaf_clover:",
+    keyword: "four_leaf_clover",
+  },
+  {
+    title: "🍁",
+    description: ":maple_leaf:",
+    keyword: "maple_leaf",
+  },
+  {
+    title: "🍂",
+    description: ":fallen_leaf:",
+    keyword: "fallen_leaf",
+  },
+  {
+    title: "🍃",
+    description: ":leaves:",
+    keyword: "leaves",
+  },
+  {
+    title: "🍇",
+    description: ":grapes:",
+    keyword: "grapes",
+  },
+  {
+    title: "🍈",
+    description: ":melon:",
+    keyword: "melon",
+  },
+  {
+    title: "🍉",
+    description: ":watermelon:",
+    keyword: "watermelon",
+  },
+  {
+    title: "🍊",
+    description: ":tangerine:",
+    keyword: "tangerine",
+  },
+  {
+    title: "🍋",
+    description: ":lemon:",
+    keyword: "lemon",
+  },
+  {
+    title: "🍌",
+    description: ":banana:",
+    keyword: "banana",
+  },
+  {
+    title: "🍍",
+    description: ":pineapple:",
+    keyword: "pineapple",
+  },
+  {
+    title: "🥭",
+    description: ":mango:",
+    keyword: "mango",
+  },
+  {
+    title: "🍎",
+    description: ":apple:",
+    keyword: "apple",
+  },
+  {
+    title: "🍏",
+    description: ":green_apple:",
+    keyword: "green_apple",
+  },
+  {
+    title: "🍐",
+    description: ":pear:",
+    keyword: "pear",
+  },
+  {
+    title: "🍑",
+    description: ":peach:",
+    keyword: "peach",
+  },
+  {
+    title: "🍒",
+    description: ":cherries:",
+    keyword: "cherries",
+  },
+  {
+    title: "🍓",
+    description: ":strawberry:",
+    keyword: "strawberry",
+  },
+  {
+    title: "🥝",
+    description: ":kiwi_fruit:",
+    keyword: "kiwi_fruit",
+  },
+  {
+    title: "🍅",
+    description: ":tomato:",
+    keyword: "tomato",
+  },
+  {
+    title: "🥥",
+    description: ":coconut:",
+    keyword: "coconut",
+  },
+  {
+    title: "🥑",
+    description: ":avocado:",
+    keyword: "avocado",
+  },
+  {
+    title: "🍆",
+    description: ":eggplant:",
+    keyword: "eggplant",
+  },
+  {
+    title: "🥔",
+    description: ":potato:",
+    keyword: "potato",
+  },
+  {
+    title: "🥕",
+    description: ":carrot:",
+    keyword: "carrot",
+  },
+  {
+    title: "🌽",
+    description: ":corn:",
+    keyword: "corn",
+  },
+  {
+    title: "🌶️",
+    description: ":hot_pepper:",
+    keyword: "hot_pepper",
+  },
+  {
+    title: "🥒",
+    description: ":cucumber:",
+    keyword: "cucumber",
+  },
+  {
+    title: "🥬",
+    description: ":leafy_green:",
+    keyword: "leafy_green",
+  },
+  {
+    title: "🥦",
+    description: ":broccoli:",
+    keyword: "broccoli",
+  },
+  {
+    title: "🧄",
+    description: ":garlic:",
+    keyword: "garlic",
+  },
+  {
+    title: "🧅",
+    description: ":onion:",
+    keyword: "onion",
+  },
+  {
+    title: "🍄",
+    description: ":mushroom:",
+    keyword: "mushroom",
+  },
+  {
+    title: "🥜",
+    description: ":peanuts:",
+    keyword: "peanuts",
+  },
+  {
+    title: "🌰",
+    description: ":chestnut:",
+    keyword: "chestnut",
+  },
+  {
+    title: "🍞",
+    description: ":bread:",
+    keyword: "bread",
+  },
+  {
+    title: "🥐",
+    description: ":croissant:",
+    keyword: "croissant",
+  },
+  {
+    title: "🥖",
+    description: ":baguette_bread:",
+    keyword: "baguette_bread",
+  },
+  {
+    title: "🥨",
+    description: ":pretzel:",
+    keyword: "pretzel",
+  },
+  {
+    title: "🥯",
+    description: ":bagel:",
+    keyword: "bagel",
+  },
+  {
+    title: "🥞",
+    description: ":pancakes:",
+    keyword: "pancakes",
+  },
+  {
+    title: "🧇",
+    description: ":waffle:",
+    keyword: "waffle",
+  },
+  {
+    title: "🧀",
+    description: ":cheese:",
+    keyword: "cheese",
+  },
+  {
+    title: "🍖",
+    description: ":meat_on_bone:",
+    keyword: "meat_on_bone",
+  },
+  {
+    title: "🍗",
+    description: ":poultry_leg:",
+    keyword: "poultry_leg",
+  },
+  {
+    title: "🥩",
+    description: ":cut_of_meat:",
+    keyword: "cut_of_meat",
+  },
+  {
+    title: "🥓",
+    description: ":bacon:",
+    keyword: "bacon",
+  },
+  {
+    title: "🍔",
+    description: ":hamburger:",
+    keyword: "hamburger",
+  },
+  {
+    title: "🍟",
+    description: ":fries:",
+    keyword: "fries",
+  },
+  {
+    title: "🍕",
+    description: ":pizza:",
+    keyword: "pizza",
+  },
+  {
+    title: "🌭",
+    description: ":hotdog:",
+    keyword: "hotdog",
+  },
+  {
+    title: "🥪",
+    description: ":sandwich:",
+    keyword: "sandwich",
+  },
+  {
+    title: "🌮",
+    description: ":taco:",
+    keyword: "taco",
+  },
+  {
+    title: "🌯",
+    description: ":burrito:",
+    keyword: "burrito",
+  },
+  {
+    title: "🥙",
+    description: ":stuffed_flatbread:",
+    keyword: "stuffed_flatbread",
+  },
+  {
+    title: "🧆",
+    description: ":falafel:",
+    keyword: "falafel",
+  },
+  {
+    title: "🥚",
+    description: ":egg:",
+    keyword: "egg",
+  },
+  {
+    title: "🍳",
+    description: ":fried_egg:",
+    keyword: "fried_egg",
+  },
+  {
+    title: "🥘",
+    description: ":shallow_pan_of_food:",
+    keyword: "shallow_pan_of_food",
+  },
+  {
+    title: "🍲",
+    description: ":stew:",
+    keyword: "stew",
+  },
+  {
+    title: "🥣",
+    description: ":bowl_with_spoon:",
+    keyword: "bowl_with_spoon",
+  },
+  {
+    title: "🥗",
+    description: ":green_salad:",
+    keyword: "green_salad",
+  },
+  {
+    title: "🍿",
+    description: ":popcorn:",
+    keyword: "popcorn",
+  },
+  {
+    title: "🧈",
+    description: ":butter:",
+    keyword: "butter",
+  },
+  {
+    title: "🧂",
+    description: ":salt:",
+    keyword: "salt",
+  },
+  {
+    title: "🥫",
+    description: ":canned_food:",
+    keyword: "canned_food",
+  },
+  {
+    title: "🍱",
+    description: ":bento:",
+    keyword: "bento",
+  },
+  {
+    title: "🍘",
+    description: ":rice_cracker:",
+    keyword: "rice_cracker",
+  },
+  {
+    title: "🍙",
+    description: ":rice_ball:",
+    keyword: "rice_ball",
+  },
+  {
+    title: "🍚",
+    description: ":rice:",
+    keyword: "rice",
+  },
+  {
+    title: "🍛",
+    description: ":curry:",
+    keyword: "curry",
+  },
+  {
+    title: "🍜",
+    description: ":ramen:",
+    keyword: "ramen",
+  },
+  {
+    title: "🍝",
+    description: ":spaghetti:",
+    keyword: "spaghetti",
+  },
+  {
+    title: "🍠",
+    description: ":sweet_potato:",
+    keyword: "sweet_potato",
+  },
+  {
+    title: "🍢",
+    description: ":oden:",
+    keyword: "oden",
+  },
+  {
+    title: "🍣",
+    description: ":sushi:",
+    keyword: "sushi",
+  },
+  {
+    title: "🍤",
+    description: ":fried_shrimp:",
+    keyword: "fried_shrimp",
+  },
+  {
+    title: "🍥",
+    description: ":fish_cake:",
+    keyword: "fish_cake",
+  },
+  {
+    title: "🥮",
+    description: ":moon_cake:",
+    keyword: "moon_cake",
+  },
+  {
+    title: "🍡",
+    description: ":dango:",
+    keyword: "dango",
+  },
+  {
+    title: "🥟",
+    description: ":dumpling:",
+    keyword: "dumpling",
+  },
+  {
+    title: "🥠",
+    description: ":fortune_cookie:",
+    keyword: "fortune_cookie",
+  },
+  {
+    title: "🥡",
+    description: ":takeout_box:",
+    keyword: "takeout_box",
+  },
+  {
+    title: "🦀",
+    description: ":crab:",
+    keyword: "crab",
+  },
+  {
+    title: "🦞",
+    description: ":lobster:",
+    keyword: "lobster",
+  },
+  {
+    title: "🦐",
+    description: ":shrimp:",
+    keyword: "shrimp",
+  },
+  {
+    title: "🦑",
+    description: ":squid:",
+    keyword: "squid",
+  },
+  {
+    title: "🦪",
+    description: ":oyster:",
+    keyword: "oyster",
+  },
+  {
+    title: "🍦",
+    description: ":icecream:",
+    keyword: "icecream",
+  },
+  {
+    title: "🍧",
+    description: ":shaved_ice:",
+    keyword: "shaved_ice",
+  },
+  {
+    title: "🍨",
+    description: ":ice_cream:",
+    keyword: "ice_cream",
+  },
+  {
+    title: "🍩",
+    description: ":doughnut:",
+    keyword: "doughnut",
+  },
+  {
+    title: "🍪",
+    description: ":cookie:",
+    keyword: "cookie",
+  },
+  {
+    title: "🎂",
+    description: ":birthday:",
+    keyword: "birthday",
+  },
+  {
+    title: "🍰",
+    description: ":cake:",
+    keyword: "cake",
+  },
+  {
+    title: "🧁",
+    description: ":cupcake:",
+    keyword: "cupcake",
+  },
+  {
+    title: "🥧",
+    description: ":pie:",
+    keyword: "pie",
+  },
+  {
+    title: "🍫",
+    description: ":chocolate_bar:",
+    keyword: "chocolate_bar",
+  },
+  {
+    title: "🍬",
+    description: ":candy:",
+    keyword: "candy",
+  },
+  {
+    title: "🍭",
+    description: ":lollipop:",
+    keyword: "lollipop",
+  },
+  {
+    title: "🍮",
+    description: ":custard:",
+    keyword: "custard",
+  },
+  {
+    title: "🍯",
+    description: ":honey_pot:",
+    keyword: "honey_pot",
+  },
+  {
+    title: "🍼",
+    description: ":baby_bottle:",
+    keyword: "baby_bottle",
+  },
+  {
+    title: "🥛",
+    description: ":milk_glass:",
+    keyword: "milk_glass",
+  },
+  {
+    title: "☕",
+    description: ":coffee:",
+    keyword: "coffee",
+  },
+  {
+    title: "🍵",
+    description: ":tea:",
+    keyword: "tea",
+  },
+  {
+    title: "🍶",
+    description: ":sake:",
+    keyword: "sake",
+  },
+  {
+    title: "🍾",
+    description: ":champagne:",
+    keyword: "champagne",
+  },
+  {
+    title: "🍷",
+    description: ":wine_glass:",
+    keyword: "wine_glass",
+  },
+  {
+    title: "🍸",
+    description: ":cocktail:",
+    keyword: "cocktail",
+  },
+  {
+    title: "🍹",
+    description: ":tropical_drink:",
+    keyword: "tropical_drink",
+  },
+  {
+    title: "🍺",
+    description: ":beer:",
+    keyword: "beer",
+  },
+  {
+    title: "🍻",
+    description: ":beers:",
+    keyword: "beers",
+  },
+  {
+    title: "🥂",
+    description: ":clinking_glasses:",
+    keyword: "clinking_glasses",
+  },
+  {
+    title: "🥃",
+    description: ":tumbler_glass:",
+    keyword: "tumbler_glass",
+  },
+  {
+    title: "🥤",
+    description: ":cup_with_straw:",
+    keyword: "cup_with_straw",
+  },
+  {
+    title: "🧃",
+    description: ":beverage_box:",
+    keyword: "beverage_box",
+  },
+  {
+    title: "🧉",
+    description: ":mate:",
+    keyword: "mate",
+  },
+  {
+    title: "🧊",
+    description: ":ice_cube:",
+    keyword: "ice_cube",
+  },
+  {
+    title: "🥢",
+    description: ":chopsticks:",
+    keyword: "chopsticks",
+  },
+  {
+    title: "🍽️",
+    description: ":plate_with_cutlery:",
+    keyword: "plate_with_cutlery",
+  },
+  {
+    title: "🍴",
+    description: ":fork_and_knife:",
+    keyword: "fork_and_knife",
+  },
+  {
+    title: "🥄",
+    description: ":spoon:",
+    keyword: "spoon",
+  },
+  {
+    title: "🔪",
+    description: ":knife:",
+    keyword: "knife",
+  },
+  {
+    title: "🏺",
+    description: ":amphora:",
+    keyword: "amphora",
+  },
+  {
+    title: "🌍",
+    description: ":earth_africa:",
+    keyword: "earth_africa",
+  },
+  {
+    title: "🌎",
+    description: ":earth_americas:",
+    keyword: "earth_americas",
+  },
+  {
+    title: "🌏",
+    description: ":earth_asia:",
+    keyword: "earth_asia",
+  },
+  {
+    title: "🌐",
+    description: ":globe_with_meridians:",
+    keyword: "globe_with_meridians",
+  },
+  {
+    title: "🗺️",
+    description: ":world_map:",
+    keyword: "world_map",
+  },
+  {
+    title: "🗾",
+    description: ":japan:",
+    keyword: "japan",
+  },
+  {
+    title: "🧭",
+    description: ":compass:",
+    keyword: "compass",
+  },
+  {
+    title: "🏔️",
+    description: ":mountain_snow:",
+    keyword: "mountain_snow",
+  },
+  {
+    title: "⛰️",
+    description: ":mountain:",
+    keyword: "mountain",
+  },
+  {
+    title: "🌋",
+    description: ":volcano:",
+    keyword: "volcano",
+  },
+  {
+    title: "🗻",
+    description: ":mount_fuji:",
+    keyword: "mount_fuji",
+  },
+  {
+    title: "🏕️",
+    description: ":camping:",
+    keyword: "camping",
+  },
+  {
+    title: "🏖️",
+    description: ":beach_umbrella:",
+    keyword: "beach_umbrella",
+  },
+  {
+    title: "🏜️",
+    description: ":desert:",
+    keyword: "desert",
+  },
+  {
+    title: "🏝️",
+    description: ":desert_island:",
+    keyword: "desert_island",
+  },
+  {
+    title: "🏞️",
+    description: ":national_park:",
+    keyword: "national_park",
+  },
+  {
+    title: "🏟️",
+    description: ":stadium:",
+    keyword: "stadium",
+  },
+  {
+    title: "🏛️",
+    description: ":classical_building:",
+    keyword: "classical_building",
+  },
+  {
+    title: "🏗️",
+    description: ":building_construction:",
+    keyword: "building_construction",
+  },
+  {
+    title: "🧱",
+    description: ":bricks:",
+    keyword: "bricks",
+  },
+  {
+    title: "🏘️",
+    description: ":houses:",
+    keyword: "houses",
+  },
+  {
+    title: "🏚️",
+    description: ":derelict_house:",
+    keyword: "derelict_house",
+  },
+  {
+    title: "🏠",
+    description: ":house:",
+    keyword: "house",
+  },
+  {
+    title: "🏡",
+    description: ":house_with_garden:",
+    keyword: "house_with_garden",
+  },
+  {
+    title: "🏢",
+    description: ":office:",
+    keyword: "office",
+  },
+  {
+    title: "🏣",
+    description: ":post_office:",
+    keyword: "post_office",
+  },
+  {
+    title: "🏤",
+    description: ":european_post_office:",
+    keyword: "european_post_office",
+  },
+  {
+    title: "🏥",
+    description: ":hospital:",
+    keyword: "hospital",
+  },
+  {
+    title: "🏦",
+    description: ":bank:",
+    keyword: "bank",
+  },
+  {
+    title: "🏨",
+    description: ":hotel:",
+    keyword: "hotel",
+  },
+  {
+    title: "🏩",
+    description: ":love_hotel:",
+    keyword: "love_hotel",
+  },
+  {
+    title: "🏪",
+    description: ":convenience_store:",
+    keyword: "convenience_store",
+  },
+  {
+    title: "🏫",
+    description: ":school:",
+    keyword: "school",
+  },
+  {
+    title: "🏬",
+    description: ":department_store:",
+    keyword: "department_store",
+  },
+  {
+    title: "🏭",
+    description: ":factory:",
+    keyword: "factory",
+  },
+  {
+    title: "🏯",
+    description: ":japanese_castle:",
+    keyword: "japanese_castle",
+  },
+  {
+    title: "🏰",
+    description: ":european_castle:",
+    keyword: "european_castle",
+  },
+  {
+    title: "💒",
+    description: ":wedding:",
+    keyword: "wedding",
+  },
+  {
+    title: "🗼",
+    description: ":tokyo_tower:",
+    keyword: "tokyo_tower",
+  },
+  {
+    title: "🗽",
+    description: ":statue_of_liberty:",
+    keyword: "statue_of_liberty",
+  },
+  {
+    title: "⛪",
+    description: ":church:",
+    keyword: "church",
+  },
+  {
+    title: "🕌",
+    description: ":mosque:",
+    keyword: "mosque",
+  },
+  {
+    title: "🛕",
+    description: ":hindu_temple:",
+    keyword: "hindu_temple",
+  },
+  {
+    title: "🕍",
+    description: ":synagogue:",
+    keyword: "synagogue",
+  },
+  {
+    title: "⛩️",
+    description: ":shinto_shrine:",
+    keyword: "shinto_shrine",
+  },
+  {
+    title: "🕋",
+    description: ":kaaba:",
+    keyword: "kaaba",
+  },
+  {
+    title: "⛲",
+    description: ":fountain:",
+    keyword: "fountain",
+  },
+  {
+    title: "⛺",
+    description: ":tent:",
+    keyword: "tent",
+  },
+  {
+    title: "🌁",
+    description: ":foggy:",
+    keyword: "foggy",
+  },
+  {
+    title: "🌃",
+    description: ":night_with_stars:",
+    keyword: "night_with_stars",
+  },
+  {
+    title: "🏙️",
+    description: ":cityscape:",
+    keyword: "cityscape",
+  },
+  {
+    title: "🌄",
+    description: ":sunrise_over_mountains:",
+    keyword: "sunrise_over_mountains",
+  },
+  {
+    title: "🌅",
+    description: ":sunrise:",
+    keyword: "sunrise",
+  },
+  {
+    title: "🌆",
+    description: ":city_sunset:",
+    keyword: "city_sunset",
+  },
+  {
+    title: "🌇",
+    description: ":city_sunrise:",
+    keyword: "city_sunrise",
+  },
+  {
+    title: "🌉",
+    description: ":bridge_at_night:",
+    keyword: "bridge_at_night",
+  },
+  {
+    title: "♨️",
+    description: ":hotsprings:",
+    keyword: "hotsprings",
+  },
+  {
+    title: "🎠",
+    description: ":carousel_horse:",
+    keyword: "carousel_horse",
+  },
+  {
+    title: "🎡",
+    description: ":ferris_wheel:",
+    keyword: "ferris_wheel",
+  },
+  {
+    title: "🎢",
+    description: ":roller_coaster:",
+    keyword: "roller_coaster",
+  },
+  {
+    title: "💈",
+    description: ":barber:",
+    keyword: "barber",
+  },
+  {
+    title: "🎪",
+    description: ":circus_tent:",
+    keyword: "circus_tent",
+  },
+  {
+    title: "🚂",
+    description: ":steam_locomotive:",
+    keyword: "steam_locomotive",
+  },
+  {
+    title: "🚃",
+    description: ":railway_car:",
+    keyword: "railway_car",
+  },
+  {
+    title: "🚄",
+    description: ":bullettrain_side:",
+    keyword: "bullettrain_side",
+  },
+  {
+    title: "🚅",
+    description: ":bullettrain_front:",
+    keyword: "bullettrain_front",
+  },
+  {
+    title: "🚆",
+    description: ":train2:",
+    keyword: "train2",
+  },
+  {
+    title: "🚇",
+    description: ":metro:",
+    keyword: "metro",
+  },
+  {
+    title: "🚈",
+    description: ":light_rail:",
+    keyword: "light_rail",
+  },
+  {
+    title: "🚉",
+    description: ":station:",
+    keyword: "station",
+  },
+  {
+    title: "🚊",
+    description: ":tram:",
+    keyword: "tram",
+  },
+  {
+    title: "🚝",
+    description: ":monorail:",
+    keyword: "monorail",
+  },
+  {
+    title: "🚞",
+    description: ":mountain_railway:",
+    keyword: "mountain_railway",
+  },
+  {
+    title: "🚋",
+    description: ":train:",
+    keyword: "train",
+  },
+  {
+    title: "🚌",
+    description: ":bus:",
+    keyword: "bus",
+  },
+  {
+    title: "🚍",
+    description: ":oncoming_bus:",
+    keyword: "oncoming_bus",
+  },
+  {
+    title: "🚎",
+    description: ":trolleybus:",
+    keyword: "trolleybus",
+  },
+  {
+    title: "🚐",
+    description: ":minibus:",
+    keyword: "minibus",
+  },
+  {
+    title: "🚑",
+    description: ":ambulance:",
+    keyword: "ambulance",
+  },
+  {
+    title: "🚒",
+    description: ":fire_engine:",
+    keyword: "fire_engine",
+  },
+  {
+    title: "🚓",
+    description: ":police_car:",
+    keyword: "police_car",
+  },
+  {
+    title: "🚔",
+    description: ":oncoming_police_car:",
+    keyword: "oncoming_police_car",
+  },
+  {
+    title: "🚕",
+    description: ":taxi:",
+    keyword: "taxi",
+  },
+  {
+    title: "🚖",
+    description: ":oncoming_taxi:",
+    keyword: "oncoming_taxi",
+  },
+  {
+    title: "🚗",
+    description: ":red_car:",
+    keyword: "red_car",
+  },
+  {
+    title: "🚘",
+    description: ":oncoming_automobile:",
+    keyword: "oncoming_automobile",
+  },
+  {
+    title: "🚙",
+    description: ":blue_car:",
+    keyword: "blue_car",
+  },
+  {
+    title: "🚚",
+    description: ":truck:",
+    keyword: "truck",
+  },
+  {
+    title: "🚛",
+    description: ":articulated_lorry:",
+    keyword: "articulated_lorry",
+  },
+  {
+    title: "🚜",
+    description: ":tractor:",
+    keyword: "tractor",
+  },
+  {
+    title: "🏎️",
+    description: ":racing_car:",
+    keyword: "racing_car",
+  },
+  {
+    title: "🏍️",
+    description: ":motorcycle:",
+    keyword: "motorcycle",
+  },
+  {
+    title: "🛵",
+    description: ":motor_scooter:",
+    keyword: "motor_scooter",
+  },
+  {
+    title: "🦽",
+    description: ":manual_wheelchair:",
+    keyword: "manual_wheelchair",
+  },
+  {
+    title: "🦼",
+    description: ":motorized_wheelchair:",
+    keyword: "motorized_wheelchair",
+  },
+  {
+    title: "🛺",
+    description: ":auto_rickshaw:",
+    keyword: "auto_rickshaw",
+  },
+  {
+    title: "🚲",
+    description: ":bike:",
+    keyword: "bike",
+  },
+  {
+    title: "🛴",
+    description: ":kick_scooter:",
+    keyword: "kick_scooter",
+  },
+  {
+    title: "🛹",
+    description: ":skateboard:",
+    keyword: "skateboard",
+  },
+  {
+    title: "🚏",
+    description: ":busstop:",
+    keyword: "busstop",
+  },
+  {
+    title: "🛣️",
+    description: ":motorway:",
+    keyword: "motorway",
+  },
+  {
+    title: "🛤️",
+    description: ":railway_track:",
+    keyword: "railway_track",
+  },
+  {
+    title: "🛢️",
+    description: ":oil_drum:",
+    keyword: "oil_drum",
+  },
+  {
+    title: "⛽",
+    description: ":fuelpump:",
+    keyword: "fuelpump",
+  },
+  {
+    title: "🚨",
+    description: ":rotating_light:",
+    keyword: "rotating_light",
+  },
+  {
+    title: "🚥",
+    description: ":traffic_light:",
+    keyword: "traffic_light",
+  },
+  {
+    title: "🚦",
+    description: ":vertical_traffic_light:",
+    keyword: "vertical_traffic_light",
+  },
+  {
+    title: "🛑",
+    description: ":stop_sign:",
+    keyword: "stop_sign",
+  },
+  {
+    title: "🚧",
+    description: ":construction:",
+    keyword: "construction",
+  },
+  {
+    title: "⚓",
+    description: ":anchor:",
+    keyword: "anchor",
+  },
+  {
+    title: "⛵",
+    description: ":sailboat:",
+    keyword: "sailboat",
+  },
+  {
+    title: "🛶",
+    description: ":canoe:",
+    keyword: "canoe",
+  },
+  {
+    title: "🚤",
+    description: ":speedboat:",
+    keyword: "speedboat",
+  },
+  {
+    title: "🛳️",
+    description: ":passenger_ship:",
+    keyword: "passenger_ship",
+  },
+  {
+    title: "⛴️",
+    description: ":ferry:",
+    keyword: "ferry",
+  },
+  {
+    title: "🛥️",
+    description: ":motor_boat:",
+    keyword: "motor_boat",
+  },
+  {
+    title: "🚢",
+    description: ":ship:",
+    keyword: "ship",
+  },
+  {
+    title: "✈️",
+    description: ":airplane:",
+    keyword: "airplane",
+  },
+  {
+    title: "🛩️",
+    description: ":small_airplane:",
+    keyword: "small_airplane",
+  },
+  {
+    title: "🛫",
+    description: ":flight_departure:",
+    keyword: "flight_departure",
+  },
+  {
+    title: "🛬",
+    description: ":flight_arrival:",
+    keyword: "flight_arrival",
+  },
+  {
+    title: "🪂",
+    description: ":parachute:",
+    keyword: "parachute",
+  },
+  {
+    title: "💺",
+    description: ":seat:",
+    keyword: "seat",
+  },
+  {
+    title: "🚁",
+    description: ":helicopter:",
+    keyword: "helicopter",
+  },
+  {
+    title: "🚟",
+    description: ":suspension_railway:",
+    keyword: "suspension_railway",
+  },
+  {
+    title: "🚠",
+    description: ":mountain_cableway:",
+    keyword: "mountain_cableway",
+  },
+  {
+    title: "🚡",
+    description: ":aerial_tramway:",
+    keyword: "aerial_tramway",
+  },
+  {
+    title: "🛰️",
+    description: ":artificial_satellite:",
+    keyword: "artificial_satellite",
+  },
+  {
+    title: "🚀",
+    description: ":rocket:",
+    keyword: "rocket",
+  },
+  {
+    title: "🛸",
+    description: ":flying_saucer:",
+    keyword: "flying_saucer",
+  },
+  {
+    title: "🛎️",
+    description: ":bellhop_bell:",
+    keyword: "bellhop_bell",
+  },
+  {
+    title: "🧳",
+    description: ":luggage:",
+    keyword: "luggage",
+  },
+  {
+    title: "⌛",
+    description: ":hourglass:",
+    keyword: "hourglass",
+  },
+  {
+    title: "⏳",
+    description: ":hourglass_flowing_sand:",
+    keyword: "hourglass_flowing_sand",
+  },
+  {
+    title: "⌚",
+    description: ":watch:",
+    keyword: "watch",
+  },
+  {
+    title: "⏰",
+    description: ":alarm_clock:",
+    keyword: "alarm_clock",
+  },
+  {
+    title: "⏱️",
+    description: ":stopwatch:",
+    keyword: "stopwatch",
+  },
+  {
+    title: "⏲️",
+    description: ":timer_clock:",
+    keyword: "timer_clock",
+  },
+  {
+    title: "🕰️",
+    description: ":mantelpiece_clock:",
+    keyword: "mantelpiece_clock",
+  },
+  {
+    title: "🕛",
+    description: ":clock12:",
+    keyword: "clock12",
+  },
+  {
+    title: "🕧",
+    description: ":clock1230:",
+    keyword: "clock1230",
+  },
+  {
+    title: "🕐",
+    description: ":clock1:",
+    keyword: "clock1",
+  },
+  {
+    title: "🕜",
+    description: ":clock130:",
+    keyword: "clock130",
+  },
+  {
+    title: "🕑",
+    description: ":clock2:",
+    keyword: "clock2",
+  },
+  {
+    title: "🕝",
+    description: ":clock230:",
+    keyword: "clock230",
+  },
+  {
+    title: "🕒",
+    description: ":clock3:",
+    keyword: "clock3",
+  },
+  {
+    title: "🕞",
+    description: ":clock330:",
+    keyword: "clock330",
+  },
+  {
+    title: "🕓",
+    description: ":clock4:",
+    keyword: "clock4",
+  },
+  {
+    title: "🕟",
+    description: ":clock430:",
+    keyword: "clock430",
+  },
+  {
+    title: "🕔",
+    description: ":clock5:",
+    keyword: "clock5",
+  },
+  {
+    title: "🕠",
+    description: ":clock530:",
+    keyword: "clock530",
+  },
+  {
+    title: "🕕",
+    description: ":clock6:",
+    keyword: "clock6",
+  },
+  {
+    title: "🕡",
+    description: ":clock630:",
+    keyword: "clock630",
+  },
+  {
+    title: "🕖",
+    description: ":clock7:",
+    keyword: "clock7",
+  },
+  {
+    title: "🕢",
+    description: ":clock730:",
+    keyword: "clock730",
+  },
+  {
+    title: "🕗",
+    description: ":clock8:",
+    keyword: "clock8",
+  },
+  {
+    title: "🕣",
+    description: ":clock830:",
+    keyword: "clock830",
+  },
+  {
+    title: "🕘",
+    description: ":clock9:",
+    keyword: "clock9",
+  },
+  {
+    title: "🕤",
+    description: ":clock930:",
+    keyword: "clock930",
+  },
+  {
+    title: "🕙",
+    description: ":clock10:",
+    keyword: "clock10",
+  },
+  {
+    title: "🕥",
+    description: ":clock1030:",
+    keyword: "clock1030",
+  },
+  {
+    title: "🕚",
+    description: ":clock11:",
+    keyword: "clock11",
+  },
+  {
+    title: "🕦",
+    description: ":clock1130:",
+    keyword: "clock1130",
+  },
+  {
+    title: "🌑",
+    description: ":new_moon:",
+    keyword: "new_moon",
+  },
+  {
+    title: "🌒",
+    description: ":waxing_crescent_moon:",
+    keyword: "waxing_crescent_moon",
+  },
+  {
+    title: "🌓",
+    description: ":first_quarter_moon:",
+    keyword: "first_quarter_moon",
+  },
+  {
+    title: "🌔",
+    description: ":waxing_gibbous_moon:",
+    keyword: "waxing_gibbous_moon",
+  },
+  {
+    title: "🌕",
+    description: ":full_moon:",
+    keyword: "full_moon",
+  },
+  {
+    title: "🌖",
+    description: ":waning_gibbous_moon:",
+    keyword: "waning_gibbous_moon",
+  },
+  {
+    title: "🌗",
+    description: ":last_quarter_moon:",
+    keyword: "last_quarter_moon",
+  },
+  {
+    title: "🌘",
+    description: ":waning_crescent_moon:",
+    keyword: "waning_crescent_moon",
+  },
+  {
+    title: "🌙",
+    description: ":crescent_moon:",
+    keyword: "crescent_moon",
+  },
+  {
+    title: "🌚",
+    description: ":new_moon_with_face:",
+    keyword: "new_moon_with_face",
+  },
+  {
+    title: "🌛",
+    description: ":first_quarter_moon_with_face:",
+    keyword: "first_quarter_moon_with_face",
+  },
+  {
+    title: "🌜",
+    description: ":last_quarter_moon_with_face:",
+    keyword: "last_quarter_moon_with_face",
+  },
+  {
+    title: "🌡️",
+    description: ":thermometer:",
+    keyword: "thermometer",
+  },
+  {
+    title: "☀️",
+    description: ":sunny:",
+    keyword: "sunny",
+  },
+  {
+    title: "🌝",
+    description: ":full_moon_with_face:",
+    keyword: "full_moon_with_face",
+  },
+  {
+    title: "🌞",
+    description: ":sun_with_face:",
+    keyword: "sun_with_face",
+  },
+  {
+    title: "🪐",
+    description: ":ringed_planet:",
+    keyword: "ringed_planet",
+  },
+  {
+    title: "⭐",
+    description: ":star:",
+    keyword: "star",
+  },
+  {
+    title: "🌟",
+    description: ":star2:",
+    keyword: "star2",
+  },
+  {
+    title: "🌠",
+    description: ":stars:",
+    keyword: "stars",
+  },
+  {
+    title: "🌌",
+    description: ":milky_way:",
+    keyword: "milky_way",
+  },
+  {
+    title: "☁️",
+    description: ":cloud:",
+    keyword: "cloud",
+  },
+  {
+    title: "⛅",
+    description: ":partly_sunny:",
+    keyword: "partly_sunny",
+  },
+  {
+    title: "⛈️",
+    description: ":cloud_with_lightning_and_rain:",
+    keyword: "cloud_with_lightning_and_rain",
+  },
+  {
+    title: "🌤️",
+    description: ":sun_behind_small_cloud:",
+    keyword: "sun_behind_small_cloud",
+  },
+  {
+    title: "🌥️",
+    description: ":sun_behind_large_cloud:",
+    keyword: "sun_behind_large_cloud",
+  },
+  {
+    title: "🌦️",
+    description: ":sun_behind_rain_cloud:",
+    keyword: "sun_behind_rain_cloud",
+  },
+  {
+    title: "🌧️",
+    description: ":cloud_with_rain:",
+    keyword: "cloud_with_rain",
+  },
+  {
+    title: "🌨️",
+    description: ":cloud_with_snow:",
+    keyword: "cloud_with_snow",
+  },
+  {
+    title: "🌩️",
+    description: ":cloud_with_lightning:",
+    keyword: "cloud_with_lightning",
+  },
+  {
+    title: "🌪️",
+    description: ":tornado:",
+    keyword: "tornado",
+  },
+  {
+    title: "🌫️",
+    description: ":fog:",
+    keyword: "fog",
+  },
+  {
+    title: "🌬️",
+    description: ":wind_face:",
+    keyword: "wind_face",
+  },
+  {
+    title: "🌀",
+    description: ":cyclone:",
+    keyword: "cyclone",
+  },
+  {
+    title: "🌈",
+    description: ":rainbow:",
+    keyword: "rainbow",
+  },
+  {
+    title: "🌂",
+    description: ":closed_umbrella:",
+    keyword: "closed_umbrella",
+  },
+  {
+    title: "☂️",
+    description: ":open_umbrella:",
+    keyword: "open_umbrella",
+  },
+  {
+    title: "☔",
+    description: ":umbrella:",
+    keyword: "umbrella",
+  },
+  {
+    title: "⛱️",
+    description: ":parasol_on_ground:",
+    keyword: "parasol_on_ground",
+  },
+  {
+    title: "⚡",
+    description: ":zap:",
+    keyword: "zap",
+  },
+  {
+    title: "❄️",
+    description: ":snowflake:",
+    keyword: "snowflake",
+  },
+  {
+    title: "☃️",
+    description: ":snowman_with_snow:",
+    keyword: "snowman_with_snow",
+  },
+  {
+    title: "⛄",
+    description: ":snowman:",
+    keyword: "snowman",
+  },
+  {
+    title: "☄️",
+    description: ":comet:",
+    keyword: "comet",
+  },
+  {
+    title: "🔥",
+    description: ":fire:",
+    keyword: "fire",
+  },
+  {
+    title: "💧",
+    description: ":droplet:",
+    keyword: "droplet",
+  },
+  {
+    title: "🌊",
+    description: ":ocean:",
+    keyword: "ocean",
+  },
+  {
+    title: "🎃",
+    description: ":jack_o_lantern:",
+    keyword: "jack_o_lantern",
+  },
+  {
+    title: "🎄",
+    description: ":christmas_tree:",
+    keyword: "christmas_tree",
+  },
+  {
+    title: "🎆",
+    description: ":fireworks:",
+    keyword: "fireworks",
+  },
+  {
+    title: "🎇",
+    description: ":sparkler:",
+    keyword: "sparkler",
+  },
+  {
+    title: "🧨",
+    description: ":firecracker:",
+    keyword: "firecracker",
+  },
+  {
+    title: "✨",
+    description: ":sparkles:",
+    keyword: "sparkles",
+  },
+  {
+    title: "🎈",
+    description: ":balloon:",
+    keyword: "balloon",
+  },
+  {
+    title: "🎉",
+    description: ":tada:",
+    keyword: "tada",
+  },
+  {
+    title: "🎊",
+    description: ":confetti_ball:",
+    keyword: "confetti_ball",
+  },
+  {
+    title: "🎋",
+    description: ":tanabata_tree:",
+    keyword: "tanabata_tree",
+  },
+  {
+    title: "🎍",
+    description: ":bamboo:",
+    keyword: "bamboo",
+  },
+  {
+    title: "🎎",
+    description: ":dolls:",
+    keyword: "dolls",
+  },
+  {
+    title: "🎏",
+    description: ":flags:",
+    keyword: "flags",
+  },
+  {
+    title: "🎐",
+    description: ":wind_chime:",
+    keyword: "wind_chime",
+  },
+  {
+    title: "🎑",
+    description: ":rice_scene:",
+    keyword: "rice_scene",
+  },
+  {
+    title: "🧧",
+    description: ":red_envelope:",
+    keyword: "red_envelope",
+  },
+  {
+    title: "🎀",
+    description: ":ribbon:",
+    keyword: "ribbon",
+  },
+  {
+    title: "🎁",
+    description: ":gift:",
+    keyword: "gift",
+  },
+  {
+    title: "🎗️",
+    description: ":reminder_ribbon:",
+    keyword: "reminder_ribbon",
+  },
+  {
+    title: "🎟️",
+    description: ":tickets:",
+    keyword: "tickets",
+  },
+  {
+    title: "🎫",
+    description: ":ticket:",
+    keyword: "ticket",
+  },
+  {
+    title: "🎖️",
+    description: ":medal_military:",
+    keyword: "medal_military",
+  },
+  {
+    title: "🏆",
+    description: ":trophy:",
+    keyword: "trophy",
+  },
+  {
+    title: "🏅",
+    description: ":medal_sports:",
+    keyword: "medal_sports",
+  },
+  {
+    title: "🥇",
+    description: ":1st_place_medal:",
+    keyword: "1st_place_medal",
+  },
+  {
+    title: "🥈",
+    description: ":2nd_place_medal:",
+    keyword: "2nd_place_medal",
+  },
+  {
+    title: "🥉",
+    description: ":3rd_place_medal:",
+    keyword: "3rd_place_medal",
+  },
+  {
+    title: "⚽",
+    description: ":soccer:",
+    keyword: "soccer",
+  },
+  {
+    title: "⚾",
+    description: ":baseball:",
+    keyword: "baseball",
+  },
+  {
+    title: "🥎",
+    description: ":softball:",
+    keyword: "softball",
+  },
+  {
+    title: "🏀",
+    description: ":basketball:",
+    keyword: "basketball",
+  },
+  {
+    title: "🏐",
+    description: ":volleyball:",
+    keyword: "volleyball",
+  },
+  {
+    title: "🏈",
+    description: ":football:",
+    keyword: "football",
+  },
+  {
+    title: "🏉",
+    description: ":rugby_football:",
+    keyword: "rugby_football",
+  },
+  {
+    title: "🎾",
+    description: ":tennis:",
+    keyword: "tennis",
+  },
+  {
+    title: "🥏",
+    description: ":flying_disc:",
+    keyword: "flying_disc",
+  },
+  {
+    title: "🎳",
+    description: ":bowling:",
+    keyword: "bowling",
+  },
+  {
+    title: "🏏",
+    description: ":cricket_game:",
+    keyword: "cricket_game",
+  },
+  {
+    title: "🏑",
+    description: ":field_hockey:",
+    keyword: "field_hockey",
+  },
+  {
+    title: "🏒",
+    description: ":ice_hockey:",
+    keyword: "ice_hockey",
+  },
+  {
+    title: "🥍",
+    description: ":lacrosse:",
+    keyword: "lacrosse",
+  },
+  {
+    title: "🏓",
+    description: ":ping_pong:",
+    keyword: "ping_pong",
+  },
+  {
+    title: "🏸",
+    description: ":badminton:",
+    keyword: "badminton",
+  },
+  {
+    title: "🥊",
+    description: ":boxing_glove:",
+    keyword: "boxing_glove",
+  },
+  {
+    title: "🥋",
+    description: ":martial_arts_uniform:",
+    keyword: "martial_arts_uniform",
+  },
+  {
+    title: "🥅",
+    description: ":goal_net:",
+    keyword: "goal_net",
+  },
+  {
+    title: "⛳",
+    description: ":golf:",
+    keyword: "golf",
+  },
+  {
+    title: "⛸️",
+    description: ":ice_skate:",
+    keyword: "ice_skate",
+  },
+  {
+    title: "🎣",
+    description: ":fishing_pole_and_fish:",
+    keyword: "fishing_pole_and_fish",
+  },
+  {
+    title: "🤿",
+    description: ":diving_mask:",
+    keyword: "diving_mask",
+  },
+  {
+    title: "🎽",
+    description: ":running_shirt_with_sash:",
+    keyword: "running_shirt_with_sash",
+  },
+  {
+    title: "🎿",
+    description: ":ski:",
+    keyword: "ski",
+  },
+  {
+    title: "🛷",
+    description: ":sled:",
+    keyword: "sled",
+  },
+  {
+    title: "🥌",
+    description: ":curling_stone:",
+    keyword: "curling_stone",
+  },
+  {
+    title: "🎯",
+    description: ":dart:",
+    keyword: "dart",
+  },
+  {
+    title: "🪀",
+    description: ":yo_yo:",
+    keyword: "yo_yo",
+  },
+  {
+    title: "🪁",
+    description: ":kite:",
+    keyword: "kite",
+  },
+  {
+    title: "🎱",
+    description: ":8ball:",
+    keyword: "8ball",
+  },
+  {
+    title: "🔮",
+    description: ":crystal_ball:",
+    keyword: "crystal_ball",
+  },
+  {
+    title: "🧿",
+    description: ":nazar_amulet:",
+    keyword: "nazar_amulet",
+  },
+  {
+    title: "🎮",
+    description: ":video_game:",
+    keyword: "video_game",
+  },
+  {
+    title: "🕹️",
+    description: ":joystick:",
+    keyword: "joystick",
+  },
+  {
+    title: "🎰",
+    description: ":slot_machine:",
+    keyword: "slot_machine",
+  },
+  {
+    title: "🎲",
+    description: ":game_die:",
+    keyword: "game_die",
+  },
+  {
+    title: "🧩",
+    description: ":jigsaw:",
+    keyword: "jigsaw",
+  },
+  {
+    title: "🧸",
+    description: ":teddy_bear:",
+    keyword: "teddy_bear",
+  },
+  {
+    title: "♠️",
+    description: ":spades:",
+    keyword: "spades",
+  },
+  {
+    title: "♥️",
+    description: ":hearts:",
+    keyword: "hearts",
+  },
+  {
+    title: "♦️",
+    description: ":diamonds:",
+    keyword: "diamonds",
+  },
+  {
+    title: "♣️",
+    description: ":clubs:",
+    keyword: "clubs",
+  },
+  {
+    title: "♟️",
+    description: ":chess_pawn:",
+    keyword: "chess_pawn",
+  },
+  {
+    title: "🃏",
+    description: ":black_joker:",
+    keyword: "black_joker",
+  },
+  {
+    title: "🀄",
+    description: ":mahjong:",
+    keyword: "mahjong",
+  },
+  {
+    title: "🎴",
+    description: ":flower_playing_cards:",
+    keyword: "flower_playing_cards",
+  },
+  {
+    title: "🎭",
+    description: ":performing_arts:",
+    keyword: "performing_arts",
+  },
+  {
+    title: "🖼️",
+    description: ":framed_picture:",
+    keyword: "framed_picture",
+  },
+  {
+    title: "🎨",
+    description: ":art:",
+    keyword: "art",
+  },
+  {
+    title: "🧵",
+    description: ":thread:",
+    keyword: "thread",
+  },
+  {
+    title: "🧶",
+    description: ":yarn:",
+    keyword: "yarn",
+  },
+  {
+    title: "👓",
+    description: ":eyeglasses:",
+    keyword: "eyeglasses",
+  },
+  {
+    title: "🕶️",
+    description: ":dark_sunglasses:",
+    keyword: "dark_sunglasses",
+  },
+  {
+    title: "🥽",
+    description: ":goggles:",
+    keyword: "goggles",
+  },
+  {
+    title: "🥼",
+    description: ":lab_coat:",
+    keyword: "lab_coat",
+  },
+  {
+    title: "🦺",
+    description: ":safety_vest:",
+    keyword: "safety_vest",
+  },
+  {
+    title: "👔",
+    description: ":necktie:",
+    keyword: "necktie",
+  },
+  {
+    title: "👕",
+    description: ":tshirt:",
+    keyword: "tshirt",
+  },
+  {
+    title: "👖",
+    description: ":jeans:",
+    keyword: "jeans",
+  },
+  {
+    title: "🧣",
+    description: ":scarf:",
+    keyword: "scarf",
+  },
+  {
+    title: "🧤",
+    description: ":gloves:",
+    keyword: "gloves",
+  },
+  {
+    title: "🧥",
+    description: ":coat:",
+    keyword: "coat",
+  },
+  {
+    title: "🧦",
+    description: ":socks:",
+    keyword: "socks",
+  },
+  {
+    title: "👗",
+    description: ":dress:",
+    keyword: "dress",
+  },
+  {
+    title: "👘",
+    description: ":kimono:",
+    keyword: "kimono",
+  },
+  {
+    title: "🥻",
+    description: ":sari:",
+    keyword: "sari",
+  },
+  {
+    title: "🩱",
+    description: ":one_piece_swimsuit:",
+    keyword: "one_piece_swimsuit",
+  },
+  {
+    title: "🩲",
+    description: ":swim_brief:",
+    keyword: "swim_brief",
+  },
+  {
+    title: "🩳",
+    description: ":shorts:",
+    keyword: "shorts",
+  },
+  {
+    title: "👙",
+    description: ":bikini:",
+    keyword: "bikini",
+  },
+  {
+    title: "👚",
+    description: ":womans_clothes:",
+    keyword: "womans_clothes",
+  },
+  {
+    title: "👛",
+    description: ":purse:",
+    keyword: "purse",
+  },
+  {
+    title: "👜",
+    description: ":handbag:",
+    keyword: "handbag",
+  },
+  {
+    title: "👝",
+    description: ":pouch:",
+    keyword: "pouch",
+  },
+  {
+    title: "🛍️",
+    description: ":shopping:",
+    keyword: "shopping",
+  },
+  {
+    title: "🎒",
+    description: ":school_satchel:",
+    keyword: "school_satchel",
+  },
+  {
+    title: "👞",
+    description: ":shoe:",
+    keyword: "shoe",
+  },
+  {
+    title: "👟",
+    description: ":athletic_shoe:",
+    keyword: "athletic_shoe",
+  },
+  {
+    title: "🥾",
+    description: ":hiking_boot:",
+    keyword: "hiking_boot",
+  },
+  {
+    title: "🥿",
+    description: ":flat_shoe:",
+    keyword: "flat_shoe",
+  },
+  {
+    title: "👠",
+    description: ":high_heel:",
+    keyword: "high_heel",
+  },
+  {
+    title: "👡",
+    description: ":sandal:",
+    keyword: "sandal",
+  },
+  {
+    title: "🩰",
+    description: ":ballet_shoes:",
+    keyword: "ballet_shoes",
+  },
+  {
+    title: "👢",
+    description: ":boot:",
+    keyword: "boot",
+  },
+  {
+    title: "👑",
+    description: ":crown:",
+    keyword: "crown",
+  },
+  {
+    title: "👒",
+    description: ":womans_hat:",
+    keyword: "womans_hat",
+  },
+  {
+    title: "🎩",
+    description: ":tophat:",
+    keyword: "tophat",
+  },
+  {
+    title: "🎓",
+    description: ":mortar_board:",
+    keyword: "mortar_board",
+  },
+  {
+    title: "🧢",
+    description: ":billed_cap:",
+    keyword: "billed_cap",
+  },
+  {
+    title: "⛑️",
+    description: ":rescue_worker_helmet:",
+    keyword: "rescue_worker_helmet",
+  },
+  {
+    title: "📿",
+    description: ":prayer_beads:",
+    keyword: "prayer_beads",
+  },
+  {
+    title: "💄",
+    description: ":lipstick:",
+    keyword: "lipstick",
+  },
+  {
+    title: "💍",
+    description: ":ring:",
+    keyword: "ring",
+  },
+  {
+    title: "💎",
+    description: ":gem:",
+    keyword: "gem",
+  },
+  {
+    title: "🔇",
+    description: ":mute:",
+    keyword: "mute",
+  },
+  {
+    title: "🔈",
+    description: ":speaker:",
+    keyword: "speaker",
+  },
+  {
+    title: "🔉",
+    description: ":sound:",
+    keyword: "sound",
+  },
+  {
+    title: "🔊",
+    description: ":loud_sound:",
+    keyword: "loud_sound",
+  },
+  {
+    title: "📢",
+    description: ":loudspeaker:",
+    keyword: "loudspeaker",
+  },
+  {
+    title: "📣",
+    description: ":mega:",
+    keyword: "mega",
+  },
+  {
+    title: "📯",
+    description: ":postal_horn:",
+    keyword: "postal_horn",
+  },
+  {
+    title: "🔔",
+    description: ":bell:",
+    keyword: "bell",
+  },
+  {
+    title: "🔕",
+    description: ":no_bell:",
+    keyword: "no_bell",
+  },
+  {
+    title: "🎼",
+    description: ":musical_score:",
+    keyword: "musical_score",
+  },
+  {
+    title: "🎵",
+    description: ":musical_note:",
+    keyword: "musical_note",
+  },
+  {
+    title: "🎶",
+    description: ":notes:",
+    keyword: "notes",
+  },
+  {
+    title: "🎙️",
+    description: ":studio_microphone:",
+    keyword: "studio_microphone",
+  },
+  {
+    title: "🎚️",
+    description: ":level_slider:",
+    keyword: "level_slider",
+  },
+  {
+    title: "🎛️",
+    description: ":control_knobs:",
+    keyword: "control_knobs",
+  },
+  {
+    title: "🎤",
+    description: ":microphone:",
+    keyword: "microphone",
+  },
+  {
+    title: "🎧",
+    description: ":headphones:",
+    keyword: "headphones",
+  },
+  {
+    title: "📻",
+    description: ":radio:",
+    keyword: "radio",
+  },
+  {
+    title: "🎷",
+    description: ":saxophone:",
+    keyword: "saxophone",
+  },
+  {
+    title: "🎸",
+    description: ":guitar:",
+    keyword: "guitar",
+  },
+  {
+    title: "🎹",
+    description: ":musical_keyboard:",
+    keyword: "musical_keyboard",
+  },
+  {
+    title: "🎺",
+    description: ":trumpet:",
+    keyword: "trumpet",
+  },
+  {
+    title: "🎻",
+    description: ":violin:",
+    keyword: "violin",
+  },
+  {
+    title: "🪕",
+    description: ":banjo:",
+    keyword: "banjo",
+  },
+  {
+    title: "🥁",
+    description: ":drum:",
+    keyword: "drum",
+  },
+  {
+    title: "📱",
+    description: ":iphone:",
+    keyword: "iphone",
+  },
+  {
+    title: "📲",
+    description: ":calling:",
+    keyword: "calling",
+  },
+  {
+    title: "☎️",
+    description: ":telephone:",
+    keyword: "telephone",
+  },
+  {
+    title: "📞",
+    description: ":telephone_receiver:",
+    keyword: "telephone_receiver",
+  },
+  {
+    title: "📟",
+    description: ":pager:",
+    keyword: "pager",
+  },
+  {
+    title: "📠",
+    description: ":fax:",
+    keyword: "fax",
+  },
+  {
+    title: "🔋",
+    description: ":battery:",
+    keyword: "battery",
+  },
+  {
+    title: "🔌",
+    description: ":electric_plug:",
+    keyword: "electric_plug",
+  },
+  {
+    title: "💻",
+    description: ":computer:",
+    keyword: "computer",
+  },
+  {
+    title: "🖥️",
+    description: ":desktop_computer:",
+    keyword: "desktop_computer",
+  },
+  {
+    title: "🖨️",
+    description: ":printer:",
+    keyword: "printer",
+  },
+  {
+    title: "⌨️",
+    description: ":keyboard:",
+    keyword: "keyboard",
+  },
+  {
+    title: "🖱️",
+    description: ":computer_mouse:",
+    keyword: "computer_mouse",
+  },
+  {
+    title: "🖲️",
+    description: ":trackball:",
+    keyword: "trackball",
+  },
+  {
+    title: "💽",
+    description: ":minidisc:",
+    keyword: "minidisc",
+  },
+  {
+    title: "💾",
+    description: ":floppy_disk:",
+    keyword: "floppy_disk",
+  },
+  {
+    title: "💿",
+    description: ":cd:",
+    keyword: "cd",
+  },
+  {
+    title: "📀",
+    description: ":dvd:",
+    keyword: "dvd",
+  },
+  {
+    title: "🧮",
+    description: ":abacus:",
+    keyword: "abacus",
+  },
+  {
+    title: "🎥",
+    description: ":movie_camera:",
+    keyword: "movie_camera",
+  },
+  {
+    title: "🎞️",
+    description: ":film_strip:",
+    keyword: "film_strip",
+  },
+  {
+    title: "📽️",
+    description: ":film_projector:",
+    keyword: "film_projector",
+  },
+  {
+    title: "🎬",
+    description: ":clapper:",
+    keyword: "clapper",
+  },
+  {
+    title: "📺",
+    description: ":tv:",
+    keyword: "tv",
+  },
+  {
+    title: "📷",
+    description: ":camera:",
+    keyword: "camera",
+  },
+  {
+    title: "📸",
+    description: ":camera_flash:",
+    keyword: "camera_flash",
+  },
+  {
+    title: "📹",
+    description: ":video_camera:",
+    keyword: "video_camera",
+  },
+  {
+    title: "📼",
+    description: ":vhs:",
+    keyword: "vhs",
+  },
+  {
+    title: "🔍",
+    description: ":mag:",
+    keyword: "mag",
+  },
+  {
+    title: "🔎",
+    description: ":mag_right:",
+    keyword: "mag_right",
+  },
+  {
+    title: "🕯️",
+    description: ":candle:",
+    keyword: "candle",
+  },
+  {
+    title: "💡",
+    description: ":bulb:",
+    keyword: "bulb",
+  },
+  {
+    title: "🔦",
+    description: ":flashlight:",
+    keyword: "flashlight",
+  },
+  {
+    title: "🏮",
+    description: ":lantern:",
+    keyword: "lantern",
+  },
+  {
+    title: "🪔",
+    description: ":diya_lamp:",
+    keyword: "diya_lamp",
+  },
+  {
+    title: "📔",
+    description: ":notebook_with_decorative_cover:",
+    keyword: "notebook_with_decorative_cover",
+  },
+  {
+    title: "📕",
+    description: ":closed_book:",
+    keyword: "closed_book",
+  },
+  {
+    title: "📖",
+    description: ":open_book:",
+    keyword: "open_book",
+  },
+  {
+    title: "📗",
+    description: ":green_book:",
+    keyword: "green_book",
+  },
+  {
+    title: "📘",
+    description: ":blue_book:",
+    keyword: "blue_book",
+  },
+  {
+    title: "📙",
+    description: ":orange_book:",
+    keyword: "orange_book",
+  },
+  {
+    title: "📚",
+    description: ":books:",
+    keyword: "books",
+  },
+  {
+    title: "📓",
+    description: ":notebook:",
+    keyword: "notebook",
+  },
+  {
+    title: "📒",
+    description: ":ledger:",
+    keyword: "ledger",
+  },
+  {
+    title: "📃",
+    description: ":page_with_curl:",
+    keyword: "page_with_curl",
+  },
+  {
+    title: "📜",
+    description: ":scroll:",
+    keyword: "scroll",
+  },
+  {
+    title: "📄",
+    description: ":page_facing_up:",
+    keyword: "page_facing_up",
+  },
+  {
+    title: "📰",
+    description: ":newspaper:",
+    keyword: "newspaper",
+  },
+  {
+    title: "🗞️",
+    description: ":newspaper_roll:",
+    keyword: "newspaper_roll",
+  },
+  {
+    title: "📑",
+    description: ":bookmark_tabs:",
+    keyword: "bookmark_tabs",
+  },
+  {
+    title: "🔖",
+    description: ":bookmark:",
+    keyword: "bookmark",
+  },
+  {
+    title: "🏷️",
+    description: ":label:",
+    keyword: "label",
+  },
+  {
+    title: "💰",
+    description: ":moneybag:",
+    keyword: "moneybag",
+  },
+  {
+    title: "💴",
+    description: ":yen:",
+    keyword: "yen",
+  },
+  {
+    title: "💵",
+    description: ":dollar:",
+    keyword: "dollar",
+  },
+  {
+    title: "💶",
+    description: ":euro:",
+    keyword: "euro",
+  },
+  {
+    title: "💷",
+    description: ":pound:",
+    keyword: "pound",
+  },
+  {
+    title: "💸",
+    description: ":money_with_wings:",
+    keyword: "money_with_wings",
+  },
+  {
+    title: "💳",
+    description: ":credit_card:",
+    keyword: "credit_card",
+  },
+  {
+    title: "🧾",
+    description: ":receipt:",
+    keyword: "receipt",
+  },
+  {
+    title: "💹",
+    description: ":chart:",
+    keyword: "chart",
+  },
+  {
+    title: "✉️",
+    description: ":envelope:",
+    keyword: "envelope",
+  },
+  {
+    title: "📧",
+    description: ":e-mail:",
+    keyword: "e-mail",
+  },
+  {
+    title: "📨",
+    description: ":incoming_envelope:",
+    keyword: "incoming_envelope",
+  },
+  {
+    title: "📩",
+    description: ":envelope_with_arrow:",
+    keyword: "envelope_with_arrow",
+  },
+  {
+    title: "📤",
+    description: ":outbox_tray:",
+    keyword: "outbox_tray",
+  },
+  {
+    title: "📥",
+    description: ":inbox_tray:",
+    keyword: "inbox_tray",
+  },
+  {
+    title: "📦",
+    description: ":package:",
+    keyword: "package",
+  },
+  {
+    title: "📫",
+    description: ":mailbox:",
+    keyword: "mailbox",
+  },
+  {
+    title: "📪",
+    description: ":mailbox_closed:",
+    keyword: "mailbox_closed",
+  },
+  {
+    title: "📬",
+    description: ":mailbox_with_mail:",
+    keyword: "mailbox_with_mail",
+  },
+  {
+    title: "📭",
+    description: ":mailbox_with_no_mail:",
+    keyword: "mailbox_with_no_mail",
+  },
+  {
+    title: "📮",
+    description: ":postbox:",
+    keyword: "postbox",
+  },
+  {
+    title: "🗳️",
+    description: ":ballot_box:",
+    keyword: "ballot_box",
+  },
+  {
+    title: "✏️",
+    description: ":pencil2:",
+    keyword: "pencil2",
+  },
+  {
+    title: "✒️",
+    description: ":black_nib:",
+    keyword: "black_nib",
+  },
+  {
+    title: "🖋️",
+    description: ":fountain_pen:",
+    keyword: "fountain_pen",
+  },
+  {
+    title: "🖊️",
+    description: ":pen:",
+    keyword: "pen",
+  },
+  {
+    title: "🖌️",
+    description: ":paintbrush:",
+    keyword: "paintbrush",
+  },
+  {
+    title: "🖍️",
+    description: ":crayon:",
+    keyword: "crayon",
+  },
+  {
+    title: "📝",
+    description: ":pencil:",
+    keyword: "pencil",
+  },
+  {
+    title: "💼",
+    description: ":briefcase:",
+    keyword: "briefcase",
+  },
+  {
+    title: "📁",
+    description: ":file_folder:",
+    keyword: "file_folder",
+  },
+  {
+    title: "📂",
+    description: ":open_file_folder:",
+    keyword: "open_file_folder",
+  },
+  {
+    title: "🗂️",
+    description: ":card_index_dividers:",
+    keyword: "card_index_dividers",
+  },
+  {
+    title: "📅",
+    description: ":date:",
+    keyword: "date",
+  },
+  {
+    title: "📆",
+    description: ":calendar:",
+    keyword: "calendar",
+  },
+  {
+    title: "🗒️",
+    description: ":spiral_notepad:",
+    keyword: "spiral_notepad",
+  },
+  {
+    title: "🗓️",
+    description: ":spiral_calendar:",
+    keyword: "spiral_calendar",
+  },
+  {
+    title: "📇",
+    description: ":card_index:",
+    keyword: "card_index",
+  },
+  {
+    title: "📈",
+    description: ":chart_with_upwards_trend:",
+    keyword: "chart_with_upwards_trend",
+  },
+  {
+    title: "📉",
+    description: ":chart_with_downwards_trend:",
+    keyword: "chart_with_downwards_trend",
+  },
+  {
+    title: "📊",
+    description: ":bar_chart:",
+    keyword: "bar_chart",
+  },
+  {
+    title: "📋",
+    description: ":clipboard:",
+    keyword: "clipboard",
+  },
+  {
+    title: "📌",
+    description: ":pushpin:",
+    keyword: "pushpin",
+  },
+  {
+    title: "📍",
+    description: ":round_pushpin:",
+    keyword: "round_pushpin",
+  },
+  {
+    title: "📎",
+    description: ":paperclip:",
+    keyword: "paperclip",
+  },
+  {
+    title: "🖇️",
+    description: ":paperclips:",
+    keyword: "paperclips",
+  },
+  {
+    title: "📏",
+    description: ":straight_ruler:",
+    keyword: "straight_ruler",
+  },
+  {
+    title: "📐",
+    description: ":triangular_ruler:",
+    keyword: "triangular_ruler",
+  },
+  {
+    title: "✂️",
+    description: ":scissors:",
+    keyword: "scissors",
+  },
+  {
+    title: "🗃️",
+    description: ":card_file_box:",
+    keyword: "card_file_box",
+  },
+  {
+    title: "🗄️",
+    description: ":file_cabinet:",
+    keyword: "file_cabinet",
+  },
+  {
+    title: "🗑️",
+    description: ":wastebasket:",
+    keyword: "wastebasket",
+  },
+  {
+    title: "🔒",
+    description: ":lock:",
+    keyword: "lock",
+  },
+  {
+    title: "🔓",
+    description: ":unlock:",
+    keyword: "unlock",
+  },
+  {
+    title: "🔏",
+    description: ":lock_with_ink_pen:",
+    keyword: "lock_with_ink_pen",
+  },
+  {
+    title: "🔐",
+    description: ":closed_lock_with_key:",
+    keyword: "closed_lock_with_key",
+  },
+  {
+    title: "🔑",
+    description: ":key:",
+    keyword: "key",
+  },
+  {
+    title: "🗝️",
+    description: ":old_key:",
+    keyword: "old_key",
+  },
+  {
+    title: "🔨",
+    description: ":hammer:",
+    keyword: "hammer",
+  },
+  {
+    title: "🪓",
+    description: ":axe:",
+    keyword: "axe",
+  },
+  {
+    title: "⛏️",
+    description: ":pick:",
+    keyword: "pick",
+  },
+  {
+    title: "⚒️",
+    description: ":hammer_and_pick:",
+    keyword: "hammer_and_pick",
+  },
+  {
+    title: "🛠️",
+    description: ":hammer_and_wrench:",
+    keyword: "hammer_and_wrench",
+  },
+  {
+    title: "🗡️",
+    description: ":dagger:",
+    keyword: "dagger",
+  },
+  {
+    title: "⚔️",
+    description: ":crossed_swords:",
+    keyword: "crossed_swords",
+  },
+  {
+    title: "🔫",
+    description: ":gun:",
+    keyword: "gun",
+  },
+  {
+    title: "🏹",
+    description: ":bow_and_arrow:",
+    keyword: "bow_and_arrow",
+  },
+  {
+    title: "🛡️",
+    description: ":shield:",
+    keyword: "shield",
+  },
+  {
+    title: "🔧",
+    description: ":wrench:",
+    keyword: "wrench",
+  },
+  {
+    title: "🔩",
+    description: ":nut_and_bolt:",
+    keyword: "nut_and_bolt",
+  },
+  {
+    title: "⚙️",
+    description: ":gear:",
+    keyword: "gear",
+  },
+  {
+    title: "🗜️",
+    description: ":clamp:",
+    keyword: "clamp",
+  },
+  {
+    title: "⚖️",
+    description: ":balance_scale:",
+    keyword: "balance_scale",
+  },
+  {
+    title: "🦯",
+    description: ":probing_cane:",
+    keyword: "probing_cane",
+  },
+  {
+    title: "🔗",
+    description: ":link:",
+    keyword: "link",
+  },
+  {
+    title: "⛓️",
+    description: ":chains:",
+    keyword: "chains",
+  },
+  {
+    title: "🧰",
+    description: ":toolbox:",
+    keyword: "toolbox",
+  },
+  {
+    title: "🧲",
+    description: ":magnet:",
+    keyword: "magnet",
+  },
+  {
+    title: "⚗️",
+    description: ":alembic:",
+    keyword: "alembic",
+  },
+  {
+    title: "🧪",
+    description: ":test_tube:",
+    keyword: "test_tube",
+  },
+  {
+    title: "🧫",
+    description: ":petri_dish:",
+    keyword: "petri_dish",
+  },
+  {
+    title: "🧬",
+    description: ":dna:",
+    keyword: "dna",
+  },
+  {
+    title: "🔬",
+    description: ":microscope:",
+    keyword: "microscope",
+  },
+  {
+    title: "🔭",
+    description: ":telescope:",
+    keyword: "telescope",
+  },
+  {
+    title: "📡",
+    description: ":satellite:",
+    keyword: "satellite",
+  },
+  {
+    title: "💉",
+    description: ":syringe:",
+    keyword: "syringe",
+  },
+  {
+    title: "🩸",
+    description: ":drop_of_blood:",
+    keyword: "drop_of_blood",
+  },
+  {
+    title: "💊",
+    description: ":pill:",
+    keyword: "pill",
+  },
+  {
+    title: "🩹",
+    description: ":adhesive_bandage:",
+    keyword: "adhesive_bandage",
+  },
+  {
+    title: "🩺",
+    description: ":stethoscope:",
+    keyword: "stethoscope",
+  },
+  {
+    title: "🚪",
+    description: ":door:",
+    keyword: "door",
+  },
+  {
+    title: "🛏️",
+    description: ":bed:",
+    keyword: "bed",
+  },
+  {
+    title: "🛋️",
+    description: ":couch_and_lamp:",
+    keyword: "couch_and_lamp",
+  },
+  {
+    title: "🪑",
+    description: ":chair:",
+    keyword: "chair",
+  },
+  {
+    title: "🚽",
+    description: ":toilet:",
+    keyword: "toilet",
+  },
+  {
+    title: "🚿",
+    description: ":shower:",
+    keyword: "shower",
+  },
+  {
+    title: "🛁",
+    description: ":bathtub:",
+    keyword: "bathtub",
+  },
+  {
+    title: "🪒",
+    description: ":razor:",
+    keyword: "razor",
+  },
+  {
+    title: "🧴",
+    description: ":lotion_bottle:",
+    keyword: "lotion_bottle",
+  },
+  {
+    title: "🧷",
+    description: ":safety_pin:",
+    keyword: "safety_pin",
+  },
+  {
+    title: "🧹",
+    description: ":broom:",
+    keyword: "broom",
+  },
+  {
+    title: "🧺",
+    description: ":basket:",
+    keyword: "basket",
+  },
+  {
+    title: "🧻",
+    description: ":roll_of_paper:",
+    keyword: "roll_of_paper",
+  },
+  {
+    title: "🧼",
+    description: ":soap:",
+    keyword: "soap",
+  },
+  {
+    title: "🧽",
+    description: ":sponge:",
+    keyword: "sponge",
+  },
+  {
+    title: "🧯",
+    description: ":fire_extinguisher:",
+    keyword: "fire_extinguisher",
+  },
+  {
+    title: "🛒",
+    description: ":shopping_cart:",
+    keyword: "shopping_cart",
+  },
+  {
+    title: "🚬",
+    description: ":smoking:",
+    keyword: "smoking",
+  },
+  {
+    title: "⚰️",
+    description: ":coffin:",
+    keyword: "coffin",
+  },
+  {
+    title: "⚱️",
+    description: ":funeral_urn:",
+    keyword: "funeral_urn",
+  },
+  {
+    title: "🗿",
+    description: ":moyai:",
+    keyword: "moyai",
+  },
+  {
+    title: "🏧",
+    description: ":atm:",
+    keyword: "atm",
+  },
+  {
+    title: "🚮",
+    description: ":put_litter_in_its_place:",
+    keyword: "put_litter_in_its_place",
+  },
+  {
+    title: "🚰",
+    description: ":potable_water:",
+    keyword: "potable_water",
+  },
+  {
+    title: "♿",
+    description: ":wheelchair:",
+    keyword: "wheelchair",
+  },
+  {
+    title: "🚹",
+    description: ":mens:",
+    keyword: "mens",
+  },
+  {
+    title: "🚺",
+    description: ":womens:",
+    keyword: "womens",
+  },
+  {
+    title: "🚻",
+    description: ":restroom:",
+    keyword: "restroom",
+  },
+  {
+    title: "🚼",
+    description: ":baby_symbol:",
+    keyword: "baby_symbol",
+  },
+  {
+    title: "🚾",
+    description: ":wc:",
+    keyword: "wc",
+  },
+  {
+    title: "🛂",
+    description: ":passport_control:",
+    keyword: "passport_control",
+  },
+  {
+    title: "🛃",
+    description: ":customs:",
+    keyword: "customs",
+  },
+  {
+    title: "🛄",
+    description: ":baggage_claim:",
+    keyword: "baggage_claim",
+  },
+  {
+    title: "🛅",
+    description: ":left_luggage:",
+    keyword: "left_luggage",
+  },
+  {
+    title: "⚠️",
+    description: ":warning:",
+    keyword: "warning",
+  },
+  {
+    title: "🚸",
+    description: ":children_crossing:",
+    keyword: "children_crossing",
+  },
+  {
+    title: "⛔",
+    description: ":no_entry:",
+    keyword: "no_entry",
+  },
+  {
+    title: "🚫",
+    description: ":no_entry_sign:",
+    keyword: "no_entry_sign",
+  },
+  {
+    title: "🚳",
+    description: ":no_bicycles:",
+    keyword: "no_bicycles",
+  },
+  {
+    title: "🚭",
+    description: ":no_smoking:",
+    keyword: "no_smoking",
+  },
+  {
+    title: "🚯",
+    description: ":do_not_litter:",
+    keyword: "do_not_litter",
+  },
+  {
+    title: "🚱",
+    description: ":non-potable_water:",
+    keyword: "non-potable_water",
+  },
+  {
+    title: "🚷",
+    description: ":no_pedestrians:",
+    keyword: "no_pedestrians",
+  },
+  {
+    title: "📵",
+    description: ":no_mobile_phones:",
+    keyword: "no_mobile_phones",
+  },
+  {
+    title: "🔞",
+    description: ":underage:",
+    keyword: "underage",
+  },
+  {
+    title: "☢️",
+    description: ":radioactive:",
+    keyword: "radioactive",
+  },
+  {
+    title: "☣️",
+    description: ":biohazard:",
+    keyword: "biohazard",
+  },
+  {
+    title: "⬆️",
+    description: ":arrow_up:",
+    keyword: "arrow_up",
+  },
+  {
+    title: "↗️",
+    description: ":arrow_upper_right:",
+    keyword: "arrow_upper_right",
+  },
+  {
+    title: "➡️",
+    description: ":arrow_right:",
+    keyword: "arrow_right",
+  },
+  {
+    title: "↘️",
+    description: ":arrow_lower_right:",
+    keyword: "arrow_lower_right",
+  },
+  {
+    title: "⬇️",
+    description: ":arrow_down:",
+    keyword: "arrow_down",
+  },
+  {
+    title: "↙️",
+    description: ":arrow_lower_left:",
+    keyword: "arrow_lower_left",
+  },
+  {
+    title: "⬅️",
+    description: ":arrow_left:",
+    keyword: "arrow_left",
+  },
+  {
+    title: "↖️",
+    description: ":arrow_upper_left:",
+    keyword: "arrow_upper_left",
+  },
+  {
+    title: "↕️",
+    description: ":arrow_up_down:",
+    keyword: "arrow_up_down",
+  },
+  {
+    title: "↔️",
+    description: ":left_right_arrow:",
+    keyword: "left_right_arrow",
+  },
+  {
+    title: "↩️",
+    description: ":leftwards_arrow_with_hook:",
+    keyword: "leftwards_arrow_with_hook",
+  },
+  {
+    title: "↪️",
+    description: ":arrow_right_hook:",
+    keyword: "arrow_right_hook",
+  },
+  {
+    title: "⤴️",
+    description: ":arrow_heading_up:",
+    keyword: "arrow_heading_up",
+  },
+  {
+    title: "⤵️",
+    description: ":arrow_heading_down:",
+    keyword: "arrow_heading_down",
+  },
+  {
+    title: "🔃",
+    description: ":arrows_clockwise:",
+    keyword: "arrows_clockwise",
+  },
+  {
+    title: "🔄",
+    description: ":arrows_counterclockwise:",
+    keyword: "arrows_counterclockwise",
+  },
+  {
+    title: "🔙",
+    description: ":back:",
+    keyword: "back",
+  },
+  {
+    title: "🔚",
+    description: ":end:",
+    keyword: "end",
+  },
+  {
+    title: "🔛",
+    description: ":on:",
+    keyword: "on",
+  },
+  {
+    title: "🔜",
+    description: ":soon:",
+    keyword: "soon",
+  },
+  {
+    title: "🔝",
+    description: ":top:",
+    keyword: "top",
+  },
+  {
+    title: "🛐",
+    description: ":place_of_worship:",
+    keyword: "place_of_worship",
+  },
+  {
+    title: "⚛️",
+    description: ":atom_symbol:",
+    keyword: "atom_symbol",
+  },
+  {
+    title: "🕉️",
+    description: ":om:",
+    keyword: "om",
+  },
+  {
+    title: "✡️",
+    description: ":star_of_david:",
+    keyword: "star_of_david",
+  },
+  {
+    title: "☸️",
+    description: ":wheel_of_dharma:",
+    keyword: "wheel_of_dharma",
+  },
+  {
+    title: "☯️",
+    description: ":yin_yang:",
+    keyword: "yin_yang",
+  },
+  {
+    title: "✝️",
+    description: ":latin_cross:",
+    keyword: "latin_cross",
+  },
+  {
+    title: "☦️",
+    description: ":orthodox_cross:",
+    keyword: "orthodox_cross",
+  },
+  {
+    title: "☪️",
+    description: ":star_and_crescent:",
+    keyword: "star_and_crescent",
+  },
+  {
+    title: "☮️",
+    description: ":peace_symbol:",
+    keyword: "peace_symbol",
+  },
+  {
+    title: "🕎",
+    description: ":menorah:",
+    keyword: "menorah",
+  },
+  {
+    title: "🔯",
+    description: ":six_pointed_star:",
+    keyword: "six_pointed_star",
+  },
+  {
+    title: "♈",
+    description: ":aries:",
+    keyword: "aries",
+  },
+  {
+    title: "♉",
+    description: ":taurus:",
+    keyword: "taurus",
+  },
+  {
+    title: "♊",
+    description: ":gemini:",
+    keyword: "gemini",
+  },
+  {
+    title: "♋",
+    description: ":cancer:",
+    keyword: "cancer",
+  },
+  {
+    title: "♌",
+    description: ":leo:",
+    keyword: "leo",
+  },
+  {
+    title: "♍",
+    description: ":virgo:",
+    keyword: "virgo",
+  },
+  {
+    title: "♎",
+    description: ":libra:",
+    keyword: "libra",
+  },
+  {
+    title: "♏",
+    description: ":scorpius:",
+    keyword: "scorpius",
+  },
+  {
+    title: "♐",
+    description: ":sagittarius:",
+    keyword: "sagittarius",
+  },
+  {
+    title: "♑",
+    description: ":capricorn:",
+    keyword: "capricorn",
+  },
+  {
+    title: "♒",
+    description: ":aquarius:",
+    keyword: "aquarius",
+  },
+  {
+    title: "♓",
+    description: ":pisces:",
+    keyword: "pisces",
+  },
+  {
+    title: "⛎",
+    description: ":ophiuchus:",
+    keyword: "ophiuchus",
+  },
+  {
+    title: "🔀",
+    description: ":twisted_rightwards_arrows:",
+    keyword: "twisted_rightwards_arrows",
+  },
+  {
+    title: "🔁",
+    description: ":repeat:",
+    keyword: "repeat",
+  },
+  {
+    title: "🔂",
+    description: ":repeat_one:",
+    keyword: "repeat_one",
+  },
+  {
+    title: "▶️",
+    description: ":arrow_forward:",
+    keyword: "arrow_forward",
+  },
+  {
+    title: "⏩",
+    description: ":fast_forward:",
+    keyword: "fast_forward",
+  },
+  {
+    title: "⏭️",
+    description: ":next_track_button:",
+    keyword: "next_track_button",
+  },
+  {
+    title: "⏯️",
+    description: ":play_or_pause_button:",
+    keyword: "play_or_pause_button",
+  },
+  {
+    title: "◀️",
+    description: ":arrow_backward:",
+    keyword: "arrow_backward",
+  },
+  {
+    title: "⏪",
+    description: ":rewind:",
+    keyword: "rewind",
+  },
+  {
+    title: "⏮️",
+    description: ":previous_track_button:",
+    keyword: "previous_track_button",
+  },
+  {
+    title: "🔼",
+    description: ":arrow_up_small:",
+    keyword: "arrow_up_small",
+  },
+  {
+    title: "⏫",
+    description: ":arrow_double_up:",
+    keyword: "arrow_double_up",
+  },
+  {
+    title: "🔽",
+    description: ":arrow_down_small:",
+    keyword: "arrow_down_small",
+  },
+  {
+    title: "⏬",
+    description: ":arrow_double_down:",
+    keyword: "arrow_double_down",
+  },
+  {
+    title: "⏸️",
+    description: ":pause_button:",
+    keyword: "pause_button",
+  },
+  {
+    title: "⏹️",
+    description: ":stop_button:",
+    keyword: "stop_button",
+  },
+  {
+    title: "⏺️",
+    description: ":record_button:",
+    keyword: "record_button",
+  },
+  {
+    title: "⏏️",
+    description: ":eject_button:",
+    keyword: "eject_button",
+  },
+  {
+    title: "🎦",
+    description: ":cinema:",
+    keyword: "cinema",
+  },
+  {
+    title: "🔅",
+    description: ":low_brightness:",
+    keyword: "low_brightness",
+  },
+  {
+    title: "🔆",
+    description: ":high_brightness:",
+    keyword: "high_brightness",
+  },
+  {
+    title: "📶",
+    description: ":signal_strength:",
+    keyword: "signal_strength",
+  },
+  {
+    title: "📳",
+    description: ":vibration_mode:",
+    keyword: "vibration_mode",
+  },
+  {
+    title: "📴",
+    description: ":mobile_phone_off:",
+    keyword: "mobile_phone_off",
+  },
+  {
+    title: "♀️",
+    description: ":female_sign:",
+    keyword: "female_sign",
+  },
+  {
+    title: "♂️",
+    description: ":male_sign:",
+    keyword: "male_sign",
+  },
+  {
+    title: "✖️",
+    description: ":heavy_multiplication_x:",
+    keyword: "heavy_multiplication_x",
+  },
+  {
+    title: "➕",
+    description: ":heavy_plus_sign:",
+    keyword: "heavy_plus_sign",
+  },
+  {
+    title: "➖",
+    description: ":heavy_minus_sign:",
+    keyword: "heavy_minus_sign",
+  },
+  {
+    title: "➗",
+    description: ":heavy_division_sign:",
+    keyword: "heavy_division_sign",
+  },
+  {
+    title: "♾️",
+    description: ":infinity:",
+    keyword: "infinity",
+  },
+  {
+    title: "‼️",
+    description: ":bangbang:",
+    keyword: "bangbang",
+  },
+  {
+    title: "⁉️",
+    description: ":interrobang:",
+    keyword: "interrobang",
+  },
+  {
+    title: "❓",
+    description: ":question:",
+    keyword: "question",
+  },
+  {
+    title: "❔",
+    description: ":grey_question:",
+    keyword: "grey_question",
+  },
+  {
+    title: "❕",
+    description: ":grey_exclamation:",
+    keyword: "grey_exclamation",
+  },
+  {
+    title: "❗",
+    description: ":heavy_exclamation_mark:",
+    keyword: "heavy_exclamation_mark",
+  },
+  {
+    title: "〰️",
+    description: ":wavy_dash:",
+    keyword: "wavy_dash",
+  },
+  {
+    title: "💱",
+    description: ":currency_exchange:",
+    keyword: "currency_exchange",
+  },
+  {
+    title: "💲",
+    description: ":heavy_dollar_sign:",
+    keyword: "heavy_dollar_sign",
+  },
+  {
+    title: "⚕️",
+    description: ":medical_symbol:",
+    keyword: "medical_symbol",
+  },
+  {
+    title: "♻️",
+    description: ":recycle:",
+    keyword: "recycle",
+  },
+  {
+    title: "⚜️",
+    description: ":fleur_de_lis:",
+    keyword: "fleur_de_lis",
+  },
+  {
+    title: "🔱",
+    description: ":trident:",
+    keyword: "trident",
+  },
+  {
+    title: "📛",
+    description: ":name_badge:",
+    keyword: "name_badge",
+  },
+  {
+    title: "🔰",
+    description: ":beginner:",
+    keyword: "beginner",
+  },
+  {
+    title: "⭕",
+    description: ":o:",
+    keyword: "o",
+  },
+  {
+    title: "✅",
+    description: ":white_check_mark:",
+    keyword: "white_check_mark",
+  },
+  {
+    title: "☑️",
+    description: ":ballot_box_with_check:",
+    keyword: "ballot_box_with_check",
+  },
+  {
+    title: "✔️",
+    description: ":heavy_check_mark:",
+    keyword: "heavy_check_mark",
+  },
+  {
+    title: "❌",
+    description: ":x:",
+    keyword: "x",
+  },
+  {
+    title: "❎",
+    description: ":negative_squared_cross_mark:",
+    keyword: "negative_squared_cross_mark",
+  },
+  {
+    title: "➰",
+    description: ":curly_loop:",
+    keyword: "curly_loop",
+  },
+  {
+    title: "➿",
+    description: ":loop:",
+    keyword: "loop",
+  },
+  {
+    title: "〽️",
+    description: ":part_alternation_mark:",
+    keyword: "part_alternation_mark",
+  },
+  {
+    title: "✳️",
+    description: ":eight_spoked_asterisk:",
+    keyword: "eight_spoked_asterisk",
+  },
+  {
+    title: "✴️",
+    description: ":eight_pointed_black_star:",
+    keyword: "eight_pointed_black_star",
+  },
+  {
+    title: "❇️",
+    description: ":sparkle:",
+    keyword: "sparkle",
+  },
+  {
+    title: "©️",
+    description: ":copyright:",
+    keyword: "copyright",
+  },
+  {
+    title: "®️",
+    description: ":registered:",
+    keyword: "registered",
+  },
+  {
+    title: "™️",
+    description: ":tm:",
+    keyword: "tm",
+  },
+  {
+    title: "#️⃣",
+    description: ":hash:",
+    keyword: "hash",
+  },
+  {
+    title: "*️⃣",
+    description: ":asterisk:",
+    keyword: "asterisk",
+  },
+  {
+    title: "0️⃣",
+    description: ":zero:",
+    keyword: "zero",
+  },
+  {
+    title: "1️⃣",
+    description: ":one:",
+    keyword: "one",
+  },
+  {
+    title: "2️⃣",
+    description: ":two:",
+    keyword: "two",
+  },
+  {
+    title: "3️⃣",
+    description: ":three:",
+    keyword: "three",
+  },
+  {
+    title: "4️⃣",
+    description: ":four:",
+    keyword: "four",
+  },
+  {
+    title: "5️⃣",
+    description: ":five:",
+    keyword: "five",
+  },
+  {
+    title: "6️⃣",
+    description: ":six:",
+    keyword: "six",
+  },
+  {
+    title: "7️⃣",
+    description: ":seven:",
+    keyword: "seven",
+  },
+  {
+    title: "8️⃣",
+    description: ":eight:",
+    keyword: "eight",
+  },
+  {
+    title: "9️⃣",
+    description: ":nine:",
+    keyword: "nine",
+  },
+  {
+    title: "🔟",
+    description: ":keycap_ten:",
+    keyword: "keycap_ten",
+  },
+  {
+    title: "🔠",
+    description: ":capital_abcd:",
+    keyword: "capital_abcd",
+  },
+  {
+    title: "🔡",
+    description: ":abcd:",
+    keyword: "abcd",
+  },
+  {
+    title: "🔢",
+    description: ":1234:",
+    keyword: "1234",
+  },
+  {
+    title: "🔣",
+    description: ":symbols:",
+    keyword: "symbols",
+  },
+  {
+    title: "🔤",
+    description: ":abc:",
+    keyword: "abc",
+  },
+  {
+    title: "🅰️",
+    description: ":a:",
+    keyword: "a",
+  },
+  {
+    title: "🆎",
+    description: ":ab:",
+    keyword: "ab",
+  },
+  {
+    title: "🅱️",
+    description: ":b:",
+    keyword: "b",
+  },
+  {
+    title: "🆑",
+    description: ":cl:",
+    keyword: "cl",
+  },
+  {
+    title: "🆒",
+    description: ":cool:",
+    keyword: "cool",
+  },
+  {
+    title: "🆓",
+    description: ":free:",
+    keyword: "free",
+  },
+  {
+    title: "ℹ️",
+    description: ":information_source:",
+    keyword: "information_source",
+  },
+  {
+    title: "🆔",
+    description: ":id:",
+    keyword: "id",
+  },
+  {
+    title: "Ⓜ️",
+    description: ":m:",
+    keyword: "m",
+  },
+  {
+    title: "🆕",
+    description: ":new:",
+    keyword: "new",
+  },
+  {
+    title: "🆖",
+    description: ":ng:",
+    keyword: "ng",
+  },
+  {
+    title: "🅾️",
+    description: ":o2:",
+    keyword: "o2",
+  },
+  {
+    title: "🆗",
+    description: ":ok:",
+    keyword: "ok",
+  },
+  {
+    title: "🅿️",
+    description: ":parking:",
+    keyword: "parking",
+  },
+  {
+    title: "🆘",
+    description: ":sos:",
+    keyword: "sos",
+  },
+  {
+    title: "🆙",
+    description: ":up:",
+    keyword: "up",
+  },
+  {
+    title: "🆚",
+    description: ":vs:",
+    keyword: "vs",
+  },
+  {
+    title: "🈁",
+    description: ":koko:",
+    keyword: "koko",
+  },
+  {
+    title: "🈂️",
+    description: ":sa:",
+    keyword: "sa",
+  },
+  {
+    title: "🈷️",
+    description: ":u6708:",
+    keyword: "u6708",
+  },
+  {
+    title: "🈶",
+    description: ":u6709:",
+    keyword: "u6709",
+  },
+  {
+    title: "🈯",
+    description: ":u6307:",
+    keyword: "u6307",
+  },
+  {
+    title: "🉐",
+    description: ":ideograph_advantage:",
+    keyword: "ideograph_advantage",
+  },
+  {
+    title: "🈹",
+    description: ":u5272:",
+    keyword: "u5272",
+  },
+  {
+    title: "🈚",
+    description: ":u7121:",
+    keyword: "u7121",
+  },
+  {
+    title: "🈲",
+    description: ":u7981:",
+    keyword: "u7981",
+  },
+  {
+    title: "🉑",
+    description: ":accept:",
+    keyword: "accept",
+  },
+  {
+    title: "🈸",
+    description: ":u7533:",
+    keyword: "u7533",
+  },
+  {
+    title: "🈴",
+    description: ":u5408:",
+    keyword: "u5408",
+  },
+  {
+    title: "🈳",
+    description: ":u7a7a:",
+    keyword: "u7a7a",
+  },
+  {
+    title: "㊗️",
+    description: ":congratulations:",
+    keyword: "congratulations",
+  },
+  {
+    title: "㊙️",
+    description: ":secret:",
+    keyword: "secret",
+  },
+  {
+    title: "🈺",
+    description: ":u55b6:",
+    keyword: "u55b6",
+  },
+  {
+    title: "🈵",
+    description: ":u6e80:",
+    keyword: "u6e80",
+  },
+  {
+    title: "🔴",
+    description: ":red_circle:",
+    keyword: "red_circle",
+  },
+  {
+    title: "🟠",
+    description: ":orange_circle:",
+    keyword: "orange_circle",
+  },
+  {
+    title: "🟡",
+    description: ":yellow_circle:",
+    keyword: "yellow_circle",
+  },
+  {
+    title: "🟢",
+    description: ":green_circle:",
+    keyword: "green_circle",
+  },
+  {
+    title: "🔵",
+    description: ":large_blue_circle:",
+    keyword: "large_blue_circle",
+  },
+  {
+    title: "🟣",
+    description: ":purple_circle:",
+    keyword: "purple_circle",
+  },
+  {
+    title: "🟤",
+    description: ":brown_circle:",
+    keyword: "brown_circle",
+  },
+  {
+    title: "⚫",
+    description: ":black_circle:",
+    keyword: "black_circle",
+  },
+  {
+    title: "⚪",
+    description: ":white_circle:",
+    keyword: "white_circle",
+  },
+  {
+    title: "🟥",
+    description: ":red_square:",
+    keyword: "red_square",
+  },
+  {
+    title: "🟧",
+    description: ":orange_square:",
+    keyword: "orange_square",
+  },
+  {
+    title: "🟨",
+    description: ":yellow_square:",
+    keyword: "yellow_square",
+  },
+  {
+    title: "🟩",
+    description: ":green_square:",
+    keyword: "green_square",
+  },
+  {
+    title: "🟦",
+    description: ":blue_square:",
+    keyword: "blue_square",
+  },
+  {
+    title: "🟪",
+    description: ":purple_square:",
+    keyword: "purple_square",
+  },
+  {
+    title: "🟫",
+    description: ":brown_square:",
+    keyword: "brown_square",
+  },
+  {
+    title: "⬛",
+    description: ":black_large_square:",
+    keyword: "black_large_square",
+  },
+  {
+    title: "⬜",
+    description: ":white_large_square:",
+    keyword: "white_large_square",
+  },
+  {
+    title: "◼️",
+    description: ":black_medium_square:",
+    keyword: "black_medium_square",
+  },
+  {
+    title: "◻️",
+    description: ":white_medium_square:",
+    keyword: "white_medium_square",
+  },
+  {
+    title: "◾",
+    description: ":black_medium_small_square:",
+    keyword: "black_medium_small_square",
+  },
+  {
+    title: "◽",
+    description: ":white_medium_small_square:",
+    keyword: "white_medium_small_square",
+  },
+  {
+    title: "▪️",
+    description: ":black_small_square:",
+    keyword: "black_small_square",
+  },
+  {
+    title: "▫️",
+    description: ":white_small_square:",
+    keyword: "white_small_square",
+  },
+  {
+    title: "🔶",
+    description: ":large_orange_diamond:",
+    keyword: "large_orange_diamond",
+  },
+  {
+    title: "🔷",
+    description: ":large_blue_diamond:",
+    keyword: "large_blue_diamond",
+  },
+  {
+    title: "🔸",
+    description: ":small_orange_diamond:",
+    keyword: "small_orange_diamond",
+  },
+  {
+    title: "🔹",
+    description: ":small_blue_diamond:",
+    keyword: "small_blue_diamond",
+  },
+  {
+    title: "🔺",
+    description: ":small_red_triangle:",
+    keyword: "small_red_triangle",
+  },
+  {
+    title: "🔻",
+    description: ":small_red_triangle_down:",
+    keyword: "small_red_triangle_down",
+  },
+  {
+    title: "💠",
+    description: ":diamond_shape_with_a_dot_inside:",
+    keyword: "diamond_shape_with_a_dot_inside",
+  },
+  {
+    title: "🔘",
+    description: ":radio_button:",
+    keyword: "radio_button",
+  },
+  {
+    title: "🔳",
+    description: ":white_square_button:",
+    keyword: "white_square_button",
+  },
+  {
+    title: "🔲",
+    description: ":black_square_button:",
+    keyword: "black_square_button",
+  },
+  {
+    title: "🏁",
+    description: ":checkered_flag:",
+    keyword: "checkered_flag",
+  },
+  {
+    title: "🚩",
+    description: ":triangular_flag_on_post:",
+    keyword: "triangular_flag_on_post",
+  },
+  {
+    title: "🎌",
+    description: ":crossed_flags:",
+    keyword: "crossed_flags",
+  },
+  {
+    title: "🏴",
+    description: ":black_flag:",
+    keyword: "black_flag",
+  },
+  {
+    title: "🏳️",
+    description: ":white_flag:",
+    keyword: "white_flag",
+  },
+  {
+    title: "🇦🇨",
+    description: ":ascension_island:",
+    keyword: "ascension_island",
+  },
+  {
+    title: "🇦🇩",
+    description: ":andorra:",
+    keyword: "andorra",
+  },
+  {
+    title: "🇦🇪",
+    description: ":united_arab_emirates:",
+    keyword: "united_arab_emirates",
+  },
+  {
+    title: "🇦🇫",
+    description: ":afghanistan:",
+    keyword: "afghanistan",
+  },
+  {
+    title: "🇦🇬",
+    description: ":antigua_barbuda:",
+    keyword: "antigua_barbuda",
+  },
+  {
+    title: "🇦🇮",
+    description: ":anguilla:",
+    keyword: "anguilla",
+  },
+  {
+    title: "🇦🇱",
+    description: ":albania:",
+    keyword: "albania",
+  },
+  {
+    title: "🇦🇲",
+    description: ":armenia:",
+    keyword: "armenia",
+  },
+  {
+    title: "🇦🇴",
+    description: ":angola:",
+    keyword: "angola",
+  },
+  {
+    title: "🇦🇶",
+    description: ":antarctica:",
+    keyword: "antarctica",
+  },
+  {
+    title: "🇦🇷",
+    description: ":argentina:",
+    keyword: "argentina",
+  },
+  {
+    title: "🇦🇸",
+    description: ":american_samoa:",
+    keyword: "american_samoa",
+  },
+  {
+    title: "🇦🇹",
+    description: ":austria:",
+    keyword: "austria",
+  },
+  {
+    title: "🇦🇺",
+    description: ":australia:",
+    keyword: "australia",
+  },
+  {
+    title: "🇦🇼",
+    description: ":aruba:",
+    keyword: "aruba",
+  },
+  {
+    title: "🇦🇽",
+    description: ":aland_islands:",
+    keyword: "aland_islands",
+  },
+  {
+    title: "🇦🇿",
+    description: ":azerbaijan:",
+    keyword: "azerbaijan",
+  },
+  {
+    title: "🇧🇦",
+    description: ":bosnia_herzegovina:",
+    keyword: "bosnia_herzegovina",
+  },
+  {
+    title: "🇧🇧",
+    description: ":barbados:",
+    keyword: "barbados",
+  },
+  {
+    title: "🇧🇩",
+    description: ":bangladesh:",
+    keyword: "bangladesh",
+  },
+  {
+    title: "🇧🇪",
+    description: ":belgium:",
+    keyword: "belgium",
+  },
+  {
+    title: "🇧🇫",
+    description: ":burkina_faso:",
+    keyword: "burkina_faso",
+  },
+  {
+    title: "🇧🇬",
+    description: ":bulgaria:",
+    keyword: "bulgaria",
+  },
+  {
+    title: "🇧🇭",
+    description: ":bahrain:",
+    keyword: "bahrain",
+  },
+  {
+    title: "🇧🇮",
+    description: ":burundi:",
+    keyword: "burundi",
+  },
+  {
+    title: "🇧🇯",
+    description: ":benin:",
+    keyword: "benin",
+  },
+  {
+    title: "🇧🇱",
+    description: ":st_barthelemy:",
+    keyword: "st_barthelemy",
+  },
+  {
+    title: "🇧🇲",
+    description: ":bermuda:",
+    keyword: "bermuda",
+  },
+  {
+    title: "🇧🇳",
+    description: ":brunei:",
+    keyword: "brunei",
+  },
+  {
+    title: "🇧🇴",
+    description: ":bolivia:",
+    keyword: "bolivia",
+  },
+  {
+    title: "🇧🇶",
+    description: ":caribbean_netherlands:",
+    keyword: "caribbean_netherlands",
+  },
+  {
+    title: "🇧🇷",
+    description: ":brazil:",
+    keyword: "brazil",
+  },
+  {
+    title: "🇧🇸",
+    description: ":bahamas:",
+    keyword: "bahamas",
+  },
+  {
+    title: "🇧🇹",
+    description: ":bhutan:",
+    keyword: "bhutan",
+  },
+  {
+    title: "🇧🇻",
+    description: ":bouvet_island:",
+    keyword: "bouvet_island",
+  },
+  {
+    title: "🇧🇼",
+    description: ":botswana:",
+    keyword: "botswana",
+  },
+  {
+    title: "🇧🇾",
+    description: ":belarus:",
+    keyword: "belarus",
+  },
+  {
+    title: "🇧🇿",
+    description: ":belize:",
+    keyword: "belize",
+  },
+  {
+    title: "🇨🇦",
+    description: ":canada:",
+    keyword: "canada",
+  },
+  {
+    title: "🇨🇨",
+    description: ":cocos_islands:",
+    keyword: "cocos_islands",
+  },
+  {
+    title: "🇨🇩",
+    description: ":congo_kinshasa:",
+    keyword: "congo_kinshasa",
+  },
+  {
+    title: "🇨🇫",
+    description: ":central_african_republic:",
+    keyword: "central_african_republic",
+  },
+  {
+    title: "🇨🇬",
+    description: ":congo_brazzaville:",
+    keyword: "congo_brazzaville",
+  },
+  {
+    title: "🇨🇭",
+    description: ":switzerland:",
+    keyword: "switzerland",
+  },
+  {
+    title: "🇨🇮",
+    description: ":cote_divoire:",
+    keyword: "cote_divoire",
+  },
+  {
+    title: "🇨🇰",
+    description: ":cook_islands:",
+    keyword: "cook_islands",
+  },
+  {
+    title: "🇨🇱",
+    description: ":chile:",
+    keyword: "chile",
+  },
+  {
+    title: "🇨🇲",
+    description: ":cameroon:",
+    keyword: "cameroon",
+  },
+  {
+    title: "🇨🇳",
+    description: ":cn:",
+    keyword: "cn",
+  },
+  {
+    title: "🇨🇴",
+    description: ":colombia:",
+    keyword: "colombia",
+  },
+  {
+    title: "🇨🇵",
+    description: ":clipperton_island:",
+    keyword: "clipperton_island",
+  },
+  {
+    title: "🇨🇷",
+    description: ":costa_rica:",
+    keyword: "costa_rica",
+  },
+  {
+    title: "🇨🇺",
+    description: ":cuba:",
+    keyword: "cuba",
+  },
+  {
+    title: "🇨🇻",
+    description: ":cape_verde:",
+    keyword: "cape_verde",
+  },
+  {
+    title: "🇨🇼",
+    description: ":curacao:",
+    keyword: "curacao",
+  },
+  {
+    title: "🇨🇽",
+    description: ":christmas_island:",
+    keyword: "christmas_island",
+  },
+  {
+    title: "🇨🇾",
+    description: ":cyprus:",
+    keyword: "cyprus",
+  },
+  {
+    title: "🇨🇿",
+    description: ":czech_republic:",
+    keyword: "czech_republic",
+  },
+  {
+    title: "🇩🇪",
+    description: ":de:",
+    keyword: "de",
+  },
+  {
+    title: "🇩🇬",
+    description: ":diego_garcia:",
+    keyword: "diego_garcia",
+  },
+  {
+    title: "🇩🇯",
+    description: ":djibouti:",
+    keyword: "djibouti",
+  },
+  {
+    title: "🇩🇰",
+    description: ":denmark:",
+    keyword: "denmark",
+  },
+  {
+    title: "🇩🇲",
+    description: ":dominica:",
+    keyword: "dominica",
+  },
+  {
+    title: "🇩🇴",
+    description: ":dominican_republic:",
+    keyword: "dominican_republic",
+  },
+  {
+    title: "🇩🇿",
+    description: ":algeria:",
+    keyword: "algeria",
+  },
+  {
+    title: "🇪🇦",
+    description: ":ceuta_melilla:",
+    keyword: "ceuta_melilla",
+  },
+  {
+    title: "🇪🇨",
+    description: ":ecuador:",
+    keyword: "ecuador",
+  },
+  {
+    title: "🇪🇪",
+    description: ":estonia:",
+    keyword: "estonia",
+  },
+  {
+    title: "🇪🇬",
+    description: ":egypt:",
+    keyword: "egypt",
+  },
+  {
+    title: "🇪🇭",
+    description: ":western_sahara:",
+    keyword: "western_sahara",
+  },
+  {
+    title: "🇪🇷",
+    description: ":eritrea:",
+    keyword: "eritrea",
+  },
+  {
+    title: "🇪🇸",
+    description: ":es:",
+    keyword: "es",
+  },
+  {
+    title: "🇪🇹",
+    description: ":ethiopia:",
+    keyword: "ethiopia",
+  },
+  {
+    title: "🇪🇺",
+    description: ":european_union:",
+    keyword: "european_union",
+  },
+  {
+    title: "🇫🇮",
+    description: ":finland:",
+    keyword: "finland",
+  },
+  {
+    title: "🇫🇯",
+    description: ":fiji:",
+    keyword: "fiji",
+  },
+  {
+    title: "🇫🇰",
+    description: ":falkland_islands:",
+    keyword: "falkland_islands",
+  },
+  {
+    title: "🇫🇲",
+    description: ":micronesia:",
+    keyword: "micronesia",
+  },
+  {
+    title: "🇫🇴",
+    description: ":faroe_islands:",
+    keyword: "faroe_islands",
+  },
+  {
+    title: "🇫🇷",
+    description: ":fr:",
+    keyword: "fr",
+  },
+  {
+    title: "🇬🇦",
+    description: ":gabon:",
+    keyword: "gabon",
+  },
+  {
+    title: "🇬🇧",
+    description: ":uk:",
+    keyword: "uk",
+  },
+  {
+    title: "🇬🇩",
+    description: ":grenada:",
+    keyword: "grenada",
+  },
+  {
+    title: "🇬🇪",
+    description: ":georgia:",
+    keyword: "georgia",
+  },
+  {
+    title: "🇬🇫",
+    description: ":french_guiana:",
+    keyword: "french_guiana",
+  },
+  {
+    title: "🇬🇬",
+    description: ":guernsey:",
+    keyword: "guernsey",
+  },
+  {
+    title: "🇬🇭",
+    description: ":ghana:",
+    keyword: "ghana",
+  },
+  {
+    title: "🇬🇮",
+    description: ":gibraltar:",
+    keyword: "gibraltar",
+  },
+  {
+    title: "🇬🇱",
+    description: ":greenland:",
+    keyword: "greenland",
+  },
+  {
+    title: "🇬🇲",
+    description: ":gambia:",
+    keyword: "gambia",
+  },
+  {
+    title: "🇬🇳",
+    description: ":guinea:",
+    keyword: "guinea",
+  },
+  {
+    title: "🇬🇵",
+    description: ":guadeloupe:",
+    keyword: "guadeloupe",
+  },
+  {
+    title: "🇬🇶",
+    description: ":equatorial_guinea:",
+    keyword: "equatorial_guinea",
+  },
+  {
+    title: "🇬🇷",
+    description: ":greece:",
+    keyword: "greece",
+  },
+  {
+    title: "🇬🇸",
+    description: ":south_georgia_south_sandwich_islands:",
+    keyword: "south_georgia_south_sandwich_islands",
+  },
+  {
+    title: "🇬🇹",
+    description: ":guatemala:",
+    keyword: "guatemala",
+  },
+  {
+    title: "🇬🇺",
+    description: ":guam:",
+    keyword: "guam",
+  },
+  {
+    title: "🇬🇼",
+    description: ":guinea_bissau:",
+    keyword: "guinea_bissau",
+  },
+  {
+    title: "🇬🇾",
+    description: ":guyana:",
+    keyword: "guyana",
+  },
+  {
+    title: "🇭🇰",
+    description: ":hong_kong:",
+    keyword: "hong_kong",
+  },
+  {
+    title: "🇭🇲",
+    description: ":heard_mcdonald_islands:",
+    keyword: "heard_mcdonald_islands",
+  },
+  {
+    title: "🇭🇳",
+    description: ":honduras:",
+    keyword: "honduras",
+  },
+  {
+    title: "🇭🇷",
+    description: ":croatia:",
+    keyword: "croatia",
+  },
+  {
+    title: "🇭🇹",
+    description: ":haiti:",
+    keyword: "haiti",
+  },
+  {
+    title: "🇭🇺",
+    description: ":hungary:",
+    keyword: "hungary",
+  },
+  {
+    title: "🇮🇨",
+    description: ":canary_islands:",
+    keyword: "canary_islands",
+  },
+  {
+    title: "🇮🇩",
+    description: ":indonesia:",
+    keyword: "indonesia",
+  },
+  {
+    title: "🇮🇪",
+    description: ":ireland:",
+    keyword: "ireland",
+  },
+  {
+    title: "🇮🇱",
+    description: ":israel:",
+    keyword: "israel",
+  },
+  {
+    title: "🇮🇲",
+    description: ":isle_of_man:",
+    keyword: "isle_of_man",
+  },
+  {
+    title: "🇮🇳",
+    description: ":india:",
+    keyword: "india",
+  },
+  {
+    title: "🇮🇴",
+    description: ":british_indian_ocean_territory:",
+    keyword: "british_indian_ocean_territory",
+  },
+  {
+    title: "🇮🇶",
+    description: ":iraq:",
+    keyword: "iraq",
+  },
+  {
+    title: "🇮🇷",
+    description: ":iran:",
+    keyword: "iran",
+  },
+  {
+    title: "🇮🇸",
+    description: ":iceland:",
+    keyword: "iceland",
+  },
+  {
+    title: "🇮🇹",
+    description: ":it:",
+    keyword: "it",
+  },
+  {
+    title: "🇯🇪",
+    description: ":jersey:",
+    keyword: "jersey",
+  },
+  {
+    title: "🇯🇲",
+    description: ":jamaica:",
+    keyword: "jamaica",
+  },
+  {
+    title: "🇯🇴",
+    description: ":jordan:",
+    keyword: "jordan",
+  },
+  {
+    title: "🇯🇵",
+    description: ":jp:",
+    keyword: "jp",
+  },
+  {
+    title: "🇰🇪",
+    description: ":kenya:",
+    keyword: "kenya",
+  },
+  {
+    title: "🇰🇬",
+    description: ":kyrgyzstan:",
+    keyword: "kyrgyzstan",
+  },
+  {
+    title: "🇰🇭",
+    description: ":cambodia:",
+    keyword: "cambodia",
+  },
+  {
+    title: "🇰🇮",
+    description: ":kiribati:",
+    keyword: "kiribati",
+  },
+  {
+    title: "🇰🇲",
+    description: ":comoros:",
+    keyword: "comoros",
+  },
+  {
+    title: "🇰🇳",
+    description: ":st_kitts_nevis:",
+    keyword: "st_kitts_nevis",
+  },
+  {
+    title: "🇰🇵",
+    description: ":north_korea:",
+    keyword: "north_korea",
+  },
+  {
+    title: "🇰🇷",
+    description: ":kr:",
+    keyword: "kr",
+  },
+  {
+    title: "🇰🇼",
+    description: ":kuwait:",
+    keyword: "kuwait",
+  },
+  {
+    title: "🇰🇾",
+    description: ":cayman_islands:",
+    keyword: "cayman_islands",
+  },
+  {
+    title: "🇰🇿",
+    description: ":kazakhstan:",
+    keyword: "kazakhstan",
+  },
+  {
+    title: "🇱🇦",
+    description: ":laos:",
+    keyword: "laos",
+  },
+  {
+    title: "🇱🇧",
+    description: ":lebanon:",
+    keyword: "lebanon",
+  },
+  {
+    title: "🇱🇨",
+    description: ":st_lucia:",
+    keyword: "st_lucia",
+  },
+  {
+    title: "🇱🇮",
+    description: ":liechtenstein:",
+    keyword: "liechtenstein",
+  },
+  {
+    title: "🇱🇰",
+    description: ":sri_lanka:",
+    keyword: "sri_lanka",
+  },
+  {
+    title: "🇱🇷",
+    description: ":liberia:",
+    keyword: "liberia",
+  },
+  {
+    title: "🇱🇸",
+    description: ":lesotho:",
+    keyword: "lesotho",
+  },
+  {
+    title: "🇱🇹",
+    description: ":lithuania:",
+    keyword: "lithuania",
+  },
+  {
+    title: "🇱🇺",
+    description: ":luxembourg:",
+    keyword: "luxembourg",
+  },
+  {
+    title: "🇱🇻",
+    description: ":latvia:",
+    keyword: "latvia",
+  },
+  {
+    title: "🇱🇾",
+    description: ":libya:",
+    keyword: "libya",
+  },
+  {
+    title: "🇲🇦",
+    description: ":morocco:",
+    keyword: "morocco",
+  },
+  {
+    title: "🇲🇨",
+    description: ":monaco:",
+    keyword: "monaco",
+  },
+  {
+    title: "🇲🇩",
+    description: ":moldova:",
+    keyword: "moldova",
+  },
+  {
+    title: "🇲🇪",
+    description: ":montenegro:",
+    keyword: "montenegro",
+  },
+  {
+    title: "🇲🇫",
+    description: ":st_martin:",
+    keyword: "st_martin",
+  },
+  {
+    title: "🇲🇬",
+    description: ":madagascar:",
+    keyword: "madagascar",
+  },
+  {
+    title: "🇲🇭",
+    description: ":marshall_islands:",
+    keyword: "marshall_islands",
+  },
+  {
+    title: "🇲🇰",
+    description: ":macedonia:",
+    keyword: "macedonia",
+  },
+  {
+    title: "🇲🇱",
+    description: ":mali:",
+    keyword: "mali",
+  },
+  {
+    title: "🇲🇲",
+    description: ":myanmar:",
+    keyword: "myanmar",
+  },
+  {
+    title: "🇲🇳",
+    description: ":mongolia:",
+    keyword: "mongolia",
+  },
+  {
+    title: "🇲🇴",
+    description: ":macau:",
+    keyword: "macau",
+  },
+  {
+    title: "🇲🇵",
+    description: ":northern_mariana_islands:",
+    keyword: "northern_mariana_islands",
+  },
+  {
+    title: "🇲🇶",
+    description: ":martinique:",
+    keyword: "martinique",
+  },
+  {
+    title: "🇲🇷",
+    description: ":mauritania:",
+    keyword: "mauritania",
+  },
+  {
+    title: "🇲🇸",
+    description: ":montserrat:",
+    keyword: "montserrat",
+  },
+  {
+    title: "🇲🇹",
+    description: ":malta:",
+    keyword: "malta",
+  },
+  {
+    title: "🇲🇺",
+    description: ":mauritius:",
+    keyword: "mauritius",
+  },
+  {
+    title: "🇲🇻",
+    description: ":maldives:",
+    keyword: "maldives",
+  },
+  {
+    title: "🇲🇼",
+    description: ":malawi:",
+    keyword: "malawi",
+  },
+  {
+    title: "🇲🇽",
+    description: ":mexico:",
+    keyword: "mexico",
+  },
+  {
+    title: "🇲🇾",
+    description: ":malaysia:",
+    keyword: "malaysia",
+  },
+  {
+    title: "🇲🇿",
+    description: ":mozambique:",
+    keyword: "mozambique",
+  },
+  {
+    title: "🇳🇦",
+    description: ":namibia:",
+    keyword: "namibia",
+  },
+  {
+    title: "🇳🇨",
+    description: ":new_caledonia:",
+    keyword: "new_caledonia",
+  },
+  {
+    title: "🇳🇪",
+    description: ":niger:",
+    keyword: "niger",
+  },
+  {
+    title: "🇳🇫",
+    description: ":norfolk_island:",
+    keyword: "norfolk_island",
+  },
+  {
+    title: "🇳🇬",
+    description: ":nigeria:",
+    keyword: "nigeria",
+  },
+  {
+    title: "🇳🇮",
+    description: ":nicaragua:",
+    keyword: "nicaragua",
+  },
+  {
+    title: "🇳🇱",
+    description: ":netherlands:",
+    keyword: "netherlands",
+  },
+  {
+    title: "🇳🇴",
+    description: ":norway:",
+    keyword: "norway",
+  },
+  {
+    title: "🇳🇵",
+    description: ":nepal:",
+    keyword: "nepal",
+  },
+  {
+    title: "🇳🇷",
+    description: ":nauru:",
+    keyword: "nauru",
+  },
+  {
+    title: "🇳🇺",
+    description: ":niue:",
+    keyword: "niue",
+  },
+  {
+    title: "🇳🇿",
+    description: ":new_zealand:",
+    keyword: "new_zealand",
+  },
+  {
+    title: "🇴🇲",
+    description: ":oman:",
+    keyword: "oman",
+  },
+  {
+    title: "🇵🇦",
+    description: ":panama:",
+    keyword: "panama",
+  },
+  {
+    title: "🇵🇪",
+    description: ":peru:",
+    keyword: "peru",
+  },
+  {
+    title: "🇵🇫",
+    description: ":french_polynesia:",
+    keyword: "french_polynesia",
+  },
+  {
+    title: "🇵🇬",
+    description: ":papua_new_guinea:",
+    keyword: "papua_new_guinea",
+  },
+  {
+    title: "🇵🇭",
+    description: ":philippines:",
+    keyword: "philippines",
+  },
+  {
+    title: "🇵🇰",
+    description: ":pakistan:",
+    keyword: "pakistan",
+  },
+  {
+    title: "🇵🇱",
+    description: ":poland:",
+    keyword: "poland",
+  },
+  {
+    title: "🇵🇲",
+    description: ":st_pierre_miquelon:",
+    keyword: "st_pierre_miquelon",
+  },
+  {
+    title: "🇵🇳",
+    description: ":pitcairn_islands:",
+    keyword: "pitcairn_islands",
+  },
+  {
+    title: "🇵🇷",
+    description: ":puerto_rico:",
+    keyword: "puerto_rico",
+  },
+  {
+    title: "🇵🇸",
+    description: ":palestinian_territories:",
+    keyword: "palestinian_territories",
+  },
+  {
+    title: "🇵🇹",
+    description: ":portugal:",
+    keyword: "portugal",
+  },
+  {
+    title: "🇵🇼",
+    description: ":palau:",
+    keyword: "palau",
+  },
+  {
+    title: "🇵🇾",
+    description: ":paraguay:",
+    keyword: "paraguay",
+  },
+  {
+    title: "🇶🇦",
+    description: ":qatar:",
+    keyword: "qatar",
+  },
+  {
+    title: "🇷🇪",
+    description: ":reunion:",
+    keyword: "reunion",
+  },
+  {
+    title: "🇷🇴",
+    description: ":romania:",
+    keyword: "romania",
+  },
+  {
+    title: "🇷🇸",
+    description: ":serbia:",
+    keyword: "serbia",
+  },
+  {
+    title: "🇷🇺",
+    description: ":ru:",
+    keyword: "ru",
+  },
+  {
+    title: "🇷🇼",
+    description: ":rwanda:",
+    keyword: "rwanda",
+  },
+  {
+    title: "🇸🇦",
+    description: ":saudi_arabia:",
+    keyword: "saudi_arabia",
+  },
+  {
+    title: "🇸🇧",
+    description: ":solomon_islands:",
+    keyword: "solomon_islands",
+  },
+  {
+    title: "🇸🇨",
+    description: ":seychelles:",
+    keyword: "seychelles",
+  },
+  {
+    title: "🇸🇩",
+    description: ":sudan:",
+    keyword: "sudan",
+  },
+  {
+    title: "🇸🇪",
+    description: ":sweden:",
+    keyword: "sweden",
+  },
+  {
+    title: "🇸🇬",
+    description: ":singapore:",
+    keyword: "singapore",
+  },
+  {
+    title: "🇸🇭",
+    description: ":st_helena:",
+    keyword: "st_helena",
+  },
+  {
+    title: "🇸🇮",
+    description: ":slovenia:",
+    keyword: "slovenia",
+  },
+  {
+    title: "🇸🇯",
+    description: ":svalbard_jan_mayen:",
+    keyword: "svalbard_jan_mayen",
+  },
+  {
+    title: "🇸🇰",
+    description: ":slovakia:",
+    keyword: "slovakia",
+  },
+  {
+    title: "🇸🇱",
+    description: ":sierra_leone:",
+    keyword: "sierra_leone",
+  },
+  {
+    title: "🇸🇲",
+    description: ":san_marino:",
+    keyword: "san_marino",
+  },
+  {
+    title: "🇸🇳",
+    description: ":senegal:",
+    keyword: "senegal",
+  },
+  {
+    title: "🇸🇴",
+    description: ":somalia:",
+    keyword: "somalia",
+  },
+  {
+    title: "🇸🇷",
+    description: ":suriname:",
+    keyword: "suriname",
+  },
+  {
+    title: "🇸🇸",
+    description: ":south_sudan:",
+    keyword: "south_sudan",
+  },
+  {
+    title: "🇸🇹",
+    description: ":sao_tome_principe:",
+    keyword: "sao_tome_principe",
+  },
+  {
+    title: "🇸🇻",
+    description: ":el_salvador:",
+    keyword: "el_salvador",
+  },
+  {
+    title: "🇸🇽",
+    description: ":sint_maarten:",
+    keyword: "sint_maarten",
+  },
+  {
+    title: "🇸🇾",
+    description: ":syria:",
+    keyword: "syria",
+  },
+  {
+    title: "🇸🇿",
+    description: ":swaziland:",
+    keyword: "swaziland",
+  },
+  {
+    title: "🇹🇦",
+    description: ":tristan_da_cunha:",
+    keyword: "tristan_da_cunha",
+  },
+  {
+    title: "🇹🇨",
+    description: ":turks_caicos_islands:",
+    keyword: "turks_caicos_islands",
+  },
+  {
+    title: "🇹🇩",
+    description: ":chad:",
+    keyword: "chad",
+  },
+  {
+    title: "🇹🇫",
+    description: ":french_southern_territories:",
+    keyword: "french_southern_territories",
+  },
+  {
+    title: "🇹🇬",
+    description: ":togo:",
+    keyword: "togo",
+  },
+  {
+    title: "🇹🇭",
+    description: ":thailand:",
+    keyword: "thailand",
+  },
+  {
+    title: "🇹🇯",
+    description: ":tajikistan:",
+    keyword: "tajikistan",
+  },
+  {
+    title: "🇹🇰",
+    description: ":tokelau:",
+    keyword: "tokelau",
+  },
+  {
+    title: "🇹🇱",
+    description: ":timor_leste:",
+    keyword: "timor_leste",
+  },
+  {
+    title: "🇹🇲",
+    description: ":turkmenistan:",
+    keyword: "turkmenistan",
+  },
+  {
+    title: "🇹🇳",
+    description: ":tunisia:",
+    keyword: "tunisia",
+  },
+  {
+    title: "🇹🇴",
+    description: ":tonga:",
+    keyword: "tonga",
+  },
+  {
+    title: "🇹🇷",
+    description: ":tr:",
+    keyword: "tr",
+  },
+  {
+    title: "🇹🇹",
+    description: ":trinidad_tobago:",
+    keyword: "trinidad_tobago",
+  },
+  {
+    title: "🇹🇻",
+    description: ":tuvalu:",
+    keyword: "tuvalu",
+  },
+  {
+    title: "🇹🇼",
+    description: ":taiwan:",
+    keyword: "taiwan",
+  },
+  {
+    title: "🇹🇿",
+    description: ":tanzania:",
+    keyword: "tanzania",
+  },
+  {
+    title: "🇺🇦",
+    description: ":ukraine:",
+    keyword: "ukraine",
+  },
+  {
+    title: "🇺🇬",
+    description: ":uganda:",
+    keyword: "uganda",
+  },
+  {
+    title: "🇺🇲",
+    description: ":us_outlying_islands:",
+    keyword: "us_outlying_islands",
+  },
+  {
+    title: "🇺🇳",
+    description: ":united_nations:",
+    keyword: "united_nations",
+  },
+  {
+    title: "🇺🇸",
+    description: ":us:",
+    keyword: "us",
+  },
+  {
+    title: "🇺🇾",
+    description: ":uruguay:",
+    keyword: "uruguay",
+  },
+  {
+    title: "🇺🇿",
+    description: ":uzbekistan:",
+    keyword: "uzbekistan",
+  },
+  {
+    title: "🇻🇦",
+    description: ":vatican_city:",
+    keyword: "vatican_city",
+  },
+  {
+    title: "🇻🇨",
+    description: ":st_vincent_grenadines:",
+    keyword: "st_vincent_grenadines",
+  },
+  {
+    title: "🇻🇪",
+    description: ":venezuela:",
+    keyword: "venezuela",
+  },
+  {
+    title: "🇻🇬",
+    description: ":british_virgin_islands:",
+    keyword: "british_virgin_islands",
+  },
+  {
+    title: "🇻🇮",
+    description: ":us_virgin_islands:",
+    keyword: "us_virgin_islands",
+  },
+  {
+    title: "🇻🇳",
+    description: ":vietnam:",
+    keyword: "vietnam",
+  },
+  {
+    title: "🇻🇺",
+    description: ":vanuatu:",
+    keyword: "vanuatu",
+  },
+  {
+    title: "🇼🇫",
+    description: ":wallis_futuna:",
+    keyword: "wallis_futuna",
+  },
+  {
+    title: "🇼🇸",
+    description: ":samoa:",
+    keyword: "samoa",
+  },
+  {
+    title: "🇽🇰",
+    description: ":kosovo:",
+    keyword: "kosovo",
+  },
+  {
+    title: "🇾🇪",
+    description: ":yemen:",
+    keyword: "yemen",
+  },
+  {
+    title: "🇾🇹",
+    description: ":mayotte:",
+    keyword: "mayotte",
+  },
+  {
+    title: "🇿🇦",
+    description: ":south_africa:",
+    keyword: "south_africa",
+  },
+  {
+    title: "🇿🇲",
+    description: ":zambia:",
+    keyword: "zambia",
+  },
+  {
+    title: "🇿🇼",
+    description: ":zimbabwe:",
+    keyword: "zimbabwe",
+  },
+  {
+    title: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    description: ":england:",
+    keyword: "england",
+  },
+  {
+    title: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    description: ":scotland:",
+    keyword: "scotland",
+  },
+  {
+    title: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+    description: ":wales:",
+    keyword: "wales",
+  },
+  {
+    title: "🧑‍🎨",
+    description: ":artist:",
+    keyword: "artist",
+  },
+  {
+    title: "🧑‍🚀",
+    description: ":astronaut:",
+    keyword: "astronaut",
+  },
+  {
+    title: "👨‍🦲",
+    description: ":bald_man:",
+    keyword: "bald_man",
+  },
+  {
+    title: "👩‍🦲",
+    description: ":bald_woman:",
+    keyword: "bald_woman",
+  },
+  {
+    title: "⛹️‍♂️",
+    description: ":bouncing_ball_man:",
+    keyword: "bouncing_ball_man",
+  },
+  {
+    title: "⛹️‍♀️",
+    description: ":bouncing_ball_woman:",
+    keyword: "bouncing_ball_woman",
+  },
+  {
+    title: "🚴‍♂️",
+    description: ":biking_man:",
+    keyword: "biking_man",
+  },
+  {
+    title: "🚴‍♀️",
+    description: ":biking_woman:",
+    keyword: "biking_woman",
+  },
+  {
+    title: "👱‍♂️",
+    description: ":blond_haired_man:",
+    keyword: "blond_haired_man",
+  },
+  {
+    title: "👱‍♀️",
+    description: ":blonde_woman:",
+    keyword: "blonde_woman",
+  },
+  {
+    title: "🙇‍♂️",
+    description: ":bowing_man:",
+    keyword: "bowing_man",
+  },
+  {
+    title: "🙇‍♀️",
+    description: ":bowing_woman:",
+    keyword: "bowing_woman",
+  },
+  {
+    title: "🧗‍♂️",
+    description: ":climbing_man:",
+    keyword: "climbing_man",
+  },
+  {
+    title: "🧗‍♀️",
+    description: ":climbing_woman:",
+    keyword: "climbing_woman",
+  },
+  {
+    title: "👷‍♂️",
+    description: ":construction_worker_man:",
+    keyword: "construction_worker_man",
+  },
+  {
+    title: "👷‍♀️",
+    description: ":construction_worker_woman:",
+    keyword: "construction_worker_woman",
+  },
+  {
+    title: "🧑‍🍳",
+    description: ":cook:",
+    keyword: "cook",
+  },
+  {
+    title: "👨‍❤️‍👨",
+    description: ":couple_with_heart_man_man:",
+    keyword: "couple_with_heart_man_man",
+  },
+  {
+    title: "👩‍❤️‍👨",
+    description: ":couple_with_heart_woman_man:",
+    keyword: "couple_with_heart_woman_man",
+  },
+  {
+    title: "👩‍❤️‍👩",
+    description: ":couple_with_heart_woman_woman:",
+    keyword: "couple_with_heart_woman_woman",
+  },
+  {
+    title: "👨‍❤️‍💋‍👨",
+    description: ":couplekiss_man_man:",
+    keyword: "couplekiss_man_man",
+  },
+  {
+    title: "👩‍❤️‍💋‍👨",
+    description: ":couplekiss_man_woman:",
+    keyword: "couplekiss_man_woman",
+  },
+  {
+    title: "👩‍❤️‍💋‍👩",
+    description: ":couplekiss_woman_woman:",
+    keyword: "couplekiss_woman_woman",
+  },
+  {
+    title: "👨‍🦱",
+    description: ":curly_haired_man:",
+    keyword: "curly_haired_man",
+  },
+  {
+    title: "👩‍🦱",
+    description: ":curly_haired_woman:",
+    keyword: "curly_haired_woman",
+  },
+  {
+    title: "👯‍♂️",
+    description: ":dancing_men:",
+    keyword: "dancing_men",
+  },
+  {
+    title: "👯‍♀️",
+    description: ":dancing_women:",
+    keyword: "dancing_women",
+  },
+  {
+    title: "🧏‍♂️",
+    description: ":deaf_man:",
+    keyword: "deaf_man",
+  },
+  {
+    title: "🧏‍♀️",
+    description: ":deaf_woman:",
+    keyword: "deaf_woman",
+  },
+  {
+    title: "🧝‍♂️",
+    description: ":elf_man:",
+    keyword: "elf_man",
+  },
+  {
+    title: "🧝‍♀️",
+    description: ":elf_woman:",
+    keyword: "elf_woman",
+  },
+  {
+    title: "👁️‍🗨️",
+    description: ":eye_speech_bubble:",
+    keyword: "eye_speech_bubble",
+  },
+  {
+    title: "🧑‍🏭",
+    description: ":factory_worker:",
+    keyword: "factory_worker",
+  },
+  {
+    title: "🧚‍♂️",
+    description: ":fairy_man:",
+    keyword: "fairy_man",
+  },
+  {
+    title: "🧚‍♀️",
+    description: ":fairy_woman:",
+    keyword: "fairy_woman",
+  },
+  {
+    title: "👨‍👦",
+    description: ":family_man_boy:",
+    keyword: "family_man_boy",
+  },
+  {
+    title: "👨‍👦‍👦",
+    description: ":family_man_boy_boy:",
+    keyword: "family_man_boy_boy",
+  },
+  {
+    title: "👨‍👧",
+    description: ":family_man_girl:",
+    keyword: "family_man_girl",
+  },
+  {
+    title: "👨‍👧‍👦",
+    description: ":family_man_girl_boy:",
+    keyword: "family_man_girl_boy",
+  },
+  {
+    title: "👨‍👧‍👧",
+    description: ":family_man_girl_girl:",
+    keyword: "family_man_girl_girl",
+  },
+  {
+    title: "👨‍👨‍👦",
+    description: ":family_man_man_boy:",
+    keyword: "family_man_man_boy",
+  },
+  {
+    title: "👨‍👨‍👦‍👦",
+    description: ":family_man_man_boy_boy:",
+    keyword: "family_man_man_boy_boy",
+  },
+  {
+    title: "👨‍👨‍👧",
+    description: ":family_man_man_girl:",
+    keyword: "family_man_man_girl",
+  },
+  {
+    title: "👨‍👨‍👧‍👦",
+    description: ":family_man_man_girl_boy:",
+    keyword: "family_man_man_girl_boy",
+  },
+  {
+    title: "👨‍👨‍👧‍👧",
+    description: ":family_man_man_girl_girl:",
+    keyword: "family_man_man_girl_girl",
+  },
+  {
+    title: "👨‍👩‍👦",
+    description: ":family_man_woman_boy:",
+    keyword: "family_man_woman_boy",
+  },
+  {
+    title: "👨‍👩‍👦‍👦",
+    description: ":family_man_woman_boy_boy:",
+    keyword: "family_man_woman_boy_boy",
+  },
+  {
+    title: "👨‍👩‍👧",
+    description: ":family_man_woman_girl:",
+    keyword: "family_man_woman_girl",
+  },
+  {
+    title: "👨‍👩‍👧‍👦",
+    description: ":family_man_woman_girl_boy:",
+    keyword: "family_man_woman_girl_boy",
+  },
+  {
+    title: "👨‍👩‍👧‍👧",
+    description: ":family_man_woman_girl_girl:",
+    keyword: "family_man_woman_girl_girl",
+  },
+  {
+    title: "👩‍👦",
+    description: ":family_woman_boy:",
+    keyword: "family_woman_boy",
+  },
+  {
+    title: "👩‍👦‍👦",
+    description: ":family_woman_boy_boy:",
+    keyword: "family_woman_boy_boy",
+  },
+  {
+    title: "👩‍👧",
+    description: ":family_woman_girl:",
+    keyword: "family_woman_girl",
+  },
+  {
+    title: "👩‍👧‍👦",
+    description: ":family_woman_girl_boy:",
+    keyword: "family_woman_girl_boy",
+  },
+  {
+    title: "👩‍👧‍👧",
+    description: ":family_woman_girl_girl:",
+    keyword: "family_woman_girl_girl",
+  },
+  {
+    title: "👩‍👩‍👦",
+    description: ":family_woman_woman_boy:",
+    keyword: "family_woman_woman_boy",
+  },
+  {
+    title: "👩‍👩‍👦‍👦",
+    description: ":family_woman_woman_boy_boy:",
+    keyword: "family_woman_woman_boy_boy",
+  },
+  {
+    title: "👩‍👩‍👧",
+    description: ":family_woman_woman_girl:",
+    keyword: "family_woman_woman_girl",
+  },
+  {
+    title: "👩‍👩‍👧‍👦",
+    description: ":family_woman_woman_girl_boy:",
+    keyword: "family_woman_woman_girl_boy",
+  },
+  {
+    title: "👩‍👩‍👧‍👧",
+    description: ":family_woman_woman_girl_girl:",
+    keyword: "family_woman_woman_girl_girl",
+  },
+  {
+    title: "🧑‍🌾",
+    description: ":farmer:",
+    keyword: "farmer",
+  },
+  {
+    title: "🕵️‍♀️",
+    description: ":female_detective:",
+    keyword: "female_detective",
+  },
+  {
+    title: "🧑‍🚒",
+    description: ":firefighter:",
+    keyword: "firefighter",
+  },
+  {
+    title: "🙍‍♂️",
+    description: ":frowning_man:",
+    keyword: "frowning_man",
+  },
+  {
+    title: "🙍‍♀️",
+    description: ":frowning_woman:",
+    keyword: "frowning_woman",
+  },
+  {
+    title: "🧞‍♂️",
+    description: ":genie_man:",
+    keyword: "genie_man",
+  },
+  {
+    title: "🧞‍♀️",
+    description: ":genie_woman:",
+    keyword: "genie_woman",
+  },
+  {
+    title: "🏌️‍♂️",
+    description: ":golfing_man:",
+    keyword: "golfing_man",
+  },
+  {
+    title: "🏌️‍♀️",
+    description: ":golfing_woman:",
+    keyword: "golfing_woman",
+  },
+  {
+    title: "💂‍♂️",
+    description: ":guardsman:",
+    keyword: "guardsman",
+  },
+  {
+    title: "💂‍♀️",
+    description: ":guardswoman:",
+    keyword: "guardswoman",
+  },
+  {
+    title: "💇‍♂️",
+    description: ":haircut_man:",
+    keyword: "haircut_man",
+  },
+  {
+    title: "💇‍♀️",
+    description: ":haircut_woman:",
+    keyword: "haircut_woman",
+  },
+  {
+    title: "🧑‍⚕️",
+    description: ":health_worker:",
+    keyword: "health_worker",
+  },
+  {
+    title: "🧑‍⚖️",
+    description: ":judge:",
+    keyword: "judge",
+  },
+  {
+    title: "🧎‍♂️",
+    description: ":kneeling_man:",
+    keyword: "kneeling_man",
+  },
+  {
+    title: "🧎‍♀️",
+    description: ":kneeling_woman:",
+    keyword: "kneeling_woman",
+  },
+  {
+    title: "🧘‍♂️",
+    description: ":lotus_position_man:",
+    keyword: "lotus_position_man",
+  },
+  {
+    title: "🧘‍♀️",
+    description: ":lotus_position_woman:",
+    keyword: "lotus_position_woman",
+  },
+  {
+    title: "🧙‍♂️",
+    description: ":mage_man:",
+    keyword: "mage_man",
+  },
+  {
+    title: "🧙‍♀️",
+    description: ":mage_woman:",
+    keyword: "mage_woman",
+  },
+  {
+    title: "🕵️‍♂️",
+    description: ":male_detective:",
+    keyword: "male_detective",
+  },
+  {
+    title: "👨‍🎨",
+    description: ":man_artist:",
+    keyword: "man_artist",
+  },
+  {
+    title: "👨‍🚀",
+    description: ":man_astronaut:",
+    keyword: "man_astronaut",
+  },
+  {
+    title: "🤸‍♂️",
+    description: ":man_cartwheeling:",
+    keyword: "man_cartwheeling",
+  },
+  {
+    title: "👨‍🍳",
+    description: ":man_cook:",
+    keyword: "man_cook",
+  },
+  {
+    title: "🤦‍♂️",
+    description: ":man_facepalming:",
+    keyword: "man_facepalming",
+  },
+  {
+    title: "👨‍🏭",
+    description: ":man_factory_worker:",
+    keyword: "man_factory_worker",
+  },
+  {
+    title: "👨‍🌾",
+    description: ":man_farmer:",
+    keyword: "man_farmer",
+  },
+  {
+    title: "👨‍🚒",
+    description: ":man_firefighter:",
+    keyword: "man_firefighter",
+  },
+  {
+    title: "👨‍⚕️",
+    description: ":man_health_worker:",
+    keyword: "man_health_worker",
+  },
+  {
+    title: "👨‍🦽",
+    description: ":man_in_manual_wheelchair:",
+    keyword: "man_in_manual_wheelchair",
+  },
+  {
+    title: "👨‍🦼",
+    description: ":man_in_motorized_wheelchair:",
+    keyword: "man_in_motorized_wheelchair",
+  },
+  {
+    title: "👨‍⚖️",
+    description: ":man_judge:",
+    keyword: "man_judge",
+  },
+  {
+    title: "🤹‍♂️",
+    description: ":man_juggling:",
+    keyword: "man_juggling",
+  },
+  {
+    title: "👨‍🔧",
+    description: ":man_mechanic:",
+    keyword: "man_mechanic",
+  },
+  {
+    title: "👨‍💼",
+    description: ":man_office_worker:",
+    keyword: "man_office_worker",
+  },
+  {
+    title: "👨‍✈️",
+    description: ":man_pilot:",
+    keyword: "man_pilot",
+  },
+  {
+    title: "🤾‍♂️",
+    description: ":man_playing_handball:",
+    keyword: "man_playing_handball",
+  },
+  {
+    title: "🤽‍♂️",
+    description: ":man_playing_water_polo:",
+    keyword: "man_playing_water_polo",
+  },
+  {
+    title: "👨‍🔬",
+    description: ":man_scientist:",
+    keyword: "man_scientist",
+  },
+  {
+    title: "🤷‍♂️",
+    description: ":man_shrugging:",
+    keyword: "man_shrugging",
+  },
+  {
+    title: "👨‍🎤",
+    description: ":man_singer:",
+    keyword: "man_singer",
+  },
+  {
+    title: "👨‍🎓",
+    description: ":man_student:",
+    keyword: "man_student",
+  },
+  {
+    title: "👨‍🏫",
+    description: ":man_teacher:",
+    keyword: "man_teacher",
+  },
+  {
+    title: "👨‍💻",
+    description: ":man_technologist:",
+    keyword: "man_technologist",
+  },
+  {
+    title: "👨‍🦯",
+    description: ":man_with_probing_cane:",
+    keyword: "man_with_probing_cane",
+  },
+  {
+    title: "👳‍♂️",
+    description: ":man_with_turban:",
+    keyword: "man_with_turban",
+  },
+  {
+    title: "💆‍♂️",
+    description: ":massage_man:",
+    keyword: "massage_man",
+  },
+  {
+    title: "💆‍♀️",
+    description: ":massage_woman:",
+    keyword: "massage_woman",
+  },
+  {
+    title: "🧑‍🔧",
+    description: ":mechanic:",
+    keyword: "mechanic",
+  },
+  {
+    title: "🤼‍♂️",
+    description: ":men_wrestling:",
+    keyword: "men_wrestling",
+  },
+  {
+    title: "🧜‍♀️",
+    description: ":mermaid:",
+    keyword: "mermaid",
+  },
+  {
+    title: "🧜‍♂️",
+    description: ":merman:",
+    keyword: "merman",
+  },
+  {
+    title: "🚵‍♂️",
+    description: ":mountain_biking_man:",
+    keyword: "mountain_biking_man",
+  },
+  {
+    title: "🚵‍♀️",
+    description: ":mountain_biking_woman:",
+    keyword: "mountain_biking_woman",
+  },
+  {
+    title: "🙅‍♂️",
+    description: ":no_good_man:",
+    keyword: "no_good_man",
+  },
+  {
+    title: "🙅‍♀️",
+    description: ":no_good_woman:",
+    keyword: "no_good_woman",
+  },
+  {
+    title: "🧑‍💼",
+    description: ":office_worker:",
+    keyword: "office_worker",
+  },
+  {
+    title: "🙆‍♂️",
+    description: ":ok_man:",
+    keyword: "ok_man",
+  },
+  {
+    title: "🙆‍♀️",
+    description: ":ok_woman:",
+    keyword: "ok_woman",
+  },
+  {
+    title: "🧑‍🤝‍🧑",
+    description: ":people_holding_hands:",
+    keyword: "people_holding_hands",
+  },
+  {
+    title: "🧑‍🦲",
+    description: ":person_bald:",
+    keyword: "person_bald",
+  },
+  {
+    title: "🧑‍🦱",
+    description: ":person_curly_hair:",
+    keyword: "person_curly_hair",
+  },
+  {
+    title: "🧑‍🦽",
+    description: ":person_in_manual_wheelchair:",
+    keyword: "person_in_manual_wheelchair",
+  },
+  {
+    title: "🧑‍🦼",
+    description: ":person_in_motorized_wheelchair:",
+    keyword: "person_in_motorized_wheelchair",
+  },
+  {
+    title: "🧑‍🦰",
+    description: ":person_red_hair:",
+    keyword: "person_red_hair",
+  },
+  {
+    title: "🧑‍🦳",
+    description: ":person_white_hair:",
+    keyword: "person_white_hair",
+  },
+  {
+    title: "🧑‍🦯",
+    description: ":person_with_probing_cane:",
+    keyword: "person_with_probing_cane",
+  },
+  {
+    title: "🧑‍✈️",
+    description: ":pilot:",
+    keyword: "pilot",
+  },
+  {
+    title: "🏴‍☠️",
+    description: ":pirate_flag:",
+    keyword: "pirate_flag",
+  },
+  {
+    title: "👮‍♂️",
+    description: ":policeman:",
+    keyword: "policeman",
+  },
+  {
+    title: "👮‍♀️",
+    description: ":policewoman:",
+    keyword: "policewoman",
+  },
+  {
+    title: "🙎‍♂️",
+    description: ":pouting_man:",
+    keyword: "pouting_man",
+  },
+  {
+    title: "🙎‍♀️",
+    description: ":pouting_woman:",
+    keyword: "pouting_woman",
+  },
+  {
+    title: "🏳️‍🌈",
+    description: ":rainbow_flag:",
+    keyword: "rainbow_flag",
+  },
+  {
+    title: "🙋‍♂️",
+    description: ":raising_hand_man:",
+    keyword: "raising_hand_man",
+  },
+  {
+    title: "🙋‍♀️",
+    description: ":raising_hand_woman:",
+    keyword: "raising_hand_woman",
+  },
+  {
+    title: "👨‍🦰",
+    description: ":red_haired_man:",
+    keyword: "red_haired_man",
+  },
+  {
+    title: "👩‍🦰",
+    description: ":red_haired_woman:",
+    keyword: "red_haired_woman",
+  },
+  {
+    title: "🚣‍♂️",
+    description: ":rowing_man:",
+    keyword: "rowing_man",
+  },
+  {
+    title: "🚣‍♀️",
+    description: ":rowing_woman:",
+    keyword: "rowing_woman",
+  },
+  {
+    title: "🏃‍♂️",
+    description: ":running_man:",
+    keyword: "running_man",
+  },
+  {
+    title: "🏃‍♀️",
+    description: ":running_woman:",
+    keyword: "running_woman",
+  },
+  {
+    title: "💁‍♂️",
+    description: ":tipping_hand_man:",
+    keyword: "tipping_hand_man",
+  },
+  {
+    title: "💁‍♀️",
+    description: ":tipping_hand_woman:",
+    keyword: "tipping_hand_woman",
+  },
+  {
+    title: "🧖‍♂️",
+    description: ":sauna_man:",
+    keyword: "sauna_man",
+  },
+  {
+    title: "🧖‍♀️",
+    description: ":sauna_woman:",
+    keyword: "sauna_woman",
+  },
+  {
+    title: "🧑‍🔬",
+    description: ":scientist:",
+    keyword: "scientist",
+  },
+  {
+    title: "🐕‍🦺",
+    description: ":service_dog:",
+    keyword: "service_dog",
+  },
+  {
+    title: "🧑‍🎤",
+    description: ":singer:",
+    keyword: "singer",
+  },
+  {
+    title: "🧍‍♂️",
+    description: ":standing_man:",
+    keyword: "standing_man",
+  },
+  {
+    title: "🧍‍♀️",
+    description: ":standing_woman:",
+    keyword: "standing_woman",
+  },
+  {
+    title: "🧑‍🎓",
+    description: ":student:",
+    keyword: "student",
+  },
+  {
+    title: "🦸‍♂️",
+    description: ":superhero_man:",
+    keyword: "superhero_man",
+  },
+  {
+    title: "🦸‍♀️",
+    description: ":superhero_woman:",
+    keyword: "superhero_woman",
+  },
+  {
+    title: "🦹‍♂️",
+    description: ":supervillain_man:",
+    keyword: "supervillain_man",
+  },
+  {
+    title: "🦹‍♀️",
+    description: ":supervillain_woman:",
+    keyword: "supervillain_woman",
+  },
+  {
+    title: "🏄‍♂️",
+    description: ":surfing_man:",
+    keyword: "surfing_man",
+  },
+  {
+    title: "🏄‍♀️",
+    description: ":surfing_woman:",
+    keyword: "surfing_woman",
+  },
+  {
+    title: "🏊‍♂️",
+    description: ":swimming_man:",
+    keyword: "swimming_man",
+  },
+  {
+    title: "🏊‍♀️",
+    description: ":swimming_woman:",
+    keyword: "swimming_woman",
+  },
+  {
+    title: "🧑‍🏫",
+    description: ":teacher:",
+    keyword: "teacher",
+  },
+  {
+    title: "🧑‍💻",
+    description: ":technologist:",
+    keyword: "technologist",
+  },
+  {
+    title: "🧛‍♂️",
+    description: ":vampire_man:",
+    keyword: "vampire_man",
+  },
+  {
+    title: "🧛‍♀️",
+    description: ":vampire_woman:",
+    keyword: "vampire_woman",
+  },
+  {
+    title: "🚶‍♂️",
+    description: ":walking_man:",
+    keyword: "walking_man",
+  },
+  {
+    title: "🚶‍♀️",
+    description: ":walking_woman:",
+    keyword: "walking_woman",
+  },
+  {
+    title: "🏋️‍♂️",
+    description: ":weight_lifting_man:",
+    keyword: "weight_lifting_man",
+  },
+  {
+    title: "🏋️‍♀️",
+    description: ":weight_lifting_woman:",
+    keyword: "weight_lifting_woman",
+  },
+  {
+    title: "👨‍🦳",
+    description: ":white_haired_man:",
+    keyword: "white_haired_man",
+  },
+  {
+    title: "👩‍🦳",
+    description: ":white_haired_woman:",
+    keyword: "white_haired_woman",
+  },
+  {
+    title: "👩‍🎨",
+    description: ":woman_artist:",
+    keyword: "woman_artist",
+  },
+  {
+    title: "👩‍🚀",
+    description: ":woman_astronaut:",
+    keyword: "woman_astronaut",
+  },
+  {
+    title: "🤸‍♀️",
+    description: ":woman_cartwheeling:",
+    keyword: "woman_cartwheeling",
+  },
+  {
+    title: "👩‍🍳",
+    description: ":woman_cook:",
+    keyword: "woman_cook",
+  },
+  {
+    title: "🤦‍♀️",
+    description: ":woman_facepalming:",
+    keyword: "woman_facepalming",
+  },
+  {
+    title: "👩‍🏭",
+    description: ":woman_factory_worker:",
+    keyword: "woman_factory_worker",
+  },
+  {
+    title: "👩‍🌾",
+    description: ":woman_farmer:",
+    keyword: "woman_farmer",
+  },
+  {
+    title: "👩‍🚒",
+    description: ":woman_firefighter:",
+    keyword: "woman_firefighter",
+  },
+  {
+    title: "👩‍⚕️",
+    description: ":woman_health_worker:",
+    keyword: "woman_health_worker",
+  },
+  {
+    title: "👩‍🦽",
+    description: ":woman_in_manual_wheelchair:",
+    keyword: "woman_in_manual_wheelchair",
+  },
+  {
+    title: "👩‍🦼",
+    description: ":woman_in_motorized_wheelchair:",
+    keyword: "woman_in_motorized_wheelchair",
+  },
+  {
+    title: "👩‍⚖️",
+    description: ":woman_judge:",
+    keyword: "woman_judge",
+  },
+  {
+    title: "🤹‍♀️",
+    description: ":woman_juggling:",
+    keyword: "woman_juggling",
+  },
+  {
+    title: "👩‍🔧",
+    description: ":woman_mechanic:",
+    keyword: "woman_mechanic",
+  },
+  {
+    title: "👩‍💼",
+    description: ":woman_office_worker:",
+    keyword: "woman_office_worker",
+  },
+  {
+    title: "👩‍✈️",
+    description: ":woman_pilot:",
+    keyword: "woman_pilot",
+  },
+  {
+    title: "🤾‍♀️",
+    description: ":woman_playing_handball:",
+    keyword: "woman_playing_handball",
+  },
+  {
+    title: "🤽‍♀️",
+    description: ":woman_playing_water_polo:",
+    keyword: "woman_playing_water_polo",
+  },
+  {
+    title: "👩‍🔬",
+    description: ":woman_scientist:",
+    keyword: "woman_scientist",
+  },
+  {
+    title: "🤷‍♀️",
+    description: ":woman_shrugging:",
+    keyword: "woman_shrugging",
+  },
+  {
+    title: "👩‍🎤",
+    description: ":woman_singer:",
+    keyword: "woman_singer",
+  },
+  {
+    title: "👩‍🎓",
+    description: ":woman_student:",
+    keyword: "woman_student",
+  },
+  {
+    title: "👩‍🏫",
+    description: ":woman_teacher:",
+    keyword: "woman_teacher",
+  },
+  {
+    title: "👩‍💻",
+    description: ":woman_technologist:",
+    keyword: "woman_technologist",
+  },
+  {
+    title: "👩‍🦯",
+    description: ":woman_with_probing_cane:",
+    keyword: "woman_with_probing_cane",
+  },
+  {
+    title: "👳‍♀️",
+    description: ":woman_with_turban:",
+    keyword: "woman_with_turban",
+  },
+  {
+    title: "🤼‍♀️",
+    description: ":women_wrestling:",
+    keyword: "women_wrestling",
+  },
+  {
+    title: "🧟‍♂️",
+    description: ":zombie_man:",
+    keyword: "zombie_man",
+  },
+  {
+    title: "🧟‍♀️",
+    description: ":zombie_woman:",
+    keyword: "zombie_woman",
+  },
+];

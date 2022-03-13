@@ -41,7 +41,7 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `cmd+j cmd+j`: Exit editing mode, also `ctrl+[` can do the same thing.
 - `mod+alt+j`: Join next sibling block.
 - `mod+shift+enter`: Jumping into internal page or tag.
-- `mod+shift+;`: Trigger command mode, provide many handy commands to use, explain below.
+- `mod+shift+;` and `mod+alt+;`: Trigger command mode, provide many handy commands to use, explain below.
 - `/`: Trigger the search in page panel.
 - `sb`: Search block content in Baidu.
 - `se`: Search block content in Wikipedia.
@@ -69,6 +69,8 @@ You can select more blocks up and down and move the selected blocks using `j` an
 ### Command mode
 
 In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;`, also can be memorized as `mod+:`, After trigger, you can find a input area at the bottom, you can input some commands here like in VIM. For now it's about 10+ commands, but I believe that would be more.
+
+NOTE: on Windows, the trigger is `ctrl+alt+;`
 
 #### The bottom input features
 
