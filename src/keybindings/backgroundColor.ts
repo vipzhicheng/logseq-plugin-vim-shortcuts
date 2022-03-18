@@ -37,7 +37,6 @@ export default (logseq: ILSPluginUser) => {
         includeChildren: true,
       });
       const blocks = block.children;
-      console.log("blocks", blocks);
       const mapped = blocks.map((item, index) => {
         const block = item as BlockEntity;
         logseq.Editor.upsertBlockProperty(

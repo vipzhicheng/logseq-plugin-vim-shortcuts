@@ -14,7 +14,6 @@ const collapse = async (blockUUID: BlockUUID | undefined) => {
     const block = await logseq.Editor.getBlock(blockUUID, {
       includeChildren: true,
     });
-    console.log("block", block);
     if (block && block.children && block.children.length > 0) {
       for (let item of block.children as BlockEntity[]) {
         if (item.uuid) {
