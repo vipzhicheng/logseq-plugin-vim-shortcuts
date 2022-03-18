@@ -38,10 +38,26 @@ export const commandList = [
   { value: "redo", desc: "Redo last edit.", wait: false },
   { value: "lorem", desc: "Random generate blocks.", wait: true },
   { value: "lorem-ipsum", desc: "Random generate blocks.", wait: true },
-  { value: "emoji-picker", desc: "Search and input emojis.", wait: false },
+  {
+    value: "emoji-picker",
+    desc: "Search and input emojis using emoji picker.",
+    wait: false,
+  },
   { value: "emoji", desc: "Search and input emojis.", wait: true },
   { value: "sort", desc: "Sort blocks a-z.", wait: false },
   { value: "rsort", desc: "Sort blocks z-a.", wait: false },
+  {
+    value: "bg-picker",
+    desc: "Set block backgroud color using color picker.",
+    wait: false,
+  },
+  { value: "bg", desc: "Set block backgroud color.", wait: true },
+  { value: "bg-clear", desc: "Clear block backgroud color.", wait: false },
+  {
+    value: "bg-random",
+    desc: "Set block backgroud color randomly.",
+    wait: false,
+  },
   {
     value: "go ",
     desc: "Create new page or go to existed page.",

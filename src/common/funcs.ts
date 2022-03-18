@@ -9,6 +9,7 @@ import { N, TempCache } from "./type";
 import { schemaVersion } from "../../package.json";
 import hotkeys from "hotkeys-js";
 import { useCommandStore } from "@/stores/command";
+import { useColorStore } from "@/stores/color";
 
 export async function createPageIfNotExists(pageName): Promise<PageEntity> {
   let page = await logseq.Editor.getPage(pageName);
@@ -35,6 +36,10 @@ export async function setHotkeys(logseq: ILSPluginUser) {
       const commandStore = useCommandStore();
       commandStore.emptyInput();
     }
+
+    const colorStore = useColorStore();
+    colorStore.hide();
+
     hideMainUI();
     return false;
   });
@@ -359,3 +364,18 @@ export const getCurrentPage = async () => {
   }
   return page;
 };
+
+export function hexToRgb(hex) {
+  const hexCode = hex.charAt(0) === "#" ? hex.substr(1, 6) : hex;
+
+  const hexR = parseInt(hexCode.substr(0, 2), 16);
+  const hexG = parseInt(hexCode.substr(2, 2), 16);
+  const hexB = parseInt(hexCode.substr(4, 2), 16);
+
+  return [hexR, hexG, hexB];
+}
+
+export function filterDarkColor(hexColor) {
+  const [r, g, b] = hexToRgb(hexColor);
+  return r * 0.299 + g * 0.587 + b * 0.114 < 150;
+}

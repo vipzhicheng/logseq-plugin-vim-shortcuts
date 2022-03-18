@@ -21,6 +21,7 @@ specifiers:
   unplugin-vue-components: ^0.17.21
   vite: ^2.8.6
   vue: ^3.2.31
+  vue-color-kit: ^1.0.5
 
 dependencies:
   '@joeattardi/emoji-button': 4.6.2
@@ -33,6 +34,7 @@ dependencies:
   minimist: 1.2.5
   pinia: 2.0.11_typescript@4.6.2+vue@3.2.31
   vue: 3.2.31
+  vue-color-kit: 1.0.5_vue@3.2.31
 
 devDependencies:
   '@types/lodash-es': 4.17.6
@@ -1685,6 +1687,14 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /vue-color-kit/1.0.5_vue@3.2.31:
+    resolution: {integrity: sha512-PUQzqdpI7672YYuoHdTLENHldieVMis0u9g2n7NAxiLGdiaqCD/QaYtbDOvtASpN5oSIfKxQgPV+i45MOlkKnw==}
+    peerDependencies:
+      vue: ^3.0.5
+    dependencies:
+      vue: 3.2.31
+    dev: false
 
   /vue-demi/0.12.1_vue@3.2.31:
     resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}

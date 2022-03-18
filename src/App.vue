@@ -4,6 +4,7 @@
   <Command />
   <Mark />
   <Help />
+  <Color />
 </template>
 
 <style></style>

@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.1.4
+
+This release is all about setting block background color
+
+- feat: `:bg [namedColor|hexColor]` command to set block background color, support multiple block selection.
+- feat: `:bg-picker` command to trigger a color picker to select block background color, support multiple block selection.
+- feat: `:bg-random` command to set block background color randomly, support multiple block selection.
+- feat: `:bg-clear` command to clear block background color, support multiple block selection.
+- feat: `/Random Bg Color` and `Children Random Bg Color` to set block background color and children blocks background color.
+
 ## v0.1.3
 
 - feat: add `mod+alt+;` shortcut to command mode for Windows trigger.

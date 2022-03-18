@@ -4,11 +4,13 @@ import minimist from "minimist";
 
 import * as commands from "@/commands";
 import { useCommandStore } from "@/stores/command";
-import { hideMainUI, pushCommandHistory, sleep } from "@/common/funcs";
+import { useColorStore } from "@/stores/color";
 
 import emojiData from "../commands/emoji/emoji";
+import { hideMainUI, pushCommandHistory } from "@/common/funcs";
 
 const commandStore = useCommandStore();
+const colorStore = useColorStore();
 
 let wait = false;
 const handleSelect = async (selected) => {
@@ -117,6 +119,26 @@ const handleEnter = async () => {
     case "emoji":
       await commands.emoji.generate(argv);
       break;
+
+    case "bg-picker":
+      await commands.bg.picker();
+      commandStore.emptyInput();
+      break;
+    case "bg":
+      await commands.bg.set(argv);
+      commandStore.emptyInput();
+      hideMainUI();
+      break;
+    case "bg-random":
+      await commands.bg.random();
+      commandStore.emptyInput();
+      hideMainUI();
+      break;
+    case "bg-clear":
+      await commands.bg.clear();
+      commandStore.emptyInput();
+      hideMainUI();
+      break;
     case "q":
     case "quit":
       commands.page.quit();
@@ -170,6 +192,25 @@ const querySearch = (queryString: string, cb: any) => {
     const splitQueryString: string[] = queryString.split(" ");
 
     switch (splitQueryString[0]) {
+      case "bg":
+        const subQueryString = splitQueryString.slice(1);
+        const colorKeyword = subQueryString[subQueryString.length - 1];
+        if (colorKeyword.length > 2) {
+          results = Object.keys(colorStore.namedColors)
+            .filter((color) => {
+              return (
+                color.toLowerCase().indexOf(colorKeyword.toLowerCase()) > -1
+              );
+            })
+            .map((color) => {
+              return {
+                value: color,
+                desc: `: <span style="background: ${color}" class="px-4 py-2 -mb-1 inline-block w-8"></span>`,
+                wait: true,
+              };
+            });
+        }
+        break;
       case "emoji":
         if (
           !Number.isInteger(
@@ -256,7 +297,7 @@ const handleClose = () => {
         <span v-if="isCommand">:</span
         ><span class="font-bold">{{ item.value }}</span>
         <span v-if="isCommand">-</span>
-        <span class="text-gray-400">{{ item.desc }}</span>
+        <span class="text-gray-400" v-html="item.desc"></span>
       </div>
     </template>
   </el-autocomplete>

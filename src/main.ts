@@ -58,10 +58,12 @@ import { createPinia } from "pinia";
 import { commandList, useCommandStore } from "./stores/command";
 
 import { useEmojiStore } from "@/stores/emoji";
+import { useColorStore } from "./stores/color";
 import emoji from "./keybindings/emoji";
 import sort from "./keybindings/sort";
 import collapseAll from "./keybindings/collapseAll";
 import extendAll from "./keybindings/extendAll";
+import backgroundColor from "./keybindings/backgroundColor";
 
 async function main() {
   // settings
@@ -132,6 +134,7 @@ async function main() {
   changeCaseUpperCase(logseq);
   changeCaseLowerCase(logseq);
   sort(logseq);
+  backgroundColor(logseq);
   command(logseq);
 
   // load marks
@@ -148,6 +151,8 @@ async function main() {
   const emojiStore = useEmojiStore();
   emojiStore.initPicker();
   emoji(logseq);
+
+  const colorStore = useColorStore();
 
   const $input = document.querySelector(
     ".command-input input"
@@ -213,6 +218,19 @@ async function main() {
           const subKeyword = splitKeyword[0];
 
           switch (subKeyword) {
+            case "bg":
+              const findColor = Object.keys(colorStore.namedColors).filter(
+                (color) => color.startsWith(lastWord.toLowerCase())
+              );
+              if (findColor.length > 0) {
+                if (findColor.length === 1) {
+                  commandStore.setInput(
+                    splitKeyword.slice(0, -1).join(" ") + " " + findColor[0]
+                  );
+                }
+              }
+              break;
+
             case "go":
             case "go!":
               const tokens = [

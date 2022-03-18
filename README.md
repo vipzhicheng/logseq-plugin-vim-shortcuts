@@ -107,6 +107,10 @@ NOTE: on Windows, the trigger is `ctrl+alt+;`
 - `:emoji`: Insert emojis by searching keyword, you can repeat emoji by appending a number.
 - `:emoji-picker`: Insert emoji by emoji UI.
 - `:sort` and `rsort`: Sort page first level blocks with no focus any blocks and sort sub level blocks with focus on one block.
+- `:bg [namedColor|hexColor]`: Set block background color, support multiple block selection.
+- `:bg-picker`: Trigger a color picker to select block background color, support multiple block selection.
+- `:bg-random`: Set block background color randomly, support multiple block selection.
+- `:bg-clear`: Clear block background color, support multiple block selection.
 - `:w` and `:write`: Save current page, actually this is a fake one, because Logseq save automatically.
 - `:wq`: Save current page and quit vim command mode.
 - `:q` and `:quit`: Quit vim command mode.
