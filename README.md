@@ -150,6 +150,12 @@ Because some VIM shortcuts or commands may also need to be as a slash command, s
 - `/Insert Emoji`: Insert emoji at current position.
 - `/Sort Blocks`: Sort sub level children blocks from a to z.
 - `/Reverse Sort Blocks`: Sort sub level children blocks from z to a.
+- `/Random Bg Color`: Set block background color
+- `Children Random Bg Color`: Set children blocks background color
+
+## Named Background Colors
+
+The named colors you can use in `:bg` command are from [here](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
 
 ## Other notes
 
