@@ -141,7 +141,9 @@ const handleEnter = async () => {
       break;
     case "copy-path":
       await commands.page.copyPath();
-      hideMainUI();
+      break;
+    case "open-in-vscode":
+      await commands.page.openInVSCode();
       break;
     case "q":
     case "quit":
@@ -300,7 +302,7 @@ const handleClose = () => {
       <div>
         <span v-if="isCommand">:</span
         ><span class="font-bold">{{ item.value }}</span>
-        <span v-if="isCommand">-</span>
+        <span v-if="isCommand"> - </span>
         <span class="text-gray-400" v-html="item.desc"></span>
       </div>
     </template>

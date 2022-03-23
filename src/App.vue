@@ -5,6 +5,7 @@
   <Mark />
   <Help />
   <Color />
+  <CopyText />
 </template>
 
 <style></style>

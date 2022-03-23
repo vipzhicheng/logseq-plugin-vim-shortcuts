@@ -63,6 +63,10 @@ export const commandList = [
     desc: "Copy page or journal path for editing it in other editor.",
   },
   {
+    value: "open-in-vscode",
+    desc: "Open page in VSCode.",
+  },
+  {
     value: "go ",
     desc: "Create new page or go to existed page.",
     wait: true,

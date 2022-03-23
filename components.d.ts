@@ -6,6 +6,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Color: typeof import('./src/components/Color.vue')['default']
     Command: typeof import('./src/components/Command.vue')['default']
+    CopyText: typeof import('./src/components/CopyText.vue')['default']
     ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElDialog: typeof import('element-plus/es')['ElDialog']
