@@ -19,6 +19,23 @@ const walkReplace = async (blocks: any[], regex, replace) => {
   }
 };
 
+export async function copyPath() {
+  const page = await logseq.Editor.getCurrentPage();
+  const graph = await logseq.App.getCurrentGraph();
+  let pagePath;
+  if (page && graph) {
+    const { path } = graph;
+    if (page["journal?"]) {
+      pagePath = `${path}/journals/${page.originalName}.md`.replace("-", "_");
+    } else {
+      pagePath = `${path}/pages/${page.originalName}.md`;
+    }
+  }
+
+  // navigator.platform.includes("Mac")
+  console.log("pagePath", pagePath, page, graph);
+}
+
 export async function rename(pageName: string) {
   const currentPage = await logseq.Editor.getCurrentPage();
   if (currentPage) {

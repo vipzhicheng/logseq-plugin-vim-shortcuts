@@ -59,6 +59,10 @@ export const commandList = [
     wait: false,
   },
   {
+    value: "copy-path",
+    desc: "Copy page or journal path for editing it in other editor.",
+  },
+  {
     value: "go ",
     desc: "Create new page or go to existed page.",
     wait: true,

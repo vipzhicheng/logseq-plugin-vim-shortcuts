@@ -139,6 +139,10 @@ const handleEnter = async () => {
       commandStore.emptyInput();
       hideMainUI();
       break;
+    case "copy-path":
+      await commands.page.copyPath();
+      hideMainUI();
+      break;
     case "q":
     case "quit":
       commands.page.quit();

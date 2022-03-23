@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.5
+
+- feat: add `:copy-path` to get page or journal absolute path, so you can edit it outside of Logseq.
+
 ## v0.1.4
 
 This release is all about setting block background color
