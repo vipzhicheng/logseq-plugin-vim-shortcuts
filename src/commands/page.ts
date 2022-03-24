@@ -1,6 +1,7 @@
 import { hideMainUI } from "@/common/funcs";
 import "@logseq/libs";
 import { useCopyTextStore } from "@/stores/copy-text";
+import { format } from "date-fns";
 
 const replaceBlock = async (block, regex, replace) => {
   const replaced = block.content.replace(regex, replace);
@@ -21,15 +22,27 @@ const walkReplace = async (blocks: any[], regex, replace) => {
 };
 
 export async function openInVSCode() {
-  const page = await logseq.Editor.getCurrentPage();
+  let page = await logseq.Editor.getCurrentPage();
+  if (!page) {
+    let block = await logseq.Editor.getCurrentBlock();
+    if (block?.page.id) {
+      page = await logseq.Editor.getPage(block.page.id);
+    }
+  }
   const graph = await logseq.App.getCurrentGraph();
   let pagePath;
   if (page && graph) {
     const { path } = graph;
     if (page["journal?"]) {
-      pagePath = `${path}/journals/${page.originalName}.md`.replace(/-/g, "_");
+      const fileName = [
+        `${page.journalDay}`.substring(0, 4),
+        `${page.journalDay}`.substring(4, 6),
+        `${page.journalDay}`.substring(6),
+      ].join("_");
+      pagePath = `${path}/journals/${fileName}.md`;
     } else {
-      pagePath = `${path}/pages/${page.originalName}.md`;
+      const fileName = page.originalName.replace(/\//g, ".");
+      pagePath = `${path}/pages/${fileName}.md`;
     }
 
     window.open(`vscode://file/${pagePath}`, "_blank");
@@ -38,15 +51,27 @@ export async function openInVSCode() {
 
 export async function copyPath() {
   const copyTextStore = useCopyTextStore();
-  const page = await logseq.Editor.getCurrentPage();
+  let page = await logseq.Editor.getCurrentPage();
+  if (!page) {
+    let block = await logseq.Editor.getCurrentBlock();
+    if (block?.page.id) {
+      page = await logseq.Editor.getPage(block.page.id);
+    }
+  }
   const graph = await logseq.App.getCurrentGraph();
   let pagePath;
   if (page && graph) {
     const { path } = graph;
     if (page["journal?"]) {
-      pagePath = `${path}/journals/${page.originalName}.md`.replace(/-/g, "_");
+      const fileName = [
+        `${page.journalDay}`.substring(0, 4),
+        `${page.journalDay}`.substring(4, 6),
+        `${page.journalDay}`.substring(6),
+      ].join("_");
+      pagePath = `${path}/journals/${fileName}.md`;
     } else {
-      pagePath = `${path}/pages/${page.originalName}.md`;
+      const fileName = page.originalName.replace(/\//g, ".");
+      pagePath = `${path}/pages/${fileName}.md`;
     }
 
     copyTextStore.setTitle("Copy Path");

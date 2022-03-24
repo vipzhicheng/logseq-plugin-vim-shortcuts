@@ -111,6 +111,8 @@ NOTE: on Windows, the trigger is `ctrl+alt+;`
 - `:bg-picker`: Trigger a color picker to select block background color, support multiple block selection.
 - `:bg-random`: Set block background color randomly, support multiple block selection.
 - `:bg-clear`: Clear block background color, support multiple block selection.
+- `:copy-path`: Get page or journal absolute path, so you can edit it outside of Logseq.
+- `:open-in-vscode`: Open page or journal in VSCode.
 - `:w` and `:write`: Save current page, actually this is a fake one, because Logseq save automatically.
 - `:wq`: Save current page and quit vim command mode.
 - `:q` and `:quit`: Quit vim command mode.

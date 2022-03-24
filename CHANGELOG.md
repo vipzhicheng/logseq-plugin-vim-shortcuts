@@ -3,6 +3,7 @@
 ## v0.1.5
 
 - feat: add `:copy-path` to get page or journal absolute path, so you can edit it outside of Logseq.
+- feat: add `:open-in-vscode` to open page or journal in VSCode
 
 ## v0.1.4
 
