@@ -141,10 +141,10 @@ const handleEnter = async () => {
       break;
     case "copy-path":
       await commands.page.copyPath();
-      hideMainUI();
       break;
     case "open-in-vscode":
       await commands.page.openInVSCode();
+      hideMainUI();
       break;
     case "q":
     case "quit":

@@ -41,7 +41,12 @@ export async function openInVSCode() {
       ].join("_");
       pagePath = `${path}/journals/${fileName}.md`;
     } else {
-      const fileName = page.originalName.replace(/\//g, ".");
+      const fileName = page.originalName
+        .replace(/^\//, "")
+        .replace(/\/$/, "")
+        .replace(/\//g, ".")
+        .replace(/[:*?"<>|]+/g, "_")
+        .replace(/[\\#|%]+/g, "_");
       pagePath = `${path}/pages/${fileName}.md`;
     }
 
@@ -70,7 +75,12 @@ export async function copyPath() {
       ].join("_");
       pagePath = `${path}/journals/${fileName}.md`;
     } else {
-      const fileName = page.originalName.replace(/\//g, ".");
+      const fileName = page.originalName
+        .replace(/^\//, "")
+        .replace(/\/$/, "")
+        .replace(/\//g, ".")
+        .replace(/[:*?"<>|]+/g, "_")
+        .replace(/[\\#|%]+/g, "_");
       pagePath = `${path}/pages/${fileName}.md`;
     }
 
