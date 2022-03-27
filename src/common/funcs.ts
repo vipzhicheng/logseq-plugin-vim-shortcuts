@@ -308,6 +308,8 @@ export const defaultSettings = {
   markSave: "m",
   markJump: "'",
   markJumpSidebar: "mod+'",
+  increase: "ctrl+a",
+  decrease: "ctrl+x",
   command: ["mod+alt+;", "mod+shift+;"],
   emoji: "mod+/",
   settingsVersion,

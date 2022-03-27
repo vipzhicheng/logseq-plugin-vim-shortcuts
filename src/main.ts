@@ -64,6 +64,8 @@ import sort from "./keybindings/sort";
 import collapseAll from "./keybindings/collapseAll";
 import extendAll from "./keybindings/extendAll";
 import backgroundColor from "./keybindings/backgroundColor";
+import increase from "./keybindings/increase";
+import decrease from "./keybindings/decrease";
 
 async function main() {
   // settings
@@ -127,6 +129,9 @@ async function main() {
   exitEditing(logseq);
   jumpInto(logseq);
   joinNextLine(logseq);
+
+  increase(logseq);
+  decrease(logseq);
 
   toggleVisualMode(logseq);
 
