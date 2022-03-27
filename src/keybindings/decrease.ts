@@ -12,7 +12,7 @@ export default (logseq: ILSPluginUser) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-decrease-" + index,
-        label: "Redo",
+        label: "Decrease",
         keybinding: {
           mode: "non-editing",
           binding,

@@ -37,7 +37,6 @@ export const commandList = [
   { value: "undo", desc: "Undo last edit.", wait: false },
   { value: "redo", desc: "Redo last edit.", wait: false },
   { value: "lorem", desc: "Random generate blocks.", wait: true },
-  { value: "lorem-ipsum", desc: "Random generate blocks.", wait: true },
   {
     value: "emoji-picker",
     desc: "Search and input emojis using emoji picker.",

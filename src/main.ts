@@ -66,6 +66,8 @@ import extendAll from "./keybindings/extendAll";
 import backgroundColor from "./keybindings/backgroundColor";
 import increase from "./keybindings/increase";
 import decrease from "./keybindings/decrease";
+import cut from "./keybindings/cut";
+import cutWord from "./keybindings/cutWord";
 
 async function main() {
   // settings
@@ -132,6 +134,9 @@ async function main() {
 
   increase(logseq);
   decrease(logseq);
+
+  cut(logseq);
+  cutWord(logseq);
 
   toggleVisualMode(logseq);
 

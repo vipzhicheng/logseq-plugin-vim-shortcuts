@@ -42,6 +42,10 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `mod+alt+j`: Join next sibling block.
 - `mod+shift+enter`: Jumping into internal page or tag.
 - `mod+shift+;` and `mod+alt+;`: Trigger command mode, provide many handy commands to use, explain below.
+- `ctrl+a`: Increase the first found number in block. Support multiple selections and combo.
+- `ctrl+x`: Decrease the first found number in block. Support multiple selections and combo.
+- `x`: Cut a leading character. Support multiple selections.
+- `x`: Cut a leading word. Support multiple selections.
 - `/`: Trigger the search in page panel.
 - `sb`: Search block content in Baidu.
 - `se`: Search block content in Wikipedia.
@@ -104,6 +108,7 @@ NOTE: on Windows, the trigger is `ctrl+alt+;`
 - `:lorem` and `:lorem-ipsum`: generate random blocks in same level, with `--unit word|paragraph|sentence` to change random block unit.
   - `--unit` has a short style as `-u`
   - `word`, `paragraph` and `sentence` also have short styles as `w`, `p`, and `s`.
+  - also support `-p`, `-s`, `-w` and `--paragraph`, `--sentence`, `--word`.
 - `:emoji`: Insert emojis by searching keyword, you can repeat emoji by appending a number.
 - `:emoji-picker`: Insert emoji by emoji UI.
 - `:sort` and `rsort`: Sort page first level blocks with no focus any blocks and sort sub level blocks with focus on one block.

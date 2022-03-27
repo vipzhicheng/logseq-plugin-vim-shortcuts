@@ -2,7 +2,10 @@
 
 ## v0.1.6
 
-- feat: add `ctrl+a` and `ctrl+x` to increase and decrease the first found number in block. Support multiple selections and combo.
+- feat: add `ctrl+a` and `ctrl+x` to increase or decrease the first found number in block. Support multiple selections and combo.
+- feat: add `x` and `X` to cut a leading character or word. Support multiple selections.
+- adjust: `:lorem` now support `-p` and `--paragraph` stands for `paragraph`, `-w` and `--word` stands for word.
+- adjust: `:lorem-ipsum` is deleted, because it is too long to type.
 
 ## v0.1.5
 

@@ -310,6 +310,8 @@ export const defaultSettings = {
   markJumpSidebar: "mod+'",
   increase: "ctrl+a",
   decrease: "ctrl+x",
+  cut: "x",
+  cutWord: "shift+x",
   command: ["mod+alt+;", "mod+shift+;"],
   emoji: "mod+/",
   settingsVersion,

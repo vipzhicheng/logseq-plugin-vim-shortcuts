@@ -18,7 +18,14 @@ export async function generate(argv) {
   }
 
   const lines = parseInt(argv._[0]) || 1;
-  const unit = ["paragraph", "sentence", "word"].includes(u) ? u : "sentence";
+  let unit = ["paragraph", "sentence", "word"].includes(u) ? u : "sentence";
+  if (argv.paragraph || argv.p) {
+    unit = "paragraph";
+  } else if (argv.sentence || argv.s) {
+    unit = "sentence";
+  } else if (argv.word || argv.w) {
+    unit = "word";
+  }
 
   let currentBlockFilled = false;
   for (let i = 0; i < lines; i++) {

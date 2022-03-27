@@ -103,7 +103,6 @@ const handleEnter = async () => {
       commands.page.writeAndQuit();
       break;
     case "lorem":
-    case "lorem-ipsum":
       await commands.lorem.generate(argv);
       hideMainUI();
       break;
