@@ -283,7 +283,7 @@ const handleClose = () => {
     :trigger-on-focus="commandStore.triggerOnFocus"
     :highlight-first-item="true"
     :teleported="false"
-    class="w-full command-input absolute bottom-0 font-mono font-bold"
+    class="w-full command-input absolute bottom-0 font-mono font-bold z-40"
     popper-class="w-[99%] overflow-hidden"
     size="large"
     placement="bottom-start"

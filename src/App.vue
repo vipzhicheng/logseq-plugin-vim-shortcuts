@@ -2,6 +2,7 @@
 
 <template>
   <Command />
+  <Search />
   <Mark />
   <Help />
   <Color />

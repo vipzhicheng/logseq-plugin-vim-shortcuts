@@ -11,10 +11,12 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElDialog: typeof import('element-plus/es')['ElDialog']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     Help: typeof import('./src/components/Help.vue')['default']
     Mark: typeof import('./src/components/Mark.vue')['default']
+    Search: typeof import('./src/components/Search.vue')['default']
   }
 }
 

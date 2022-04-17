@@ -34,6 +34,13 @@ export default (logseq: ILSPluginUser) => {
           autoFocus: true,
         });
 
+        const $input = document.querySelector(
+          ".command-input input"
+        ) as HTMLInputElement;
+        setTimeout(() => {
+          $input && $input.focus();
+        }, 500);
+
         document.removeEventListener("click", handleDocumentClick);
         document.addEventListener("click", handleDocumentClick);
       }
@@ -55,6 +62,14 @@ export default (logseq: ILSPluginUser) => {
       logseq.showMainUI({
         autoFocus: true,
       });
+
+      const $input = document.querySelector(
+        ".command-input input"
+      ) as HTMLInputElement;
+
+      setTimeout(() => {
+        $input && $input.focus();
+      }, 500);
 
       document.removeEventListener("click", handleDocumentClick);
       document.addEventListener("click", handleDocumentClick);

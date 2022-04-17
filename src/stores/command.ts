@@ -86,7 +86,7 @@ export const useCommandStore = defineStore("command", {
     commandList,
     triggerOnFocus: false,
     input: "",
-    visible: true,
+    visible: false,
   }),
   actions: {
     show() {

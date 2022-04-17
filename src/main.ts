@@ -56,9 +56,10 @@ import up from "./keybindings/up";
 import { createPinia } from "pinia";
 
 import { commandList, useCommandStore } from "./stores/command";
-
 import { useEmojiStore } from "@/stores/emoji";
 import { useColorStore } from "./stores/color";
+import { useSearchStore } from "./stores/search";
+
 import emoji from "./keybindings/emoji";
 import sort from "./keybindings/sort";
 import collapseAll from "./keybindings/collapseAll";
@@ -164,22 +165,26 @@ async function main() {
 
   const colorStore = useColorStore();
 
-  const $input = document.querySelector(
+  const $searchInput = document.querySelector(
+    ".search-input input"
+  ) as HTMLInputElement;
+
+  const $commandInput = document.querySelector(
     ".command-input input"
   ) as HTMLInputElement;
   const $popper = document.querySelector(
     ".el-autocomplete__popper"
   ) as HTMLElement;
   const $run = document.querySelector(".command-run") as HTMLButtonElement;
-  const handleClick = (e) => {
+  const handleCommandClick = (e) => {
     setTimeout(() => {
-      $input && $input.focus();
+      $commandInput && $commandInput.focus();
     }, 100);
     e.stopPropagation();
     return false;
   };
 
-  const handleKeyup = async (e) => {
+  const handleCommandKeyup = async (e) => {
     const commandStore = useCommandStore();
     if (e.keyCode === 38 || e.code === "ArrowUp") {
       if ($popper.style.display === "none") {
@@ -199,14 +204,14 @@ async function main() {
       hideMainUI();
     } else if (e.keyCode === 13 || e.code === "Enter") {
       e.stopPropagation();
-      if ($input.value) {
+      if ($commandInput && $commandInput.value) {
         $run.click();
       }
     }
     // console.log(e);
   };
 
-  const handleKeydown = (e) => {
+  const handleCommandKeydown = (e) => {
     const commandStore = useCommandStore();
     if (e.keyCode === 9 || e.code === "Tab") {
       e.preventDefault();
@@ -270,6 +275,16 @@ async function main() {
     }
   };
 
+  const handleSearchKeyup = async (e) => {
+    const searchStore = useSearchStore();
+    if (e.keyCode === 27 || e.code === "Escape") {
+      e.stopPropagation();
+      searchStore.emptyInput();
+      hideMainUI();
+    }
+    // console.log(e);
+  };
+
   logseq.on("ui:visible:changed", async ({ visible }) => {
     if (!visible) {
       return;
@@ -277,17 +292,24 @@ async function main() {
 
     setTimeout(() => {
       // add event listeners for input element
-      $input.removeEventListener("click", handleClick);
-      $input.addEventListener("click", handleClick);
+      $commandInput &&
+        $commandInput.removeEventListener("click", handleCommandClick);
+      $commandInput &&
+        $commandInput.addEventListener("click", handleCommandClick);
 
-      $input.removeEventListener("keyup", handleKeyup);
-      $input.addEventListener("keyup", handleKeyup);
+      $commandInput &&
+        $commandInput.removeEventListener("keyup", handleCommandKeyup);
+      $commandInput &&
+        $commandInput.addEventListener("keyup", handleCommandKeyup);
 
-      $input.removeEventListener("keydown", handleKeydown);
-      $input.addEventListener("keydown", handleKeydown);
+      $commandInput &&
+        $commandInput.removeEventListener("keydown", handleCommandKeydown);
+      $commandInput &&
+        $commandInput.addEventListener("keydown", handleCommandKeydown);
 
-      // auto focus
-      $input && $input.focus();
+      $searchInput &&
+        $searchInput.removeEventListener("keyup", handleSearchKeyup);
+      $searchInput && $searchInput.addEventListener("keyup", handleSearchKeyup);
     }, 300);
   });
 }

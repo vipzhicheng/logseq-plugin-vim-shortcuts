@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.7
+
+- feat: new VIM-like in-page search.
+
 ## v0.1.6
 
 - feat: add `ctrl+a` and `ctrl+x` to increase or decrease the first found number in block. Support multiple selections and combo.

@@ -10,6 +10,7 @@ import { schemaVersion } from "../../package.json";
 import hotkeys from "hotkeys-js";
 import { useCommandStore } from "@/stores/command";
 import { useColorStore } from "@/stores/color";
+import { useSearchStore } from "@/stores/search";
 
 export async function createPageIfNotExists(pageName): Promise<PageEntity> {
   let page = await logseq.Editor.getPage(pageName);
@@ -29,17 +30,6 @@ export async function createPageIfNotExists(pageName): Promise<PageEntity> {
 
 export async function setHotkeys(logseq: ILSPluginUser) {
   hotkeys("esc", () => {
-    const $input = document.querySelector(
-      ".command-input input"
-    ) as HTMLInputElement;
-    if ($input) {
-      const commandStore = useCommandStore();
-      commandStore.emptyInput();
-    }
-
-    const colorStore = useColorStore();
-    colorStore.hide();
-
     hideMainUI();
     return false;
   });
@@ -197,6 +187,13 @@ export const showMainUI = (inputVisible) => {
 export const hideMainUI = () => {
   const commandStore = useCommandStore();
   commandStore.emptyInput();
+  commandStore.hide();
+
+  const searchStore = useSearchStore();
+  searchStore.hide();
+
+  const colorStore = useColorStore();
+  colorStore.hide();
 
   logseq.hideMainUI({
     restoreEditingCursor: true,
