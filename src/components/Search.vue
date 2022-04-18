@@ -11,6 +11,7 @@ const searchStore = useSearchStore();
       placeholder="Please input for search"
       class="w-full search-input absolute bottom-0 font-mono font-bold z-50"
       size="large"
+      @click="searchStore.search"
     >
       <template #prepend>/</template>
     </el-input>
