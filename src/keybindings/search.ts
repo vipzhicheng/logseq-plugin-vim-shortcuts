@@ -5,23 +5,24 @@ import { useSearchStore } from "@/stores/search";
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.search)
+  const searchBindings = Array.isArray(settings.search)
     ? settings.search
     : [settings.search];
 
-  bindings.forEach((binding, index) => {
+  searchBindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-search-" + index,
         label: "Search",
         keybinding: {
-          mode: "non-editing",
+          mode: "global",
           binding,
         },
       },
       async () => {
         debug("Search");
         const searchStore = useSearchStore();
+        searchStore.emptyInput();
         searchStore.show();
         logseq.showMainUI({
           autoFocus: true,
@@ -33,8 +34,52 @@ export default (logseq: ILSPluginUser) => {
         setTimeout(() => {
           $input && $input.focus();
         }, 500);
-        // // @ts-ignore
-        // await logseq.App.invokeExternalCommand('logseq.go/search-in-page');
+      }
+    );
+  });
+
+  // Search Next
+  const searchNextBindings = Array.isArray(settings.searchNext)
+    ? settings.searchNext
+    : [settings.searchNext];
+
+  searchNextBindings.forEach((binding, index) => {
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-search-next-" + index,
+        label: "Search Next",
+        keybinding: {
+          mode: "global",
+          binding,
+        },
+      },
+      async () => {
+        debug("Search Next");
+        const searchStore = useSearchStore();
+        searchStore.searchNext();
+      }
+    );
+  });
+
+  // Search Prev
+  const searchPrevBindings = Array.isArray(settings.searchPrev)
+    ? settings.searchPrev
+    : [settings.searchPrev];
+
+  searchPrevBindings.forEach((binding, index) => {
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-search-prev-" + index,
+        label: "Search Prev",
+        keybinding: {
+          mode: "global",
+          binding,
+        },
+      },
+      async () => {
+        debug("Search Prev");
+        const searchStore = useSearchStore();
+        searchStore.searchPrev();
       }
     );
   });

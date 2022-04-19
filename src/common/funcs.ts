@@ -289,6 +289,8 @@ export const defaultSettings = {
   prevSibling: "shift+k",
   redo: "ctrl+r",
   search: "/",
+  searchPrev: "shift+n",
+  searchNext: "n",
   searchBaidu: "s b",
   searchGithub: "s h",
   searchGoogle: "s g",

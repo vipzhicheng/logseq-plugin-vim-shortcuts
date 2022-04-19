@@ -3,6 +3,9 @@
 ## v0.1.7
 
 - feat: new VIM-like in-page search.
+- feat: add short n for next, N for prev.
+- TODO: search in fuzzy mode
+- TODO: search in regex mode
 
 ## v0.1.6
 
