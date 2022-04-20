@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { useSearchStore } from "@/stores/search";
 const searchStore = useSearchStore();
+
+const handlerInput = () => {
+  searchStore.search();
+};
 </script>
 
 <template>
@@ -11,7 +15,7 @@ const searchStore = useSearchStore();
       placeholder="Please input keywords for searching in this page"
       class="w-full search-input absolute bottom-0 font-mono font-bold z-50"
       size="large"
-      @click="searchStore.search"
+      @input="handlerInput"
     >
       <template #prepend>/</template>
     </el-input>

@@ -284,7 +284,7 @@ async function main() {
     } else if (e.keyCode === 13 || e.code === "Enter") {
       e.stopPropagation();
       const searchStore = useSearchStore();
-      searchStore.search();
+      searchStore.search(true);
     }
     // console.log(e);
   };

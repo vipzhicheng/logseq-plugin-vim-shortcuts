@@ -78,6 +78,7 @@ export const useSearchStore = defineStore("search", {
     cursor: -1,
     flatedBlocks: [],
     currentPageName: "",
+    timer: null,
   }),
   actions: {
     toggle() {
@@ -96,44 +97,55 @@ export const useSearchStore = defineStore("search", {
       this.input = "";
     },
 
-    async search() {
-      this.cursor = -1;
-      let flatedBlocks = [];
-      let page = await logseq.Editor.getCurrentPage();
-      if (page) {
-        const blocks = await logseq.Editor.getCurrentPageBlocksTree();
-        flatedBlocks = flatBlocks(blocks);
-      } else {
-        const block = await logseq.Editor.getCurrentBlock();
-        if (block) {
-          page = await logseq.Editor.getPage(block.page.id);
-          const blocks = await logseq.Editor.getPageBlocksTree(page.name);
+    async search(hideUI = false) {
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
+
+      this.timer = setTimeout(async () => {
+        this.cursor = -1;
+        let flatedBlocks = [];
+        let page = await logseq.Editor.getCurrentPage();
+        if (page) {
+          const blocks = await logseq.Editor.getCurrentPageBlocksTree();
           flatedBlocks = flatBlocks(blocks);
+        } else {
+          const block = await logseq.Editor.getCurrentBlock();
+          if (block) {
+            page = await logseq.Editor.getPage(block.page.id);
+            const blocks = await logseq.Editor.getPageBlocksTree(page.name);
+            flatedBlocks = flatBlocks(blocks);
+          }
         }
-      }
 
-      this.flatedBlocks = flatedBlocks;
-      this.currentPageName = page ? page.name : "";
+        this.flatedBlocks = flatedBlocks;
+        this.currentPageName = page ? page.name : "";
 
-      if (!this.currentPageName) {
-        logseq.App.showMsg("No page selected");
-      }
+        if (!this.currentPageName) {
+          logseq.App.showMsg("No page selected");
+        }
 
-      this.cursor = searchBlock(
-        this.input,
-        this.flatedBlocks,
-        this.cursor,
-        "next"
-      );
+        this.cursor = searchBlock(
+          this.input,
+          this.flatedBlocks,
+          this.cursor,
+          "next"
+        );
 
-      if (this.cursor >= 0) {
-        const flatBlock = this.flatedBlocks[this.cursor];
-        logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
-      } else {
-        logseq.App.showMsg("Pattern not found: " + this.input);
-      }
+        if (this.cursor >= 0) {
+          const flatBlock = this.flatedBlocks[this.cursor];
+          logseq.Editor.scrollToBlockInPage(
+            this.currentPageName,
+            flatBlock.uuid
+          );
+        } else {
+          logseq.App.showMsg("Pattern not found: " + this.input);
+        }
 
-      hideMainUI();
+        if (hideUI) {
+          hideMainUI();
+        }
+      }, 300);
     },
 
     async searchNext() {
