@@ -1,5 +1,6 @@
 import "@logseq/libs";
 import {
+  BlockEntity,
   BlockPageName,
   BlockUUID,
   ILSPluginUser,
@@ -11,6 +12,37 @@ import hotkeys from "hotkeys-js";
 import { useCommandStore } from "@/stores/command";
 import { useColorStore } from "@/stores/color";
 import { useSearchStore } from "@/stores/search";
+
+export const clearBlocksHighlight = async (blocks: BlockEntity[]) => {
+  for (const block of blocks) {
+    const regex = /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/;
+    if (regex.test(block.content)) {
+      const content = block.content.replace(regex, "$1");
+      await logseq.Editor.updateBlock(block.uuid, content);
+    }
+
+    if (block.children.length > 0) {
+      await clearBlocksHighlight(block.children as BlockEntity[]);
+    }
+  }
+};
+
+export const clearCurrentPageBlocksHighlight = async () => {
+  let page = await logseq.Editor.getCurrentPage();
+  let blocks;
+  if (page) {
+    blocks = await logseq.Editor.getCurrentPageBlocksTree();
+  } else {
+    const block = await logseq.Editor.getCurrentBlock();
+    if (block) {
+      page = await logseq.Editor.getPage(block.page.id);
+      blocks = await logseq.Editor.getPageBlocksTree(page.name);
+    }
+  }
+  if (blocks && blocks.length > 0) {
+    await clearBlocksHighlight(blocks);
+  }
+};
 
 export async function createPageIfNotExists(pageName): Promise<PageEntity> {
   let page = await logseq.Editor.getPage(pageName);

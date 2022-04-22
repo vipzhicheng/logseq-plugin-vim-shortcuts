@@ -145,6 +145,10 @@ const handleEnter = async () => {
       await commands.page.openInVSCode();
       hideMainUI();
       break;
+    case "clear-highlights":
+      await commands.page.clearHighlights();
+      hideMainUI();
+      break;
     case "q":
     case "quit":
       commands.page.quit();

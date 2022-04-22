@@ -1,4 +1,4 @@
-import { hideMainUI } from "@/common/funcs";
+import { clearCurrentPageBlocksHighlight, hideMainUI } from "@/common/funcs";
 import "@logseq/libs";
 import { useCopyTextStore } from "@/stores/copy-text";
 import { format } from "date-fns";
@@ -164,4 +164,8 @@ export async function substitutePage(value) {
       "Current page blocks not found. Please select a page first."
     );
   }
+}
+
+export async function clearHighlights() {
+  await clearCurrentPageBlocksHighlight();
 }

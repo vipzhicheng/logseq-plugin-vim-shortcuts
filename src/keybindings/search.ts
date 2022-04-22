@@ -1,5 +1,9 @@
-import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getSettings } from "@/common/funcs";
+import { BlockEntity, ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
+import {
+  clearCurrentPageBlocksHighlight,
+  debug,
+  getSettings,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
@@ -28,6 +32,8 @@ export default (logseq: ILSPluginUser) => {
           autoFocus: true,
         });
 
+        await clearCurrentPageBlocksHighlight();
+
         const $input = document.querySelector(
           ".search-input input"
         ) as HTMLInputElement;
@@ -55,6 +61,7 @@ export default (logseq: ILSPluginUser) => {
       },
       async () => {
         debug("Search Next");
+        await clearCurrentPageBlocksHighlight();
         const searchStore = useSearchStore();
         searchStore.searchNext();
       }
@@ -78,6 +85,7 @@ export default (logseq: ILSPluginUser) => {
       },
       async () => {
         debug("Search Prev");
+        await clearCurrentPageBlocksHighlight();
         const searchStore = useSearchStore();
         searchStore.searchPrev();
       }

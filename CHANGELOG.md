@@ -4,8 +4,7 @@
 
 - feat: new VIM-like in-page search.
 - feat: add short n for next, N for prev.
-- TODO: search in fuzzy mode
-- TODO: search in regex mode
+- feat: add highlight support, `:clear-highlights` to clear all highlights on current page.
 
 ## v0.1.6
 

@@ -71,6 +71,11 @@ export const commandList = [
     wait: true,
   },
   {
+    value: "clear-highlights",
+    desc: "Clear all blocks highlight on current page.",
+    wait: false,
+  },
+  {
     value: "h",
     desc: "Show help modal.",
     wait: false,
