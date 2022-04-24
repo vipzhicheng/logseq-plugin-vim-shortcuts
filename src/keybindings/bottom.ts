@@ -9,9 +9,9 @@ import {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.bottom)
-    ? settings.bottom
-    : [settings.bottom];
+  const bindings = Array.isArray(settings.keyBindings.bottom)
+    ? settings.keyBindings.bottom
+    : [settings.keyBindings.bottom];
 
   bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(

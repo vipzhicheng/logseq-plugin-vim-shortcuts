@@ -4,7 +4,9 @@ import { debug, getNumber, getSettings, resetNumber } from "@/common/funcs";
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.cut) ? settings.cut : [settings.cut];
+  const bindings = Array.isArray(settings.keyBindings.cut)
+    ? settings.keyBindings.cut
+    : [settings.keyBindings.cut];
 
   bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(

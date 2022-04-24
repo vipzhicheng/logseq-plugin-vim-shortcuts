@@ -1,24 +1,29 @@
-import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getSettings } from '@/common/funcs';
+import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
+import { debug, getSettings } from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.outdent) ? settings.outdent : [settings.outdent];
+  const bindings = Array.isArray(settings.keyBindings.outdent)
+    ? settings.keyBindings.outdent
+    : [settings.keyBindings.outdent];
 
   bindings.forEach((binding, index) => {
-    logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-outdent-' + index,
-      label: 'outdent',
-      keybinding: {
-        mode: 'non-editing',
-        binding
-      }
-    }, async () => {
-      debug('Outdent');
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-outdent-" + index,
+        label: "outdent",
+        keybinding: {
+          mode: "non-editing",
+          binding,
+        },
+      },
+      async () => {
+        debug("Outdent");
 
-      // @ts-ignore
-      await logseq.App.invokeExternalCommand('logseq.editor/outdent');
-    });
+        // @ts-ignore
+        await logseq.App.invokeExternalCommand("logseq.editor/outdent");
+      }
+    );
   });
 };

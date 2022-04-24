@@ -10,9 +10,9 @@ import {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.jumpInto)
-    ? settings.jumpInto
-    : [settings.jumpInto];
+  const bindings = Array.isArray(settings.keyBindings.jumpInto)
+    ? settings.keyBindings.jumpInto
+    : [settings.keyBindings.jumpInto];
 
   bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(

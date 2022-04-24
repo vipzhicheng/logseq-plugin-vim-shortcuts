@@ -5,9 +5,9 @@ import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.emoji)
-    ? settings.emoji
-    : [settings.emoji];
+  const bindings = Array.isArray(settings.keyBindings.emoji)
+    ? settings.keyBindings.emoji
+    : [settings.keyBindings.emoji];
 
   const emojiHandler = async () => {
     debug("Insert emoji");

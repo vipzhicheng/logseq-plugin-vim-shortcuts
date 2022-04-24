@@ -27,9 +27,9 @@ const collapse = async (blockUUID: BlockUUID | undefined) => {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.collapseAll)
-    ? settings.collapseAll
-    : [settings.collapseAll];
+  const bindings = Array.isArray(settings.keyBindings.collapseAll)
+    ? settings.keyBindings.collapseAll
+    : [settings.keyBindings.collapseAll];
 
   bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(

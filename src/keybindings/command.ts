@@ -13,9 +13,9 @@ export default (logseq: ILSPluginUser) => {
     $input && $input.blur();
   };
 
-  const bindings = Array.isArray(settings.command)
-    ? settings.command
-    : [settings.command];
+  const bindings = Array.isArray(settings.keyBindings.command)
+    ? settings.keyBindings.command
+    : [settings.keyBindings.command];
 
   bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(

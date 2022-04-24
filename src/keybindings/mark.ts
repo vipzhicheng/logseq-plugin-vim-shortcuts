@@ -1,105 +1,138 @@
-import { ILSPluginUser } from '@logseq/libs/dist/LSPlugin';
-import { debug, getCurrentPage, getMark, getNumber, getSettings, resetNumber, setMark } from '@/common/funcs';
+import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
+import {
+  debug,
+  getCurrentPage,
+  getMark,
+  getNumber,
+  getSettings,
+  resetNumber,
+  setMark,
+} from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindingsMarkSave = Array.isArray(settings.markSave) ? settings.markSave : [settings.markSave];
-  const bindingsMarkJump = Array.isArray(settings.markJump) ? settings.markJump : [settings.markJump];
-  const bindingsMarkJumpSidebar = Array.isArray(settings.markJumpSidebar) ? settings.markJumpSidebar : [settings.markJumpSidebar];
+  const bindingsMarkSave = Array.isArray(settings.keyBindings.markSave)
+    ? settings.keyBindings.markSave
+    : [settings.keyBindings.markSave];
+  const bindingsMarkJump = Array.isArray(settings.keyBindings.markJump)
+    ? settings.keyBindings.markJump
+    : [settings.keyBindings.markJump];
+  const bindingsMarkJumpSidebar = Array.isArray(
+    settings.keyBindings.markJumpSidebar
+  )
+    ? settings.keyBindings.markJumpSidebar
+    : [settings.keyBindings.markJumpSidebar];
 
   bindingsMarkSave.forEach((binding, index) => {
-    logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-save-mark-' + index,
-      label: 'Save mark',
-      keybinding: {
-        mode: 'non-editing',
-        binding
-      }
-    }, async () => {
-      debug('Save mark');
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-save-mark-" + index,
+        label: "Save mark",
+        keybinding: {
+          mode: "non-editing",
+          binding,
+        },
+      },
+      async () => {
+        debug("Save mark");
 
-      const number = getNumber();
-      resetNumber();
+        const number = getNumber();
+        resetNumber();
 
-      const page = await getCurrentPage();
-      if (page?.name) {
-        const block = await logseq.Editor.getCurrentBlock();
-        const selected = await logseq.Editor.getSelectedBlocks();
+        const page = await getCurrentPage();
+        if (page?.name) {
+          const block = await logseq.Editor.getCurrentBlock();
+          const selected = await logseq.Editor.getSelectedBlocks();
 
-        // 1. current block uuid exist
-        // 2. current block page id === current page id
-        // 3. current block is selected and only current block is selected
-        if (block?.uuid && block.page.id === page.id && (selected && selected.length === 1 && selected[0].uuid === block.uuid)) {
-          if (!block?.properties?.id) {
-            await logseq.Editor.upsertBlockProperty(block.uuid, 'id', block.uuid);
+          // 1. current block uuid exist
+          // 2. current block page id === current page id
+          // 3. current block is selected and only current block is selected
+          if (
+            block?.uuid &&
+            block.page.id === page.id &&
+            selected &&
+            selected.length === 1 &&
+            selected[0].uuid === block.uuid
+          ) {
+            if (!block?.properties?.id) {
+              await logseq.Editor.upsertBlockProperty(
+                block.uuid,
+                "id",
+                block.uuid
+              );
+            }
+            await setMark(number, page.name, block.uuid);
+            logseq.App.showMsg(`Mark ${number} saved`);
+          } else {
+            await setMark(number, page.name);
+            logseq.App.showMsg(`Mark ${number} saved`);
           }
-          await setMark(number, page.name, block.uuid);
-          logseq.App.showMsg(`Mark ${number} saved`);
-        } else {
-          await setMark(number, page.name);
-          logseq.App.showMsg(`Mark ${number} saved`);
         }
       }
-    });
+    );
   });
 
   bindingsMarkJump.forEach((binding, index) => {
-    logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-jump-mark-' + index,
-      label: 'Jump mark',
-      keybinding: {
-        mode: 'non-editing',
-        binding
-      }
-    }, async () => {
-      debug('Jump mark');
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-jump-mark-" + index,
+        label: "Jump mark",
+        keybinding: {
+          mode: "non-editing",
+          binding,
+        },
+      },
+      async () => {
+        debug("Jump mark");
 
-      const number = getNumber();
-      resetNumber();
+        const number = getNumber();
+        resetNumber();
 
-      const mark = getMark(number);
+        const mark = getMark(number);
 
-      if (mark) {
-
-        if (mark.block) {
-          logseq.Editor.scrollToBlockInPage(mark.page, mark.block);
-        } else {
-          logseq.App.pushState('page', {
-            name: mark.page
-          });
-        }
-      }
-    });
-  });
-
-  bindingsMarkJumpSidebar.forEach((binding, index) => {
-    logseq.App.registerCommandPalette({
-      key: 'vim-shortcut-jump-mark-sidebar-' + index,
-      label: 'Jump mark to sidebar',
-      keybinding: {
-        mode: 'non-editing',
-        binding
-      }
-    }, async () => {
-      debug('Jump mark to sidebar');
-
-      const number = getNumber();
-      resetNumber();
-
-      const mark = getMark(number);
-
-      if (mark) {
-        if (mark.block) {
-          logseq.App.openInRightSidebar(mark.block);
-        } else {
-          const page = await logseq.Editor.getPage(mark.page);
-          if (page?.uuid) {
-            logseq.App.openInRightSidebar(page.uuid);
+        if (mark) {
+          if (mark.block) {
+            logseq.Editor.scrollToBlockInPage(mark.page, mark.block);
+          } else {
+            logseq.App.pushState("page", {
+              name: mark.page,
+            });
           }
         }
       }
+    );
+  });
 
-    });
+  bindingsMarkJumpSidebar.forEach((binding, index) => {
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-jump-mark-sidebar-" + index,
+        label: "Jump mark to sidebar",
+        keybinding: {
+          mode: "non-editing",
+          binding,
+        },
+      },
+      async () => {
+        debug("Jump mark to sidebar");
+
+        const number = getNumber();
+        resetNumber();
+
+        const mark = getMark(number);
+
+        if (mark) {
+          if (mark.block) {
+            logseq.App.openInRightSidebar(mark.block);
+          } else {
+            const page = await logseq.Editor.getPage(mark.page);
+            if (page?.uuid) {
+              logseq.App.openInRightSidebar(page.uuid);
+            }
+          }
+        }
+      }
+    );
   });
 };

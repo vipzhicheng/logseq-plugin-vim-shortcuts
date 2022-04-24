@@ -9,9 +9,33 @@ import { useSearchStore } from "@/stores/search";
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const searchBindings = Array.isArray(settings.search)
-    ? settings.search
-    : [settings.search];
+  // Search Prev
+  const searchCleanupBindings = Array.isArray(
+    settings.keyBindings.searchCleanup
+  )
+    ? settings.keyBindings.searchCleanup
+    : [settings.keyBindings.searchCleanup];
+
+  searchCleanupBindings.forEach((binding, index) => {
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-search-cleanup-" + index,
+        label: "Search Cleanup",
+        keybinding: {
+          mode: "global",
+          binding,
+        },
+      },
+      async () => {
+        debug("Search Cleanup");
+        await clearCurrentPageBlocksHighlight();
+      }
+    );
+  });
+
+  const searchBindings = Array.isArray(settings.keyBindings.search)
+    ? settings.keyBindings.search
+    : [settings.keyBindings.search];
 
   searchBindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
@@ -45,9 +69,9 @@ export default (logseq: ILSPluginUser) => {
   });
 
   // Search Next
-  const searchNextBindings = Array.isArray(settings.searchNext)
-    ? settings.searchNext
-    : [settings.searchNext];
+  const searchNextBindings = Array.isArray(settings.keyBindings.searchNext)
+    ? settings.keyBindings.searchNext
+    : [settings.keyBindings.searchNext];
 
   searchNextBindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
@@ -69,9 +93,9 @@ export default (logseq: ILSPluginUser) => {
   });
 
   // Search Prev
-  const searchPrevBindings = Array.isArray(settings.searchPrev)
-    ? settings.searchPrev
-    : [settings.searchPrev];
+  const searchPrevBindings = Array.isArray(settings.keyBindings.searchPrev)
+    ? settings.keyBindings.searchPrev
+    : [settings.keyBindings.searchPrev];
 
   searchPrevBindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(

@@ -10,9 +10,9 @@ import {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.highlightFocusIn)
-    ? settings.highlightFocusIn
-    : [settings.highlightFocusIn];
+  const bindings = Array.isArray(settings.keyBindings.highlightFocusIn)
+    ? settings.keyBindings.highlightFocusIn
+    : [settings.keyBindings.highlightFocusIn];
 
   bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(

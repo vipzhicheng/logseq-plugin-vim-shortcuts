@@ -28,9 +28,9 @@ const extend = async (blockUUID: BlockUUID | undefined) => {
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
 
-  const bindings = Array.isArray(settings.extendAll)
-    ? settings.extendAll
-    : [settings.extendAll];
+  const bindings = Array.isArray(settings.keyBindings.extendAll)
+    ? settings.keyBindings.extendAll
+    : [settings.keyBindings.extendAll];
 
   bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
