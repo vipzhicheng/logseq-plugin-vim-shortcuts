@@ -46,7 +46,9 @@ This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
 - `ctrl+x`: Decrease the first found number in block. Support multiple selections and combo.
 - `x`: Cut a leading character. Support multiple selections.
 - `x`: Cut a leading word. Support multiple selections.
-- `/`: Trigger the search in page panel.
+- `/`: Trigger search in page bar on the below. Support smartcase.
+- `n`: Search next search match.
+- `N`: Search prev search match.
 - `sb`: Search block content in Baidu.
 - `se`: Search block content in Wikipedia.
 - `sg`: Search block content in Google.
@@ -158,11 +160,15 @@ Because some VIM shortcuts or commands may also need to be as a slash command, s
 - `/Sort Blocks`: Sort sub level children blocks from a to z.
 - `/Reverse Sort Blocks`: Sort sub level children blocks from z to a.
 - `/Random Bg Color`: Set block background color
-- `Children Random Bg Color`: Set children blocks background color
+- `/Children Random Bg Color`: Set children blocks background color
 
 ## Named Background Colors
 
 The named colors you can use in `:bg` command are from [here](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+
+## Search in page
+
+Like in VIM, if you press `/` you can trigger in-page search, and it support smartcase which means if you search in lower case it will match case insensitive and if you search a keyword including upper case char then it will match case sensitive.
 
 ## Other notes
 

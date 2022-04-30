@@ -2,8 +2,8 @@
 
 ## v0.1.7
 
-- feat: new VIM-like in-page search.
-- feat: add short n for next, N for prev.
+- feat: new VIM-like in-page search support smartcase.
+- feat: add short n for next match, N for prev match.
 - feat: add highlight support, `:clear-highlights` to clear all highlights on current page.
 
 ## v0.1.6
