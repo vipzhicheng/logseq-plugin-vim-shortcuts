@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.8
+
+- feat: add `z M` to collapse hierarchically. add `z O` to extend hierarchically.
+
 ## v0.1.7
 
 - feat: new VIM-like in-page search support smartcase.

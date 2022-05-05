@@ -116,8 +116,8 @@ async function main() {
   collapse(logseq);
   extend(logseq);
 
-  // collapseAll(logseq);
-  // extendAll(logseq);
+  collapseAll(logseq);
+  extendAll(logseq);
 
   highlightFocusIn(logseq);
   highlightFocusOut(logseq);
