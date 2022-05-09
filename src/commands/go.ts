@@ -77,10 +77,22 @@ const parsePageName = async (pageName: string) => {
   }
 };
 
-export async function goOrCreate(pageName) {
+export async function goOrCreate(pageName, opts) {
   const isBlock = /\(\((.*?)\)\)/.test(pageName);
 
   if (!isBlock) {
+    if (opts.ns || opts.namespace) {
+      let currentPage = await logseq.Editor.getCurrentPage();
+      if (!currentPage) {
+        let block = await logseq.Editor.getCurrentBlock();
+        if (block) {
+          currentPage = await logseq.Editor.getPage(block.page.id);
+        }
+      }
+      if (currentPage) {
+        pageName = `${currentPage.name}/${pageName}`;
+      }
+    }
     pageName = await parsePageName(pageName);
     if (pageName) {
       let page = await logseq.Editor.getPage(pageName);
@@ -120,10 +132,22 @@ export async function goOrCreate(pageName) {
   hideMainUI();
 }
 
-export async function go(pageName) {
+export async function go(pageName, opts) {
   const isBlock = /\(\((.*?)\)\)/.test(pageName);
 
   if (!isBlock) {
+    if (opts.ns || opts.namespace) {
+      let currentPage = await logseq.Editor.getCurrentPage();
+      if (!currentPage) {
+        let block = await logseq.Editor.getCurrentBlock();
+        if (block) {
+          currentPage = await logseq.Editor.getPage(block.page.id);
+        }
+      }
+      if (currentPage) {
+        pageName = `${currentPage.name}/${pageName}`;
+      }
+    }
     pageName = await parsePageName(pageName);
     if (pageName) {
       let page = await logseq.Editor.getPage(pageName);

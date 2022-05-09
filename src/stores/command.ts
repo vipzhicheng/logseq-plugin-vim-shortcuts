@@ -67,6 +67,11 @@ export const commandList = [
   },
   {
     value: "go ",
+    desc: "go to existed page.",
+    wait: true,
+  },
+  {
+    value: "go! ",
     desc: "Create new page or go to existed page.",
     wait: true,
   },

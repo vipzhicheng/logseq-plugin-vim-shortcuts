@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.9
+
+- feat: add `--ns` and `--namespace` to `:go` and `:go!`, so you can go next level without inputing prefix title
+
 ## v0.1.8
 
 - feat: add `z M` to collapse hierarchically. add `z O` to extend hierarchically.
