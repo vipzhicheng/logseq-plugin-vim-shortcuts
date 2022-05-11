@@ -106,7 +106,8 @@ NOTE: on Windows, the trigger is `ctrl+alt+;`
     - `:go @next` Go to next-day's journal page, if currect page is not a journal page, fallback to @tomorrow.
     - `:go @back` Go to backward page.
     - `:go @forward` Go to forward page.
-- `:go!`: Go to existed page or block, create one if page not exist, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
+  - `:go!`: Go to existed page or block, create one if page not exist, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
+  - `:go!` and `:go` support `--ns` and `--namespace` to go or create namespace page. e.g. you run command `:go! subpage --ns` on `test` page, then you will be redirect to `test/subpage` for saving your time to input prefix chars.
 - `:re` and `:rename`: Rename current page name, if target page exists, page content will be merged.
 - `:undo` and `:redo`: Undo and redo last edit.
 - `:lorem` and `:lorem-ipsum`: generate random blocks in same level, with `--unit word|paragraph|sentence` to change random block unit.
