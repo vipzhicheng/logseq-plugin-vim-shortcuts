@@ -161,6 +161,25 @@ const handleEnter = async () => {
         value.indexOf("%substitute/") === 0
       ) {
         await commands.page.substitutePage(value);
+      } else if (!isNaN(Number(value)) || /\.\d+/.test(value)) {
+        const blocks = await logseq.Editor.getCurrentPageBlocksTree();
+        const page = await logseq.Editor.getCurrentPage();
+        if (page && blocks.length > 0) {
+          let line
+          if (/\.\d+/.test(value)) {
+            line = Math.floor(+value * blocks.length);
+          } else if (!isNaN(Number(value))) {
+            if (+value < 0) {
+              line = +value % blocks.length + blocks.length
+            } else if (+value > 0) {
+              line = +value % blocks.length - 1
+            }
+          }
+          if (line) {
+            logseq.Editor.scrollToBlockInPage(page.name, blocks[line].uuid)
+            hideMainUI()
+          }
+        }
       } else {
         logseq.App.showMsg("Unknown command: " + cmd);
       }

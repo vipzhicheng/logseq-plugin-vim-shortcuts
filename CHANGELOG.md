@@ -1,5 +1,10 @@
 # CHANGELOG
 
+
+## v0.1.10
+
+- feat: support `:NUMBER` to scroll to specific line or `:.NUMBER` represents scrolling to NUMBER * 100% of the page.
+
 ## v0.1.9
 
 - feat: add `--ns` and `--namespace` to `:go` and `:go!`, so you can go next level without inputing prefix title
