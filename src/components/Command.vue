@@ -175,7 +175,7 @@ const handleEnter = async () => {
               line = +value % blocks.length - 1
             }
           }
-          if (line) {
+          if (line !== undefined) {
             logseq.Editor.scrollToBlockInPage(page.name, blocks[line].uuid)
             hideMainUI()
           }
