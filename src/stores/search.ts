@@ -7,10 +7,9 @@ const flatBlocks = (blocks: BlockEntity[]) => {
   blocks.forEach((block) => {
     flat.push({
       uuid: block.uuid,
-      content: block.content.replace(
-        /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/,
-        "$1"
-      ),
+      content: block.content
+        .replace(/ <mark class="vim-shortcuts-highlight">(.*?)<\/mark>/, "$1")
+        .replace(/<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/, "$1"),
     });
 
     if (block.children) {
@@ -145,7 +144,7 @@ export const useSearchStore = defineStore("search", {
 
           const newContent =
             flatBlock.content.substring(0, startPos) +
-            `<mark class="vim-shortcuts-highlight">${this.input}</mark>` +
+            ` <mark class="vim-shortcuts-highlight">${this.input}</mark>` +
             flatBlock.content.substring(startPos + this.input.length);
           await logseq.Editor.updateBlock(flatBlock.uuid, newContent);
 
@@ -203,7 +202,7 @@ export const useSearchStore = defineStore("search", {
 
         const newContent =
           flatBlock.content.substring(0, startPos) +
-          `<mark class="vim-shortcuts-highlight">${this.input}</mark>` +
+          ` <mark class="vim-shortcuts-highlight">${this.input}</mark>` +
           flatBlock.content.substring(startPos + this.input.length);
         await logseq.Editor.updateBlock(flatBlock.uuid, newContent);
 
@@ -255,7 +254,7 @@ export const useSearchStore = defineStore("search", {
 
         const newContent =
           flatBlock.content.substring(0, startPos) +
-          `<mark class="vim-shortcuts-highlight">${this.input}</mark>` +
+          ` <mark class="vim-shortcuts-highlight">${this.input}</mark>` +
           flatBlock.content.substring(startPos + this.input.length);
         await logseq.Editor.updateBlock(flatBlock.uuid, newContent);
 

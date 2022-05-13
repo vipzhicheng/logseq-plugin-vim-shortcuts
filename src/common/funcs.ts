@@ -16,8 +16,9 @@ import { useSearchStore } from "@/stores/search";
 export const clearBlocksHighlight = async (blocks: BlockEntity[]) => {
   for (const block of blocks) {
     const regex = /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/;
+    const regex2 = / <mark class="vim-shortcuts-highlight">(.*?)<\/mark>/;
     if (regex.test(block.content)) {
-      const content = block.content.replace(regex, "$1");
+      const content = block.content.replace(regex2, "$1").replace(regex, "$1");
       await logseq.Editor.updateBlock(block.uuid, content);
     }
 
