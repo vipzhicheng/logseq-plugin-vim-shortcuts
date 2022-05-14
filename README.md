@@ -90,6 +90,7 @@ NOTE: on Windows, the trigger is `ctrl+alt+;`
 
 #### Supported commands
 
+- `:NUMBER` to scroll to specific line or `:-NUMBER` to scroll to specific line to the end or `:.NUMBER` represents scrolling to NUMBER * 100% of the page.
 - `:s/` and `:substitute/`: Replace current block according regex, e.g. `s/foo/bar/gi`, Notice it support Regex modifiers.
 - `:%s/`a nd `:%substitute/`: Replace current page blocks according regex, e.g. `%s/foo/bar/gi`.
 - `:marks`: Show marks.
