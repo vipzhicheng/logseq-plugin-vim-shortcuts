@@ -3,55 +3,55 @@
 
 [![Github All Releases](https://img.shields.io/github/downloads/vipzhicheng/logseq-plugin-vim-shortcuts/total.svg)](https://github.com/vipzhicheng/logseq-plugin-vim-shortcuts/releases)
 
-This plugin provide some shortcuts which give Logseq a feeling of VIM-like.
+This plugin provide some shortcuts which give Logseq a VIM-like feeling.
 
 ![screencast](screencast.gif)
 
 ## Supported shortcuts
 
-- `j`: Move to next line, in visual block mode it is for selecting down.
-- `k`: Move to previous line in visual block mode it is for selecting up.
+- `j`: Move to next line. In visual block mode, it is for selecting down.
+- `k`: Move to previous line. In visual block mode, it is for selecting up.
 - `h`: Outdent.
 - `l`: Indent.
-- `J`: Move to next sibling, in visual block mode it is for moving down.
-- `K`: Move to previous sibling, in visual block node it is for moving up.
+- `J`: Move to next sibling. In visual block mode, it is for moving down.
+- `K`: Move to previous sibling. In visual block mode, it is for moving up.
 - `H`: Highlight focus out to parent level.
 - `L`: Highlight focus into child level.
-- `i`: Enter edit mode, put the cursor to the end, and also `a` can do the same thing.
-- `I`: Enter edit mode, put the cursor to the start.
-- `yy`: Copy current block content. Only support one block, multi blocks copy please use `cmd+c`.
+- `i`: Move the cursor to the end and enter edit mode. `a` does the same thing.
+- `I`: Move the cursor to the beginning and enter edit mode.
+- `yy`: Copy current block content. Only supports one block – for copying multiple blocks, please use `cmd+c`.
 - `Y`: Copy current block ref.
-- `p`: Paste clipboard content to next sibling. Only support one block, multi blocks paste please use `cmd+v`.
-- `P`: Paste clipboard content to previous sibling. Only support one block, multi blocks paste please use `cmd+v`.
-- `o`: Insert a empty block to next sibling.
-- `O`: Insert a empty block to previous sibling.
-- `dd`: Delete current block, child blocks will also be deleted, but only current block content in the clipboard.
-- `T`: Scroll to top, because Logseq use gg to go to graph view.
+- `p`: Paste clipboard content to next sibling. Only supports one block – for pasting multiple blocks, please use `cmd+v`.
+- `P`: Paste clipboard content to previous sibling. Only supports one block – for pasting multiple blocks, please use `cmd+v`.
+- `o`: Insert an empty block to next sibling.
+- `O`: Insert an empty block to previous sibling.
+- `dd`: Delete current block. Child blocks will also be deleted, but only current block content in the clipboard.
+- `T`: Scroll to top, because Logseq uses `gg` to go to graph view.
 - `G`: Scroll to bottom.
 - `u`: Undo.
 - `ctrl+r`: Redo.
 - `gu`: Change block content to lower case.
 - `gU`: Change block content to upper case.
-- `mod+shift+u`: Toggle block content to lower case or upper case.
-- `NUMBER`+`mod+shift+u`: Trigger different case style, support 1~16.
+- `mod+shift+u`: Toggle block content between lower and upper case.
+- `NUMBER`+`mod+shift+u`: Trigger different case style, supports 1–16.
 - `zo`: Extend block.
 - `zm`: Collapse block.
 - `zO`: Extend block hierarchically.
 - `zM`: Collapse block hierarchically.
-- `NUMBER`+`m`: Save current page or block as a mark to NUMBER register.
+- `NUMBER`+`m`: Save current page or block as a mark to `NUMBER` register.
 - `NUMBER`+`'`: Load saved mark on main region.
 - `NUMBER`+`mod+'`: Load saved mark on right sidebar.
-- `cmd+j cmd+j`: Exit editing mode, also `ctrl+[` can do the same thing.
+- `cmd+j cmd+j`: Exit editing mode. `ctrl+[` does the same thing.
 - `mod+alt+j`: Join next sibling block.
 - `mod+shift+enter`: Jumping into internal page or tag.
-- `mod+shift+;` and `mod+alt+;`: Trigger command mode, provide many handy commands to use, explain below.
-- `ctrl+a`: Increase the first found number in block. Support multiple selections and combo.
-- `ctrl+x`: Decrease the first found number in block. Support multiple selections and combo.
-- `x`: Cut a leading character. Support multiple selections.
-- `x`: Cut a leading word. Support multiple selections.
-- `/`: Trigger search in page bar on the below. Support smartcase.
+- `mod+shift+;` and `mod+alt+;`: Trigger command mode. This provides many handy commands to use, explained below.
+- `ctrl+a`: Increase the first found number in block. Supports multiple selections and combo.
+- `ctrl+x`: Decrease the first found number in block. Supports multiple selections and combo.
+- `x`: Cut a leading character. Supports multiple selections.
+- `x`: Cut a leading word. Supports multiple selections.
+- `/`: Trigger search in page bar on the below. Supports smartcase.
 - `n`: Search next search match.
-- `N`: Search prev search match.
+- `N`: Search previous search match.
 - `sb`: Search block content in Baidu.
 - `se`: Search block content in Wikipedia.
 - `sg`: Search block content in Google.
@@ -69,15 +69,15 @@ A block is focused/highlighted.
 
 ### Insert mode
 
-You can edit a block
+You can edit a block.
 
 ### Visual block mode
 
-You can select more blocks up and down and move the selected blocks using `j` and `k`
+You can select more blocks up and down and move the selected blocks using `j` and `k`.
 
 ### Command mode
 
-In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;`, also can be memorized as `mod+:`, After trigger, you can find a input area at the bottom, you can input some commands here like in VIM. For now it's about 10+ commands, but I believe that would be more.
+In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;`, also can be memorized as `mod+:`. After trigger, you can find an input area at the bottom, you can input some commands here like in VIM. For now it's about 10+ commands, but I believe that would be more.
 
 NOTE: on Windows, the trigger is `ctrl+alt+;`
 
