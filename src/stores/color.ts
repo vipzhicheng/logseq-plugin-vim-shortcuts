@@ -207,8 +207,6 @@ export const useColorStore = defineStore("color", {
               "background-color",
               this.color
             );
-            // Why this doesn't work?
-            await logseq.Editor.exitEditingMode(true);
           }
         }
 

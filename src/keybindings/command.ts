@@ -29,6 +29,7 @@ export default (logseq: ILSPluginUser) => {
       },
       async () => {
         debug("Call VIM commands");
+        await logseq.Editor.exitEditingMode(true);
         commandStore.show();
         logseq.showMainUI({
           autoFocus: true,
@@ -58,6 +59,7 @@ export default (logseq: ILSPluginUser) => {
     },
     async () => {
       debug("Call VIM commands non editing");
+      await logseq.Editor.exitEditingMode(true);
       commandStore.show();
       logseq.showMainUI({
         autoFocus: true,

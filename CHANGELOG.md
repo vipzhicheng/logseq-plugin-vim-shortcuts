@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.11
+
+- fix: adjust color picker, auto lose focus for preview
+
 ## v0.1.10
 
 - feat: support `:NUMBER` to scroll to specific line or `:.NUMBER` represents scrolling to NUMBER * 100% of the page.
