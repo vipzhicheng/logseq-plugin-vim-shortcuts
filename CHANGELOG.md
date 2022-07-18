@@ -1,13 +1,10 @@
 # CHANGELOG
 
-## v0.1.12
+## v0.1.11
 
 - fix: change mapping `zm` and `zM` to `zc` and `zC`. #21
 - fix: adjust `a`, `i`, `A` and `I` mapping #20.
 - fix: typos, thanks to @RomanHN
-
-## v0.1.11
-
 - fix: adjust color picker, auto lose focus for preview
 
 ## v0.1.10
