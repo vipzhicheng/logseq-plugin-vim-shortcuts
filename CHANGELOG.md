@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.13
+
+- fix: search highlight case
+
 ## v0.1.12
 
 - feat: refactor search highlight, now it won't change block content.

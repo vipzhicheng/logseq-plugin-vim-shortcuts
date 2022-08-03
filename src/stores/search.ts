@@ -116,7 +116,10 @@ function addHighlight(word: string, input: string) {
   if (startPos > -1) {
     word =
       word.substring(0, startPos) +
-      `<mark class="vim-shortcuts-highlight">${input}</mark>` +
+      `<mark class="vim-shortcuts-highlight">${word.substring(
+        startPos,
+        startPos + input.length
+      )}</mark>` +
       word.substring(startPos + input.length);
   }
   return word;
