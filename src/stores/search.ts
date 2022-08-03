@@ -73,6 +73,64 @@ const searchBlock = (keyword, blocks, cursor = -1, dir = "next") => {
   return newCursor;
 };
 
+function splitTextFromHtml(htmlStr) {
+  let tab: number[] = [];
+  tab = getAllIndexOf("<", ">", htmlStr);
+  let splitTab: HTMLElement[] = [];
+  let shiftL = 0;
+  let shiftR = 1;
+  for (let i = 0; i < tab.length - 1; i++) {
+    splitTab.push(htmlStr.substring(tab[i] + shiftL, tab[i + 1] + shiftR));
+    let x = shiftR;
+    shiftR = shiftL;
+    shiftL = x;
+  }
+  return splitTab;
+}
+
+function getAllIndexOf(s1, s2, str) {
+  let index = 0;
+  let tab: number[] = [];
+  while (index != -1) {
+    index = str.indexOf(s1, index);
+    if (index == -1) break;
+    tab.push(index);
+    index = str.indexOf(s2, index);
+    tab.push(index);
+  }
+  return tab;
+}
+
+function processBlockSegments(tab, input) {
+  for (let k = 0; k < tab.length; k++) {
+    if (tab[k].includes("<")) continue;
+    tab[k] = addHighlight(tab[k], input);
+  }
+  return tab;
+}
+
+function addHighlight(word: string, input: string) {
+  const startPos = hasUpperCase(input)
+    ? word.indexOf(input)
+    : word.toLowerCase().indexOf(input);
+  if (startPos > -1) {
+    word =
+      word.substring(0, startPos) +
+      `<mark class="vim-shortcuts-highlight">${input}</mark>` +
+      word.substring(startPos + input.length);
+  }
+  return word;
+}
+
+function highlightInput(block, input) {
+  const el = top!.document.getElementById(`block-content-${block.uuid}`);
+
+  let spanTab: Element[] = [];
+  spanTab = splitTextFromHtml(el.innerHTML);
+  spanTab = processBlockSegments(spanTab, input);
+  el.innerHTML = spanTab.join("");
+}
+
 export const useSearchStore = defineStore("search", {
   state: () => ({
     visible: false,
@@ -138,36 +196,15 @@ export const useSearchStore = defineStore("search", {
 
           // add highlight tag
           await clearCurrentPageBlocksHighlight();
-          const startPos = hasUpperCase(this.input)
-            ? flatBlock.content.indexOf(this.input)
-            : flatBlock.content.toLowerCase().indexOf(this.input);
 
-          const newContent =
-            flatBlock.content.substring(0, startPos) +
-            ` <mark class="vim-shortcuts-highlight">${this.input}</mark>` +
-            flatBlock.content.substring(startPos + this.input.length);
-          await logseq.Editor.updateBlock(flatBlock.uuid, newContent);
+          if (this.input) {
+            highlightInput(flatBlock, this.input);
 
-          // clear last highlight
-          // const currentBlock = await logseq.Editor.getCurrentBlock();
-          // if (currentBlock.uuid !== flatBlock.uuid) {
-          //   const regex = /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/;
-          //   if (regex.test(currentBlock.content)) {
-          //     const currentBlockContent = currentBlock.content.replace(
-          //       /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/,
-          //       "$1"
-          //     );
-          //     await logseq.Editor.updateBlock(
-          //       currentBlock.uuid,
-          //       currentBlockContent
-          //     );
-          //   }
-          // }
-
-          logseq.Editor.scrollToBlockInPage(
-            this.currentPageName,
-            flatBlock.uuid
-          );
+            logseq.Editor.scrollToBlockInPage(
+              this.currentPageName,
+              flatBlock.uuid
+            );
+          }
         } else {
           logseq.App.showMsg("Pattern not found: " + this.input);
         }
@@ -196,31 +233,9 @@ export const useSearchStore = defineStore("search", {
 
         // add highlight tag
         await clearCurrentPageBlocksHighlight();
-        const startPos = hasUpperCase(this.input)
-          ? flatBlock.content.indexOf(this.input)
-          : flatBlock.content.toLowerCase().indexOf(this.input);
-
-        const newContent =
-          flatBlock.content.substring(0, startPos) +
-          ` <mark class="vim-shortcuts-highlight">${this.input}</mark>` +
-          flatBlock.content.substring(startPos + this.input.length);
-        await logseq.Editor.updateBlock(flatBlock.uuid, newContent);
-
-        // const currentBlock = await logseq.Editor.getCurrentBlock();
-        // if (currentBlock.uuid !== flatBlock.uuid) {
-        //   // clear current block highlight
-        //   const regex = /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/;
-        //   if (regex.test(currentBlock.content)) {
-        //     const currentBlockContent = currentBlock.content.replace(
-        //       /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/,
-        //       "$1"
-        //     );
-        //     await logseq.Editor.updateBlock(
-        //       currentBlock.uuid,
-        //       currentBlockContent
-        //     );
-        //   }
-        // }
+        if (this.input) {
+          highlightInput(flatBlock, this.input);
+        }
 
         logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
       } else {
@@ -248,31 +263,10 @@ export const useSearchStore = defineStore("search", {
 
         // add highlight tag
         await clearCurrentPageBlocksHighlight();
-        const startPos = hasUpperCase(this.input)
-          ? flatBlock.content.indexOf(this.input)
-          : flatBlock.content.toLowerCase().indexOf(this.input);
+        if (this.input) {
+          highlightInput(flatBlock, this.input);
+        }
 
-        const newContent =
-          flatBlock.content.substring(0, startPos) +
-          ` <mark class="vim-shortcuts-highlight">${this.input}</mark>` +
-          flatBlock.content.substring(startPos + this.input.length);
-        await logseq.Editor.updateBlock(flatBlock.uuid, newContent);
-
-        // const currentBlock = await logseq.Editor.getCurrentBlock();
-        // if (currentBlock.uuid !== flatBlock.uuid) {
-        //   // clear current block highlight
-        //   const regex = /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/;
-        //   if (regex.test(currentBlock.content)) {
-        //     const currentBlockContent = currentBlock.content.replace(
-        //       /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/,
-        //       "$1"
-        //     );
-        //     await logseq.Editor.updateBlock(
-        //       currentBlock.uuid,
-        //       currentBlockContent
-        //     );
-        //   }
-        // }
         logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
       } else {
         logseq.App.showMsg("search hit TOP, continuing at BOTTOM");

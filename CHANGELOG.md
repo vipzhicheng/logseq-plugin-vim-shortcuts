@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.12
+
+- feat: refactor search highlight, now it won't change block content.
+
 ## v0.1.11
 
 - fix: change mapping `zm` and `zM` to `zc` and `zC`. #21
