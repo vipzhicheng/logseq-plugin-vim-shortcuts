@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.14
+
+- fix: search highlight issues
+
 ## v0.1.13
 
 - fix: search highlight case

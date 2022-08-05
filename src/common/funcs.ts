@@ -17,7 +17,7 @@ export const clearBlocksHighlight = async (blocks: BlockEntity[]) => {
   for (const block of blocks) {
     const regex = /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/;
     const el = top!.document.getElementById(`block-content-${block.uuid}`);
-    if (regex.test(el.innerHTML)) {
+    if (el?.innerHTML && regex.test(el.innerHTML)) {
       el.innerHTML = el.innerHTML.replace(regex, "$1");
     }
 
