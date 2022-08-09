@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.15
+
+- feat: add visual mode indicator
+
 ## v0.1.14
 
 - fix: search highlight issues

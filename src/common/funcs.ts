@@ -105,32 +105,39 @@ export const readClipboard = (): string => {
   return tempCache.clipboard;
 };
 
+export const updateVisualModeIndicator = (visualMode: boolean) => {
+  if (visualMode) {
+    logseq.App.registerUIItem("pagebar", {
+      key: "vim-shortcut-mode",
+      template: `
+        <span class="">
+          <a title="Visual mode" class="button" data-on-click="toggleVisualMode" style="font-size: 18px">
+            Visual
+          </a>
+        </span>
+      `,
+    });
+  } else {
+    logseq.App.registerUIItem("pagebar", {
+      key: "vim-shortcut-mode",
+      template: `
+        <span class="">
+          <a title="Non-Visual mode" class="button" data-on-click="toggleVisualMode" style="font-size: 18px">
+            Normal
+          </a>
+        </span>
+      `,
+    });
+  }
+};
+
 export const setVisualMode = (visualMode: boolean, message = true) => {
   if (visualMode) {
     message && logseq.App.showMsg("Visual block mode enabled", "success");
-    // logseq.App.registerUIItem("pagebar", {
-    //   key: "vim-shortcut-mode",
-    //   template: `
-    //     <span class="">
-    //       <a title="Visual mode" class="button" data-on-click="">
-    //         Visual
-    //       </a>
-    //     </span>
-    //   `,
-    // });
   } else {
     message && logseq.App.showMsg("Visual block mode disabled", "success");
-    // logseq.App.registerUIItem("pagebar", {
-    //   key: "vim-shortcut-mode",
-    //   template: `
-    //     <span class="">
-    //       <a title="Non-Visual mode" class="button" data-on-click="">
-    //         Normal
-    //       </a>
-    //     </span>
-    //   `,
-    // });
   }
+  updateVisualModeIndicator(visualMode);
   tempCache.visualMode = visualMode;
 };
 

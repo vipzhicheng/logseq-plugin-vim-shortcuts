@@ -12,6 +12,8 @@ import {
   getCommandFromHistoryForward,
   hideMainUI,
   setVisualMode,
+  getVisualMode,
+  updateVisualModeIndicator,
 } from "./common/funcs";
 import bottom from "./keybindings/bottom";
 import changeCase from "./keybindings/changeCase";
@@ -69,10 +71,42 @@ import increase from "./keybindings/increase";
 import decrease from "./keybindings/decrease";
 import cut from "./keybindings/cut";
 import cutWord from "./keybindings/cutWord";
+import { SettingSchemaDesc } from "@logseq/libs/dist/LSPlugin.user";
+
+const defineSettings: SettingSchemaDesc[] = [
+  {
+    key: "enableVisualModeIndicator",
+    title: "Enable visual mode indicator",
+    description: "Enable visual mode indicator",
+    default: true,
+    type: "boolean",
+  },
+];
+
+logseq.useSettingsSchema(defineSettings);
+logseq.onSettingsChanged(() => {
+  if (logseq.settings?.enableVisualModeIndicator) {
+    const visualMode = getVisualMode();
+    updateVisualModeIndicator(visualMode);
+  } else {
+    logseq.App.registerUIItem("pagebar", {
+      key: "vim-shortcut-mode",
+      template: ``,
+    });
+  }
+});
 
 async function main() {
   // settings
   initSettings();
+
+  logseq.provideModel({
+    toggleVisualMode() {
+      const visualMode = getVisualMode();
+      updateVisualModeIndicator(!visualMode);
+      setVisualMode(!visualMode);
+    },
+  });
 
   // setup vue
   const app = createApp(App);
