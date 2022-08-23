@@ -1,16 +1,32 @@
 import { clearCurrentPageBlocksHighlight, hideMainUI } from "@/common/funcs";
-import { BlockEntity } from "@logseq/libs/dist/LSPlugin";
+import { BlockEntity, BlockUUID } from "@logseq/libs/dist/LSPlugin";
 import { defineStore } from "pinia";
+
+const expandParents = async (uuid: BlockUUID) => {
+  const block = await logseq.Editor.getBlock(uuid);
+  if (block.parent && block.parent.id !== block.page.id) {
+    const parentBlock = await logseq.Editor.getBlock(block.parent.id);
+    if (parentBlock["collapsed?"]) {
+      await logseq.Editor.setBlockCollapsed(parentBlock.uuid, {
+        flag: false,
+      });
+    }
+    await expandParents(parentBlock.uuid);
+  }
+};
 
 const flatBlocks = (blocks: BlockEntity[]) => {
   let flat = [];
   blocks.forEach((block) => {
-    flat.push({
-      uuid: block.uuid,
-      content: block.content
-        .replace(/ <mark class="vim-shortcuts-highlight">(.*?)<\/mark>/, "$1")
-        .replace(/<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/, "$1"),
-    });
+    if (block.content) {
+      flat.push({
+        uuid: block.uuid,
+        content: block.content.replace(
+          /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/,
+          "$1"
+        ),
+      });
+    }
 
     if (block.children) {
       flat = flat.concat(flatBlocks(block.children as BlockEntity[]));
@@ -201,8 +217,9 @@ export const useSearchStore = defineStore("search", {
           await clearCurrentPageBlocksHighlight();
 
           if (this.input) {
-            highlightInput(flatBlock, this.input);
+            await expandParents(flatBlock.uuid);
 
+            highlightInput(flatBlock, this.input);
             logseq.Editor.scrollToBlockInPage(
               this.currentPageName,
               flatBlock.uuid

@@ -165,19 +165,19 @@ const handleEnter = async () => {
         const blocks = await logseq.Editor.getCurrentPageBlocksTree();
         const page = await logseq.Editor.getCurrentPage();
         if (page && blocks.length > 0) {
-          let line
+          let line;
           if (/\.\d+/.test(value)) {
             line = Math.floor(+value * blocks.length);
           } else if (!isNaN(Number(value))) {
             if (+value < 0) {
-              line = +value % blocks.length + blocks.length
+              line = (+value % blocks.length) + blocks.length;
             } else if (+value > 0) {
-              line = +value % blocks.length - 1
+              line = (+value % blocks.length) - 1;
             }
           }
           if (line !== undefined) {
-            logseq.Editor.scrollToBlockInPage(page.name, blocks[line].uuid)
-            hideMainUI()
+            logseq.Editor.scrollToBlockInPage(page.name, blocks[line].uuid);
+            hideMainUI();
           }
         }
       } else {
@@ -211,9 +211,9 @@ const querySearch = (queryString: string, cb: any) => {
   ) as HTMLInputElement;
   let results = queryString
     ? commandList.filter(
-      (item) =>
-        item.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
-    )
+        (item) =>
+          item.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+      )
     : commandList;
 
   if (results.length === 0) {
@@ -299,10 +299,19 @@ const handleClose = () => {
 </script>
 
 <template>
-  <el-autocomplete v-model="commandStore.input" v-show="commandStore.visible" :fetch-suggestions="querySearch"
-    :trigger-on-focus="commandStore.triggerOnFocus" :highlight-first-item="true" :teleported="false"
-    class="w-full command-input absolute bottom-0 font-mono font-bold z-40" popper-class="w-[99%] overflow-hidden"
-    size="large" placement="bottom-start" @select="handleSelect">
+  <el-autocomplete
+    v-model="commandStore.input"
+    v-show="commandStore.visible"
+    :fetch-suggestions="querySearch"
+    :trigger-on-focus="commandStore.triggerOnFocus"
+    :highlight-first-item="true"
+    :teleported="false"
+    class="w-full command-input absolute bottom-0 font-mono font-bold z-40"
+    popper-class="w-[99%] overflow-hidden"
+    size="large"
+    placement="bottom-start"
+    @select="handleSelect"
+  >
     <template #prepend>:</template>
     <template #append>
       <el-button class="command-run" @click="handleEnter" type="primary">
@@ -314,7 +323,8 @@ const handleClose = () => {
     </template>
     <template #default="{ item }">
       <div>
-        <span v-if="isCommand">:</span><span class="font-bold">{{ item.value }}</span>
+        <span v-if="isCommand">:</span
+        ><span class="font-bold">{{ item.value }}</span>
         <span v-if="isCommand"> - </span>
         <span class="text-gray-400" v-html="item.desc"></span>
       </div>

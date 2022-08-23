@@ -35,9 +35,9 @@ This plugin provide some shortcuts which give Logseq a VIM-like feeling.
 - `mod+shift+u`: Toggle block content between lower and upper case.
 - `NUMBER`+`mod+shift+u`: Trigger different case style, supports 1–16.
 - `zo`: Extend block.
-- `zm`: Collapse block.
+- `zc`: Collapse block.
 - `zO`: Extend block hierarchically.
-- `zM`: Collapse block hierarchically.
+- `zC`: Collapse block hierarchically.
 - `NUMBER`+`m`: Save current page or block as a mark to `NUMBER` register.
 - `NUMBER`+`'`: Load saved mark on main region.
 - `NUMBER`+`mod+'`: Load saved mark on right sidebar.

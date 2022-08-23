@@ -3,6 +3,7 @@
 ## v0.1.15
 
 - feat: add visual mode indicator
+- fix: highlight search collapsed content
 
 ## v0.1.14
 
