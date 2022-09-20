@@ -142,12 +142,16 @@ function addHighlight(word: string, input: string) {
 }
 
 function highlightInput(block, input) {
-  const el = top!.document.getElementById(`block-content-${block.uuid}`);
+  setTimeout(() => {
+    const el = top!.document.getElementById(`block-content-${block.uuid}`);
 
-  let spanTab: Element[] = [];
-  spanTab = splitTextFromHtml(el.innerHTML);
-  spanTab = processBlockSegments(spanTab, input);
-  el.innerHTML = spanTab.join("");
+    if (el) {
+      let spanTab: Element[] = [];
+      spanTab = splitTextFromHtml(el.innerHTML);
+      spanTab = processBlockSegments(spanTab, input);
+      el.innerHTML = spanTab.join("");
+    }
+  }, 500);
 }
 
 export const useSearchStore = defineStore("search", {
@@ -219,11 +223,11 @@ export const useSearchStore = defineStore("search", {
           if (this.input) {
             await expandParents(flatBlock.uuid);
 
-            highlightInput(flatBlock, this.input);
             logseq.Editor.scrollToBlockInPage(
               this.currentPageName,
               flatBlock.uuid
             );
+            highlightInput(flatBlock, this.input);
           }
         } else {
           logseq.App.showMsg("Pattern not found: " + this.input);
@@ -253,11 +257,11 @@ export const useSearchStore = defineStore("search", {
 
         // add highlight tag
         await clearCurrentPageBlocksHighlight();
+
+        logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
         if (this.input) {
           highlightInput(flatBlock, this.input);
         }
-
-        logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
       } else {
         logseq.App.showMsg("search hit BOTTOM, continuing at TOP");
         this.cursor = -1;
@@ -283,11 +287,10 @@ export const useSearchStore = defineStore("search", {
 
         // add highlight tag
         await clearCurrentPageBlocksHighlight();
+        logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
         if (this.input) {
           highlightInput(flatBlock, this.input);
         }
-
-        logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
       } else {
         logseq.App.showMsg("search hit TOP, continuing at BOTTOM");
         this.cursor = this.flatedBlocks.length;
