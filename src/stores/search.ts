@@ -151,7 +151,7 @@ function highlightInput(block, input) {
       spanTab = processBlockSegments(spanTab, input);
       el.innerHTML = spanTab.join("");
     }
-  }, 500);
+  }, 200);
 }
 
 export const useSearchStore = defineStore("search", {

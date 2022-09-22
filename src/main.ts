@@ -78,7 +78,7 @@ const defineSettings: SettingSchemaDesc[] = [
     key: "enableVisualModeIndicator",
     title: "Enable visual mode indicator",
     description: "Enable visual mode indicator",
-    default: true,
+    default: false,
     type: "boolean",
   },
 ];
