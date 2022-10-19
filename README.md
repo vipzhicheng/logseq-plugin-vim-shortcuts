@@ -48,7 +48,7 @@ This plugin provide some shortcuts which give Logseq a VIM-like feeling.
 - `ctrl+a`: Increase the first found number in block. Supports multiple selections and combo.
 - `ctrl+x`: Decrease the first found number in block. Supports multiple selections and combo.
 - `x`: Cut a leading character. Supports multiple selections.
-- `x`: Cut a leading word. Supports multiple selections.
+- `X`: Cut a leading word. Supports multiple selections.
 - `/`: Trigger search in page bar on the below. Supports smartcase.
 - `n`: Search next search match.
 - `N`: Search previous search match.
