@@ -1,5 +1,9 @@
 # CHANGELOG
 
+
+## v0.1.16
+
+- fix typo #26
 ## v0.1.15
 
 - feat: add visual mode indicator
