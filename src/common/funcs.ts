@@ -300,7 +300,7 @@ export const debug = (msg: string, status = "success") => {
   }
 };
 
-const settingsVersion = "v2";
+const settingsVersion = "v3";
 export const defaultSettings = {
   keyBindings: {
     bottom: "shift+g",
@@ -315,14 +315,14 @@ export const defaultSettings = {
     down: "j",
     extend: "z o",
     extendAll: "z shift+o",
-    highlightFocusIn: "shift+l",
-    highlightFocusOut: "shift+h",
-    indent: "l",
+    highlightFocusIn: "l",
+    highlightFocusOut: "h",
+    indent: "shift+l",
     insert: ["shift+a", "a"],
     insertBefore: ["shift+i", "i"],
     nextNewBlock: "o",
     nextSibling: "shift+j",
-    outdent: "h",
+    outdent: "shift+h",
     pasteNext: "p",
     pastePrev: "shift+p",
     prevNewBlock: "shift+o",

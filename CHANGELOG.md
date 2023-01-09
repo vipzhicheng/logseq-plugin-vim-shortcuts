@@ -1,6 +1,11 @@
 # CHANGELOG
 
 
+## v0.1.17
+
+- fix: highlight focus in not work
+- adjust: replace `hl` and `HL`
+
 ## v0.1.16
 
 - fix typo #26

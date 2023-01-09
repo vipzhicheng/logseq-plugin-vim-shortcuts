@@ -38,6 +38,8 @@ export default (logseq: ILSPluginUser) => {
               let focusInBlock = block.children[block.children.length - 1];
               if (Array.isArray(focusInBlock) && focusInBlock[0] === "uuid") {
                 scrollToBlockInPage(page.name, focusInBlock[1]);
+              } else if (focusInBlock["uuid"]) {
+                scrollToBlockInPage(page.name, focusInBlock["uuid"]);
               }
             }
           }
