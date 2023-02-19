@@ -357,6 +357,7 @@ export const defaultSettings = {
   },
   settingsVersion,
   disabled: false,
+  showRecentEmojis: false,
 };
 
 export type DefaultSettingsType = typeof defaultSettings;
