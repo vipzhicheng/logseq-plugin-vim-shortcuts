@@ -81,6 +81,14 @@ const defineSettings: SettingSchemaDesc[] = [
     default: false,
     type: "boolean",
   },
+
+  {
+    key: "showRecentEmojis",
+    title: "Show recent emojis by default",
+    description: "Show recent emojis by default. Needs window reload.",
+    default: false,
+    type: "boolean",
+  },
 ];
 
 logseq.useSettingsSchema(defineSettings);

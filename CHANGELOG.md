@@ -1,6 +1,11 @@
 # CHANGELOG
 
 
+## v0.1.18
+
+- feat: add an option to show recent emoji by default. By the way, the default shortcut is `cmd+/` for triiger the emoji panel. #35
+- fix: jump into can not recognize tag correctly. #42
+
 ## v0.1.17
 
 - fix: highlight focus in not work
