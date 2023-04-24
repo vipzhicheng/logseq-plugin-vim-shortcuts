@@ -1,6 +1,11 @@
 import { defineStore } from "pinia";
 import { EmojiButton } from "@joeattardi/emoji-button";
-import { getNumber, hideMainUI, resetNumber } from "@/common/funcs";
+import {
+  getNumber,
+  hideMainUI,
+  resetNumber,
+  getSettings,
+} from "@/common/funcs";
 import "@logseq/libs";
 
 export const useEmojiStore = defineStore("emoji", {
@@ -12,10 +17,13 @@ export const useEmojiStore = defineStore("emoji", {
     async makePicker() {
       if (this.picker) return this.picker;
 
+      const settings = getSettings();
       const appUserConfig = await logseq.App.getUserConfigs();
+
       this.picker = new EmojiButton({
         position: "bottom-start",
         theme: appUserConfig.preferredThemeMode,
+        initialCategory: settings?.showRecentEmojis ? "recents" : null,
       });
 
       this.picker.on("emoji", async (selection) => {
