@@ -300,7 +300,7 @@ export const debug = (msg: string, status = "success") => {
   }
 };
 
-const settingsVersion = "v3";
+const settingsVersion = "v4";
 export const defaultSettings = {
   keyBindings: {
     bottom: "shift+g",
@@ -312,6 +312,8 @@ export const defaultSettings = {
     copyCurrentBlockContent: "y y",
     copyCurrentBlockRef: "shift+y",
     deleteCurrentBlock: "d d",
+    deleteCurrentAndNextSiblingBlocks: "d j",
+    deleteCurrentAndPrevSiblingBlocks: "d k",
     down: "j",
     extend: "z o",
     extendAll: "z shift+o",

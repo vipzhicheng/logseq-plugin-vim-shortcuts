@@ -3,6 +3,7 @@
 
 ## v0.1.18
 
+- feat: add delete prev and next blocks keybindings. #39
 - feat: add an option to show recent emoji by default. By the way, the default shortcut is `cmd+/` for triiger the emoji panel. #35
 - fix: jump into can not recognize tag correctly. #42
 

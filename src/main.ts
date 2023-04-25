@@ -72,6 +72,8 @@ import decrease from "./keybindings/decrease";
 import cut from "./keybindings/cut";
 import cutWord from "./keybindings/cutWord";
 import { SettingSchemaDesc } from "@logseq/libs/dist/LSPlugin.user";
+import deleteCurrentAndNextSiblingBlocks from "./keybindings/deleteCurrentAndNextSiblingBlocks";
+import deleteCurrentAndPrevSiblingBlocks from "./keybindings/deleteCurrentAndPrevSiblingBlocks";
 
 const defineSettings: SettingSchemaDesc[] = [
   {
@@ -148,6 +150,8 @@ async function main() {
   prevNewBlock(logseq);
 
   deleteCurrentBlock(logseq);
+  deleteCurrentAndNextSiblingBlocks(logseq);
+  deleteCurrentAndPrevSiblingBlocks(logseq);
 
   copyCurrentBlockContent(logseq);
   copyCurrentBlockRef(logseq);
