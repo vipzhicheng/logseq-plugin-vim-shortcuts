@@ -51,6 +51,21 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
         }
       }
     }
+  } else {
+    let blockUUID = lastBlockUUID || (await getCurrentBlockUUID());
+    if (blockUUID) {
+      let block = await logseq.Editor.getBlock(blockUUID);
+      const page = await logseq.Editor.getPage(block.page.id);
+      if (block?.uuid) {
+        const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
+        if (nextBlock?.uuid) {
+          scrollToBlockInPage(page.name, nextBlock.uuid);
+          return nextBlock?.uuid;
+        } else if (block.parent.id) {
+          await findNextBlockRecur(page, block);
+        }
+      }
+    }
   }
 };
 

@@ -32,6 +32,27 @@ const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
         }
       }
     }
+  } else {
+    let blockUUID = lastBlockUUID || (await getCurrentBlockUUID());
+    if (blockUUID) {
+      let block = await logseq.Editor.getBlock(blockUUID);
+      const page = await logseq.Editor.getPage(block.page.id);
+      if (block?.uuid) {
+        const prevBlock = await logseq.Editor.getPreviousSiblingBlock(
+          block.uuid
+        );
+        if (prevBlock?.uuid) {
+          scrollToBlockInPage(page.name, prevBlock.uuid);
+          return prevBlock.uuid;
+        } else if (block.parent.id) {
+          const parentBlock = await logseq.Editor.getBlock(block.parent.id);
+          if (parentBlock?.uuid) {
+            scrollToBlockInPage(page.name, parentBlock.uuid);
+            return parentBlock.uuid;
+          }
+        }
+      }
+    }
   }
 };
 
