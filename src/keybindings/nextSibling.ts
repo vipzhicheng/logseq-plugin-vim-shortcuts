@@ -26,7 +26,7 @@ const findNextBlockRecur = async (
         parentBlock?.uuid
       );
       if (parentNextBlock?.uuid) {
-        scrollToBlockInPage(page.name, parentNextBlock.uuid);
+        scrollToBlockInPage(page.name || page.uuid, parentNextBlock.uuid);
       } else if (parentBlock.parent.id) {
         await findNextBlockRecur(page, parentBlock);
       }
@@ -44,7 +44,7 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
       if (block?.uuid) {
         const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
         if (nextBlock?.uuid) {
-          scrollToBlockInPage(page.name, nextBlock.uuid);
+          scrollToBlockInPage(page.name || page.uuid, nextBlock.uuid);
           return nextBlock?.uuid;
         } else if (block.parent.id) {
           await findNextBlockRecur(page, block);
@@ -55,11 +55,10 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
     let blockUUID = lastBlockUUID || (await getCurrentBlockUUID());
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
-      const page = await logseq.Editor.getPage(block.page.id);
       if (block?.uuid) {
         const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
         if (nextBlock?.uuid) {
-          scrollToBlockInPage(page.name, nextBlock.uuid);
+          scrollToBlockInPage(page.uuid, nextBlock.uuid);
           return nextBlock?.uuid;
         } else if (block.parent.id) {
           await findNextBlockRecur(page, block);

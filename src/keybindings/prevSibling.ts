@@ -21,12 +21,12 @@ const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
           block.uuid
         );
         if (prevBlock?.uuid) {
-          scrollToBlockInPage(page.name, prevBlock.uuid);
+          scrollToBlockInPage(page.name || page.uuid, prevBlock.uuid);
           return prevBlock.uuid;
         } else if (block.parent.id) {
           const parentBlock = await logseq.Editor.getBlock(block.parent.id);
           if (parentBlock?.uuid) {
-            scrollToBlockInPage(page.name, parentBlock.uuid);
+            scrollToBlockInPage(page.name || page.uuid, parentBlock.uuid);
             return parentBlock.uuid;
           }
         }
@@ -36,18 +36,17 @@ const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
     let blockUUID = lastBlockUUID || (await getCurrentBlockUUID());
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
-      const page = await logseq.Editor.getPage(block.page.id);
       if (block?.uuid) {
         const prevBlock = await logseq.Editor.getPreviousSiblingBlock(
           block.uuid
         );
         if (prevBlock?.uuid) {
-          scrollToBlockInPage(page.name, prevBlock.uuid);
+          scrollToBlockInPage(page.uuid, prevBlock.uuid);
           return prevBlock.uuid;
         } else if (block.parent.id) {
           const parentBlock = await logseq.Editor.getBlock(block.parent.id);
           if (parentBlock?.uuid) {
-            scrollToBlockInPage(page.name, parentBlock.uuid);
+            scrollToBlockInPage(page.uuid, parentBlock.uuid);
             return parentBlock.uuid;
           }
         }

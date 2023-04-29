@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v0.1.19
+
+- fix: optimize prevSibling and nextSibling action. It can keep on block page now.
 
 ## v0.1.18
 
