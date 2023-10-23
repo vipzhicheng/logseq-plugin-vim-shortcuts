@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.1.20
+
+- fix: jump into tag scenario
+- infra: upgrade deps
+
 ## v0.1.19
 
 - fix: optimize prevSibling and nextSibling action. It can keep on block page now.

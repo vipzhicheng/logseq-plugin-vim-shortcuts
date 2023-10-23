@@ -31,9 +31,9 @@ export default (logseq: ILSPluginUser) => {
         resetNumber();
         const block = await logseq.Editor.getCurrentBlock();
         if (block?.content) {
-          if (/\[\[(.*?)\]\]|#([^\s,.'"!#:?/]+)/.test(block.content)) {
+          if (/\[\[(.*?)\]\]|#([^[\s,.'"!#:?/]+)/.test(block.content)) {
             const matchedAll = [
-              ...block.content.matchAll(/\[\[(.*?)\]\]|#([^\s,.'"!#:?/]+)/g),
+              ...block.content.matchAll(/\[\[(.*?)\]\]|#([^[\s,.'"!#:?/]+)/g),
             ];
 
             if (matchedAll[number - 1]) {
