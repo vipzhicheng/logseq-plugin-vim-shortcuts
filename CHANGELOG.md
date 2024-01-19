@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.21
+
+- fix: try to stay in the original page.
+
 ## v0.1.20
 
 - fix: jump into tag scenario
@@ -24,6 +28,7 @@
 ## v0.1.16
 
 - fix typo #26
+
 ## v0.1.15
 
 - feat: add visual mode indicator
@@ -50,7 +55,7 @@
 
 ## v0.1.10
 
-- feat: support `:NUMBER` to scroll to specific line or `:.NUMBER` represents scrolling to NUMBER * 100% of the page.
+- feat: support `:NUMBER` to scroll to specific line or `:.NUMBER` represents scrolling to NUMBER \* 100% of the page.
 - fix: optimize search a little bit.
 
 ## v0.1.9

@@ -397,15 +397,15 @@ export const getCurrentBlockUUID = async (): Promise<BlockUUID | undefined> => {
 export const getCurrentPage = async () => {
   let page = await logseq.Editor.getCurrentPage();
 
-  if (!page) {
-    let blockUUID = await getCurrentBlockUUID();
-    if (blockUUID) {
-      let block = await logseq.Editor.getBlock(blockUUID);
-      if (block?.page.id) {
-        page = await logseq.Editor.getPage(block.page.id);
-      }
-    }
-  }
+  // if (!page) {
+  //   let blockUUID = await getCurrentBlockUUID();
+  //   if (blockUUID) {
+  //     let block = await logseq.Editor.getBlock(blockUUID);
+  //     if (block?.page.id) {
+  //       page = await logseq.Editor.getPage(block.page.id);
+  //     }
+  //   }
+  // }
 
   if (page?.name) {
     tempCache.lastPage = page.name;
