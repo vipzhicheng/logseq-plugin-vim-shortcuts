@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.22
+
+- fix: hide Visual/Normal indicator by setting
+
 ## v0.1.21
 
 - fix: try to stay in the original page.

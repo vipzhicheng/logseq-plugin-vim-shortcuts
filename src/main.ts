@@ -203,7 +203,14 @@ async function main() {
 
   // setup ui hotkeys
   setHotkeys(logseq);
-  setVisualMode(false, false);
+  if (logseq.settings?.enableVisualModeIndicator) {
+    setVisualMode(false, false);
+  } else {
+    logseq.App.registerUIItem("pagebar", {
+      key: "vim-shortcut-mode",
+      template: ``,
+    });
+  }
 
   const emojiStore = useEmojiStore();
   emojiStore.initPicker();
