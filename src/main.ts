@@ -19,6 +19,7 @@ import bottom from "./keybindings/bottom";
 import changeCase from "./keybindings/changeCase";
 import changeCaseLowerCase from "./keybindings/changeCaseLowerCase";
 import changeCaseUpperCase from "./keybindings/changeCaseUpperCase";
+import changeCurrentBlock from "./keybindings/changeCurrentBlock";
 import collapse from "./keybindings/collapse";
 import command from "./keybindings/command";
 import copyCurrentBlockContent from "./keybindings/copyCurrentBlockContent";
@@ -152,6 +153,8 @@ async function main() {
   deleteCurrentBlock(logseq);
   deleteCurrentAndNextSiblingBlocks(logseq);
   deleteCurrentAndPrevSiblingBlocks(logseq);
+
+  changeCurrentBlock(logseq);
 
   copyCurrentBlockContent(logseq);
   copyCurrentBlockRef(logseq);
