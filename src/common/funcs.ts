@@ -293,7 +293,7 @@ export const clearMarks = async () => {
 };
 
 const debugMode = false;
-export const debug = (msg: string, status = "success") => {
+export const debug = (msg: any, status = "success") => {
   if (debugMode) {
     // logseq.App.showMsg(msg, status);
     console.log(msg);
@@ -307,6 +307,7 @@ export const defaultSettings = {
     changeCase: "mod+shift+u",
     changeCaseUpper: "g shift+u",
     changeCaseLower: "g u",
+    changeCurrentBlock: "d c",
     collapse: "z c",
     collapseAll: "z shift+c",
     copyCurrentBlockContent: "y y",

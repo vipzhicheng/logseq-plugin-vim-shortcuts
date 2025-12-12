@@ -26,6 +26,7 @@ This plugin provide some shortcuts which give Logseq a VIM-like feeling.
 - `o`: Insert an empty block to next sibling.
 - `O`: Insert an empty block to previous sibling.
 - `dd`: Delete current block. Child blocks will also be deleted, but only current block content in the clipboard.
+- `dc`: Change current block (delete content and change into edit mode). For selection the first block is changed, all the others are deleted, but only the top blocks content goes into the clipboard.
 - `dj`: Delete current and next blocks. Child blocks will also be deleted, but only current block content in the clipboard.
 - `dk`: Delete current and prev blocks. Child blocks will also be deleted, but only current block content in the clipboard.
 - `T`: Scroll to top, because Logseq uses `gg` to go to graph view.
