@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.24
+
+- chore: adjust github action config file
+
 ## v0.1.23
 
 - merge #65 and #66, thanks to @primeapple
