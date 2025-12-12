@@ -1,4 +1,5 @@
-[:coffee: Get me a coffee](https://www.buymeacoffee.com/vipzhicheng) if you like this plugin!
+[Get me a coffee](https://www.buymeacoffee.com/vipzhicheng) if you like this plugin!
+
 # logseq-plugin-vim-shortcuts
 
 [![Github All Releases](https://img.shields.io/github/downloads/vipzhicheng/logseq-plugin-vim-shortcuts/total.svg)](https://github.com/vipzhicheng/logseq-plugin-vim-shortcuts/releases)
@@ -94,7 +95,7 @@ NOTE: on Windows, the trigger is `ctrl+alt+;`
 
 #### Supported commands
 
-- `:NUMBER` to scroll to specific line or `:-NUMBER` to scroll to specific line to the end or `:.NUMBER` represents scrolling to NUMBER * 100% of the page.
+- `:NUMBER` to scroll to specific line or `:-NUMBER` to scroll to specific line to the end or `:.NUMBER` represents scrolling to NUMBER \* 100% of the page.
 - `:s/` and `:substitute/`: Replace current block according regex, e.g. `s/foo/bar/gi`, Notice it support Regex modifiers.
 - `:%s/`a nd `:%substitute/`: Replace current page blocks according regex, e.g. `%s/foo/bar/gi`.
 - `:marks`: Show marks.

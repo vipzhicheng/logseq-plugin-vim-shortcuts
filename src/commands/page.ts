@@ -8,6 +8,15 @@ const replaceBlock = async (block, regex, replace) => {
   await logseq.Editor.updateBlock(block.uuid, replaced);
 };
 
+function parseEscapeSequences(str) {
+  return str
+    .replace(/\\n/g, "\n")
+    .replace(/\\t/g, "\t")
+    .replace(/\\r/g, "\r")
+    .replace(/\\s/g, " ");
+  // 可以根据需要支持其他转义字符，比如 \\r, \\s 等
+}
+
 const walkReplace = async (blocks: any[], regex, replace) => {
   if (blocks && blocks.length > 0) {
     for (let block of blocks) {
@@ -122,7 +131,7 @@ export async function substituteBlock(value) {
   const splitReplace = value.trim().split("/");
   const search = splitReplace[1];
   if (search) {
-    const replace = splitReplace[2] || "";
+    const replace = parseEscapeSequences(splitReplace[2]) || "";
     const modifiers = splitReplace[3] || "";
     const regex = new RegExp(search, modifiers);
     const block = await logseq.Editor.getCurrentBlock();
@@ -148,7 +157,7 @@ export async function substitutePage(value) {
     const splitReplace = value.trim().split("/");
     const search = splitReplace[1];
     if (search) {
-      const replace = splitReplace[2] || "";
+      const replace = parseEscapeSequences(splitReplace[2]) || "";
       const modifiers = splitReplace[3] || "";
       const regex = new RegExp(search, modifiers);
       await walkReplace(blocks, regex, replace);
