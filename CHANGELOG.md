@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.1.23
+
+- merge #65 and #66, thanks to @primeapple
+- fix: optimize vim command substitute
+
 ## v0.1.22
 
 - fix: hide Visual/Normal indicator by setting
