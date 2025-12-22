@@ -41,52 +41,32 @@ const hasUpperCase = (keyword) => {
   return keyword.toLowerCase() !== keyword;
 };
 
-const searchBlock = (keyword, blocks, cursor = -1, dir = "next") => {
-  let newCursor;
-  if (dir === "next") {
-    if (cursor >= blocks.length - 1) {
-      return -1;
-    }
-    const rangeBlocks = blocks.slice(cursor + 1);
-    const found = rangeBlocks.findIndex((block) => {
-      let content = block.content;
-      if (!hasUpperCase(keyword)) {
-        content = content.toLowerCase();
-      }
+// Find all matches in all blocks
+const findAllMatches = (keyword, blocks) => {
+  const matches = [];
 
-      return content.indexOf(keyword) >= 0;
-    });
+  blocks.forEach((block, blockIndex) => {
+    let content = block.content;
+    const searchContent = hasUpperCase(keyword) ? content : content.toLowerCase();
+    const searchKeyword = hasUpperCase(keyword) ? keyword : keyword.toLowerCase();
 
-    if (found >= 0) {
-      newCursor = blocks.findIndex(
-        (block) => block.uuid === rangeBlocks[found].uuid
-      );
-    } else {
-      return -1;
-    }
-  } else {
-    if (cursor <= 0) {
-      return -1;
-    }
-    const rangeBlocks = blocks.slice(0, cursor).reverse();
-    const found = rangeBlocks.findIndex((block) => {
-      let content = block.content;
-      if (!hasUpperCase(keyword)) {
-        content = content.toLowerCase();
-      }
-      return content.indexOf(keyword) >= 0;
-    });
+    let position = 0;
+    let matchIndex = searchContent.indexOf(searchKeyword, position);
 
-    if (found >= 0) {
-      newCursor = blocks.findIndex(
-        (block) => block.uuid === rangeBlocks[found].uuid
-      );
-    } else {
-      return -1;
-    }
-  }
+    while (matchIndex >= 0) {
+      matches.push({
+        blockIndex,
+        matchOffset: matchIndex,
+        uuid: block.uuid,
+        content: block.content,
+      });
 
-  return newCursor;
+      position = matchIndex + 1;
+      matchIndex = searchContent.indexOf(searchKeyword, position);
+    }
+  });
+
+  return matches;
 };
 
 function splitTextFromHtml(htmlStr) {
@@ -117,7 +97,29 @@ function getAllIndexOf(s1, s2, str) {
   return tab;
 }
 
-function processBlockSegments(tab, input) {
+function processBlockSegments(tab, input, highlightOffset?: number) {
+  // If highlightOffset is specified, we need to track position across segments
+  if (highlightOffset !== undefined) {
+    let currentPos = 0;
+    for (let k = 0; k < tab.length; k++) {
+      if (tab[k].includes("<")) continue;
+
+      const segmentLength = tab[k].length;
+      const segmentStart = currentPos;
+      const segmentEnd = currentPos + segmentLength;
+
+      // Check if the highlight falls within this segment
+      if (highlightOffset >= segmentStart && highlightOffset < segmentEnd) {
+        const offsetInSegment = highlightOffset - segmentStart;
+        tab[k] = addHighlight(tab[k], input, offsetInSegment);
+      }
+
+      currentPos += segmentLength;
+    }
+    return tab;
+  }
+
+  // Original behavior: highlight first match in any segment
   for (let k = 0; k < tab.length; k++) {
     if (tab[k].includes("<")) continue;
     tab[k] = addHighlight(tab[k], input);
@@ -125,7 +127,23 @@ function processBlockSegments(tab, input) {
   return tab;
 }
 
-function addHighlight(word: string, input: string) {
+function addHighlight(word: string, input: string, highlightOffset?: number) {
+  // If highlightOffset is specified, only highlight that specific match
+  if (highlightOffset !== undefined) {
+    const startPos = highlightOffset;
+    if (startPos > -1 && startPos < word.length) {
+      word =
+        word.substring(0, startPos) +
+        `<mark class="vim-shortcuts-highlight">${word.substring(
+          startPos,
+          startPos + input.length
+        )}</mark>` +
+        word.substring(startPos + input.length);
+    }
+    return word;
+  }
+
+  // Original behavior: highlight first match
   const startPos = hasUpperCase(input)
     ? word.indexOf(input)
     : word.toLowerCase().indexOf(input);
@@ -141,17 +159,69 @@ function addHighlight(word: string, input: string) {
   return word;
 }
 
-function highlightInput(block, input) {
+function highlightInput(block, input, matchOffset?: number) {
   setTimeout(() => {
     const el = top!.document.getElementById(`block-content-${block.uuid}`);
 
     if (el) {
-      let spanTab: Element[] = [];
-      spanTab = splitTextFromHtml(el.innerHTML);
-      spanTab = processBlockSegments(spanTab, input);
-      el.innerHTML = spanTab.join("");
+      // If matchOffset is specified, we need to find the exact position in the text
+      if (matchOffset !== undefined) {
+        highlightAtTextOffset(el, matchOffset, input.length);
+      } else {
+        // Original behavior for backward compatibility
+        let spanTab: Element[] = [];
+        spanTab = splitTextFromHtml(el.innerHTML);
+        spanTab = processBlockSegments(spanTab, input, matchOffset);
+        el.innerHTML = spanTab.join("");
+      }
     }
   }, 200);
+}
+
+function highlightAtTextOffset(element: HTMLElement, offset: number, length: number) {
+  // Walk through all text nodes and find the one containing our offset
+  const walker = document.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT,
+    null
+  );
+
+  let currentOffset = 0;
+  let node: Node | null;
+
+  while ((node = walker.nextNode())) {
+    const textNode = node as Text;
+    const nodeLength = textNode.textContent?.length || 0;
+
+    // Check if our match starts in this text node
+    if (offset >= currentOffset && offset < currentOffset + nodeLength) {
+      const startInNode = offset - currentOffset;
+      const endInNode = Math.min(startInNode + length, nodeLength);
+
+      // Split the text node to insert the mark
+      const beforeText = textNode.textContent?.substring(0, startInNode) || "";
+      const matchText = textNode.textContent?.substring(startInNode, endInNode) || "";
+      const afterText = textNode.textContent?.substring(endInNode) || "";
+
+      const mark = document.createElement('mark');
+      mark.className = 'vim-shortcuts-highlight';
+      mark.textContent = matchText;
+
+      const fragment = document.createDocumentFragment();
+      if (beforeText) {
+        fragment.appendChild(document.createTextNode(beforeText));
+      }
+      fragment.appendChild(mark);
+      if (afterText) {
+        fragment.appendChild(document.createTextNode(afterText));
+      }
+
+      textNode.parentNode?.replaceChild(fragment, textNode);
+      return;
+    }
+
+    currentOffset += nodeLength;
+  }
 }
 
 export const useSearchStore = defineStore("search", {
@@ -160,6 +230,7 @@ export const useSearchStore = defineStore("search", {
     input: "",
     cursor: -1,
     flatedBlocks: [],
+    allMatches: [], // All match positions {blockIndex, matchOffset, uuid, content}
     currentPageName: "",
     timer: null,
   }),
@@ -207,27 +278,24 @@ export const useSearchStore = defineStore("search", {
           logseq.UI.showMsg("No page selected");
         }
 
-        this.cursor = searchBlock(
-          this.input,
-          this.flatedBlocks,
-          this.cursor,
-          "next"
-        );
+        // Find all matches
+        this.allMatches = findAllMatches(this.input, this.flatedBlocks);
 
-        if (this.cursor >= 0) {
-          const flatBlock = this.flatedBlocks[this.cursor];
+        if (this.allMatches.length > 0) {
+          this.cursor = 0;
+          const match = this.allMatches[this.cursor];
 
           // add highlight tag
           await clearCurrentPageBlocksHighlight();
 
           if (this.input) {
-            await expandParents(flatBlock.uuid);
+            await expandParents(match.uuid);
 
             logseq.Editor.scrollToBlockInPage(
               this.currentPageName,
-              flatBlock.uuid
+              match.uuid
             );
-            highlightInput(flatBlock, this.input);
+            highlightInput({ uuid: match.uuid }, this.input, match.matchOffset);
           }
         } else {
           logseq.UI.showMsg("Pattern not found: " + this.input);
@@ -245,27 +313,28 @@ export const useSearchStore = defineStore("search", {
         return;
       }
 
-      this.cursor = searchBlock(
-        this.input,
-        this.flatedBlocks,
-        this.cursor,
-        "next"
-      );
+      // Move to next match
+      this.cursor++;
 
-      if (this.cursor >= 0) {
-        const flatBlock = this.flatedBlocks[this.cursor];
+      // Wrap around if we reach the end
+      if (this.cursor >= this.allMatches.length) {
+        logseq.UI.showMsg("search hit BOTTOM, continuing at TOP");
+        this.cursor = 0;
+      }
+
+      if (this.allMatches.length > 0) {
+        const match = this.allMatches[this.cursor];
 
         // add highlight tag
         await clearCurrentPageBlocksHighlight();
 
-        logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
+        await expandParents(match.uuid);
+        logseq.Editor.scrollToBlockInPage(this.currentPageName, match.uuid);
         if (this.input) {
-          highlightInput(flatBlock, this.input);
+          highlightInput({ uuid: match.uuid }, this.input, match.matchOffset);
         }
       } else {
-        logseq.UI.showMsg("search hit BOTTOM, continuing at TOP");
-        this.cursor = -1;
-        await this.searchNext();
+        logseq.UI.showMsg("No matches found");
       }
     },
 
@@ -275,26 +344,28 @@ export const useSearchStore = defineStore("search", {
         return;
       }
 
-      this.cursor = searchBlock(
-        this.input,
-        this.flatedBlocks,
-        this.cursor,
-        "prev"
-      );
+      // Move to previous match
+      this.cursor--;
 
-      if (this.cursor >= 0) {
-        const flatBlock = this.flatedBlocks[this.cursor];
+      // Wrap around if we reach the beginning
+      if (this.cursor < 0) {
+        logseq.UI.showMsg("search hit TOP, continuing at BOTTOM");
+        this.cursor = this.allMatches.length - 1;
+      }
+
+      if (this.allMatches.length > 0) {
+        const match = this.allMatches[this.cursor];
 
         // add highlight tag
         await clearCurrentPageBlocksHighlight();
-        logseq.Editor.scrollToBlockInPage(this.currentPageName, flatBlock.uuid);
+
+        await expandParents(match.uuid);
+        logseq.Editor.scrollToBlockInPage(this.currentPageName, match.uuid);
         if (this.input) {
-          highlightInput(flatBlock, this.input);
+          highlightInput({ uuid: match.uuid }, this.input, match.matchOffset);
         }
       } else {
-        logseq.UI.showMsg("search hit TOP, continuing at BOTTOM");
-        this.cursor = this.flatedBlocks.length;
-        await this.searchPrev();
+        logseq.UI.showMsg("No matches found");
       }
     },
   },

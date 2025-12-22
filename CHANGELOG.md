@@ -4,6 +4,7 @@
 
 - fix: add `shift+.` and `shift+,` to indent and outdent block, thanks to @primeapple for the suggestion. #34
 - fix: adjust showMsg to use logseq.UI.showMsg instead of logseq.App.showMsg
+- feat: search highlight can match word multi times in block
 
 ## v0.1.24
 
