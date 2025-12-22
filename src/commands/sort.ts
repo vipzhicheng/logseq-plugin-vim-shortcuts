@@ -34,7 +34,7 @@ export async function sort() {
       return;
     } else {
       if (selected && selected.length > 1) {
-        logseq.App.showMsg("Please select only one block!");
+        logseq.UI.showMsg("Please select only one block!");
         return;
       }
     }
@@ -46,7 +46,7 @@ export async function sort() {
   if (pageMode) {
     const page = await logseq.Editor.getCurrentPage();
     if (!page) {
-      logseq.App.showMsg("No page selected");
+      logseq.UI.showMsg("No page selected");
       return;
     }
 
@@ -107,7 +107,7 @@ export async function rsort() {
       return;
     } else {
       if (selected && selected.length > 1) {
-        logseq.App.showMsg("Please select only one block!");
+        logseq.UI.showMsg("Please select only one block!");
         return;
       }
     }
@@ -119,7 +119,7 @@ export async function rsort() {
   if (pageMode) {
     const page = await logseq.Editor.getCurrentPage();
     if (!page) {
-      logseq.App.showMsg("No page selected");
+      logseq.UI.showMsg("No page selected");
       return;
     }
 

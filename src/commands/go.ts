@@ -126,7 +126,7 @@ export async function goOrCreate(pageName, opts) {
       const page = await logseq.Editor.getPage(block.page.id);
       await logseq.Editor.scrollToBlockInPage(page.name, blockId);
     } else {
-      logseq.App.showMsg("Block not exist!");
+      logseq.UI.showMsg("Block not exist!");
     }
   }
   hideMainUI();
@@ -153,7 +153,7 @@ export async function go(pageName, opts) {
       let page = await logseq.Editor.getPage(pageName);
 
       if (!page) {
-        logseq.App.showMsg(
+        logseq.UI.showMsg(
           "Page not exist! If you want create non-exist page, use go! command."
         );
       } else {
@@ -174,7 +174,7 @@ export async function go(pageName, opts) {
       const page = await logseq.Editor.getPage(block.page.id);
       await logseq.Editor.scrollToBlockInPage(page.name, blockId);
     } else {
-      logseq.App.showMsg("Block not exist!");
+      logseq.UI.showMsg("Block not exist!");
     }
   }
   hideMainUI();

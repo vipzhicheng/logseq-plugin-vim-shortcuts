@@ -7,7 +7,7 @@ const copyTextStore = useCopyTextStore();
 
 const handleClick = () => {
   clipboardy.write(copyTextStore.content);
-  logseq.App.showMsg("Copied to clipboard");
+  logseq.UI.showMsg("Copied to clipboard");
 };
 </script>
 

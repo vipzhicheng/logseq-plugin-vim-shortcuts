@@ -5,11 +5,11 @@ import { useCommandStore } from "@/stores/command";
 
 export async function generate(argv) {
   if (argv._.length < 1 || !argv._[0]) {
-    // logseq.App.showMsg("Please input at least one emoji.");
+    // logseq.UI.showMsg("Please input at least one emoji.");
     // popup emoji picker
     const isEditing = await logseq.Editor.checkEditing();
     if (!isEditing) {
-      logseq.App.showMsg("Please edit a block first.");
+      logseq.UI.showMsg("Please edit a block first.");
       return;
     }
     const emojiStore = useEmojiStore();
@@ -26,7 +26,7 @@ export async function generate(argv) {
   }
 
   if (argv._.length < 1) {
-    logseq.App.showMsg("Please input at least one emoji.");
+    logseq.UI.showMsg("Please input at least one emoji.");
     return;
   }
 

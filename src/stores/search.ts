@@ -204,7 +204,7 @@ export const useSearchStore = defineStore("search", {
         this.currentPageName = page ? page.name : "";
 
         if (!this.currentPageName) {
-          logseq.App.showMsg("No page selected");
+          logseq.UI.showMsg("No page selected");
         }
 
         this.cursor = searchBlock(
@@ -230,7 +230,7 @@ export const useSearchStore = defineStore("search", {
             highlightInput(flatBlock, this.input);
           }
         } else {
-          logseq.App.showMsg("Pattern not found: " + this.input);
+          logseq.UI.showMsg("Pattern not found: " + this.input);
         }
 
         if (hideUI) {
@@ -241,7 +241,7 @@ export const useSearchStore = defineStore("search", {
 
     async searchNext() {
       if (!this.input) {
-        logseq.App.showMsg("No search pattern provide, press / to input!");
+        logseq.UI.showMsg("No search pattern provide, press / to input!");
         return;
       }
 
@@ -263,7 +263,7 @@ export const useSearchStore = defineStore("search", {
           highlightInput(flatBlock, this.input);
         }
       } else {
-        logseq.App.showMsg("search hit BOTTOM, continuing at TOP");
+        logseq.UI.showMsg("search hit BOTTOM, continuing at TOP");
         this.cursor = -1;
         await this.searchNext();
       }
@@ -271,7 +271,7 @@ export const useSearchStore = defineStore("search", {
 
     async searchPrev() {
       if (!this.input) {
-        logseq.App.showMsg("No search pattern provide, press / to input!");
+        logseq.UI.showMsg("No search pattern provide, press / to input!");
         return;
       }
 
@@ -292,7 +292,7 @@ export const useSearchStore = defineStore("search", {
           highlightInput(flatBlock, this.input);
         }
       } else {
-        logseq.App.showMsg("search hit TOP, continuing at BOTTOM");
+        logseq.UI.showMsg("search hit TOP, continuing at BOTTOM");
         this.cursor = this.flatedBlocks.length;
         await this.searchPrev();
       }

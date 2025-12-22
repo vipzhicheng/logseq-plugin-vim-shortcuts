@@ -181,7 +181,7 @@ const handleEnter = async () => {
           }
         }
       } else {
-        logseq.App.showMsg("Unknown command: " + cmd);
+        logseq.UI.showMsg("Unknown command: " + cmd);
       }
       break;
   }
@@ -293,7 +293,6 @@ const querySearch = (queryString: string, cb: any) => {
 };
 
 const handleClose = () => {
-  logseq.App.showMsg("Quit VIM command mode.");
   hideMainUI();
 };
 </script>
@@ -306,7 +305,7 @@ const handleClose = () => {
     :trigger-on-focus="commandStore.triggerOnFocus"
     :highlight-first-item="true"
     :teleported="false"
-    class="w-full command-input absolute bottom-0 font-mono font-bold z-40"
+    class="absolute bottom-0 z-40 w-full font-mono font-bold command-input"
     popper-class="w-[99%] overflow-hidden"
     size="large"
     placement="bottom-start"

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.1.25
+
+- fix: add `shift+.` and `shift+,` to indent and outdent block, thanks to @primeapple for the suggestion. #34
+- fix: adjust showMsg to use logseq.UI.showMsg instead of logseq.App.showMsg
+
 ## v0.1.24
 
 - chore: adjust github action config file

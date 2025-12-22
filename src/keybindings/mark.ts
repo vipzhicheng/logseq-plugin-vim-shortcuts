@@ -63,10 +63,10 @@ export default (logseq: ILSPluginUser) => {
               );
             }
             await setMark(number, page.name, block.uuid);
-            logseq.App.showMsg(`Mark ${number} saved`);
+            logseq.UI.showMsg(`Mark ${number} saved`);
           } else {
             await setMark(number, page.name);
-            logseq.App.showMsg(`Mark ${number} saved`);
+            logseq.UI.showMsg(`Mark ${number} saved`);
           }
         }
       }

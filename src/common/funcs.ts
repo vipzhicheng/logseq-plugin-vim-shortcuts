@@ -133,9 +133,9 @@ export const updateVisualModeIndicator = (visualMode: boolean) => {
 
 export const setVisualMode = (visualMode: boolean, message = true) => {
   if (visualMode) {
-    message && logseq.App.showMsg("Visual block mode enabled", "success");
+    message && logseq.UI.showMsg("Visual block mode enabled", "success");
   } else {
-    message && logseq.App.showMsg("Visual block mode disabled", "success");
+    message && logseq.UI.showMsg("Visual block mode disabled", "success");
   }
   updateVisualModeIndicator(visualMode);
   tempCache.visualMode = visualMode;
@@ -295,7 +295,7 @@ export const clearMarks = async () => {
 const debugMode = false;
 export const debug = (msg: any, status = "success") => {
   if (debugMode) {
-    // logseq.App.showMsg(msg, status);
+    // logseq.UI.showMsg(msg, status);
     console.log(msg);
   }
 };
@@ -320,12 +320,12 @@ export const defaultSettings = {
     extendAll: "z shift+o",
     highlightFocusIn: "l",
     highlightFocusOut: "h",
-    indent: "shift+l",
+    indent: ["shift+l", "shift+."],
     insert: ["shift+a", "a"],
     insertBefore: ["shift+i", "i"],
     nextNewBlock: "o",
     nextSibling: "shift+j",
-    outdent: "shift+h",
+    outdent: ["shift+h", "shift+,"],
     pasteNext: "p",
     pastePrev: "shift+p",
     prevNewBlock: "shift+o",

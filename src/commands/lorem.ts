@@ -3,7 +3,7 @@ import { loremIpsum } from "lorem-ipsum";
 export async function generate(argv) {
   let block = await logseq.Editor.getCurrentBlock();
   if (!block) {
-    logseq.App.showMsg("No block selected!");
+    logseq.UI.showMsg("No block selected!");
     return;
   }
 

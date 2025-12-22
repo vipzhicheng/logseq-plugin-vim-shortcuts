@@ -16,7 +16,7 @@ export default (logseq: ILSPluginUser) => {
 
     const isEditing = await logseq.Editor.checkEditing();
     if (!isEditing) {
-      logseq.App.showMsg("Please edit a block first.");
+      logseq.UI.showMsg("Please edit a block first.");
       return;
     }
     const emojiStore = useEmojiStore();

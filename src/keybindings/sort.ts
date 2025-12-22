@@ -32,7 +32,7 @@ export default (logseq: ILSPluginUser) => {
         }
       } else {
         if (selected && selected.length > 1) {
-          logseq.App.showMsg("Please select only one block!");
+          logseq.UI.showMsg("Please select only one block!");
           return;
         }
       }
@@ -70,7 +70,7 @@ export default (logseq: ILSPluginUser) => {
         }
       } else {
         if (selected && selected.length > 1) {
-          logseq.App.showMsg("Please select only one block!");
+          logseq.UI.showMsg("Please select only one block!");
           return;
         }
       }
