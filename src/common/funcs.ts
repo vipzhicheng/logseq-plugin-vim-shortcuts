@@ -15,13 +15,14 @@ import { useSearchStore } from "@/stores/search";
 
 export const clearBlocksHighlight = async (blocks: BlockEntity[]) => {
   for (const block of blocks) {
-    const regex = /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/;
     const el = top!.document.getElementById(`block-content-${block.uuid}`);
-    if (el?.innerHTML && regex.test(el.innerHTML)) {
+    if (el?.innerHTML) {
+      // Use global regex to replace ALL highlight marks in this block
+      const regex = /<mark class="vim-shortcuts-highlight">(.*?)<\/mark>/g;
       el.innerHTML = el.innerHTML.replace(regex, "$1");
     }
 
-    if (block.children.length > 0) {
+    if (block.children && block.children.length > 0) {
       await clearBlocksHighlight(block.children as BlockEntity[]);
     }
   }

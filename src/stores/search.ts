@@ -179,18 +179,22 @@ function highlightInput(block, input, matchOffset?: number) {
 }
 
 function highlightAtTextOffset(element: HTMLElement, offset: number, length: number) {
-  // Walk through all text nodes and find the one containing our offset
+  // Get all text nodes first (before any DOM modification)
+  const textNodes: Text[] = [];
   const walker = document.createTreeWalker(
     element,
     NodeFilter.SHOW_TEXT,
     null
   );
 
-  let currentOffset = 0;
   let node: Node | null;
-
   while ((node = walker.nextNode())) {
-    const textNode = node as Text;
+    textNodes.push(node as Text);
+  }
+
+  // Find the target text node
+  let currentOffset = 0;
+  for (const textNode of textNodes) {
     const nodeLength = textNode.textContent?.length || 0;
 
     // Check if our match starts in this text node
@@ -233,6 +237,7 @@ export const useSearchStore = defineStore("search", {
     allMatches: [], // All match positions {blockIndex, matchOffset, uuid, content}
     currentPageName: "",
     timer: null,
+    isSearching: false, // Flag to prevent concurrent searches
   }),
   actions: {
     toggle() {
@@ -257,52 +262,72 @@ export const useSearchStore = defineStore("search", {
       }
 
       this.timer = setTimeout(async () => {
-        this.cursor = -1;
-        let flatedBlocks = [];
-        let page = await logseq.Editor.getCurrentPage();
-        if (page) {
-          const blocks = await logseq.Editor.getCurrentPageBlocksTree();
-          flatedBlocks = flatBlocks(blocks);
-        } else {
-          const block = await logseq.Editor.getCurrentBlock();
-          if (block) {
-            page = await logseq.Editor.getPage(block.page.id);
-            const blocks = await logseq.Editor.getPageBlocksTree(page.name);
-            flatedBlocks = flatBlocks(blocks);
-          }
-        }
-        this.flatedBlocks = flatedBlocks;
-        this.currentPageName = page ? page.name : "";
-
-        if (!this.currentPageName) {
-          logseq.UI.showMsg("No page selected");
+        // Prevent concurrent searches
+        if (this.isSearching) {
+          return;
         }
 
-        // Find all matches
-        this.allMatches = findAllMatches(this.input, this.flatedBlocks);
-
-        if (this.allMatches.length > 0) {
-          this.cursor = 0;
-          const match = this.allMatches[this.cursor];
-
-          // add highlight tag
+        // Clear highlights if input is empty
+        if (!this.input || this.input.trim() === "") {
           await clearCurrentPageBlocksHighlight();
-
-          if (this.input) {
-            await expandParents(match.uuid);
-
-            logseq.Editor.scrollToBlockInPage(
-              this.currentPageName,
-              match.uuid
-            );
-            highlightInput({ uuid: match.uuid }, this.input, match.matchOffset);
-          }
-        } else {
-          logseq.UI.showMsg("Pattern not found: " + this.input);
+          this.cursor = -1;
+          this.allMatches = [];
+          this.flatedBlocks = [];
+          return;
         }
 
-        if (hideUI) {
-          hideMainUI();
+        this.isSearching = true;
+        try {
+          this.cursor = -1;
+          let flatedBlocks = [];
+          let page = await logseq.Editor.getCurrentPage();
+          if (page) {
+            const blocks = await logseq.Editor.getCurrentPageBlocksTree();
+            flatedBlocks = flatBlocks(blocks);
+          } else {
+            const block = await logseq.Editor.getCurrentBlock();
+            if (block) {
+              page = await logseq.Editor.getPage(block.page.id);
+              const blocks = await logseq.Editor.getPageBlocksTree(page.name);
+              flatedBlocks = flatBlocks(blocks);
+            }
+          }
+          this.flatedBlocks = flatedBlocks;
+          this.currentPageName = page ? page.name : "";
+
+          if (!this.currentPageName) {
+            logseq.UI.showMsg("No page selected");
+            return;
+          }
+
+          // Find all matches
+          this.allMatches = findAllMatches(this.input, this.flatedBlocks);
+
+          if (this.allMatches.length > 0) {
+            this.cursor = 0;
+            const match = this.allMatches[this.cursor];
+
+            // add highlight tag
+            await clearCurrentPageBlocksHighlight();
+
+            if (this.input) {
+              await expandParents(match.uuid);
+
+              logseq.Editor.scrollToBlockInPage(
+                this.currentPageName,
+                match.uuid
+              );
+              highlightInput({ uuid: match.uuid }, this.input, match.matchOffset);
+            }
+          } else {
+            logseq.UI.showMsg("Pattern not found: " + this.input);
+          }
+
+          if (hideUI) {
+            hideMainUI();
+          }
+        } finally {
+          this.isSearching = false;
         }
       }, 300);
     },
@@ -367,6 +392,14 @@ export const useSearchStore = defineStore("search", {
       } else {
         logseq.UI.showMsg("No matches found");
       }
+    },
+
+    // Get current match information
+    getCurrentMatch() {
+      if (this.cursor >= 0 && this.cursor < this.allMatches.length) {
+        return this.allMatches[this.cursor];
+      }
+      return null;
     },
   },
 });
