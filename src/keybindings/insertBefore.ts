@@ -40,8 +40,8 @@ export default (logseq: ILSPluginUser) => {
             const searchStore = useSearchStore();
             const currentMatch = searchStore.getCurrentMatch();
 
-            if (currentMatch && currentMatch.uuid === blockUUID && searchStore.input) {
-              // Insert at the start of the match
+            if (currentMatch && currentMatch.uuid === blockUUID && (searchStore.input || searchStore.cursorMode)) {
+              // Insert at the start of the match or cursor position
               await logseq.Editor.editBlock(blockUUID, {
                 pos: currentMatch.matchOffset,
               });

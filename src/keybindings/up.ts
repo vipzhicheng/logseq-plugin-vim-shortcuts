@@ -6,6 +6,7 @@ import {
   getVisualMode,
   resetNumber,
 } from "@/common/funcs";
+import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
@@ -18,13 +19,22 @@ export default (logseq: ILSPluginUser) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-up-" + index,
-        label: "up",
+        label: "up or move cursor up",
         keybinding: {
           mode: "non-editing",
           binding,
         },
       },
       async () => {
+        const searchStore = useSearchStore();
+
+        // If in cursor mode, move cursor up (to previous block)
+        if (searchStore.cursorMode) {
+          debug("Move cursor up");
+          await searchStore.moveCursorUp();
+          return;
+        }
+
         const number = getNumber();
         resetNumber();
 

@@ -29,6 +29,9 @@ export default (logseq: ILSPluginUser) => {
       async () => {
         debug("Search Cleanup");
         await clearCurrentPageBlocksHighlight();
+        // Clear cursor mode as well
+        const searchStore = useSearchStore();
+        searchStore.clearCursor();
       }
     );
   });

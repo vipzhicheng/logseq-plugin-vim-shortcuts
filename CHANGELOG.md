@@ -1,12 +1,14 @@
 # CHANGELOG
 
-## v0.1.25
+## v0.2.0
 
 - fix: add `shift+.` and `shift+,` to indent and outdent block, thanks to @primeapple for the suggestion. #34
+- fix: use `shift+h` and `shift+l` to focus in and out block level.
 - fix: adjust showMsg to use logseq.UI.showMsg instead of logseq.App.showMsg
 - feat: search highlight can match word multi times in block
 - feat: search highlight can use a/A/i/I/d c to edit like VIM
 - fix: adjust some key bindings.
+- feat: big feature, add cursor to block in normal mode.
 
 ## v0.1.24
 

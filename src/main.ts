@@ -34,6 +34,16 @@ import indent from "./keybindings/indent";
 import insert from "./keybindings/insert";
 import insertBefore from "./keybindings/insertBefore";
 import joinNextLine from "./keybindings/joinNextLine";
+import left from "./keybindings/left";
+import right from "./keybindings/right";
+import wordForward from "./keybindings/wordForward";
+import wordBackward from "./keybindings/wordBackward";
+import wordEnd from "./keybindings/wordEnd";
+import lineEnd from "./keybindings/lineEnd";
+import findChar from "./keybindings/findChar";
+import findCharBackward from "./keybindings/findCharBackward";
+import repeatCharSearch from "./keybindings/repeatCharSearch";
+import repeatCharSearchReverse from "./keybindings/repeatCharSearchReverse";
 import jumpInto from "./keybindings/jumpInto";
 import mark from "./keybindings/mark";
 import nextNewBlock from "./keybindings/nextNewBlock";
@@ -111,6 +121,14 @@ async function main() {
   // settings
   initSettings();
 
+  // Inject CSS for vim-shortcuts-highlight to Logseq main page
+  logseq.provideStyle(`
+    mark.vim-shortcuts-highlight {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  `);
+
   logseq.provideModel({
     toggleVisualMode() {
       const visualMode = getVisualMode();
@@ -143,6 +161,18 @@ async function main() {
 
   up(logseq);
   down(logseq);
+
+  left(logseq);
+  right(logseq);
+
+  wordForward(logseq);
+  wordBackward(logseq);
+  wordEnd(logseq);
+  lineEnd(logseq);
+  findChar(logseq);
+  findCharBackward(logseq);
+  repeatCharSearch(logseq);
+  repeatCharSearchReverse(logseq);
 
   indent(logseq);
   outdent(logseq);
@@ -344,6 +374,27 @@ async function main() {
     }
     // console.log(e);
   };
+
+  // Global keydown handler for character search (f/t commands)
+  const handleGlobalKeydown = async (e: KeyboardEvent) => {
+    const searchStore = useSearchStore();
+
+    if (searchStore.waitingForChar) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (e.key === "Escape") {
+        searchStore.cancelCharSearch();
+        logseq.UI.showMsg("Cancelled", "info");
+      } else if (e.key.length === 1) {
+        // Single character key
+        await searchStore.handleCharInput(e.key);
+      }
+    }
+  };
+
+  // Add global keydown listener
+  window.top!.document.addEventListener("keydown", handleGlobalKeydown, true);
 
   logseq.on("ui:visible:changed", async ({ visible }) => {
     if (!visible) {

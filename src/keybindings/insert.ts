@@ -46,6 +46,11 @@ export default (logseq: ILSPluginUser) => {
             await logseq.Editor.editBlock(blockUUID, {
               pos: currentMatch.matchOffset + searchStore.input.length,
             });
+          } else if (currentMatch && currentMatch.uuid === blockUUID && searchStore.cursorMode) {
+            // Lowercase (no shift) - Insert after cursor position
+            await logseq.Editor.editBlock(blockUUID, {
+              pos: currentMatch.matchOffset + 1,
+            });
           } else {
             // Lowercase (no shift) - Default behavior: enter edit mode
             await logseq.Editor.editBlock(blockUUID);

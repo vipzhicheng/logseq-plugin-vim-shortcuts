@@ -6,6 +6,7 @@ import {
   getVisualMode,
   resetNumber,
 } from "@/common/funcs";
+import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
@@ -18,13 +19,22 @@ export default (logseq: ILSPluginUser) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-down-" + index,
-        label: "down",
+        label: "down or move cursor down",
         keybinding: {
           mode: "non-editing",
           binding,
         },
       },
       async () => {
+        const searchStore = useSearchStore();
+
+        // If in cursor mode, move cursor down (to next block)
+        if (searchStore.cursorMode) {
+          debug("Move cursor down");
+          await searchStore.moveCursorDown();
+          return;
+        }
+
         const number = getNumber();
         resetNumber();
 

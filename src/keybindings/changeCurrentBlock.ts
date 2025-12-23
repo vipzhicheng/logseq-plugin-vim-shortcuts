@@ -72,6 +72,13 @@ export default (logseq: ILSPluginUser) => {
             await deleteMatchAndEdit(blockUUID, currentMatch.matchOffset, searchStore.input.length);
             return;
           }
+
+          // If in cursor mode, delete the character at cursor position
+          if (currentMatch && currentMatch.uuid === blockUUID && searchStore.cursorMode) {
+            await deleteMatchAndEdit(blockUUID, currentMatch.matchOffset, 1);
+            searchStore.clearCursor();
+            return;
+          }
         }
 
         // Otherwise, use the original behavior (clear entire block or selection)
