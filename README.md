@@ -12,12 +12,12 @@ This plugin provide some shortcuts which give Logseq a VIM-like feeling.
 
 - `j`: Move to next line. In visual block mode, it is for selecting down.
 - `k`: Move to previous line. In visual block mode, it is for selecting up.
-- `h`: Highlight focus out to parent level.
-- `l`: Highlight focus into child level.
+- `H`: Highlight focus out to parent level.
+- `L`: Highlight focus into child level.
 - `J`: Move to next sibling. In visual block mode, it is for moving down.
 - `K`: Move to previous sibling. In visual block mode, it is for moving up.
-- `H`: Outdent.
-- `L`: Indent.
+- `<`: Outdent.
+- `>`: Indent.
 - `a` and `A`: Move the cursor to the end and enter edit mode.
 - `i` and `I`: Move the cursor to the beginning and enter edit mode.
 - `yy`: Copy current block content. Only supports one block – for copying multiple blocks, please use `cmd+c`.

@@ -6,6 +6,7 @@
 - fix: adjust showMsg to use logseq.UI.showMsg instead of logseq.App.showMsg
 - feat: search highlight can match word multi times in block
 - feat: search highlight can use a/A/i/I/d c to edit like VIM
+- fix: adjust some key bindings.
 
 ## v0.1.24
 
