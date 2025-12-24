@@ -39,6 +39,24 @@ const flatBlocks = (blocks: BlockEntity[]) => {
   return flat;
 };
 
+// Get all visible blocks in display order (depth-first traversal)
+// This respects collapsed state - only returns blocks that are visible in UI
+const getVisibleBlocksInOrder = async (blocks: BlockEntity[]): Promise<BlockEntity[]> => {
+  let visible: BlockEntity[] = [];
+
+  for (const block of blocks) {
+    visible.push(block);
+
+    // Only include children if block is not collapsed
+    if (block.children && block.children.length > 0 && !block["collapsed?"]) {
+      const childrenVisible = await getVisibleBlocksInOrder(block.children as BlockEntity[]);
+      visible = visible.concat(childrenVisible);
+    }
+  }
+
+  return visible;
+};
+
 // Check if keyword has upper case
 const hasUpperCase = (keyword) => {
   return keyword.toLowerCase() !== keyword;
@@ -844,70 +862,107 @@ export const useSearchStore = defineStore("search", {
       }
     },
 
-    // Move cursor down (j key) - switch to next block
+    // Move cursor down (j key) - switch to next visible block (cross-level)
     async moveCursorDown() {
       if (!this.cursorMode) return;
 
-      // Move to next block
       const currentBlock = await logseq.Editor.getCurrentBlock();
       if (!currentBlock) return;
 
-      // Try to move down (simulate 'j' key)
-      // We need to find the next block and switch to it
-      const nextBlock = await logseq.Editor.getNextSiblingBlock(currentBlock.uuid);
-      if (nextBlock) {
-        await logseq.Editor.selectBlock(nextBlock.uuid);
-
-        // Update cursor to new block
-        this.cursorBlockUUID = nextBlock.uuid;
-        this.cursorBlockContent = nextBlock.content;
-
-        // Normalize position to visible character
-        if (this.cursorPosition >= nextBlock.content.length) {
-          // Start from end and find last visible position
-          this.cursorPosition = normalizeToVisiblePosition(nextBlock.content, Math.max(0, nextBlock.content.length - 1));
-        } else {
-          // Normalize current position
-          this.cursorPosition = normalizeToVisiblePosition(nextBlock.content, this.cursorPosition);
+      // Get current page blocks tree
+      let page = await logseq.Editor.getCurrentPage();
+      let blocks;
+      if (page) {
+        blocks = await logseq.Editor.getCurrentPageBlocksTree();
+      } else {
+        const block = await logseq.Editor.getCurrentBlock();
+        if (block) {
+          page = await logseq.Editor.getPage(block.page.id);
+          blocks = await logseq.Editor.getPageBlocksTree(page.name);
         }
+      }
 
-        // Show cursor
-        if (nextBlock.content.length > 0) {
-          highlightInput({ uuid: nextBlock.uuid }, this.getCursorChar(), this.cursorPosition);
-        }
+      if (!blocks || blocks.length === 0) return;
+
+      // Get all visible blocks in display order
+      const visibleBlocks = await getVisibleBlocksInOrder(blocks);
+
+      // Find current block index
+      const currentIndex = visibleBlocks.findIndex(b => b.uuid === currentBlock.uuid);
+      if (currentIndex === -1 || currentIndex === visibleBlocks.length - 1) return;
+
+      // Get next block
+      const nextBlock = visibleBlocks[currentIndex + 1];
+      await logseq.Editor.selectBlock(nextBlock.uuid);
+
+      // Update cursor to new block
+      this.cursorBlockUUID = nextBlock.uuid;
+      this.cursorBlockContent = nextBlock.content;
+
+      // Normalize position to visible character
+      if (this.cursorPosition >= nextBlock.content.length) {
+        // Start from end and find last visible position
+        this.cursorPosition = normalizeToVisiblePosition(nextBlock.content, Math.max(0, nextBlock.content.length - 1));
+      } else {
+        // Normalize current position
+        this.cursorPosition = normalizeToVisiblePosition(nextBlock.content, this.cursorPosition);
+      }
+
+      // Show cursor
+      if (nextBlock.content.length > 0) {
+        highlightInput({ uuid: nextBlock.uuid }, this.getCursorChar(), this.cursorPosition);
       }
     },
 
-    // Move cursor up (k key) - switch to previous block
+    // Move cursor up (k key) - switch to previous visible block (cross-level)
     async moveCursorUp() {
       if (!this.cursorMode) return;
 
-      // Move to previous block
       const currentBlock = await logseq.Editor.getCurrentBlock();
       if (!currentBlock) return;
 
-      // Try to move up
-      const prevBlock = await logseq.Editor.getPreviousSiblingBlock(currentBlock.uuid);
-      if (prevBlock) {
-        await logseq.Editor.selectBlock(prevBlock.uuid);
-
-        // Update cursor to new block
-        this.cursorBlockUUID = prevBlock.uuid;
-        this.cursorBlockContent = prevBlock.content;
-
-        // Normalize position to visible character
-        if (this.cursorPosition >= prevBlock.content.length) {
-          // Start from end and find last visible position
-          this.cursorPosition = normalizeToVisiblePosition(prevBlock.content, Math.max(0, prevBlock.content.length - 1));
-        } else {
-          // Normalize current position
-          this.cursorPosition = normalizeToVisiblePosition(prevBlock.content, this.cursorPosition);
+      // Get current page blocks tree
+      let page = await logseq.Editor.getCurrentPage();
+      let blocks;
+      if (page) {
+        blocks = await logseq.Editor.getCurrentPageBlocksTree();
+      } else {
+        const block = await logseq.Editor.getCurrentBlock();
+        if (block) {
+          page = await logseq.Editor.getPage(block.page.id);
+          blocks = await logseq.Editor.getPageBlocksTree(page.name);
         }
+      }
 
-        // Show cursor
-        if (prevBlock.content.length > 0) {
-          highlightInput({ uuid: prevBlock.uuid }, this.getCursorChar(), this.cursorPosition);
-        }
+      if (!blocks || blocks.length === 0) return;
+
+      // Get all visible blocks in display order
+      const visibleBlocks = await getVisibleBlocksInOrder(blocks);
+
+      // Find current block index
+      const currentIndex = visibleBlocks.findIndex(b => b.uuid === currentBlock.uuid);
+      if (currentIndex === -1 || currentIndex === 0) return;
+
+      // Get previous block
+      const prevBlock = visibleBlocks[currentIndex - 1];
+      await logseq.Editor.selectBlock(prevBlock.uuid);
+
+      // Update cursor to new block
+      this.cursorBlockUUID = prevBlock.uuid;
+      this.cursorBlockContent = prevBlock.content;
+
+      // Normalize position to visible character
+      if (this.cursorPosition >= prevBlock.content.length) {
+        // Start from end and find last visible position
+        this.cursorPosition = normalizeToVisiblePosition(prevBlock.content, Math.max(0, prevBlock.content.length - 1));
+      } else {
+        // Normalize current position
+        this.cursorPosition = normalizeToVisiblePosition(prevBlock.content, this.cursorPosition);
+      }
+
+      // Show cursor
+      if (prevBlock.content.length > 0) {
+        highlightInput({ uuid: prevBlock.uuid }, this.getCursorChar(), this.cursorPosition);
       }
     },
 

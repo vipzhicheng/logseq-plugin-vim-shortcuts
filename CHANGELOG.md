@@ -9,6 +9,7 @@
 - feat: search highlight can use a/A/i/I/d c to edit like VIM
 - fix: adjust some key bindings.
 - feat: big feature, add cursor to block in normal mode.
+- fix: optimize j and k to move across block levels.
 
 ## v0.1.24
 
