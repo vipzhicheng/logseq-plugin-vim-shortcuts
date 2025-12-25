@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(pnpm install:*)",
-      "Bash(pnpm run build:*)"
-    ]
-  }
-}

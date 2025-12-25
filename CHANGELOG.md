@@ -11,6 +11,8 @@
 - feat: big feature, add cursor to block in normal mode.
 - fix: optimize j and k to move across block levels.
 - feat: add visual mode to select text in block.
+- feat: improve marks UI and functionality.
+- chore: upgrade deps.
 
 ## v0.1.24
 

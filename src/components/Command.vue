@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import "@logseq/libs";
 import minimist from "minimist";
+import { ref, watch, onUnmounted } from "vue";
 
 import * as commands from "@/commands";
 import { useCommandStore } from "@/stores/command";
@@ -176,7 +177,7 @@ const handleEnter = async () => {
             }
           }
           if (line !== undefined) {
-            logseq.Editor.scrollToBlockInPage(page.name, blocks[line].uuid);
+            logseq.Editor.scrollToBlockInPage(page.name as string, blocks[line].uuid);
             hideMainUI();
           }
         }
@@ -295,12 +296,68 @@ const querySearch = (queryString: string, cb: any) => {
 const handleClose = () => {
   hideMainUI();
 };
+
+const handleClickOutside = (event: MouseEvent) => {
+  const target = event.target as HTMLElement;
+  const commandInput = document.querySelector('.command-input');
+  const commandPopper = document.querySelector('.el-autocomplete__popper');
+
+  // Check if click is outside input
+  if (commandInput && !commandInput.contains(target)) {
+    // If popper exists, also check if click is outside popper
+    if (commandPopper) {
+      if (!commandPopper.contains(target)) {
+        hideMainUI();
+      }
+    } else {
+      // No popper, just hide
+      hideMainUI();
+    }
+  }
+};
+
+const handlePrependClick = () => {
+  commandStore.enableTriggerOnFocus();
+  const $input = document.querySelector('.command-input input') as HTMLInputElement;
+  if ($input) {
+    $input.focus();
+    // Trigger suggestions to show all commands
+    setTimeout(() => {
+      $input.dispatchEvent(new Event('focus'));
+    }, 100);
+  }
+};
+
+// Add/remove click outside listener
+watch(() => commandStore.visible, (visible) => {
+  if (visible) {
+    setTimeout(() => {
+      // Add listener to both plugin document and parent document (Logseq main window)
+      document.addEventListener('click', handleClickOutside, true);
+      if (parent && parent.document) {
+        parent.document.addEventListener('click', handleClickOutside, true);
+      }
+    }, 100);
+  } else {
+    document.removeEventListener('click', handleClickOutside, true);
+    if (parent && parent.document) {
+      parent.document.removeEventListener('click', handleClickOutside, true);
+    }
+  }
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside, true);
+  if (parent && parent.document) {
+    parent.document.removeEventListener('click', handleClickOutside, true);
+  }
+});
 </script>
 
 <template>
+  <div v-show="commandStore.visible">
   <el-autocomplete
     v-model="commandStore.input"
-    v-show="commandStore.visible"
     :fetch-suggestions="querySearch"
     :trigger-on-focus="commandStore.triggerOnFocus"
     :highlight-first-item="true"
@@ -311,13 +368,15 @@ const handleClose = () => {
     placement="bottom-start"
     @select="handleSelect"
   >
-    <template #prepend>:</template>
+    <template #prepend>
+      <div @click="handlePrependClick" class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 px-2 -mx-2">:</div>
+    </template>
     <template #append>
-      <el-button class="command-run" @click="handleEnter" type="primary">
-        Run
+      <el-button class="command-run" @click="handleEnter" type="primary" title="Run (Enter)">
+        ✓
       </el-button>
-      <el-button class="command-close" @click="handleClose" type="primary">
-        Close
+      <el-button class="command-close" @click="handleClose" type="primary" title="Close (Esc)">
+        ✕
       </el-button>
     </template>
     <template #default="{ item }">
@@ -329,6 +388,7 @@ const handleClose = () => {
       </div>
     </template>
   </el-autocomplete>
+  </div>
 </template>
 
 <style>

@@ -2,9 +2,13 @@ import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
 import {
   debug,
   getCurrentPage,
-  getMark,
+  getBlockMark,
+  getPageMark,
+  getBlockMarks,
+  getPageMarks,
   getNumber,
   getSettings,
+  hasExplicitNumber,
   resetNumber,
   setMark,
 } from "@/common/funcs";
@@ -15,6 +19,9 @@ export default (logseq: ILSPluginUser) => {
   const bindingsMarkSave = Array.isArray(settings.keyBindings.markSave)
     ? settings.keyBindings.markSave
     : [settings.keyBindings.markSave];
+  const bindingsMarkPageSave = Array.isArray(settings.keyBindings.markPageSave)
+    ? settings.keyBindings.markPageSave
+    : [settings.keyBindings.markPageSave];
   const bindingsMarkJump = Array.isArray(settings.keyBindings.markJump)
     ? settings.keyBindings.markJump
     : [settings.keyBindings.markJump];
@@ -23,6 +30,14 @@ export default (logseq: ILSPluginUser) => {
   )
     ? settings.keyBindings.markJumpSidebar
     : [settings.keyBindings.markJumpSidebar];
+  const bindingsMarkPageJump = Array.isArray(settings.keyBindings.markPageJump)
+    ? settings.keyBindings.markPageJump
+    : [settings.keyBindings.markPageJump];
+  const bindingsMarkPageJumpSidebar = Array.isArray(
+    settings.keyBindings.markPageJumpSidebar
+  )
+    ? settings.keyBindings.markPageJumpSidebar
+    : [settings.keyBindings.markPageJumpSidebar];
 
   bindingsMarkSave.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
@@ -37,8 +52,23 @@ export default (logseq: ILSPluginUser) => {
       async () => {
         debug("Save mark");
 
-        const number = getNumber();
+        let number = getNumber();
+        const explicitNumber = hasExplicitNumber();
         resetNumber();
+
+        // If no explicit number was provided, find the next available mark number
+        if (!explicitNumber) {
+          const marks = getBlockMarks();
+          const markNumbers = Object.keys(marks).map(key => parseInt(key, 10)).filter(n => !isNaN(n));
+
+          if (markNumbers.length > 0) {
+            // Find the maximum number and add 1
+            number = Math.max(...markNumbers) + 1;
+          } else {
+            // No marks exist, start from 1
+            number = 1;
+          }
+        }
 
         const page = await getCurrentPage();
         if (page?.name) {
@@ -89,16 +119,10 @@ export default (logseq: ILSPluginUser) => {
         const number = getNumber();
         resetNumber();
 
-        const mark = getMark(number);
+        const mark = getBlockMark(number);
 
         if (mark) {
-          if (mark.block) {
-            logseq.Editor.scrollToBlockInPage(mark.page, mark.block);
-          } else {
-            logseq.App.pushState("page", {
-              name: mark.page,
-            });
-          }
+          logseq.Editor.scrollToBlockInPage(mark.page, mark.block);
         }
       }
     );
@@ -120,16 +144,107 @@ export default (logseq: ILSPluginUser) => {
         const number = getNumber();
         resetNumber();
 
-        const mark = getMark(number);
+        const mark = getBlockMark(number);
 
         if (mark) {
-          if (mark.block) {
-            logseq.App.openInRightSidebar(mark.block);
+          logseq.Editor.openInRightSidebar(mark.block);
+        }
+      }
+    );
+  });
+
+  // Mark Page Save (M key)
+  bindingsMarkPageSave.forEach((binding, index) => {
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-save-page-mark-" + index,
+        label: "Save page mark",
+        keybinding: {
+          mode: "non-editing",
+          binding,
+        },
+      },
+      async () => {
+        debug("Save page mark");
+
+        let number = getNumber();
+        const explicitNumber = hasExplicitNumber();
+        resetNumber();
+
+        // If no explicit number was provided, find the next available mark number
+        if (!explicitNumber) {
+          const marks = getPageMarks();
+          const markNumbers = Object.keys(marks)
+            .map(key => parseInt(key, 10))
+            .filter(n => !isNaN(n));
+
+          if (markNumbers.length > 0) {
+            number = Math.max(...markNumbers) + 1;
           } else {
-            const page = await logseq.Editor.getPage(mark.page);
-            if (page?.uuid) {
-              logseq.App.openInRightSidebar(page.uuid);
-            }
+            number = 1;
+          }
+        }
+
+        const page = await getCurrentPage();
+        if (page?.name) {
+          await setMark(number, page.name as string); // No block UUID - page only
+          logseq.UI.showMsg(`Page mark ${number} saved`);
+        }
+      }
+    );
+  });
+
+  // Mark Page Jump (" key)
+  bindingsMarkPageJump.forEach((binding, index) => {
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-jump-page-mark-" + index,
+        label: "Jump to page mark",
+        keybinding: {
+          mode: "non-editing",
+          binding,
+        },
+      },
+      async () => {
+        debug("Jump to page mark");
+
+        const number = getNumber();
+        resetNumber();
+
+        const mark = getPageMark(number);
+
+        if (mark) {
+          logseq.App.pushState("page", {
+            name: mark.page,
+          });
+        }
+      }
+    );
+  });
+
+  // Mark Page Jump to Sidebar (mod+shift+' key)
+  bindingsMarkPageJumpSidebar.forEach((binding, index) => {
+    logseq.App.registerCommandPalette(
+      {
+        key: "vim-shortcut-jump-page-mark-sidebar-" + index,
+        label: "Jump to page mark in sidebar",
+        keybinding: {
+          mode: "non-editing",
+          binding,
+        },
+      },
+      async () => {
+        debug("Jump to page mark in sidebar");
+
+        const number = getNumber();
+        resetNumber();
+
+        const mark = getPageMark(number);
+
+        if (mark) {
+          const page = await logseq.Editor.getPage(mark.page);
+          if (page?.uuid) {
+            await logseq.Editor.openInRightSidebar(page.uuid);
           }
         }
       }

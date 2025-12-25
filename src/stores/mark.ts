@@ -1,5 +1,13 @@
 import { defineStore } from "pinia";
-import { clearMarks, delMark, getMark, getMarks } from "@/common/funcs";
+import {
+  clearMarks,
+  clearBlockMarks,
+  clearPageMarks,
+  delMark,
+  getMark,
+  getBlockMarks,
+  getPageMarks,
+} from "@/common/funcs";
 
 export const useMarkStore = defineStore("mark", {
   state: () => ({
@@ -7,6 +15,8 @@ export const useMarkStore = defineStore("mark", {
     title: "Marks",
     content: "",
     marks: [],
+    blockMarks: [],
+    pageMarks: [],
   }),
   actions: {
     toggle() {
@@ -15,26 +25,49 @@ export const useMarkStore = defineStore("mark", {
     close() {
       this.visible = false;
     },
-    async deleteMarks(numbers: string[]) {
-      for (let number of numbers) {
-        await delMark(number);
-      }
+    async deleteBlockMark(number: string) {
+      await delMark(number, false);
     },
-    getMark(number) {
-      return getMark(number);
+    async deletePageMark(number: string) {
+      await delMark(number, true);
+    },
+    async clearBlockMarks() {
+      await clearBlockMarks();
+    },
+    async clearPageMarks() {
+      await clearPageMarks();
+    },
+    getBlockMark(number: number) {
+      return getMark(number, false);
+    },
+    getPageMark(number: number) {
+      return getMark(number, true);
     },
     async clearMarks() {
       await clearMarks();
     },
     reload() {
-      const marksObj = getMarks();
-      this.marks = Object.keys(marksObj).map((key) => {
+      const blockMarksObj = getBlockMarks();
+      const pageMarksObj = getPageMarks();
+
+      this.blockMarks = Object.keys(blockMarksObj).map((key) => {
         return {
-          ...marksObj[key],
+          ...blockMarksObj[key],
           key,
-          color: marksObj[key].block ? "#b3e19d" : "#66b1ff",
+          color: "#b3e19d",
         };
       });
+
+      this.pageMarks = Object.keys(pageMarksObj).map((key) => {
+        return {
+          ...pageMarksObj[key],
+          key,
+          color: "#66b1ff",
+        };
+      });
+
+      // Merge for backward compatibility (if needed elsewhere)
+      this.marks = [...this.blockMarks, ...this.pageMarks];
     },
   },
 });

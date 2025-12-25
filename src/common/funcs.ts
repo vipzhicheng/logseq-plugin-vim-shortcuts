@@ -105,7 +105,6 @@ export const readClipboard = (): string => {
   return tempCache.clipboard;
 };
 
-
 const numberCache: N = {
   n: 1,
   lastChange: null,
@@ -125,6 +124,10 @@ export const getNumber = (): number => {
     resetNumber();
   }
   return numberCache.n;
+};
+
+export const hasExplicitNumber = (): boolean => {
+  return numberCache.lastChange !== null;
 };
 
 export const setNumber = (n: number) => {
@@ -202,55 +205,247 @@ export const hideMainUI = () => {
   resetCommandCursor();
 };
 
-let markCache: {
+let blockMarkCache: {
   [key: string]: {
     page: string;
-    block?: BlockUUID | undefined;
+    block: BlockUUID;
+    note?: string;
   };
 } = {};
+
+let pageMarkCache: {
+  [key: string]: {
+    page: string;
+    note?: string;
+  };
+} = {};
+
+/**
+ * Extract plain text from block content by removing special chars, HTML tags, and Markdown syntax
+ * @param content - The block content string
+ * @returns Plain text string, max 20 chars
+ */
+export const extractPlainText = (content: string): string => {
+  try {
+    if (!content || typeof content !== "string") return "";
+
+    let text = content;
+
+    // Remove Logseq properties (key:: value)
+    text = text.replace(/^[\w\-]+::\s*.+$/gm, "");
+    text = text.replace(/[\w\-]+::\s*[^\n]+/g, "");
+
+    // Remove HTML tags
+    text = text.replace(/<[^>]*>/g, "");
+
+    // Extract content from Logseq page references [[xyz]] -> xyz
+    text = text.replace(/\[\[(.+?)\]\]/g, "$1");
+
+    // Extract content from Logseq block references ((xyz)) -> xyz
+    text = text.replace(/\(\((.+?)\)\)/g, "$1");
+
+    // Remove Markdown syntax
+    text = text.replace(/\*\*(.+?)\*\*/g, "$1"); // Bold
+    text = text.replace(/__(.+?)__/g, "$1");
+    text = text.replace(/\*(.+?)\*/g, "$1"); // Italic
+    text = text.replace(/_(.+?)_/g, "$1");
+    text = text.replace(/~~(.+?)~~/g, "$1"); // Strikethrough
+    text = text.replace(/`(.+?)`/g, "$1"); // Inline code
+    text = text.replace(/==(.+?)==/g, "$1"); // Highlight
+    text = text.replace(/\[(.+?)\]\((.+?)\)/g, "$1"); // Links
+    text = text.replace(/^#{1,6}\s+/gm, ""); // Headers
+    text = text.replace(/^[-*]\s+\[([ x])\]\s+/gm, ""); // Task list
+    text = text.replace(/^[-*]\s+/gm, ""); // Unordered list
+    text = text.replace(/^>\s+/gm, ""); // Block quotes
+    text = text.replace(/^\d+\.\s+/gm, ""); // Ordered list
+
+    // Remove extra whitespace and newlines
+    text = text.replace(/\s+/g, " ").trim();
+
+    // Limit to 20 characters
+    return text.substring(0, 20);
+  } catch (error) {
+    console.error("Error extracting plain text:", error);
+    return "";
+  }
+};
 
 export const setMark = async (
   number: number,
   page: BlockPageName,
   block: BlockUUID | undefined = undefined
 ) => {
-  markCache[number] = {
-    page,
-    block,
-  };
+  try {
+    const storage = logseq.Assets.makeSandboxStorage();
 
-  const graphKey = await getGraphKey("markCache");
-  localStorage.setItem(graphKey, JSON.stringify(markCache));
-};
+    if (block) {
+      // Block mark - extract note from block content
+      let note = "";
+      try {
+        const blockEntity = await logseq.Editor.getBlock(block);
+        if (blockEntity && blockEntity.content) {
+          note = extractPlainText(blockEntity.content);
+        }
+      } catch (error) {
+        console.error("Failed to extract note from block:", error);
+        // Continue with empty note
+      }
 
-export const loadMarks = async () => {
-  const graphKey = await getGraphKey("markCache");
-  const markCacheStr = localStorage.getItem(graphKey);
-  if (markCacheStr) {
-    markCache = JSON.parse(markCacheStr) || {};
-  } else {
-    markCache = {};
+      blockMarkCache[number] = {
+        page,
+        block,
+        note,
+      };
+
+      await storage.setItem("block-marks.json", JSON.stringify(blockMarkCache));
+    } else {
+      // Page mark - use empty note initially
+      pageMarkCache[number] = {
+        page,
+        note: "",
+      };
+
+      await storage.setItem("page-marks.json", JSON.stringify(pageMarkCache));
+    }
+  } catch (error) {
+    console.error("Failed to set mark:", error);
+    throw error;
   }
 };
 
-export const getMark = (number: number) => {
-  return markCache[number] || undefined;
+export const loadMarks = async () => {
+  try {
+    const storage = logseq.Assets.makeSandboxStorage();
+
+    // Load block marks
+    const blockMarkCacheStr = await storage.getItem("block-marks.json");
+    if (blockMarkCacheStr) {
+      const loaded = JSON.parse(blockMarkCacheStr as string) || {};
+      // Ensure all entries have the note field for backward compatibility
+      blockMarkCache = {};
+      Object.keys(loaded).forEach((key) => {
+        blockMarkCache[key] = {
+          ...loaded[key],
+          note: loaded[key].note || "", // Add empty note if missing
+        };
+      });
+    } else {
+      blockMarkCache = {};
+    }
+
+    // Load page marks
+    const pageMarkCacheStr = await storage.getItem("page-marks.json");
+    if (pageMarkCacheStr) {
+      const loaded = JSON.parse(pageMarkCacheStr as string) || {};
+      // Ensure all entries have the note field for backward compatibility
+      pageMarkCache = {};
+      Object.keys(loaded).forEach((key) => {
+        pageMarkCache[key] = {
+          ...loaded[key],
+          note: loaded[key].note || "", // Add empty note if missing
+        };
+      });
+    } else {
+      pageMarkCache = {};
+    }
+  } catch (error) {
+    console.error("Failed to load marks:", error);
+    blockMarkCache = {};
+    pageMarkCache = {};
+  }
+};
+
+export const getMark = (
+  number: number,
+  isPageMark: boolean = false
+): { page: string; block: BlockUUID } | { page: string } | undefined => {
+  if (isPageMark) {
+    return pageMarkCache[number] || undefined;
+  } else {
+    return blockMarkCache[number] || undefined;
+  }
+};
+
+export const getBlockMark = (number: number) => {
+  return blockMarkCache[number] || undefined;
+};
+
+export const getPageMark = (number: number) => {
+  return pageMarkCache[number] || undefined;
 };
 
 export const getMarks = () => {
-  return markCache;
+  // Merge both caches for backward compatibility
+  const merged = {};
+  Object.keys(blockMarkCache).forEach((key) => {
+    merged[key] = blockMarkCache[key];
+  });
+  Object.keys(pageMarkCache).forEach((key) => {
+    merged[key] = pageMarkCache[key];
+  });
+  return merged;
 };
 
-export const delMark = async (number: string) => {
-  delete markCache[number];
-  const graphKey = await getGraphKey("markCache");
-  localStorage.setItem(graphKey, JSON.stringify(markCache));
+export const getBlockMarks = () => {
+  return blockMarkCache;
+};
+
+export const getPageMarks = () => {
+  return pageMarkCache;
+};
+
+export const delMark = async (number: string, isPageMark: boolean = false) => {
+  const storage = logseq.Assets.makeSandboxStorage();
+
+  if (isPageMark) {
+    delete pageMarkCache[number];
+    await storage.setItem("page-marks.json", JSON.stringify(pageMarkCache));
+  } else {
+    delete blockMarkCache[number];
+    await storage.setItem("block-marks.json", JSON.stringify(blockMarkCache));
+  }
 };
 
 export const clearMarks = async () => {
-  markCache = {};
-  const graphKey = await getGraphKey("markCache");
-  localStorage.setItem(graphKey, JSON.stringify(markCache));
+  const storage = logseq.Assets.makeSandboxStorage();
+  blockMarkCache = {};
+  pageMarkCache = {};
+  await storage.setItem("block-marks.json", JSON.stringify(blockMarkCache));
+  await storage.setItem("page-marks.json", JSON.stringify(pageMarkCache));
+};
+
+export const clearBlockMarks = async () => {
+  const storage = logseq.Assets.makeSandboxStorage();
+  blockMarkCache = {};
+  await storage.setItem("block-marks.json", JSON.stringify(blockMarkCache));
+};
+
+export const clearPageMarks = async () => {
+  const storage = logseq.Assets.makeSandboxStorage();
+  pageMarkCache = {};
+  await storage.setItem("page-marks.json", JSON.stringify(pageMarkCache));
+};
+
+/**
+ * Update the note for a block mark
+ */
+export const updateBlockMarkNote = async (number: string, note: string) => {
+  if (blockMarkCache[number]) {
+    blockMarkCache[number].note = note;
+    const storage = logseq.Assets.makeSandboxStorage();
+    await storage.setItem("block-marks.json", JSON.stringify(blockMarkCache));
+  }
+};
+
+/**
+ * Update the note for a page mark
+ */
+export const updatePageMarkNote = async (number: string, note: string) => {
+  if (pageMarkCache[number]) {
+    pageMarkCache[number].note = note;
+    const storage = logseq.Assets.makeSandboxStorage();
+    await storage.setItem("page-marks.json", JSON.stringify(pageMarkCache));
+  }
 };
 
 const debugMode = false;
@@ -320,8 +515,11 @@ export const defaultSettings = {
     joinNextLine: "mod+alt+j",
     toggleVisualMode: "v",
     markSave: "m",
+    markPageSave: "shift+m",
     markJump: "'",
+    markPageJump: "shift+'",
     markJumpSidebar: "mod+'",
+    markPageJumpSidebar: "mod+shift+'",
     increase: "ctrl+a",
     decrease: "ctrl+x",
     cut: "x",

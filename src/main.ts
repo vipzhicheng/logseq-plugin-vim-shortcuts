@@ -69,6 +69,7 @@ import { commandList, useCommandStore } from "./stores/command";
 import { useEmojiStore } from "@/stores/emoji";
 import { useColorStore } from "./stores/color";
 import { useSearchStore } from "./stores/search";
+import { useMarkStore } from "./stores/mark";
 
 import emoji from "./keybindings/emoji";
 import sort from "./keybindings/sort";
@@ -82,6 +83,7 @@ import cutWord from "./keybindings/cutWord";
 import { SettingSchemaDesc } from "@logseq/libs/dist/LSPlugin.user";
 import deleteCurrentAndNextSiblingBlocks from "./keybindings/deleteCurrentAndNextSiblingBlocks";
 import deleteCurrentAndPrevSiblingBlocks from "./keybindings/deleteCurrentAndPrevSiblingBlocks";
+import { marks } from "./commands/mark";
 
 const defineSettings: SettingSchemaDesc[] = [
   {
@@ -107,7 +109,30 @@ async function main() {
     }
   `);
 
-  logseq.provideModel({});
+  logseq.provideModel({
+    async openMarks() {
+      const data1 = await logseq.Editor.getCurrentBlock();
+      const data2 = await logseq.Editor.getSelectedBlocks();
+      console.log("Current block:", data1);
+      console.log("Selected blocks:", data2);
+      const commandStore = useCommandStore();
+      commandStore.hide();
+      logseq.showMainUI({
+        autoFocus: false,
+      });
+      marks();
+    },
+  });
+
+  // Register toolbar icon for marks
+  logseq.App.registerUIItem("toolbar", {
+    key: "vim-shortcuts-marks",
+    template: `
+      <a class="button" data-on-click="openMarks" title="Open Marks" style="font-size: 18px">
+        <i class="ti ti-bookmark" style=""></i>
+      </a>
+    `,
+  });
 
   // setup vue
   const app = createApp(App);
@@ -200,8 +225,14 @@ async function main() {
   command(logseq);
 
   // load marks
+  await loadMarks();
+  const markStore = useMarkStore();
+  markStore.reload();
+
+  // reload marks when graph changes
   logseq.App.onCurrentGraphChanged(async () => {
     await loadMarks();
+    markStore.reload();
   });
 
   mark(logseq);
