@@ -11,9 +11,6 @@ import {
   getCommandFromHistoryBack,
   getCommandFromHistoryForward,
   hideMainUI,
-  setVisualMode,
-  getVisualMode,
-  updateVisualModeIndicator,
 } from "./common/funcs";
 import bottom from "./keybindings/bottom";
 import changeCase from "./keybindings/changeCase";
@@ -88,14 +85,6 @@ import deleteCurrentAndPrevSiblingBlocks from "./keybindings/deleteCurrentAndPre
 
 const defineSettings: SettingSchemaDesc[] = [
   {
-    key: "enableVisualModeIndicator",
-    title: "Enable visual mode indicator",
-    description: "Enable visual mode indicator",
-    default: false,
-    type: "boolean",
-  },
-
-  {
     key: "showRecentEmojis",
     title: "Show recent emojis by default",
     description: "Show recent emojis by default. Needs window reload.",
@@ -105,17 +94,6 @@ const defineSettings: SettingSchemaDesc[] = [
 ];
 
 logseq.useSettingsSchema(defineSettings);
-logseq.onSettingsChanged(() => {
-  if (logseq.settings?.enableVisualModeIndicator) {
-    const visualMode = getVisualMode();
-    updateVisualModeIndicator(visualMode);
-  } else {
-    logseq.App.registerUIItem("pagebar", {
-      key: "vim-shortcut-mode",
-      template: ``,
-    });
-  }
-});
 
 async function main() {
   // settings
@@ -129,13 +107,7 @@ async function main() {
     }
   `);
 
-  logseq.provideModel({
-    toggleVisualMode() {
-      const visualMode = getVisualMode();
-      updateVisualModeIndicator(!visualMode);
-      setVisualMode(!visualMode);
-    },
-  });
+  logseq.provideModel({});
 
   // setup vue
   const app = createApp(App);
@@ -236,14 +208,6 @@ async function main() {
 
   // setup ui hotkeys
   setHotkeys(logseq);
-  if (logseq.settings?.enableVisualModeIndicator) {
-    setVisualMode(false, false);
-  } else {
-    logseq.App.registerUIItem("pagebar", {
-      key: "vim-shortcut-mode",
-      template: ``,
-    });
-  }
 
   const emojiStore = useEmojiStore();
   emojiStore.initPicker();

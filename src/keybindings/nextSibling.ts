@@ -10,7 +10,6 @@ import {
   getCurrentPage,
   getNumber,
   getSettings,
-  getVisualMode,
   resetNumber,
   scrollToBlockInPage,
 } from "@/common/funcs";
@@ -44,7 +43,10 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
       if (block?.uuid) {
         const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
         if (nextBlock?.uuid) {
-          scrollToBlockInPage(page.name || page.uuid, nextBlock.uuid);
+          scrollToBlockInPage(
+            (page.name as string) || page.uuid,
+            nextBlock.uuid
+          );
           return nextBlock?.uuid;
         } else if (block.parent.id) {
           await findNextBlockRecur(page, block);
@@ -89,23 +91,11 @@ export default (logseq: ILSPluginUser) => {
         const number = getNumber();
         resetNumber();
 
-        const visualMode = getVisualMode();
-
-        if (visualMode) {
-          debug("Move block down");
-          for (let i = 0; i < number; i++) {
-            await logseq.App.invokeExternalCommand(
-              // @ts-ignore
-              "logseq.editor/move-block-down"
-            );
-          }
-        } else {
-          debug("Next sibling");
-          let lastBlockUUID: BlockUUID | undefined;
-          for (let i = 0; i < number; i++) {
-            // @ts-ignore
-            lastBlockUUID = await goNextSibling(lastBlockUUID);
-          }
+        debug("Next sibling");
+        let lastBlockUUID: BlockUUID | undefined;
+        for (let i = 0; i < number; i++) {
+          // @ts-ignore
+          lastBlockUUID = await goNextSibling(lastBlockUUID);
         }
       }
     );

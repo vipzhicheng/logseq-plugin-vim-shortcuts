@@ -10,6 +10,7 @@
 - fix: adjust some key bindings.
 - feat: big feature, add cursor to block in normal mode.
 - fix: optimize j and k to move across block levels.
+- feat: add visual mode to select text in block.
 
 ## v0.1.24
 

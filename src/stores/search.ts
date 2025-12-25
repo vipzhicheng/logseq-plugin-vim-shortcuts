@@ -585,6 +585,10 @@ export const useSearchStore = defineStore("search", {
     cursorBlockUUID: "", // Current block UUID for cursor
     cursorPosition: 0, // Current cursor position (character index)
     cursorBlockContent: "", // Content of the current cursor block
+    // Visual selection mode
+    visualMode: false, // Whether in visual selection mode
+    visualStartPosition: 0, // Selection start position
+    visualEndPosition: 0, // Selection end position
     // Character search mode (f/t commands)
     waitingForChar: false, // Whether waiting for character input
     charSearchMode: "", // "f" or "F"
@@ -795,6 +799,9 @@ export const useSearchStore = defineStore("search", {
       this.cursorBlockUUID = "";
       this.cursorPosition = 0;
       this.cursorBlockContent = "";
+      this.visualMode = false;
+      this.visualStartPosition = 0;
+      this.visualEndPosition = 0;
     },
 
     // Move cursor right (l key)
@@ -835,11 +842,20 @@ export const useSearchStore = defineStore("search", {
         const nextPos = findNextVisiblePosition(block.content, this.cursorPosition);
         if (nextPos !== this.cursorPosition) {
           this.cursorPosition = nextPos;
+
+          // If in visual mode, extend selection
+          if (this.visualMode) {
+            this.visualEndPosition = this.cursorPosition;
+            await this.updateVisualSelection();
+            return;
+          }
         }
       }
 
       // Show cursor (clearCurrentPageBlocksHighlight is now handled inside highlightInput)
-      highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
+      if (!this.visualMode) {
+        highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
+      }
     },
 
     // Move cursor left (h key)
@@ -856,6 +872,13 @@ export const useSearchStore = defineStore("search", {
       const prevPos = findPrevVisiblePosition(block.content, this.cursorPosition);
       if (prevPos !== this.cursorPosition) {
         this.cursorPosition = prevPos;
+
+        // If in visual mode, extend selection in reverse
+        if (this.visualMode) {
+          this.visualEndPosition = this.cursorPosition;
+          await this.updateVisualSelection();
+          return;
+        }
 
         // Show cursor at new position
         highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
@@ -1249,6 +1272,71 @@ export const useSearchStore = defineStore("search", {
       } else if (this.lastCharSearchMode === "F") {
         await this.findCharForward(this.lastCharSearchChar, false);
       }
+    },
+
+    // Toggle visual selection mode (v key)
+    async toggleVisualMode() {
+      if (!this.cursorMode) {
+        logseq.UI.showMsg("Visual mode requires cursor mode", "warning");
+        return;
+      }
+
+      const blockUUID = await logseq.Editor.getCurrentBlock().then(b => b?.uuid);
+      if (!blockUUID || this.cursorBlockUUID !== blockUUID) return;
+
+      if (!this.visualMode) {
+        // Enter visual mode
+        this.visualMode = true;
+        this.visualStartPosition = this.cursorPosition;
+        this.visualEndPosition = this.cursorPosition;
+
+        // Highlight the selection (just the current character)
+        await this.updateVisualSelection();
+      } else {
+        // Exit visual mode
+        this.visualMode = false;
+        this.visualStartPosition = 0;
+        this.visualEndPosition = 0;
+
+        // Restore normal cursor highlight
+        highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
+      }
+    },
+
+    // Update visual selection highlight
+    async updateVisualSelection() {
+      if (!this.visualMode || !this.cursorBlockUUID) return;
+
+      const block = await logseq.Editor.getBlock(this.cursorBlockUUID);
+      if (!block) return;
+
+      // Calculate selection range (always from smaller to larger position)
+      const startPos = Math.min(this.visualStartPosition, this.visualEndPosition);
+      const endPos = Math.max(this.visualStartPosition, this.visualEndPosition);
+
+      // Highlight the selection range
+      highlightInput({ uuid: this.cursorBlockUUID }, block.content.substring(startPos, endPos + 1), startPos);
+    },
+
+    // Get selected text in visual mode
+    getVisualSelection(): { start: number; end: number; text: string } | null {
+      if (!this.visualMode || !this.cursorBlockUUID) return null;
+
+      const startPos = Math.min(this.visualStartPosition, this.visualEndPosition);
+      const endPos = Math.max(this.visualStartPosition, this.visualEndPosition);
+
+      return {
+        start: startPos,
+        end: endPos,
+        text: this.cursorBlockContent.substring(startPos, endPos + 1)
+      };
+    },
+
+    // Exit visual mode
+    exitVisualMode() {
+      this.visualMode = false;
+      this.visualStartPosition = 0;
+      this.visualEndPosition = 0;
     },
   },
 });

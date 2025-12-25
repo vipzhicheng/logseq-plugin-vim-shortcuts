@@ -40,6 +40,21 @@ export default (logseq: ILSPluginUser) => {
               await logseq.Editor.editBlock(blockUUID, {
                 pos: block.content.length,
               });
+              // Exit visual mode if active
+              if (searchStore.visualMode) {
+                searchStore.exitVisualMode();
+                searchStore.clearCursor();
+              }
+            }
+          } else if (searchStore.visualMode && searchStore.cursorBlockUUID === blockUUID) {
+            // In visual mode - Insert after the selection end
+            const selection = searchStore.getVisualSelection();
+            if (selection) {
+              await logseq.Editor.editBlock(blockUUID, {
+                pos: selection.end + 1,
+              });
+              searchStore.exitVisualMode();
+              searchStore.clearCursor();
             }
           } else if (currentMatch && currentMatch.uuid === blockUUID && searchStore.input) {
             // Lowercase (no shift) - Insert at the end of the match when searching

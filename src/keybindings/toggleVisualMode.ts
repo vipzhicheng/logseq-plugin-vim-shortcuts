@@ -1,10 +1,6 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import {
-  debug,
-  getSettings,
-  getVisualMode,
-  setVisualMode,
-} from "@/common/funcs";
+import { debug, getSettings } from "@/common/funcs";
+import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   const settings = getSettings();
@@ -17,21 +13,16 @@ export default (logseq: ILSPluginUser) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-toggleVisualMode-" + index,
-        label: "Toggle visual mode",
+        label: "Toggle visual selection mode",
         keybinding: {
           mode: "non-editing",
           binding,
         },
       },
       async () => {
-        debug("Toggle visual mode");
-
-        const visualMode = getVisualMode();
-        if (visualMode) {
-          setVisualMode(false);
-        } else {
-          setVisualMode(true);
-        }
+        debug("Toggle visual selection mode");
+        const searchStore = useSearchStore();
+        await searchStore.toggleVisualMode();
       }
     );
   });

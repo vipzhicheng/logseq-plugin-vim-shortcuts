@@ -67,6 +67,18 @@ export default (logseq: ILSPluginUser) => {
           const searchStore = useSearchStore();
           const currentMatch = searchStore.getCurrentMatch();
 
+          // If in visual selection mode, delete the selected text
+          if (searchStore.visualMode && searchStore.cursorBlockUUID === blockUUID) {
+            const selection = searchStore.getVisualSelection();
+            if (selection) {
+              const length = selection.end - selection.start + 1;
+              await deleteMatchAndEdit(blockUUID, selection.start, length);
+              searchStore.exitVisualMode();
+              searchStore.clearCursor();
+              return;
+            }
+          }
+
           // If there's an active search match on this block, delete only the match
           if (currentMatch && currentMatch.uuid === blockUUID && searchStore.input) {
             await deleteMatchAndEdit(blockUUID, currentMatch.matchOffset, searchStore.input.length);

@@ -3,7 +3,6 @@ import {
   debug,
   getNumber,
   getSettings,
-  getVisualMode,
   resetNumber,
 } from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
@@ -38,22 +37,10 @@ export default (logseq: ILSPluginUser) => {
         const number = getNumber();
         resetNumber();
 
-        const visualMode = getVisualMode();
-
-        if (visualMode) {
-          debug("Select down");
-          for (let i = 0; i < number; i++) {
-            await logseq.App.invokeExternalCommand(
-              // @ts-ignore
-              "logseq.editor/select-block-down"
-            );
-          }
-        } else {
-          debug("Down");
-          for (let i = 0; i < number; i++) {
-            // @ts-ignore
-            await logseq.App.invokeExternalCommand("logseq.editor/down");
-          }
+        debug("Down");
+        for (let i = 0; i < number; i++) {
+          // @ts-ignore
+          await logseq.App.invokeExternalCommand("logseq.editor/down");
         }
       }
     );

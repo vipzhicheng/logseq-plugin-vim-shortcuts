@@ -5,7 +5,6 @@ import {
   getCurrentPage,
   getNumber,
   getSettings,
-  getVisualMode,
   resetNumber,
   scrollToBlockInPage,
 } from "@/common/funcs";
@@ -76,23 +75,11 @@ export default (logseq: ILSPluginUser) => {
         const number = getNumber();
         resetNumber();
 
-        const visualMode = getVisualMode();
+        debug("Prev sibling");
 
-        if (visualMode) {
-          debug("Move block up");
-          for (let i = 0; i < number; i++) {
-            await logseq.App.invokeExternalCommand(
-              // @ts-ignore
-              "logseq.editor/move-block-up"
-            );
-          }
-        } else {
-          debug("Prev sibling");
-
-          let lastBlockUUID: BlockUUID | undefined = undefined;
-          for (let i = 0; i < number; i++) {
-            lastBlockUUID = await goPrevSibling(lastBlockUUID);
-          }
+        let lastBlockUUID: BlockUUID | undefined = undefined;
+        for (let i = 0; i < number; i++) {
+          lastBlockUUID = await goPrevSibling(lastBlockUUID);
         }
       }
     );

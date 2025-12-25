@@ -95,7 +95,6 @@ export function sleep(ms: number) {
 const tempCache: TempCache = {
   clipboard: "",
   lastPage: "",
-  visualMode: false,
 };
 
 export const writeClipboard = (content: string) => {
@@ -106,45 +105,6 @@ export const readClipboard = (): string => {
   return tempCache.clipboard;
 };
 
-export const updateVisualModeIndicator = (visualMode: boolean) => {
-  if (visualMode) {
-    logseq.App.registerUIItem("pagebar", {
-      key: "vim-shortcut-mode",
-      template: `
-        <span class="">
-          <a title="Visual mode" class="button" data-on-click="toggleVisualMode" style="font-size: 18px">
-            Visual
-          </a>
-        </span>
-      `,
-    });
-  } else {
-    logseq.App.registerUIItem("pagebar", {
-      key: "vim-shortcut-mode",
-      template: `
-        <span class="">
-          <a title="Non-Visual mode" class="button" data-on-click="toggleVisualMode" style="font-size: 18px">
-            Normal
-          </a>
-        </span>
-      `,
-    });
-  }
-};
-
-export const setVisualMode = (visualMode: boolean, message = true) => {
-  if (visualMode) {
-    message && logseq.UI.showMsg("Visual block mode enabled", "success");
-  } else {
-    message && logseq.UI.showMsg("Visual block mode disabled", "success");
-  }
-  updateVisualModeIndicator(visualMode);
-  tempCache.visualMode = visualMode;
-};
-
-export const getVisualMode = (): boolean => {
-  return tempCache.visualMode;
-};
 
 const numberCache: N = {
   n: 1,
@@ -358,7 +318,7 @@ export const defaultSettings = {
     exitEditing: ["mod+j mod+j", "ctrl+["],
     jumpInto: "mod+shift+enter",
     joinNextLine: "mod+alt+j",
-    toggleVisualMode: "ctrl+v",
+    toggleVisualMode: "v",
     markSave: "m",
     markJump: "'",
     markJumpSidebar: "mod+'",
@@ -420,7 +380,7 @@ export const getCurrentPage = async () => {
   // }
 
   if (page?.name) {
-    tempCache.lastPage = page.name;
+    tempCache.lastPage = page.name as string;
   }
   return page;
 };
