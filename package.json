@@ -16,14 +16,14 @@
     "@types/lodash-es": "*",
     "@types/minimist": "^1.2.5",
     "@types/node": "^25.0.3",
-    "@vitejs/plugin-vue": "^2.2.4",
+    "@vitejs/plugin-vue": "^6.0.3",
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.0.23",
-    "typescript": "^4.6.2",
-    "unplugin-auto-import": "^0.6.1",
-    "unplugin-vue-components": "^0.17.21",
-    "vite": "^2.8.6"
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.9.3",
+    "unplugin-auto-import": "^20.3.0",
+    "unplugin-vue-components": "^30.0.0",
+    "vite": "^7.3.0"
   },
   "dependencies": {
     "@joeattardi/emoji-button": "^4.6.4",
@@ -35,7 +35,7 @@
     "hotkeys-js": "^4.0.0",
     "lorem-ipsum": "^2.0.8",
     "minimist": "^1.2.8",
-    "pinia": "^2.0.11",
+    "pinia": "^3.0.4",
     "vue": "^3.5.26",
     "vue-color-kit": "^1.0.6"
   }
