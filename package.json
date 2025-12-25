@@ -15,6 +15,7 @@
   "devDependencies": {
     "@types/lodash-es": "*",
     "@types/minimist": "^1.2.5",
+    "@types/node": "^25.0.3",
     "@vitejs/plugin-vue": "^2.2.4",
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",

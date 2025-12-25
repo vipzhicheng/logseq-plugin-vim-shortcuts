@@ -51,6 +51,9 @@ importers:
       '@types/minimist':
         specifier: ^1.2.5
         version: 1.2.5
+      '@types/node':
+        specifier: ^25.0.3
+        version: 25.0.3
       '@vitejs/plugin-vue':
         specifier: ^2.2.4
         version: 2.3.4(vite@2.9.18)(vue@3.5.26(typescript@4.9.5))
@@ -210,6 +213,9 @@ packages:
 
   '@types/minimist@1.2.5':
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
+
+  '@types/node@25.0.3':
+    resolution: {integrity: sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA==}
 
   '@types/throttle-debounce@2.1.0':
     resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
@@ -1078,6 +1084,9 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
+  undici-types@7.16.0:
+    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+
   unicorn-magic@0.3.0:
     resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
     engines: {node: '>=18'}
@@ -1360,6 +1369,10 @@ snapshots:
   '@types/lodash@4.17.20': {}
 
   '@types/minimist@1.2.5': {}
+
+  '@types/node@25.0.3':
+    dependencies:
+      undici-types: 7.16.0
 
   '@types/throttle-debounce@2.1.0': {}
 
@@ -2178,6 +2191,8 @@ snapshots:
       universalify: 0.1.2
 
   typescript@4.9.5: {}
+
+  undici-types@7.16.0: {}
 
   unicorn-magic@0.3.0: {}
 
