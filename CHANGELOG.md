@@ -15,6 +15,7 @@
 - feat: add settings UI for key bindings configuration with customization support.
 - fix: optimize increase/decrease number action.
 - feat: optimize search commands to support highlights.
+- feat: optimize move cursor actions to support visual mode.
 - chore: upgrade deps.
 
 ## v0.1.24

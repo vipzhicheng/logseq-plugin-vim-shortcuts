@@ -918,6 +918,11 @@ export const useSearchStore = defineStore("search", {
       const nextBlock = visibleBlocks[currentIndex + 1];
       await logseq.Editor.selectBlock(nextBlock.uuid);
 
+      // Exit visual mode when switching blocks
+      if (this.visualMode) {
+        this.exitVisualMode();
+      }
+
       // Update cursor to new block
       this.cursorBlockUUID = nextBlock.uuid;
       this.cursorBlockContent = nextBlock.content;
@@ -969,6 +974,11 @@ export const useSearchStore = defineStore("search", {
       // Get previous block
       const prevBlock = visibleBlocks[currentIndex - 1];
       await logseq.Editor.selectBlock(prevBlock.uuid);
+
+      // Exit visual mode when switching blocks
+      if (this.visualMode) {
+        this.exitVisualMode();
+      }
 
       // Update cursor to new block
       this.cursorBlockUUID = prevBlock.uuid;
@@ -1037,6 +1047,14 @@ export const useSearchStore = defineStore("search", {
       // Normalize to visible position
       if (pos < content.length) {
         this.cursorPosition = normalizeToVisiblePosition(content, pos);
+
+        // If in visual mode, extend selection
+        if (this.visualMode) {
+          this.visualEndPosition = this.cursorPosition;
+          await this.updateVisualSelection();
+          return;
+        }
+
         highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
       }
     },
@@ -1085,6 +1103,14 @@ export const useSearchStore = defineStore("search", {
       }
 
       this.cursorPosition = normalizeToVisiblePosition(content, pos);
+
+      // If in visual mode, extend selection
+      if (this.visualMode) {
+        this.visualEndPosition = this.cursorPosition;
+        await this.updateVisualSelection();
+        return;
+      }
+
       highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
     },
 
@@ -1132,6 +1158,14 @@ export const useSearchStore = defineStore("search", {
       }
 
       this.cursorPosition = normalizeToVisiblePosition(content, pos);
+
+      // If in visual mode, extend selection
+      if (this.visualMode) {
+        this.visualEndPosition = this.cursorPosition;
+        await this.updateVisualSelection();
+        return;
+      }
+
       highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
     },
 
@@ -1147,6 +1181,14 @@ export const useSearchStore = defineStore("search", {
 
       // Move to first visible character
       this.cursorPosition = normalizeToVisiblePosition(block.content, 0);
+
+      // If in visual mode, extend selection
+      if (this.visualMode) {
+        this.visualEndPosition = this.cursorPosition;
+        await this.updateVisualSelection();
+        return;
+      }
+
       highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
     },
 
@@ -1163,6 +1205,14 @@ export const useSearchStore = defineStore("search", {
       const content = block.content;
       // Move to last visible character
       this.cursorPosition = normalizeToVisiblePosition(content, Math.max(0, content.length - 1));
+
+      // If in visual mode, extend selection
+      if (this.visualMode) {
+        this.visualEndPosition = this.cursorPosition;
+        await this.updateVisualSelection();
+        return;
+      }
+
       highlightInput({ uuid: blockUUID }, this.getCursorChar(), this.cursorPosition);
     },
 
