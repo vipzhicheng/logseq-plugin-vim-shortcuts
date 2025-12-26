@@ -17,6 +17,7 @@
 - feat: optimize search commands to support highlights.
 - feat: optimize move cursor actions to support visual mode.
 - feat: change case support visual mode selection.
+- feat: cut action support visual mode selection.
 - chore: upgrade deps.
 
 ## v0.1.24
