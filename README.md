@@ -1,250 +1,547 @@
-[Get me a coffee](https://www.buymeacoffee.com/vipzhicheng) if you like this plugin!
-
-# logseq-plugin-vim-shortcuts
+# Logseq Plugin: Vim Shortcuts
 
 [![Github All Releases](https://img.shields.io/github/downloads/vipzhicheng/logseq-plugin-vim-shortcuts/total.svg)](https://github.com/vipzhicheng/logseq-plugin-vim-shortcuts/releases)
 
-This plugin provide some shortcuts which give Logseq a VIM-like feeling.
+A comprehensive Vim-style keybinding plugin for Logseq that brings powerful modal editing, navigation, and command capabilities to your note-taking workflow.
+
+[中文文档](README_CN.md)
 
 ![screencast](screencast.gif)
 
-## Supported shortcuts
+## Table of Contents
 
-- `j`: Move to next line. In visual block mode, it is for selecting down.
-- `k`: Move to previous line. In visual block mode, it is for selecting up.
-- `H`: Highlight focus out to parent level.
-- `L`: Highlight focus into child level.
-- `J`: Move to next sibling. In visual block mode, it is for moving down.
-- `K`: Move to previous sibling. In visual block mode, it is for moving up.
-- `<`: Outdent.
-- `>`: Indent.
-- `a` and `A`: Move the cursor to the end and enter edit mode.
-- `i` and `I`: Move the cursor to the beginning and enter edit mode.
-- `yy`: Copy current block content. Only supports one block – for copying multiple blocks, please use `cmd+c`.
-- `Y`: Copy current block ref.
-- `p`: Paste clipboard content to next sibling. Only supports one block – for pasting multiple blocks, please use `cmd+v`.
-- `P`: Paste clipboard content to previous sibling. Only supports one block – for pasting multiple blocks, please use `cmd+v`.
-- `o`: Insert an empty block to next sibling.
-- `O`: Insert an empty block to previous sibling.
-- `dd`: Delete current block. Child blocks will also be deleted, but only current block content in the clipboard.
-- `dc`: Change current block (delete content and change into edit mode). For selection the first block is changed, all the others are deleted, but only the top blocks content goes into the clipboard.
-- `dj`: Delete current and next blocks. Child blocks will also be deleted, but only current block content in the clipboard.
-- `dk`: Delete current and prev blocks. Child blocks will also be deleted, but only current block content in the clipboard.
-- `T`: Scroll to top, because Logseq uses `gg` to go to graph view.
-- `G`: Scroll to bottom.
-- `u`: Undo.
-- `ctrl+r`: Redo.
-- `gu`: Change block content to lower case.
-- `gU`: Change block content to upper case.
-- `mod+shift+u`: Toggle block content between lower and upper case.
-- `NUMBER`+`mod+shift+u`: Trigger different case style, supports 1–16.
-- `zo`: Extend block.
-- `zc`: Collapse block.
-- `zO`: Extend block hierarchically.
-- `zC`: Collapse block hierarchically.
-- `NUMBER`+`m`: Save current page or block as a mark to `NUMBER` register.
-- `NUMBER`+`'`: Load saved mark on main region.
-- `NUMBER`+`mod+'`: Load saved mark on right sidebar.
-- `cmd+j cmd+j`: Exit editing mode. `ctrl+[` does the same thing.
-- `mod+alt+j`: Join next sibling block.
-- `mod+shift+enter`: Jumping into internal page or tag.
-- `mod+shift+;` and `mod+alt+;`: Trigger command mode. This provides many handy commands to use, explained below.
-- `ctrl+a`: Increase the first found number in block. Supports multiple selections and combo.
-- `ctrl+x`: Decrease the first found number in block. Supports multiple selections and combo.
-- `x`: Cut a leading character. Supports multiple selections.
-- `X`: Cut a leading word. Supports multiple selections.
-- `/`: Trigger search in page bar on the below. Supports smartcase.
-- `n`: Search next search match.
-- `N`: Search previous search match.
-- `sb`: Search block content in Baidu.
-- `se`: Search block content in Wikipedia.
-- `sg`: Search block content in Google.
-- `sh`: Search block content in Github.
-- `ss`: Search block content in Stackoverflow.
-- `sy`: Search block content in Youtube.
-- `ctrl+v`: Toggle visual block mode.
-- `mod+/`: Trigger emoji picker UI.
+- [Features](#features)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Modes](#modes)
+- [Settings UI](#settings-ui)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Command Mode](#command-mode)
+- [Mark Feature](#mark-feature)
+- [Slash Commands](#slash-commands)
+- [Tips & Notes](#tips--notes)
+
+## Features
+
+- ✨ **Full Vim Modal Editing** - Normal, Insert, Visual, and Command modes
+- 🎯 **Extensive Key Bindings** - 50+ customizable keyboard shortcuts
+- ⚙️ **Visual Settings UI** - Easy configuration with graphical interface
+- 🔖 **Mark System** - Save and jump to frequently used pages and blocks
+- 🎨 **Block Styling** - Color picker for block backgrounds
+- 🔍 **Smart Search** - In-page search with smart case matching
+- 📋 **Advanced Editing** - Case conversion, number increment/decrement, and more
+- 🌐 **External Search** - Quick search selection in Google, GitHub, Wikipedia, etc.
+
+## Installation
+
+### From Logseq Marketplace
+
+1. Open Logseq and go to Settings → Plugins
+2. Click "Marketplace"
+3. Search for "Vim Shortcuts"
+4. Click "Install"
+
+### Manual Installation
+
+1. Download the latest release from [GitHub Releases](https://github.com/vipzhicheng/logseq-plugin-vim-shortcuts/releases)
+2. Extract to your Logseq plugins folder
+3. Enable the plugin in Logseq Settings → Plugins
+
+## Quick Start
+
+1. **Install the plugin** from the Logseq Marketplace
+2. **Restart Logseq** to activate the plugin
+3. **Focus on any block** - you're now in Normal mode
+4. **Try basic navigation**: `j` (down), `k` (up), `h` (left), `l` (right)
+5. **Press `i` or `a`** to enter Insert mode and start editing
+6. **Press `Cmd+j Cmd+j` (Mac) or `Ctrl+[ `** to exit Insert mode
+7. **Open Settings**: Press `Mod+Shift+;` then type `:help` or click the gear icon ⚙️ in the command palette
 
 ## Modes
 
-### Normal mode
+### Normal Mode
 
-A block is focused/highlighted.
+The default mode when a block is focused but not being edited. Use navigation and action commands without typing text.
 
-### Insert mode
+**How to enter**:
 
-You can edit a block.
+- Press `Cmd+j Cmd+j` (Mac) or `Ctrl+[` while in Insert mode
+- Click outside the editing area
 
-### Visual block mode
+### Insert Mode
 
-You can select more blocks up and down and move the selected blocks using `j` and `k`.
+Active editing mode where you can type and modify block content.
 
-### Command mode
+**How to enter**:
 
-In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;`, also can be memorized as `mod+:`. After trigger, you can find an input area at the bottom, you can input some commands here like in VIM. For now it's about 10+ commands, but I believe that would be more.
+- Press `i` or `I` - Insert at beginning of line
+- Press `a` or `A` - Insert at end of line
+- Press `o` - Create new block below
+- Press `O` - Create new block above
 
-NOTE: on Windows, the trigger is `ctrl+alt+;`
+### Visual Mode
+
+Character-level selection within a block using cursor mode.
+
+**How to enter**:
+
+1. First enter cursor mode by pressing `h`, `l`, `w`, `b`, `e`, or `$` in Normal mode
+2. Press `v` to toggle visual selection mode
+
+**Actions in Visual mode**:
+
+- `h` / `l` - Extend selection left/right (character by character)
+- `w` - Extend selection to next word
+- `b` - Extend selection to previous word
+- `e` - Extend selection to word end
+- `$` - Extend selection to line end
+- `v` - Exit visual mode
+
+> **Note**: Visual mode operates on character-level selections within the current block, not multi-block selections. Use cursor navigation keys to extend the selection.
+
+### Command Mode
+
+Execute Vim-style commands for advanced operations.
+
+**How to enter**: Press `Mod+Shift+;` or `Mod+Alt+;` in Normal mode
+
+**Features**:
+
+- Auto-suggestion and Tab completion
+- Command history (Up/Down arrows, 1000 commands capacity)
+- 30+ available commands (see [Command Mode](#command-mode) section)
+
+## Keyboard Shortcuts
+
+All shortcuts can be customized via the [Settings UI](#settings-ui). Below are the default bindings organized by category.
+
+### Navigation
+
+| Shortcut          | Action           | Description                                                                |
+| ----------------- | ---------------- | -------------------------------------------------------------------------- |
+| `j`               | Move Down        | Move to next block (or extend selection down in Visual mode)               |
+| `k`               | Move Up          | Move to previous block (or extend selection up in Visual mode)             |
+| `h`               | Move Left        | Move cursor left within line                                               |
+| `l`               | Move Right       | Move cursor right within line                                              |
+| `w`               | Next Word        | Jump to start of next word                                                 |
+| `b`               | Previous Word    | Jump to start of previous word                                             |
+| `e`               | Word End         | Jump to end of current word                                                |
+| `$`               | Line End         | Jump to end of line                                                        |
+| `J`               | Next Sibling     | Jump to next sibling block (or move selected blocks down in Visual mode)   |
+| `K`               | Previous Sibling | Jump to previous sibling block (or move selected blocks up in Visual mode) |
+| `T`               | Jump to Top      | Scroll to top of page                                                      |
+| `G`               | Jump to Bottom   | Scroll to bottom of page                                                   |
+| `H`               | Focus Out        | Move focus to parent block                                                 |
+| `L`               | Focus In         | Move focus to child block                                                  |
+| `f<char>`         | Find Character   | Find character forward in current line                                     |
+| `F<char>`         | Find Backward    | Find character backward in current line                                    |
+| `;`               | Repeat Find      | Repeat last character search                                               |
+| `,`               | Reverse Find     | Repeat last character search in reverse                                    |
+| `Mod+Shift+Enter` | Jump Into        | Jump into page/tag reference                                               |
+
+### Editing
+
+| Shortcut                 | Action          | Description                           |
+| ------------------------ | --------------- | ------------------------------------- |
+| `i` / `I`                | Insert at Start | Enter Insert mode at line beginning   |
+| `a` / `A`                | Insert at End   | Enter Insert mode at line end         |
+| `o`                      | New Block Below | Create new block below current        |
+| `O`                      | New Block Above | Create new block above current        |
+| `Cmd+j Cmd+j` / `Ctrl+[` | Exit Editing    | Return to Normal mode                 |
+| `u`                      | Undo            | Undo last operation                   |
+| `Ctrl+r`                 | Redo            | Redo last operation                   |
+| `x`                      | Cut Character   | Cut character under cursor            |
+| `X`                      | Cut Word        | Cut word under cursor                 |
+| `Ctrl+a`                 | Increase Number | Increment first number in block       |
+| `Ctrl+x`                 | Decrease Number | Decrement first number in block       |
+| `Mod+Alt+j`              | Join Next Line  | Merge next sibling block into current |
+
+### Block Operations
+
+| Shortcut        | Action                  | Description                                |
+| --------------- | ----------------------- | ------------------------------------------ |
+| `dd`            | Delete Block            | Delete current block and children          |
+| `dj`            | Delete Block & Next     | Delete current and next sibling blocks     |
+| `dk`            | Delete Block & Previous | Delete current and previous sibling blocks |
+| `dc`            | Change Block            | Delete content and enter Insert mode       |
+| `yy`            | Copy Block              | Copy current block content                 |
+| `Y`             | Copy Block Reference    | Copy block reference                       |
+| `p`             | Paste Below             | Paste content as next sibling              |
+| `P`             | Paste Above             | Paste content as previous sibling          |
+| `>` / `Shift+.` | Indent                  | Increase block indentation                 |
+| `<` / `Shift+,` | Outdent                 | Decrease block indentation                 |
+| `zc`            | Collapse                | Collapse current block                     |
+| `zo`            | Expand                  | Expand current block                       |
+| `zC`            | Collapse All            | Collapse current block and all children    |
+| `zO`            | Expand All              | Expand current block and all children      |
+
+### Case Conversion
+
+| Shortcut               | Action      | Description                                                              |
+| ---------------------- | ----------- | ------------------------------------------------------------------------ |
+| `Mod+Shift+u`          | Toggle Case | Toggle between upper/lower case                                          |
+| `gu`                   | Lowercase   | Convert to lowercase                                                     |
+| `gU`                   | Uppercase   | Convert to uppercase                                                     |
+| `NUMBER`+`Mod+Shift+u` | Case Style  | Apply specific case style (1-16, see [Case Styles](#case-change-styles)) |
+
+### Search
+
+| Shortcut | Action                | Description                               |
+| -------- | --------------------- | ----------------------------------------- |
+| `/`      | Search in Page        | Open in-page search (smart case matching) |
+| `n`      | Next Result           | Jump to next search result                |
+| `N`      | Previous Result       | Jump to previous search result            |
+| `sq`     | Clear Highlights      | Remove search highlights                  |
+| `sg`     | Search Google         | Search block content in Google            |
+| `sh`     | Search GitHub         | Search block content in GitHub            |
+| `ss`     | Search Stack Overflow | Search block content in Stack Overflow    |
+| `sb`     | Search Baidu          | Search block content in Baidu             |
+| `se`     | Search Wikipedia      | Search block content in Wikipedia         |
+| `sy`     | Search YouTube        | Search block content in YouTube           |
+
+### Marks
+
+| Shortcut              | Action                       | Description                             |
+| --------------------- | ---------------------------- | --------------------------------------- |
+| `<NUMBER>m`           | Save Block Mark              | Save current block as mark NUMBER       |
+| `<NUMBER>M`           | Save Page Mark               | Save current page as mark NUMBER        |
+| `<NUMBER>'`           | Jump to Block Mark           | Jump to block mark NUMBER in main area  |
+| `<NUMBER>Shift+'`     | Jump to Page Mark            | Jump to page mark NUMBER in main area   |
+| `<NUMBER>Mod+'`       | Jump to Block Mark (Sidebar) | Open block mark NUMBER in right sidebar |
+| `<NUMBER>Mod+Shift+'` | Jump to Page Mark (Sidebar)  | Open page mark NUMBER in right sidebar  |
+
+### Visual Mode & Other
+
+| Shortcut                    | Action             | Description                            |
+| --------------------------- | ------------------ | -------------------------------------- |
+| `v`                         | Toggle Visual Mode | Enter/exit Visual block selection mode |
+| `Mod+Shift+;` / `Mod+Alt+;` | Command Mode       | Open command palette                   |
+| `Mod+/`                     | Emoji Picker       | Open emoji picker UI                   |
+
+> **Note**: `Mod` = `Cmd` on macOS, `Ctrl` on Windows/Linux
+
+> **Combo Actions**: Many shortcuts support number prefixes (e.g., `5j` moves down 5 blocks, `3dd` deletes 3 blocks)
 
 ## Settings UI
 
-The plugin now includes a graphical settings interface for easy key binding customization. Click the **gear icon (⚙)** in the command palette (between the Run and Exit buttons) to open the settings panel.
+The plugin includes a modern graphical interface for customizing all key bindings without editing configuration files.
+
+### Opening Settings
+
+**Method 1**: Click the **gear icon (⚙)** in the command palette (between Run and Close buttons)
+**Method 2**: Press `Mod+Shift+;` to open command mode, then type `:help`
 
 ### Features
 
-- **Visual Key Binding Configuration**: View and modify all key bindings in a clean, organized interface grouped by category
-- **Multiple Key Bindings**: Each action supports multiple key bindings - add as many alternatives as you need
-- **Enable/Disable**: Quickly enable or disable individual key bindings using checkboxes
-- **Validation**: Automatic validation of key binding formats and duplicate detection
-- **Reset to Default**: Easily restore default key bindings for any action
-- **Built-in Help**: Comprehensive help documentation accessible via the Help button
+- ✅ **Visual Configuration**: View and modify all key bindings in a clean, categorized interface
+- ✅ **Multiple Bindings**: Assign multiple key combinations to the same action
+- ✅ **Toggle Enable/Disable**: Quickly enable or disable individual shortcuts
+- ✅ **Validation**: Automatic format validation and duplicate detection
+- ✅ **One-Click Reset**: Restore default bindings for any action
+- ✅ **Built-in Help**: Comprehensive documentation accessible via Help button
 
-### Using the Settings UI
+### How to Use
 
 1. **Open Settings**: Click the gear icon (⚙) in the command palette
-2. **Browse Key Bindings**: All key bindings are organized by category (Navigation, Editing, Block Operations, Search, Marks, Visual Mode, Command)
-3. **Enable/Disable**: Use the checkbox next to each action to enable or disable it
-4. **Edit Key Bindings**: Click the "Edit" button next to a key binding to modify it
-5. **Add Key Bindings**: Click "+ Add Key Binding" to add additional shortcuts for an action
-6. **Remove Key Bindings**: Click "Remove" to delete a key binding (requires at least one remaining)
-7. **Reset**: Click "Reset to Default" to restore the default key binding for an action
-8. **Save**: Click "Save Settings" when done - you'll be prompted to restart the plugin for changes to take effect
+2. **Browse Categories**: Navigate through Navigation, Editing, Block Operations, Search, Marks, Visual Mode, and Command categories
+3. **Enable/Disable**: Use checkboxes to toggle shortcuts on/off
+4. **Edit Bindings**: Click "Edit" to modify a key binding, press Enter to save, Esc to cancel
+5. **Add Alternatives**: Click "+ Add Key Binding" to add additional shortcuts for the same action
+6. **Remove Bindings**: Click "Remove" to delete a binding (at least one must remain)
+7. **Reset to Default**: Click "Reset to Default" to restore original settings
+8. **Save Changes**: Click "Save Settings" - Logseq will prompt to restart for changes to take effect
 
 ### Key Binding Format
 
-Key bindings support the following formats:
+Key bindings support three formats:
 
-- **Single key**: `j`, `k`, `h`, `l`
-- **Combination keys**: `shift+j`, `ctrl+r`, `mod+shift+a`
-- **Sequential keys**: `g u`, `d d`, `z c`
+| Format          | Example                            | Description                       |
+| --------------- | ---------------------------------- | --------------------------------- |
+| **Single key**  | `j`, `k`, `h`, `l`                 | Single character keys             |
+| **Combination** | `shift+j`, `ctrl+r`, `mod+shift+a` | Modifier + key                    |
+| **Sequential**  | `g u`, `d d`, `z c`                | Multiple keys pressed in sequence |
 
-**Modifier keys**:
-- `mod` - Command (⌘) on Mac, Ctrl on Windows/Linux
+**Modifier Keys**:
+
+- `mod` - Cmd (⌘) on macOS, Ctrl on Windows/Linux
 - `shift` - Shift key
 - `ctrl` - Control key
-- `alt` - Alt/Option key
+- `alt` - Alt (Option on macOS) key
 
-### Notes
+### Important Notes
 
-- Changes require a plugin restart to take effect
-- Duplicate key binding detection prevents conflicts
-- At least one key binding must remain for each action
-- Settings are saved to your Logseq configuration and persist across sessions
+- ⚠️ Changes require **Logseq restart** to take effect
+- ⚠️ Duplicate detection prevents binding conflicts
+- ⚠️ At least one binding must remain per action
+- ✅ Settings persist across sessions in Logseq configuration
 
-#### The bottom input features
+## Command Mode
 
-- Autosuggestion when you input.
-- Press `Tab` if only one command matched, the matched command will be autocompleted right away.
-- Press `Up` and `Down` to traverse command history, it's a 1000 limit history, I think it's enough to use.
-- Press `Esc` to close command mode and back to the main window. For now Logseq can not get focused automatically sometime. so you need to click the main window to continue.
-- Just in case bug stuck, there are `Run` button and `Close` at bottom right to help you trigger behaviors.
+Execute powerful Vim-style commands for advanced operations. Press `Mod+Shift+;` or `Mod+Alt+;` to activate.
 
-#### Supported commands
+### Command Palette Features
 
-- `:NUMBER` to scroll to specific line or `:-NUMBER` to scroll to specific line to the end or `:.NUMBER` represents scrolling to NUMBER \* 100% of the page.
-- `:s/` and `:substitute/`: Replace current block according regex, e.g. `s/foo/bar/gi`, Notice it support Regex modifiers.
-- `:%s/`a nd `:%substitute/`: Replace current page blocks according regex, e.g. `%s/foo/bar/gi`.
-- `:marks`: Show marks.
-- `:delm` and `:delmarks`: Delete specific mark ids, e.g. `:delm 1 2 3`.
-- `:delm!` and `:delmarks!`: Delete all marks.
-- `:m` and `:mark`: Go to specific mark, e.g. `:m 1`.
-- `:go`: Go to existed page or block, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
-  - There are some shortcuts for page name:
-    - `:go @` and `:go @index`: Go to Contents page
-    - `:go @today` Go to today's journal page.
-    - `:go @yesterday` Go to yesterday's journal page.
-    - `:go @tomorrow` Go to tomorrow's journal page.
-    - `:go @prev` Go to prev-day's journal page, if currect page is not a journal page, fallback to @yesterday.
-    - `:go @next` Go to next-day's journal page, if currect page is not a journal page, fallback to @tomorrow.
-    - `:go @back` Go to backward page.
-    - `:go @forward` Go to forward page.
-  - `:go!`: Go to existed page or block, create one if page not exist, e.g. `:go 2022-02-22` or `:go ((6219c981-256a-4464-bc62-4ecfab4c2141))`.
-  - `:go!` and `:go` support `--ns` and `--namespace` to go or create namespace page. e.g. you run command `:go! subpage --ns` on `test` page, then you will be redirect to `test/subpage` for saving your time to input prefix chars.
-- `:re` and `:rename`: Rename current page name, if target page exists, page content will be merged.
-- `:undo` and `:redo`: Undo and redo last edit.
-- `:lorem` and `:lorem-ipsum`: generate random blocks in same level, with `--unit word|paragraph|sentence` to change random block unit.
-  - `--unit` has a short style as `-u`
-  - `word`, `paragraph` and `sentence` also have short styles as `w`, `p`, and `s`.
-  - also support `-p`, `-s`, `-w` and `--paragraph`, `--sentence`, `--word`.
-- `:emoji`: Insert emojis by searching keyword, you can repeat emoji by appending a number.
-- `:emoji-picker`: Insert emoji by emoji UI.
-- `:sort` and `rsort`: Sort page first level blocks with no focus any blocks and sort sub level blocks with focus on one block.
-- `:bg [namedColor|hexColor]`: Set block background color, support multiple block selection.
-- `:bg-picker`: Trigger a color picker to select block background color, support multiple block selection.
-- `:bg-random`: Set block background color randomly, support multiple block selection.
-- `:bg-clear`: Clear block background color, support multiple block selection.
-- `:copy-path`: Get page or journal absolute path, so you can edit it outside of Logseq.
-- `:open-in-vscode`: Open page or journal in VSCode.
-- `:w` and `:write`: Save current page, actually this is a fake one, because Logseq save automatically.
-- `:wq`: Save current page and quit vim command mode.
-- `:q` and `:quit`: Quit vim command mode.
-- `h` and `help`: Show a help message modal.
+- **Auto-completion**: Type-ahead suggestions as you type
+- **Tab Completion**: Press Tab when only one match exists for instant completion
+- **Command History**: Navigate through last 1000 commands using Up/Down arrows
+- **Keyboard Navigation**:
+  - `Esc` - Close command mode and return to editing
+  - `Enter` - Execute command
+  - `Tab` - Auto-complete
+- **UI Controls**: Run button and Close button available as alternatives
+
+### Available Commands
+
+#### Navigation & Jumping
+
+| Command              | Description                     | Examples                                     |
+| -------------------- | ------------------------------- | -------------------------------------------- |
+| `:NUMBER`            | Scroll to line NUMBER           | `:25` - Jump to line 25                      |
+| `:-NUMBER`           | Scroll to line from end         | `:-5` - Jump to 5th line from end            |
+| `:.NUMBER`           | Scroll to percentage            | `:.50` - Jump to 50% of page                 |
+| `:go <page>`         | Navigate to existing page/block | `:go 2022-02-22`<br>`:go ((block-uuid))`     |
+| `:go! <page>`        | Navigate or create page         | `:go! ProjectIdeas` - Creates if missing     |
+| `:go @index`         | Go to Contents page             | `:go @` also works                           |
+| `:go @today`         | Go to today's journal           |                                              |
+| `:go @yesterday`     | Go to yesterday's journal       |                                              |
+| `:go @tomorrow`      | Go to tomorrow's journal        |                                              |
+| `:go @prev`          | Go to previous day's journal    |                                              |
+| `:go @next`          | Go to next day's journal        |                                              |
+| `:go @back`          | Navigate backward in history    |                                              |
+| `:go @forward`       | Navigate forward in history     |                                              |
+| `:go[!] <name> --ns` | Go/create namespace page        | On page `test`: `:go! sub --ns` → `test/sub` |
+| `:m <NUMBER>`        | Jump to mark NUMBER             | `:m 3` - Jump to mark 3                      |
+| `:mark <NUMBER>`     | Alias for `:m`                  | `:mark 5`                                    |
+
+#### Text Manipulation
+
+| Command                         | Description                        | Examples                                                      |
+| ------------------------------- | ---------------------------------- | ------------------------------------------------------------- |
+| `:s/pattern/replacement/flags`  | Replace in current block (regex)   | `:s/foo/bar/gi` - Replace all foo with bar (case-insensitive) |
+| `:%s/pattern/replacement/flags` | Replace in all page blocks (regex) | `:%s/TODO/DONE/g` - Replace all TODO with DONE                |
+| `:substitute/`                  | Alias for `:s/`                    | `:substitute/old/new/`                                        |
+| `:%substitute/`                 | Alias for `:%s/`                   | `:%substitute/old/new/g`                                      |
+
+#### Marks Management
+
+| Command               | Description           | Examples                                 |
+| --------------------- | --------------------- | ---------------------------------------- |
+| `:marks`              | Show all saved marks  | Display marks with notes                 |
+| `:delm <NUMBERS>`     | Delete specific marks | `:delm 1 2 3` - Delete marks 1, 2, and 3 |
+| `:delmarks <NUMBERS>` | Alias for `:delm`     | `:delmarks 5 6`                          |
+| `:delm!`              | Delete all marks      | Clears all saved marks                   |
+| `:delmarks!`          | Alias for `:delm!`    |                                          |
+
+#### Page Management
+
+| Command             | Description                 | Examples                                    |
+| ------------------- | --------------------------- | ------------------------------------------- |
+| `:re <newname>`     | Rename current page         | `:re NewPageName` - Merges if target exists |
+| `:rename <newname>` | Alias for `:re`             | `:rename ProjectNotes`                      |
+| `:copy-path`        | Copy page/journal file path | For external editing                        |
+| `:open-in-vscode`   | Open current page in VSCode | Requires VSCode installed                   |
+
+#### Content Generation
+
+| Command                    | Description                        | Examples                                          |
+| -------------------------- | ---------------------------------- | ------------------------------------------------- |
+| `:lorem`                   | Generate random lorem ipsum blocks | `:lorem` - Default paragraphs                     |
+| `:lorem-ipsum`             | Alias for `:lorem`                 |                                                   |
+| `:lorem -u w`              | Generate random words              | Unit: `w`/`word`, `s`/`sentence`, `p`/`paragraph` |
+| `:lorem --unit sentence`   | Long form unit specification       | `:lorem --unit paragraph`                         |
+| `:emoji <keyword>`         | Insert emoji by keyword search     | `:emoji smile`                                    |
+| `:emoji <keyword> <count>` | Insert multiple emojis             | `:emoji heart 5` - Insert 5 hearts                |
+| `:emoji-picker`            | Open emoji picker UI               | Visual emoji selection                            |
+
+#### Block Styling
+
+| Command       | Description                 | Examples                   |
+| ------------- | --------------------------- | -------------------------- |
+| `:bg <color>` | Set block background color  | `:bg red` or `:bg #ff0000` |
+| `:bg-picker`  | Open color picker UI        | Visual color selection     |
+| `:bg-random`  | Set random background color | Random color assignment    |
+| `:bg-clear`   | Remove background color     | Clear block styling        |
+
+**Color Formats**: Named colors (e.g., `red`, `blue`) from [CSS color values](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) or hex codes (e.g., `#ff0000`)
+
+> Note: Block styling commands support multiple block selection in Visual mode
+
+#### Sorting
+
+| Command  | Description                      |
+| -------- | -------------------------------- |
+| `:sort`  | Sort blocks alphabetically (A-Z) |
+| `:rsort` | Reverse sort blocks (Z-A)        |
+
+- **No block focused**: Sorts page's top-level blocks
+- **Block focused**: Sorts that block's children
+
+#### Editing
+
+| Command | Description           |
+| ------- | --------------------- |
+| `:undo` | Undo last edit        |
+| `:redo` | Redo last undone edit |
+
+#### System
+
+| Command         | Description                             |
+| --------------- | --------------------------------------- |
+| `:w` / `:write` | Save page (symbolic, Logseq auto-saves) |
+| `:wq`           | Save and quit command mode              |
+| `:q` / `:quit`  | Quit command mode                       |
+| `:h` / `:help`  | Show help documentation                 |
 
 ## Case Change Styles
 
-- `1`: Toggle upper and lower case, the default behavior.
-- `2`: Change to upper case. e.g. `LOGSEQ IS SO AWESOME`
-- `3`: Change to lower case. e.g. `logseq is so awesome`
-- `4`: Change to title case. e.g. `Logseq Is so Awesome`
-- `5`: Change to sentence case. e.g. `Logseq is so awesome`
-- `6`: Change to path case. e.g. `logseq/is/so/awesome`
-- `7`: Change to capital case. e.g. `Logseq Is So Awesome`
-- `8`: Change to constant case. e.g. `LOGSEQ_IS_SO_AWESOME`
-- `9`: Change to dot case. e.g. `logseq.is.so.awesome`
-- `10`: Change to header case. e.g. `Logseq-Is-So-Awesome`
-- `11`: Change to param case. e.g. `logseq-is-so-awesome`
-- `12`: Change to pascal case. e.g. `LogseqIsSoAwesome`
-- `13`: Change to camel case. e.g. `logseqIsSoAwesome`
-- `14`: Change to snake case. e.g. `logseq_is_so_awesome`
-- `15`: Change to swap case. e.g. `lOGSEQ IS SO AWESOME`
-- `16`: Change to random case. e.g. `logsEQ IS SO awESoME`
+Use `NUMBER` + `Mod+Shift+u` to apply different case transformations:
 
-## Mark feature notes
+| Number | Style                 | Example Output                  |
+| ------ | --------------------- | ------------------------------- |
+| `1`    | Toggle Case (default) | Toggles between UPPER and lower |
+| `2`    | UPPERCASE             | `LOGSEQ IS SO AWESOME`          |
+| `3`    | lowercase             | `logseq is so awesome`          |
+| `4`    | Title Case            | `Logseq Is So Awesome`          |
+| `5`    | Sentence case         | `Logseq is so awesome`          |
+| `6`    | path/case             | `logseq/is/so/awesome`          |
+| `7`    | Capital Case          | `Logseq Is So Awesome`          |
+| `8`    | CONSTANT_CASE         | `LOGSEQ_IS_SO_AWESOME`          |
+| `9`    | dot.case              | `logseq.is.so.awesome`          |
+| `10`   | Header-Case           | `Logseq-Is-So-Awesome`          |
+| `11`   | param-case            | `logseq-is-so-awesome`          |
+| `12`   | PascalCase            | `LogseqIsSoAwesome`             |
+| `13`   | camelCase             | `logseqIsSoAwesome`             |
+| `14`   | snake_case            | `logseq_is_so_awesome`          |
+| `15`   | sWAP cASE             | `lOGSEQ IS SO AWESOME`          |
+| `16`   | RaNdOm CaSe           | `logsEQ IS SO awESoME`          |
 
-- Logseq have `Favorites` and `Recent` feature, and we also have a `Tabs` plugins, the mark feature kind of like Tabs position, but give the power to yourself to decide which is which, that feels good to me.
-- Marked pages and blocks can be persisted automatically and graph separately.
-- NUMBER can be more than 10, actually thousands if you wish.
-- The `m` shortcut could be conflicted with `Markmap` plugin, so if you met this issue, please upgrade `Markmap` plugin to latest version.
-- NUMBER=1 is the default one, so you can just press `m` to save and press `'` to load for mark 1.
+**Usage**: Press the number first, then `Mod+Shift+u`. Example: `2` then `Mod+Shift+u` converts to UPPERCASE.
 
-## Slash commands this plugin added
+## Mark Feature
 
-Because some VIM shortcuts or commands may also need to be as a slash command, so this plugin provides some.
+The mark system lets you bookmark and quickly jump to frequently used pages and blocks - like browser bookmarks for your knowledge graph.
 
-- `/Insert Emoji`: Insert emoji at current position.
-- `/Sort Blocks`: Sort sub level children blocks from a to z.
-- `/Reverse Sort Blocks`: Sort sub level children blocks from z to a.
-- `/Random Bg Color`: Set block background color
-- `/Children Random Bg Color`: Set children blocks background color
+### Features
 
-## Named Background Colors
+- 🔖 **Persistent Storage**: Marks are saved automatically per graph
+- 📄 **Dual Types**: Save both block-level and page-level marks
+- 🔢 **Unlimited Marks**: Use any number (not limited to 0-9)
+- 📝 **Auto Notes**: Block marks show content preview, page marks show page name
+- 🎯 **Multiple Jump Modes**: Open in main area or right sidebar
 
-The named colors you can use in `:bg` command are from [here](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+### Usage
 
-## Search in page
+1. **Save a Mark**:
 
-Like in VIM, if you press `/` you can trigger in-page search, and it support smartcase which means if you search in lower case it will match case insensitive and if you search a keyword including upper case char then it will match case sensitive.
+   - Block mark: Press `m` then a number (e.g., `m5` saves to mark 5)
+   - Page mark: Press `M` then a number (e.g., `M3` saves page to mark 3)
 
-## Other notes
+2. **Jump to Mark**:
 
-- Logseq keybindings support may be changed in future, so just use it for a while if you need it, and it may be conflicted with Logseq future shortcuts.
-- Not exactly same with VIM key-bindings, just mimic.
-- If you are on journal home page, some shortcuts will redirect you to specific page, because there is no API can stay journal home page and move block highlight line.
-- Some shortcuts are not perfect for now, maybe need more polish and some support from Logseq Team.
-- There may be more shortcuts coming soon.
-- Stay tuned.
-- Copy here not means copy to system clipboard, just in memory of Logseq.
-- The `VIM` scroll to top shortcut is `gg`, if you want it, you can change Logseq gg shortcut to another one, and set gg in plugin settings JSON file.
-- Some shortcuts support VIM-like combo actions, that means pressing `N+action` to run action `N` times.
-- The join shortcuts can only join siblings without children blocks and should not be trigger too fast in editing mode.
-- Jumping internal page support combo action to select which page to jump.
-- All actions support multiple key bindings in settings JSON file.
-- `mod` means `Cmd` on Mac, `Ctrl` on Windows/Linux.
-- Recommend version of Logseq is `v0.5.9`+.
+   - Main area: Press `'` then number (e.g., `'5` jumps to mark 5)
+   - Right sidebar: Press `Mod+'` then number (e.g., `Mod+'5` opens mark 5 in sidebar)
 
-## ❤️ Buy me a coffee
+3. **View All Marks**: Type `:marks` in command mode
 
-If this plugin solve your situation a little bit and you will, you can choose to buy me a coffee via [this](https://www.buymeacoffee.com/vipzhicheng) and [this](https://afdian.net/@vipzhicheng), that means a lot to me.
+4. **Delete Marks**:
+   - Specific marks: `:delm 1 2 3`
+   - All marks: `:delm!`
 
-## Licence
+### Comparison
 
-MIT
+| Feature                   | Marks | Favorites | Recent | Tabs Plugin |
+| ------------------------- | ----- | --------- | ------ | ----------- |
+| Custom organization       | ✅    | ✅        | ❌     | ✅          |
+| Number-based quick access | ✅    | ❌        | ❌     | ❌          |
+| Block-level bookmarks     | ✅    | ❌        | ❌     | ❌          |
+| Keyboard-only workflow    | ✅    | ❌        | ❌     | ⚠️          |
+
+> **Note**: The `m` shortcut may conflict with the Markmap plugin. If you experience issues, update Markmap to the latest version or remap the mark shortcut in Settings.
+
+## Slash Commands
+
+The plugin adds Vim-related operations to Logseq's slash command menu:
+
+| Slash Command               | Description                                        |
+| --------------------------- | -------------------------------------------------- |
+| `/Insert Emoji`             | Insert emoji at cursor position                    |
+| `/Sort Blocks`              | Sort child blocks alphabetically (A-Z)             |
+| `/Reverse Sort Blocks`      | Sort child blocks reverse alphabetically (Z-A)     |
+| `/Random Bg Color`          | Apply random background color to current block     |
+| `/Children Random Bg Color` | Apply random background colors to all child blocks |
+
+## Tips & Notes
+
+### General
+
+- **Not Pure Vim**: This plugin mimics Vim behavior but isn't a complete Vim implementation
+- **Clipboard Scope**: Copy/paste operations (`yy`, `p`) use Logseq's internal clipboard, not system clipboard. For system clipboard, use `Cmd+C`/`Cmd+V`
+- **Auto-save**: The `:w` (write) command is symbolic - Logseq auto-saves all changes
+- **Number Prefixes**: Many commands support repetition - e.g., `5j` moves down 5 blocks, `3dd` deletes 3 blocks
+
+### Smart Search
+
+Press `/` to trigger in-page search with smart case matching:
+
+- **Lowercase query**: Case-insensitive search (e.g., `vim` matches "Vim", "VIM", "vim")
+- **Mixed case query**: Case-sensitive search (e.g., `Vim` only matches "Vim")
+
+### Key Binding Notes
+
+- **Customization**: All key bindings can be customized via Settings UI
+- **Multiple Bindings**: Actions can have multiple key combinations
+- **Potential Conflicts**: Some shortcuts may conflict with future Logseq updates or other plugins
+- **Platform Differences**: `Mod` = `Cmd` on macOS, `Ctrl` on Windows/Linux
+
+### Limitations
+
+- **Journal Home**: Some shortcuts redirect to a specific page when on journal home due to API limitations
+- **Join Blocks**: The join command only works on sibling blocks without children; avoid rapid triggering in edit mode
+- **Scroll to Top**: Vim's `gg` is used by Logseq for graph view. Use `T` (Shift+t) instead, or remap Logseq's `gg` and configure this plugin to use it
+
+### Combo Actions
+
+Prefix actions with numbers for repetition:
+
+- `5j` - Move down 5 blocks
+- `3dd` - Delete 3 blocks
+- `10k` - Move up 10 blocks
+- `2o` - Create 2 new blocks below
+
+### Jump Into Pages
+
+When cursor is on a page reference `[[Page Name]]` or tag `#tag`:
+
+- Press `Mod+Shift+Enter` to jump into that page
+- With number prefix: `2 Mod+Shift+Enter` jumps to the 2nd page link if multiple exist
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests on [GitHub](https://github.com/vipzhicheng/logseq-plugin-vim-shortcuts).
+
+## Support the Project
+
+If this plugin has improved your Logseq workflow, consider supporting development:
+
+- ☕ [Buy Me a Coffee](https://www.buymeacoffee.com/vipzhicheng)
+- 🎁 [爱发电 (Afdian - for Chinese users)](https://afdian.net/@vipzhicheng)
+
+Your support helps maintain and improve this plugin!
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Inspired by Vim's modal editing paradigm
+- Built for the amazing [Logseq](https://logseq.com/) community
+- Thanks to all contributors and users for feedback and support
+
+---
+
+**Made with ❤️ for Vim and Logseq enthusiasts**

@@ -12,8 +12,8 @@
 - fix: optimize j and k to move across block levels.
 - feat: add visual mode to select text in block.
 - feat: improve marks UI and functionality.
-- feat: add settings UI for key bindings configuration with customization support
-
+- feat: add settings UI for key bindings configuration with customization support.
+- fix: optimize increase/decrease number action.
 - chore: upgrade deps.
 
 ## v0.1.24

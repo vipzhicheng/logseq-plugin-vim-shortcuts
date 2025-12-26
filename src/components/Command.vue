@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import "@logseq/libs";
 import minimist from "minimist";
-import { ref, watch, onUnmounted } from "vue";
+import { ref } from "vue";
 
 import * as commands from "@/commands";
 import { useCommandStore } from "@/stores/command";
 import { useColorStore } from "@/stores/color";
 import { useSettingsStore } from "@/stores/settings";
+import { useHelpStore } from "@/stores/help";
 
 import emojiData from "../commands/emoji/emoji";
 import { hideMainUI, pushCommandHistory } from "@/common/funcs";
@@ -14,6 +15,7 @@ import { hideMainUI, pushCommandHistory } from "@/common/funcs";
 const commandStore = useCommandStore();
 const colorStore = useColorStore();
 const settingsStore = useSettingsStore();
+const helpStore = useHelpStore();
 
 let wait = false;
 const handleSelect = async (selected) => {
@@ -303,30 +305,6 @@ const handleClose = () => {
   hideMainUI();
 };
 
-const handleClickOutside = (event: MouseEvent) => {
-  // Don't close if settings dialog is open
-  if (settingsStore.visible) {
-    return;
-  }
-
-  const target = event.target as HTMLElement;
-  const commandInput = document.querySelector('.command-input');
-  const commandPopper = document.querySelector('.el-autocomplete__popper');
-
-  // Check if click is outside input
-  if (commandInput && !commandInput.contains(target)) {
-    // If popper exists, also check if click is outside popper
-    if (commandPopper) {
-      if (!commandPopper.contains(target)) {
-        hideMainUI();
-      }
-    } else {
-      // No popper, just hide
-      hideMainUI();
-    }
-  }
-};
-
 const handlePrependClick = () => {
   commandStore.enableTriggerOnFocus();
   const $input = document.querySelector('.command-input input') as HTMLInputElement;
@@ -343,30 +321,9 @@ const handleSettingsClick = () => {
   settingsStore.show();
 };
 
-// Add/remove click outside listener
-watch(() => commandStore.visible, (visible) => {
-  if (visible) {
-    setTimeout(() => {
-      // Add listener to both plugin document and parent document (Logseq main window)
-      document.addEventListener('click', handleClickOutside, true);
-      if (parent && parent.document) {
-        parent.document.addEventListener('click', handleClickOutside, true);
-      }
-    }, 100);
-  } else {
-    document.removeEventListener('click', handleClickOutside, true);
-    if (parent && parent.document) {
-      parent.document.removeEventListener('click', handleClickOutside, true);
-    }
-  }
-});
-
-onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside, true);
-  if (parent && parent.document) {
-    parent.document.removeEventListener('click', handleClickOutside, true);
-  }
-});
+const handleHelpClick = () => {
+  helpStore.show();
+};
 </script>
 
 <template>
@@ -388,13 +345,16 @@ onUnmounted(() => {
     </template>
     <template #append>
       <el-button class="command-run" @click="handleEnter" type="primary" title="Run (Enter)">
-        ✓
+        <span class="command-icon">✓</span>
       </el-button>
       <el-button class="command-settings" @click="handleSettingsClick" type="default" title="Settings">
-        ⚙
+        <span class="command-icon">⚙</span>
+      </el-button>
+      <el-button class="command-help" @click="handleHelpClick" type="default" title="Help">
+        <span class="command-icon">?</span>
       </el-button>
       <el-button class="command-close" @click="handleClose" type="primary" title="Close (Esc)">
-        ✕
+        <span class="command-icon">✕</span>
       </el-button>
     </template>
     <template #default="{ item }">
@@ -412,5 +372,11 @@ onUnmounted(() => {
 <style>
 .el-autocomplete {
   position: absolute;
+}
+
+.command-icon {
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
 }
 </style>

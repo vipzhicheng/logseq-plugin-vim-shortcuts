@@ -15,8 +15,9 @@ const editingBindingIndex = ref<number>(-1);
 const editingValue = ref('');
 const hasChanges = ref(false);
 const showHelp = ref(false);
+const searchQuery = ref('');
 
-// Group key bindings by category
+// Group key bindings by category with search filtering
 const groupedKeyBindings = computed(() => {
   const groups: Record<KeyBindingCategory, typeof keyBindingsMeta> = {
     navigation: [],
@@ -28,11 +29,39 @@ const groupedKeyBindings = computed(() => {
     command: [],
   };
 
+  const query = searchQuery.value.toLowerCase().trim();
+
   keyBindingsMeta.forEach((meta) => {
+    // Filter by search query
+    if (query) {
+      const matchesLabel = meta.label.toLowerCase().includes(query);
+      const matchesDescription = meta.description.toLowerCase().includes(query);
+      const matchesKey = meta.key.toLowerCase().includes(query);
+
+      // Check if any binding matches
+      const bindings = getBindingsArray(meta.key);
+      const matchesBinding = bindings.some(binding =>
+        binding.toLowerCase().includes(query)
+      );
+
+      if (!matchesLabel && !matchesDescription && !matchesKey && !matchesBinding) {
+        return; // Skip this item
+      }
+    }
+
     groups[meta.category as KeyBindingCategory].push(meta);
   });
 
   return groups;
+});
+
+// Count total filtered results
+const totalFilteredResults = computed(() => {
+  let count = 0;
+  Object.values(groupedKeyBindings.value).forEach(category => {
+    count += category.length;
+  });
+  return count;
 });
 
 // Load settings
@@ -193,12 +222,6 @@ const saveSettings = async () => {
   const plainKeyBindings = JSON.parse(JSON.stringify(localKeyBindings.value));
   const plainDisabledKeys = JSON.parse(JSON.stringify(disabledKeys.value));
 
-  console.log('Saving settings:', {
-    ...currentSettings,
-    keyBindings: plainKeyBindings,
-    disabledKeyBindings: plainDisabledKeys,
-  });
-
   await logseq.updateSettings({
     ...currentSettings,
     keyBindings: plainKeyBindings,
@@ -210,20 +233,20 @@ const saveSettings = async () => {
 
   // Prompt to restart
   ElMessageBox.confirm(
-    'Key binding settings have been saved, but require a plugin restart to take effect. Restart the plugin now?',
+    'Key binding settings have been saved, but require Logseq to restart to take effect. Restart Logseq now?',
     'Notice',
     {
-      confirmButtonText: 'Restart Plugin',
+      confirmButtonText: 'Restart Logseq',
       cancelButtonText: 'Restart Later',
       type: 'info',
     }
   )
     .then(async () => {
-      // Reload the plugin
+      // Reload Logseq
       await logseq.App.relaunch();
     })
     .catch(() => {
-      ElMessage.info('You can manually restart the plugin later to apply the new key binding settings');
+      ElMessage.info('You can manually restart Logseq later to apply the new key binding settings');
     });
 };
 
@@ -269,7 +292,7 @@ const closeHelp = () => {
   <div v-show="settingsStore.visible">
     <el-dialog
       v-model="settingsStore.visible"
-      title="Plugin Settings"
+      title="Vim Shortcuts Settings"
       width="80%"
       top="5vh"
       :close-on-click-modal="false"
@@ -288,11 +311,34 @@ const closeHelp = () => {
             </el-button>
           </div>
 
+          <div class="search-section">
+            <el-input
+              v-model="searchQuery"
+              placeholder="Search key bindings by name, description, or key combination..."
+              clearable
+              size="large"
+              class="search-input"
+            >
+              <template #prefix>
+                <span style="margin-left: 8px;">🔍</span>
+              </template>
+            </el-input>
+            <div v-if="searchQuery.trim()" class="search-info">
+              <span v-if="totalFilteredResults > 0">
+                Found {{ totalFilteredResults }} key binding{{ totalFilteredResults === 1 ? '' : 's' }}
+              </span>
+              <span v-else class="no-results">
+                No key bindings found matching "{{ searchQuery }}"
+              </span>
+            </div>
+          </div>
+
           <div class="keybindings-container">
             <div
               v-for="(category, categoryKey) in groupedKeyBindings"
               :key="categoryKey"
               class="category-section"
+              v-show="category.length > 0"
             >
               <h3 class="category-title">{{ categoryLabels[categoryKey as KeyBindingCategory] }}</h3>
 
@@ -415,14 +461,14 @@ const closeHelp = () => {
           <li><strong>Edit Key Binding:</strong> Click the "Edit" button to modify a key binding. Press Enter to save, Esc to cancel</li>
           <li><strong>Remove Key Binding:</strong> When multiple key bindings exist, you can remove any of them</li>
           <li><strong>Reset to Default:</strong> Click "Reset to Default" to restore the default key binding</li>
-          <li><strong>Save Settings:</strong> After making changes, click "Save Settings" and restart the plugin for changes to take effect</li>
+          <li><strong>Save Settings:</strong> After making changes, click "Save Settings" and restart Logseq for changes to take effect</li>
         </ol>
 
         <h3>Important Notes</h3>
         <ul>
           <li>Duplicate key bindings will be detected automatically before saving</li>
           <li>At least one key binding must be kept for each action</li>
-          <li>Changes require a plugin restart to take effect</li>
+          <li>Changes require Logseq to restart to take effect</li>
           <li>Invalid key binding formats will be rejected with error messages</li>
         </ul>
       </div>
@@ -518,6 +564,26 @@ const closeHelp = () => {
   border-radius: 3px;
   font-family: monospace;
   font-size: 13px;
+}
+
+.search-section {
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.search-info {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--ls-secondary-text-color);
+}
+
+.search-info .no-results {
+  color: var(--ls-error-text-color);
+  font-weight: 500;
 }
 
 .keybindings-container {
@@ -632,6 +698,7 @@ const closeHelp = () => {
 /* Help Dialog */
 :deep(.help-dialog) {
   max-height: 80vh;
+  overflow: auto;
 }
 
 :deep(.help-dialog .el-dialog) {

@@ -1,17 +1,26 @@
 <script lang="ts" setup>
 import { version } from "../../package.json";
 import { useHelpStore } from "@/stores/help";
+import { useSettingsStore } from "@/stores/settings";
+
 const help = useHelpStore();
+const settingsStore = useSettingsStore();
+
+const handleSettingsClick = () => {
+  settingsStore.show();
+};
 </script>
 
 <template>
   <el-dialog v-model="help.visible" width="30%" top="25vh" center draggable>
     <div class="flex flex-col gap-4">
-      <div class="text-gray-500 text-center font-bold">
-        Logseq VIM shortcuts v{{ version }}
+      <div class="text-gray-500 text-center font-bold flex items-center justify-center gap-2">
+        <span>Logseq VIM shortcuts v{{ version }}</span>
         <a
           href="https://github.com/vipzhicheng/logseq-plugin-vim-shortcuts"
           target="_blank"
+          class="inline-flex items-center"
+          title="View on GitHub"
           ><svg
             t="1645855006893"
             class="icon inline-block"
@@ -27,6 +36,14 @@ const help = useHelpStore();
               p-id="2751"
             ></path></svg
         ></a>
+        <button
+          @click="handleSettingsClick"
+          class="inline-flex items-center justify-center w-6 h-6 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors cursor-pointer"
+          title="Open Settings"
+          type="button"
+        >
+          <span class="text-base">⚙</span>
+        </button>
       </div>
       <p>
         Logseq VIM shortcuts is a Logseq plugin to provide some shortcuts which
