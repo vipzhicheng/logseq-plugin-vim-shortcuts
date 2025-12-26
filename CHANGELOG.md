@@ -14,6 +14,7 @@
 - feat: improve marks UI and functionality.
 - feat: add settings UI for key bindings configuration with customization support.
 - fix: optimize increase/decrease number action.
+- feat: optimize search commands to support highlights.
 - chore: upgrade deps.
 
 ## v0.1.24

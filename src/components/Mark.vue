@@ -157,6 +157,9 @@ const renderMarkdown = (text: string): string => {
   // Highlight: ==text==
   html = html.replace(/==(.+?)==/g, '<mark class="highlight">$1</mark>');
 
+  // Images: ![alt](url) - must be processed before links
+  html = html.replace(/!\[([^\]]*)\]\((.+?)\)/g, '<img src="$2" alt="$1" class="preview-image" />');
+
   // Links: [text](url)
   html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="link" target="_blank">$1</a>');
 
@@ -460,7 +463,18 @@ const saveNote = async (key: string, isPageMark: boolean) => {
                     @click="handleDeleteBlockMark(m.key)"
                     title="Delete mark"
                   >
-                    ✕
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
                   </el-button>
                 </div>
                 <div v-if="editingNote === `block-${m.key}`" class="note-edit-container">
@@ -607,7 +621,18 @@ const saveNote = async (key: string, isPageMark: boolean) => {
                     @click="handleDeletePageMark(m.key)"
                     title="Delete mark"
                   >
-                    ✕
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
                   </el-button>
                 </div>
                 <div v-if="editingNote === `page-${m.key}`" class="note-edit-container">
@@ -766,6 +791,20 @@ const saveNote = async (key: string, isPageMark: boolean) => {
 .dark .preview-content .highlight {
   background: #806d00;
   color: #fff;
+}
+
+.preview-content .preview-image {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #e0e0e0;
+}
+
+.dark .preview-content .preview-image {
+  border-color: #444;
 }
 
 .preview-content .link {
