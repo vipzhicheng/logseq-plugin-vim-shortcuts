@@ -90,6 +90,11 @@ export const commandList = [
     desc: "Show help modal.",
     wait: false,
   },
+  {
+    value: "settings",
+    desc: "Open settings dialog.",
+    wait: false,
+  },
 ];
 export const useCommandStore = defineStore("command", {
   state: () => ({

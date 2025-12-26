@@ -50,7 +50,7 @@ export async function openInVSCode() {
       ].join("_");
       pagePath = `${path}/journals/${fileName}.md`;
     } else {
-      const fileName = page.originalName
+      const fileName = (page.originalName as string)
         .replace(/^\//, "")
         .replace(/\/$/, "")
         .replace(/\//g, ".")
@@ -84,7 +84,7 @@ export async function copyPath() {
       ].join("_");
       pagePath = `${path}/journals/${fileName}.md`;
     } else {
-      const fileName = page.originalName
+      const fileName = (page.originalName as string)
         .replace(/^\//, "")
         .replace(/\/$/, "")
         .replace(/\//g, ".")
@@ -104,7 +104,7 @@ export async function copyPath() {
 export async function rename(pageName: string) {
   const currentPage = await logseq.Editor.getCurrentPage();
   if (currentPage) {
-    await logseq.Editor.renamePage(currentPage.name, pageName);
+    await logseq.Editor.renamePage(currentPage.name as string, pageName);
     logseq.UI.showMsg(`Page renamed to ${pageName}`);
   } else {
     logseq.UI.showMsg("Rename command only work on a page.");

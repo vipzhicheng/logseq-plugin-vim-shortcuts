@@ -1,12 +1,15 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import {
-  debug,
+import { debug,
   getCurrentPage,
   getSettings,
-  scrollToBlockInPage,
-} from "@/common/funcs";
+  scrollToBlockInPage, isKeyBindingEnabled } from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('bottom')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.bottom)
@@ -27,10 +30,10 @@ export default (logseq: ILSPluginUser) => {
         debug("bottom");
         const page = await getCurrentPage();
         if (page?.name) {
-          const blocks = await logseq.Editor.getPageBlocksTree(page?.name);
+          const blocks = await logseq.Editor.getPageBlocksTree(page?.name as string);
           if (blocks.length > 0) {
             let block = blocks[blocks.length - 1];
-            scrollToBlockInPage(page.name, block.uuid);
+            scrollToBlockInPage(page.name as string, block.uuid as string);
           }
         }
       }

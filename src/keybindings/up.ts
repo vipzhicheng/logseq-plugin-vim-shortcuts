@@ -1,13 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import {
-  debug,
+import { debug,
   getNumber,
   getSettings,
-  resetNumber,
-} from "@/common/funcs";
+  resetNumber, isKeyBindingEnabled } from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('up')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.up)

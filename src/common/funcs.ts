@@ -456,7 +456,7 @@ export const debug = (msg: any, status = "success") => {
   }
 };
 
-const settingsVersion = "v4";
+const settingsVersion = "v5";
 export const defaultSettings = {
   keyBindings: {
     bottom: "shift+g",
@@ -527,6 +527,7 @@ export const defaultSettings = {
     command: ["mod+alt+;", "mod+shift+;"],
     emoji: "mod+/",
   },
+  disabledKeyBindings: [] as string[],
   settingsVersion,
   disabled: false,
   showRecentEmojis: false,
@@ -550,6 +551,12 @@ export const getSettings = (): DefaultSettingsType => {
   let settings = logseq.settings;
   const merged = Object.assign(defaultSettings, settings);
   return merged;
+};
+
+export const isKeyBindingEnabled = (key: string): boolean => {
+  const settings = getSettings();
+  const disabledKeys = settings.disabledKeyBindings || [];
+  return !disabledKeys.includes(key);
 };
 
 export const scrollToBlockInPage = (
@@ -597,3 +604,73 @@ export function filterDarkColor(hexColor) {
   const [r, g, b] = hexToRgb(hexColor);
   return r * 0.299 + g * 0.587 + b * 0.114 < 150;
 }
+
+// Key binding validation and utilities
+export const validateKeyBinding = (binding: string): { valid: boolean; error?: string } => {
+  if (!binding || binding.trim() === '') {
+    return { valid: false, error: 'Key binding cannot be empty' };
+  }
+
+  const trimmed = binding.trim();
+
+  // Check for valid key format
+  // Valid formats: "j", "shift+j", "mod+shift+j", "g j", "d d"
+  const parts = trimmed.split(' ');
+
+  for (const part of parts) {
+    if (part === '') continue;
+
+    const keys = part.split('+');
+
+    // Check if all parts are valid
+    for (const key of keys) {
+      if (key === '') {
+        return { valid: false, error: 'Invalid key binding format: empty key not allowed' };
+      }
+    }
+  }
+
+  return { valid: true };
+};
+
+export const normalizeKeyBinding = (binding: string): string => {
+  // Normalize spaces and make it lowercase for comparison
+  return binding.trim().toLowerCase().replace(/\s+/g, ' ');
+};
+
+export const findDuplicateKeyBindings = (
+  keyBindings: Record<string, string | string[]>
+): { key1: string; key2: string; binding: string }[] => {
+  const duplicates: { key1: string; key2: string; binding: string }[] = [];
+  const bindingMap = new Map<string, string[]>();
+
+  // Build a map of normalized bindings to keys
+  Object.entries(keyBindings).forEach(([key, value]) => {
+    const bindings = Array.isArray(value) ? value : [value];
+    bindings.forEach((binding) => {
+      const normalized = normalizeKeyBinding(binding);
+      if (!bindingMap.has(normalized)) {
+        bindingMap.set(normalized, []);
+      }
+      bindingMap.get(normalized)!.push(key);
+    });
+  });
+
+  // Find duplicates
+  bindingMap.forEach((keys, binding) => {
+    if (keys.length > 1) {
+      // Add all pairs of duplicates
+      for (let i = 0; i < keys.length; i++) {
+        for (let j = i + 1; j < keys.length; j++) {
+          duplicates.push({
+            key1: keys[i],
+            key2: keys[j],
+            binding,
+          });
+        }
+      }
+    }
+  });
+
+  return duplicates;
+};

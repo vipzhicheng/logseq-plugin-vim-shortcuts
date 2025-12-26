@@ -1,14 +1,12 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import {
-  debug,
+import { debug,
   getCurrentBlockUUID,
   getCurrentPage,
   getNumber,
   getSettings,
   resetNumber,
   scrollToBlockInPage,
-  writeClipboard,
-} from "@/common/funcs";
+  writeClipboard, isKeyBindingEnabled } from "@/common/funcs";
 
 const deleteCurrentAndNextSiblingBlocks = async (number: number) => {
   const page = await getCurrentPage();
@@ -17,7 +15,7 @@ const deleteCurrentAndNextSiblingBlocks = async (number: number) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid);
+        let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid as string);
         let nextBlock, currentBlock;
         currentBlock = block;
 
@@ -36,11 +34,11 @@ const deleteCurrentAndNextSiblingBlocks = async (number: number) => {
 
         let focusBlock = prevBlock || nextBlock || null;
         if (focusBlock?.uuid) {
-          scrollToBlockInPage(page.name, focusBlock.uuid);
+          scrollToBlockInPage(page.name as string, focusBlock.uuid);
         } else if (block.left.id) {
           const parentBlock = await logseq.Editor.getBlock(block.left.id);
           if (parentBlock?.uuid) {
-            scrollToBlockInPage(page.name, parentBlock.uuid);
+            scrollToBlockInPage(page.name as string, parentBlock.uuid);
           }
         }
       }
@@ -50,7 +48,7 @@ const deleteCurrentAndNextSiblingBlocks = async (number: number) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid);
+        let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid as string);
         let nextBlock, currentBlock;
         currentBlock = block;
 
@@ -84,6 +82,11 @@ const deleteCurrentAndNextSiblingBlocks = async (number: number) => {
 };
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('deleteCurrentAndNextSiblingBlocks')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(

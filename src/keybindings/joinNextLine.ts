@@ -1,7 +1,12 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getNumber, getSettings, resetNumber } from "@/common/funcs";
+import { debug, getNumber, getSettings, resetNumber, isKeyBindingEnabled } from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('joinNextLine')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.joinNextLine)

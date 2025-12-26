@@ -33,7 +33,7 @@ const parsePageName = async (pageName: string) => {
     case "@prev":
       if (page && page["journal?"]) {
         pageName = format(
-          sub(new Date(page.name), {
+          sub(new Date(page.name as string), {
             days: 1,
           }),
           config.preferredDateFormat
@@ -51,7 +51,7 @@ const parsePageName = async (pageName: string) => {
     case "@next":
       if (page && page["journal?"]) {
         pageName = format(
-          add(new Date(page.name), {
+          add(new Date(page.name as string), {
             days: 1,
           }),
           config.preferredDateFormat

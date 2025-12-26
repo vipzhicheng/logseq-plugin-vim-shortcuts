@@ -4,15 +4,13 @@ import {
   PageEntity,
   BlockUUID,
 } from "@logseq/libs/dist/LSPlugin";
-import {
-  debug,
+import { debug,
   getCurrentBlockUUID,
   getCurrentPage,
   getNumber,
   getSettings,
   resetNumber,
-  scrollToBlockInPage,
-} from "@/common/funcs";
+  scrollToBlockInPage, isKeyBindingEnabled } from "@/common/funcs";
 
 const findNextBlockRecur = async (
   page: PageEntity | BlockEntity,
@@ -22,10 +20,10 @@ const findNextBlockRecur = async (
     const parentBlock = await logseq.Editor.getBlock(block.parent.id);
     if (parentBlock?.uuid) {
       const parentNextBlock = await logseq.Editor.getNextSiblingBlock(
-        parentBlock?.uuid
+        parentBlock?.uuid as string
       );
       if (parentNextBlock?.uuid) {
-        scrollToBlockInPage(page.name || page.uuid, parentNextBlock.uuid);
+        scrollToBlockInPage((page.name || page.uuid) as string, parentNextBlock.uuid as string);
       } else if (parentBlock.parent.id) {
         await findNextBlockRecur(page, parentBlock);
       }
@@ -41,7 +39,7 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
+        const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid as string);
         if (nextBlock?.uuid) {
           scrollToBlockInPage(
             (page.name as string) || page.uuid,
@@ -58,7 +56,7 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid);
+        const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid as string);
         if (nextBlock?.uuid) {
           scrollToBlockInPage(page.uuid, nextBlock.uuid);
           return nextBlock?.uuid;
@@ -71,6 +69,11 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
 };
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('nextSibling')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.nextSibling)

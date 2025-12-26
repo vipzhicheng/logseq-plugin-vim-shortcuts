@@ -1,8 +1,13 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getCurrentBlockUUID, getSettings } from "@/common/funcs";
+import { debug, getCurrentBlockUUID, getSettings, isKeyBindingEnabled } from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('insertBefore')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.insertBefore)

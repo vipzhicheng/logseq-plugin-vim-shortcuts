@@ -1,13 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import {
-  debug,
+import { debug,
   getCurrentBlockUUID,
   getCurrentPage,
   getSettings,
-  scrollToBlockInPage,
-} from "@/common/funcs";
+  scrollToBlockInPage, isKeyBindingEnabled } from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('highlightFocusIn')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.highlightFocusIn)
@@ -37,9 +40,9 @@ export default (logseq: ILSPluginUser) => {
             if (block?.children && block?.children?.length > 0) {
               let focusInBlock = block.children[block.children.length - 1];
               if (Array.isArray(focusInBlock) && focusInBlock[0] === "uuid") {
-                scrollToBlockInPage(page.name, focusInBlock[1]);
+                scrollToBlockInPage(page.name as string, focusInBlock[1]);
               } else if (focusInBlock["uuid"]) {
-                scrollToBlockInPage(page.name, focusInBlock["uuid"]);
+                scrollToBlockInPage(page.name as string, focusInBlock["uuid"]);
               }
             }
           }

@@ -1,13 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import {
-  createPageIfNotExists,
+import { createPageIfNotExists,
   debug,
   getNumber,
   getSettings,
-  resetNumber,
-} from "@/common/funcs";
+  resetNumber, isKeyBindingEnabled } from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('jumpInto')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.jumpInto)

@@ -7,6 +7,7 @@
   <Help />
   <Color />
   <CopyText />
+  <Settings />
 </template>
 
 <style></style>

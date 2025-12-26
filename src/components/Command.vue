@@ -6,12 +6,14 @@ import { ref, watch, onUnmounted } from "vue";
 import * as commands from "@/commands";
 import { useCommandStore } from "@/stores/command";
 import { useColorStore } from "@/stores/color";
+import { useSettingsStore } from "@/stores/settings";
 
 import emojiData from "../commands/emoji/emoji";
 import { hideMainUI, pushCommandHistory } from "@/common/funcs";
 
 const commandStore = useCommandStore();
 const colorStore = useColorStore();
+const settingsStore = useSettingsStore();
 
 let wait = false;
 const handleSelect = async (selected) => {
@@ -153,6 +155,10 @@ const handleEnter = async () => {
     case "q":
     case "quit":
       commands.page.quit();
+      break;
+    case "settings":
+      settingsStore.show();
+      delayFocus = false;
       break;
     default:
       if (value.indexOf("s/") === 0 || value.indexOf("substitute/") === 0) {
@@ -298,6 +304,11 @@ const handleClose = () => {
 };
 
 const handleClickOutside = (event: MouseEvent) => {
+  // Don't close if settings dialog is open
+  if (settingsStore.visible) {
+    return;
+  }
+
   const target = event.target as HTMLElement;
   const commandInput = document.querySelector('.command-input');
   const commandPopper = document.querySelector('.el-autocomplete__popper');
@@ -326,6 +337,10 @@ const handlePrependClick = () => {
       $input.dispatchEvent(new Event('focus'));
     }, 100);
   }
+};
+
+const handleSettingsClick = () => {
+  settingsStore.show();
 };
 
 // Add/remove click outside listener
@@ -374,6 +389,9 @@ onUnmounted(() => {
     <template #append>
       <el-button class="command-run" @click="handleEnter" type="primary" title="Run (Enter)">
         ✓
+      </el-button>
+      <el-button class="command-settings" @click="handleSettingsClick" type="default" title="Settings">
+        ⚙
       </el-button>
       <el-button class="command-close" @click="handleClose" type="primary" title="Close (Esc)">
         ✕

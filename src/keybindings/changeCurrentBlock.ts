@@ -1,10 +1,8 @@
 import { BlockEntity, ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import {
-  debug,
+import { debug,
   getCurrentBlockUUID,
   getSettings,
-  writeClipboard,
-} from "@/common/funcs";
+  writeClipboard, isKeyBindingEnabled } from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 const clearBlockAndEdit = async (currentBlock: BlockEntity): Promise<void> => {
@@ -42,6 +40,11 @@ const deleteMatchAndEdit = async (
 };
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('changeCurrentBlock')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.changeCurrentBlock)

@@ -1,8 +1,13 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
 import * as cc from "change-case-all";
-import { debug, getSettings } from "@/common/funcs";
+import { debug, getSettings, isKeyBindingEnabled } from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('changeCaseLower')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.changeCaseLower)

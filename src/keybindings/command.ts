@@ -1,8 +1,13 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getSettings } from "@/common/funcs";
+import { debug, getSettings, isKeyBindingEnabled } from "@/common/funcs";
 import { useCommandStore } from "@/stores/command";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('command')) {
+    return;
+  }
+
   const commandStore = useCommandStore();
   const settings = getSettings();
 

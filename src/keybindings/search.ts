@@ -1,12 +1,15 @@
 import { BlockEntity, ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import {
-  clearCurrentPageBlocksHighlight,
+import { clearCurrentPageBlocksHighlight,
   debug,
-  getSettings,
-} from "@/common/funcs";
+  getSettings, isKeyBindingEnabled } from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('search')) {
+    return;
+  }
+
   const settings = getSettings();
 
   // Search Prev

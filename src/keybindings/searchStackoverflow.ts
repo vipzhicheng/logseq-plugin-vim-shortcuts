@@ -1,7 +1,12 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getCurrentBlockUUID, getSettings } from "@/common/funcs";
+import { debug, getCurrentBlockUUID, getSettings, isKeyBindingEnabled } from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('searchStackoverflow')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.searchStackoverflow)

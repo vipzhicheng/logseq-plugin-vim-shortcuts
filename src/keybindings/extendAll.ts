@@ -3,7 +3,7 @@ import {
   BlockUUID,
   ILSPluginUser,
 } from "@logseq/libs/dist/LSPlugin";
-import { debug, getCurrentBlockUUID, getSettings } from "@/common/funcs";
+import { debug, getCurrentBlockUUID, getSettings, isKeyBindingEnabled } from "@/common/funcs";
 
 const extend = async (blockUUID: BlockUUID | undefined) => {
   if (blockUUID) {
@@ -26,6 +26,11 @@ const extend = async (blockUUID: BlockUUID | undefined) => {
 };
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('extendAll')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.extendAll)

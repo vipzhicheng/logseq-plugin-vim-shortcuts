@@ -92,10 +92,10 @@ export default (logseq: ILSPluginUser) => {
                 block.uuid
               );
             }
-            await setMark(number, page.name, block.uuid);
+            await setMark(number, page.name as string, block.uuid as string);
             logseq.UI.showMsg(`Mark ${number} saved`);
           } else {
-            await setMark(number, page.name);
+            await setMark(number, page.name as string);
             logseq.UI.showMsg(`Mark ${number} saved`);
           }
         }

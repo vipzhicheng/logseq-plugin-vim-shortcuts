@@ -85,6 +85,51 @@ In VIM this mode can be triggered by `:`, but here, the shortcut is `mod+shift+;
 
 NOTE: on Windows, the trigger is `ctrl+alt+;`
 
+## Settings UI
+
+The plugin now includes a graphical settings interface for easy key binding customization. Click the **gear icon (⚙)** in the command palette (between the Run and Exit buttons) to open the settings panel.
+
+### Features
+
+- **Visual Key Binding Configuration**: View and modify all key bindings in a clean, organized interface grouped by category
+- **Multiple Key Bindings**: Each action supports multiple key bindings - add as many alternatives as you need
+- **Enable/Disable**: Quickly enable or disable individual key bindings using checkboxes
+- **Validation**: Automatic validation of key binding formats and duplicate detection
+- **Reset to Default**: Easily restore default key bindings for any action
+- **Built-in Help**: Comprehensive help documentation accessible via the Help button
+
+### Using the Settings UI
+
+1. **Open Settings**: Click the gear icon (⚙) in the command palette
+2. **Browse Key Bindings**: All key bindings are organized by category (Navigation, Editing, Block Operations, Search, Marks, Visual Mode, Command)
+3. **Enable/Disable**: Use the checkbox next to each action to enable or disable it
+4. **Edit Key Bindings**: Click the "Edit" button next to a key binding to modify it
+5. **Add Key Bindings**: Click "+ Add Key Binding" to add additional shortcuts for an action
+6. **Remove Key Bindings**: Click "Remove" to delete a key binding (requires at least one remaining)
+7. **Reset**: Click "Reset to Default" to restore the default key binding for an action
+8. **Save**: Click "Save Settings" when done - you'll be prompted to restart the plugin for changes to take effect
+
+### Key Binding Format
+
+Key bindings support the following formats:
+
+- **Single key**: `j`, `k`, `h`, `l`
+- **Combination keys**: `shift+j`, `ctrl+r`, `mod+shift+a`
+- **Sequential keys**: `g u`, `d d`, `z c`
+
+**Modifier keys**:
+- `mod` - Command (⌘) on Mac, Ctrl on Windows/Linux
+- `shift` - Shift key
+- `ctrl` - Control key
+- `alt` - Alt/Option key
+
+### Notes
+
+- Changes require a plugin restart to take effect
+- Duplicate key binding detection prevents conflicts
+- At least one key binding must remain for each action
+- Settings are saved to your Logseq configuration and persist across sessions
+
 #### The bottom input features
 
 - Autosuggestion when you input.

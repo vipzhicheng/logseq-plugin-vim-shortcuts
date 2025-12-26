@@ -1,8 +1,13 @@
-import { debug, getSettings, showMainUI } from "@/common/funcs";
+import { debug, getSettings, showMainUI, isKeyBindingEnabled } from "@/common/funcs";
 import { useEmojiStore } from "@/stores/emoji";
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
 
 export default (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!isKeyBindingEnabled('emoji')) {
+    return;
+  }
+
   const settings = getSettings();
 
   const bindings = Array.isArray(settings.keyBindings.emoji)
