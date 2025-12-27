@@ -1,10 +1,15 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getSettings, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('findChar')) {
+  if (!beforeActionRegister("findChar")) {
     return;
   }
 
@@ -25,6 +30,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Find character");
         const searchStore = useSearchStore();
         searchStore.startCharSearch("f");

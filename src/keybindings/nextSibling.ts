@@ -4,13 +4,17 @@ import {
   PageEntity,
   BlockUUID,
 } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentBlockUUID,
   getCurrentPage,
   getNumber,
   getSettings,
   resetNumber,
-  scrollToBlockInPage, isKeyBindingEnabled } from "@/common/funcs";
+  scrollToBlockInPage,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 const findNextBlockRecur = async (
   page: PageEntity | BlockEntity,
@@ -23,7 +27,10 @@ const findNextBlockRecur = async (
         parentBlock?.uuid as string
       );
       if (parentNextBlock?.uuid) {
-        scrollToBlockInPage((page.name || page.uuid) as string, parentNextBlock.uuid as string);
+        scrollToBlockInPage(
+          (page.name || page.uuid) as string,
+          parentNextBlock.uuid as string
+        );
       } else if (parentBlock.parent.id) {
         await findNextBlockRecur(page, parentBlock);
       }
@@ -39,7 +46,9 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid as string);
+        const nextBlock = await logseq.Editor.getNextSiblingBlock(
+          block.uuid as string
+        );
         if (nextBlock?.uuid) {
           scrollToBlockInPage(
             (page.name as string) || page.uuid,
@@ -56,7 +65,9 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        const nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid as string);
+        const nextBlock = await logseq.Editor.getNextSiblingBlock(
+          block.uuid as string
+        );
         if (nextBlock?.uuid) {
           scrollToBlockInPage(page.uuid, nextBlock.uuid);
           return nextBlock?.uuid;
@@ -70,7 +81,7 @@ const goNextSibling = async (lastBlockUUID: BlockUUID | undefined) => {
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('nextSibling')) {
+  if (!beforeActionRegister("nextSibling")) {
     return;
   }
 
@@ -91,6 +102,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         const number = getNumber();
         resetNumber();
 

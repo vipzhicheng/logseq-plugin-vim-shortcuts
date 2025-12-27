@@ -18,6 +18,8 @@
 - feat: optimize move cursor actions to support visual mode.
 - feat: change case support visual mode selection.
 - feat: cut action support visual mode selection.
+- feat: add visual line mode.
+- feat: add replace action.
 - chore: upgrade deps.
 
 ## v0.1.24

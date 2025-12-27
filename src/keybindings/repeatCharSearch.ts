@@ -1,10 +1,15 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getSettings, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('repeatCharSearch')) {
+  if (!beforeActionRegister("repeatCharSearch")) {
     return;
   }
 
@@ -25,6 +30,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Repeat character search");
         const searchStore = useSearchStore();
         await searchStore.repeatCharSearch();

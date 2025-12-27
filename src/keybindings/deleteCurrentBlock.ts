@@ -1,5 +1,6 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentBlockUUID,
   getCurrentPage,
   getNumber,
@@ -7,7 +8,9 @@ import { debug,
   resetNumber,
   scrollToBlockInPage,
   writeClipboard,
-  isKeyBindingEnabled } from "@/common/funcs";
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 const deleteCurrentBlock = async (number: number) => {
   const page = await getCurrentPage();
@@ -16,7 +19,9 @@ const deleteCurrentBlock = async (number: number) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid as string);
+        let prevBlock = await logseq.Editor.getPreviousSiblingBlock(
+          block.uuid as string
+        );
         let nextBlock, currentBlock;
         currentBlock = block;
 
@@ -49,7 +54,9 @@ const deleteCurrentBlock = async (number: number) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        let prevBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid as string);
+        let prevBlock = await logseq.Editor.getPreviousSiblingBlock(
+          block.uuid as string
+        );
         let nextBlock, currentBlock;
         currentBlock = block;
 
@@ -84,7 +91,7 @@ const deleteCurrentBlock = async (number: number) => {
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('deleteCurrentBlock')) {
+  if (!beforeActionRegister("deleteCurrentBlock")) {
     return;
   }
 
@@ -105,6 +112,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("delete current block");
 
         const number = getNumber();

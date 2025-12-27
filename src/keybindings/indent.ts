@@ -1,9 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getNumber, getSettings, resetNumber, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getNumber,
+  getSettings,
+  resetNumber,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('indent')) {
+  if (!beforeActionRegister("indent")) {
     return;
   }
 
@@ -24,6 +31,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Indent");
 
         // @ts-ignore

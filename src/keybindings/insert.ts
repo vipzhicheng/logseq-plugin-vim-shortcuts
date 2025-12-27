@@ -1,10 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getCurrentBlockUUID, getSettings, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getCurrentBlockUUID,
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('insert')) {
+  if (!beforeActionRegister("insert")) {
     return;
   }
 
@@ -31,6 +37,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug(`Insert (${key})`);
 
         let blockUUID = await getCurrentBlockUUID();
@@ -51,7 +62,10 @@ export default (logseq: ILSPluginUser) => {
                 searchStore.clearCursor();
               }
             }
-          } else if (searchStore.visualMode && searchStore.cursorBlockUUID === blockUUID) {
+          } else if (
+            searchStore.visualMode &&
+            searchStore.cursorBlockUUID === blockUUID
+          ) {
             // In visual mode - Insert after the selection end
             const selection = searchStore.getVisualSelection();
             if (selection) {
@@ -61,12 +75,20 @@ export default (logseq: ILSPluginUser) => {
               searchStore.exitVisualMode();
               searchStore.clearCursor();
             }
-          } else if (currentMatch && currentMatch.uuid === blockUUID && searchStore.input) {
+          } else if (
+            currentMatch &&
+            currentMatch.uuid === blockUUID &&
+            searchStore.input
+          ) {
             // Lowercase (no shift) - Insert at the end of the match when searching
             await logseq.Editor.editBlock(blockUUID, {
               pos: currentMatch.matchOffset + searchStore.input.length,
             });
-          } else if (currentMatch && currentMatch.uuid === blockUUID && searchStore.cursorMode) {
+          } else if (
+            currentMatch &&
+            currentMatch.uuid === blockUUID &&
+            searchStore.cursorMode
+          ) {
             // Lowercase (no shift) - Insert after cursor position
             await logseq.Editor.editBlock(blockUUID, {
               pos: currentMatch.matchOffset + 1,

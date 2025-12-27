@@ -1,11 +1,15 @@
 import { BlockUUID, ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentBlockUUID,
   getCurrentPage,
   getNumber,
   getSettings,
   resetNumber,
-  scrollToBlockInPage, isKeyBindingEnabled } from "@/common/funcs";
+  scrollToBlockInPage,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
   const page = await getCurrentPage();
@@ -18,12 +22,18 @@ const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
           block.uuid as string
         );
         if (prevBlock?.uuid) {
-          scrollToBlockInPage((page.name || page.uuid) as string, prevBlock.uuid as string);
+          scrollToBlockInPage(
+            (page.name || page.uuid) as string,
+            prevBlock.uuid as string
+          );
           return prevBlock.uuid;
         } else if (block.parent.id) {
           const parentBlock = await logseq.Editor.getBlock(block.parent.id);
           if (parentBlock?.uuid) {
-            scrollToBlockInPage((page.name || page.uuid) as string, parentBlock.uuid as string);
+            scrollToBlockInPage(
+              (page.name || page.uuid) as string,
+              parentBlock.uuid as string
+            );
             return parentBlock.uuid;
           }
         }
@@ -54,7 +64,7 @@ const goPrevSibling = async (lastBlockUUID: BlockUUID | undefined) => {
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('prevSibling')) {
+  if (!beforeActionRegister("prevSibling")) {
     return;
   }
 
@@ -75,6 +85,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         const number = getNumber();
         resetNumber();
 

@@ -11,35 +11,22 @@ import {
   hasExplicitNumber,
   resetNumber,
   setMark,
+  beforeActionExecute,
+  beforeActionRegister,
 } from "@/common/funcs";
 
-export default (logseq: ILSPluginUser) => {
-  const settings = getSettings();
+const registerMarkSave = (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!beforeActionRegister("markSave")) {
+    return;
+  }
 
-  const bindingsMarkSave = Array.isArray(settings.keyBindings.markSave)
+  const settings = getSettings();
+  const bindings = Array.isArray(settings.keyBindings.markSave)
     ? settings.keyBindings.markSave
     : [settings.keyBindings.markSave];
-  const bindingsMarkPageSave = Array.isArray(settings.keyBindings.markPageSave)
-    ? settings.keyBindings.markPageSave
-    : [settings.keyBindings.markPageSave];
-  const bindingsMarkJump = Array.isArray(settings.keyBindings.markJump)
-    ? settings.keyBindings.markJump
-    : [settings.keyBindings.markJump];
-  const bindingsMarkJumpSidebar = Array.isArray(
-    settings.keyBindings.markJumpSidebar
-  )
-    ? settings.keyBindings.markJumpSidebar
-    : [settings.keyBindings.markJumpSidebar];
-  const bindingsMarkPageJump = Array.isArray(settings.keyBindings.markPageJump)
-    ? settings.keyBindings.markPageJump
-    : [settings.keyBindings.markPageJump];
-  const bindingsMarkPageJumpSidebar = Array.isArray(
-    settings.keyBindings.markPageJumpSidebar
-  )
-    ? settings.keyBindings.markPageJumpSidebar
-    : [settings.keyBindings.markPageJumpSidebar];
 
-  bindingsMarkSave.forEach((binding, index) => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-save-mark-" + index,
@@ -50,6 +37,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Save mark");
 
         let number = getNumber();
@@ -59,7 +51,9 @@ export default (logseq: ILSPluginUser) => {
         // If no explicit number was provided, find the next available mark number
         if (!explicitNumber) {
           const marks = getBlockMarks();
-          const markNumbers = Object.keys(marks).map(key => parseInt(key, 10)).filter(n => !isNaN(n));
+          const markNumbers = Object.keys(marks)
+            .map((key) => parseInt(key, 10))
+            .filter((n) => !isNaN(n));
 
           if (markNumbers.length > 0) {
             // Find the maximum number and add 1
@@ -102,8 +96,20 @@ export default (logseq: ILSPluginUser) => {
       }
     );
   });
+};
 
-  bindingsMarkJump.forEach((binding, index) => {
+const registerMarkJump = (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!beforeActionRegister("markJump")) {
+    return;
+  }
+
+  const settings = getSettings();
+  const bindings = Array.isArray(settings.keyBindings.markJump)
+    ? settings.keyBindings.markJump
+    : [settings.keyBindings.markJump];
+
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-jump-mark-" + index,
@@ -114,6 +120,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Jump mark");
 
         const number = getNumber();
@@ -127,8 +138,20 @@ export default (logseq: ILSPluginUser) => {
       }
     );
   });
+};
 
-  bindingsMarkJumpSidebar.forEach((binding, index) => {
+const registerMarkJumpSidebar = (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!beforeActionRegister("markJumpSidebar")) {
+    return;
+  }
+
+  const settings = getSettings();
+  const bindings = Array.isArray(settings.keyBindings.markJumpSidebar)
+    ? settings.keyBindings.markJumpSidebar
+    : [settings.keyBindings.markJumpSidebar];
+
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-jump-mark-sidebar-" + index,
@@ -139,6 +162,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Jump mark to sidebar");
 
         const number = getNumber();
@@ -152,9 +180,21 @@ export default (logseq: ILSPluginUser) => {
       }
     );
   });
+};
+
+const registerMarkPageSave = (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!beforeActionRegister("markPageSave")) {
+    return;
+  }
+
+  const settings = getSettings();
+  const bindings = Array.isArray(settings.keyBindings.markPageSave)
+    ? settings.keyBindings.markPageSave
+    : [settings.keyBindings.markPageSave];
 
   // Mark Page Save (M key)
-  bindingsMarkPageSave.forEach((binding, index) => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-save-page-mark-" + index,
@@ -165,6 +205,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Save page mark");
 
         let number = getNumber();
@@ -175,8 +220,8 @@ export default (logseq: ILSPluginUser) => {
         if (!explicitNumber) {
           const marks = getPageMarks();
           const markNumbers = Object.keys(marks)
-            .map(key => parseInt(key, 10))
-            .filter(n => !isNaN(n));
+            .map((key) => parseInt(key, 10))
+            .filter((n) => !isNaN(n));
 
           if (markNumbers.length > 0) {
             number = Math.max(...markNumbers) + 1;
@@ -193,9 +238,21 @@ export default (logseq: ILSPluginUser) => {
       }
     );
   });
+};
+
+const registerMarkPageJump = (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!beforeActionRegister("markPageJump")) {
+    return;
+  }
+
+  const settings = getSettings();
+  const bindings = Array.isArray(settings.keyBindings.markPageJump)
+    ? settings.keyBindings.markPageJump
+    : [settings.keyBindings.markPageJump];
 
   // Mark Page Jump (" key)
-  bindingsMarkPageJump.forEach((binding, index) => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-jump-page-mark-" + index,
@@ -206,6 +263,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Jump to page mark");
 
         const number = getNumber();
@@ -221,9 +283,21 @@ export default (logseq: ILSPluginUser) => {
       }
     );
   });
+};
+
+const registerMarkPageJumpSidebar = (logseq: ILSPluginUser) => {
+  // Check if this keybinding is disabled
+  if (!beforeActionRegister("markPageJumpSidebar")) {
+    return;
+  }
+
+  const settings = getSettings();
+  const bindings = Array.isArray(settings.keyBindings.markPageJumpSidebar)
+    ? settings.keyBindings.markPageJumpSidebar
+    : [settings.keyBindings.markPageJumpSidebar];
 
   // Mark Page Jump to Sidebar (mod+shift+' key)
-  bindingsMarkPageJumpSidebar.forEach((binding, index) => {
+  bindings.forEach((binding, index) => {
     logseq.App.registerCommandPalette(
       {
         key: "vim-shortcut-jump-page-mark-sidebar-" + index,
@@ -234,6 +308,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Jump to page mark in sidebar");
 
         const number = getNumber();
@@ -250,4 +329,13 @@ export default (logseq: ILSPluginUser) => {
       }
     );
   });
+};
+
+export default (logseq: ILSPluginUser) => {
+  registerMarkSave(logseq);
+  registerMarkJump(logseq);
+  registerMarkJumpSidebar(logseq);
+  registerMarkPageSave(logseq);
+  registerMarkPageJump(logseq);
+  registerMarkPageJumpSidebar(logseq);
 };

@@ -1,10 +1,16 @@
-import { debug, getSettings, showMainUI, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getSettings,
+  showMainUI,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useEmojiStore } from "@/stores/emoji";
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('emoji')) {
+  if (!beforeActionRegister("emoji")) {
     return;
   }
 
@@ -15,6 +21,11 @@ export default (logseq: ILSPluginUser) => {
     : [settings.keyBindings.emoji];
 
   const emojiHandler = async () => {
+    // Check before action hook
+    if (!beforeActionExecute()) {
+      return;
+    }
+
     debug("Insert emoji");
 
     showMainUI(false);

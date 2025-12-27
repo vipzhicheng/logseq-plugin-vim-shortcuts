@@ -1,8 +1,12 @@
 import { BlockEntity, ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentBlockUUID,
   getSettings,
-  writeClipboard, isKeyBindingEnabled } from "@/common/funcs";
+  writeClipboard,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 const clearBlockAndEdit = async (currentBlock: BlockEntity): Promise<void> => {
@@ -30,7 +34,7 @@ const deleteMatchAndEdit = async (
     await logseq.Editor.updateBlock(blockUUID, newContent);
 
     // Small delay to ensure the block is updated
-    await new Promise(resolve => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, 50));
 
     // Enter edit mode at the match position
     await logseq.Editor.editBlock(blockUUID, {
@@ -41,7 +45,7 @@ const deleteMatchAndEdit = async (
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('changeCurrentBlock')) {
+  if (!beforeActionRegister("changeCurrentBlock")) {
     return;
   }
 
@@ -62,6 +66,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("change current block");
 
         // First check if we're in search mode with an active match
@@ -71,7 +80,10 @@ export default (logseq: ILSPluginUser) => {
           const currentMatch = searchStore.getCurrentMatch();
 
           // If in visual selection mode, delete the selected text
-          if (searchStore.visualMode && searchStore.cursorBlockUUID === blockUUID) {
+          if (
+            searchStore.visualMode &&
+            searchStore.cursorBlockUUID === blockUUID
+          ) {
             const selection = searchStore.getVisualSelection();
             if (selection) {
               const length = selection.end - selection.start + 1;
@@ -83,13 +95,25 @@ export default (logseq: ILSPluginUser) => {
           }
 
           // If there's an active search match on this block, delete only the match
-          if (currentMatch && currentMatch.uuid === blockUUID && searchStore.input) {
-            await deleteMatchAndEdit(blockUUID, currentMatch.matchOffset, searchStore.input.length);
+          if (
+            currentMatch &&
+            currentMatch.uuid === blockUUID &&
+            searchStore.input
+          ) {
+            await deleteMatchAndEdit(
+              blockUUID,
+              currentMatch.matchOffset,
+              searchStore.input.length
+            );
             return;
           }
 
           // If in cursor mode, delete the character at cursor position
-          if (currentMatch && currentMatch.uuid === blockUUID && searchStore.cursorMode) {
+          if (
+            currentMatch &&
+            currentMatch.uuid === blockUUID &&
+            searchStore.cursorMode
+          ) {
             await deleteMatchAndEdit(blockUUID, currentMatch.matchOffset, 1);
             searchStore.clearCursor();
             return;
@@ -98,7 +122,7 @@ export default (logseq: ILSPluginUser) => {
 
         // Otherwise, use the original behavior (clear entire block or selection)
         const selected = await logseq.Editor.getSelectedBlocks();
-        debug(selected)
+        debug(selected);
         if (selected && selected.length > 1) {
           for (let i = 1; i < selected.length; i++) {
             await logseq.Editor.removeBlock(selected[i].uuid);

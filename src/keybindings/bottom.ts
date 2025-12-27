@@ -1,12 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentPage,
   getSettings,
-  scrollToBlockInPage, isKeyBindingEnabled } from "@/common/funcs";
+  scrollToBlockInPage,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('bottom')) {
+  if (!beforeActionRegister("bottom")) {
     return;
   }
 
@@ -27,10 +31,17 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("bottom");
         const page = await getCurrentPage();
         if (page?.name) {
-          const blocks = await logseq.Editor.getPageBlocksTree(page?.name as string);
+          const blocks = await logseq.Editor.getPageBlocksTree(
+            page?.name as string
+          );
           if (blocks.length > 0) {
             let block = blocks[blocks.length - 1];
             scrollToBlockInPage(page.name as string, block.uuid as string);

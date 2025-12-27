@@ -1,11 +1,18 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
 import * as cc from "change-case-all";
-import { debug, getNumber, getSettings, resetNumber, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getNumber,
+  getSettings,
+  resetNumber,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('changeCase')) {
+  if (!beforeActionRegister("changeCase")) {
     return;
   }
 
@@ -26,6 +33,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Change case");
 
         const number = getNumber();
@@ -67,7 +79,10 @@ export default (logseq: ILSPluginUser) => {
           textToChange = content.substring(start, end + 1);
           afterText = content.substring(end + 1);
           isVisualMode = true;
-        } else if (searchStore.cursorMode && searchStore.cursorBlockUUID === block.uuid) {
+        } else if (
+          searchStore.cursorMode &&
+          searchStore.cursorBlockUUID === block.uuid
+        ) {
           // Change case of single character at cursor position
           const pos = searchStore.cursorPosition;
           if (pos >= 0 && pos < content.length) {

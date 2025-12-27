@@ -1,13 +1,17 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getNumber,
   getSettings,
-  resetNumber, isKeyBindingEnabled } from "@/common/funcs";
+  resetNumber,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('down')) {
+  if (!beforeActionRegister("down")) {
     return;
   }
 
@@ -28,6 +32,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         const searchStore = useSearchStore();
 
         // If in cursor mode, move cursor down (to next block)

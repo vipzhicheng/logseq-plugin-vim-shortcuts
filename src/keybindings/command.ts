@@ -1,10 +1,15 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getSettings, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useCommandStore } from "@/stores/command";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('command')) {
+  if (!beforeActionRegister("command")) {
     return;
   }
 
@@ -33,6 +38,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Call VIM commands");
         await logseq.Editor.exitEditingMode(true);
         commandStore.show();
@@ -63,6 +73,11 @@ export default (logseq: ILSPluginUser) => {
       },
     },
     async () => {
+      // Check before action hook
+      if (!beforeActionExecute()) {
+        return;
+      }
+
       debug("Call VIM commands non editing");
       await logseq.Editor.exitEditingMode(true);
       commandStore.show();

@@ -1,11 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
 import * as cc from "change-case-all";
-import { debug, getSettings, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('changeCaseLower')) {
+  if (!beforeActionRegister("changeCaseLower")) {
     return;
   }
 
@@ -26,6 +31,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Change case lower");
 
         const searchStore = useSearchStore();
@@ -49,7 +59,10 @@ export default (logseq: ILSPluginUser) => {
 
           // Exit visual mode after operation
           await searchStore.toggleVisualMode();
-        } else if (searchStore.cursorMode && searchStore.cursorBlockUUID === block.uuid) {
+        } else if (
+          searchStore.cursorMode &&
+          searchStore.cursorBlockUUID === block.uuid
+        ) {
           // Change case of single character at cursor position
           const pos = searchStore.cursorPosition;
           if (pos >= 0 && pos < content.length) {

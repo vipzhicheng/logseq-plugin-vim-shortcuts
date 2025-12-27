@@ -53,6 +53,7 @@ import pastePrev from "./keybindings/pastePrev";
 import prevNewBlock from "./keybindings/prevNewBlock";
 import prevSibling from "./keybindings/prevSibling";
 import redo from "./keybindings/redo";
+import replace from "./keybindings/replace";
 import search from "./keybindings/search";
 import searchBaidu from "./keybindings/searchBaidu";
 import searchGithub from "./keybindings/searchGithub";
@@ -85,6 +86,7 @@ import cutWord from "./keybindings/cutWord";
 import { SettingSchemaDesc } from "@logseq/libs/dist/LSPlugin.user";
 import deleteCurrentAndNextSiblingBlocks from "./keybindings/deleteCurrentAndNextSiblingBlocks";
 import deleteCurrentAndPrevSiblingBlocks from "./keybindings/deleteCurrentAndPrevSiblingBlocks";
+import openSettings from "./keybindings/openSettings";
 import { marks } from "./commands/mark";
 
 const defineSettings: SettingSchemaDesc[] = [
@@ -216,6 +218,7 @@ async function main() {
 
   cut(logseq);
   cutWord(logseq);
+  replace(logseq);
 
   toggleVisualMode(logseq);
   visualLineMode(logseq);
@@ -226,6 +229,8 @@ async function main() {
   sort(logseq);
   backgroundColor(logseq);
   command(logseq);
+
+  openSettings(logseq);
 
   // load marks
   await loadMarks();

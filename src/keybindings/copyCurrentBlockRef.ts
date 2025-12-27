@@ -1,12 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentBlockUUID,
   getSettings,
-  writeClipboard, isKeyBindingEnabled } from "@/common/funcs";
+  writeClipboard,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('copyCurrentBlockRef')) {
+  if (!beforeActionRegister("copyCurrentBlockRef")) {
     return;
   }
 
@@ -27,6 +31,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Copy current block ref");
         let blockUUID = await getCurrentBlockUUID();
         if (blockUUID) {

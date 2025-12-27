@@ -1,12 +1,16 @@
 import { BlockEntity, ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { clearCurrentPageBlocksHighlight,
+import {
+  clearCurrentPageBlocksHighlight,
   debug,
-  getSettings, isKeyBindingEnabled } from "@/common/funcs";
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('search')) {
+  if (!beforeActionRegister("search")) {
     return;
   }
 
@@ -30,6 +34,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Search Cleanup");
         await clearCurrentPageBlocksHighlight();
         // Clear cursor mode as well
@@ -54,6 +63,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Search");
         const searchStore = useSearchStore();
         searchStore.emptyInput();
@@ -90,6 +104,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Search Next");
         await clearCurrentPageBlocksHighlight();
         const searchStore = useSearchStore();
@@ -114,6 +133,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Search Prev");
         await clearCurrentPageBlocksHighlight();
         const searchStore = useSearchStore();

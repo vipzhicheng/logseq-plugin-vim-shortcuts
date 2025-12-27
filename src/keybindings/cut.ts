@@ -4,7 +4,8 @@ import {
   getCurrentBlockUUID,
   getSettings,
   writeClipboard,
-  isKeyBindingEnabled,
+  beforeActionExecute,
+  beforeActionRegister,
 } from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
@@ -32,7 +33,7 @@ const deleteTextAndCopy = async (
     // Force UI refresh by briefly entering and exiting edit mode
     await logseq.Editor.editBlock(blockUUID);
     // Small delay to ensure the block is updated before exiting
-    await new Promise(resolve => setTimeout(resolve, 50));
+    await new Promise((resolve) => setTimeout(resolve, 50));
     await logseq.Editor.exitEditingMode();
 
     // Restore cursor position after cut
@@ -52,7 +53,10 @@ const deleteTextAndCopy = async (
       }
 
       // Ensure cursor doesn't go beyond content length
-      if (searchStore.cursorPosition >= newContent.length && newContent.length > 0) {
+      if (
+        searchStore.cursorPosition >= newContent.length &&
+        newContent.length > 0
+      ) {
         searchStore.cursorPosition = newContent.length - 1;
       }
 
@@ -65,7 +69,7 @@ const deleteTextAndCopy = async (
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled("cut")) {
+  if (!beforeActionRegister("cut")) {
     return;
   }
 
@@ -86,6 +90,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("cut");
 
         const blockUUID = await getCurrentBlockUUID();

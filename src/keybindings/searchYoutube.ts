@@ -1,10 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getCurrentBlockUUID, getSettings, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getCurrentBlockUUID,
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('searchYoutube')) {
+  if (!beforeActionRegister("searchYoutube")) {
     return;
   }
 
@@ -25,6 +31,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Search in Youtube");
 
         const searchStore = useSearchStore();
@@ -52,7 +63,9 @@ export default (logseq: ILSPluginUser) => {
 
         if (searchText) {
           await logseq.App.openExternalLink(
-            `https://www.youtube.com/results?search_query=${encodeURIComponent(searchText)}`
+            `https://www.youtube.com/results?search_query=${encodeURIComponent(
+              searchText
+            )}`
           );
         }
       }

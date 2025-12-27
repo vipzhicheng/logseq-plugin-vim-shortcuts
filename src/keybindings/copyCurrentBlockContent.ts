@@ -1,13 +1,17 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentBlockUUID,
   getSettings,
-  writeClipboard, isKeyBindingEnabled } from "@/common/funcs";
+  writeClipboard,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 // Extract visible content by removing Logseq hidden properties
 function extractVisibleContent(content: string): string {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   const visibleLines: string[] = [];
 
   for (let i = 0; i < lines.length; i++) {
@@ -22,12 +26,12 @@ function extractVisibleContent(content: string): string {
     visibleLines.push(line);
   }
 
-  return visibleLines.join('\n').trim();
+  return visibleLines.join("\n").trim();
 }
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('copyCurrentBlockContent')) {
+  if (!beforeActionRegister("copyCurrentBlockContent")) {
     return;
   }
 
@@ -48,6 +52,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Copy current block contents");
 
         const searchStore = useSearchStore();

@@ -1,9 +1,15 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getCurrentBlockUUID, getSettings, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getCurrentBlockUUID,
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('nextNewBlock')) {
+  if (!beforeActionRegister("nextNewBlock")) {
     return;
   }
 
@@ -24,6 +30,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("create new next block");
         let blockUUID = await getCurrentBlockUUID();
         if (blockUUID) {

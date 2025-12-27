@@ -1,10 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug, getCurrentBlockUUID, getSettings, isKeyBindingEnabled } from "@/common/funcs";
+import {
+  debug,
+  getCurrentBlockUUID,
+  getSettings,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('insertBefore')) {
+  if (!beforeActionRegister("insertBefore")) {
     return;
   }
 
@@ -31,6 +37,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug(`Insert before (${key})`);
 
         let blockUUID = await getCurrentBlockUUID();
@@ -51,7 +62,10 @@ export default (logseq: ILSPluginUser) => {
             // Lowercase (no shift) - Check if we're in visual mode or have a current match
             const currentMatch = searchStore.getCurrentMatch();
 
-            if (searchStore.visualMode && searchStore.cursorBlockUUID === blockUUID) {
+            if (
+              searchStore.visualMode &&
+              searchStore.cursorBlockUUID === blockUUID
+            ) {
               // In visual mode - Insert at the selection start
               const selection = searchStore.getVisualSelection();
               if (selection) {
@@ -61,7 +75,11 @@ export default (logseq: ILSPluginUser) => {
                 searchStore.exitVisualMode();
                 searchStore.clearCursor();
               }
-            } else if (currentMatch && currentMatch.uuid === blockUUID && (searchStore.input || searchStore.cursorMode)) {
+            } else if (
+              currentMatch &&
+              currentMatch.uuid === blockUUID &&
+              (searchStore.input || searchStore.cursorMode)
+            ) {
               // Insert at the start of the match or cursor position
               await logseq.Editor.editBlock(blockUUID, {
                 pos: currentMatch.matchOffset,

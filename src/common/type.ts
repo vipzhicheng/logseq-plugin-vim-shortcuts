@@ -74,6 +74,7 @@ export const keyBindingsMeta: KeyBindingMeta[] = [
   { key: 'pastePrev', label: 'Paste Above', description: 'Paste above current block', category: 'block', defaultBinding: 'shift+p' },
   { key: 'cut', label: 'Cut Character', description: 'Cut character at cursor', category: 'block', defaultBinding: 'x' },
   { key: 'cutWord', label: 'Cut Word', description: 'Cut word at cursor', category: 'block', defaultBinding: 'shift+x' },
+  { key: 'replace', label: 'Replace Character', description: 'Replace character(s) at cursor or selection', category: 'editing', defaultBinding: 'r' },
   { key: 'indent', label: 'Indent', description: 'Increase block indentation', category: 'block', defaultBinding: ['shift+.'] },
   { key: 'outdent', label: 'Outdent', description: 'Decrease block indentation', category: 'block', defaultBinding: ['shift+,'] },
   { key: 'collapse', label: 'Collapse', description: 'Collapse current block', category: 'block', defaultBinding: 'z c' },
@@ -110,6 +111,7 @@ export const keyBindingsMeta: KeyBindingMeta[] = [
   // Command
   { key: 'command', label: 'Command Palette', description: 'Open command palette', category: 'command', defaultBinding: ['mod+alt+;', 'mod+shift+;'] },
   { key: 'emoji', label: 'Emoji Picker', description: 'Open emoji picker', category: 'command', defaultBinding: 'mod+/' },
+  { key: 'openSettings', label: 'Open Settings', description: 'Open vim shortcuts settings dialog', category: 'command', defaultBinding: '' },
 ];
 
 export const categoryLabels: Record<KeyBindingCategory, string> = {

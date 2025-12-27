@@ -1,13 +1,17 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { createPageIfNotExists,
+import {
+  createPageIfNotExists,
   debug,
   getNumber,
   getSettings,
-  resetNumber, isKeyBindingEnabled } from "@/common/funcs";
+  resetNumber,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('jumpInto')) {
+  if (!beforeActionRegister("jumpInto")) {
     return;
   }
 
@@ -28,6 +32,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Jump into internal link");
 
         const number = getNumber();

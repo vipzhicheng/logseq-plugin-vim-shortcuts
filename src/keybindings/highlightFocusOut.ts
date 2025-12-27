@@ -1,13 +1,17 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentBlockUUID,
   getCurrentPage,
   getSettings,
-  scrollToBlockInPage, isKeyBindingEnabled } from "@/common/funcs";
+  scrollToBlockInPage,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('highlightFocusOut')) {
+  if (!beforeActionRegister("highlightFocusOut")) {
     return;
   }
 
@@ -28,6 +32,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("Highlight focus out");
 
         const page = await getCurrentPage();

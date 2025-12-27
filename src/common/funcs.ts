@@ -525,8 +525,10 @@ export const defaultSettings = {
     decrease: "ctrl+x",
     cut: "x",
     cutWord: "shift+x",
+    replace: "r",
     command: ["mod+alt+;", "mod+shift+;"],
     emoji: "mod+/",
+    openSettings: "",
   },
   disabledKeyBindings: [] as string[],
   settingsVersion,
@@ -587,9 +589,10 @@ let lastSettingsVersion: string | null = null;
 
 export const getSettings = (): DefaultSettingsType => {
   const settings = logseq.settings;
-  const currentVersion = typeof settings?.settingsVersion === 'string'
-    ? settings.settingsVersion
-    : null;
+  const currentVersion =
+    typeof settings?.settingsVersion === "string"
+      ? settings.settingsVersion
+      : null;
 
   // Return cached settings if version hasn't changed
   if (settingsCache && lastSettingsVersion === currentVersion) {
@@ -597,7 +600,9 @@ export const getSettings = (): DefaultSettingsType => {
   }
 
   // Deep clone defaultSettings to avoid mutation
-  const clonedDefaults = JSON.parse(JSON.stringify(defaultSettings)) as DefaultSettingsType;
+  const clonedDefaults = JSON.parse(
+    JSON.stringify(defaultSettings)
+  ) as DefaultSettingsType;
 
   // Merge user settings into cloned defaults
   const merged = deepAssign(clonedDefaults, settings);
@@ -613,6 +618,73 @@ export const isKeyBindingEnabled = (key: string): boolean => {
   const settings = getSettings();
   const disabledKeys = settings.disabledKeyBindings || [];
   return !disabledKeys.includes(key);
+};
+
+// State for tracking input listening mode (e.g., when waiting for replace character)
+let isWaitingForInput = false;
+let inputListenerCleanup: (() => void) | null = null;
+
+/**
+ * Set the input listening state
+ * @param waiting - Whether we're waiting for input
+ * @param cleanup - Optional cleanup function to call when cancelled
+ */
+export const setWaitingForInput = (waiting: boolean, cleanup?: () => void) => {
+  isWaitingForInput = waiting;
+
+  if (cleanup) {
+    inputListenerCleanup = cleanup;
+  } else if (!waiting && inputListenerCleanup) {
+    // Clear cleanup function when no longer waiting
+    inputListenerCleanup = null;
+  }
+};
+
+/**
+ * Cancel any pending input listener
+ */
+export const cancelInputListener = () => {
+  if (inputListenerCleanup) {
+    inputListenerCleanup();
+    inputListenerCleanup = null;
+  }
+  isWaitingForInput = false;
+};
+
+/**
+ * Check if currently waiting for input
+ */
+export const isInInputListeningMode = (): boolean => {
+  return isWaitingForInput;
+};
+
+/**
+ * Hook called before registering a keybinding
+ * Checks if the keybinding should be registered based on settings
+ *
+ * @param key - The keybinding key identifier
+ * @returns true if keybinding should be registered, false otherwise
+ */
+export const beforeActionRegister = (key: string): boolean => {
+  // Check if keybinding is disabled in settings
+  return isKeyBindingEnabled(key);
+};
+
+/**
+ * Hook called before executing any action
+ * Returns true if the action should continue, false if it should be blocked
+ *
+ * @param key - The keybinding key identifier (optional, for future use)
+ * @returns true if action should continue, false otherwise
+ */
+export const beforeActionExecute = (_key?: string): boolean => {
+  // Check if we're currently waiting for input (e.g., replace character)
+  // In this case, block all other actions
+  if (isWaitingForInput) {
+    return false;
+  }
+
+  return true;
 };
 
 export const scrollToBlockInPage = (

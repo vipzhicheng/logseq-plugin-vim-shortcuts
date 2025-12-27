@@ -1,12 +1,16 @@
 import { ILSPluginUser } from "@logseq/libs/dist/LSPlugin";
-import { debug,
+import {
+  debug,
   getCurrentBlockUUID,
   getCurrentPage,
   getNumber,
   getSettings,
   resetNumber,
   scrollToBlockInPage,
-  writeClipboard, isKeyBindingEnabled } from "@/common/funcs";
+  writeClipboard,
+  beforeActionExecute,
+  beforeActionRegister,
+} from "@/common/funcs";
 
 const deleteCurrentAndPrevSiblingBlocks = async (number: number) => {
   const page = await getCurrentPage();
@@ -15,7 +19,9 @@ const deleteCurrentAndPrevSiblingBlocks = async (number: number) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        let nextBlock = await logseq.Editor.getNextSiblingBlock(block.uuid as string);
+        let nextBlock = await logseq.Editor.getNextSiblingBlock(
+          block.uuid as string
+        );
         let prevBlock, currentBlock;
         currentBlock = block;
 
@@ -48,7 +54,9 @@ const deleteCurrentAndPrevSiblingBlocks = async (number: number) => {
     if (blockUUID) {
       let block = await logseq.Editor.getBlock(blockUUID);
       if (block?.uuid) {
-        let nextBlock = await logseq.Editor.getPreviousSiblingBlock(block.uuid as string);
+        let nextBlock = await logseq.Editor.getPreviousSiblingBlock(
+          block.uuid as string
+        );
         let prevBlock, currentBlock;
         currentBlock = block;
 
@@ -83,7 +91,7 @@ const deleteCurrentAndPrevSiblingBlocks = async (number: number) => {
 
 export default (logseq: ILSPluginUser) => {
   // Check if this keybinding is disabled
-  if (!isKeyBindingEnabled('deleteCurrentAndPrevSiblingBlocks')) {
+  if (!beforeActionRegister("deleteCurrentAndPrevSiblingBlocks")) {
     return;
   }
 
@@ -106,6 +114,11 @@ export default (logseq: ILSPluginUser) => {
         },
       },
       async () => {
+        // Check before action hook
+        if (!beforeActionExecute()) {
+          return;
+        }
+
         debug("delete current and prev blocks");
 
         const number = getNumber();
