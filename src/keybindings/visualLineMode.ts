@@ -4,6 +4,7 @@ import {
   getSettings,
   beforeActionExecute,
   beforeActionRegister,
+  clearCurrentPageBlocksHighlight,
 } from "@/common/funcs";
 import { useSearchStore } from "@/stores/search";
 
@@ -53,13 +54,29 @@ export default (logseq: ILSPluginUser) => {
         const block = await logseq.Editor.getBlock(blockUUID);
         if (!block || !block.content) return;
 
-        // Enter visual mode and select entire line
-        searchStore.visualMode = true;
-        searchStore.visualStartPosition = 0;
-        searchStore.visualEndPosition = Math.max(0, block.content.length - 1);
+        // Check if already in visual line mode (entire line selected)
+        const isInVisualLineMode =
+          searchStore.visualMode &&
+          searchStore.visualStartPosition === 0 &&
+          searchStore.visualEndPosition === Math.max(0, block.content.length - 1);
 
-        // Update the visual selection highlight
-        await searchStore.updateVisualSelection();
+        if (isInVisualLineMode) {
+          // Exit visual mode and restore to single cursor
+          searchStore.exitVisualMode();
+
+          // Clear highlight
+          await clearCurrentPageBlocksHighlight();
+          await searchStore.moveCursorRight();
+          await searchStore.moveCursorLeft();
+        } else {
+          // Enter visual mode and select entire line
+          searchStore.visualMode = true;
+          searchStore.visualStartPosition = 0;
+          searchStore.visualEndPosition = Math.max(0, block.content.length - 1);
+
+          // Update the visual selection highlight
+          await searchStore.updateVisualSelection();
+        }
       }
     );
   });

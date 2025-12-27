@@ -16,13 +16,6 @@ export default (logseq: ILSPluginUser) => {
   const commandStore = useCommandStore();
   const settings = getSettings();
 
-  const handleDocumentClick = () => {
-    const $input = document.querySelector(
-      ".command-input input"
-    ) as HTMLInputElement;
-    $input && $input.blur();
-  };
-
   const bindings = Array.isArray(settings.keyBindings.command)
     ? settings.keyBindings.command
     : [settings.keyBindings.command];
@@ -56,9 +49,6 @@ export default (logseq: ILSPluginUser) => {
         setTimeout(() => {
           $input && $input.focus();
         }, 500);
-
-        document.removeEventListener("click", handleDocumentClick);
-        document.addEventListener("click", handleDocumentClick);
       }
     );
   });
@@ -92,9 +82,6 @@ export default (logseq: ILSPluginUser) => {
       setTimeout(() => {
         $input && $input.focus();
       }, 500);
-
-      document.removeEventListener("click", handleDocumentClick);
-      document.addEventListener("click", handleDocumentClick);
     }
   );
 };

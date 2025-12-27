@@ -286,6 +286,37 @@ const getDescription = (key: string): string => {
 const closeHelp = () => {
   showHelp.value = false;
 };
+
+// Check if current binding is different from default
+const isDifferentFromDefault = (key: string): boolean => {
+  const meta = keyBindingsMeta.find((m) => m.key === key);
+  if (!meta) return false;
+
+  const currentBinding = localKeyBindings.value[key];
+  const defaultBinding = meta.defaultBinding;
+
+  // Convert both to arrays for comparison
+  const currentArray = Array.isArray(currentBinding) ? currentBinding : [currentBinding];
+  const defaultArray = Array.isArray(defaultBinding) ? defaultBinding : [defaultBinding];
+
+  // Compare lengths
+  if (currentArray.length !== defaultArray.length) return true;
+
+  // Compare each binding
+  return !currentArray.every((binding, index) => binding === defaultArray[index]);
+};
+
+// Get default binding as a formatted string
+const getDefaultBindingString = (key: string): string => {
+  const meta = keyBindingsMeta.find((m) => m.key === key);
+  if (!meta) return '';
+
+  const defaultBinding = meta.defaultBinding;
+  if (Array.isArray(defaultBinding)) {
+    return defaultBinding.join(', ');
+  }
+  return defaultBinding || 'None';
+};
 </script>
 
 <template>
@@ -407,9 +438,15 @@ const closeHelp = () => {
                     <el-button size="small" type="text" @click="addBinding(meta.key)">
                       + Add Key Binding
                     </el-button>
-                    <el-button size="small" type="text" @click="resetToDefault(meta.key)">
-                      Reset to Default
-                    </el-button>
+                    <el-tooltip
+                      v-if="isDifferentFromDefault(meta.key)"
+                      :content="`Default: ${getDefaultBindingString(meta.key)}`"
+                      placement="top"
+                    >
+                      <el-button size="small" type="text" @click="resetToDefault(meta.key)">
+                        Reset to Default
+                      </el-button>
+                    </el-tooltip>
                   </div>
                 </div>
               </div>

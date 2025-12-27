@@ -399,6 +399,64 @@ async function main() {
   // Add global keydown listener
   window.top!.document.addEventListener("keydown", handleGlobalKeydown, true);
 
+  // Global click handler to close UI when clicking outside
+  const handleDocumentClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+
+    // Check if click is within the plugin's main UI container
+    const isClickInPluginUI = target.closest("#app");
+
+    // Check if click is within any of the UI components that should stay open
+    const isClickInSettings = target.closest(".settings-dialog");
+    const isClickInHelp = target.closest(".help-dialog");
+    const isClickInMarks = target.closest(".vim-shortcuts-marks");
+    const isClickInCommand = target.closest(".command-input");
+    const isClickInSearch = target.closest(".search-input");
+    const isClickInColor = target.closest(".color-picker");
+    const isClickInEmoji = target.closest(".emoji-picker");
+
+    // Element Plus components
+    const isClickInPopper = target.closest(".el-popper");
+    const isClickInDialog = target.closest(".el-dialog");
+    const isClickInDialogWrapper = target.closest(".el-overlay");
+    const isClickInMessageBox = target.closest(".el-message-box");
+    const isClickInButton = target.closest(".el-button");
+    const isClickInInput = target.closest(".el-input");
+    const isClickInCheckbox = target.closest(".el-checkbox");
+    const isClickInTag = target.closest(".el-tag");
+    const isClickInTabs = target.closest(".el-tabs");
+    const isClickInSelect = target.closest(".el-select");
+    const isClickInDropdown = target.closest(".el-dropdown");
+
+    // If click is outside all UI components, hide the main UI
+    if (
+      !isClickInPluginUI &&
+      !isClickInSettings &&
+      !isClickInHelp &&
+      !isClickInMarks &&
+      !isClickInCommand &&
+      !isClickInSearch &&
+      !isClickInColor &&
+      !isClickInEmoji &&
+      !isClickInPopper &&
+      !isClickInDialog &&
+      !isClickInDialogWrapper &&
+      !isClickInMessageBox &&
+      !isClickInButton &&
+      !isClickInInput &&
+      !isClickInCheckbox &&
+      !isClickInTag &&
+      !isClickInTabs &&
+      !isClickInSelect &&
+      !isClickInDropdown
+    ) {
+      hideMainUI();
+    }
+  };
+
+  // Add global click listener
+  window.addEventListener("click", handleDocumentClick);
+
   logseq.on("ui:visible:changed", async ({ visible }) => {
     if (!visible) {
       return;

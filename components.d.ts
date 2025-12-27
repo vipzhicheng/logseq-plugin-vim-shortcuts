@@ -26,6 +26,7 @@ declare module 'vue' {
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Help: typeof import('./src/components/Help.vue')['default']
     Mark: typeof import('./src/components/Mark.vue')['default']
     Search: typeof import('./src/components/Search.vue')['default']

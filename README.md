@@ -23,13 +23,13 @@ A comprehensive Vim-style keybinding plugin for Logseq that brings powerful moda
 
 ## Features
 
-- ✨ **Full Vim Modal Editing** - Normal, Insert, Visual, and Command modes
+- ✨ **Full Vim Modal Editing** - Normal, Insert, Visual (character & line), and Command modes
 - 🎯 **Extensive Key Bindings** - 50+ customizable keyboard shortcuts
-- ⚙️ **Visual Settings UI** - Easy configuration with graphical interface
+- ⚙️ **Visual Settings UI** - Easy configuration with graphical interface, smart defaults, and tooltips
 - 🔖 **Mark System** - Save and jump to frequently used pages and blocks
 - 🎨 **Block Styling** - Color picker for block backgrounds
 - 🔍 **Smart Search** - In-page search with smart case matching
-- 📋 **Advanced Editing** - Case conversion, number increment/decrement, and more
+- 📋 **Advanced Editing** - Case conversion, number increment/decrement, replace action, and more
 - 🌐 **External Search** - Quick search selection in Google, GitHub, Wikipedia, etc.
 
 ## Installation
@@ -95,9 +95,33 @@ Character-level selection within a block using cursor mode.
 - `b` - Extend selection to previous word
 - `e` - Extend selection to word end
 - `$` - Extend selection to line end
+- `gu` - Convert selection to lowercase
+- `gU` - Convert selection to uppercase
+- `Mod+Shift+u` - Toggle selection case
+- `x` - Cut selected text
+- `r` - Replace selected character(s)
 - `v` - Exit visual mode
 
 > **Note**: Visual mode operates on character-level selections within the current block, not multi-block selections. Use cursor navigation keys to extend the selection.
+
+### Visual Line Mode
+
+Line-level visual selection mode for selecting entire blocks.
+
+**How to enter**: Press `Shift+V` in Normal mode
+
+**Actions in Visual Line mode**:
+
+- `j` / `k` - Extend selection down/up by blocks
+- `J` / `K` - Move selected blocks down/up
+- `gu` - Convert selected blocks to lowercase
+- `gU` - Convert selected blocks to uppercase
+- `Mod+Shift+u` - Toggle selected blocks case
+- `x` - Cut selected blocks
+- `r` - Replace first character in selected blocks
+- `Shift+V` - Exit visual line mode
+
+> **Note**: Visual Line mode selects entire blocks, making it easy to perform operations on multiple blocks at once.
 
 ### Command Mode
 
@@ -141,20 +165,21 @@ All shortcuts can be customized via the [Settings UI](#settings-ui). Below are t
 
 ### Editing
 
-| Shortcut                 | Action          | Description                           |
-| ------------------------ | --------------- | ------------------------------------- |
-| `i` / `I`                | Insert at Start | Enter Insert mode at line beginning   |
-| `a` / `A`                | Insert at End   | Enter Insert mode at line end         |
-| `o`                      | New Block Below | Create new block below current        |
-| `O`                      | New Block Above | Create new block above current        |
-| `Cmd+j Cmd+j` / `Ctrl+[` | Exit Editing    | Return to Normal mode                 |
-| `u`                      | Undo            | Undo last operation                   |
-| `Ctrl+r`                 | Redo            | Redo last operation                   |
-| `x`                      | Cut Character   | Cut character under cursor            |
-| `X`                      | Cut Word        | Cut word under cursor                 |
-| `Ctrl+a`                 | Increase Number | Increment first number in block       |
-| `Ctrl+x`                 | Decrease Number | Decrement first number in block       |
-| `Mod+Alt+j`              | Join Next Line  | Merge next sibling block into current |
+| Shortcut                 | Action          | Description                                            |
+| ------------------------ | --------------- | ------------------------------------------------------ |
+| `i` / `I`                | Insert at Start | Enter Insert mode at line beginning                    |
+| `a` / `A`                | Insert at End   | Enter Insert mode at line end                          |
+| `o`                      | New Block Below | Create new block below current                         |
+| `O`                      | New Block Above | Create new block above current                         |
+| `Cmd+j Cmd+j` / `Ctrl+[` | Exit Editing    | Return to Normal mode                                  |
+| `u`                      | Undo            | Undo last operation                                    |
+| `Ctrl+r`                 | Redo            | Redo last operation                                    |
+| `x`                      | Cut Character   | Cut character under cursor or visual selection         |
+| `X`                      | Cut Word        | Cut word under cursor                                  |
+| `r`                      | Replace         | Replace character(s) at cursor or in visual selection  |
+| `Ctrl+a`                 | Increase Number | Increment first number in block                        |
+| `Ctrl+x`                 | Decrease Number | Decrement first number in block                        |
+| `Mod+Alt+j`              | Join Next Line  | Merge next sibling block into current                  |
 
 ### Block Operations
 
@@ -215,6 +240,7 @@ All shortcuts can be customized via the [Settings UI](#settings-ui). Below are t
 | Shortcut                    | Action             | Description                            |
 | --------------------------- | ------------------ | -------------------------------------- |
 | `v`                         | Toggle Visual Mode | Enter/exit Visual block selection mode |
+| `Shift+V`                   | Visual Line Mode   | Enter/exit Visual line selection mode  |
 | `Mod+Shift+;` / `Mod+Alt+;` | Command Mode       | Open command palette                   |
 | `Mod+/`                     | Emoji Picker       | Open emoji picker UI                   |
 
@@ -230,6 +256,7 @@ The plugin includes a modern graphical interface for customizing all key binding
 
 **Method 1**: Click the **gear icon (⚙)** in the command palette (between Run and Close buttons)
 **Method 2**: Press `Mod+Shift+;` to open command mode, then type `:help`
+**Method 3**: Bind a custom shortcut to "Open Settings" action (search for "Open Settings" in Logseq's Command Palette to configure a keybinding)
 
 ### Features
 
@@ -237,19 +264,22 @@ The plugin includes a modern graphical interface for customizing all key binding
 - ✅ **Multiple Bindings**: Assign multiple key combinations to the same action
 - ✅ **Toggle Enable/Disable**: Quickly enable or disable individual shortcuts
 - ✅ **Validation**: Automatic format validation and duplicate detection
-- ✅ **One-Click Reset**: Restore default bindings for any action
+- ✅ **Smart Reset Button**: "Reset to Default" button only appears when your bindings differ from defaults
+- ✅ **Default Value Tooltips**: Hover over any setting to see the default value in a tooltip
+- ✅ **Smart Click-Outside Behavior**: Clicking outside the Settings UI closes it, but clicking inside Settings, Help, Marks panels, or Element Plus components keeps them open
 - ✅ **Built-in Help**: Comprehensive documentation accessible via Help button
 
 ### How to Use
 
-1. **Open Settings**: Click the gear icon (⚙) in the command palette
+1. **Open Settings**: Click the gear icon (⚙) in the command palette, or use a custom keybinding if configured
 2. **Browse Categories**: Navigate through Navigation, Editing, Block Operations, Search, Marks, Visual Mode, and Command categories
 3. **Enable/Disable**: Use checkboxes to toggle shortcuts on/off
 4. **Edit Bindings**: Click "Edit" to modify a key binding, press Enter to save, Esc to cancel
 5. **Add Alternatives**: Click "+ Add Key Binding" to add additional shortcuts for the same action
 6. **Remove Bindings**: Click "Remove" to delete a binding (at least one must remain)
-7. **Reset to Default**: Click "Reset to Default" to restore original settings
-8. **Save Changes**: Click "Save Settings" - Logseq will prompt to restart for changes to take effect
+7. **Reset to Default**: Click "Reset to Default" (only visible when different from default) to restore original settings
+8. **View Defaults**: Hover over any setting to see its default value in a tooltip
+9. **Save Changes**: Click "Save Settings" - Logseq will prompt to restart for changes to take effect
 
 ### Key Binding Format
 
@@ -524,7 +554,7 @@ Contributions are welcome! Please feel free to submit issues, feature requests, 
 If this plugin has improved your Logseq workflow, consider supporting development:
 
 - ☕ [Buy Me a Coffee](https://www.buymeacoffee.com/vipzhicheng)
-- 🎁 [爱发电 (Afdian - for Chinese users)](https://afdian.net/@vipzhicheng)
+- 🎁 [爱发电 (Afdian - for Chinese users)](https://afdian.com/a/vipzhicheng)
 
 Your support helps maintain and improve this plugin!
 
