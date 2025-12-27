@@ -514,6 +514,7 @@ export const defaultSettings = {
     jumpInto: "mod+shift+enter",
     joinNextLine: "mod+alt+j",
     toggleVisualMode: "v",
+    visualLineMode: "shift+v",
     markSave: "m",
     markPageSave: "shift+m",
     markJump: "'",
@@ -547,9 +548,64 @@ export const initSettings = () => {
   }
 };
 
+export function deepAssign<T extends object>(
+  target: T,
+  ...sources: Array<Partial<T> | null | undefined>
+): T {
+  const validSources = sources.filter((s): s is Partial<T> => s != null);
+
+  for (const source of validSources) {
+    for (const key of Object.keys(source)) {
+      const targetVal = (target as Record<string, unknown>)[key];
+      const sourceVal = (source as Record<string, unknown>)[key];
+
+      if (isPlainObject(targetVal) && isPlainObject(sourceVal)) {
+        // Recursively merge nested objects
+        deepAssign(targetVal as object, sourceVal);
+      } else if (sourceVal !== undefined) {
+        // Only assign if source value is defined
+        (target as Record<string, unknown>)[key] = sourceVal;
+      }
+    }
+  }
+
+  return target;
+}
+
+function isPlainObject(val: unknown): val is object {
+  return (
+    val !== null &&
+    typeof val === "object" &&
+    !Array.isArray(val) &&
+    Object.getPrototypeOf(val) === Object.prototype
+  );
+}
+
+// Cache for merged settings to avoid repeated deep cloning
+let settingsCache: DefaultSettingsType | null = null;
+let lastSettingsVersion: string | null = null;
+
 export const getSettings = (): DefaultSettingsType => {
-  let settings = logseq.settings;
-  const merged = Object.assign(defaultSettings, settings);
+  const settings = logseq.settings;
+  const currentVersion = typeof settings?.settingsVersion === 'string'
+    ? settings.settingsVersion
+    : null;
+
+  // Return cached settings if version hasn't changed
+  if (settingsCache && lastSettingsVersion === currentVersion) {
+    return settingsCache;
+  }
+
+  // Deep clone defaultSettings to avoid mutation
+  const clonedDefaults = JSON.parse(JSON.stringify(defaultSettings)) as DefaultSettingsType;
+
+  // Merge user settings into cloned defaults
+  const merged = deepAssign(clonedDefaults, settings);
+
+  // Update cache
+  settingsCache = merged;
+  lastSettingsVersion = currentVersion;
+
   return merged;
 };
 
@@ -606,26 +662,31 @@ export function filterDarkColor(hexColor) {
 }
 
 // Key binding validation and utilities
-export const validateKeyBinding = (binding: string): { valid: boolean; error?: string } => {
-  if (!binding || binding.trim() === '') {
-    return { valid: false, error: 'Key binding cannot be empty' };
+export const validateKeyBinding = (
+  binding: string
+): { valid: boolean; error?: string } => {
+  if (!binding || binding.trim() === "") {
+    return { valid: false, error: "Key binding cannot be empty" };
   }
 
   const trimmed = binding.trim();
 
   // Check for valid key format
   // Valid formats: "j", "shift+j", "mod+shift+j", "g j", "d d"
-  const parts = trimmed.split(' ');
+  const parts = trimmed.split(" ");
 
   for (const part of parts) {
-    if (part === '') continue;
+    if (part === "") continue;
 
-    const keys = part.split('+');
+    const keys = part.split("+");
 
     // Check if all parts are valid
     for (const key of keys) {
-      if (key === '') {
-        return { valid: false, error: 'Invalid key binding format: empty key not allowed' };
+      if (key === "") {
+        return {
+          valid: false,
+          error: "Invalid key binding format: empty key not allowed",
+        };
       }
     }
   }
@@ -635,7 +696,7 @@ export const validateKeyBinding = (binding: string): { valid: boolean; error?: s
 
 export const normalizeKeyBinding = (binding: string): string => {
   // Normalize spaces and make it lowercase for comparison
-  return binding.trim().toLowerCase().replace(/\s+/g, ' ');
+  return binding.trim().toLowerCase().replace(/\s+/g, " ");
 };
 
 export const findDuplicateKeyBindings = (

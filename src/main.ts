@@ -61,6 +61,7 @@ import searchStackoverflow from "./keybindings/searchStackoverflow";
 import searchWikipedia from "./keybindings/searchWikipedia";
 import searchYoutube from "./keybindings/searchYoutube";
 import toggleVisualMode from "./keybindings/toggleVisualMode";
+import visualLineMode from "./keybindings/visualLineMode";
 import top from "./keybindings/top";
 import undo from "./keybindings/undo";
 import up from "./keybindings/up";
@@ -217,6 +218,7 @@ async function main() {
   cutWord(logseq);
 
   toggleVisualMode(logseq);
+  visualLineMode(logseq);
 
   changeCase(logseq);
   changeCaseUpperCase(logseq);

@@ -105,6 +105,7 @@ export const keyBindingsMeta: KeyBindingMeta[] = [
 
   // Visual Mode
   { key: 'toggleVisualMode', label: 'Toggle Visual Mode', description: 'Toggle visual mode to select text', category: 'visual', defaultBinding: 'v' },
+  { key: 'visualLineMode', label: 'Visual Line Mode', description: 'Enter visual mode and select entire line', category: 'visual', defaultBinding: 'shift+v' },
 
   // Command
   { key: 'command', label: 'Command Palette', description: 'Open command palette', category: 'command', defaultBinding: ['mod+alt+;', 'mod+shift+;'] },
